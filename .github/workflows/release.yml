@@ -96,7 +96,10 @@ jobs:
           tools: composer:v2
 
       - name: Validate composer.json
-        run: composer validate --strict
+        # --no-check-version: the version field is intentionally present and
+        # owned by the release pipeline, which is at odds with Packagist's
+        # "omit version" recommendation; keep strict checks for everything else.
+        run: composer validate --strict --no-check-version
 
       - name: Install dependencies
         uses: ramsey/composer-install@v3
@@ -207,7 +210,10 @@ jobs:
           tools: composer:v2
 
       - name: Validate composer.json
-        run: composer validate --strict
+        # --no-check-version: the version field is intentionally present and
+        # owned by the release pipeline, which is at odds with Packagist's
+        # "omit version" recommendation; keep strict checks for everything else.
+        run: composer validate --strict --no-check-version
 
       - name: Install dependencies (no dev, as a consumer would)
         run: composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
