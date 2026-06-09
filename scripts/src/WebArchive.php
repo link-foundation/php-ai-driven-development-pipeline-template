@@ -16,8 +16,23 @@ final class WebArchive
 {
     public const AVAILABILITY_API = 'https://archive.org/wayback/available';
 
-    public function __construct(private readonly Http $http = new Http())
-    {
+    /** Number of times to query the availability API before giving up. */
+    public const MAX_ATTEMPTS = 3;
+
+    /** @var callable(int): void */
+    private $sleeper;
+
+    /**
+     * @param (callable(int): void)|null $sleeper backoff hook (defaults to sleep);
+     *                                             injectable so tests run instantly
+     */
+    public function __construct(
+        private readonly Http $http = new Http(),
+        ?callable $sleeper = null,
+    ) {
+        $this->sleeper = $sleeper ?? static function (int $seconds): void {
+            sleep($seconds);
+        };
     }
 
     /**
@@ -48,22 +63,35 @@ final class WebArchive
 
     /**
      * Return the archived snapshot URL for $url, or null when none exists.
+     *
+     * The Wayback availability API is intermittently rate-limited: instead of a
+     * 429 it answers HTTP 200 with an empty `archived_snapshots` object even
+     * when a snapshot exists. An empty/failed answer is therefore treated as
+     * inconclusive and retried with a linear backoff before we conclude there is
+     * genuinely no snapshot.
      */
     public function snapshot(string $url): ?string
     {
         $endpoint = self::AVAILABILITY_API . '?url=' . rawurlencode($url);
-        $response = $this->http->get($endpoint);
 
-        if ($response['status'] !== 200 || $response['body'] === '') {
-            return null;
-        }
+        for ($attempt = 1; $attempt <= self::MAX_ATTEMPTS; ++$attempt) {
+            $response = $this->http->get($endpoint);
 
-        /** @var array{archived_snapshots?: array{closest?: array{available?: bool, url?: string}}} $data */
-        $data = json_decode($response['body'], true) ?: [];
-        $closest = $data['archived_snapshots']['closest'] ?? null;
+            if ($response['status'] === 200 && $response['body'] !== '') {
+                /** @var array{archived_snapshots?: array{closest?: array{available?: bool, url?: string}}} $data */
+                $data = json_decode($response['body'], true) ?: [];
+                $closest = $data['archived_snapshots']['closest'] ?? null;
 
-        if (\is_array($closest) && ($closest['available'] ?? false) === true && isset($closest['url'])) {
-            return (string) $closest['url'];
+                if (\is_array($closest) && ($closest['available'] ?? false) === true && isset($closest['url'])) {
+                    return (string) $closest['url'];
+                }
+            }
+
+            // Inconclusive (non-200, empty body, or empty snapshot set): back off
+            // and retry, unless this was the final attempt.
+            if ($attempt < self::MAX_ATTEMPTS) {
+                ($this->sleeper)($attempt);
+            }
         }
 
         return null;
