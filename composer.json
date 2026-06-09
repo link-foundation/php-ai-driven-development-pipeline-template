@@ -5,7 +5,7 @@
     "keywords": ["template", "ci-cd", "ai-driven-development", "symfony", "composer", "pipeline"],
     "homepage": "https://github.com/link-foundation/php-ai-driven-development-pipeline-template",
     "license": "Unlicense",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "authors": [
         {
             "name": "Link Foundation",
