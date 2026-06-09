@@ -108,7 +108,7 @@ final class ChangesetValidator
                 continue;
             }
 
-            if (\in_array(basename($path), ['README.md'], true)) {
+            if (\in_array(basename($path), ChangelogFragments::RESERVED, true)) {
                 continue;
             }
 

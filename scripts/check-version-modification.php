@@ -20,6 +20,21 @@ use LinkFoundation\Template\Pipeline\Actions;
 use LinkFoundation\Template\Pipeline\Process;
 use LinkFoundation\Template\Pipeline\Project;
 
+/**
+ * Extract the `version` field from raw composer.json text, or null when absent
+ * or unparseable.
+ */
+function versionField(string $json): ?string
+{
+    $data = json_decode($json, true);
+
+    if (is_array($data) && isset($data['version']) && is_string($data['version'])) {
+        return $data['version'];
+    }
+
+    return null;
+}
+
 $project = Project::locate();
 $root = $project->root();
 
@@ -30,37 +45,35 @@ if ($baseRef === '') {
     exit(0);
 }
 
-// Make sure the base branch is available, then diff only composer.json.
+// Make sure the base branch is available so we can read its composer.json.
 Process::run(['git', 'fetch', '--no-tags', '--depth=1', 'origin', $baseRef], $root);
 
-$diff = Process::run(
-    ['git', 'diff', "origin/{$baseRef}...HEAD", '--unified=0', '--', 'composer.json'],
-    $root,
-);
+// Read composer.json as it exists on the base branch. A non-zero exit means the
+// file does not exist there yet (it is being added in this PR), so there is no
+// prior version to protect — allow it. This is what lets the template's own
+// bootstrap PR, which creates composer.json for the first time, pass the guard.
+$baseFile = Process::run(['git', 'show', "origin/{$baseRef}:composer.json"], $root);
 
-if (!$diff->ok()) {
-    Actions::warning('Could not diff composer.json against the base branch; skipping check.');
+if (!$baseFile->ok()) {
+    echo "composer.json does not exist on the base branch (new file); skipping version-modification check.\n";
     exit(0);
 }
 
-$touchesVersion = false;
+$baseVersion = versionField($baseFile->stdout);
+$headVersion = versionField((string) file_get_contents($project->composerJsonPath()));
 
-foreach (explode("\n", $diff->output()) as $line) {
-    // Added or removed lines (not the diff header "+++"/"---").
-    if (preg_match('/^[+-](?![+-])/', $line) && preg_match('/"version"\s*:/', $line)) {
-        $touchesVersion = true;
-
-        break;
-    }
-}
-
-if ($touchesVersion) {
-    Actions::error(
-        'This pull request modifies the "version" field in composer.json. '
-        . 'Versions are managed automatically by the release pipeline from '
-        . 'changelog fragments — add one with `composer changeset` instead of '
-        . 'editing the version by hand.',
-    );
+// Compare the actual version *value*, not the textual diff: only a genuine
+// change to an existing version counts as a manual bump. Reformatting,
+// reordering, or leaving the version untouched is fine.
+if ($baseVersion !== null && $headVersion !== null && $baseVersion !== $headVersion) {
+    Actions::error(sprintf(
+        'This pull request changes the "version" field in composer.json '
+        . '(%s -> %s). Versions are managed automatically by the release '
+        . 'pipeline from changelog fragments — add one with `composer changeset` '
+        . 'instead of editing the version by hand.',
+        $baseVersion,
+        $headVersion,
+    ));
     exit(1);
 }
 

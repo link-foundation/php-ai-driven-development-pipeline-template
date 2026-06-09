@@ -25,7 +25,7 @@ final class ChangelogFragments
     public const CATEGORIES = ['Added', 'Changed', 'Deprecated', 'Removed', 'Fixed', 'Security'];
 
     /** Files in changelog.d/ that are never treated as fragments. */
-    private const RESERVED = ['README.md', '.gitkeep', 'fragment_template.md'];
+    public const RESERVED = ['README.md', '.gitkeep', 'fragment_template.md'];
 
     public function __construct(private readonly string $directory)
     {
