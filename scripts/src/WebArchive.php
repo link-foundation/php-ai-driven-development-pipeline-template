@@ -36,17 +36,31 @@ final class WebArchive
     }
 
     /**
-     * Extract candidate URLs from a lychee Markdown report.
+     * Extract the broken-link URLs from a lychee Markdown report.
+     *
+     * lychee renders every broken link as a Markdown list item that carries its
+     * failing status and the URL as an autolink, e.g.
+     *
+     *     * [404] <https://example.com/page> | Rejected status code: 404 Not Found
+     *     * [ERROR] <https://example.com/page> | Network error: ...
+     *
+     * Only these entries are genuine broken links. Everything else in the report
+     * must be ignored: the summary table, the section headings, and — crucially —
+     * the `[Full Github Actions output](…?check_suite_focus=true)` footer that
+     * lychee-action appends to the Markdown output. Probing that footer URL
+     * against the Web Archive (it has no snapshot) used to fail the job even when
+     * every real broken link was archived. Anchoring extraction to the status
+     * tag plus the `<…>` autolink keeps us to the actual broken links.
      *
      * @return list<string>
      */
     public static function extractUrls(string $report): array
     {
-        preg_match_all('#https?://[^\s)\]<>"\']+#', $report, $matches);
+        preg_match_all('#^\s*[*-]\s*\[[^\]]+\]\s*<(https?://[^>]+)>#m', $report, $matches);
 
         $urls = [];
 
-        foreach ($matches[0] as $url) {
+        foreach ($matches[1] as $url) {
             // Trim trailing punctuation that the regex may have captured.
             $url = rtrim($url, '.,;:');
 

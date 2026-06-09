@@ -17,19 +17,64 @@ final class WebArchiveTest extends TestCase
         };
     }
 
-    public function testExtractsUrlsAndSkipsArchiveLinks(): void
+    public function testExtractsBrokenLinkUrlsFromErrorEntries(): void
     {
         $report = <<<MD
-            | https://example.com/missing | 404 |
-            See https://web.archive.org/web/2020/https://example.com/missing
-            Also (https://example.org/page).
+            ## Errors per input
+
+            ### Errors in docs/BEST-PRACTICES.md
+
+            * [404] <https://example.com/missing> | Rejected status code: 404 Not Found
+            * [ERROR] <https://example.org/page> | Network error: Connection reset by peer
             MD;
 
         $urls = WebArchive::extractUrls($report);
 
         self::assertContains('https://example.com/missing', $urls);
         self::assertContains('https://example.org/page', $urls);
+    }
+
+    public function testSkipsArchiveLinks(): void
+    {
+        $report = <<<MD
+            * [404] <https://example.com/missing> | Rejected status code: 404 Not Found
+            See https://web.archive.org/web/2020/https://example.com/missing
+            MD;
+
+        $urls = WebArchive::extractUrls($report);
+
+        self::assertContains('https://example.com/missing', $urls);
         self::assertNotContains('https://web.archive.org/web/2020/https://example.com/missing', $urls);
+    }
+
+    /**
+     * Regression: lychee-action appends a `[Full Github Actions output](…)`
+     * footer (the action run URL with `?check_suite_focus=true`) to the Markdown
+     * report. It is not a broken link and has no Web Archive snapshot, so picking
+     * it up used to fail the job even when every real broken link was archived.
+     */
+    public function testIgnoresActionFooterAndSummaryTable(): void
+    {
+        $report = <<<MD
+            # Summary
+
+            | Status         | Count |
+            |----------------|-------|
+            | 🔍 Total       | 53    |
+            | 🚫 Errors      | 1     |
+
+            ## Errors per input
+
+            ### Errors in docs/BEST-PRACTICES.md
+
+            * [ERROR] <https://www.php-fig.org/psr/psr-12/> | Network error: Connection reset by peer
+
+            [Full Github Actions output](https://github.com/link-foundation/php-ai-driven-development-pipeline-template/actions/runs/27229118794?check_suite_focus=true)
+            MD;
+
+        $urls = WebArchive::extractUrls($report);
+
+        self::assertSame(['https://www.php-fig.org/psr/psr-12/'], $urls);
     }
 
     public function testSnapshotReturnsUrlWhenAvailable(): void
