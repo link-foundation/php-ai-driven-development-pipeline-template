@@ -27,6 +27,46 @@ final class WorkflowPolicyTest extends TestCase
         self::assertStringContainsString('name: CI/CD Pipeline', self::workflow('release.yml'));
     }
 
+    public function testWorkflowChangesAreLintedForCorrectnessAndSecurity(): void
+    {
+        $yaml = self::workflow('workflows.yml');
+
+        self::assertStringContainsString("- '.github/**'", $yaml);
+        self::assertStringContainsString('docker://rhysd/actionlint:1.7.7', $yaml);
+        self::assertStringContainsString('zizmorcore/zizmor-action@v0.6.2', $yaml);
+        self::assertStringContainsString('advanced-security: false', $yaml);
+        self::assertStringContainsString('annotations: true', $yaml);
+    }
+
+    public function testZizmorOnlyAuditsActiveGitHubConfiguration(): void
+    {
+        $yaml = self::workflow('workflows.yml');
+
+        self::assertStringContainsString('inputs: .github', $yaml);
+    }
+
+    public function testDocsWritePermissionsAreLimitedToDeployment(): void
+    {
+        $yaml = self::workflow('docs.yml');
+
+        self::assertSame(1, substr_count($yaml, 'pages: write'));
+        self::assertSame(1, substr_count($yaml, 'id-token: write'));
+        self::assertMatchesRegularExpression(
+            '/deploy:.*permissions:\s+pages: write\s+id-token: write/s',
+            $yaml,
+        );
+    }
+
+    public function testManualReleaseInputsReachShellThroughEnvironment(): void
+    {
+        $yaml = self::workflow('release.yml');
+
+        self::assertStringContainsString('BUMP_TYPE: ${{ github.event.inputs.bump_type }}', $yaml);
+        self::assertStringContainsString('RELEASE_DESCRIPTION: ${{ github.event.inputs.description }}', $yaml);
+        self::assertStringContainsString('--bump="$BUMP_TYPE"', $yaml);
+        self::assertStringContainsString('--description="$RELEASE_DESCRIPTION"', $yaml);
+    }
+
     public function testConcurrencyNeverCancelsMain(): void
     {
         $yaml = self::workflow('release.yml');

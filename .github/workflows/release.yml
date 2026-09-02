@@ -312,11 +312,14 @@ jobs:
 
       - name: Version, changelog, commit and tag
         id: version
+        env:
+          BUMP_TYPE: ${{ github.event.inputs.bump_type }}
+          RELEASE_DESCRIPTION: ${{ github.event.inputs.description }}
         run: |
           php scripts/version-and-commit.php \
             --mode=instant \
-            --bump="${{ github.event.inputs.bump_type }}" \
-            --description="${{ github.event.inputs.description }}"
+            --bump="$BUMP_TYPE" \
+            --description="$RELEASE_DESCRIPTION"
 
       - name: Wait for Packagist to import the release
         if: steps.version.outputs.new_version != ''
