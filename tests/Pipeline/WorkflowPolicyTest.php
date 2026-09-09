@@ -32,10 +32,39 @@ final class WorkflowPolicyTest extends TestCase
         $yaml = self::workflow('workflows.yml');
 
         self::assertStringContainsString("- '.github/**'", $yaml);
-        self::assertStringContainsString('docker://rhysd/actionlint:1.7.7', $yaml);
+
+        // The actionlint container image must be pinned by digest, not by the
+        // mutable 1.7.x tag: a tag of a repository we do not control is
+        // arbitrary code execution in a job that runs with the repo mounted
+        // (issue #5). A bare hash is unreadable, so the pin carries its tag.
+        self::assertMatchesRegularExpression(
+            '/uses:\s+docker:\/\/rhysd\/actionlint@sha256:[0-9a-f]{64} # v1\.7\.12/',
+            $yaml,
+        );
+        self::assertStringNotContainsString('docker://rhysd/actionlint:1', $yaml);
         self::assertStringContainsString('zizmorcore/zizmor-action@v0.6.2', $yaml);
         self::assertStringContainsString('advanced-security: false', $yaml);
         self::assertStringContainsString('annotations: true', $yaml);
+    }
+
+    public function testZizmorRunsANamedVersionAndThePedanticHighSeverityPass(): void
+    {
+        $yaml = self::workflow('workflows.yml');
+
+        // `latest` in zizmor-action is the action's own frozen table entry
+        // (v0.6.2 -> zizmor 1.29.0), not the latest zizmor; naming it keeps
+        // the analyser that reproduces a finding visible in the diff (#6).
+        self::assertStringContainsString('version: 1.29.0', $yaml);
+
+        // The unpinned-images audit is Pedantic-only, so the `'*': hash-pin`
+        // policy is only enforced on container references by this narrow
+        // second pass, filtered to high severity and high confidence (#5).
+        self::assertStringContainsString(
+            'Audit for pedantic-only high-severity findings',
+            $yaml,
+        );
+        self::assertStringContainsString('--persona pedantic --min-severity high --min-confidence high', $yaml);
+        self::assertStringContainsString('pipx run zizmor==1.29.0', $yaml);
     }
 
     public function testZizmorOnlyAuditsActiveGitHubConfiguration(): void
