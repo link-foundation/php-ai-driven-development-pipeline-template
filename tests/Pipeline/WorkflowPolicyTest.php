@@ -265,6 +265,77 @@ final class WorkflowPolicyTest extends TestCase
         self::assertStringContainsString('treated as a real failure', $contents);
     }
 
+    public function testLongStepsRunUnderAnExecutionBudget(): void
+    {
+        $yaml = self::workflow('release.yml');
+
+        // The wrapper owns the deadline so a hung step fails the job (red)
+        // instead of letting the runner kill the job as cancelled (grey).
+        self::assertGreaterThanOrEqual(
+            8,
+            substr_count($yaml, 'run-with-budget-warning.sh'),
+            'release.yml should wrap its long steps in run-with-budget-warning.sh (issue #10).',
+        );
+
+        $script = file_get_contents(\dirname(__DIR__, 2) . '/scripts/run-with-budget-warning.sh');
+        self::assertIsString($script, 'Missing scripts/run-with-budget-warning.sh.');
+        // set -m gives the command its own process group so the whole tree is
+        // signalled, not just the direct child; the grace window is what makes
+        // SIGTERM -> SIGKILL orderly; exit 124 is what turns a timeout into a
+        // failure the pipeline-status gate can see.
+        self::assertStringContainsString('set -m', $script);
+        self::assertStringContainsString('BUDGET_WARN_RATIO_PERCENT', $script);
+        self::assertStringContainsString('BUDGET_GRACE_SECONDS', $script);
+        self::assertStringContainsString('exit 124', $script);
+    }
+
+    public function testStepBudgetsExpireBeforeTheJobCapTheySitUnder(): void
+    {
+        $yaml = self::workflow('release.yml');
+        $maxBudgetSharePercent = 70;
+        $checked = 0;
+
+        foreach (self::jobNames($yaml) as $job) {
+            $block = self::jobBlock($yaml, $job);
+
+            preg_match('/^    timeout-minutes: (\d+)$/m', $block, $capMatch);
+            $capMinutes = (int) ($capMatch[1] ?? '0');
+            self::assertGreaterThan(
+                0,
+                $capMinutes,
+                "{$job}: every release job declares a job-level timeout.",
+            );
+            $capSeconds = $capMinutes * 60;
+
+            $deadlines = [];
+
+            $budgetMatches = [];
+            preg_match_all('/^          ([A-Z0-9_]*BUDGET_SECONDS): (\d+)$/m', $block, $budgetMatches, PREG_SET_ORDER);
+            foreach ($budgetMatches as $set) {
+                $deadlines[] = [$set[1], (int) $set[2]];
+            }
+
+            $timeoutMatches = [];
+            preg_match_all('/^        timeout-minutes: (\d+)$/m', $block, $timeoutMatches, PREG_SET_ORDER);
+            foreach ($timeoutMatches as $set) {
+                $deadlines[] = ["step timeout-minutes: {$set[1]}", ((int) $set[1]) * 60];
+            }
+
+            foreach ($deadlines as [$source, $seconds]) {
+                ++$checked;
+                self::assertLessThanOrEqual(
+                    (int) ($capSeconds * $maxBudgetSharePercent / 100),
+                    $seconds,
+                    "{$job}: {$source} must expire before the job's {$capMinutes}-minute cap, or the cap fires first and the deadline was decorative.",
+                );
+            }
+        }
+
+        // The invariant must have checked real work: an empty deadline list
+        // would let a future edit drop every budget without a failure.
+        self::assertGreaterThanOrEqual(10, $checked, 'Expected the long steps to carry budgets.');
+    }
+
     public function testReleaseJobsRequireWriteContents(): void
     {
         $yaml = self::workflow('release.yml');

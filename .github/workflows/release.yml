@@ -103,12 +103,27 @@ jobs:
 
       - name: Install dependencies
         uses: ramsey/composer-install@v3
+        # A `uses:` step cannot be wrapped by run-with-budget-warning.sh, so
+        # it declares its deadline with a step-level timeout-minutes: an
+        # exhausted step budget fails the step, while an exhausted job cap
+        # only cancels the job (issue #10).
+        timeout-minutes: 5
 
       - name: Check coding standards (PHP-CS-Fixer)
-        run: composer lint
+        env:
+          LINT_BUDGET_SECONDS: 600
+        run: |
+          bash scripts/run-with-budget-warning.sh \
+            "$LINT_BUDGET_SECONDS" "Coding standards" \
+            composer lint
 
       - name: Static analysis (PHPStan)
-        run: composer analyse
+        env:
+          ANALYSE_BUDGET_SECONDS: 600
+        run: |
+          bash scripts/run-with-budget-warning.sh \
+            "$ANALYSE_BUDGET_SECONDS" "Static analysis" \
+            composer analyse
 
       - name: Check file size limit
         run: composer check:file-size
@@ -144,9 +159,19 @@ jobs:
 
       - name: Install dependencies
         uses: ramsey/composer-install@v3
+        # A `uses:` step cannot be wrapped by run-with-budget-warning.sh, so
+        # it declares its deadline with a step-level timeout-minutes: an
+        # exhausted step budget fails the step, while an exhausted job cap
+        # only cancels the job (issue #10).
+        timeout-minutes: 5
 
       - name: Run tests
-        run: php vendor/bin/phpunit --coverage-text
+        env:
+          TEST_BUDGET_SECONDS: 1200
+        run: |
+          bash scripts/run-with-budget-warning.sh \
+            "$TEST_BUDGET_SECONDS" "Test suite" \
+            php vendor/bin/phpunit --coverage-text
 
   # === CHANGESET CHECK - only on PRs that touch code ===
   # Docs-only PRs are exempt (no changelog fragment required).
@@ -170,6 +195,11 @@ jobs:
 
       - name: Install dependencies
         uses: ramsey/composer-install@v3
+        # A `uses:` step cannot be wrapped by run-with-budget-warning.sh, so
+        # it declares its deadline with a step-level timeout-minutes: an
+        # exhausted step budget fails the step, while an exhausted job cap
+        # only cancels the job (issue #10).
+        timeout-minutes: 5
 
       - name: Ensure the version was not bumped by hand
         env:
@@ -216,7 +246,12 @@ jobs:
         run: composer validate --strict --no-check-version
 
       - name: Install dependencies (no dev, as a consumer would)
-        run: composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+        env:
+          BUILD_BUDGET_SECONDS: 800
+        run: |
+          bash scripts/run-with-budget-warning.sh \
+            "$BUILD_BUDGET_SECONDS" "Build" \
+            composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
       - name: Verify autoloading works
         run: php -r "require 'vendor/autoload.php'; echo (new LinkFoundation\Template\Calculator())->add(2, 3), PHP_EOL;"
@@ -247,36 +282,59 @@ jobs:
 
       - name: Install dependencies
         uses: ramsey/composer-install@v3
+        # A `uses:` step cannot be wrapped by run-with-budget-warning.sh, so
+        # it declares its deadline with a step-level timeout-minutes: an
+        # exhausted step budget fails the step, while an exhausted job cap
+        # only cancels the job (issue #10).
+        timeout-minutes: 5
 
       - name: Decide whether a release is needed
         id: decide
         env:
+          DECIDE_BUDGET_SECONDS: 300
           GITHUB_REPOSITORY: ${{ github.repository }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: php scripts/check-release-needed.php
+        run: |
+          bash scripts/run-with-budget-warning.sh \
+            "$DECIDE_BUDGET_SECONDS" "Release decision" \
+            php scripts/check-release-needed.php
 
       - name: Version, changelog, commit and tag
         id: version
         if: steps.decide.outputs.should_release == 'true'
+        env:
+          VERSION_BUDGET_SECONDS: 600
         run: |
           if [ "${{ steps.decide.outputs.skip_bump }}" = "true" ]; then
-            php scripts/version-and-commit.php --skip-bump
+            bash scripts/run-with-budget-warning.sh \
+              "$VERSION_BUDGET_SECONDS" "Version, changelog, commit and tag" \
+              php scripts/version-and-commit.php --skip-bump
           else
-            php scripts/version-and-commit.php --mode=changeset
+            bash scripts/run-with-budget-warning.sh \
+              "$VERSION_BUDGET_SECONDS" "Version, changelog, commit and tag" \
+              php scripts/version-and-commit.php --mode=changeset
           fi
 
       - name: Wait for Packagist to import the release
         if: steps.version.outputs.new_version != ''
         env:
+          PACKAGIST_WAIT_BUDGET_SECONDS: 600
           GITHUB_REPOSITORY: ${{ github.repository }}
-        run: php scripts/wait-for-packagist.php --version "${{ steps.version.outputs.new_version }}"
+        run: |
+          bash scripts/run-with-budget-warning.sh \
+            "$PACKAGIST_WAIT_BUDGET_SECONDS" "Packagist import wait" \
+            php scripts/wait-for-packagist.php --version "${{ steps.version.outputs.new_version }}"
 
       - name: Create GitHub release
         if: steps.version.outputs.new_version != ''
         env:
+          GITHUB_RELEASE_BUDGET_SECONDS: 300
           GITHUB_REPOSITORY: ${{ github.repository }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: php scripts/create-github-release.php --version "${{ steps.version.outputs.new_version }}"
+        run: |
+          bash scripts/run-with-budget-warning.sh \
+            "$GITHUB_RELEASE_BUDGET_SECONDS" "GitHub release" \
+            php scripts/create-github-release.php --version "${{ steps.version.outputs.new_version }}"
 
   # === MANUAL RELEASE - workflow_dispatch ===
   manual-release:
@@ -309,30 +367,46 @@ jobs:
 
       - name: Install dependencies
         uses: ramsey/composer-install@v3
+        # A `uses:` step cannot be wrapped by run-with-budget-warning.sh, so
+        # it declares its deadline with a step-level timeout-minutes: an
+        # exhausted step budget fails the step, while an exhausted job cap
+        # only cancels the job (issue #10).
+        timeout-minutes: 5
 
       - name: Version, changelog, commit and tag
         id: version
         env:
+          VERSION_BUDGET_SECONDS: 600
           BUMP_TYPE: ${{ github.event.inputs.bump_type }}
           RELEASE_DESCRIPTION: ${{ github.event.inputs.description }}
         run: |
-          php scripts/version-and-commit.php \
-            --mode=instant \
-            --bump="$BUMP_TYPE" \
-            --description="$RELEASE_DESCRIPTION"
+          bash scripts/run-with-budget-warning.sh \
+            "$VERSION_BUDGET_SECONDS" "Version, changelog, commit and tag" \
+            php scripts/version-and-commit.php \
+              --mode=instant \
+              --bump="$BUMP_TYPE" \
+              --description="$RELEASE_DESCRIPTION"
 
       - name: Wait for Packagist to import the release
         if: steps.version.outputs.new_version != ''
         env:
+          PACKAGIST_WAIT_BUDGET_SECONDS: 600
           GITHUB_REPOSITORY: ${{ github.repository }}
-        run: php scripts/wait-for-packagist.php --version "${{ steps.version.outputs.new_version }}"
+        run: |
+          bash scripts/run-with-budget-warning.sh \
+            "$PACKAGIST_WAIT_BUDGET_SECONDS" "Packagist import wait" \
+            php scripts/wait-for-packagist.php --version "${{ steps.version.outputs.new_version }}"
 
       - name: Create GitHub release
         if: steps.version.outputs.new_version != ''
         env:
+          GITHUB_RELEASE_BUDGET_SECONDS: 300
           GITHUB_REPOSITORY: ${{ github.repository }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: php scripts/create-github-release.php --version "${{ steps.version.outputs.new_version }}"
+        run: |
+          bash scripts/run-with-budget-warning.sh \
+            "$GITHUB_RELEASE_BUDGET_SECONDS" "GitHub release" \
+            php scripts/create-github-release.php --version "${{ steps.version.outputs.new_version }}"
 
   # === PIPELINE STATUS ===
   # GitHub reports jobs killed by timeout-minutes as cancelled. Observe every
