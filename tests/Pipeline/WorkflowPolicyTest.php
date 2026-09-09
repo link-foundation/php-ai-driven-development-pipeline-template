@@ -22,6 +22,88 @@ final class WorkflowPolicyTest extends TestCase
         return $contents;
     }
 
+    /**
+     * @return list<string>
+     */
+    private static function jobNames(string $yaml): array
+    {
+        // Only scan the `jobs:` section: the `on:` block's 2-space keys
+        // (push, pull_request, ...) otherwise match the same shape.
+        $jobsStart = strpos($yaml, "\njobs:\n");
+        self::assertIsInt($jobsStart, 'Workflow is missing a jobs: section.');
+        $jobsSection = substr($yaml, $jobsStart);
+
+        preg_match_all('/^  ([A-Za-z0-9_-]+):\s*$/m', $jobsSection, $matches);
+
+        return $matches[1];
+    }
+
+    private static function jobBlock(string $yaml, string $job): string
+    {
+        self::assertContains($job, self::jobNames($yaml), "Missing job {$job}.");
+
+        $lines = explode("\n", $yaml);
+        $start = null;
+        $end = \count($lines);
+
+        foreach ($lines as $index => $line) {
+            if ($start === null) {
+                if (preg_match('/^  ' . $job . ':\s*$/', $line) === 1) {
+                    $start = (int) $index;
+                }
+
+                continue;
+            }
+
+            if (preg_match('/^  [A-Za-z0-9_-]+:\s*$/', $line) === 1) {
+                $end = (int) $index;
+
+                break;
+            }
+        }
+
+        self::assertIsInt($start);
+
+        return implode("\n", \array_slice($lines, $start, $end - $start));
+    }
+
+    /**
+     * @return list<string>
+     */
+    private static function needsList(string $jobBlock): array
+    {
+        $lines = explode("\n", $jobBlock);
+        $needs = [];
+
+        foreach ($lines as $index => $line) {
+            if (preg_match('/^    needs:\s*\[([^\]]*)\]\s*$/', $line, $flow) === 1) {
+                foreach (array_map('trim', explode(',', $flow[1])) as $item) {
+                    if ($item !== '') {
+                        $needs[] = $item;
+                    }
+                }
+
+                break;
+            }
+
+            if (preg_match('/^    needs:\s*$/', $line) === 1) {
+                for ($next = (int) $index + 1, $count = \count($lines); $next < $count; ++$next) {
+                    if (preg_match('/^      - ([A-Za-z0-9_-]+)\s*$/', $lines[$next], $item) === 1) {
+                        $needs[] = $item[1];
+
+                        continue;
+                    }
+
+                    break;
+                }
+
+                break;
+            }
+        }
+
+        return $needs;
+    }
+
     public function testReleaseWorkflowExists(): void
     {
         self::assertStringContainsString('name: CI/CD Pipeline', self::workflow('release.yml'));
@@ -119,11 +201,13 @@ final class WorkflowPolicyTest extends TestCase
 
     public function testEveryJobHasATimeout(): void
     {
-        foreach (['release.yml', 'docs.yml', 'links.yml'] as $file) {
+        foreach (['release.yml', 'docs.yml', 'links.yml', 'workflows.yml'] as $file) {
             $yaml = self::workflow($file);
-            // One `runs-on:` per job; every job must carry a timeout.
+            // One `runs-on:` per job; every job must carry a job-level timeout
+            // (four-space indent). Step-level `timeout-minutes:` values are
+            // eight spaces deep and checked by the budget-invariant test.
             $jobCount = substr_count($yaml, 'runs-on:');
-            $timeoutCount = substr_count($yaml, 'timeout-minutes:');
+            $timeoutCount = (int) preg_match_all('/^    timeout-minutes:/m', $yaml);
 
             self::assertGreaterThan(0, $jobCount, "{$file} should declare jobs.");
             self::assertSame(
@@ -132,6 +216,53 @@ final class WorkflowPolicyTest extends TestCase
                 "{$file}: every job should declare a timeout-minutes.",
             );
         }
+    }
+
+    public function testEveryWorkflowHasATerminalStatusGateObservingEveryJob(): void
+    {
+        foreach (['release.yml', 'docs.yml', 'links.yml', 'workflows.yml'] as $file) {
+            $yaml = self::workflow($file);
+            $jobs = self::jobNames($yaml);
+
+            self::assertContains(
+                'pipeline-status',
+                $jobs,
+                "{$file} needs a terminal pipeline-status gate (issue #9).",
+            );
+
+            $block = self::jobBlock($yaml, 'pipeline-status');
+
+            // always() is load-bearing: without it the gate inherits the skip
+            // of whichever dependency was cancelled and disappears exactly
+            // when it is needed.
+            self::assertStringContainsString('if: always()', $block);
+            self::assertStringContainsString('bash scripts/check-pipeline-status.sh', $block);
+            self::assertStringContainsString('NEEDS_JSON: ${{ toJSON(needs) }}', $block);
+            self::assertStringContainsString('persist-credentials: false', $block);
+
+            // A job missing from `needs:` can hit its timeout cap with nothing
+            // to observe it (issue #9), so pin the observed list to the job
+            // list.
+            self::assertSame(
+                array_values(array_diff($jobs, ['pipeline-status'])),
+                self::needsList($block),
+                "{$file}: pipeline-status must observe every other job.",
+            );
+        }
+    }
+
+    public function testPipelineStatusScriptHandlesFailuresCancellationsAndSupersededRuns(): void
+    {
+        $contents = file_get_contents(\dirname(__DIR__, 2) . '/scripts/check-pipeline-status.sh');
+        self::assertIsString($contents, 'Missing scripts/check-pipeline-status.sh.');
+
+        self::assertStringContainsString('select_by_result failure', $contents);
+        self::assertStringContainsString('select_by_result cancelled', $contents);
+        // A cancelled job on main only fails the run when it was still the
+        // branch head; anything else must not block on expected churn.
+        self::assertStringContainsString('run_is_superseded', $contents);
+        // The gate fails loud when it cannot prove a cancellation benign.
+        self::assertStringContainsString('treated as a real failure', $contents);
     }
 
     public function testReleaseJobsRequireWriteContents(): void
