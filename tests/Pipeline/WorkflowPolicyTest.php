@@ -336,6 +336,29 @@ final class WorkflowPolicyTest extends TestCase
         self::assertGreaterThanOrEqual(10, $checked, 'Expected the long steps to carry budgets.');
     }
 
+    public function testReleaseJobsGateOnThePreflightResult(): void
+    {
+        $yaml = self::workflow('release.yml');
+        $preflight = self::jobBlock($yaml, 'release-preflight');
+
+        self::assertStringContainsString('php scripts/preflight-credentials.php', $preflight);
+        self::assertStringContainsString('persist-credentials: false', $preflight);
+        // The blocking mode is reserved for the events that can actually
+        // release: a fork pull request only annotates (issue #11).
+        self::assertStringContainsString("'release' || 'report'", $preflight);
+
+        foreach (['auto-release', 'manual-release'] as $job) {
+            $block = self::jobBlock($yaml, $job);
+
+            self::assertContains('release-preflight', self::needsList($block));
+            self::assertStringContainsString(
+                "needs.release-preflight.result == 'success'",
+                $block,
+                "{$job} must gate on the preflight succeeding, not merely not failing.",
+            );
+        }
+    }
+
     public function testReleaseJobsRequireWriteContents(): void
     {
         $yaml = self::workflow('release.yml');

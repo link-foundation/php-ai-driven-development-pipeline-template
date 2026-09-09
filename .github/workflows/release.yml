@@ -128,6 +128,46 @@ jobs:
       - name: Check file size limit
         run: composer check:file-size
 
+  # === RELEASE PREFLIGHT ===
+  # Prove the release preconditions before the pipeline spends an hour of
+  # build minutes on top of them (issue #11). wait-for-packagist.php is the
+  # first step that ever asks whether Packagist knows the package -- after
+  # the version tag is already pushed -- and create-github-release.php is
+  # the first that learns the token cannot push. The preflight asks both
+  # questions first. In report mode (pull requests, where a fork cannot
+  # satisfy the repository's preconditions) the same probes annotate without
+  # blocking, which is why the release jobs gate on
+  # `needs.release-preflight.result == 'success'` rather than on greenness.
+  release-preflight:
+    name: Release Preflight
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ env.PHP_VERSION }}
+          coverage: none
+
+      - name: Probe every release precondition
+        env:
+          # Expressions have no ternary operator; this idiom is safe because
+          # both branch values are non-empty string literals.
+          PREFLIGHT_MODE: >-
+            ${{
+              (
+                (github.event_name == 'push' && github.ref == 'refs/heads/main') ||
+                github.event_name == 'workflow_dispatch'
+              ) && 'release' || 'report'
+            }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: php scripts/preflight-credentials.php
+
   # === TEST ===
   test:
     name: Test (PHP ${{ matrix.php }})
@@ -261,8 +301,14 @@ jobs:
   # truth, not git tags. Re-running after a partial failure resumes safely.
   auto-release:
     name: Auto Release
-    needs: [lint, test, build]
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [lint, test, build, release-preflight]
+    # A refused precondition must stop the release even when everything else
+    # is green: `result == 'success'`, not mere non-failure, is the gate
+    # (issue #11).
+    if: |
+      always() && !cancelled() &&
+      github.event_name == 'push' && github.ref == 'refs/heads/main' &&
+      needs.release-preflight.result == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
@@ -339,15 +385,17 @@ jobs:
   # === MANUAL RELEASE - workflow_dispatch ===
   manual-release:
     name: Manual Release
-    needs: [lint, test, build]
+    needs: [lint, test, build, release-preflight]
     # always() && !cancelled() prevents the skipped detect-changes dependency
-    # from propagating; explicit result checks gate release behind green CI.
+    # from propagating; explicit result checks gate release behind green CI
+    # and a passed preflight (issue #11).
     if: |
       always() && !cancelled() &&
       github.event_name == 'workflow_dispatch' &&
       needs.lint.result == 'success' &&
       needs.test.result == 'success' &&
-      needs.build.result == 'success'
+      needs.build.result == 'success' &&
+      needs.release-preflight.result == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
@@ -418,6 +466,7 @@ jobs:
     needs:
       - detect-changes
       - lint
+      - release-preflight
       - test
       - changeset
       - build
