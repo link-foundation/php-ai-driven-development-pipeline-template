@@ -7,12 +7,20 @@ declare(strict_types=1);
  * Machine. Sets the `all_archived` step output to true only when every broken
  * link has an archived snapshot, in which case the workflow does not fail.
  *
- * Input: LYCHEE_OUTPUT env var (path to the lychee markdown report).
+ * URLs the link re-check (scripts/recheck-broken-links.php) found healthy are
+ * dropped from the archive lookup: a URL that never answered lychee but
+ * answers the re-check is not a broken link, and keeping it in this report
+ * would send a healthy URL to the Wayback Machine and fail the job on it.
+ *
+ * Input: LYCHEE_OUTPUT env var (path to the lychee markdown report) and
+ * RECOVERED_URLS env var (path to the re-check's recovered list, when the
+ * re-check step ran).
  */
 
 require_once __DIR__ . '/bootstrap.php';
 
 use LinkFoundation\Template\Pipeline\Actions;
+use LinkFoundation\Template\Pipeline\LinkRecheck;
 use LinkFoundation\Template\Pipeline\WebArchive;
 
 $reportPath = getenv('LYCHEE_OUTPUT') ?: 'lychee/out.md';
@@ -26,8 +34,18 @@ if (!is_file($reportPath)) {
 $report = file_get_contents($reportPath) ?: '';
 $urls = WebArchive::extractUrls($report);
 
+$recoveredPath = getenv('RECOVERED_URLS') ?: 'lychee/recovered.txt';
+$recoveredText = is_file($recoveredPath) ? (string) file_get_contents($recoveredPath) : '';
+$split = LinkRecheck::splitRecoveredUrls($urls, $recoveredText);
+
+foreach ($split['recovered'] as $url) {
+    echo "  {$url} never answered lychee but answers the re-check -- not broken\n";
+}
+
+$urls = $split['remaining'];
+
 if ($urls === []) {
-    echo "No URLs found in the lychee report.\n";
+    echo "No broken URLs left in the lychee report.\n";
     Actions::setBoolOutput('all_archived', true);
     exit(0);
 }

@@ -438,6 +438,33 @@ final class WorkflowPolicyTest extends TestCase
         self::assertStringContainsString('comment-summary-in-pr: on-failure', $review);
     }
 
+    public function testBrokenLinkGatesReAskTheNeverAnsweredUrls(): void
+    {
+        $yaml = self::workflow('links.yml');
+
+        self::assertStringContainsString('php scripts/recheck-broken-links.php', $yaml);
+
+        // The re-check only runs when lychee failed; a green lychee pass
+        // must not spend the budget.
+        self::assertMatchesRegularExpression(
+            '/if: steps\.lychee\.outputs\.exit_code != 0\n        id: recheck/',
+            $yaml,
+        );
+
+        // `!= 'true'`, never `== 'false'`: a skipped or crashed re-check
+        // leaves the output empty, and only the != form fails safe.
+        self::assertSame(
+            2,
+            substr_count($yaml, "steps.recheck.outputs.all_recovered != 'true'"),
+            'Both the archive lookup and the fail step must respect a full recovery (issue #12).',
+        );
+        self::assertStringNotContainsString("all_recovered == 'false'", $yaml);
+
+        // The archive check must receive the re-check's recovered list, or
+        // it would send healthy URLs to the Wayback Machine.
+        self::assertStringContainsString('RECOVERED_URLS: lychee/recovered.txt', $yaml);
+    }
+
     public function testReleaseJobsRequireWriteContents(): void
     {
         $yaml = self::workflow('release.yml');
