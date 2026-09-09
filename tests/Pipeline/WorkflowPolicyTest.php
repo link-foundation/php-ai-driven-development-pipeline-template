@@ -201,7 +201,7 @@ final class WorkflowPolicyTest extends TestCase
 
     public function testEveryJobHasATimeout(): void
     {
-        foreach (['release.yml', 'docs.yml', 'links.yml', 'workflows.yml'] as $file) {
+        foreach (['release.yml', 'docs.yml', 'links.yml', 'workflows.yml', 'security.yml'] as $file) {
             $yaml = self::workflow($file);
             // One `runs-on:` per job; every job must carry a job-level timeout
             // (four-space indent). Step-level `timeout-minutes:` values are
@@ -220,7 +220,7 @@ final class WorkflowPolicyTest extends TestCase
 
     public function testEveryWorkflowHasATerminalStatusGateObservingEveryJob(): void
     {
-        foreach (['release.yml', 'docs.yml', 'links.yml', 'workflows.yml'] as $file) {
+        foreach (['release.yml', 'docs.yml', 'links.yml', 'workflows.yml', 'security.yml'] as $file) {
             $yaml = self::workflow($file);
             $jobs = self::jobNames($yaml);
 
@@ -367,7 +367,7 @@ final class WorkflowPolicyTest extends TestCase
         $checkouts = 0;
         $persisting = [];
 
-        foreach (['release.yml', 'docs.yml', 'links.yml', 'workflows.yml'] as $file) {
+        foreach (['release.yml', 'docs.yml', 'links.yml', 'workflows.yml', 'security.yml'] as $file) {
             $lines = explode("\n", self::workflow($file));
 
             foreach ($lines as $index => $line) {
@@ -390,7 +390,7 @@ final class WorkflowPolicyTest extends TestCase
             }
         }
 
-        self::assertSame(16, $checkouts, 'Expected every checkout to be visited by this test.');
+        self::assertSame(20, $checkouts, 'Expected every checkout to be visited by this test.');
         // Only the two release jobs push (version-and-commit.php runs
         // `git push` to publish the version bump); every other checkout only
         // reads the tree.
@@ -399,6 +399,43 @@ final class WorkflowPolicyTest extends TestCase
             $persisting,
             'Only the pushing release checkouts may persist credentials.',
         );
+    }
+
+    /**
+     * @return list<string>
+     */
+    private static function codeqlLanguages(string $yaml): array
+    {
+        self::assertMatchesRegularExpression('/^        language: \[[^\]]+\]$/m', $yaml);
+        preg_match('/^        language: \[([^\]]+)\]$/m', $yaml, $match);
+        self::assertIsString($match[1] ?? null, 'CodeQL matrix must declare its languages inline.');
+
+        return array_values(array_map('trim', explode(',', $match[1])));
+    }
+
+    public function testSecurityWorkflowAuditsTheSupplyChain(): void
+    {
+        $yaml = self::workflow('security.yml');
+
+        // Advisory + abandonment checks run against the freshly resolved set:
+        // the template ships no lock file, so an audit without a resolve step
+        // would have nothing to look at.
+        self::assertStringContainsString('composer update --no-interaction', $yaml);
+        self::assertStringContainsString('composer audit --locked --abandoned=fail', $yaml);
+
+        // Weekly cadence: a newly published advisory must not wait for the
+        // next unrelated merge to be discovered.
+        self::assertStringContainsString("cron: '0 6 * * 1'", $yaml);
+
+        // CodeQL has no PHP analyser; the only language it can scan here is
+        // this repository's own workflow definitions.
+        self::assertSame(['actions'], self::codeqlLanguages($yaml));
+
+        // A pull request that raises a high-severity dependency fails and
+        // says so in the PR itself.
+        $review = self::jobBlock($yaml, 'dependency-review');
+        self::assertStringContainsString('fail-on-severity: high', $review);
+        self::assertStringContainsString('comment-summary-in-pr: on-failure', $review);
     }
 
     public function testReleaseJobsRequireWriteContents(): void
