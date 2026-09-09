@@ -51,6 +51,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -87,6 +88,8 @@ jobs:
       )
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -189,6 +192,8 @@ jobs:
         php: ['8.1', '8.2', '8.3', '8.4']
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -225,6 +230,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -271,6 +277,8 @@ jobs:
       )
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -314,8 +322,14 @@ jobs:
     permissions:
       contents: write
     steps:
+      # This checkout keeps credentials in .git/config on purpose:
+      # scripts/version-and-commit.php runs `git push` to publish the version
+      # bump, which needs the token wired into the remote. Every other
+      # checkout in this repository sets persist-credentials: false (issue
+      # #8).
       - uses: actions/checkout@v4
         with:
+          persist-credentials: true
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -401,8 +415,14 @@ jobs:
     permissions:
       contents: write
     steps:
+      # This checkout keeps credentials in .git/config on purpose:
+      # scripts/version-and-commit.php runs `git push` to publish the version
+      # bump, which needs the token wired into the remote. Every other
+      # checkout in this repository sets persist-credentials: false (issue
+      # #8).
       - uses: actions/checkout@v4
         with:
+          persist-credentials: true
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 

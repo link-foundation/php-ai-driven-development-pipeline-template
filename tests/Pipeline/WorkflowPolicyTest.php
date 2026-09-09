@@ -359,6 +359,48 @@ final class WorkflowPolicyTest extends TestCase
         }
     }
 
+    public function testEveryCheckoutDeclaresCredentialPersistence(): void
+    {
+        // actions/checkout writes the token into .git/config unless told not
+        // to, so every checkout must make the choice explicit instead of
+        // inheriting the credential-persisting default (issue #8).
+        $checkouts = 0;
+        $persisting = [];
+
+        foreach (['release.yml', 'docs.yml', 'links.yml', 'workflows.yml'] as $file) {
+            $lines = explode("\n", self::workflow($file));
+
+            foreach ($lines as $index => $line) {
+                if (preg_match('/^\s*- uses: actions\/checkout@/', $line) !== 1) {
+                    continue;
+                }
+
+                ++$checkouts;
+                $step = implode("\n", \array_slice($lines, $index, 6));
+
+                self::assertStringContainsString(
+                    'persist-credentials:',
+                    $step,
+                    "{$file}:" . ($index + 1) . ' checkout does not set persist-credentials.',
+                );
+
+                if (str_contains($step, 'persist-credentials: true')) {
+                    $persisting[] = "{$file}:" . ($index + 1);
+                }
+            }
+        }
+
+        self::assertSame(16, $checkouts, 'Expected every checkout to be visited by this test.');
+        // Only the two release jobs push (version-and-commit.php runs
+        // `git push` to publish the version bump); every other checkout only
+        // reads the tree.
+        self::assertSame(
+            ['release.yml:330', 'release.yml:423'],
+            $persisting,
+            'Only the pushing release checkouts may persist credentials.',
+        );
+    }
+
     public function testReleaseJobsRequireWriteContents(): void
     {
         $yaml = self::workflow('release.yml');
