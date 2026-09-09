@@ -359,6 +359,22 @@ final class WorkflowPolicyTest extends TestCase
         }
     }
 
+    public function testEveryWorkflowGrantsExplicitTopLevelPermissions(): void
+    {
+        // A workflow without a top-level permissions block hands every job
+        // the repository's default token permissions; zizmor's
+        // excessive-permissions audit and CodeQL both flag it.
+        foreach (['release.yml', 'docs.yml', 'links.yml', 'workflows.yml', 'security.yml'] as $file) {
+            $yaml = self::workflow($file);
+
+            self::assertMatchesRegularExpression(
+                '/^permissions:\n  contents: read$/m',
+                $yaml,
+                "{$file} must declare explicit top-level permissions.",
+            );
+        }
+    }
+
     public function testEveryCheckoutDeclaresCredentialPersistence(): void
     {
         // actions/checkout writes the token into .git/config unless told not

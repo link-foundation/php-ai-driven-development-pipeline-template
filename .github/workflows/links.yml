@@ -16,6 +16,13 @@ on:
       - '.github/workflows/links.yml'
   workflow_dispatch:
 
+# The link checker only reads the tree and talks to external URL hosts; the
+# token gets nothing beyond read. Without this block every job would inherit
+# the repository's default token permissions (zizmor excessive-permissions,
+# CodeQL "workflow does not contain permissions").
+permissions:
+  contents: read
+
 jobs:
   link-checker:
     name: Check Links
