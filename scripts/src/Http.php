@@ -10,15 +10,15 @@ namespace LinkFoundation\Template\Pipeline;
  * Network access is wrapped behind a swappable fetcher callable so tests can
  * inject canned responses without hitting the network.
  *
- * @phpstan-type Fetcher callable(string, string): array{status:int, body:string}
+ * @phpstan-type Fetcher callable(string, string, array<string, string>): array{status:int, body:string}
  */
 final class Http
 {
-    /** @var callable(string, string): array{status:int, body:string} */
+    /** @var callable(string, string, array<string, string>): array{status:int, body:string} */
     private $fetcher;
 
     /**
-     * @param (callable(string, string): array{status:int, body:string})|null $fetcher
+     * @param (callable(string, string, array<string, string>): array{status:int, body:string})|null $fetcher
      */
     public function __construct(?callable $fetcher = null)
     {
@@ -26,33 +26,40 @@ final class Http
     }
 
     /**
+     * @param array<string, string> $headers
      * @return array{status:int, body:string}
      */
-    public function get(string $url): array
+    public function get(string $url, array $headers = []): array
     {
-        return ($this->fetcher)('GET', $url);
+        return ($this->fetcher)('GET', $url, $headers);
     }
 
     /**
+     * @param array<string, string> $headers
      * @return array{status:int, body:string}
      */
-    public function head(string $url): array
+    public function head(string $url, array $headers = []): array
     {
-        return ($this->fetcher)('HEAD', $url);
+        return ($this->fetcher)('HEAD', $url, $headers);
     }
 
     /**
-     * @return callable(string, string): array{status:int, body:string}
+     * @return callable(string, string, array<string, string>): array{status:int, body:string}
      */
     private static function defaultFetcher(): callable
     {
-        return static function (string $method, string $url): array {
+        return static function (string $method, string $url, array $headers = []): array {
+            $headerLines = ['User-Agent: php-ai-driven-development-pipeline-template'];
+            foreach ($headers as $name => $value) {
+                $headerLines[] = "{$name}: {$value}";
+            }
+
             $context = stream_context_create([
                 'http' => [
                     'method' => $method,
                     'timeout' => 30,
                     'ignore_errors' => true,
-                    'header' => "User-Agent: php-ai-driven-development-pipeline-template\r\n",
+                    'header' => implode("\r\n", $headerLines),
                 ],
             ]);
 
