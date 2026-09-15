@@ -238,6 +238,9 @@ final class WorkflowPolicyTest extends TestCase
             self::assertStringContainsString('if: always()', $block);
             self::assertStringContainsString('bash scripts/check-pipeline-status.sh', $block);
             self::assertStringContainsString('NEEDS_JSON: ${{ toJSON(needs) }}', $block);
+            self::assertStringContainsString('RUN_SHA: ${{ github.event.pull_request.head.sha || github.sha }}', $block);
+            self::assertStringContainsString('BRANCH_REF: ${{ github.head_ref || github.ref_name }}', $block);
+            self::assertStringContainsString("GIT_REMOTE: \${{ github.event.pull_request.head.repo.clone_url || 'origin' }}", $block);
             self::assertStringContainsString('persist-credentials: false', $block);
 
             // A job missing from `needs:` can hit its timeout cap with nothing
@@ -256,13 +259,14 @@ final class WorkflowPolicyTest extends TestCase
         $contents = file_get_contents(\dirname(__DIR__, 2) . '/scripts/check-pipeline-status.sh');
         self::assertIsString($contents, 'Missing scripts/check-pipeline-status.sh.');
 
-        self::assertStringContainsString('select_by_result failure', $contents);
+        self::assertStringContainsString('select_by_result not-success', $contents);
         self::assertStringContainsString('select_by_result cancelled', $contents);
-        // A cancelled job on main only fails the run when it was still the
-        // branch head; anything else must not block on expected churn.
+        // A branch moving is only half the proof: the individual job must
+        // actually opt into being cancelled by a superseding run (#14).
         self::assertStringContainsString('run_is_superseded', $contents);
-        // The gate fails loud when it cannot prove a cancellation benign.
-        self::assertStringContainsString('treated as a real failure', $contents);
+        self::assertStringContainsString('read-job-cancel-in-progress.php', $contents);
+        // Unreadable and expression-valued policies fail closed.
+        self::assertStringContainsString('expression or otherwise unknown', $contents);
     }
 
     public function testLongStepsRunUnderAnExecutionBudget(): void
@@ -286,6 +290,9 @@ final class WorkflowPolicyTest extends TestCase
         self::assertStringContainsString('set -m', $script);
         self::assertStringContainsString('BUDGET_WARN_RATIO_PERCENT', $script);
         self::assertStringContainsString('BUDGET_GRACE_SECONDS', $script);
+        self::assertStringContainsString('BUDGET_CAPTURE_OUTPUT', $script);
+        self::assertStringContainsString('group_members', $script);
+        self::assertStringContainsString('sudo -n kill', $script);
         self::assertStringContainsString('exit 124', $script);
     }
 
