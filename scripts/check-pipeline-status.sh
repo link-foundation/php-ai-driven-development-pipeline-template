@@ -26,6 +26,7 @@ verbose="${PIPELINE_STATUS_VERBOSE:-0}"
 trace() { [ "$verbose" = "1" ] && echo "[pipeline-status] $*" >&2 || true; }
 
 select_by_result() {
+  # shellcheck disable=SC2016 # PHP source is intentionally single-quoted.
   NEEDS_JSON="$NEEDS_JSON" WANT_RESULT="$1" php -r '
     $needs = json_decode((string) getenv("NEEDS_JSON"), true);
     if (!is_array($needs)) {

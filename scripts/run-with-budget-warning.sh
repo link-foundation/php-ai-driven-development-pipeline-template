@@ -72,6 +72,7 @@ fi
 status_file="${status_dir}/status"
 stdout_file="${status_dir}/stdout"
 stderr_file="${status_dir}/stderr"
+# shellcheck disable=SC2329 # invoked indirectly by the EXIT trap
 cleanup() { rm -rf "${status_dir}"; }
 trap cleanup EXIT
 trace "control state: ${status_dir}"
@@ -178,6 +179,7 @@ signal_command() {
   fi
 }
 
+# shellcheck disable=SC2329 # invoked indirectly by the signal traps
 forward_cancellation() {
   signal_command TERM
   exit 143
