@@ -13,6 +13,26 @@ use PHPUnit\Framework\TestCase;
  */
 final class WorkflowPolicyTest extends TestCase
 {
+    public function testHostedRunnersUseExplicitImages(): void
+    {
+        foreach (glob(\dirname(__DIR__, 2) . '/.github/workflows/*.yml') ?: [] as $file) {
+            self::assertDoesNotMatchRegularExpression('/^\s*[^#\n].*\b(?:ubuntu|windows|macos)-latest\b/m', (string) file_get_contents($file), $file);
+        }
+    }
+
+    public function testWorkflowFreshnessAndLinkConfigurationChangesAreChecked(): void
+    {
+        $workflow = self::workflow('workflows.yml');
+        self::assertStringContainsString('php scripts/check-workflow-dependencies.php', $workflow);
+        self::assertStringContainsString('schedule:', $workflow);
+        self::assertSame(2, substr_count($workflow, "- 'scripts/src/WorkflowDependencies.php'"));
+
+        $links = self::workflow('links.yml');
+        self::assertSame(2, substr_count($links, "- 'lychee.toml'"));
+        self::assertSame(2, substr_count($links, "- '.lycheeignore'"));
+        self::assertSame(2, substr_count($links, "- 'scripts/recheck-broken-links.php'"));
+    }
+
     private static function workflow(string $name): string
     {
         $path = \dirname(__DIR__, 2) . '/.github/workflows/' . $name;
@@ -124,7 +144,7 @@ final class WorkflowPolicyTest extends TestCase
             $yaml,
         );
         self::assertStringNotContainsString('docker://rhysd/actionlint:1', $yaml);
-        self::assertStringContainsString('zizmorcore/zizmor-action@v0.6.2', $yaml);
+        self::assertStringContainsString('zizmorcore/zizmor-action@v0.6.4', $yaml);
         self::assertStringContainsString('advanced-security: false', $yaml);
         self::assertStringContainsString('annotations: true', $yaml);
     }
@@ -134,9 +154,9 @@ final class WorkflowPolicyTest extends TestCase
         $yaml = self::workflow('workflows.yml');
 
         // `latest` in zizmor-action is the action's own frozen table entry
-        // (v0.6.2 -> zizmor 1.29.0), not the latest zizmor; naming it keeps
+        // (v0.6.4 -> zizmor 1.30.1), not the latest zizmor; naming it keeps
         // the analyser that reproduces a finding visible in the diff (#6).
-        self::assertStringContainsString('version: 1.29.0', $yaml);
+        self::assertStringContainsString('version: 1.30.1', $yaml);
 
         // The unpinned-images audit is Pedantic-only, so the `'*': hash-pin`
         // policy is only enforced on container references by this narrow
@@ -146,7 +166,7 @@ final class WorkflowPolicyTest extends TestCase
             $yaml,
         );
         self::assertStringContainsString('--persona pedantic --min-severity high --min-confidence high', $yaml);
-        self::assertStringContainsString('pipx run zizmor==1.29.0', $yaml);
+        self::assertStringContainsString('pipx run zizmor==1.30.1', $yaml);
     }
 
     public function testZizmorOnlyAuditsActiveGitHubConfiguration(): void
@@ -413,7 +433,7 @@ final class WorkflowPolicyTest extends TestCase
             }
         }
 
-        self::assertSame(20, $checkouts, 'Expected every checkout to be visited by this test.');
+        self::assertSame(21, $checkouts, 'Expected every checkout to be visited by this test.');
         // Only the two release jobs push (version-and-commit.php runs
         // `git push` to publish the version bump); every other checkout only
         // reads the tree.
