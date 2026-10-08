@@ -187,4 +187,125 @@ final class LinkRecheckTest extends TestCase
         self::assertInstanceOf(LycheeFailure::class, $failure);
         self::assertTrue($failure->answered);
     }
+
+    public function testOnlyTransientHttpFailuresAreRetryable(): void
+    {
+        $report = <<<'MD'
+            * [429] <https://example.com/limited> | Too Many Requests
+            * [502] <https://example.com/gateway> | Bad Gateway
+            * [ERROR] <https://example.com/unavailable> | Rejected status code: 503 Service Unavailable
+            * [404] <https://example.com/gone> | Not Found
+            * [403] <https://example.com/forbidden> | Forbidden
+            * [ERROR] <https://example.com/reset> | Connection reset
+            * [ERROR] <file:///missing.md> | Missing file
+            MD;
+
+        self::assertSame(
+            [true, true, true, false, false, true, false],
+            array_map(static fn (LycheeFailure $failure): bool => $failure->shouldRetry(), LinkRecheck::parseLycheeFailures($report)),
+        );
+    }
+
+    public function testTransientAnswersRecoverWithExponentialBackoff(): void
+    {
+        $answers = [503, 429, 200];
+        $waits = [];
+        $now = 0.0;
+        $recheck = new LinkRecheck(
+            static function () use (&$answers): int {
+                return array_shift($answers) ?? 404;
+            },
+            static function () use (&$now): float {
+                return $now;
+            },
+            static function (float $ms) use (&$now, &$waits): void {
+                $waits[] = $ms;
+                $now += $ms / 1000;
+            },
+        );
+
+        $result = $recheck->recheckUnanswered(['https://example.com/flaky'], '200..=299', 'lychee', 10, 2000);
+
+        self::assertSame(['https://example.com/flaky'], $result['recovered']);
+        self::assertSame([], $result['still_broken']);
+        self::assertSame([2000.0, 4000.0], $waits);
+    }
+
+    public function testPersistentTransientFailureStaysBrokenWithinTheBudget(): void
+    {
+        $now = 0.0;
+        $calls = 0;
+        $recheck = new LinkRecheck(
+            static function () use (&$calls): int {
+                ++$calls;
+                return 503;
+            },
+            static function () use (&$now): float {
+                return $now;
+            },
+            static function (float $ms) use (&$now): void {
+                $now += $ms / 1000;
+            },
+        );
+
+        $result = $recheck->recheckUnanswered(['https://example.com/down'], '200..=299', 'lychee', 5, 2000);
+
+        self::assertSame([], $result['recovered']);
+        self::assertSame(503, $result['still_broken'][0]['status']);
+        self::assertSame(2, $calls);
+        self::assertSame(2.0, $now);
+    }
+
+    public function testRecheckStopsOnAPermanentAnswerAfterATransientOne(): void
+    {
+        $answers = [502, 404, 200];
+        $recheck = new LinkRecheck(static function () use (&$answers): int {
+            return array_shift($answers) ?? 200;
+        });
+
+        $result = $recheck->recheckUnanswered(['https://example.com/gone'], '200..=299', 'lychee', 5, 1);
+
+        self::assertSame([], $result['recovered']);
+        self::assertSame(404, $result['still_broken'][0]['status']);
+        self::assertSame([200], $answers);
+    }
+
+    public function testBudgetIsCheckedBetweenUrlsAndCapsTheRequestTimeout(): void
+    {
+        $now = 0.0;
+        $timeouts = [];
+        $recheck = new LinkRecheck(
+            static function (string $url, string $agent, float $timeout) use (&$now, &$timeouts): int {
+                $timeouts[] = $timeout;
+                $now += 5;
+
+                return 200;
+            },
+            static function () use (&$now): float {
+                return $now;
+            },
+        );
+
+        $result = $recheck->recheckUnanswered(['https://example.com/a', 'https://example.com/b'], '200..=299', 'lychee', 5);
+
+        self::assertSame([5.0], $timeouts);
+        self::assertSame(['https://example.com/a'], $result['recovered']);
+        self::assertSame('https://example.com/b', $result['still_broken'][0]['url']);
+    }
+
+    public function testZeroWaitStillHasAFiniteRetryLimit(): void
+    {
+        $calls = 0;
+        $recheck = new LinkRecheck(static function () use (&$calls): int {
+            ++$calls;
+
+            return 429;
+        });
+
+        $result = $recheck->recheckUnanswered(['https://example.com/limited'], '200..=299', 'lychee', 5, 0);
+
+        self::assertSame(8, $calls);
+        self::assertSame([], $result['recovered']);
+        self::assertSame(429, $result['still_broken'][0]['status']);
+    }
 }

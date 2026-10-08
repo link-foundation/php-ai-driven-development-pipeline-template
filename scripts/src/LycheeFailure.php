@@ -7,9 +7,8 @@ namespace LinkFoundation\Template\Pipeline;
 /**
  * One failure entry from the lychee markdown report.
  *
- * `answered` is the load-bearing flag: a failure carrying a numeric status
- * marker ([404]) or a "Rejected status code" detail means a host answered,
- * and that answer is final -- a 404 is never re-checked.
+ * `answered` distinguishes HTTP responses from transport errors. A 429 or
+ * 5xx response is transient; other answered failures remain final.
  */
 final class LycheeFailure
 {
@@ -19,5 +18,23 @@ final class LycheeFailure
         public readonly string $detail,
         public readonly bool $answered,
     ) {
+    }
+
+    public function shouldRetry(): bool
+    {
+        if (preg_match('#^https?://#i', $this->url) !== 1) {
+            return false;
+        }
+
+        if (!$this->answered) {
+            return true;
+        }
+
+        $status = (int) $this->marker;
+        if (preg_match('/rejected status code:\s*(\d{3})/i', $this->detail, $match) === 1) {
+            $status = (int) $match[1];
+        }
+
+        return LinkRecheck::isTransientStatus($status);
     }
 }
