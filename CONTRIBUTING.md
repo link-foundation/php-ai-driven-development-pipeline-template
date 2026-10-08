@@ -51,6 +51,19 @@ CI.
 
    Auto-fix style issues with `composer lint:fix`.
 
+   Workflow dependencies use exact stable release tags, and hosted runners use
+   explicit images such as `ubuntu-24.04`. The Workflows check verifies these
+   on relevant changes and weekly, including the zizmor tool input and the
+   actionlint image's release annotation. With an authenticated GitHub CLI,
+   run the same live check locally:
+
+   ```bash
+   php scripts/check-workflow-dependencies.php
+   ```
+
+   When upgrading actionlint, update both the Docker digest and its release
+   annotation. Keep the zizmor action input and `pipx` version synchronized.
+
 4. **Add a changelog fragment**
 
    Every code change needs a fragment so the release pipeline can compute the

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace LinkFoundation\Template\Pipeline;
 
 /**
- * Re-checks the lychee failures where no host ever answered (issue #12).
+ * Re-checks transport failures and transient HTTP responses (issues #12, #18).
  *
  * lychee's `--max-retries` cannot retry a connection reset during connect
  * (lycheeverse/lychee#2297: the error is classified by its phase, and the
@@ -15,36 +15,53 @@ namespace LinkFoundation\Template\Pipeline;
  * asks those URLs again, outside lychee, with a round-robin doubling wait
  * inside a wall-clock budget.
  *
- * The rule that keeps this from hiding real breakage: a failure carrying a
- * status code means a host answered, and that answer is final -- a 404 is
- * never re-checked.
+ * A 429 or 5xx asks for a later retry. Other rejected HTTP statuses stay
+ * final, and a transient response must recover to an accepted status.
  */
 final class LinkRecheck
 {
     public const ACCEPT_DEFAULT = '100..=103,200..=299';
     public const USER_AGENT_DEFAULT = 'lychee';
 
-    /** @var callable(string, string): int */
+    /** @var callable(string, string, float): int */
     private $fetch;
 
+    /** @var callable(): float */
+    private $clock;
+
+    /** @var callable(float): void */
+    private $sleep;
+
     /**
-     * @param (callable(string, string): int)|null $fetch HEADs one URL and
+     * @param (callable(string, string, float): int)|null $fetch HEADs one URL and
      *                                             returns its final status;
      *                                             throws when no host
      *                                             answered. Injectable so
      *                                             tests run without network.
+     * @param (callable(): float)|null $clock Monotonic time in seconds.
+     * @param (callable(float): void)|null $sleep Wait in milliseconds.
      */
-    public function __construct(?callable $fetch = null)
+    public function __construct(?callable $fetch = null, ?callable $clock = null, ?callable $sleep = null)
     {
         $this->fetch = $fetch ?? self::defaultFetch();
+        $this->clock = $clock ?? static fn (): float => hrtime(true) / 1e9;
+        $this->sleep = $sleep ?? static function (float $ms): void {
+            usleep((int) ($ms * 1000));
+        };
+    }
+
+    public static function isTransientStatus(int $status): bool
+    {
+        return $status === 429 || ($status >= 500 && $status <= 599);
     }
 
     /**
-     * Split the report into failures, marking the answered ones final.
+     * Split the report into failures, recording whether a host answered.
      *
      * A failure is "answered" when a numeric status marker is present ([404])
      * or the detail says "Rejected status code" -- a host answered, and the
-     * answer is final. Everything else ([ERROR], [TIMEOUT], [UNKNOWN]) is a
+     * status can then be classified as transient or permanent. Everything
+     * else ([ERROR], [TIMEOUT], [UNKNOWN]) is a
      * failure where no host ever answered.
      *
      * @return list<LycheeFailure>
@@ -173,9 +190,9 @@ final class LinkRecheck
      * Ask every URL once more, round-robin with a doubling wait.
      *
      * Runs until everything either answers accepted or the budget runs out.
-     * Any answer is final: an accepted status recovers the URL, a rejected
-     * status fails it for good, and only a URL that keeps refusing to answer
-     * is retried.
+     * Accepted answers recover a URL. Transport errors, 429 and 5xx are
+     * retried with exponential backoff, up to eight rounds inside the budget.
+     * Other rejected statuses fail permanently, including a genuine 404.
      *
      * @param list<string> $urls
      * @return array{recovered: list<string>, still_broken: list<array{url: string, status: int|null, reason: string}>}
@@ -188,28 +205,36 @@ final class LinkRecheck
         float $initialWaitMs = 2000.0,
     ): array {
         $isAccepted = self::parseAcceptRanges($accept);
-        $deadline = hrtime(true) + (int) ($budgetSeconds * 1e9);
-        $waitMs = $initialWaitMs;
+        $deadline = ($this->clock)() + max(0.0, $budgetSeconds);
+        $waitMs = max(0.0, $initialWaitMs);
 
         $recovered = [];
         $rejected = [];
         $pending = array_values(array_unique($urls));
+        $lastStatuses = [];
 
-        while ($pending !== [] && hrtime(true) < $deadline) {
-            if ($waitMs !== $initialWaitMs) {
-                if (hrtime(true) + (int) ($waitMs * 1e6) > $deadline) {
+        for ($round = 0; $round < 8 && $pending !== [] && ($this->clock)() < $deadline; ++$round) {
+            if ($round > 0) {
+                if (($this->clock)() + $waitMs / 1000 >= $deadline) {
                     break;
                 }
 
-                usleep((int) ($waitMs * 1000));
+                ($this->sleep)($waitMs);
                 $waitMs *= 2;
             }
 
             $stillPending = [];
 
             foreach ($pending as $url) {
+                $remaining = $deadline - ($this->clock)();
+                if ($remaining <= 0) {
+                    $stillPending[] = $url;
+
+                    continue;
+                }
+
                 try {
-                    $status = ($this->fetch)($url, $userAgent);
+                    $status = ($this->fetch)($url, $userAgent, min(30.0, $remaining));
                 } catch (\Throwable) {
                     // No answer this round, whatever the cause.
                     $stillPending[] = $url;
@@ -219,6 +244,9 @@ final class LinkRecheck
 
                 if ($isAccepted($status)) {
                     $recovered[] = $url;
+                } elseif (self::isTransientStatus($status)) {
+                    $lastStatuses[$url] = $status;
+                    $stillPending[] = $url;
                 } else {
                     $rejected[] = [
                         'url' => $url,
@@ -234,8 +262,8 @@ final class LinkRecheck
         foreach ($pending as $url) {
             $rejected[] = [
                 'url' => $url,
-                'status' => null,
-                'reason' => 'no answer within the re-check budget',
+                'status' => $lastStatuses[$url] ?? null,
+                'reason' => 'no accepted answer within the re-check budget or retry limit',
             ];
         }
 
@@ -243,11 +271,11 @@ final class LinkRecheck
     }
 
     /**
-     * @return callable(string, string): int
+     * @return callable(string, string, float): int
      */
     private static function defaultFetch(): callable
     {
-        return static function (string $url, string $userAgent): int {
+        return static function (string $url, string $userAgent, float $timeout): int {
             $context = stream_context_create([
                 'http' => [
                     'method' => 'HEAD',
@@ -255,7 +283,7 @@ final class LinkRecheck
                     // arrives as a status, which is a host's answer, not a
                     // transport failure.
                     'ignore_errors' => true,
-                    'timeout' => 30,
+                    'timeout' => $timeout,
                     'header' => "User-Agent: {$userAgent}",
                 ],
             ]);

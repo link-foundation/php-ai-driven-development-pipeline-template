@@ -8,12 +8,22 @@ on:
       - '**.md'
       - '**.html'
       - '.github/workflows/links.yml'
+      - 'lychee.toml'
+      - '.lycheeignore'
+      - 'scripts/recheck-broken-links.php'
+      - 'scripts/check-web-archive.php'
+      - 'scripts/src/**'
   pull_request:
     types: [opened, synchronize, reopened]
     paths:
       - '**.md'
       - '**.html'
       - '.github/workflows/links.yml'
+      - 'lychee.toml'
+      - '.lycheeignore'
+      - 'scripts/recheck-broken-links.php'
+      - 'scripts/check-web-archive.php'
+      - 'scripts/src/**'
   workflow_dispatch:
 
 # The link checker only reads the tree and talks to external URL hosts; the
@@ -26,26 +36,26 @@ permissions:
 jobs:
   link-checker:
     name: Check Links
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     # Typical run: <1min with the lychee cache. 10min prevents slow external
     # hosts or Wayback Machine probes from hanging the workflow.
     timeout-minutes: 10
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@2.37.2
         with:
           php-version: '8.3'
           coverage: none
 
       - name: Check links with lychee
         id: lychee
-        uses: lycheeverse/lychee-action@v2
+        uses: lycheeverse/lychee-action@v2.9.0
         with:
           # The case-studies directory holds research copied from sibling repos
           # whose relative links resolve there, not here; exclude it.
@@ -65,12 +75,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Re-check links that never got an answer
+      - name: Re-check transient and unanswered link failures
         # --max-retries never retries a failure during the connect phase
         # (lycheeverse/lychee#2297), so a healthy URL behind a connection
-        # reset is reported broken without one retry. Ask those URLs again
-        # outside lychee. A failure carrying a status code is a host's
-        # answer and stays final (issue #12).
+        # reset is reported broken without one retry. It also never retries
+        # rejected 5xx responses. Retry those and 429 with backoff inside a
+        # finite budget; permanent failures such as 404 stay final (#12, #18).
         if: steps.lychee.outputs.exit_code != 0
         id: recheck
         env:
@@ -117,10 +127,10 @@ jobs:
     needs:
       - link-checker
     if: always()
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 

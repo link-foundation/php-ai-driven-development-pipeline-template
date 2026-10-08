@@ -6,10 +6,18 @@ on:
       - main
     paths:
       - '.github/**'
+      - 'scripts/check-workflow-dependencies.php'
+      - 'scripts/src/WorkflowDependencies.php'
+      - 'tests/Pipeline/WorkflowDependenciesTest.php'
   pull_request:
     types: [opened, synchronize, reopened]
     paths:
       - '.github/**'
+      - 'scripts/check-workflow-dependencies.php'
+      - 'scripts/src/WorkflowDependencies.php'
+      - 'tests/Pipeline/WorkflowDependenciesTest.php'
+  schedule:
+    - cron: '17 6 * * 1'
   workflow_dispatch:
 
 # Least-privilege default; these jobs only read the checked-out tree.
@@ -23,15 +31,36 @@ env:
   GIT_CONFIG_VALUE_0: main
 
 jobs:
+  dependencies:
+    name: Workflow dependency freshness
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@2.37.2
+        with:
+          php-version: '8.3'
+          coverage: none
+
+      - name: Check runner images and action/tool releases
+        timeout-minutes: 5
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: php scripts/check-workflow-dependencies.php
+
   actionlint:
     name: actionlint
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     concurrency:
       group: check-${{ github.workflow }}-${{ github.ref }}-actionlint
       cancel-in-progress: true
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
@@ -58,13 +87,13 @@ jobs:
 
   zizmor:
     name: zizmor
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     concurrency:
       group: check-${{ github.workflow }}-${{ github.ref }}-zizmor
       cancel-in-progress: true
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
@@ -72,20 +101,20 @@ jobs:
       # scanning may not be enabled, while still making findings fail loudly.
       #
       # `version` is named rather than left at the default, because the
-      # action's `latest` entry is its own frozen table (v0.6.2 -> zizmor
-      # 1.29.0), not the latest zizmor. Naming the version keeps the next bump
+      # action's `latest` entry is its own frozen table (v0.6.4 -> zizmor
+      # 1.30.1), not the latest zizmor. Naming the version keeps the next bump
       # a visible line in the diff rather than a side effect of bumping the
       # action, and documents exactly which analyser reproduces a finding
       # (issue #6).
       - name: Audit workflow files
-        uses: zizmorcore/zizmor-action@v0.6.2
+        uses: zizmorcore/zizmor-action@v0.6.4
         with:
           advanced-security: false
           annotations: true
           config: .github/zizmor.yml
           inputs: .github
           min-confidence: medium
-          version: 1.29.0
+          version: 1.30.1
 
       # The step above runs the default (regular) persona, which is the right
       # default: pedantic surfaces dozens of stylistic findings. But the audits
@@ -100,7 +129,7 @@ jobs:
       - name: Audit for pedantic-only high-severity findings
         timeout-minutes: 5
         run: |
-          pipx run zizmor==1.29.0 --config .github/zizmor.yml \
+          pipx run zizmor==1.30.1 --config .github/zizmor.yml \
             --persona pedantic --min-severity high --min-confidence high \
             .github
 
@@ -112,13 +141,14 @@ jobs:
   pipeline-status:
     name: Pipeline Status
     needs:
+      - dependencies
       - actionlint
       - zizmor
     if: always()
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 

@@ -3,14 +3,15 @@
 declare(strict_types=1);
 
 /**
- * Re-check the lychee failures where no host ever answered (issue #12).
+ * Re-check transport failures, 429 and 5xx responses (issues #12, #18).
  *
  * lychee's --max-retries cannot retry a connection reset during connect
  * (lycheeverse/lychee#2297), so a healthy URL that answers a RST -- a normal
  * event for a rate-limiting host seen from a CI address range -- is reported
  * as broken without a single retry. This script asks those URLs again,
- * outside lychee. A failure carrying a status code means a host answered,
- * and that answer is final: a 404 is never re-checked.
+ * outside lychee. Transient HTTP responses also need retries: lychee does
+ * not retry rejected 5xx statuses. Other HTTP failures, including 404, stay
+ * final. Persistent transient failures still fail the workflow.
  *
  * Environment:
  *   LYCHEE_OUTPUT          path to the lychee markdown report (default
@@ -23,7 +24,7 @@ declare(strict_types=1);
  *                          (default 2000)
  *
  * GitHub Actions outputs:
- *   all_recovered          'true' when every unanswered link answered healthy
+ *   all_recovered          'true' when every failed link answered healthy
  *                          on re-check. Consumers must test `!= 'true'`,
  *                          never `== 'false'`: a skipped or crashed step
  *                          leaves the output empty, and only the `!=` form
@@ -51,33 +52,31 @@ try {
     $failures = LinkRecheck::parseLycheeFailures((string) file_get_contents($lycheeOutput));
 
     $final = [];
-    $unanswered = [];
+    $retryable = [];
 
     foreach ($failures as $failure) {
-        $isHttp = preg_match('#^https?://#i', $failure->url) === 1;
-
-        if ($failure->answered || !$isHttp) {
-            $final[] = $failure;
+        if ($failure->shouldRetry()) {
+            $retryable[] = $failure->url;
         } else {
-            $unanswered[] = $failure->url;
+            $final[] = $failure;
         }
     }
 
     echo sprintf(
-        'Re-check: %d lychee failure(s), %d answered and final, %d never got an answer%s',
+        'Re-check: %d lychee failure(s), %d final, %d transient or unanswered%s',
         count($failures),
         count($final),
-        count($unanswered),
+        count($retryable),
         "\n",
     );
 
-    if ($unanswered === []) {
+    if ($retryable === []) {
         echo "Re-check: nothing to re-ask.\n";
         exit(0);
     }
 
     $result = (new LinkRecheck())->recheckUnanswered(
-        $unanswered,
+        array_values(array_unique($retryable)),
         $accept,
         $userAgent,
         $budgetSeconds,
@@ -85,7 +84,7 @@ try {
     );
 
     foreach ($result['recovered'] as $url) {
-        Actions::notice("{$url} never answered lychee but answers {$accept} now -- not a broken link");
+        Actions::notice("{$url} answers {$accept} on re-check -- not a broken link");
     }
 
     if ($result['recovered'] !== []) {
@@ -93,15 +92,15 @@ try {
     }
 
     echo sprintf(
-        'Re-check finished: %d recovered, %d still without an answer%s',
+        'Re-check finished: %d recovered, %d still failing%s',
         count($result['recovered']),
         count($result['still_broken']),
         "\n",
     );
 
     if (
-        $result['still_broken'] === []
-        && count($result['recovered']) === count($unanswered)
+        $failures !== [] && $final === [] && $result['still_broken'] === []
+        && count($result['recovered']) === count(array_unique($retryable))
     ) {
         Actions::setBoolOutput('all_recovered', true);
     }
