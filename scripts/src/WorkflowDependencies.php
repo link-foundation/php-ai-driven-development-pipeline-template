@@ -7,6 +7,12 @@ namespace LinkFoundation\Template\Pipeline;
 /**
  * Keeps active workflow runners and action/tool versions explicit and current.
  * The release lookup is injectable so regression tests stay offline.
+ *
+ * A newer upstream release is a fact about the world, not about the commit
+ * under test (issue #20). Outdated pins therefore block pull requests, where
+ * a contributor can act, but only warn on push, schedule and manual runs so
+ * `main` does not turn red without a change. Unpinned runner images, missing
+ * release annotations and failed release lookups still fail on every event.
  */
 final class WorkflowDependencies
 {
@@ -117,17 +123,29 @@ final class WorkflowDependencies
      */
     public function check(array $workflows): array
     {
-        $errors = [];
+        return array_map(static fn (array $finding): string => $finding['message'], $this->findings($workflows));
+    }
+
+    /**
+     * Like check(), but marks findings caused only by a newer upstream release
+     * (external state) as `outdated`, so callers can decide how to gate them.
+     *
+     * @param array<string, string> $workflows Workflow paths and their contents.
+     * @return list<array{message: string, outdated: bool}>
+     */
+    public function findings(array $workflows): array
+    {
+        $findings = [];
         $releases = [];
         $lookupErrors = [];
         foreach ($workflows as $file => $yaml) {
             foreach (self::runnerErrors($yaml) as $error) {
-                $errors[] = $file . ':' . $error;
+                $findings[] = ['message' => $file . ':' . $error, 'outdated' => false];
             }
             try {
                 $dependencies = self::dependencies($yaml);
             } catch (\Throwable $error) {
-                $errors[] = $file . ': ' . $error->getMessage();
+                $findings[] = ['message' => $file . ': ' . $error->getMessage(), 'outdated' => false];
 
                 continue;
             }
@@ -135,7 +153,7 @@ final class WorkflowDependencies
                 $repository = $dependency['repository'];
                 $location = $file . ':' . $dependency['line'];
                 if (isset($lookupErrors[$repository])) {
-                    $errors[] = "{$location}: cannot check {$repository}: " . $lookupErrors[$repository];
+                    $findings[] = ['message' => "{$location}: cannot check {$repository}: " . $lookupErrors[$repository], 'outdated' => false];
 
                     continue;
                 }
@@ -145,15 +163,47 @@ final class WorkflowDependencies
                     }
                     $latest = $releases[$repository];
                     if (ltrim($dependency['reference'], 'v') !== ltrim($latest, 'v')) {
-                        $errors[] = "{$location}: {$repository}@{$dependency['reference']} must use the latest stable release {$latest}";
+                        $findings[] = ['message' => "{$location}: {$repository}@{$dependency['reference']} must use the latest stable release {$latest}", 'outdated' => true];
                     }
                 } catch (\Throwable $error) {
                     $lookupErrors[$repository] = $error->getMessage();
-                    $errors[] = "{$location}: cannot check {$repository}: " . $error->getMessage();
+                    $findings[] = ['message' => "{$location}: cannot check {$repository}: " . $error->getMessage(), 'outdated' => false];
                 }
             }
         }
 
-        return $errors;
+        return $findings;
+    }
+
+    /**
+     * Reports findings as annotations and returns the process exit code.
+     * Outdated pins fail only when $gateOutdated is true (pull requests);
+     * otherwise they become warnings plus a step summary listing the bumps.
+     *
+     * @param list<array{message: string, outdated: bool}> $findings
+     */
+    public static function report(array $findings, bool $gateOutdated): int
+    {
+        $failed = false;
+        $warnings = [];
+        foreach ($findings as $finding) {
+            if ($finding['outdated'] && !$gateOutdated) {
+                Actions::warning($finding['message']);
+                $warnings[] = $finding['message'];
+
+                continue;
+            }
+            Actions::error($finding['message']);
+            $failed = true;
+        }
+        if ($warnings !== []) {
+            Actions::summary("### Outdated workflow dependencies\n\n"
+                . 'A newer upstream release is not caused by this commit, so this run only warns. '
+                . 'Pull requests fail until the pins below are bumped. Dependabot proposes `uses:` action bumps; '
+                . "the zizmor `version` input, the `pipx` pin and the actionlint image need a manual pull request.\n\n"
+                . implode("\n", array_map(static fn (string $warning): string => '- ' . $warning, $warnings)));
+        }
+
+        return $failed ? 1 : 0;
     }
 }

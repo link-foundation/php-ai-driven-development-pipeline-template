@@ -19,12 +19,14 @@ try {
     if ($workflows === []) {
         throw new RuntimeException('No active workflows found');
     }
-    $errors = (new WorkflowDependencies())->check($workflows);
-    foreach ($errors as $error) {
-        Actions::error($error);
-    }
-    if ($errors !== []) {
-        exit(1);
+    $findings = (new WorkflowDependencies())->findings($workflows);
+    // A newer upstream release is external state: gate it on pull requests,
+    // where a contributor can act, and warn on push, schedule and manual runs
+    // so main does not turn red without a commit (issue #20). Unpinned runner
+    // images and lookup failures still fail on every event.
+    $exitCode = WorkflowDependencies::report($findings, getenv('GITHUB_EVENT_NAME') === 'pull_request');
+    if ($findings !== []) {
+        exit($exitCode);
     }
     echo "All hosted runner images are explicit and workflow dependencies use current stable releases.\n";
 } catch (Throwable $error) {

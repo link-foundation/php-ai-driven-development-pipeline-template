@@ -64,6 +64,14 @@ CI.
    When upgrading actionlint, update both the Docker digest and its release
    annotation. Keep the zizmor action input and `pipx` version synchronized.
 
+   A newer upstream release is not caused by any commit, so the check treats it
+   by event: pull requests fail on an outdated pin, while push, scheduled and
+   manual runs only emit warnings plus a step summary, keeping `main` green.
+   Unpinned runner images and failed release lookups fail on every event.
+   Dependabot (`.github/dependabot.yml`) opens a weekly grouped pull request
+   for `uses:` bumps; the zizmor `version` input, the `pipx` pin and the
+   actionlint image still need a manual bump when the weekly run warns.
+
 4. **Add a changelog fragment**
 
    Every code change needs a fragment so the release pipeline can compute the
