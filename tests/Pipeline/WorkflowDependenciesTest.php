@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace LinkFoundation\Template\Tests\Pipeline;
 
+use LinkFoundation\Template\Pipeline\Process;
+use LinkFoundation\Template\Pipeline\ProcessResult;
 use LinkFoundation\Template\Pipeline\WorkflowDependencies;
 use PHPUnit\Framework\TestCase;
 
@@ -94,5 +96,116 @@ final class WorkflowDependenciesTest extends TestCase
         self::assertCount(2, $errors);
         self::assertStringContainsString('API unavailable', $errors[0]);
         self::assertSame(1, $calls);
+    }
+
+    public function testOnlyNewerUpstreamReleasesAreMarkedAsOutdated(): void
+    {
+        $checker = new WorkflowDependencies(static fn (string $repo): string => $repo === 'broken/action'
+            ? throw new \RuntimeException('API unavailable')
+            : 'v7.0.1');
+        $findings = $checker->findings([
+            'a.yml' => "runs-on: ubuntu-latest\nuses: actions/checkout@v7.0.0\nuses: broken/action@v1.0.0\nuses: actions/checkout@v7.0.1",
+        ]);
+
+        self::assertSame([false, true, false], array_column($findings, 'outdated'));
+        self::assertStringContainsString('ubuntu-24.04', $findings[0]['message']);
+        self::assertStringContainsString('must use the latest stable release v7.0.1', $findings[1]['message']);
+        self::assertStringContainsString('API unavailable', $findings[2]['message']);
+    }
+
+    public function testOutdatedPinsFailPullRequestsButOnlyWarnElsewhere(): void
+    {
+        $outdated = [['message' => 'a.yml:1: actions/checkout@v7.0.0 must use the latest stable release v7.0.1', 'outdated' => true]];
+        $broken = [['message' => 'a.yml:2: cannot check broken/action: API unavailable', 'outdated' => false]];
+
+        ob_start();
+        self::assertSame(1, WorkflowDependencies::report($outdated, gateOutdated: true));
+        self::assertStringStartsWith('::error::', (string) ob_get_clean());
+
+        ob_start();
+        self::assertSame(0, WorkflowDependencies::report($outdated, gateOutdated: false));
+        $output = (string) ob_get_clean();
+        self::assertStringStartsWith('::warning::', $output);
+        self::assertStringNotContainsString('::error::', $output);
+
+        ob_start();
+        self::assertSame(1, WorkflowDependencies::report([...$outdated, ...$broken], gateOutdated: false));
+        $output = (string) ob_get_clean();
+        self::assertStringContainsString('::warning::a.yml:1', $output);
+        self::assertStringContainsString('::error::a.yml:2', $output);
+    }
+
+    /**
+     * End-to-end over the real workflows with a stub `gh` that reports a newer
+     * release of everything: the script must exit 1 on pull requests and 0
+     * with warnings and a step summary on push, schedule and manual runs.
+     */
+    public function testScriptGatesOutdatedPinsOnlyOnPullRequests(): void
+    {
+        $directory = self::stubGh("#!/bin/sh\necho v999.0.0\n");
+        try {
+            foreach (['pull_request' => 1, 'push' => 0, 'schedule' => 0, 'workflow_dispatch' => 0] as $event => $expected) {
+                file_put_contents($directory . '/summary.md', '');
+                $result = self::runScript($directory, $event);
+                $output = $result->stdout . $result->stderr;
+
+                self::assertSame($expected, $result->exitCode, "{$event}: {$output}");
+                self::assertStringContainsString('must use the latest stable release v999.0.0', $output);
+                if ($expected === 1) {
+                    self::assertStringContainsString('::error::', $output);
+                    self::assertStringNotContainsString('::warning::', $output);
+                } else {
+                    self::assertStringContainsString('::warning::', $output);
+                    self::assertStringNotContainsString('::error::', $output);
+                    self::assertStringContainsString('Outdated workflow dependencies', (string) file_get_contents($directory . '/summary.md'));
+                }
+            }
+        } finally {
+            self::removeDirectory($directory);
+        }
+    }
+
+    public function testScriptStillFailsOnLookupFailuresOutsidePullRequests(): void
+    {
+        $directory = self::stubGh("#!/bin/sh\necho 'API unavailable' >&2\nexit 1\n");
+        try {
+            $result = self::runScript($directory, 'schedule');
+
+            self::assertSame(1, $result->exitCode, $result->stdout);
+            self::assertStringContainsString('::error::', $result->stdout);
+        } finally {
+            self::removeDirectory($directory);
+        }
+    }
+
+    private static function stubGh(string $script): string
+    {
+        $directory = sys_get_temp_dir() . '/workflow-dependencies-' . bin2hex(random_bytes(8));
+        mkdir($directory);
+        file_put_contents($directory . '/gh', $script);
+        chmod($directory . '/gh', 0o755);
+
+        return $directory;
+    }
+
+    private static function runScript(string $directory, string $event): ProcessResult
+    {
+        $root = \dirname(__DIR__, 2);
+
+        return Process::run([
+            'env',
+            'PATH=' . $directory . ':' . (string) getenv('PATH'),
+            'GITHUB_EVENT_NAME=' . $event,
+            'GITHUB_STEP_SUMMARY=' . $directory . '/summary.md',
+            PHP_BINARY, $root . '/scripts/check-workflow-dependencies.php',
+        ], $root);
+    }
+
+    private static function removeDirectory(string $directory): void
+    {
+        foreach (glob($directory . '/*') ?: [] as $file) {
+            unlink($file);
+        }
+        rmdir($directory);
     }
 }

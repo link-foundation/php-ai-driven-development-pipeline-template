@@ -1,0 +1,16 @@
+# Turns the scheduled "outdated workflow dependency" warning from the
+# Workflows check into a pull request (issue #20). Dependabot only sees
+# `uses:` references; the zizmor `version` input, the `pipx run zizmor==`
+# pin and the actionlint image annotation stay with the weekly warning.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    # Let a fresh release settle before proposing it.
+    cooldown:
+      default-days: 7
+    groups:
+      actions:
+        patterns: ['*']

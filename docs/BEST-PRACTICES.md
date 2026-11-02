@@ -108,9 +108,16 @@ as regression tests over the workflow YAML.
 
 ### 13. Pinned Action Versions
 
-Third-party actions are pinned to a major version (`actions/checkout@v4`,
-`shivammathur/setup-php@v2`, `ramsey/composer-install@v3`, …) for reproducible
-builds.
+Third-party actions and workflow tools are pinned to exact stable releases
+(`actions/checkout@v7.0.1`, …) and hosted runners to explicit images
+(`ubuntu-24.04`) for reproducible builds. `scripts/check-workflow-dependencies.php`
+keeps those pins current.
+
+A newer upstream release is external state, not something the commit under test
+did, so the freshness check gates it on pull requests and only warns on push,
+schedule and manual runs: `main` never turns red without a change. Dependabot
+turns the weekly warning into a grouped update pull request for `uses:`
+references; tool pins it cannot see stay visible as warnings.
 
 ### 14. Link Checking with an Archive Fallback
 

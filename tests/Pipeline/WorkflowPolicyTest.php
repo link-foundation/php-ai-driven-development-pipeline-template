@@ -27,6 +27,9 @@ final class WorkflowPolicyTest extends TestCase
         self::assertStringContainsString('schedule:', $workflow);
         self::assertSame(2, substr_count($workflow, "- 'scripts/src/WorkflowDependencies.php'"));
 
+        $dependabot = (string) file_get_contents(\dirname(__DIR__, 2) . '/.github/dependabot.yml');
+        self::assertStringContainsString('package-ecosystem: github-actions', $dependabot);
+
         $links = self::workflow('links.yml');
         self::assertSame(2, substr_count($links, "- 'lychee.toml'"));
         self::assertSame(2, substr_count($links, "- '.lycheeignore'"));
