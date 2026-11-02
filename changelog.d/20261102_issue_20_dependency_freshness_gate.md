@@ -13,3 +13,9 @@ bump: patch
 
 - Added `.github/dependabot.yml` so the weekly outdated-action warning becomes a
   grouped GitHub Actions update pull request.
+
+### Changed
+
+- Bumped `shivammathur/setup-php` to 2.40.0, `github/codeql-action` to
+  v4.39.1, `zizmorcore/zizmor-action` to v0.8.0 and zizmor to 1.31.1, the
+  releases the freshness check now reports.

@@ -54,7 +54,7 @@ jobs:
           persist-credentials: false
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@2.37.2
+        uses: shivammathur/setup-php@2.40.0
         with:
           php-version: ${{ env.PHP_VERSION }}
           coverage: none
@@ -92,7 +92,7 @@ jobs:
           persist-credentials: false
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@2.37.2
+        uses: shivammathur/setup-php@2.40.0
         with:
           php-version: ${{ env.PHP_VERSION }}
           coverage: none
@@ -151,7 +151,7 @@ jobs:
           persist-credentials: false
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@2.37.2
+        uses: shivammathur/setup-php@2.40.0
         with:
           php-version: ${{ env.PHP_VERSION }}
           coverage: none
@@ -196,7 +196,7 @@ jobs:
           persist-credentials: false
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@2.37.2
+        uses: shivammathur/setup-php@2.40.0
         with:
           php-version: ${{ matrix.php }}
           coverage: xdebug
@@ -233,7 +233,7 @@ jobs:
           persist-credentials: false
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@2.37.2
+        uses: shivammathur/setup-php@2.40.0
         with:
           php-version: ${{ env.PHP_VERSION }}
           coverage: none
@@ -281,7 +281,7 @@ jobs:
           persist-credentials: false
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@2.37.2
+        uses: shivammathur/setup-php@2.40.0
         with:
           php-version: ${{ env.PHP_VERSION }}
           coverage: none
@@ -334,7 +334,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@2.37.2
+        uses: shivammathur/setup-php@2.40.0
         with:
           php-version: ${{ env.PHP_VERSION }}
           coverage: none
@@ -427,7 +427,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@2.37.2
+        uses: shivammathur/setup-php@2.40.0
         with:
           php-version: ${{ env.PHP_VERSION }}
           coverage: none
