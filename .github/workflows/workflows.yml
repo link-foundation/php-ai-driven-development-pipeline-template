@@ -107,7 +107,7 @@ jobs:
       # action, and documents exactly which analyser reproduces a finding
       # (issue #6).
       - name: Audit workflow files
-        uses: zizmorcore/zizmor-action@v0.8.0
+        uses: zizmorcore/zizmor-action@v0.8.1
         with:
           advanced-security: false
           annotations: true
