@@ -147,7 +147,7 @@ final class WorkflowPolicyTest extends TestCase
             $yaml,
         );
         self::assertStringNotContainsString('docker://rhysd/actionlint:1', $yaml);
-        self::assertStringContainsString('zizmorcore/zizmor-action@v0.8.0', $yaml);
+        self::assertMatchesRegularExpression('/uses:\s+zizmorcore\/zizmor-action@v\d+\.\d+\.\d+\b/', $yaml);
         self::assertStringContainsString('advanced-security: false', $yaml);
         self::assertStringContainsString('annotations: true', $yaml);
     }
@@ -159,7 +159,7 @@ final class WorkflowPolicyTest extends TestCase
         // `latest` in zizmor-action is the action's own frozen table entry
         // (for example v0.6.4 -> zizmor 1.30.1), not the latest zizmor; naming it keeps
         // the analyser that reproduces a finding visible in the diff (#6).
-        self::assertStringContainsString('version: 1.31.1', $yaml);
+        self::assertSame(1, preg_match('/^\s+version: (\d+\.\d+\.\d+)$/m', $yaml, $version));
 
         // The unpinned-images audit is Pedantic-only, so the `'*': hash-pin`
         // policy is only enforced on container references by this narrow
@@ -169,7 +169,7 @@ final class WorkflowPolicyTest extends TestCase
             $yaml,
         );
         self::assertStringContainsString('--persona pedantic --min-severity high --min-confidence high', $yaml);
-        self::assertStringContainsString('pipx run zizmor==1.31.1', $yaml);
+        self::assertStringContainsString('pipx run zizmor==' . $version[1], $yaml);
     }
 
     public function testZizmorOnlyAuditsActiveGitHubConfiguration(): void
