@@ -86,8 +86,7 @@ final class ReleasePreflightTest extends TestCase
 
     public function testPushPermissionVerifies(): void
     {
-        $body = (string) json_encode(['permissions' => ['push' => true]]);
-        self::assertIsString($body);
+        $body = json_encode(['permissions' => ['push' => true]], JSON_THROW_ON_ERROR);
 
         $check = $this->preflightAnswering(200, $body)->checkGitHubPushPermission();
 
@@ -96,8 +95,7 @@ final class ReleasePreflightTest extends TestCase
 
     public function testReadOnlyTokenFailsWithWhereToFixIt(): void
     {
-        $body = (string) json_encode(['permissions' => ['push' => false]]);
-        self::assertIsString($body);
+        $body = json_encode(['permissions' => ['push' => false]], JSON_THROW_ON_ERROR);
 
         $check = $this->preflightAnswering(200, $body)->checkGitHubPushPermission();
 

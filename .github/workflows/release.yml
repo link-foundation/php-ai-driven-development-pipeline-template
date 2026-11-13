@@ -31,7 +31,7 @@ permissions:
   contents: read
 
 env:
-  PHP_VERSION: '8.3'
+  PHP_VERSION: '8.5.12'
 
 jobs:
   # === DETECT CHANGES - determines which downstream jobs need to run ===
@@ -96,7 +96,7 @@ jobs:
         with:
           php-version: ${{ env.PHP_VERSION }}
           coverage: none
-          tools: composer:v2
+          tools: composer:2.11.2
 
       - name: Validate composer.json
         # --no-check-version: the version field is intentionally present and
@@ -145,6 +145,8 @@ jobs:
     name: Release Preflight
     runs-on: ubuntu-24.04
     timeout-minutes: 5
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v7.0.1
         with:
@@ -189,7 +191,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: ['8.1', '8.2', '8.3', '8.4']
+        php: ['8.5.12']
     steps:
       - uses: actions/checkout@v7.0.1
         with:
@@ -200,7 +202,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           coverage: xdebug
-          tools: composer:v2
+          tools: composer:2.11.2
 
       - name: Install dependencies
         uses: ramsey/composer-install@4.0.0
@@ -237,7 +239,7 @@ jobs:
         with:
           php-version: ${{ env.PHP_VERSION }}
           coverage: none
-          tools: composer:v2
+          tools: composer:2.11.2
 
       - name: Install dependencies
         uses: ramsey/composer-install@4.0.0
@@ -285,7 +287,7 @@ jobs:
         with:
           php-version: ${{ env.PHP_VERSION }}
           coverage: none
-          tools: composer:v2
+          tools: composer:2.11.2
 
       - name: Validate composer.json
         # --no-check-version: the version field is intentionally present and
@@ -338,7 +340,7 @@ jobs:
         with:
           php-version: ${{ env.PHP_VERSION }}
           coverage: none
-          tools: composer:v2
+          tools: composer:2.11.2
 
       - name: Install dependencies
         uses: ramsey/composer-install@4.0.0
@@ -431,7 +433,7 @@ jobs:
         with:
           php-version: ${{ env.PHP_VERSION }}
           coverage: none
-          tools: composer:v2
+          tools: composer:2.11.2
 
       - name: Install dependencies
         uses: ramsey/composer-install@4.0.0

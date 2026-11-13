@@ -75,7 +75,7 @@ try {
         exit(0);
     }
 
-    $result = (new LinkRecheck())->recheckUnanswered(
+    $result = new LinkRecheck()->recheckUnanswered(
         array_values(array_unique($retryable)),
         $accept,
         $userAgent,

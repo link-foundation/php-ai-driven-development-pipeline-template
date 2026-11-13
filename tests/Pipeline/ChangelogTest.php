@@ -72,6 +72,6 @@ final class ChangelogTest extends TestCase
     {
         file_put_contents($this->path, Changelog::scaffold());
 
-        self::assertNull((new Changelog($this->path))->section('9.9.9'));
+        self::assertNull(new Changelog($this->path)->section('9.9.9'));
     }
 }

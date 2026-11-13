@@ -46,7 +46,7 @@ reach runtime. The pipeline classes are written to pass level 8 with no baseline
 [PHPUnit](https://phpunit.de/) runs two suites: `package` (`tests/Unit/`) and
 `pipeline` (`tests/Pipeline/`). Pipeline classes take injectable collaborators
 (HTTP fetcher, process runner, filesystem root) so the tests never hit the network
-or mutate the real repo. Tests run on the **full matrix** of PHP 8.1–8.4.
+or mutate the real repo. Tests run on the **full matrix** of PHP 8.5.
 
 ### 6. Changeset-Based Versioning
 

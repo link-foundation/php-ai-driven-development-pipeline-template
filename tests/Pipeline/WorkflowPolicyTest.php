@@ -160,6 +160,8 @@ final class WorkflowPolicyTest extends TestCase
         // (for example v0.6.4 -> zizmor 1.30.1), not the latest zizmor; naming it keeps
         // the analyser that reproduces a finding visible in the diff (#6).
         self::assertSame(1, preg_match('/^\s+version: (\d+\.\d+\.\d+)$/m', $yaml, $version));
+        $toolVersion = $version[1] ?? '';
+        self::assertNotSame('', $toolVersion);
 
         // The unpinned-images audit is Pedantic-only, so the `'*': hash-pin`
         // policy is only enforced on container references by this narrow
@@ -169,7 +171,7 @@ final class WorkflowPolicyTest extends TestCase
             $yaml,
         );
         self::assertStringContainsString('--persona pedantic --min-severity high --min-confidence high', $yaml);
-        self::assertStringContainsString('pipx run zizmor==' . $version[1], $yaml);
+        self::assertStringContainsString('pipx run zizmor==' . $toolVersion, $yaml);
     }
 
     public function testZizmorOnlyAuditsActiveGitHubConfiguration(): void
@@ -373,6 +375,9 @@ final class WorkflowPolicyTest extends TestCase
 
         self::assertStringContainsString('php scripts/preflight-credentials.php', $preflight);
         self::assertStringContainsString('persist-credentials: false', $preflight);
+        // Probe with the same token scope as the release jobs. The workflow
+        // default is read-only even when repository defaults allow writes.
+        self::assertStringContainsString("permissions:\n      contents: write", $preflight);
         // The blocking mode is reserved for the events that can actually
         // release: a fork pull request only annotates (issue #11).
         self::assertStringContainsString("'release' || 'report'", $preflight);
@@ -440,11 +445,10 @@ final class WorkflowPolicyTest extends TestCase
         // Only the two release jobs push (version-and-commit.php runs
         // `git push` to publish the version bump); every other checkout only
         // reads the tree.
-        self::assertSame(
-            ['release.yml:330', 'release.yml:423'],
-            $persisting,
-            'Only the pushing release checkouts may persist credentials.',
-        );
+        self::assertCount(2, $persisting, 'Only the pushing release checkouts may persist credentials.');
+        foreach (['auto-release', 'manual-release'] as $job) {
+            self::assertStringContainsString('persist-credentials: true', self::jobBlock(self::workflow('release.yml'), $job));
+        }
     }
 
     /**
@@ -463,10 +467,8 @@ final class WorkflowPolicyTest extends TestCase
     {
         $yaml = self::workflow('security.yml');
 
-        // Advisory + abandonment checks run against the freshly resolved set:
-        // the template ships no lock file, so an audit without a resolve step
-        // would have nothing to look at.
-        self::assertStringContainsString('composer update --no-interaction', $yaml);
+        // Audit the same committed tree installed by CI and fresh clones.
+        self::assertStringContainsString('composer install --no-interaction', $yaml);
         self::assertStringContainsString('composer audit --locked --abandoned=fail', $yaml);
 
         // Weekly cadence: a newly published advisory must not wait for the

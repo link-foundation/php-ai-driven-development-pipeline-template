@@ -13,7 +13,7 @@ CI.
    cd php-ai-driven-development-pipeline-template
    ```
 
-2. **Install dependencies** (PHP 8.1+ and [Composer](https://getcomposer.org/)
+2. **Install dependencies** (PHP 8.5+ and [Composer](https://getcomposer.org/)
    required)
 
    ```bash
@@ -88,7 +88,7 @@ CI.
 5. **Commit and open a pull request**
 
    Write a clear commit message and describe what changed and why. CI runs the
-   full matrix (PHP 8.1–8.4) plus changeset validation on your PR.
+   full matrix (PHP 8.5) plus changeset validation on your PR.
 
 ## Testing Guidelines
 

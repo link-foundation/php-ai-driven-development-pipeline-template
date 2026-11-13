@@ -37,7 +37,7 @@ final class FileSizeCheckerTest extends TestCase
         file_put_contents($this->root . '/src/Big.php', str_repeat("<?php\n", 12));
         file_put_contents($this->root . '/src/Small.php', "<?php\n");
 
-        $violations = (new FileSizeChecker($this->root, 10))->violations();
+        $violations = new FileSizeChecker($this->root, 10)->violations();
 
         self::assertArrayHasKey('src/Big.php', $violations);
         self::assertArrayNotHasKey('src/Small.php', $violations);
@@ -47,7 +47,7 @@ final class FileSizeCheckerTest extends TestCase
     {
         file_put_contents($this->root . '/vendor/Huge.php', str_repeat("<?php\n", 50));
 
-        $violations = (new FileSizeChecker($this->root, 10))->violations();
+        $violations = new FileSizeChecker($this->root, 10)->violations();
 
         self::assertSame([], $violations);
     }
@@ -56,6 +56,6 @@ final class FileSizeCheckerTest extends TestCase
     {
         file_put_contents($this->root . '/src/data.txt', str_repeat("x\n", 50));
 
-        self::assertSame([], (new FileSizeChecker($this->root, 10))->violations());
+        self::assertSame([], new FileSizeChecker($this->root, 10)->violations());
     }
 }

@@ -45,9 +45,9 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@2.40.0
         with:
-          php-version: '8.3'
+          php-version: '8.5.12'
           coverage: none
-          tools: phpDocumentor
+          tools: phpDocumentor:3.10.0
 
       - name: Build API documentation
         run: phpDocumentor --directory=src --target=_site --title="$(php -r "echo json_decode(file_get_contents('composer.json'))->name;")"

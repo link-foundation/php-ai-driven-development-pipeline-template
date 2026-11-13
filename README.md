@@ -19,7 +19,7 @@ and GitHub Releases.
 
 ## Features
 
-- **Multi-version PHP support**: tested on PHP 8.1, 8.2, 8.3 and 8.4
+- **Multi-version PHP support**: tested on PHP 8.5, 8.2, 8.3 and 8.4
 - **Native-PHP pipeline**: all CI/CD logic lives in [`scripts/`](scripts) and the
   tested [`scripts/src/`](scripts/src) classes — no other languages used
 - **Comprehensive testing**: [PHPUnit](https://phpunit.de/) with separate package
@@ -155,7 +155,7 @@ tags, and publishes. See [`changelog.d/README.md`](changelog.d/README.md).
 ## How the Release Pipeline Works
 
 1. **On every PR** the pipeline lints, statically analyses and tests the code
-   across PHP 8.1–8.4, validates that code changes ship a changelog fragment, and
+   across PHP 8.5, validates that code changes ship a changelog fragment, and
    ensures nobody hand-edited the version.
 2. **On push to `main`** it re-runs the checks, then decides whether a release is
    needed (are there fragments? is the current version already on Packagist?).

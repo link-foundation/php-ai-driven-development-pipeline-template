@@ -43,7 +43,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@2.40.0
         with:
-          php-version: '8.3'
+          php-version: '8.5.12'
           coverage: none
 
       - name: Check runner images and action/tool releases
@@ -114,7 +114,7 @@ jobs:
           config: .github/zizmor.yml
           inputs: .github
           min-confidence: medium
-          version: 1.31.1
+          version: 1.32.0
 
       # The step above runs the default (regular) persona, which is the right
       # default: pedantic surfaces dozens of stylistic findings. But the audits
@@ -129,7 +129,7 @@ jobs:
       - name: Audit for pedantic-only high-severity findings
         timeout-minutes: 5
         run: |
-          pipx run zizmor==1.31.1 --config .github/zizmor.yml \
+          pipx run zizmor==1.32.0 --config .github/zizmor.yml \
             --persona pedantic --min-severity high --min-confidence high \
             .github
 
