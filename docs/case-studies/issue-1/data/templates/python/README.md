@@ -3,16 +3,16 @@
 A comprehensive template for AI-driven Python development with full CI/CD pipeline support.
 
 [![CI/CD Pipeline](https://github.com/link-foundation/python-ai-driven-development-pipeline-template/workflows/CI/CD%20Pipeline/badge.svg)](https://github.com/link-foundation/python-ai-driven-development-pipeline-template/actions)
-[![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
+[![Python Version](https://img.shields.io/badge/python-3.15%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 
 ## Features
 
-- **Multi-version Python support**: Works with Python 3.9-3.13
+- **Current Python support**: Works with Python 3.15 and later
 - **Comprehensive testing**: pytest with async support and coverage reporting
 - **Code quality**: Ruff (linting + formatting) + mypy (type checking)
 - **Pre-commit hooks**: Automated code quality checks before commits
-- **CI/CD pipeline**: GitHub Actions CI/CD with Python 3.13
+- **CI/CD pipeline**: GitHub Actions CI/CD with Python 3.15
 - **Changelog management**: Scriv for conflict-free changelog (like Changesets in JS)
 - **Release automation**: Automatic PyPI publishing and GitHub releases
 - **API documentation**: Sphinx + GitHub Pages deploy on push to `main`
@@ -39,11 +39,11 @@ cd python-ai-driven-development-pipeline-template
 python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
-# Install in editable mode with development dependencies
-pip install -e ".[dev]"
+# Install the shared development/build/docs lock, then the local package
+pip install -r requirements.lock
+pip install --no-deps --no-build-isolation -e .
 
 # Install pre-commit hooks
-pip install pre-commit
 pre-commit install
 ```
 
@@ -183,7 +183,7 @@ The GitHub Actions workflow provides:
 
 1. **Linting**: Ruff linting, formatting, and mypy type checking
 2. **Changelog check**: Warns if PRs are missing changelog fragments
-3. **Testing**: Python 3.13 test suite
+3. **Testing**: Python 3.15 test suite
 4. **Building**: Package building and validation
 5. **Coverage**: Automatic upload to Codecov
 
@@ -195,7 +195,8 @@ deploying) to catch regressions before they merge.
 
 ```bash
 # Install docs dependencies
-pip install -e ".[docs]"
+pip install -r requirements.lock
+pip install --no-deps --no-build-isolation -e .
 
 # Build locally (output goes to _site/)
 sphinx-build -W --keep-going -b html docs _site

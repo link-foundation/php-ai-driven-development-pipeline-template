@@ -3,12 +3,12 @@
 A comprehensive template for AI-driven C# development with full CI/CD pipeline support.
 
 [![CI/CD Pipeline](https://github.com/link-foundation/csharp-ai-driven-development-pipeline-template/workflows/CI%2FCD%20Pipeline/badge.svg)](https://github.com/link-foundation/csharp-ai-driven-development-pipeline-template/actions)
-[![.NET Version](https://img.shields.io/badge/.NET-8.0-blue.svg)](https://dotnet.microsoft.com/)
+[![.NET Version](https://img.shields.io/badge/.NET-11.0-blue.svg)](https://dotnet.microsoft.com/)
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 
 ## Features
 
-- **.NET 8.0 support**: Works with the latest .NET LTS version
+- **.NET 11.0 support**: Works with the current .NET release
 - **Cross-platform testing**: CI runs on Ubuntu, macOS, and Windows
 - **Comprehensive testing**: xUnit tests with coverage reporting
 - **Code quality**: EditorConfig + .NET analyzers with warnings as errors
@@ -53,10 +53,10 @@ dotnet run --project examples/BasicUsage
 dotnet test
 
 # Run tests with verbose output
-dotnet test --verbosity normal
+dotnet test --output Detailed
 
 # Run tests with coverage
-dotnet test --collect:"XPlat Code Coverage"
+dotnet test --timeout 60s --coverlet --coverlet-output-format cobertura
 
 # Run a specific test
 dotnet test --filter "FullyQualifiedName~CalculatorTests"
@@ -185,7 +185,7 @@ The GitHub Actions workflow provides:
 
 1. **Changeset validation**: Ensures PRs include a changeset file
 2. **Linting**: dotnet format and build with warnings as errors
-3. **Test matrix**: 3 OS (Ubuntu, macOS, Windows) with .NET 8.0
+3. **Test matrix**: 3 OS (Ubuntu, macOS, Windows) with .NET 11.0
 4. **Building**: Release build and package validation
 5. **Release**: Automated versioning, NuGet publishing, and GitHub releases
 

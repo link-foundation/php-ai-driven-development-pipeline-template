@@ -25,12 +25,12 @@ and GitHub Releases.
 - **Comprehensive testing**: [PHPUnit](https://phpunit.de/) with separate package
   and pipeline test suites, plus coverage output
 - **Code quality**: [PHP-CS-Fixer](https://cs.symfony.com/) (`@PSR12` +
-  `@PHP81Migration`) and [PHPStan](https://phpstan.org/) at the strictest level 8
+  `@PHP85Migration`) and [PHPStan](https://phpstan.org/) at level 8
 - **Changeset-style changelog**: conflict-free `changelog.d/` fragments drive
   semantic versioning, like Changesets in JS or Scriv in Python
 - **Self-healing releases**: idempotent, re-runnable release flow with the git tag
   as the only idempotency guard; Packagist + GitHub Releases are the source of truth
-- **Combined CI/CD workflow**: change detection, lint, static analysis, multi-version
+- **Combined CI/CD workflow**: change detection, lint, static analysis, PHP 8.5
   tests, changeset validation, automatic + manual releases — all in one workflow
 - **API documentation**: [phpDocumentor](https://phpdoc.org/) build deployed to
   GitHub Pages on push to `main`
