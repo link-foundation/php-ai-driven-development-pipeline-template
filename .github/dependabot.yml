@@ -24,6 +24,17 @@ updates:
     groups:
       actions:
         patterns: ["*"]
+  - package-ecosystem: dotnet-sdk
+    directories:
+      - /
+      - /docs/case-studies/issue-1/data/templates/csharp
+    cooldown:
+      default-days: 7
+    schedule:
+      interval: weekly
+    groups:
+      dotnet-sdk:
+        patterns: ["*"]
   - package-ecosystem: nuget
     directories:
       - /docs/case-studies/issue-1/data/templates/csharp
