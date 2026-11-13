@@ -12,16 +12,16 @@
 //!
 //! ```cargo
 //! [dependencies]
-//! regex = "1"
-//! chrono = "0.4"
+//! regex = "1.13.1"
+//! chrono = "0.4.45"
 //! ```
 
+use chrono::Utc;
+use regex::Regex;
 use std::env;
 use std::fs;
 use std::path::Path;
 use std::process::exit;
-use chrono::Utc;
-use regex::Regex;
 
 const INSERT_MARKER: &str = "<!-- changelog-insert-here -->";
 
@@ -114,8 +114,8 @@ fn collect_fragments(changelog_dir: &str) -> String {
             .filter_map(|e| e.ok())
             .map(|e| e.path())
             .filter(|p| {
-                p.extension().map_or(false, |ext| ext == "md")
-                    && p.file_name().map_or(false, |name| name != "README.md")
+                p.extension().is_some_and(|ext| ext == "md")
+                    && p.file_name().is_some_and(|name| name != "README.md")
             })
             .collect(),
         Err(_) => return String::new(),
@@ -158,7 +158,8 @@ fn update_changelog(changelog_file: &str, version: &str, fragments: &str) {
             }
 
             if let Some(idx) = insert_index {
-                let mut new_lines: Vec<String> = lines[..idx].iter().map(|s| s.to_string()).collect();
+                let mut new_lines: Vec<String> =
+                    lines[..idx].iter().map(|s| s.to_string()).collect();
                 new_lines.push(new_entry.clone());
                 new_lines.extend(lines[idx..].iter().map(|s| s.to_string()));
                 content = new_lines.join("\n");
@@ -193,12 +194,11 @@ fn remove_fragments(changelog_dir: &str) {
     if let Ok(entries) = fs::read_dir(dir_path) {
         for entry in entries.filter_map(|e| e.ok()) {
             let path = entry.path();
-            if path.extension().map_or(false, |ext| ext == "md")
-                && path.file_name().map_or(false, |name| name != "README.md")
+            if path.extension().is_some_and(|ext| ext == "md")
+                && path.file_name().is_some_and(|name| name != "README.md")
+                && fs::remove_file(&path).is_ok()
             {
-                if fs::remove_file(&path).is_ok() {
-                    println!("Removed {}", path.display());
-                }
+                println!("Removed {}", path.display());
             }
         }
     }

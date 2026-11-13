@@ -8,9 +8,9 @@
 //!
 //! ```cargo
 //! [dependencies]
-//! regex = "1"
-//! serde = { version = "1", features = ["derive"] }
-//! serde_json = "1"
+//! regex = "1.13.1"
+//! serde = { version = "1.0.229", features = ["derive"] }
+//! serde_json = "1.0.154"
 //! ```
 
 use regex::Regex;
@@ -25,7 +25,7 @@ use std::io::Write;
 #[cfg(not(test))]
 use std::path::Path;
 #[cfg(not(test))]
-use std::process::{exit, Command, Stdio};
+use std::process::{Command, Stdio, exit};
 
 #[cfg(not(test))]
 const USAGE: &str = "Usage: rust-script scripts/create-github-release.rs --release-version <version> --repository <repository> [--tag-prefix <prefix>] [--language <name>] [--release-label <label>] [--docker-hub-url <url>]";
@@ -338,14 +338,14 @@ fn main() {
     let rust_root = get_rust_root();
     let cargo_toml = get_cargo_toml_path(&rust_root);
 
-    if let Some(ref crate_name) = get_crate_name_from_toml(&cargo_toml) {
-        if crate_name == "example-sum-package-name" {
-            println!(
-                "Skipping GitHub release: package name is the template default 'example-sum-package-name'"
-            );
-            println!("Rename the package in Cargo.toml before creating releases");
-            return;
-        }
+    if let Some(ref crate_name) = get_crate_name_from_toml(&cargo_toml)
+        && crate_name == "example-sum-package-name"
+    {
+        println!(
+            "Skipping GitHub release: package name is the template default 'example-sum-package-name'"
+        );
+        println!("Rename the package in Cargo.toml before creating releases");
+        return;
     }
 
     let changelog_path = get_changelog_path(&rust_root);

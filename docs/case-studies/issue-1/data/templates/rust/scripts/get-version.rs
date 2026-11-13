@@ -15,7 +15,7 @@
 //!
 //! ```cargo
 //! [dependencies]
-//! regex = "1"
+//! regex = "1.13.1"
 //! ```
 
 use std::env;
@@ -26,8 +26,8 @@ use std::process::exit;
 mod rust_paths;
 
 fn set_output(key: &str, value: &str) {
-    if let Ok(output_file) = env::var("GITHUB_OUTPUT") {
-        if let Err(e) = fs::OpenOptions::new()
+    if let Ok(output_file) = env::var("GITHUB_OUTPUT")
+        && let Err(e) = fs::OpenOptions::new()
             .create(true)
             .append(true)
             .open(&output_file)
@@ -35,9 +35,8 @@ fn set_output(key: &str, value: &str) {
                 use std::io::Write;
                 writeln!(f, "{}={}", key, value)
             })
-        {
-            eprintln!("Warning: Could not write to GITHUB_OUTPUT: {}", e);
-        }
+    {
+        eprintln!("Warning: Could not write to GITHUB_OUTPUT: {}", e);
     }
     println!("Output: {}={}", key, value);
 }

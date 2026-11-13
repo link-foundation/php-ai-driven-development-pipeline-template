@@ -1,0 +1,83 @@
+[package]
+name = "captured-template-pipeline"
+version = "0.0.0"
+edition = "2024"
+rust-version = "1.100"
+publish = false
+
+[dependencies]
+regex = "1.13.1"
+chrono = "0.4.45"
+ureq = { version = "3.5.2", features = ["json"] }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+walkdir = "2.5.0"
+
+[[bin]]
+name = "get-bump-type"
+path = "../scripts/get-bump-type.rs"
+
+[[bin]]
+name = "get-version"
+path = "../scripts/get-version.rs"
+
+[[bin]]
+name = "check-changelog-fragment"
+path = "../scripts/check-changelog-fragment.rs"
+
+[[bin]]
+name = "check-crate-size"
+path = "../scripts/check-crate-size.rs"
+
+[[bin]]
+name = "rust-paths"
+path = "../scripts/rust-paths.rs"
+
+[[bin]]
+name = "collect-changelog"
+path = "../scripts/collect-changelog.rs"
+
+[[bin]]
+name = "wait-for-crate"
+path = "../scripts/wait-for-crate.rs"
+
+[[bin]]
+name = "detect-code-changes"
+path = "../scripts/detect-code-changes.rs"
+
+[[bin]]
+name = "check-version-modification"
+path = "../scripts/check-version-modification.rs"
+
+[[bin]]
+name = "create-github-release"
+path = "../scripts/create-github-release.rs"
+
+[[bin]]
+name = "version-and-commit"
+path = "../scripts/version-and-commit.rs"
+
+[[bin]]
+name = "publish-crate"
+path = "../scripts/publish-crate.rs"
+
+[[bin]]
+name = "create-changelog-fragment"
+path = "../scripts/create-changelog-fragment.rs"
+
+[[bin]]
+name = "git-config"
+path = "../scripts/git-config.rs"
+
+[[bin]]
+name = "bump-version"
+path = "../scripts/bump-version.rs"
+
+[[bin]]
+name = "check-release-needed"
+path = "../scripts/check-release-needed.rs"
+
+[[bin]]
+name = "check-file-size"
+path = "../scripts/check-file-size.rs"
+

@@ -16,25 +16,22 @@
 //!
 //! ```cargo
 //! [dependencies]
-//! regex = "1"
-//! chrono = "0.4"
-//! ureq = "2"
-//! serde = { version = "1", features = ["derive"] }
-//! serde_json = "1"
+//! regex = "1.13.1"
+//! chrono = "0.4.45"
+//! ureq = { version = "3.5.2", features = ["json"] }
+//! serde = { version = "1.0.229", features = ["derive"] }
+//! serde_json = "1.0.154"
 //! ```
 
-#[cfg(not(test))]
 use chrono::Utc;
 use regex::Regex;
-#[cfg(not(test))]
 use serde::Deserialize;
 use std::env;
 use std::fs;
 use std::io::Write;
 use std::path::{Path, PathBuf};
-#[cfg(not(test))]
-use std::process::exit;
 use std::process::Command;
+use std::process::exit;
 
 #[path = "rust-paths.rs"]
 mod rust_paths;
@@ -68,15 +65,14 @@ fn get_changelog_path(rust_root: &str) -> String {
 }
 
 fn set_output(key: &str, value: &str) {
-    if let Ok(output_file) = env::var("GITHUB_OUTPUT") {
-        if let Err(e) = fs::OpenOptions::new()
+    if let Ok(output_file) = env::var("GITHUB_OUTPUT")
+        && let Err(e) = fs::OpenOptions::new()
             .create(true)
             .append(true)
             .open(&output_file)
             .and_then(|mut f| writeln!(f, "{}={}", key, value))
-        {
-            eprintln!("Warning: Could not write to GITHUB_OUTPUT: {}", e);
-        }
+    {
+        eprintln!("Warning: Could not write to GITHUB_OUTPUT: {}", e);
     }
     println!("Output: {}={}", key, value);
 }
@@ -192,13 +188,11 @@ fn update_cargo_lock(
     Ok(true)
 }
 
-#[cfg(not(test))]
 #[derive(Deserialize)]
 struct CratesIoCrate {
     versions: Option<Vec<CratesIoVersionEntry>>,
 }
 
-#[cfg(not(test))]
 #[derive(Deserialize)]
 struct CratesIoVersionEntry {
     num: String,
@@ -222,11 +216,10 @@ fn check_tag_exists(tag_prefix: &str, version: &str) -> bool {
     exec_check("git", &["rev-parse", &format!("{}{}", tag_prefix, version)])
 }
 
-#[cfg(not(test))]
 fn check_version_on_crates_io(crate_name: &str, version: &str) -> bool {
     let url = format!("https://crates.io/api/v1/crates/{}/{}", crate_name, version);
     match ureq::get(&url)
-        .set("User-Agent", "rust-script-version-and-commit")
+        .header("User-Agent", "rust-script-version-and-commit")
         .call()
     {
         Ok(response) => response.status() == 200,
@@ -234,45 +227,41 @@ fn check_version_on_crates_io(crate_name: &str, version: &str) -> bool {
     }
 }
 
-#[cfg(not(test))]
 fn get_max_published_version(crate_name: &str) -> Option<(u32, u32, u32)> {
     let url = format!("https://crates.io/api/v1/crates/{}", crate_name);
     match ureq::get(&url)
-        .set("User-Agent", "rust-script-version-and-commit")
+        .header("User-Agent", "rust-script-version-and-commit")
         .call()
     {
-        Ok(response) => {
-            if response.status() == 200 {
-                if let Ok(body) = response.into_string() {
-                    if let Ok(data) = serde_json::from_str::<CratesIoCrate>(&body) {
-                        if let Some(versions) = data.versions {
-                            let mut max: Option<(u32, u32, u32)> = None;
-                            for v in &versions {
-                                if v.yanked {
-                                    continue;
-                                }
-                                let base = match v.num.split('-').next() {
-                                    Some(b) => b,
-                                    None => continue,
-                                };
-                                let parts: Vec<&str> = base.split('.').collect();
-                                if parts.len() == 3 {
-                                    if let (Ok(a), Ok(b), Ok(c)) = (
-                                        parts[0].parse::<u32>(),
-                                        parts[1].parse::<u32>(),
-                                        parts[2].parse::<u32>(),
-                                    ) {
-                                        let tuple = (a, b, c);
-                                        if max.map_or(true, |m| tuple > m) {
-                                            max = Some(tuple);
-                                        }
-                                    }
-                                }
-                            }
-                            return max;
+        Ok(mut response) => {
+            if response.status() == 200
+                && let Ok(data) = response.body_mut().read_json::<CratesIoCrate>()
+                && let Some(versions) = data.versions
+            {
+                let mut max: Option<(u32, u32, u32)> = None;
+                for v in &versions {
+                    if v.yanked {
+                        continue;
+                    }
+                    let base = match v.num.split('-').next() {
+                        Some(b) => b,
+                        None => continue,
+                    };
+                    let parts: Vec<&str> = base.split('.').collect();
+                    if parts.len() == 3
+                        && let (Ok(a), Ok(b), Ok(c)) = (
+                            parts[0].parse::<u32>(),
+                            parts[1].parse::<u32>(),
+                            parts[2].parse::<u32>(),
+                        )
+                    {
+                        let tuple = (a, b, c);
+                        if max.is_none_or(|m| tuple > m) {
+                            max = Some(tuple);
                         }
                     }
                 }
+                return max;
             }
             None
         }
@@ -280,7 +269,6 @@ fn get_max_published_version(crate_name: &str) -> Option<(u32, u32, u32)> {
     }
 }
 
-#[cfg(not(test))]
 fn ensure_version_exceeds_published(
     version_str: &str,
     crate_name: &str,
@@ -301,18 +289,24 @@ fn ensure_version_exceeds_published(
     let mut minor: u32 = parts[1].parse().unwrap_or(0);
     let mut patch: u32 = parts[2].parse().unwrap_or(0);
 
-    if let Some((pub_major, pub_minor, pub_patch)) = max_published {
-        if (major, minor, patch) <= (pub_major, pub_minor, pub_patch) {
-            println!(
-                "Version {}.{}.{} is not greater than max published {}.{}.{}, adjusting to {}.{}.{}",
-                major, minor, patch,
-                pub_major, pub_minor, pub_patch,
-                pub_major, pub_minor, pub_patch + 1
-            );
-            major = pub_major;
-            minor = pub_minor;
-            patch = pub_patch + 1;
-        }
+    if let Some((pub_major, pub_minor, pub_patch)) = max_published
+        && (major, minor, patch) <= (pub_major, pub_minor, pub_patch)
+    {
+        println!(
+            "Version {}.{}.{} is not greater than max published {}.{}.{}, adjusting to {}.{}.{}",
+            major,
+            minor,
+            patch,
+            pub_major,
+            pub_minor,
+            pub_patch,
+            pub_major,
+            pub_minor,
+            pub_patch + 1
+        );
+        major = pub_major;
+        minor = pub_minor;
+        patch = pub_patch + 1;
     }
 
     let mut candidate = format!("{}.{}.{}", major, minor, patch);
@@ -355,7 +349,6 @@ fn remove_changelog_fragments(files: &[PathBuf]) {
     }
 }
 
-#[cfg(not(test))]
 fn collect_changelog(changelog_dir: &str, changelog_file: &str, version: &str) {
     let date_str = Utc::now().format("%Y-%m-%d").to_string();
     collect_changelog_with_date(changelog_dir, changelog_file, version, &date_str);
@@ -377,8 +370,8 @@ fn collect_changelog_with_date(
             .filter_map(|e| e.ok())
             .map(|e| e.path())
             .filter(|p| {
-                p.extension().map_or(false, |ext| ext == "md")
-                    && p.file_name().map_or(false, |name| name != "README.md")
+                p.extension().is_some_and(|ext| ext == "md")
+                    && p.file_name().is_some_and(|name| name != "README.md")
             })
             .collect(),
         Err(_) => return,
@@ -437,157 +430,14 @@ fn collect_changelog_with_date(
     println!("Collected {} changelog fragment(s)", files.len());
 }
 
-#[cfg(test)]
-mod tests {
-    use super::{collect_changelog_with_date, update_cargo_lock};
-    use std::fs;
-    use std::path::PathBuf;
-    use std::time::{SystemTime, UNIX_EPOCH};
 
-    fn temp_dir(name: &str) -> PathBuf {
-        let nanos = SystemTime::now()
-            .duration_since(UNIX_EPOCH)
-            .unwrap()
-            .as_nanos();
-        let path = std::env::temp_dir().join(format!("version-and-commit-{name}-{nanos}"));
-        fs::create_dir_all(&path).unwrap();
-        path
-    }
-
-    #[test]
-    fn cargo_lock_update_scopes_to_named_package_entry() {
-        let repo = temp_dir("lock-update");
-        let cargo_lock = repo.join("Cargo.lock");
-        fs::write(
-            &cargo_lock,
-            r#"[[package]]
-name = "example-sum-package-name-helper"
-version = "9.9.9"
-
-[[package]]
-name = "example-sum-package-name"
-version = "0.13.0"
-dependencies = [
- "clap",
-]
-
-[[package]]
-name = "regex"
-version = "1.12.3"
-"#,
-        )
-        .unwrap();
-
-        assert!(update_cargo_lock(&cargo_lock, "example-sum-package-name", "0.14.0").unwrap());
-
-        let updated = fs::read_to_string(&cargo_lock).unwrap();
-        assert!(updated.contains("name = \"example-sum-package-name\"\nversion = \"0.14.0\""));
-        assert!(updated.contains("name = \"example-sum-package-name-helper\"\nversion = \"9.9.9\""));
-        assert!(updated.contains("name = \"regex\"\nversion = \"1.12.3\""));
-    }
-
-    #[test]
-    fn cargo_lock_update_is_idempotent_when_version_already_matches() {
-        let repo = temp_dir("lock-idempotent");
-        let cargo_lock = repo.join("Cargo.lock");
-        let content = r#"[[package]]
-name = "example-sum-package-name"
-version = "0.14.0"
-"#;
-        fs::write(&cargo_lock, content).unwrap();
-
-        assert!(!update_cargo_lock(&cargo_lock, "example-sum-package-name", "0.14.0").unwrap());
-        assert_eq!(fs::read_to_string(&cargo_lock).unwrap(), content);
-    }
-
-    #[test]
-    fn cargo_lock_update_returns_false_when_lock_file_is_absent() {
-        let repo = temp_dir("lock-absent");
-        let cargo_lock = repo.join("Cargo.lock");
-
-        assert!(!update_cargo_lock(&cargo_lock, "example-sum-package-name", "0.14.0").unwrap());
-        assert!(!cargo_lock.exists());
-    }
-
-    #[test]
-    fn cargo_lock_update_returns_false_when_package_entry_is_absent() {
-        let repo = temp_dir("lock-entry-absent");
-        let cargo_lock = repo.join("Cargo.lock");
-        let content = r#"[[package]]
-name = "regex"
-version = "1.12.3"
-"#;
-        fs::write(&cargo_lock, content).unwrap();
-
-        assert!(!update_cargo_lock(&cargo_lock, "example-sum-package-name", "0.14.0").unwrap());
-        assert_eq!(fs::read_to_string(&cargo_lock).unwrap(), content);
-    }
-
-    #[test]
-    fn changelog_collection_removes_consumed_fragments_and_keeps_readme() {
-        let repo = temp_dir("changelog-cleanup");
-        let changelog_dir = repo.join("changelog.d");
-        fs::create_dir_all(&changelog_dir).unwrap();
-
-        let first_fragment = changelog_dir.join("20260608_fix_release_loop.md");
-        let second_fragment = changelog_dir.join("20260608_note_release_loop.md");
-        fs::write(
-            &first_fragment,
-            r#"---
-bump: patch
----
-
-### Fixed
-- Prevent already-collected changelog fragments from triggering another release.
-"#,
-        )
-        .unwrap();
-        fs::write(
-            &second_fragment,
-            r#"### Changed
-- Keep release commits from leaving stale changelog fragments behind.
-"#,
-        )
-        .unwrap();
-        fs::write(changelog_dir.join("README.md"), "Fragment instructions\n").unwrap();
-
-        let changelog = repo.join("CHANGELOG.md");
-        fs::write(
-            &changelog,
-            r#"# Changelog
-
-## [0.1.0] - 2026-01-01
-
-### Added
-- Initial release
-"#,
-        )
-        .unwrap();
-
-        collect_changelog_with_date(
-            changelog_dir.to_str().unwrap(),
-            changelog.to_str().unwrap(),
-            "0.2.0",
-            "2026-06-08",
-        );
-
-        let updated = fs::read_to_string(&changelog).unwrap();
-        assert!(updated.contains("## [0.2.0] - 2026-06-08"));
-        assert!(updated.contains("Prevent already-collected changelog fragments"));
-        assert!(updated.contains("Keep release commits from leaving stale changelog fragments"));
-        assert!(!updated.contains("bump: patch"));
-        assert!(!first_fragment.exists());
-        assert!(!second_fragment.exists());
-        assert!(changelog_dir.join("README.md").exists());
-    }
-}
-
-#[cfg(not(test))]
 fn main() {
     let bump_type = match get_arg("bump-type") {
         Some(bt) => bt,
         None => {
-            eprintln!("Usage: rust-script scripts/version-and-commit.rs --bump-type <major|minor|patch> [--description <desc>] [--rust-root <path>] [--tag-prefix <prefix>] [--release-label <label>]");
+            eprintln!(
+                "Usage: rust-script scripts/version-and-commit.rs --bump-type <major|minor|patch> [--description <desc>] [--rust-root <path>] [--tag-prefix <prefix>] [--release-label <label>]"
+            );
             exit(1);
         }
     };
@@ -715,11 +565,11 @@ fn main() {
         eprintln!("Error staging release files: {}", e);
         exit(1);
     }
-    if Path::new(&changelog_dir).exists() {
-        if let Err(e) = exec("git", &["add", "-A", &changelog_dir]) {
-            eprintln!("Error staging changelog fragments: {}", e);
-            exit(1);
-        }
+    if Path::new(&changelog_dir).exists()
+        && let Err(e) = exec("git", &["add", "-A", &changelog_dir])
+    {
+        eprintln!("Error staging changelog fragments: {}", e);
+        exit(1);
     }
 
     // Check if there are changes to commit
@@ -819,4 +669,151 @@ fn main() {
 
     set_output("version_committed", "true");
     set_output("new_version", &new_version);
+}
+
+#[cfg(test)]
+mod tests {
+    use super::{collect_changelog_with_date, update_cargo_lock};
+    use std::fs;
+    use std::path::PathBuf;
+    use std::time::{SystemTime, UNIX_EPOCH};
+
+    fn temp_dir(name: &str) -> PathBuf {
+        let nanos = SystemTime::now()
+            .duration_since(UNIX_EPOCH)
+            .unwrap()
+            .as_nanos();
+        let path = std::env::temp_dir().join(format!("version-and-commit-{name}-{nanos}"));
+        fs::create_dir_all(&path).unwrap();
+        path
+    }
+
+    #[test]
+    fn cargo_lock_update_scopes_to_named_package_entry() {
+        let repo = temp_dir("lock-update");
+        let cargo_lock = repo.join("Cargo.lock");
+        fs::write(
+            &cargo_lock,
+            r#"[[package]]
+name = "example-sum-package-name-helper"
+version = "9.9.9"
+
+[[package]]
+name = "example-sum-package-name"
+version = "0.13.0"
+dependencies = [
+ "clap",
+]
+
+[[package]]
+name = "regex"
+version = "1.12.3"
+"#,
+        )
+        .unwrap();
+
+        assert!(update_cargo_lock(&cargo_lock, "example-sum-package-name", "0.14.0").unwrap());
+
+        let updated = fs::read_to_string(&cargo_lock).unwrap();
+        assert!(updated.contains("name = \"example-sum-package-name\"\nversion = \"0.14.0\""));
+        assert!(
+            updated.contains("name = \"example-sum-package-name-helper\"\nversion = \"9.9.9\"")
+        );
+        assert!(updated.contains("name = \"regex\"\nversion = \"1.12.3\""));
+    }
+
+    #[test]
+    fn cargo_lock_update_is_idempotent_when_version_already_matches() {
+        let repo = temp_dir("lock-idempotent");
+        let cargo_lock = repo.join("Cargo.lock");
+        let content = r#"[[package]]
+name = "example-sum-package-name"
+version = "0.14.0"
+"#;
+        fs::write(&cargo_lock, content).unwrap();
+
+        assert!(!update_cargo_lock(&cargo_lock, "example-sum-package-name", "0.14.0").unwrap());
+        assert_eq!(fs::read_to_string(&cargo_lock).unwrap(), content);
+    }
+
+    #[test]
+    fn cargo_lock_update_returns_false_when_lock_file_is_absent() {
+        let repo = temp_dir("lock-absent");
+        let cargo_lock = repo.join("Cargo.lock");
+
+        assert!(!update_cargo_lock(&cargo_lock, "example-sum-package-name", "0.14.0").unwrap());
+        assert!(!cargo_lock.exists());
+    }
+
+    #[test]
+    fn cargo_lock_update_returns_false_when_package_entry_is_absent() {
+        let repo = temp_dir("lock-entry-absent");
+        let cargo_lock = repo.join("Cargo.lock");
+        let content = r#"[[package]]
+name = "regex"
+version = "1.12.3"
+"#;
+        fs::write(&cargo_lock, content).unwrap();
+
+        assert!(!update_cargo_lock(&cargo_lock, "example-sum-package-name", "0.14.0").unwrap());
+        assert_eq!(fs::read_to_string(&cargo_lock).unwrap(), content);
+    }
+
+    #[test]
+    fn changelog_collection_removes_consumed_fragments_and_keeps_readme() {
+        let repo = temp_dir("changelog-cleanup");
+        let changelog_dir = repo.join("changelog.d");
+        fs::create_dir_all(&changelog_dir).unwrap();
+
+        let first_fragment = changelog_dir.join("20260608_fix_release_loop.md");
+        let second_fragment = changelog_dir.join("20260608_note_release_loop.md");
+        fs::write(
+            &first_fragment,
+            r#"---
+bump: patch
+---
+
+### Fixed
+- Prevent already-collected changelog fragments from triggering another release.
+"#,
+        )
+        .unwrap();
+        fs::write(
+            &second_fragment,
+            r#"### Changed
+- Keep release commits from leaving stale changelog fragments behind.
+"#,
+        )
+        .unwrap();
+        fs::write(changelog_dir.join("README.md"), "Fragment instructions\n").unwrap();
+
+        let changelog = repo.join("CHANGELOG.md");
+        fs::write(
+            &changelog,
+            r#"# Changelog
+
+## [0.1.0] - 2026-01-01
+
+### Added
+- Initial release
+"#,
+        )
+        .unwrap();
+
+        collect_changelog_with_date(
+            changelog_dir.to_str().unwrap(),
+            changelog.to_str().unwrap(),
+            "0.2.0",
+            "2026-06-08",
+        );
+
+        let updated = fs::read_to_string(&changelog).unwrap();
+        assert!(updated.contains("## [0.2.0] - 2026-06-08"));
+        assert!(updated.contains("Prevent already-collected changelog fragments"));
+        assert!(updated.contains("Keep release commits from leaving stale changelog fragments"));
+        assert!(!updated.contains("bump: patch"));
+        assert!(!first_fragment.exists());
+        assert!(!second_fragment.exists());
+        assert!(changelog_dir.join("README.md").exists());
+    }
 }
