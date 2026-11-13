@@ -28,7 +28,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "check:duplication": "jscpd .",
-    "check": "npm run lint && npm run format:check && npm run check:duplication",
+    "check": "npm run lint && npm run format:check && npm run check:duplication && npm run lint:secrets",
     "example:web:dev": "npm --prefix examples/universal-app run dev",
     "example:web:build": "npm --prefix examples/universal-app run build",
     "example:web:preview": "npm --prefix examples/universal-app run preview",
@@ -40,7 +40,8 @@
     "changeset": "changeset",
     "changeset:version": "node scripts/changeset-version.mjs",
     "changeset:publish": "changeset publish",
-    "changeset:status": "changeset status --since=origin/main"
+    "changeset:status": "changeset status --since=origin/main",
+    "lint:secrets": "secretlint \"**/*\""
   },
   "keywords": [
     "template",
@@ -64,6 +65,7 @@
     "@actions/core": "^3.0.1",
     "@changesets/cli": "^3.0.3",
     "@eslint/js": "^10.0.1",
+    "@secretlint/secretlint-rule-preset-recommend": "^13.1.0",
     "browser-commander": "^0.34.1",
     "command-stream": "^2.6.0",
     "eslint": "^10.14.0",
@@ -76,6 +78,7 @@
     "lint-staged": "^17.6.0",
     "playwright": "^1.65.0",
     "prettier": "^3.10.1",
+    "secretlint": "^13.1.0",
     "semver": "^7.8.6",
     "test-anywhere": "^0.9.1",
     "yaml": "^2.9.1"

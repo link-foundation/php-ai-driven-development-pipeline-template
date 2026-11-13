@@ -11,6 +11,7 @@ rules:
         shivammathur/*: ref-pin
         ramsey/*: ref-pin
         oven-sh/*: ref-pin
+        denoland/setup-deno: ref-pin
         taiki-e/*: ref-pin
         lycheeverse/*: ref-pin
         zizmorcore/*: ref-pin

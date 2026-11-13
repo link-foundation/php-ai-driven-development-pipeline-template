@@ -10,3 +10,6 @@ CLAUDE.md
 docs/case-studies/*/data/
 
 reports/
+
+# Electron Forge package output
+**/out/**

@@ -49,7 +49,7 @@ jobs:
         with:
           bun-version: "1.4.4"
       - run: bun test --timeout 30000 tests
-      - uses: denoland/setup-deno@22d081ff2d3a40755e97629de92e3bcbfa7cf2ed # v2.0.5
+      - uses: denoland/setup-deno@v2.0.5
         with:
           deno-version: "2.9.8"
       - run: deno test --allow-read --allow-write --allow-env --allow-run tests
