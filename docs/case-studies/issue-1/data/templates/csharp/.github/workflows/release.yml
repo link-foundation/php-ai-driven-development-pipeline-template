@@ -42,7 +42,7 @@ jobs:
   # === DETECT CHANGES - determines which jobs should run ===
   detect-changes:
     name: Detect Changes
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 5
     if: github.event_name != 'workflow_dispatch'
     outputs:
@@ -76,7 +76,7 @@ jobs:
   # Docs-only PRs (./docs folder, markdown files) don't require changesets
   changeset-check:
     name: Changeset Validation
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 10
     needs: [detect-changes]
     if: github.event_name == 'pull_request' && needs.detect-changes.outputs.any-code-changed == 'true'
@@ -110,7 +110,7 @@ jobs:
   # See: https://github.com/link-foundation/js-ai-driven-development-pipeline-template/pull/18 for why this dependency was removed
   lint:
     name: Lint and Format Check
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 20
     needs: [detect-changes]
     if: |
@@ -162,7 +162,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-24.04, macos-15, windows-2025]
+        os: [ubuntu-26.04, macos-26, windows-2025]
     steps:
       - uses: actions/checkout@v7.0.1
 
@@ -181,7 +181,7 @@ jobs:
         run: dotnet test --no-build --configuration Release --timeout 60s --coverlet --coverlet-output-format cobertura
 
       - name: Upload coverage to Codecov
-        if: matrix.os == 'ubuntu-24.04'
+        if: matrix.os == 'ubuntu-26.04'
         uses: codecov/codecov-action@v7.1.1
         with:
           fail_ci_if_error: false
@@ -190,7 +190,7 @@ jobs:
   # Only runs if lint and test pass
   build:
     name: Build Package
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 20
     needs: [lint, test]
     if: always() && needs.lint.result == 'success' && needs.test.result == 'success'
@@ -223,7 +223,7 @@ jobs:
     name: Release
     needs: [lint, test, build]
     if: always() && github.ref == 'refs/heads/main' && github.event_name == 'push' && needs.lint.result == 'success' && needs.test.result == 'success' && needs.build.result == 'success'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 30
     permissions:
       contents: write
@@ -396,7 +396,7 @@ jobs:
     name: Instant Release
     needs: [lint, test, build]
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.release_mode == 'instant' && needs.lint.result == 'success' && needs.test.result == 'success' && needs.build.result == 'success'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 30
     permissions:
       contents: write
@@ -512,7 +512,7 @@ jobs:
   changeset-pr:
     name: Create Changeset PR
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.release_mode == 'changeset-pr'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 10
     permissions:
       contents: write
