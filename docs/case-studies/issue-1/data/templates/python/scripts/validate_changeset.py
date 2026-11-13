@@ -77,6 +77,21 @@ def validate_fragment_content(fragment_path: Path) -> tuple[bool, str]:
     return True, ""
 
 
+def print_expected_format() -> None:
+    """Show the supported changelog fragment sections."""
+    print("Expected fragment format:")
+    print()
+    print("  ### Added")
+    print("  - Description of new feature")
+    print()
+    print("  ### Changed")
+    print("  - Description of change")
+    print()
+    print("  ### Fixed")
+    print("  - Description of bug fix")
+    print()
+
+
 def main() -> int:
     """Main entry point."""
     # Determine project root and changelog directory
@@ -140,21 +155,10 @@ def main() -> int:
     if all_valid:
         print("Changelog validation passed!")
         return 0
-    else:
-        print("Changelog validation FAILED!")
-        print()
-        print("Expected fragment format:")
-        print()
-        print("  ### Added")
-        print("  - Description of new feature")
-        print()
-        print("  ### Changed")
-        print("  - Description of change")
-        print()
-        print("  ### Fixed")
-        print("  - Description of bug fix")
-        print()
-        return 1
+    print("Changelog validation FAILED!")
+    print()
+    print_expected_format()
+    return 1
 
 
 if __name__ == "__main__":

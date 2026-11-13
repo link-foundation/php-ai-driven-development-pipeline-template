@@ -29,7 +29,7 @@ jobs:
   # === DETECT CHANGES - determines which jobs should run ===
   detect-changes:
     name: Detect Changes
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     if: github.event_name != 'workflow_dispatch'
     outputs:
@@ -40,14 +40,14 @@ jobs:
       workflow-changed: ${{ steps.changes.outputs.workflow-changed }}
       any-code-changed: ${{ steps.changes.outputs.any-code-changed }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7.1.0
         with:
-          python-version: '3.13'
+          python-version: '3.15.2'
 
       - name: Detect changes
         id: changes
@@ -65,7 +65,7 @@ jobs:
   # See: https://github.com/link-assistant/hive-mind/pull/1024 for why this dependency was removed
   lint:
     name: Lint and Format Check
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     needs: [detect-changes]
     # always() && !cancelled() lets this job evaluate even though detect-changes
@@ -82,17 +82,18 @@ jobs:
         needs.detect-changes.outputs.workflow-changed == 'true'
       )
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7.1.0
         with:
-          python-version: '3.13'
+          python-version: '3.15.2'
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -e ".[dev]"
+          python -m pip install --upgrade pip==26.3
+          pip install -r requirements.lock
+          pip install --no-deps --no-build-isolation .
 
       - name: Run Ruff linting
         run: ruff check .
@@ -110,7 +111,7 @@ jobs:
   # Test on latest Python version only
   test:
     name: Test (Python 3.13)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     needs: [detect-changes]
     # always() && !cancelled() lets this job evaluate even though detect-changes
@@ -126,23 +127,24 @@ jobs:
         needs.detect-changes.outputs.workflow-changed == 'true'
       )
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7.1.0
         with:
-          python-version: '3.13'
+          python-version: '3.15.2'
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -e ".[dev]"
+          python -m pip install --upgrade pip==26.3
+          pip install -r requirements.lock
+          pip install --no-deps --no-build-isolation .
 
       - name: Run tests
         run: pytest tests/ -v --cov=src --cov-report=xml --cov-report=term
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v7.1.1
         with:
           file: ./coverage.xml
           fail_ci_if_error: false
@@ -151,7 +153,7 @@ jobs:
   # Build package - runs if lint and test pass, or were skipped (docs-only PR)
   build:
     name: Build Package
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     needs: [detect-changes, lint, test]
     # Run if: push/dispatch event, OR lint/test succeeded, OR lint/test were skipped (docs-only PR)
@@ -165,26 +167,26 @@ jobs:
         )
       )
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7.1.0
         with:
-          python-version: '3.13'
+          python-version: '3.15.2'
 
       - name: Install build dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install build twine
+          python -m pip install --upgrade pip==26.3
+          pip install -r requirements.lock
 
       - name: Build package
-        run: python -m build
+        run: python -m build --no-isolation
 
       - name: Check package
         run: twine check dist/*
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: dist
           path: dist/
@@ -193,22 +195,22 @@ jobs:
   # Docs-only PRs (./docs folder, markdown files) don't require changelog fragments
   changelog:
     name: Changelog Fragment Check
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     needs: [detect-changes]
     if: github.event_name == 'pull_request' && needs.detect-changes.outputs.any-code-changed == 'true'
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7.1.0
         with:
-          python-version: "3.13"
+          python-version: '3.15.2'
 
       - name: Install scriv
-        run: pip install "scriv[toml]"
+        run: pip install -r requirements.lock
 
       - name: Check for changelog fragments
         run: |
@@ -244,25 +246,25 @@ jobs:
     name: Auto Release
     needs: [lint, test, build]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
       contents: write
       id-token: write
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7.1.0
         with:
-          python-version: '3.13'
+          python-version: '3.15.2'
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install build twine
+          python -m pip install --upgrade pip==26.3
+          pip install -r requirements.lock
 
       - name: Check if version changed
         id: version_check
@@ -282,14 +284,14 @@ jobs:
 
       - name: Download artifacts
         if: steps.version_check.outputs.should_release == 'true'
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8.0.2
         with:
           name: dist
           path: dist/
 
       - name: Publish to PyPI
         if: steps.version_check.outputs.should_release == 'true'
-        uses: pypa/gh-action-pypi-publish@release/v1
+        uses: pypa/gh-action-pypi-publish@v1.14.3
 
       - name: Create GitHub Release
         if: steps.version_check.outputs.should_release == 'true'
@@ -313,26 +315,26 @@ jobs:
       needs.lint.result == 'success' &&
       needs.test.result == 'success' &&
       needs.build.result == 'success'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
       contents: write
       id-token: write
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7.1.0
         with:
-          python-version: '3.13'
+          python-version: '3.15.2'
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install build twine "scriv[toml]"
+          python -m pip install --upgrade pip==26.3
+          pip install -r requirements.lock
 
       - name: Configure git
         run: |
@@ -359,7 +361,7 @@ jobs:
 
       - name: Build package
         if: steps.version.outputs.version_committed == 'true' || steps.version.outputs.already_released == 'true'
-        run: python -m build
+        run: python -m build --no-isolation
 
       - name: Check package
         if: steps.version.outputs.version_committed == 'true' || steps.version.outputs.already_released == 'true'
@@ -367,7 +369,7 @@ jobs:
 
       - name: Publish to PyPI
         if: steps.version.outputs.version_committed == 'true' || steps.version.outputs.already_released == 'true'
-        uses: pypa/gh-action-pypi-publish@release/v1
+        uses: pypa/gh-action-pypi-publish@v1.14.3
 
       - name: Create GitHub Release
         if: steps.version.outputs.version_committed == 'true' || steps.version.outputs.already_released == 'true'

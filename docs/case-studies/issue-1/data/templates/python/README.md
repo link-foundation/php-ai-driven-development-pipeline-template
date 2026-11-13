@@ -314,9 +314,11 @@ import asyncio
 result = add(2, 3)  # 5
 product = multiply(2, 3)  # 6
 
+
 # Async operations
 async def main():
     await delay(1.0)  # Wait for 1 second
+
 
 asyncio.run(main())
 ```

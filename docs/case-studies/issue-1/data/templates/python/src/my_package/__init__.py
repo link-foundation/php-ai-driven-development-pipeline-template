@@ -5,12 +5,14 @@ Replace this with your actual implementation.
 
 from __future__ import annotations
 
+import asyncio
+
 __version__ = "0.1.0"
 
-__all__ = ["add", "multiply", "delay"]
+__all__ = ["add", "delay", "multiply"]
 
 
-def add(a: int | float, b: int | float) -> int | float:
+def add(a: float, b: float) -> int | float:
     """Add two numbers.
 
     Args:
@@ -23,7 +25,7 @@ def add(a: int | float, b: int | float) -> int | float:
     return a + b
 
 
-def multiply(a: int | float, b: int | float) -> int | float:
+def multiply(a: float, b: float) -> int | float:
     """Multiply two numbers.
 
     Args:
@@ -42,6 +44,4 @@ async def delay(seconds: float) -> None:
     Args:
         seconds: Seconds to wait
     """
-    import asyncio
-
     await asyncio.sleep(seconds)

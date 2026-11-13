@@ -61,7 +61,7 @@ def set_github_output(key: str, value: str) -> None:
     """Set GitHub Actions output variable."""
     output_file = os.environ.get("GITHUB_OUTPUT")
     if output_file:
-        with open(output_file, "a") as f:
+        with Path(output_file).open("a") as f:
             f.write(f"{key}={value}\n")
         print(f"Set output: {key}={value}")
 
@@ -71,7 +71,8 @@ def get_current_version(pyproject_path: Path) -> str:
     content = pyproject_path.read_text()
     match = re.search(r'^version\s*=\s*["\']([^"\']+)["\']', content, re.MULTILINE)
     if not match:
-        raise ValueError("Could not find version in pyproject.toml")
+        msg = "Could not find version in pyproject.toml"
+        raise ValueError(msg)
     return match.group(1)
 
 
@@ -130,9 +131,8 @@ def check_remote_changes(pyproject_path: Path) -> tuple[bool, str]:
                 print("Local and remote versions differ, rebasing...")
                 run_command(["git", "rebase", "origin/main"])
                 return False, remote_version
-            else:
-                print("Versions match, assuming previous run completed successfully")
-                return True, remote_version
+            print("Versions match, assuming previous run completed successfully")
+            return True, remote_version
 
     return False, ""
 
