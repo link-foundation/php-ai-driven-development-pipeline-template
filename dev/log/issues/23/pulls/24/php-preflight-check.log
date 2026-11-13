@@ -1,0 +1,31 @@
+PHP CS Fixer 3.95.30 Adalbertus by Fabien Potencier, Dariusz Ruminski and contributors.
+PHP runtime: 8.5.11
+Loaded config default from "/tmp/gh-issue-solver-1794605189377/.php-cs-fixer.dist.php".
+Running analysis on 5 cores with 10 files per process.
+Using cache file ".php-cs-fixer.cache".
+  0/64 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%
+  7/64 [▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░░]  10%
+ 64/64 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+
+
+Found 0 of 64 files that can be fixed in 0.658 seconds, 38.00 MB memory used
+Note: Using configuration file /tmp/gh-issue-solver-1794605189377/phpstan.neon.dist.
+  0/64 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%
+ 64/64 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+
+
+ [OK] No errors                                                                 
+
+All PHP files are within the 1000-line limit.
+PHPUnit 13.4.7 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /tmp/gh-issue-solver-1794605189377/phpunit.xml.dist
+
+...............................................................  63 / 141 ( 44%)
+............................................................... 126 / 141 ( 89%)
+...............                                                 141 / 141 (100%)
+
+Time: 00:04.615, Memory: 22.00 MB
+
+[30;42mOK (141 tests, 642 assertions)[0m

@@ -1,0 +1,4 @@
+{"probe":"anonymous","status":401,"receivePackAdvertisement":false}
+{"probe":"authenticated","status":200,"receivePackAdvertisement":true}
+[preflight] Git receive-pack discovery: HTTP 200; push advertisement: yes.
+{"status":"verified","detail":"Git authorizes this token to push to link-foundation\/php-ai-driven-development-pipeline-template; no refs were changed."}

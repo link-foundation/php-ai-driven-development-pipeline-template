@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace LinkFoundation\Template\Tests\Pipeline;
 
+use LinkFoundation\Template\Pipeline\Http;
 use LinkFoundation\Template\Pipeline\Process;
 use PHPUnit\Framework\TestCase;
 
@@ -84,6 +85,12 @@ final class LinkRecheckCliTest extends TestCase
             self::assertSame("/recovered\n", file_get_contents($directory . '/requests.txt'), 'The 404 must never be re-requested.');
             $outputs = (string) file_get_contents($directory . '/outputs');
             self::assertSame(!$includePermanentFailure, str_contains($outputs, 'all_recovered=true'));
+
+            // Exercise native PHP response headers and ensure an unanswered
+            // request cannot inherit the successful request's status.
+            $http = new Http();
+            self::assertSame(200, $http->get($url . '/recovered')['status']);
+            self::assertSame(0, $http->get('data://text/plain,no HTTP response')['status']);
         } finally {
             proc_terminate($server);
             proc_close($server);

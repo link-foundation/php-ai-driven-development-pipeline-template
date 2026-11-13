@@ -288,16 +288,15 @@ final class LinkRecheck
                 ],
             ]);
 
-            // PHP populates $http_response_header in the local scope after
-            // the request; seed it so a failed request yields no status.
-            $http_response_header = [];
+            // Clear prior response state before a potentially unanswered request.
+            http_clear_last_response_headers();
             @file_get_contents($url, false, $context);
 
             $status = 0;
 
             // Redirect chains leave every hop's status line here; the last
             // one is the final answer.
-            foreach ($http_response_header as $header) {
+            foreach (http_get_last_response_headers() ?? [] as $header) {
                 if (preg_match('#^HTTP/\S+\s+(\d+)#', $header, $m) === 1) {
                     $status = (int) $m[1];
                 }

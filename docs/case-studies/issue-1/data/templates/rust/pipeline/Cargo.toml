@@ -80,4 +80,3 @@ path = "../scripts/check-release-needed.rs"
 [[bin]]
 name = "check-file-size"
 path = "../scripts/check-file-size.rs"
-

@@ -96,7 +96,7 @@ for e,n,v,p in sorted(set(items)):
   elif e=='cargo':reason='Current parent API lines retain this distinct crate major: '+parents+'. Both Cargo audits are clean. See lock edges and cargo-metadata.json for declared version requirements.'
   elif parents:reason='Retained parent API/version line; exact declaring constraints: '+parents+'. See UPSTREAM.md for deprecated installer API reports.'
   else:reason='Bundled/optional package pinned by its upstream distribution; no independent root constraint. See lock path and registry parent dependencies.'
- before=baseline.get(n,'not locked') if e=='composer' else 'not locked' 
+ before=baseline.get(n,'not locked') if e=='composer' else 'not locked'
  rows.append(f'| {e} | {n} | {before} | {v} | [{latest}]({d["source"]}) | {reason} | {p.removeprefix(str(root)+"/")} |')
 (out/'TRANSITIVES.md').write_text('\n'.join(rows)+'\n')
 print(f'{len(items)} dependency instances, {len(keys)} registry queries, {sum("error"in v for v in cache.values())} errors')

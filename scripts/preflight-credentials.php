@@ -19,6 +19,7 @@ declare(strict_types=1);
  *                       precondition of a package it does not own.
  *   GITHUB_REPOSITORY   the repository the token is probed against
  *   GITHUB_TOKEN        the token whose push permission is probed
+ *   PREFLIGHT_DEBUG     '1' logs sanitized HTTP/protocol diagnostics to stderr
  *
  * Exit codes: 'release' mode exits 1 when a precondition was definitively
  * refused, or when nothing at all could be verified (a run that verified
@@ -44,6 +45,9 @@ $preflight = new ReleasePreflight(
     packageName: $packageName,
     githubRepository: $repository,
     githubToken: $token,
+    trace: getenv('PREFLIGHT_DEBUG') === '1' ? static function (string $message): void {
+        fwrite(STDERR, "[preflight] {$message}\n");
+    } : null,
 );
 
 // Report every precondition even after one fails: one run naming all the
