@@ -127,6 +127,7 @@ jobs:
         run: |
           npm run example:desktop:package
           for attempt in {1..30}; do
+            echo "Checking package output (attempt $attempt/30)"
             if [[ -d examples/universal-app/out ]] &&
               [[ -n "$(find examples/universal-app/out -mindepth 1 -print -quit)" ]]; then
               find examples/universal-app/out -maxdepth 2 -mindepth 1 -print

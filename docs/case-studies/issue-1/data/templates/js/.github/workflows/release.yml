@@ -155,9 +155,10 @@ jobs:
           GITHUB_BASE_REF: ${{ github.base_ref }}
           GITHUB_BASE_SHA: ${{ github.event.pull_request.base.sha }}
           GITHUB_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          GITHUB_HEAD_REF: ${{ github.head_ref }}
         run: |
           # Skip changeset check for automated version PRs
-          if [[ "${{ github.head_ref }}" == "changeset-release/"* ]]; then
+          if [[ "$GITHUB_HEAD_REF" == "changeset-release/"* ]]; then
             echo "Skipping changeset check for automated release PR"
             exit 0
           fi
@@ -227,7 +228,7 @@ jobs:
     # Use !cancelled() instead of always() so cancellation propagates correctly (hive-mind issue #1278)
     # Run if: push event, OR changeset-check succeeded, OR changeset-check was skipped (docs-only PR)
     # AND all fast checks passed (or were skipped for irrelevant changes)
-    if: !cancelled() && (github.event_name == 'push' || needs.changeset-check.result == 'success' || needs.changeset-check.result == 'skipped') && (needs.test-compilation.result == 'success' || needs.test-compilation.result == 'skipped') && (needs.lint.result == 'success' || needs.lint.result == 'skipped') && (needs.check-file-line-limits.result == 'success' || needs.check-file-line-limits.result == 'skipped')
+    if: ${{ !cancelled() && (github.event_name == 'push' || needs.changeset-check.result == 'success' || needs.changeset-check.result == 'skipped') && (needs.test-compilation.result == 'success' || needs.test-compilation.result == 'skipped') && (needs.lint.result == 'success' || needs.lint.result == 'skipped') && (needs.check-file-line-limits.result == 'success' || needs.check-file-line-limits.result == 'skipped') }}
     strategy:
       fail-fast: false
       matrix:
@@ -281,7 +282,7 @@ jobs:
 
       - name: Run tests (Deno)
         if: matrix.runtime == 'deno'
-        run: deno test --allow-read --allow-write --allow-env --allow-run tests
+        run: deno test --frozen-lockfile --allow-read --allow-write --allow-env --allow-run tests
 
   # === DOCUMENTATION VALIDATION ===
   # Validate documentation files when docs change (hive-mind principle #12)
@@ -335,7 +336,7 @@ jobs:
     timeout-minutes: 30
     # Use !cancelled() instead of always() so cancellation propagates correctly (hive-mind issue #1278)
     # This is needed because lint/test jobs have a transitive dependency on changeset-check
-    if: !cancelled() && github.ref == 'refs/heads/main' && github.event_name == 'push' && needs.lint.result == 'success' && needs.test.result == 'success'
+    if: ${{ !cancelled() && github.ref == 'refs/heads/main' && github.event_name == 'push' && needs.lint.result == 'success' && needs.test.result == 'success' }}
     runs-on: ubuntu-26.04
     # Permissions required for npm OIDC trusted publishing
     permissions: &publish-permissions
@@ -448,7 +449,7 @@ jobs:
     name: Optional Docker Hub Publish
     needs: [release, instant-release]
     timeout-minutes: 30
-    if: !cancelled() && ( (needs.release.result == 'success' && needs.release.outputs.published == 'true') || (needs.instant-release.result == 'success' && needs.instant-release.outputs.published == 'true') )
+    if: ${{ !cancelled() && ( (needs.release.result == 'success' && needs.release.outputs.published == 'true') || (needs.instant-release.result == 'success' && needs.instant-release.outputs.published == 'true') ) }}
     runs-on: ubuntu-26.04
     permissions:
       contents: read

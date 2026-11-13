@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - '.github/**'
+      - 'docs/case-studies/issue-1/data/templates/**/.github/**'
       - 'scripts/check-workflow-dependencies.php'
       - 'scripts/src/WorkflowDependencies.php'
       - 'tests/Pipeline/WorkflowDependenciesTest.php'
@@ -13,6 +14,7 @@ on:
     types: [opened, synchronize, reopened]
     paths:
       - '.github/**'
+      - 'docs/case-studies/issue-1/data/templates/**/.github/**'
       - 'scripts/check-workflow-dependencies.php'
       - 'scripts/src/WorkflowDependencies.php'
       - 'tests/Pipeline/WorkflowDependenciesTest.php'
@@ -84,6 +86,13 @@ jobs:
         uses: docker://rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667 # v1.7.12
         with:
           args: -color
+
+      - name: Lint captured template workflows
+        run: |
+          docker run --rm -v "$PWD:/work" -w /work \
+            rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667 \
+            -color -config-file /work/.github/actionlint.yaml \
+            docs/case-studies/issue-1/data/templates/{js,python,csharp,rust}/.github/workflows/*.yml
 
   zizmor:
     name: zizmor

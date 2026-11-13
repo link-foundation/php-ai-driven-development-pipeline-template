@@ -1,9 +1,21 @@
 import { readWorkflow, getJobBlock } from './workflow-helpers.js';
 import { describe, it, expect } from 'test-anywhere';
 import { readFileSync } from 'node:fs';
-import { parse } from 'yaml';
+import { parse, parseDocument } from 'yaml';
 
 describe('workflow reliability policy', () => {
+  it('keeps cancellation guards as valid YAML and GitHub expressions', () => {
+    const document = parseDocument(
+      readWorkflow('.github/workflows/release.yml')
+    );
+    expect(document.errors).toEqual([]);
+    expect(document.warnings).toEqual([]);
+    const jobs = document.toJS().jobs;
+    for (const job of ['test', 'release', 'docker-publish']) {
+      expect(jobs[job].if).toContain('${{ !cancelled()');
+    }
+  });
+
   it('cancels superseded non-main runs without cancelling main runs', () => {
     const workflowPaths = [
       '.github/workflows/example-app.yml',

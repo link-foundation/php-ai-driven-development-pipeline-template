@@ -32,7 +32,7 @@ phpdoc -d src,scripts/src -t build/docs
 | Stage | Script | What it does |
 | --- | --- | --- |
 | Change detection | `detect-code-changes.php` | classifies changed files to gate CI |
-| Lint | `composer lint` | PHP-CS-Fixer `@PSR12` + `@PHP81Migration` |
+| Lint | `composer lint` | PHP-CS-Fixer `@PSR12` + `@PHP85Migration` |
 | Static analysis | `composer analyse` | PHPStan level 8 |
 | File size | `check-file-size.php` | enforces the 1000-line limit |
 | Tests | `composer test` | PHPUnit across PHP 8.5 |

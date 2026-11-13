@@ -66,6 +66,7 @@
     "@changesets/cli": "^3.0.3",
     "@eslint/js": "^10.0.1",
     "@secretlint/secretlint-rule-preset-recommend": "^13.1.0",
+    "@stylistic/eslint-plugin": "^5.10.0",
     "browser-commander": "^0.34.1",
     "command-stream": "^2.6.0",
     "eslint": "^10.15.0",

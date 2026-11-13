@@ -3,6 +3,7 @@ import globals from 'globals';
 import { defineConfig } from 'eslint/config';
 import prettierConfig from 'eslint-config-prettier';
 import prettierPlugin from 'eslint-plugin-prettier';
+import stylistic from '@stylistic/eslint-plugin';
 
 export default defineConfig([
   js.configs.recommended,
@@ -11,6 +12,7 @@ export default defineConfig([
     files: ['**/*.js', '**/*.mjs', '**/*.cjs'],
     plugins: {
       prettier: prettierPlugin,
+      '@stylistic': stylistic,
     },
     languageOptions: {
       ecmaVersion: 'latest',
@@ -49,6 +51,7 @@ export default defineConfig([
       'require-await': 'warn',
 
       // Comments and documentation
+      '@stylistic/spaced-comment': ['error', 'always', { markers: ['/'] }],
 
       // Complexity rules - reasonable thresholds for maintainability
       complexity: ['warn', 15], // Cyclomatic complexity - allow more complex logic than strict 8

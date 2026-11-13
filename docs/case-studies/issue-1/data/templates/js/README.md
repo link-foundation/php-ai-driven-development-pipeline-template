@@ -40,7 +40,7 @@ bun test --timeout 30000
 
 # Or with other runtimes:
 npm test
-deno test --allow-read
+deno test --frozen-lockfile --allow-read --allow-write --allow-env --allow-run tests
 
 # Lint code
 bun run lint
