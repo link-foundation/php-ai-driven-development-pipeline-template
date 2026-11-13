@@ -1,0 +1,23 @@
+npm notice run @link-foundation/example-package-name@0.11.4 prepare
+npm notice run husky
+.git can't be foundnpm notice
+npm notice 📦  @link-foundation/example-package-name@0.11.4
+npm notice Tarball Contents
+npm notice 10.9kB CHANGELOG.md
+npm notice 1.2kB LICENSE
+npm notice 15.6kB README.md
+npm notice 1.9kB bin/example-package-name.js
+npm notice 2.8kB package.json
+npm notice 651B src/index.d.ts
+npm notice 694B src/index.js
+npm notice Tarball Details
+npm notice name: @link-foundation/example-package-name
+npm notice version: 0.11.4
+npm notice filename: link-foundation-example-package-name-0.11.4.tgz
+npm notice package size: 12.5 kB
+npm notice unpacked size: 33.8 kB
+npm notice shasum: 114efe9ce9aaa2b5aca108f2402e617665740706
+npm notice integrity: sha512-gR4DGXiFyQd/3[...]CEybtVNMlVH0Q==
+npm notice total files: 7
+npm notice
+link-foundation-example-package-name-0.11.4.tgz

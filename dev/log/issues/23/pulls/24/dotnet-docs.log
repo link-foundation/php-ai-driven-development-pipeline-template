@@ -1,0 +1,23 @@
+Loading project /tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/csharp/src/MyPackage/MyPackage.csproj
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+Processing MyPackage
+Creating output...
+Searching built-in plugins in directory /home/box/.nuget/packages/docfx/2.81.0/tools/net11.0/any/...
+Post processor ExtractSearchIndex loaded.
+No files are found with glob pattern images/**, excluding _site/**,obj/**, under directory "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/csharp/docs"
+7 plug-in(s) loaded.
+ExtractSearchIndex: UseMetadata = False, UseMetadataTitle = True
+Building 2 file(s) in ConceptualDocumentProcessor(BuildConceptualDocument=>ValidateConceptualDocumentMetadata)...
+Building 3 file(s) in TocDocumentProcessor(BuildTocDocument)...
+Building 3 file(s) in ManagedReferenceDocumentProcessor(BuildManagedReferenceDocument=>SplitClassPageToMemberLevel=>ValidateManagedReferenceDocumentMetadata=>ApplyOverwriteDocumentForMref=>FillReferenceInformation=>FillMetadata)...
+Applying templates to 8 model(s)...
+XRef map exported.
+Extracting index data from 5 html files
+
+
+Build succeeded.
+
+    0 warning(s)
+    0 error(s)
+

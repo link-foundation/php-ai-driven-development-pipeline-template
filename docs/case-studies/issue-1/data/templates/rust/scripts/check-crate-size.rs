@@ -20,7 +20,7 @@
 //!
 //! ```cargo
 //! [dependencies]
-//! regex = "1"
+//! regex = "1.13.1"
 //! ```
 
 #[cfg(not(test))]
@@ -30,7 +30,7 @@ use std::fs;
 use std::io::Write;
 use std::path::{Path, PathBuf};
 #[cfg(not(test))]
-use std::process::{exit, Command};
+use std::process::{Command, exit};
 
 #[cfg(not(test))]
 #[path = "rust-paths.rs"]
@@ -68,14 +68,13 @@ fn format_mib(size_bytes: u64) -> String {
 
 #[cfg(not(test))]
 fn set_output(key: &str, value: &str) {
-    if let Ok(output_file) = env::var("GITHUB_OUTPUT") {
-        if let Ok(mut file) = fs::OpenOptions::new()
+    if let Ok(output_file) = env::var("GITHUB_OUTPUT")
+        && let Ok(mut file) = fs::OpenOptions::new()
             .create(true)
             .append(true)
             .open(&output_file)
-        {
-            let _ = writeln!(file, "{key}={value}");
-        }
+    {
+        let _ = writeln!(file, "{key}={value}");
     }
     println!("Output: {key}={value}");
 }

@@ -31,13 +31,13 @@ permissions:
   contents: read
 
 env:
-  PHP_VERSION: '8.3'
+  PHP_VERSION: '8.5.12'
 
 jobs:
   # === DETECT CHANGES - determines which downstream jobs need to run ===
   detect-changes:
     name: Detect Changes
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 5
     if: github.event_name != 'workflow_dispatch'
     outputs:
@@ -71,7 +71,7 @@ jobs:
   # Independent of the changeset check so a fast quality gate always runs.
   lint:
     name: Lint and Static Analysis
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 20
     needs: [detect-changes]
     # always() && !cancelled() lets this evaluate even though detect-changes is
@@ -96,7 +96,7 @@ jobs:
         with:
           php-version: ${{ env.PHP_VERSION }}
           coverage: none
-          tools: composer:v2
+          tools: composer:2.11.2
 
       - name: Validate composer.json
         # --no-check-version: the version field is intentionally present and
@@ -143,8 +143,10 @@ jobs:
   # `needs.release-preflight.result == 'success'` rather than on greenness.
   release-preflight:
     name: Release Preflight
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 5
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v7.0.1
         with:
@@ -174,7 +176,7 @@ jobs:
   # === TEST ===
   test:
     name: Test (PHP ${{ matrix.php }})
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 30
     needs: [detect-changes]
     if: |
@@ -189,7 +191,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: ['8.1', '8.2', '8.3', '8.4']
+        php: ['8.5.12']
     steps:
       - uses: actions/checkout@v7.0.1
         with:
@@ -200,7 +202,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           coverage: xdebug
-          tools: composer:v2
+          tools: composer:2.11.2
 
       - name: Install dependencies
         uses: ramsey/composer-install@4.0.0
@@ -222,7 +224,7 @@ jobs:
   # Docs-only PRs are exempt (no changelog fragment required).
   changeset:
     name: Changeset Check
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 10
     needs: [detect-changes]
     if: github.event_name == 'pull_request' && needs.detect-changes.outputs.any-code-changed == 'true'
@@ -237,7 +239,7 @@ jobs:
         with:
           php-version: ${{ env.PHP_VERSION }}
           coverage: none
-          tools: composer:v2
+          tools: composer:2.11.2
 
       - name: Install dependencies
         uses: ramsey/composer-install@4.0.0
@@ -263,7 +265,7 @@ jobs:
   # succeeded or were skipped (docs-only PR).
   build:
     name: Build
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 20
     needs: [detect-changes, lint, test]
     if: |
@@ -285,7 +287,7 @@ jobs:
         with:
           php-version: ${{ env.PHP_VERSION }}
           coverage: none
-          tools: composer:v2
+          tools: composer:2.11.2
 
       - name: Validate composer.json
         # --no-check-version: the version field is intentionally present and
@@ -317,7 +319,7 @@ jobs:
       always() && !cancelled() &&
       github.event_name == 'push' && github.ref == 'refs/heads/main' &&
       needs.release-preflight.result == 'success'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 30
     permissions:
       contents: write
@@ -338,7 +340,7 @@ jobs:
         with:
           php-version: ${{ env.PHP_VERSION }}
           coverage: none
-          tools: composer:v2
+          tools: composer:2.11.2
 
       - name: Install dependencies
         uses: ramsey/composer-install@4.0.0
@@ -410,7 +412,7 @@ jobs:
       needs.test.result == 'success' &&
       needs.build.result == 'success' &&
       needs.release-preflight.result == 'success'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 30
     permissions:
       contents: write
@@ -431,7 +433,7 @@ jobs:
         with:
           php-version: ${{ env.PHP_VERSION }}
           coverage: none
-          tools: composer:v2
+          tools: composer:2.11.2
 
       - name: Install dependencies
         uses: ramsey/composer-install@4.0.0
@@ -493,7 +495,7 @@ jobs:
       - auto-release
       - manual-release
     if: always()
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v7.0.1

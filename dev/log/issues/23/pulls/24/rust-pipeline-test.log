@@ -1,0 +1,180 @@
+   Compiling cfg-if v1.0.5
+   Compiling libc v0.2.191
+   Compiling zeroize v1.9.1
+   Compiling memchr v2.8.3
+   Compiling rustls-pki-types v1.16.0
+   Compiling getrandom v0.2.17
+   Compiling itoa v1.0.19
+   Compiling untrusted v0.9.0
+   Compiling ring v0.17.14
+   Compiling serde_core v1.0.229
+   Compiling adler2 v2.0.1
+   Compiling bytes v1.12.1
+   Compiling simd-adler32 v0.3.10
+   Compiling log v0.4.35
+   Compiling miniz_oxide v0.9.1
+   Compiling http v1.5.0
+   Compiling crc32fast v1.5.5
+   Compiling httparse v1.10.1
+   Compiling zmij v1.0.23
+   Compiling rustls-webpki v0.103.17
+   Compiling aho-corasick v1.1.5
+   Compiling subtle v2.6.1
+   Compiling regex-syntax v0.8.11
+   Compiling once_cell v1.21.4
+   Compiling base64 v0.23.1
+   Compiling ureq-proto v0.7.1
+   Compiling rustls v0.23.46
+   Compiling regex-automata v0.4.18
+   Compiling serde_json v1.0.154
+   Compiling num-traits v0.2.19
+   Compiling flate2 v1.1.11
+   Compiling serde v1.0.229
+   Compiling webpki-roots v1.0.12
+   Compiling percent-encoding v2.3.2
+   Compiling iana-time-zone v0.1.65
+   Compiling utf8-zero v0.8.1
+   Compiling same-file v1.0.6
+   Compiling walkdir v2.5.0
+   Compiling ureq v3.5.2
+   Compiling chrono v0.4.45
+   Compiling regex v1.13.1
+   Compiling captured-template-pipeline v0.0.0 (/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/rust/pipeline)
+    Finished `test` profile [unoptimized] target(s) in 1m 03s
+     Running unittests ../scripts/bump-version.rs (pipeline/target/debug/build/captured-template-pipeline/a8d22a7c13225fd2/out/bump_version-a8d22a7c13225fd2)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests ../scripts/check-changelog-fragment.rs (pipeline/target/debug/build/captured-template-pipeline/b7f75b56357540a3/out/check_changelog_fragment-b7f75b56357540a3)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests ../scripts/check-crate-size.rs (pipeline/target/debug/build/captured-template-pipeline/7aac0fe907cd3cd7/out/check_crate_size-7aac0fe907cd3cd7)
+
+running 6 tests
+test tests::format_mib_is_human_readable ... ok
+test tests::blocks_above_hard_limit ... ok
+test tests::limit_matches_crates_io_documented_bytes ... ok
+test tests::warns_before_blocking ... ok
+test tests::find_crate_archive_locates_generated_archive ... ok
+test tests::find_crate_archive_returns_none_when_missing ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests ../scripts/check-file-size.rs (pipeline/target/debug/build/captured-template-pipeline/3745f1e57bc0982d/out/check_file_size-3745f1e57bc0982d)
+
+running 4 tests
+test tests::classifies_warning_band_without_blocking ... ok
+test tests::warning_annotation_uses_github_actions_format ... ok
+test tests::classifies_hard_limit_violations ... ok
+test tests::check_directory_reports_warning_and_violation_separately ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests ../scripts/check-release-needed.rs (pipeline/target/debug/build/captured-template-pipeline/c96a8edfd48a47a8/out/check_release_needed-c96a8edfd48a47a8)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests ../scripts/check-version-modification.rs (pipeline/target/debug/build/captured-template-pipeline/1082fbfa7dd951b1/out/check_version_modification-1082fbfa7dd951b1)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests ../scripts/collect-changelog.rs (pipeline/target/debug/build/captured-template-pipeline/9dc2e76089a5874d/out/collect_changelog-9dc2e76089a5874d)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests ../scripts/create-changelog-fragment.rs (pipeline/target/debug/build/captured-template-pipeline/3df972a50ad1c299/out/create_changelog_fragment-3df972a50ad1c299)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests ../scripts/create-github-release.rs (pipeline/target/debug/build/captured-template-pipeline/a1b831a5085c7da2/out/create_github_release-a1b831a5085c7da2)
+
+running 11 tests
+test tests::mixed_validation_failure_is_not_existing_release ... ok
+test tests::docker_hub_badge_escapes_build_metadata ... ok
+test tests::duplicate_release_validation_is_idempotent ... ok
+test tests::generic_validation_failure_is_not_existing_release ... ok
+test tests::docker_hub_badge_links_to_exact_tag ... ok
+test tests::release_title_defaults_empty_language_to_rust ... ok
+test tests::oversized_release_notes_are_capped_with_full_changelog_link ... ok
+test tests::release_payload_keeps_tag_prefix_out_of_release_name ... ok
+test tests::release_tag_uses_prefix_with_normalized_semver ... ok
+test tests::release_title_uses_language_and_bare_semver ... ok
+test tests::release_label_remains_optional_suffix ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running unittests ../scripts/detect-code-changes.rs (pipeline/target/debug/build/captured-template-pipeline/a7d903fe95510dd0/out/detect_code_changes-a7d903fe95510dd0)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests ../scripts/get-bump-type.rs (pipeline/target/debug/build/captured-template-pipeline/af5c4ce2b26a5420/out/get_bump_type-af5c4ce2b26a5420)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests ../scripts/get-version.rs (pipeline/target/debug/build/captured-template-pipeline/9d376c39e1e2feaf/out/get_version-9d376c39e1e2feaf)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests ../scripts/git-config.rs (pipeline/target/debug/build/captured-template-pipeline/6600191d19eb34d3/out/git_config-6600191d19eb34d3)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests ../scripts/publish-crate.rs (pipeline/target/debug/build/captured-template-pipeline/948dfaf1faf03f54/out/publish_crate-948dfaf1faf03f54)
+
+running 7 tests
+test tests::classifies_rate_limit_from_too_many_versions_marker ... ok
+test tests::classifies_already_exists_response ... ok
+test tests::classifies_rate_limit_response ... ok
+test tests::classifies_auth_failure_response ... ok
+test tests::only_rate_limit_is_deferred ... ok
+test tests::classifies_unknown_response ... ok
+test tests::rate_limit_takes_precedence_over_auth_markers ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests ../scripts/rust-paths.rs (pipeline/target/debug/build/captured-template-pipeline/50f72f1bbf99b090/out/rust_paths-50f72f1bbf99b090)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests ../scripts/version-and-commit.rs (pipeline/target/debug/build/captured-template-pipeline/7d7ae6b8b9967529/out/version_and_commit-7d7ae6b8b9967529)
+
+running 5 tests
+test tests::cargo_lock_update_returns_false_when_lock_file_is_absent ... ok
+test tests::cargo_lock_update_returns_false_when_package_entry_is_absent ... ok
+test tests::cargo_lock_update_is_idempotent_when_version_already_matches ... ok
+test tests::cargo_lock_update_scopes_to_named_package_entry ... ok
+test tests::changelog_collection_removes_consumed_fragments_and_keeps_readme ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests ../scripts/wait-for-crate.rs (pipeline/target/debug/build/captured-template-pipeline/2892e7ba16959012/out/wait_for_crate-2892e7ba16959012)
+
+running 2 tests
+test tests::skips_template_default_package_name ... ok
+test tests::waits_for_real_package_names ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

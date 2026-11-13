@@ -1,0 +1,15 @@
+scripts/bump_version.py:77:13: DTZ005 `datetime.datetime.now()` called without a `tz` argument
+scripts/create_github_release.py:135:5: PLR0917 Too many positional arguments (6 > 5)
+scripts/create_manual_changeset.py:131:17: DTZ005 `datetime.datetime.now()` called without a `tz` argument
+scripts/detect_code_changes.py:65:14: PTH123 `open()` should be replaced by `Path.open()`
+scripts/detect_code_changes.py:128:5: SIM110 Use `return any(file_path.startswith(folder) for folder in excluded_folders)` instead of `for` loop
+scripts/detect_code_changes.py:183:5: PLC0415 `import` should be at the top-level of a file
+scripts/format_release_notes.py:32:13: RUF005 Consider `["gh", *args]` instead of concatenation
+scripts/format_release_notes.py:151:14: PTH123 `open()` should be replaced by `Path.open()`
+scripts/validate_changeset.py:80:5: PLR0915 Too many statements (53 > 50)
+scripts/version_and_commit.py:64:14: PTH123 `open()` should be replaced by `Path.open()`
+src/my_package/__init__.py:45:5: PLC0415 `import` should be at the top-level of a file
+tests/test_create_github_release.py:16:1: PT018 Assertion should be broken down into multiple parts
+tests/test_my_package.py:59:9: PLC0415 `import` should be at the top-level of a file
+Found 13 errors.
+3 unsafe fixes available with `--fix --unsafe-fixes`.

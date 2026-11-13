@@ -21,13 +21,14 @@ Thank you for your interest in contributing! This document provides guidelines a
 3. **Install dependencies**
 
    ```bash
-   pip install -e ".[dev]"
+   pip install -r requirements.lock
+   pip install --no-deps --no-build-isolation -e .
    ```
 
 4. **Install pre-commit hooks**
 
    ```bash
-   pip install pre-commit
+   pip install pre-commit==4.7.0
    pre-commit install
    ```
 
@@ -78,7 +79,8 @@ Thank you for your interest in contributing! This document provides guidelines a
    make sure Sphinx still renders without warnings:
 
    ```bash
-   pip install -e ".[docs]"
+   pip install -r requirements.lock
+   pip install --no-deps --no-build-isolation -e .
    sphinx-build -W --keep-going -b html docs _site
    ```
 
@@ -201,7 +203,8 @@ This project uses [Scriv](https://scriv.readthedocs.io/) for changelog managemen
 
 ```bash
 # Install scriv (included in dev dependencies)
-pip install -e ".[dev]"
+pip install -r requirements.lock
+   pip install --no-deps --no-build-isolation -e .
 
 # Create a new fragment
 scriv create

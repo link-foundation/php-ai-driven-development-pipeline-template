@@ -1,0 +1,212 @@
+DEBUG Searching for user configuration in: /home/box/.config/uv/uv.toml
+DEBUG uv 0.13.8 (x86_64-unknown-linux-gnu)
+DEBUG Starting Python discovery for Python 3.15
+DEBUG Looking for Python 3.15
+DEBUG Searching for Python 3.15 in virtual environments, managed installations, or search path
+DEBUG Searching for managed installations at `/home/box/.local/share/uv/python`
+DEBUG Found managed installation `cpython-3.15.2-linux-x86_64-gnu`
+DEBUG Found `cpython-3.15.2-linux-x86_64-gnu` at `/home/box/.local/share/uv/python/cpython-3.15-linux-x86_64-gnu/bin/python3.15` (managed installations)
+DEBUG Using Python 3.15.2 interpreter at `/home/box/.local/share/uv/python/cpython-3.15-linux-x86_64-gnu/bin/python3.15` for builds
+DEBUG Using request connect timeout of 10s and read timeout of 30s
+DEBUG Solving with installed Python version: 3.15.2
+DEBUG Solving with target Python version: >=3.15
+DEBUG Adding direct dependency: scriv>=1.8.1, <1.8.1+
+DEBUG Adding direct dependency: click>=8.5.1, <8.5.1+
+DEBUG Adding direct dependency: markdown-it-py>=4.3.0, <4.3.0+
+INFO add_decision: Id::<PubGrubPackage>(0) @ 0a0.dev0 without checking dependencies    
+DEBUG Found stale response for: https://pypi.org/simple/click/
+DEBUG Found stale response for: https://pypi.org/simple/markdown-it-py/
+DEBUG Found stale response for: https://pypi.org/simple/scriv/
+DEBUG Sending revalidation request for: https://pypi.org/simple/click/
+DEBUG starting new connection 'Some("pypi.org")'    
+DEBUG Sending revalidation request for: https://pypi.org/simple/markdown-it-py/
+DEBUG starting new connection 'Some("pypi.org")'    
+DEBUG Sending revalidation request for: https://pypi.org/simple/scriv/
+DEBUG starting new connection 'Some("pypi.org")'    
+DEBUG connecting to 151.101.128.223:443
+DEBUG connecting to 151.101.0.223:443
+DEBUG connected to 151.101.0.223:443
+DEBUG No cached session for DnsName("pypi.org")    
+DEBUG Not resuming any session    
+DEBUG connecting to 151.101.64.223:443
+DEBUG connected to 151.101.128.223:443
+DEBUG No cached session for DnsName("pypi.org")    
+DEBUG Not resuming any session    
+DEBUG Using ciphersuite TLS13_AES_128_GCM_SHA256    
+DEBUG Not resuming    
+DEBUG TLS1.3 encrypted extensions: ServerExtensions { server_name_ack: (), selected_protocol: SingleProtocolName(ProtocolName(6832)), unknown_extensions: {}, .. }    
+DEBUG ALPN protocol is Some(b"h2")    
+DEBUG binding client connection
+DEBUG client connection bound
+DEBUG send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG pooling idle connection for ("https", pypi.org)
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=WindowUpdate { stream_id: StreamId(0), size_increment: 5177345 }
+DEBUG send frame=Headers { stream_id: StreamId(1), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(3), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(5), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Settings { flags: (0x0), header_table_size: 8192, max_concurrent_streams: 100 }
+DEBUG send frame=Settings { flags: (0x1: ACK) }
+DEBUG received frame=WindowUpdate { stream_id: StreamId(0), size_increment: 16711681 }
+DEBUG Using ciphersuite TLS13_AES_128_GCM_SHA256    
+DEBUG Not resuming    
+DEBUG TLS1.3 encrypted extensions: ServerExtensions { server_name_ack: (), selected_protocol: SingleProtocolName(ProtocolName(6832)), unknown_extensions: {}, .. }    
+DEBUG ALPN protocol is Some(b"h2")    
+DEBUG binding client connection
+DEBUG client connection bound
+DEBUG send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG send frame=WindowUpdate { stream_id: StreamId(0), size_increment: 5177345 }
+DEBUG send frame=GoAway { error_code: NO_ERROR, last_stream_id: StreamId(0) }
+DEBUG Connection::poll; connection error error=GoAway(b"", NO_ERROR, Library)
+DEBUG Sending warning alert CloseNotify    
+DEBUG received frame=Settings { flags: (0x1: ACK) }
+DEBUG received settings ACK; applying Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG connected to 151.101.64.223:443
+DEBUG Resuming session    
+DEBUG received frame=Headers { stream_id: StreamId(1), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(3), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/markdown-it-py/
+DEBUG Found not-modified response for: https://pypi.org/simple/click/
+DEBUG No cache entry for: https://files.pythonhosted.org/packages/c9/31/5f0ac2f1a1c67423c995c731a11cd4ad05d081a2be969d74f868bdb9cc70/markdown_it_py-4.3.0-py3-none-any.whl.metadata
+DEBUG Sending fresh GET request for: https://files.pythonhosted.org/packages/c9/31/5f0ac2f1a1c67423c995c731a11cd4ad05d081a2be969d74f868bdb9cc70/markdown_it_py-4.3.0-py3-none-any.whl.metadata
+DEBUG starting new connection 'Some("files.pythonhosted.org")'    
+DEBUG No cache entry for: https://files.pythonhosted.org/packages/31/7d/164b7ffc8624fe9efb4221bf9af485d5c1e41b9ae118045d2b6dc5457d8b/click-8.5.1-py3-none-any.whl.metadata
+DEBUG Sending fresh GET request for: https://files.pythonhosted.org/packages/31/7d/164b7ffc8624fe9efb4221bf9af485d5c1e41b9ae118045d2b6dc5457d8b/click-8.5.1-py3-none-any.whl.metadata
+DEBUG starting new connection 'Some("files.pythonhosted.org")'    
+DEBUG connecting to 151.101.0.223:443
+DEBUG connecting to 151.101.0.223:443
+DEBUG Using ciphersuite TLS13_AES_128_GCM_SHA256    
+DEBUG Resuming using PSK    
+DEBUG TLS1.3 encrypted extensions: ServerExtensions { server_name_ack: (), selected_protocol: SingleProtocolName(ProtocolName(6832)), unknown_extensions: {}, .. }    
+DEBUG ALPN protocol is Some(b"h2")    
+DEBUG binding client connection
+DEBUG client connection bound
+DEBUG send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG send frame=WindowUpdate { stream_id: StreamId(0), size_increment: 5177345 }
+DEBUG send frame=GoAway { error_code: NO_ERROR, last_stream_id: StreamId(0) }
+DEBUG Connection::poll; connection error error=GoAway(b"", NO_ERROR, Library)
+DEBUG Sending warning alert CloseNotify    
+DEBUG connected to 151.101.0.223:443
+DEBUG No cached session for DnsName("files.pythonhosted.org")    
+DEBUG Not resuming any session    
+DEBUG connected to 151.101.0.223:443
+DEBUG No cached session for DnsName("files.pythonhosted.org")    
+DEBUG Not resuming any session    
+DEBUG Using ciphersuite TLS13_AES_128_GCM_SHA256    
+DEBUG Not resuming    
+DEBUG TLS1.3 encrypted extensions: ServerExtensions { server_name_ack: (), selected_protocol: SingleProtocolName(ProtocolName(6832)), unknown_extensions: {}, .. }    
+DEBUG ALPN protocol is Some(b"h2")    
+DEBUG binding client connection
+DEBUG client connection bound
+DEBUG send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG pooling idle connection for ("https", files.pythonhosted.org)
+DEBUG reuse idle connection for ("https", files.pythonhosted.org)
+DEBUG send frame=WindowUpdate { stream_id: StreamId(0), size_increment: 5177345 }
+DEBUG send frame=Headers { stream_id: StreamId(1), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(3), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Using ciphersuite TLS13_AES_128_GCM_SHA256    
+DEBUG Not resuming    
+DEBUG TLS1.3 encrypted extensions: ServerExtensions { server_name_ack: (), selected_protocol: SingleProtocolName(ProtocolName(6832)), unknown_extensions: {}, .. }    
+DEBUG ALPN protocol is Some(b"h2")    
+DEBUG binding client connection
+DEBUG client connection bound
+DEBUG send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG send frame=WindowUpdate { stream_id: StreamId(0), size_increment: 5177345 }
+DEBUG send frame=GoAway { error_code: NO_ERROR, last_stream_id: StreamId(0) }
+DEBUG Connection::poll; connection error error=GoAway(b"", NO_ERROR, Library)
+DEBUG Sending warning alert CloseNotify    
+DEBUG received frame=Settings { flags: (0x0), header_table_size: 8192, max_concurrent_streams: 100 }
+DEBUG send frame=Settings { flags: (0x1: ACK) }
+DEBUG received frame=WindowUpdate { stream_id: StreamId(0), size_increment: 16711681 }
+DEBUG received frame=Settings { flags: (0x1: ACK) }
+DEBUG received settings ACK; applying Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG received frame=Headers { stream_id: StreamId(3), flags: (0x4: END_HEADERS) }
+DEBUG received frame=Data { stream_id: StreamId(3), flags: (0x1: END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(1), flags: (0x4: END_HEADERS) }
+DEBUG received frame=Data { stream_id: StreamId(1), flags: (0x1: END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(5), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/scriv/
+DEBUG Searching for a compatible version of scriv (>=1.8.1, <1.8.1+)
+DEBUG Selecting: scriv==1.8.1 [compatible] (scriv-1.8.1-py3-none-any.whl)
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/4b/5c/b9809467770d4fd83bed6f6735d15408ec4235c8d3b8ef2c45bbe1534203/scriv-1.8.1-py3-none-any.whl.metadata
+DEBUG Adding transitive dependency for scriv==1.8.1: attrs>=26.1.0, <26.1.0+
+DEBUG Adding transitive dependency for scriv==1.8.1: certifi>=2026.10.23, <2026.10.23+
+DEBUG Adding transitive dependency for scriv==1.8.1: charset-normalizer>=3.5.2, <3.5.2+
+DEBUG Adding transitive dependency for scriv==1.8.1: click>=8.5.0, <8.5.0+
+DEBUG Adding transitive dependency for scriv==1.8.1: click-log>=0.4.0, <0.4.0+
+DEBUG Adding transitive dependency for scriv==1.8.1: idna>=3.20, <3.20+
+DEBUG Adding transitive dependency for scriv==1.8.1: jinja2>=3.1.6, <3.1.6+
+DEBUG Adding transitive dependency for scriv==1.8.1: markdown-it-py>=4.2.0, <4.2.0+
+DEBUG Adding transitive dependency for scriv==1.8.1: markupsafe>=3.0.4, <3.0.4+
+DEBUG Adding transitive dependency for scriv==1.8.1: mdurl>=0.1.2, <0.1.2+
+DEBUG Adding transitive dependency for scriv==1.8.1: requests>=2.34.2, <2.34.2+
+DEBUG Adding transitive dependency for scriv==1.8.1: urllib3>=2.8.0, <2.8.0+
+INFO add_decision: Id::<PubGrubPackage>(1) @ 1.8.1 without checking dependencies    
+INFO Start conflict resolution because incompat satisfied:
+   scriv >1.8.0 depends on markdown-it-py >=4.2.0, <4.2.0+    
+INFO prior cause: root ==0a0.dev0 depends on markdown-it-py >=4.2.0, <4.2.0+    
+INFO prior cause: root ==0a0.dev0 is forbidden    
+DEBUG Found stale response for: https://pypi.org/simple/attrs/
+DEBUG Sending revalidation request for: https://pypi.org/simple/attrs/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(7), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/certifi/
+DEBUG Sending revalidation request for: https://pypi.org/simple/certifi/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(9), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/click-log/
+DEBUG Found stale response for: https://pypi.org/simple/idna/
+DEBUG Sending revalidation request for: https://pypi.org/simple/click-log/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/idna/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(11), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(13), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/mdurl/
+DEBUG Sending revalidation request for: https://pypi.org/simple/mdurl/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(15), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/jinja2/
+DEBUG Sending revalidation request for: https://pypi.org/simple/jinja2/
+DEBUG Found stale response for: https://pypi.org/simple/requests/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/requests/
+DEBUG Found stale response for: https://pypi.org/simple/urllib3/
+DEBUG Found stale response for: https://pypi.org/simple/charset-normalizer/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/urllib3/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/charset-normalizer/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(17), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(19), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(21), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(23), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/markupsafe/
+DEBUG received frame=Headers { stream_id: StreamId(7), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(9), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(13), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(15), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(11), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Sending revalidation request for: https://pypi.org/simple/markupsafe/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Found not-modified response for: https://pypi.org/simple/attrs/
+DEBUG Found not-modified response for: https://pypi.org/simple/certifi/
+DEBUG Found not-modified response for: https://pypi.org/simple/idna/
+DEBUG Found not-modified response for: https://pypi.org/simple/mdurl/
+DEBUG Found not-modified response for: https://pypi.org/simple/click-log/
+DEBUG send frame=Headers { stream_id: StreamId(25), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(19), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/requests/
+DEBUG received frame=Headers { stream_id: StreamId(21), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(23), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/urllib3/
+DEBUG Found not-modified response for: https://pypi.org/simple/charset-normalizer/
+DEBUG received frame=Headers { stream_id: StreamId(17), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/jinja2/
+DEBUG received frame=Headers { stream_id: StreamId(25), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/markupsafe/
+error: No solution found when resolving dependencies
+  cause: Because scriv>=1.8.1 depends on markdown-it-py==4.2.0 and you require scriv==1.8.1, we can conclude that you require markdown-it-py==4.2.0.
+         And because you require markdown-it-py==4.3.0, we can conclude that your requirements are unsatisfiable.

@@ -1,0 +1,1709 @@
+DEBUG Found workspace root: /tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/python
+DEBUG Adding root workspace member: /tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/python
+DEBUG Skipping `pyproject.toml` in `/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/python` (no `[tool.uv]` section)
+DEBUG Searching for user configuration in: /home/box/.config/uv/uv.toml
+DEBUG uv 0.13.8 (x86_64-unknown-linux-gnu)
+DEBUG Checking for Python interpreter at path `.venv/bin/python`
+DEBUG Using Python 3.15.2 interpreter at `.venv/bin/python` for builds
+DEBUG Using request connect timeout of 10s and read timeout of 30s
+DEBUG Found static `requires-dist` for: /tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/python
+DEBUG Solving with installed Python version: 3.15.2
+DEBUG Solving with target Python version: >=3.15.2
+DEBUG Adding direct dependency: ruff>=0.17.5
+DEBUG Adding direct dependency: mypy>=2.4.1
+DEBUG Adding direct dependency: pytest>=9.2.0
+DEBUG Adding direct dependency: pytest-asyncio>=1.5.0
+DEBUG Adding direct dependency: pytest-cov>=7.1.0
+DEBUG Adding direct dependency: pre-commit>=4.7.0
+DEBUG Adding direct dependency: scriv[toml]>=1.8.1
+DEBUG Adding direct dependency: build>=1.6.1
+DEBUG Adding direct dependency: twine>=7.0.0
+DEBUG Adding direct dependency: pip-audit>=2.10.1
+DEBUG Adding direct dependency: hatchling>=1.33.0
+DEBUG Adding direct dependency: sphinx>=9.2.0
+DEBUG Adding direct dependency: furo>=2025.12.19
+DEBUG Adding direct dependency: myst-parser>=5.2.0
+INFO add_decision: Id::<PubGrubPackage>(0) @ 0a0.dev0 without checking dependencies    
+DEBUG Found stale response for: https://pypi.org/simple/pytest-asyncio/
+DEBUG Found stale response for: https://pypi.org/simple/pytest/
+DEBUG Sending revalidation request for: https://pypi.org/simple/pytest-asyncio/
+DEBUG Found stale response for: https://pypi.org/simple/pytest-cov/
+DEBUG Found stale response for: https://pypi.org/simple/pre-commit/
+DEBUG Found stale response for: https://pypi.org/simple/mypy/
+DEBUG Found stale response for: https://pypi.org/simple/scriv/
+DEBUG Found stale response for: https://pypi.org/simple/build/
+DEBUG Found stale response for: https://pypi.org/simple/twine/
+DEBUG Found stale response for: https://pypi.org/simple/pip-audit/
+DEBUG Found stale response for: https://pypi.org/simple/hatchling/
+DEBUG Found stale response for: https://pypi.org/simple/myst-parser/
+DEBUG Found stale response for: https://pypi.org/simple/furo/
+DEBUG Found stale response for: https://pypi.org/simple/sphinx/
+DEBUG starting new connection 'Some("pypi.org")'    
+DEBUG Sending revalidation request for: https://pypi.org/simple/pytest/
+DEBUG starting new connection 'Some("pypi.org")'    
+DEBUG Found stale response for: https://pypi.org/simple/ruff/
+DEBUG Sending revalidation request for: https://pypi.org/simple/pytest-cov/
+DEBUG starting new connection 'Some("pypi.org")'    
+DEBUG Sending revalidation request for: https://pypi.org/simple/pre-commit/
+DEBUG starting new connection 'Some("pypi.org")'    
+DEBUG Sending revalidation request for: https://pypi.org/simple/mypy/
+DEBUG starting new connection 'Some("pypi.org")'    
+DEBUG Sending revalidation request for: https://pypi.org/simple/scriv/
+DEBUG starting new connection 'Some("pypi.org")'    
+DEBUG Sending revalidation request for: https://pypi.org/simple/build/
+DEBUG starting new connection 'Some("pypi.org")'    
+DEBUG Sending revalidation request for: https://pypi.org/simple/twine/
+DEBUG starting new connection 'Some("pypi.org")'    
+DEBUG Sending revalidation request for: https://pypi.org/simple/pip-audit/
+DEBUG starting new connection 'Some("pypi.org")'    
+DEBUG Sending revalidation request for: https://pypi.org/simple/hatchling/
+DEBUG starting new connection 'Some("pypi.org")'    
+DEBUG Sending revalidation request for: https://pypi.org/simple/myst-parser/
+DEBUG starting new connection 'Some("pypi.org")'    
+DEBUG Sending revalidation request for: https://pypi.org/simple/furo/
+DEBUG starting new connection 'Some("pypi.org")'    
+DEBUG Sending revalidation request for: https://pypi.org/simple/sphinx/
+DEBUG starting new connection 'Some("pypi.org")'    
+DEBUG Sending revalidation request for: https://pypi.org/simple/ruff/
+DEBUG starting new connection 'Some("pypi.org")'    
+DEBUG connecting to 151.101.64.223:443
+DEBUG connecting to 151.101.128.223:443
+DEBUG connecting to 151.101.64.223:443
+DEBUG connecting to 151.101.64.223:443
+DEBUG connecting to 151.101.64.223:443
+DEBUG connecting to 151.101.128.223:443
+DEBUG connecting to 151.101.128.223:443
+DEBUG connecting to 151.101.64.223:443
+DEBUG connecting to 151.101.128.223:443
+DEBUG connecting to 151.101.128.223:443
+DEBUG connecting to 151.101.64.223:443
+DEBUG connecting to 151.101.128.223:443
+DEBUG connecting to 151.101.128.223:443
+DEBUG connecting to 151.101.64.223:443
+DEBUG connected to 151.101.128.223:443
+DEBUG No cached session for DnsName("pypi.org")    
+DEBUG Not resuming any session    
+DEBUG connected to 151.101.64.223:443
+DEBUG No cached session for DnsName("pypi.org")    
+DEBUG Not resuming any session    
+DEBUG connected to 151.101.64.223:443
+DEBUG No cached session for DnsName("pypi.org")    
+DEBUG Not resuming any session    
+DEBUG connected to 151.101.64.223:443
+DEBUG No cached session for DnsName("pypi.org")    
+DEBUG Not resuming any session    
+DEBUG connected to 151.101.128.223:443
+DEBUG No cached session for DnsName("pypi.org")    
+DEBUG Not resuming any session    
+DEBUG connected to 151.101.64.223:443
+DEBUG No cached session for DnsName("pypi.org")    
+DEBUG Not resuming any session    
+DEBUG connected to 151.101.128.223:443
+DEBUG No cached session for DnsName("pypi.org")    
+DEBUG Not resuming any session    
+DEBUG connected to 151.101.128.223:443
+DEBUG No cached session for DnsName("pypi.org")    
+DEBUG Not resuming any session    
+DEBUG connected to 151.101.128.223:443
+DEBUG No cached session for DnsName("pypi.org")    
+DEBUG Not resuming any session    
+DEBUG connected to 151.101.64.223:443
+DEBUG No cached session for DnsName("pypi.org")    
+DEBUG Not resuming any session    
+DEBUG connected to 151.101.128.223:443
+DEBUG No cached session for DnsName("pypi.org")    
+DEBUG Not resuming any session    
+DEBUG connected to 151.101.128.223:443
+DEBUG No cached session for DnsName("pypi.org")    
+DEBUG Not resuming any session    
+DEBUG connected to 151.101.64.223:443
+DEBUG No cached session for DnsName("pypi.org")    
+DEBUG Not resuming any session    
+DEBUG connected to 151.101.64.223:443
+DEBUG No cached session for DnsName("pypi.org")    
+DEBUG Not resuming any session    
+DEBUG Using ciphersuite TLS13_AES_128_GCM_SHA256    
+DEBUG Not resuming    
+DEBUG TLS1.3 encrypted extensions: ServerExtensions { server_name_ack: (), selected_protocol: SingleProtocolName(ProtocolName(6832)), unknown_extensions: {}, .. }    
+DEBUG ALPN protocol is Some(b"h2")    
+DEBUG binding client connection
+DEBUG client connection bound
+DEBUG send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG pooling idle connection for ("https", pypi.org)
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=WindowUpdate { stream_id: StreamId(0), size_increment: 5177345 }
+DEBUG send frame=Headers { stream_id: StreamId(1), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(3), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(5), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(7), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(9), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(11), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(13), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(15), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(17), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(19), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(21), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(23), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(25), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(27), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Using ciphersuite TLS13_AES_128_GCM_SHA256    
+DEBUG Not resuming    
+DEBUG TLS1.3 encrypted extensions: ServerExtensions { server_name_ack: (), selected_protocol: SingleProtocolName(ProtocolName(6832)), unknown_extensions: {}, .. }    
+DEBUG ALPN protocol is Some(b"h2")    
+DEBUG binding client connection
+DEBUG client connection bound
+DEBUG send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG send frame=WindowUpdate { stream_id: StreamId(0), size_increment: 5177345 }
+DEBUG send frame=GoAway { error_code: NO_ERROR, last_stream_id: StreamId(0) }
+DEBUG Connection::poll; connection error error=GoAway(b"", NO_ERROR, Library)
+DEBUG Sending warning alert CloseNotify    
+DEBUG received frame=Settings { flags: (0x0), header_table_size: 8192, max_concurrent_streams: 100 }
+DEBUG send frame=Settings { flags: (0x1: ACK) }
+DEBUG received frame=WindowUpdate { stream_id: StreamId(0), size_increment: 16711681 }
+DEBUG Using ciphersuite TLS13_AES_128_GCM_SHA256    
+DEBUG Not resuming    
+DEBUG TLS1.3 encrypted extensions: ServerExtensions { server_name_ack: (), selected_protocol: SingleProtocolName(ProtocolName(6832)), unknown_extensions: {}, .. }    
+DEBUG ALPN protocol is Some(b"h2")    
+DEBUG binding client connection
+DEBUG client connection bound
+DEBUG send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG send frame=WindowUpdate { stream_id: StreamId(0), size_increment: 5177345 }
+DEBUG send frame=GoAway { error_code: NO_ERROR, last_stream_id: StreamId(0) }
+DEBUG Connection::poll; connection error error=GoAway(b"", NO_ERROR, Library)
+DEBUG Sending warning alert CloseNotify    
+DEBUG Using ciphersuite TLS13_AES_128_GCM_SHA256    
+DEBUG Not resuming    
+DEBUG TLS1.3 encrypted extensions: ServerExtensions { server_name_ack: (), selected_protocol: SingleProtocolName(ProtocolName(6832)), unknown_extensions: {}, .. }    
+DEBUG ALPN protocol is Some(b"h2")    
+DEBUG binding client connection
+DEBUG client connection bound
+DEBUG send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG send frame=WindowUpdate { stream_id: StreamId(0), size_increment: 5177345 }
+DEBUG send frame=GoAway { error_code: NO_ERROR, last_stream_id: StreamId(0) }
+DEBUG Connection::poll; connection error error=GoAway(b"", NO_ERROR, Library)
+DEBUG Sending warning alert CloseNotify    
+DEBUG Using ciphersuite TLS13_AES_128_GCM_SHA256    
+DEBUG Not resuming    
+DEBUG TLS1.3 encrypted extensions: ServerExtensions { server_name_ack: (), selected_protocol: SingleProtocolName(ProtocolName(6832)), unknown_extensions: {}, .. }    
+DEBUG ALPN protocol is Some(b"h2")    
+DEBUG binding client connection
+DEBUG client connection bound
+DEBUG send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG send frame=WindowUpdate { stream_id: StreamId(0), size_increment: 5177345 }
+DEBUG send frame=GoAway { error_code: NO_ERROR, last_stream_id: StreamId(0) }
+DEBUG Connection::poll; connection error error=GoAway(b"", NO_ERROR, Library)
+DEBUG Sending warning alert CloseNotify    
+DEBUG Using ciphersuite TLS13_AES_128_GCM_SHA256    
+DEBUG Not resuming    
+DEBUG TLS1.3 encrypted extensions: ServerExtensions { server_name_ack: (), selected_protocol: SingleProtocolName(ProtocolName(6832)), unknown_extensions: {}, .. }    
+DEBUG ALPN protocol is Some(b"h2")    
+DEBUG binding client connection
+DEBUG client connection bound
+DEBUG send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG received frame=Settings { flags: (0x1: ACK) }
+DEBUG received settings ACK; applying Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG Using ciphersuite TLS13_AES_128_GCM_SHA256    
+DEBUG Not resuming    
+DEBUG TLS1.3 encrypted extensions: ServerExtensions { server_name_ack: (), selected_protocol: SingleProtocolName(ProtocolName(6832)), unknown_extensions: {}, .. }    
+DEBUG ALPN protocol is Some(b"h2")    
+DEBUG binding client connection
+DEBUG client connection bound
+DEBUG send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG send frame=WindowUpdate { stream_id: StreamId(0), size_increment: 5177345 }
+DEBUG send frame=WindowUpdate { stream_id: StreamId(0), size_increment: 5177345 }
+DEBUG send frame=GoAway { error_code: NO_ERROR, last_stream_id: StreamId(0) }
+DEBUG Connection::poll; connection error error=GoAway(b"", NO_ERROR, Library)
+DEBUG Sending warning alert CloseNotify    
+DEBUG send frame=GoAway { error_code: NO_ERROR, last_stream_id: StreamId(0) }
+DEBUG Connection::poll; connection error error=GoAway(b"", NO_ERROR, Library)
+DEBUG Sending warning alert CloseNotify    
+DEBUG received frame=Headers { stream_id: StreamId(25), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(21), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(15), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Using ciphersuite TLS13_AES_128_GCM_SHA256    
+DEBUG Not resuming    
+DEBUG TLS1.3 encrypted extensions: ServerExtensions { server_name_ack: (), selected_protocol: SingleProtocolName(ProtocolName(6832)), unknown_extensions: {}, .. }    
+DEBUG ALPN protocol is Some(b"h2")    
+DEBUG binding client connection
+DEBUG client connection bound
+DEBUG send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG send frame=WindowUpdate { stream_id: StreamId(0), size_increment: 5177345 }
+DEBUG send frame=GoAway { error_code: NO_ERROR, last_stream_id: StreamId(0) }
+DEBUG Connection::poll; connection error error=GoAway(b"", NO_ERROR, Library)
+DEBUG Sending warning alert CloseNotify    
+DEBUG Found not-modified response for: https://pypi.org/simple/sphinx/
+DEBUG Found not-modified response for: https://pypi.org/simple/hatchling/
+DEBUG Found not-modified response for: https://pypi.org/simple/build/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/c4/28/a0c50761cd215b7042f4bc617a6bc5c0cd7be62f75bc908e169e28a4d21e/sphinx-9.2.0-py3-none-any.whl.metadata
+DEBUG Using ciphersuite TLS13_AES_128_GCM_SHA256    
+DEBUG Not resuming    
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/32/64/4afe5dd77b2939a93e8c9513f8082dbd049ecba9c1484a379a0f6ae29d6b/hatchling-1.33.0-py3-none-any.whl.metadata
+DEBUG TLS1.3 encrypted extensions: ServerExtensions { server_name_ack: (), selected_protocol: SingleProtocolName(ProtocolName(6832)), unknown_extensions: {}, .. }    
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/ad/9b/9fb3585dabcd73a1b2a6267f63f62649347c9e6d072c9fde365b105abb2c/build-1.6.1-py3-none-any.whl.metadata
+DEBUG ALPN protocol is Some(b"h2")    
+DEBUG binding client connection
+DEBUG client connection bound
+DEBUG send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG received frame=Headers { stream_id: StreamId(3), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(5), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(1), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(9), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(13), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Using ciphersuite TLS13_AES_128_GCM_SHA256    
+DEBUG Not resuming    
+DEBUG TLS1.3 encrypted extensions: ServerExtensions { server_name_ack: (), selected_protocol: SingleProtocolName(ProtocolName(6832)), unknown_extensions: {}, .. }    
+DEBUG ALPN protocol is Some(b"h2")    
+DEBUG binding client connection
+DEBUG client connection bound
+DEBUG send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG Using ciphersuite TLS13_AES_128_GCM_SHA256    
+DEBUG Not resuming    
+DEBUG TLS1.3 encrypted extensions: ServerExtensions { server_name_ack: (), selected_protocol: SingleProtocolName(ProtocolName(6832)), unknown_extensions: {}, .. }    
+DEBUG ALPN protocol is Some(b"h2")    
+DEBUG binding client connection
+DEBUG client connection bound
+DEBUG send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG send frame=WindowUpdate { stream_id: StreamId(0), size_increment: 5177345 }
+DEBUG send frame=WindowUpdate { stream_id: StreamId(0), size_increment: 5177345 }
+DEBUG send frame=WindowUpdate { stream_id: StreamId(0), size_increment: 5177345 }
+DEBUG send frame=GoAway { error_code: NO_ERROR, last_stream_id: StreamId(0) }
+DEBUG Connection::poll; connection error error=GoAway(b"", NO_ERROR, Library)
+DEBUG Sending warning alert CloseNotify    
+DEBUG send frame=GoAway { error_code: NO_ERROR, last_stream_id: StreamId(0) }
+DEBUG Connection::poll; connection error error=GoAway(b"", NO_ERROR, Library)
+DEBUG Sending warning alert CloseNotify    
+DEBUG send frame=GoAway { error_code: NO_ERROR, last_stream_id: StreamId(0) }
+DEBUG Connection::poll; connection error error=GoAway(b"", NO_ERROR, Library)
+DEBUG Sending warning alert CloseNotify    
+DEBUG Found not-modified response for: https://pypi.org/simple/pytest-asyncio/
+DEBUG Found not-modified response for: https://pypi.org/simple/pytest/
+DEBUG Found not-modified response for: https://pypi.org/simple/myst-parser/
+DEBUG Found not-modified response for: https://pypi.org/simple/pre-commit/
+DEBUG Found not-modified response for: https://pypi.org/simple/scriv/
+DEBUG Using ciphersuite TLS13_AES_128_GCM_SHA256    
+DEBUG Not resuming    
+DEBUG TLS1.3 encrypted extensions: ServerExtensions { server_name_ack: (), selected_protocol: SingleProtocolName(ProtocolName(6832)), unknown_extensions: {}, .. }    
+DEBUG ALPN protocol is Some(b"h2")    
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/27/2d/e600d8f47597a803641704aba367c7266cd621f86561ec36da9888f160ec/pytest_asyncio-1.5.0-py3-none-any.whl.metadata
+DEBUG binding client connection
+DEBUG client connection bound
+DEBUG send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/51/39/1f5d8c8877a0fa327db959c19341d4be61660de1ab6b7391f9eb805bcd67/pytest-9.2.0-py3-none-any.whl.metadata
+DEBUG received frame=Headers { stream_id: StreamId(11), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(17), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(19), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(23), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(7), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(27), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=WindowUpdate { stream_id: StreamId(0), size_increment: 5177345 }
+DEBUG send frame=GoAway { error_code: NO_ERROR, last_stream_id: StreamId(0) }
+DEBUG Connection::poll; connection error error=GoAway(b"", NO_ERROR, Library)
+DEBUG Sending warning alert CloseNotify    
+DEBUG Found not-modified response for: https://pypi.org/simple/mypy/
+DEBUG Found not-modified response for: https://pypi.org/simple/twine/
+DEBUG Found not-modified response for: https://pypi.org/simple/pip-audit/
+DEBUG Found not-modified response for: https://pypi.org/simple/furo/
+DEBUG Found not-modified response for: https://pypi.org/simple/pytest-cov/
+DEBUG Found not-modified response for: https://pypi.org/simple/ruff/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/9d/7a/d968e294073affff457b041c2be9868a40c1c71f4a35fcc1e45e5493067b/pytest_cov-7.1.0-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/4b/5c/b9809467770d4fd83bed6f6735d15408ec4235c8d3b8ef2c45bbe1534203/scriv-1.8.1-py3-none-any.whl.metadata
+DEBUG Searching for a compatible version of ruff (>=0.17.5)
+DEBUG Selecting: ruff==0.17.5 [compatible] (ruff-0.17.5-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl)
+DEBUG Using ciphersuite TLS13_AES_128_GCM_SHA256    
+DEBUG Not resuming    
+DEBUG TLS1.3 encrypted extensions: ServerExtensions { server_name_ack: (), selected_protocol: SingleProtocolName(ProtocolName(6832)), unknown_extensions: {}, .. }    
+DEBUG ALPN protocol is Some(b"h2")    
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/a3/a7/b0c504148114047bd1bc9d97447453c6850ca176bb2f3c0038835994e8b7/pip_audit-2.10.1-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/eb/83/ce0a196e4f7b20b11ce3aa1fc72fb973f64b7628d51c1b8aebad37fb7f81/pre_commit-4.7.0-py2.py3-none-any.whl.metadata
+DEBUG binding client connection
+DEBUG client connection bound
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/71/6e/d6b49e7311da9b679ae0494bddb34fb2ffe3c6fe61b4f7cf58c06913a28d/myst_parser-5.2.0-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/f4/b2/50e9b292b5cac13e9e81272c7171301abc753a60460d21505b606e15cf21/furo-2025.12.19-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/c3/c9/3108b38f4c30eabd80194f5d9771a87e27196c5e0ddb5bf4b99c6ed1e97e/mypy-2.4.1-cp315-cp315-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata
+DEBUG send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG Using ciphersuite TLS13_AES_128_GCM_SHA256    
+DEBUG Not resuming    
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/96/08/ddcdc06225eaad6de0e48e1002b06d919dbde20582d0662c7af51308e5d6/twine-7.0.0-py3-none-any.whl.metadata
+DEBUG TLS1.3 encrypted extensions: ServerExtensions { server_name_ack: (), selected_protocol: SingleProtocolName(ProtocolName(6832)), unknown_extensions: {}, .. }    
+DEBUG ALPN protocol is Some(b"h2")    
+DEBUG binding client connection
+DEBUG client connection bound
+DEBUG send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+DEBUG send frame=WindowUpdate { stream_id: StreamId(0), size_increment: 5177345 }
+DEBUG send frame=WindowUpdate { stream_id: StreamId(0), size_increment: 5177345 }
+DEBUG send frame=GoAway { error_code: NO_ERROR, last_stream_id: StreamId(0) }
+DEBUG Connection::poll; connection error error=GoAway(b"", NO_ERROR, Library)
+DEBUG Sending warning alert CloseNotify    
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/f2/8a/1e29c0c3785ae7e5cd0d54ee8717a08867ef71545796340be4c653c57e24/ruff-0.17.5-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata
+DEBUG send frame=GoAway { error_code: NO_ERROR, last_stream_id: StreamId(0) }
+DEBUG Connection::poll; connection error error=GoAway(b"", NO_ERROR, Library)
+DEBUG Sending warning alert CloseNotify    
+INFO add_decision: Id::<PubGrubPackage>(3) @ 0.17.5 without checking dependencies    
+DEBUG Searching for a compatible version of mypy (>=2.4.1)
+DEBUG Selecting: mypy==2.4.1 [compatible] (mypy-2.4.1-cp315-cp315-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl)
+DEBUG Adding transitive dependency for mypy==2.4.1: typing-extensions{python_full_version >= '3.15'}>=4.14.0
+DEBUG Adding transitive dependency for mypy==2.4.1: mypy-extensions>=1.0.0
+DEBUG Adding transitive dependency for mypy==2.4.1: pathspec>=1.0.0
+DEBUG Adding transitive dependency for mypy==2.4.1: librt{platform_python_implementation != 'PyPy'}>=0.16.0
+DEBUG Adding transitive dependency for mypy==2.4.1: ast-serialize>=0.12.1, <1.0.0
+INFO add_decision: Id::<PubGrubPackage>(4) @ 2.4.1 without checking dependencies    
+DEBUG Searching for a compatible version of pytest (>=9.2.0)
+DEBUG Selecting: pytest==9.2.0 [compatible] (pytest-9.2.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for pytest==9.2.0: iniconfig>=2
+DEBUG Adding transitive dependency for pytest==9.2.0: packaging>=24
+DEBUG Adding transitive dependency for pytest==9.2.0: pluggy>=1.6, <2
+DEBUG Adding transitive dependency for pytest==9.2.0: pygments>=2.15
+INFO add_decision: Id::<PubGrubPackage>(5) @ 9.2.0 without checking dependencies    
+DEBUG Searching for a compatible version of pytest-asyncio (>=1.5.0)
+DEBUG Selecting: pytest-asyncio==1.5.0 [compatible] (pytest_asyncio-1.5.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for pytest-asyncio==1.5.0: pytest>=8.4
+INFO add_decision: Id::<PubGrubPackage>(6) @ 1.5.0 without checking dependencies    
+DEBUG Searching for a compatible version of pytest-cov (>=7.1.0)
+DEBUG Selecting: pytest-cov==7.1.0 [compatible] (pytest_cov-7.1.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for pytest-cov==7.1.0: coverage[toml]>=7.10.6
+DEBUG Adding transitive dependency for pytest-cov==7.1.0: pluggy>=1.2
+DEBUG Adding transitive dependency for pytest-cov==7.1.0: pytest>=7
+INFO add_decision: Id::<PubGrubPackage>(7) @ 7.1.0 without checking dependencies    
+DEBUG Searching for a compatible version of pre-commit (>=4.7.0)
+DEBUG Selecting: pre-commit==4.7.0 [compatible] (pre_commit-4.7.0-py2.py3-none-any.whl)
+DEBUG Adding transitive dependency for pre-commit==4.7.0: cfgv>=2.0.0
+DEBUG Adding transitive dependency for pre-commit==4.7.0: identify>=1.0.0
+DEBUG Adding transitive dependency for pre-commit==4.7.0: nodeenv>=0.11.1
+DEBUG Adding transitive dependency for pre-commit==4.7.0: pyyaml>=5.1
+DEBUG Adding transitive dependency for pre-commit==4.7.0: virtualenv>=20.10.0
+INFO add_decision: Id::<PubGrubPackage>(8) @ 4.7.0 without checking dependencies    
+DEBUG Searching for a compatible version of scriv[toml] (>=1.8.1)
+DEBUG Selecting: scriv==1.8.1 [compatible] (scriv-1.8.1-py3-none-any.whl)
+DEBUG Adding transitive dependency for scriv==1.8.1: scriv==1.8.1
+DEBUG Adding transitive dependency for scriv==1.8.1: scriv[toml]==1.8.1
+INFO add_decision: Id::<PubGrubPackage>(1) @ 1.8.1 without checking dependencies    
+DEBUG Searching for a compatible version of scriv (==1.8.1)
+DEBUG Selecting: scriv==1.8.1 [compatible] (scriv-1.8.1-py3-none-any.whl)
+DEBUG Adding transitive dependency for scriv==1.8.1: attrs>=26.1.0, <26.1.0+
+DEBUG Adding transitive dependency for scriv==1.8.1: certifi>=2026.10.23, <2026.10.23+
+DEBUG Adding transitive dependency for scriv==1.8.1: charset-normalizer>=3.5.2, <3.5.2+
+DEBUG Adding transitive dependency for scriv==1.8.1: click>=8.5.0, <8.5.0+
+DEBUG Adding transitive dependency for scriv==1.8.1: click-log>=0.4.0, <0.4.0+
+DEBUG Adding transitive dependency for scriv==1.8.1: idna>=3.20, <3.20+
+DEBUG Adding transitive dependency for scriv==1.8.1: jinja2>=3.1.6, <3.1.6+
+DEBUG Adding transitive dependency for scriv==1.8.1: markdown-it-py>=4.2.0, <4.2.0+
+DEBUG Adding transitive dependency for scriv==1.8.1: markupsafe>=3.0.4, <3.0.4+
+DEBUG Adding transitive dependency for scriv==1.8.1: mdurl>=0.1.2, <0.1.2+
+DEBUG Adding transitive dependency for scriv==1.8.1: requests>=2.34.2, <2.34.2+
+DEBUG Adding transitive dependency for scriv==1.8.1: urllib3>=2.8.0, <2.8.0+
+INFO add_decision: Id::<PubGrubPackage>(2) @ 1.8.1 without checking dependencies    
+DEBUG Searching for a compatible version of scriv[toml] (==1.8.1)
+DEBUG Selecting: scriv==1.8.1 [compatible] (scriv-1.8.1-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(34) @ 1.8.1 without checking dependencies    
+DEBUG Found stale response for: https://pypi.org/simple/typing-extensions/
+DEBUG Found stale response for: https://pypi.org/simple/pathspec/
+DEBUG Sending revalidation request for: https://pypi.org/simple/typing-extensions/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/pathspec/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(29), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(31), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/mypy-extensions/
+DEBUG Sending revalidation request for: https://pypi.org/simple/mypy-extensions/
+DEBUG Found stale response for: https://pypi.org/simple/packaging/
+DEBUG Found stale response for: https://pypi.org/simple/ast-serialize/
+DEBUG Found stale response for: https://pypi.org/simple/pluggy/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/packaging/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/ast-serialize/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/pluggy/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(33), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(35), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(37), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(39), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/pygments/
+DEBUG Found stale response for: https://pypi.org/simple/iniconfig/
+DEBUG Sending revalidation request for: https://pypi.org/simple/pygments/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/iniconfig/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(41), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(43), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/librt/
+DEBUG Sending revalidation request for: https://pypi.org/simple/librt/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(45), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/cfgv/
+DEBUG Sending revalidation request for: https://pypi.org/simple/cfgv/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(47), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/nodeenv/
+DEBUG Found stale response for: https://pypi.org/simple/identify/
+DEBUG Sending revalidation request for: https://pypi.org/simple/nodeenv/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/identify/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG received frame=Headers { stream_id: StreamId(29), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(31), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(49), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(51), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/typing-extensions/
+DEBUG Found not-modified response for: https://pypi.org/simple/pathspec/
+DEBUG Found stale response for: https://pypi.org/simple/attrs/
+DEBUG Found stale response for: https://pypi.org/simple/virtualenv/
+DEBUG Found stale response for: https://pypi.org/simple/pyyaml/
+DEBUG Found stale response for: https://pypi.org/simple/certifi/
+DEBUG Found stale response for: https://pypi.org/simple/click/
+DEBUG Found stale response for: https://pypi.org/simple/click-log/
+DEBUG Sending revalidation request for: https://pypi.org/simple/attrs/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Found stale response for: https://pypi.org/simple/idna/
+DEBUG Sending revalidation request for: https://pypi.org/simple/virtualenv/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/pyyaml/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/certifi/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/click/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/click-log/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Found stale response for: https://pypi.org/simple/jinja2/
+DEBUG Sending revalidation request for: https://pypi.org/simple/idna/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/jinja2/
+DEBUG Found stale response for: https://pypi.org/simple/charset-normalizer/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/charset-normalizer/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(53), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(55), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(57), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(59), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(61), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(63), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(65), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/coverage/
+DEBUG send frame=Headers { stream_id: StreamId(67), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(69), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Sending revalidation request for: https://pypi.org/simple/coverage/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG received frame=Headers { stream_id: StreamId(35), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(41), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(39), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(33), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(43), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(47), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/markdown-it-py/
+DEBUG received frame=Headers { stream_id: StreamId(37), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(45), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(49), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(51), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(71), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Sending revalidation request for: https://pypi.org/simple/markdown-it-py/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Found not-modified response for: https://pypi.org/simple/packaging/
+DEBUG Found not-modified response for: https://pypi.org/simple/pygments/
+DEBUG Found not-modified response for: https://pypi.org/simple/pluggy/
+DEBUG Found stale response for: https://pypi.org/simple/markupsafe/
+DEBUG Found stale response for: https://pypi.org/simple/mdurl/
+DEBUG Found stale response for: https://pypi.org/simple/urllib3/
+DEBUG Found not-modified response for: https://pypi.org/simple/mypy-extensions/
+DEBUG Found not-modified response for: https://pypi.org/simple/iniconfig/
+DEBUG Found stale response for: https://pypi.org/simple/requests/
+DEBUG Found not-modified response for: https://pypi.org/simple/cfgv/
+DEBUG Found not-modified response for: https://pypi.org/simple/ast-serialize/
+DEBUG Found not-modified response for: https://pypi.org/simple/librt/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/f1/d9/7fb5aa316bc299258e68c73ba3bddbc499654a07f151cba08f6153988714/pathspec-1.1.1-py3-none-any.whl.metadata
+DEBUG Found not-modified response for: https://pypi.org/simple/nodeenv/
+DEBUG Found not-modified response for: https://pypi.org/simple/identify/
+DEBUG Sending revalidation request for: https://pypi.org/simple/markupsafe/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/mdurl/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/urllib3/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/requests/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/db/3c/33bac158f8ab7f89b2e59426d5fe2e4f63f7ed25df84c036890172b412b5/cfgv-3.5.0-py2.py3-none-any.whl.metadata
+DEBUG send frame=Headers { stream_id: StreamId(73), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/e1/6f/53762927a32e9dc9eb1d1c1f3528da281290c86d96929a8af652f671266e/librt-0.16.0-cp315-cp315-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata
+DEBUG send frame=Headers { stream_id: StreamId(75), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(77), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(79), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(81), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(57), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(69), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(61), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(65), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(53), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(59), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/40/9e/2b38731e0fc536806f16490e1a12d7f0dc2a1235aa8cc07bcc75416a7daa/pluggy-1.7.0-py3-none-any.whl.metadata
+DEBUG received frame=Headers { stream_id: StreamId(55), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(67), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(63), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/71/46/17f022dd3e953bf20a04a028a21ec746d942f8d2af30fa0f124fa0e6a684/pygments-2.21.0-py3-none-any.whl.metadata
+DEBUG Found not-modified response for: https://pypi.org/simple/pyyaml/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/fa/70/fffc9613501877c0a10a1ef73a165e6ded3e53f6e7502227fef56d973933/identify-2.6.20-py2.py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/63/34/ba1c580383c9eada3711951fef0795c80b829a078d72188184bcab9dd527/packaging-26.3-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/2d/6a/8a9ac7d5e2f7cf53c459bfef90ebc17a2f8cd54b665af96799d4c534840e/nodeenv-1.12.0-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/b5/99/7b1adac7e97ce7bbda34792dc6e9b2f5cc5cffd1875883f78a818b2a2687/mypy_extensions-1.2.0-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/56/43/4ca9e49d27a1fcf6bece6f6aec0ea46bb9112489b93d4b688fb415457bdb/iniconfig-2.3.1-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/b4/e6/f2b67c327d9f9533e41791804403ccc2dc457821195a2e51f0b587a90b90/ast_serialize-0.13.1-cp315-abi3.abi3t-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata
+DEBUG Found not-modified response for: https://pypi.org/simple/charset-normalizer/
+DEBUG Found not-modified response for: https://pypi.org/simple/click/
+DEBUG Found not-modified response for: https://pypi.org/simple/idna/
+DEBUG Found not-modified response for: https://pypi.org/simple/attrs/
+DEBUG Found not-modified response for: https://pypi.org/simple/certifi/
+DEBUG Found not-modified response for: https://pypi.org/simple/virtualenv/
+DEBUG Found not-modified response for: https://pypi.org/simple/jinja2/
+DEBUG Found not-modified response for: https://pypi.org/simple/click-log/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/0d/a2/09f67a3589cb4320fb5ce90d3fd4c9752636b8b6ad8f34b54d76c5a54693/PyYAML-6.0.3-cp38-cp38-macosx_10_13_x86_64.whl.metadata
+DEBUG Searching for a compatible version of attrs (>=26.1.0, <26.1.0+)
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/58/50/6c0d534c5f134586a8e1ba4e330569e32f057e33372ae556463212fb4cd3/click-8.5.0-py3-none-any.whl.metadata
+DEBUG Selecting: attrs==26.1.0 [compatible] (attrs-26.1.0-py3-none-any.whl)
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/0a/63/fd514dee3159f74a96ac01beb8f460b65e4ef0b972f63f4fe9f0cd2aa0e3/virtualenv-21.15.6-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/58/a2/bb081bab032533a855d44de1d56f8e8426114ff1ba5d1f07a438a0a654f8/idna-3.20-py3-none-any.whl.metadata
+DEBUG received frame=Headers { stream_id: StreamId(79), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(77), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(81), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(75), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/urllib3/
+DEBUG Found not-modified response for: https://pypi.org/simple/mdurl/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/32/d1/a3652fe2c19134d0d15922177821d863cbd7e842d53a21bbe7e8e3a1b5ac/certifi-2026.10.23-py3-none-any.whl.metadata
+DEBUG Found not-modified response for: https://pypi.org/simple/requests/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/a0/a1/4fbf5d0f0f1b2a080474c1cf9a2f12c4c6531bb0e8ba591055e846d2b4e9/charset_normalizer-3.5.2-cp315-cp315-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/ae/5a/4f025bc751087833686892e17e7564828e409c43b632878afeae554870cd/click_log-0.4.0-py2.py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/64/b4/17d4b0b2a2dc85a6df63d1157e028ed19f90d4cd97c36717afef2bc2f395/attrs-26.1.0-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl.metadata
+DEBUG Found not-modified response for: https://pypi.org/simple/markupsafe/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/92/9d/c4e665119135114480843e7ab388fa94d8480650450e6f8e26b70d323a4c/urllib3-2.8.0-py3-none-any.whl.metadata
+INFO add_decision: Id::<PubGrubPackage>(35) @ 26.1.0 without checking dependencies    
+DEBUG Searching for a compatible version of certifi (>=2026.10.23, <2026.10.23+)
+DEBUG Selecting: certifi==2026.10.23 [compatible] (certifi-2026.10.23-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(36) @ 2026.10.23 without checking dependencies    
+DEBUG Searching for a compatible version of charset-normalizer (>=3.5.2, <3.5.2+)
+DEBUG Selecting: charset-normalizer==3.5.2 [compatible] (charset_normalizer-3.5.2-cp315-cp315-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl)
+DEBUG received frame=Headers { stream_id: StreamId(73), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/markdown-it-py/
+INFO add_decision: Id::<PubGrubPackage>(37) @ 3.5.2 without checking dependencies    
+DEBUG Searching for a compatible version of click (>=8.5.0, <8.5.0+)
+DEBUG Selecting: click==8.5.0 [compatible] (click-8.5.0-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(38) @ 8.5.0 without checking dependencies    
+DEBUG Searching for a compatible version of click-log (>=0.4.0, <0.4.0+)
+DEBUG Selecting: click-log==0.4.0 [compatible] (click_log-0.4.0-py2.py3-none-any.whl)
+DEBUG Adding transitive dependency for click-log==0.4.0: click*
+INFO add_decision: Id::<PubGrubPackage>(39) @ 0.4.0 without checking dependencies    
+DEBUG Searching for a compatible version of idna (>=3.20, <3.20+)
+DEBUG Selecting: idna==3.20 [compatible] (idna-3.20-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(40) @ 3.20 without checking dependencies    
+DEBUG Searching for a compatible version of jinja2 (>=3.1.6, <3.1.6+)
+DEBUG Selecting: jinja2==3.1.6 [compatible] (jinja2-3.1.6-py3-none-any.whl)
+DEBUG Adding transitive dependency for jinja2==3.1.6: markupsafe>=2.0
+INFO add_decision: Id::<PubGrubPackage>(41) @ 3.1.6 without checking dependencies    
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/a0/f4/c67b0b3f1b9245e8d266f0f112c500d50e5b4e83cb6f3b71b6528104182a/requests-2.34.2-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/82/96/ef49135ce260db4ca4a12b119ed468449cd248db6b1468e2112b546d7a2e/markupsafe-3.0.4-cp315-cp315-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl.metadata
+DEBUG Searching for a compatible version of markdown-it-py (>=4.2.0, <4.2.0+)
+DEBUG Selecting: markdown-it-py==4.2.0 [compatible] (markdown_it_py-4.2.0-py3-none-any.whl)
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/b3/81/4da04ced5a082363ecfa159c010d200ecbd959ae410c10c0264a38cac0f5/markdown_it_py-4.2.0-py3-none-any.whl.metadata
+DEBUG Adding transitive dependency for markdown-it-py==4.2.0: mdurl>=0.1, <1.dev0
+INFO add_decision: Id::<PubGrubPackage>(42) @ 4.2.0 without checking dependencies    
+DEBUG Searching for a compatible version of markupsafe (>=3.0.4, <3.0.4+)
+DEBUG Selecting: markupsafe==3.0.4 [compatible] (markupsafe-3.0.4-cp315-cp315-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl)
+INFO add_decision: Id::<PubGrubPackage>(43) @ 3.0.4 without checking dependencies    
+DEBUG Searching for a compatible version of mdurl (>=0.1.2, <0.1.2+)
+DEBUG Selecting: mdurl==0.1.2 [compatible] (mdurl-0.1.2-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(44) @ 0.1.2 without checking dependencies    
+DEBUG Searching for a compatible version of requests (>=2.34.2, <2.34.2+)
+DEBUG Selecting: requests==2.34.2 [compatible] (requests-2.34.2-py3-none-any.whl)
+DEBUG Adding transitive dependency for requests==2.34.2: charset-normalizer>=2, <4
+DEBUG Adding transitive dependency for requests==2.34.2: idna>=2.5, <4
+DEBUG Adding transitive dependency for requests==2.34.2: urllib3>=1.26, <3
+DEBUG Adding transitive dependency for requests==2.34.2: certifi>=2023.5.7
+INFO add_decision: Id::<PubGrubPackage>(45) @ 2.34.2 without checking dependencies    
+DEBUG Searching for a compatible version of urllib3 (>=2.8.0, <2.8.0+)
+DEBUG Selecting: urllib3==2.8.0 [compatible] (urllib3-2.8.0-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(46) @ 2.8.0 without checking dependencies    
+DEBUG Searching for a compatible version of build (>=1.6.1)
+DEBUG Selecting: build==1.6.1 [compatible] (build-1.6.1-py3-none-any.whl)
+DEBUG Adding transitive dependency for build==1.6.1: packaging>=24.0
+DEBUG Adding transitive dependency for build==1.6.1: pyproject-hooks*
+INFO add_decision: Id::<PubGrubPackage>(9) @ 1.6.1 without checking dependencies    
+DEBUG Searching for a compatible version of twine (>=7.0.0)
+DEBUG Selecting: twine==7.0.0 [compatible] (twine-7.0.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for twine==7.0.0: readme-renderer>=35.0
+DEBUG Adding transitive dependency for twine==7.0.0: requests>=2.20
+DEBUG Adding transitive dependency for twine==7.0.0: requests-toolbelt>=0.8.0, <0.9.0 | >=0.9.0+
+DEBUG Adding transitive dependency for twine==7.0.0: urllib3>=1.26.0
+DEBUG Adding transitive dependency for twine==7.0.0: keyring{platform_machine != 'ppc64le' and platform_machine != 's390x'}>=21.2.0
+DEBUG Adding transitive dependency for twine==7.0.0: rfc3986>=1.4.0
+DEBUG Adding transitive dependency for twine==7.0.0: rich>=14.3.3
+DEBUG Adding transitive dependency for twine==7.0.0: packaging>=26.1
+DEBUG Adding transitive dependency for twine==7.0.0: id*
+INFO add_decision: Id::<PubGrubPackage>(10) @ 7.0.0 without checking dependencies    
+DEBUG Searching for a compatible version of pip-audit (>=2.10.1)
+DEBUG Selecting: pip-audit==2.10.1 [compatible] (pip_audit-2.10.1-py3-none-any.whl)
+DEBUG Adding transitive dependency for pip-audit==2.10.1: cachecontrol[filecache]>=0.13.0
+DEBUG Adding transitive dependency for pip-audit==2.10.1: cyclonedx-python-lib>=5, <12
+DEBUG Adding transitive dependency for pip-audit==2.10.1: packaging>=23.0.0
+DEBUG Adding transitive dependency for pip-audit==2.10.1: pip-api>=0.0.28
+DEBUG Adding transitive dependency for pip-audit==2.10.1: pip-requirements-parser>=32.0.0
+DEBUG Adding transitive dependency for pip-audit==2.10.1: requests>=2.31.0
+DEBUG Adding transitive dependency for pip-audit==2.10.1: rich>=12.4
+DEBUG Adding transitive dependency for pip-audit==2.10.1: tomli>=2.2.1
+DEBUG Adding transitive dependency for pip-audit==2.10.1: tomli-w>=1.2.0
+DEBUG Adding transitive dependency for pip-audit==2.10.1: platformdirs>=4.2.0
+INFO add_decision: Id::<PubGrubPackage>(11) @ 2.10.1 without checking dependencies    
+DEBUG Searching for a compatible version of hatchling (>=1.33.0)
+DEBUG Selecting: hatchling==1.33.0 [compatible] (hatchling-1.33.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for hatchling==1.33.0: packaging>=24.2
+DEBUG Adding transitive dependency for hatchling==1.33.0: pathspec>=0.10.1
+DEBUG Adding transitive dependency for hatchling==1.33.0: pluggy>=1.0.0
+DEBUG Adding transitive dependency for hatchling==1.33.0: tomlkit>=0.11.1
+DEBUG Adding transitive dependency for hatchling==1.33.0: trove-classifiers*
+INFO add_decision: Id::<PubGrubPackage>(12) @ 1.33.0 without checking dependencies    
+DEBUG Searching for a compatible version of sphinx (>=9.2.0)
+DEBUG Selecting: sphinx==9.2.0 [compatible] (sphinx-9.2.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for sphinx==9.2.0: sphinxcontrib-applehelp>=1.0.7
+DEBUG Adding transitive dependency for sphinx==9.2.0: sphinxcontrib-devhelp>=1.0.6
+DEBUG Adding transitive dependency for sphinx==9.2.0: sphinxcontrib-htmlhelp>=2.0.6
+DEBUG Adding transitive dependency for sphinx==9.2.0: sphinxcontrib-jsmath>=1.0.1
+DEBUG Adding transitive dependency for sphinx==9.2.0: sphinxcontrib-qthelp>=1.0.6
+DEBUG Adding transitive dependency for sphinx==9.2.0: sphinxcontrib-serializinghtml>=1.1.9
+DEBUG Adding transitive dependency for sphinx==9.2.0: jinja2>=3.1
+DEBUG Adding transitive dependency for sphinx==9.2.0: pygments>=2.19
+DEBUG Found stale response for: https://pypi.org/simple/pyproject-hooks/
+DEBUG Adding transitive dependency for sphinx==9.2.0: docutils>=0.21, <0.24
+DEBUG Adding transitive dependency for sphinx==9.2.0: snowballstemmer>=3.0.1
+DEBUG Adding transitive dependency for sphinx==9.2.0: babel>=2.18
+DEBUG Adding transitive dependency for sphinx==9.2.0: alabaster>=1.0
+DEBUG Adding transitive dependency for sphinx==9.2.0: imagesize>=1.3
+DEBUG Adding transitive dependency for sphinx==9.2.0: requests>=2.32.5
+DEBUG Adding transitive dependency for sphinx==9.2.0: roman-numerals>=3.0
+DEBUG Adding transitive dependency for sphinx==9.2.0: packaging>=25.0
+DEBUG Sending revalidation request for: https://pypi.org/simple/pyproject-hooks/
+INFO add_decision: Id::<PubGrubPackage>(13) @ 9.2.0 without checking dependencies    
+DEBUG Searching for a compatible version of furo (>=2025.12.19)
+DEBUG Selecting: furo==2025.12.19 [compatible] (furo-2025.12.19-py3-none-any.whl)
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(83), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Adding transitive dependency for furo==2025.12.19: beautifulsoup4*
+DEBUG Adding transitive dependency for furo==2025.12.19: sphinx>=7.0, <10.0
+DEBUG Adding transitive dependency for furo==2025.12.19: sphinx-basic-ng>=1.0.0b2
+DEBUG Adding transitive dependency for furo==2025.12.19: pygments>=2.7
+DEBUG Adding transitive dependency for furo==2025.12.19: accessible-pygments>=0.0.5
+INFO add_decision: Id::<PubGrubPackage>(14) @ 2025.12.19 without checking dependencies    
+DEBUG Searching for a compatible version of myst-parser (>=5.2.0)
+DEBUG Selecting: myst-parser==5.2.0 [compatible] (myst_parser-5.2.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for myst-parser==5.2.0: docutils>=0.20, <0.24
+DEBUG Adding transitive dependency for myst-parser==5.2.0: jinja2*
+DEBUG Adding transitive dependency for myst-parser==5.2.0: markdown-it-py>=4.2, <5.dev0
+DEBUG Found stale response for: https://pypi.org/simple/readme-renderer/
+DEBUG Found stale response for: https://pypi.org/simple/requests-toolbelt/
+DEBUG Adding transitive dependency for myst-parser==5.2.0: mdit-py-plugins>=0.7, <1.dev0
+DEBUG Adding transitive dependency for myst-parser==5.2.0: pyyaml*
+DEBUG Adding transitive dependency for myst-parser==5.2.0: sphinx>=8, <10
+INFO add_decision: Id::<PubGrubPackage>(15) @ 5.2.0 without checking dependencies    
+DEBUG Searching for a compatible version of typing-extensions{python_full_version >= '3.15'} (>=4.14.0)
+DEBUG Selecting: typing-extensions==4.16.0 [compatible] (typing_extensions-4.16.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for typing-extensions==4.16.0: typing-extensions==4.16.0
+DEBUG Adding transitive dependency for typing-extensions==4.16.0: typing-extensions{python_full_version >= '3.15'}==4.16.0
+INFO add_decision: Id::<PubGrubPackage>(16) @ 4.16.0 without checking dependencies    
+DEBUG Searching for a compatible version of typing-extensions (==4.16.0)
+DEBUG Selecting: typing-extensions==4.16.0 [compatible] (typing_extensions-4.16.0-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(17) @ 4.16.0 without checking dependencies    
+DEBUG Searching for a compatible version of typing-extensions{python_full_version >= '3.15'} (==4.16.0)
+DEBUG Selecting: typing-extensions==4.16.0 [compatible] (typing_extensions-4.16.0-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(81) @ 4.16.0 without checking dependencies    
+DEBUG Searching for a compatible version of mypy-extensions (>=1.0.0)
+DEBUG Selecting: mypy-extensions==1.2.0 [compatible] (mypy_extensions-1.2.0-py3-none-any.whl)
+DEBUG Sending revalidation request for: https://pypi.org/simple/requests-toolbelt/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/readme-renderer/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Found stale response for: https://pypi.org/simple/keyring/
+INFO add_decision: Id::<PubGrubPackage>(20) @ 1.2.0 without checking dependencies    
+DEBUG Searching for a compatible version of pathspec (>=1.0.0)
+DEBUG Selecting: pathspec==1.1.1 [compatible] (pathspec-1.1.1-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(21) @ 1.1.1 without checking dependencies    
+DEBUG Searching for a compatible version of librt{platform_python_implementation != 'PyPy'} (>=0.16.0)
+DEBUG Selecting: librt==0.16.0 [compatible] (librt-0.16.0-cp315-cp315-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl)
+DEBUG Sending revalidation request for: https://pypi.org/simple/keyring/
+DEBUG Adding transitive dependency for librt==0.16.0: librt==0.16.0
+DEBUG Adding transitive dependency for librt==0.16.0: librt{platform_python_implementation != 'PyPy'}==0.16.0
+DEBUG reuse idle connection for ("https", pypi.org)
+INFO add_decision: Id::<PubGrubPackage>(18) @ 0.16.0 without checking dependencies    
+DEBUG send frame=Headers { stream_id: StreamId(85), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Searching for a compatible version of librt (==0.16.0)
+DEBUG send frame=Headers { stream_id: StreamId(87), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Selecting: librt==0.16.0 [compatible] (librt-0.16.0-cp315-cp315-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl)
+DEBUG send frame=Headers { stream_id: StreamId(89), flags: (0x5: END_HEADERS | END_STREAM) }
+INFO add_decision: Id::<PubGrubPackage>(19) @ 0.16.0 without checking dependencies    
+DEBUG Searching for a compatible version of librt{platform_python_implementation != 'PyPy'} (==0.16.0)
+DEBUG Selecting: librt==0.16.0 [compatible] (librt-0.16.0-cp315-cp315-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl)
+INFO add_decision: Id::<PubGrubPackage>(82) @ 0.16.0 without checking dependencies    
+DEBUG Searching for a compatible version of ast-serialize (>=0.12.1, <1.0.0)
+DEBUG Selecting: ast-serialize==0.13.1 [compatible] (ast_serialize-0.13.1-cp315-abi3.abi3t-manylinux_2_17_x86_64.manylinux2014_x86_64.whl)
+INFO add_decision: Id::<PubGrubPackage>(22) @ 0.13.1 without checking dependencies    
+DEBUG Searching for a compatible version of iniconfig (>=2)
+DEBUG Selecting: iniconfig==2.3.1 [compatible] (iniconfig-2.3.1-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(23) @ 2.3.1 without checking dependencies    
+DEBUG Searching for a compatible version of packaging (>=26.1)
+DEBUG Selecting: packaging==26.3 [compatible] (packaging-26.3-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(24) @ 26.3 without checking dependencies    
+DEBUG Searching for a compatible version of pluggy (>=1.6, <2)
+DEBUG Selecting: pluggy==1.7.0 [compatible] (pluggy-1.7.0-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(25) @ 1.7.0 without checking dependencies    
+DEBUG Searching for a compatible version of pygments (>=2.19)
+DEBUG Selecting: pygments==2.21.0 [compatible] (pygments-2.21.0-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(26) @ 2.21.0 without checking dependencies    
+DEBUG Found stale response for: https://pypi.org/simple/rfc3986/
+DEBUG Sending revalidation request for: https://pypi.org/simple/rfc3986/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(91), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/id/
+DEBUG Sending revalidation request for: https://pypi.org/simple/id/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(93), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/rich/
+DEBUG Sending revalidation request for: https://pypi.org/simple/rich/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(95), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/cachecontrol/
+DEBUG Sending revalidation request for: https://pypi.org/simple/cachecontrol/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(97), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/pip-api/
+DEBUG Sending revalidation request for: https://pypi.org/simple/pip-api/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(99), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/cyclonedx-python-lib/
+DEBUG Sending revalidation request for: https://pypi.org/simple/cyclonedx-python-lib/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(101), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/tomli/
+DEBUG Sending revalidation request for: https://pypi.org/simple/tomli/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(103), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/pip-requirements-parser/
+DEBUG received frame=Headers { stream_id: StreamId(83), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Sending revalidation request for: https://pypi.org/simple/pip-requirements-parser/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Found not-modified response for: https://pypi.org/simple/pyproject-hooks/
+DEBUG send frame=Headers { stream_id: StreamId(105), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/tomli-w/
+DEBUG Sending revalidation request for: https://pypi.org/simple/tomli-w/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(107), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/platformdirs/
+DEBUG Sending revalidation request for: https://pypi.org/simple/platformdirs/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(109), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/sphinxcontrib-applehelp/
+DEBUG Sending revalidation request for: https://pypi.org/simple/sphinxcontrib-applehelp/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(111), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/sphinxcontrib-devhelp/
+DEBUG Sending revalidation request for: https://pypi.org/simple/sphinxcontrib-devhelp/
+DEBUG Found stale response for: https://pypi.org/simple/trove-classifiers/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/trove-classifiers/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(113), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(115), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(95), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(87), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/rich/
+DEBUG Found stale response for: https://pypi.org/simple/sphinxcontrib-htmlhelp/
+DEBUG Found not-modified response for: https://pypi.org/simple/readme-renderer/
+DEBUG Sending revalidation request for: https://pypi.org/simple/sphinxcontrib-htmlhelp/
+DEBUG Found stale response for: https://pypi.org/simple/sphinxcontrib-qthelp/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/sphinxcontrib-qthelp/
+DEBUG Found stale response for: https://pypi.org/simple/tomlkit/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/tomlkit/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(117), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(119), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(121), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(85), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/sphinxcontrib-serializinghtml/
+DEBUG Found not-modified response for: https://pypi.org/simple/requests-toolbelt/
+DEBUG Sending revalidation request for: https://pypi.org/simple/sphinxcontrib-serializinghtml/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(123), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/snowballstemmer/
+DEBUG Found stale response for: https://pypi.org/simple/docutils/
+DEBUG Found stale response for: https://pypi.org/simple/sphinxcontrib-jsmath/
+DEBUG Sending revalidation request for: https://pypi.org/simple/snowballstemmer/
+DEBUG Found stale response for: https://pypi.org/simple/babel/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/docutils/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/sphinxcontrib-jsmath/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/babel/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(125), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(127), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/imagesize/
+DEBUG Found stale response for: https://pypi.org/simple/alabaster/
+DEBUG send frame=Headers { stream_id: StreamId(129), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(131), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/roman-numerals/
+DEBUG Found stale response for: https://pypi.org/simple/beautifulsoup4/
+DEBUG Found stale response for: https://pypi.org/simple/sphinx-basic-ng/
+DEBUG Found stale response for: https://pypi.org/simple/accessible-pygments/
+DEBUG Sending revalidation request for: https://pypi.org/simple/alabaster/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/imagesize/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/beautifulsoup4/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/roman-numerals/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/sphinx-basic-ng/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/accessible-pygments/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/85/11/044d1ae1b4ec0d7af88ee5bc91e081be1022533032b906a7bdabdbb60977/pyproject_hooks-1.3.3-py3-none-any.whl.metadata
+DEBUG received frame=Headers { stream_id: StreamId(91), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/82/3b/64d4899d73f91ba49a8c18a8ff3f0ea8f1c1d75481760df8c68ef5235bf5/rich-15.0.0-py3-none-any.whl.metadata
+DEBUG Found stale response for: https://pypi.org/simple/mdit-py-plugins/
+DEBUG received frame=Headers { stream_id: StreamId(93), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(89), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(97), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(133), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(135), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(137), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(139), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(141), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(143), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Sending revalidation request for: https://pypi.org/simple/mdit-py-plugins/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/3f/51/d4db610ef29373b879047326cbf6fa98b6c1969d6f6dc423279de2b1be2c/requests_toolbelt-1.0.0-py2.py3-none-any.whl.metadata
+DEBUG Found not-modified response for: https://pypi.org/simple/rfc3986/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/4b/72/ac5ca81fe9121fcaa9d828d21017cba00a16a98e4ea5fb60c878f93dda4f/readme_renderer-46.0-py3-none-any.whl.metadata
+DEBUG Found not-modified response for: https://pypi.org/simple/id/
+DEBUG Found not-modified response for: https://pypi.org/simple/keyring/
+DEBUG Found not-modified response for: https://pypi.org/simple/cachecontrol/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/ff/9a/9afaade874b2fa6c752c36f1548f718b5b83af81ed9b76628329dab81c1b/rfc3986-2.0.0-py2.py3-none-any.whl.metadata
+DEBUG received frame=Headers { stream_id: StreamId(99), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(107), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(101), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(103), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(145), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/pip-api/
+DEBUG Found not-modified response for: https://pypi.org/simple/tomli-w/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/42/77/de194443bf38daed9452139e960c632b0ef9f9a5dd9ce605fdf18ca9f1b1/id-1.6.1-py3-none-any.whl.metadata
+DEBUG Found not-modified response for: https://pypi.org/simple/cyclonedx-python-lib/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/81/db/e655086b7f3a705df045bf0933bdd9c2f79bb3c97bfef1384598bb79a217/keyring-25.7.0-py3-none-any.whl.metadata
+DEBUG Found not-modified response for: https://pypi.org/simple/tomli/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/ef/79/c45f2d53efe6ada1110cf6f9fca095e4ff47a0454444aefdde6ac4789179/cachecontrol-0.14.4-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/ae/83/d1ef43d1687d092ab9c235455c76e6e709483b346b056f086095c7c263a5/tomli-2.5.0-cp315-cp315-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/1d/2e/d424c5b5877be862dd9a2c8b7e9ddb13382bb25e132e6dd50cc09c0a7dde/pip_api-0.0.35-py3-none-any.whl.metadata
+DEBUG received frame=Headers { stream_id: StreamId(115), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(121), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(113), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(109), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/c7/18/c86eb8e0202e32dd3df50d43d7ff9854f8e0603945ff398974c1d91ac1ef/tomli_w-1.2.0-py3-none-any.whl.metadata
+DEBUG received frame=Headers { stream_id: StreamId(105), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(131), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(119), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/trove-classifiers/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/cf/f0/b2cb999244f2f4194df63ecff6939228178fa63a33be809c412684ca8db7/cyclonedx_python_lib-11.12.0-py3-none-any.whl.metadata
+DEBUG Found not-modified response for: https://pypi.org/simple/tomlkit/
+DEBUG Found not-modified response for: https://pypi.org/simple/sphinxcontrib-devhelp/
+DEBUG Found not-modified response for: https://pypi.org/simple/platformdirs/
+DEBUG Found not-modified response for: https://pypi.org/simple/pip-requirements-parser/
+DEBUG Found not-modified response for: https://pypi.org/simple/babel/
+DEBUG Found not-modified response for: https://pypi.org/simple/sphinxcontrib-qthelp/
+DEBUG received frame=Headers { stream_id: StreamId(123), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(111), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/da/46/7d84138a60a8bd796825b2d38ebe92d0d16501ca57d501b7c5d677401bbc/tomlkit-0.15.2-py3-none-any.whl.metadata
+DEBUG received frame=Headers { stream_id: StreamId(135), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(139), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(137), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(129), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(133), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(145), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(127), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(143), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(125), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(141), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/sphinxcontrib-serializinghtml/
+DEBUG Found not-modified response for: https://pypi.org/simple/sphinxcontrib-applehelp/
+DEBUG Found not-modified response for: https://pypi.org/simple/imagesize/
+DEBUG Found not-modified response for: https://pypi.org/simple/roman-numerals/
+DEBUG Found not-modified response for: https://pypi.org/simple/beautifulsoup4/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/7c/ae/ecbbbfd0e4343a6a521d49b3c8656fb4643dee2a4f6eaf941cf3280391a8/platformdirs-4.14.5-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/54/d0/d04f1d1e064ac901439699ee097f58688caadea42498ec9c4b4ad2ef84ab/pip_requirements_parser-32.0.1-py3-none-any.whl.metadata
+DEBUG Found not-modified response for: https://pypi.org/simple/sphinxcontrib-jsmath/
+DEBUG Found not-modified response for: https://pypi.org/simple/alabaster/
+DEBUG Found not-modified response for: https://pypi.org/simple/mdit-py-plugins/
+DEBUG Found not-modified response for: https://pypi.org/simple/docutils/
+DEBUG Found not-modified response for: https://pypi.org/simple/accessible-pygments/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/30/81/0da8afb52a71d0a4f2bd3152357b1a441e393b286374802b9d3addab4ab5/trove_classifiers-2026.9.21.13-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/27/83/859ecdd180cacc13b1f7e857abf8582a64552ea7a061057a6c716e790fce/sphinxcontrib_qthelp-2.0.0-py3-none-any.whl.metadata
+DEBUG Found not-modified response for: https://pypi.org/simple/snowballstemmer/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/77/f5/21d2de20e8b8b0408f0681956ca2c69f1320a3848ac50e6e7f39c6159675/babel-2.18.0-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/35/7a/987e583882f985fe4d7323774889ec58049171828b58c2217e7f79cdf44e/sphinxcontrib_devhelp-2.0.0-py3-none-any.whl.metadata
+DEBUG Found not-modified response for: https://pypi.org/simple/sphinx-basic-ng/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/4c/07/2ebca9b11fb9be7340a818d8d6f63feaebb146be2c4afbd6061701d6df6e/snowballstemmer-3.1.1-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/04/54/6f679c435d28e0a568d8e8a7c0a93a09010818634c3c3907fc98d8983770/roman_numerals-4.1.0-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/5d/85/9ebeae2f76e9e77b952f4b274c27238156eae7979c5421fba91a28f4970d/sphinxcontrib_applehelp-2.0.0-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/01/f9/575c8d760eae1fc99651b7cc5efd96ad5379ca4d6b53750b0fb4fe983f34/imagesize-2.0.1-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/88/c6/92fcd42f1ba33e1184263f25bfabf3d27c383410470f169e4b8163bf9c17/beautifulsoup4-4.15.0-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/52/a7/d2782e4e3f77c8450f727ba74a8f12756d5ba823d81b941f1b04da9d033a/sphinxcontrib_serializinghtml-2.0.0-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/da/c2/2965c35b39587d4b7a397f65a9c7d4b942b031061e7ac1ce91782f394a0d/sphinxcontrib_jsmath-2.0.0-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/7e/b3/6b4067be973ae96ba0d615946e314c5ae35f9f993eca561b356540bb0c2b/alabaster-1.0.0-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/32/91/30151a39f7570f448ed84529390628a651d7f27c87d73c9b887f8189695e/docutils-0.23-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/8d/3f/95338030883d8c8b91223b4e21744b04d11b161a3ef117295d8241f50ab4/accessible_pygments-0.0.5-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/4d/d3/d07e61326f150944ead0da9d0b39fb20d7fa367bbc951b10fca6bb1c7382/mdit_py_plugins-0.7.0-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/3c/dd/018ce05c532a22007ac58d4f45232514cd9d6dd0ee1dc374e309db830983/sphinx_basic_ng-1.0.0b2-py3-none-any.whl.metadata
+DEBUG received frame=Headers { stream_id: StreamId(117), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/sphinxcontrib-htmlhelp/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/0a/7b/18a8c0bcec9182c05a0b3ec2a776bba4ead82750a55ff798e8d406dae604/sphinxcontrib_htmlhelp-2.1.0-py3-none-any.whl.metadata
+DEBUG received frame=Headers { stream_id: StreamId(71), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/coverage/
+DEBUG Searching for a compatible version of coverage[toml] (>=7.10.6)
+DEBUG Selecting: coverage==7.17.3 [compatible] (coverage-7.17.3-cp315-cp315-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl)
+DEBUG Adding transitive dependency for coverage==7.17.3: coverage==7.17.3
+DEBUG Adding transitive dependency for coverage==7.17.3: coverage[toml]==7.17.3
+INFO add_decision: Id::<PubGrubPackage>(27) @ 7.17.3 without checking dependencies    
+DEBUG Searching for a compatible version of coverage (==7.17.3)
+DEBUG Selecting: coverage==7.17.3 [compatible] (coverage-7.17.3-cp315-cp315-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl)
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/10/61/1bd79ec66957f4ea7ce5f687a18aa50f3b3e8715e4843f6ed3e5f03f24bf/coverage-7.17.3-cp315-cp315-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata
+INFO add_decision: Id::<PubGrubPackage>(28) @ 7.17.3 without checking dependencies    
+DEBUG Searching for a compatible version of coverage[toml] (==7.17.3)
+DEBUG Selecting: coverage==7.17.3 [compatible] (coverage-7.17.3-cp315-cp315-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl)
+INFO add_decision: Id::<PubGrubPackage>(83) @ 7.17.3 without checking dependencies    
+DEBUG Searching for a compatible version of cfgv (>=2.0.0)
+DEBUG Selecting: cfgv==3.5.0 [compatible] (cfgv-3.5.0-py2.py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(29) @ 3.5.0 without checking dependencies    
+DEBUG Searching for a compatible version of identify (>=1.0.0)
+DEBUG Selecting: identify==2.6.20 [compatible] (identify-2.6.20-py2.py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(30) @ 2.6.20 without checking dependencies    
+DEBUG Searching for a compatible version of nodeenv (>=0.11.1)
+DEBUG Selecting: nodeenv==1.12.0 [compatible] (nodeenv-1.12.0-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(31) @ 1.12.0 without checking dependencies    
+DEBUG Searching for a compatible version of pyyaml (>=5.1)
+DEBUG Selecting: pyyaml==6.0.3 [compatible] (pyyaml-6.0.3.tar.gz)
+INFO add_decision: Id::<PubGrubPackage>(32) @ 6.0.3 without checking dependencies    
+DEBUG Searching for a compatible version of virtualenv (>=20.10.0)
+DEBUG Selecting: virtualenv==21.15.6 [compatible] (virtualenv-21.15.6-py3-none-any.whl)
+DEBUG Adding transitive dependency for virtualenv==21.15.6: distlib>=0.4.3, <1
+DEBUG Adding transitive dependency for virtualenv==21.15.6: filelock{python_full_version >= '3.10'}>=3.24.2, <5
+DEBUG Adding transitive dependency for virtualenv==21.15.6: packaging>=26.3
+DEBUG Adding transitive dependency for virtualenv==21.15.6: platformdirs>=4.4, <5
+DEBUG Adding transitive dependency for virtualenv==21.15.6: python-discovery>=1.6.1
+INFO add_decision: Id::<PubGrubPackage>(33) @ 21.15.6 without checking dependencies    
+DEBUG Searching for a compatible version of pyproject-hooks (*)
+DEBUG Selecting: pyproject-hooks==1.3.3 [compatible] (pyproject_hooks-1.3.3-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(47) @ 1.3.3 without checking dependencies    
+DEBUG Searching for a compatible version of readme-renderer (>=35.0)
+DEBUG Selecting: readme-renderer==46.0 [compatible] (readme_renderer-46.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for readme-renderer==46.0: nh3>=0.2.14
+DEBUG Adding transitive dependency for readme-renderer==46.0: docutils>=0.21.2
+DEBUG Adding transitive dependency for readme-renderer==46.0: pygments>=2.5.1
+INFO add_decision: Id::<PubGrubPackage>(50) @ 46.0 without checking dependencies    
+DEBUG Searching for a compatible version of requests-toolbelt (>=0.8.0, <0.9.0 | >=0.9.0+)
+DEBUG Selecting: requests-toolbelt==1.0.0 [compatible] (requests_toolbelt-1.0.0-py2.py3-none-any.whl)
+DEBUG Adding transitive dependency for requests-toolbelt==1.0.0: requests>=2.0.1, <3.0.0
+INFO add_decision: Id::<PubGrubPackage>(51) @ 1.0.0 without checking dependencies    
+DEBUG Searching for a compatible version of keyring{platform_machine != 'ppc64le' and platform_machine != 's390x'} (>=21.2.0)
+DEBUG Selecting: keyring==25.7.0 [compatible] (keyring-25.7.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for keyring==25.7.0: keyring==25.7.0
+DEBUG Adding transitive dependency for keyring==25.7.0: keyring{platform_machine != 'ppc64le' and platform_machine != 's390x'}==25.7.0
+INFO add_decision: Id::<PubGrubPackage>(48) @ 25.7.0 without checking dependencies    
+DEBUG Searching for a compatible version of keyring (==25.7.0)
+DEBUG Selecting: keyring==25.7.0 [compatible] (keyring-25.7.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for keyring==25.7.0: secretstorage{sys_platform == 'linux'}>=3.2
+DEBUG Adding transitive dependency for keyring==25.7.0: jeepney{sys_platform == 'linux'}>=0.4.2
+DEBUG Adding transitive dependency for keyring==25.7.0: jaraco-classes*
+DEBUG Adding transitive dependency for keyring==25.7.0: jaraco-functools*
+DEBUG Adding transitive dependency for keyring==25.7.0: jaraco-context*
+INFO add_decision: Id::<PubGrubPackage>(49) @ 25.7.0 without checking dependencies    
+DEBUG Searching for a compatible version of keyring{platform_machine != 'ppc64le' and platform_machine != 's390x'} (==25.7.0)
+DEBUG Selecting: keyring==25.7.0 [compatible] (keyring-25.7.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for keyring==25.7.0: secretstorage{sys_platform == 'linux'}>=3.2
+DEBUG Adding transitive dependency for keyring==25.7.0: jeepney{sys_platform == 'linux'}>=0.4.2
+DEBUG Adding transitive dependency for keyring==25.7.0: jaraco-classes*
+DEBUG Adding transitive dependency for keyring==25.7.0: jaraco-functools*
+DEBUG Adding transitive dependency for keyring==25.7.0: jaraco-context*
+INFO add_decision: Id::<PubGrubPackage>(89) @ 25.7.0 without checking dependencies    
+DEBUG Searching for a compatible version of rfc3986 (>=1.4.0)
+DEBUG Selecting: rfc3986==2.0.0 [compatible] (rfc3986-2.0.0-py2.py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(52) @ 2.0.0 without checking dependencies    
+DEBUG Searching for a compatible version of rich (>=14.3.3)
+DEBUG Selecting: rich==15.0.0 [compatible] (rich-15.0.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for rich==15.0.0: markdown-it-py>=2.2.0
+DEBUG Adding transitive dependency for rich==15.0.0: pygments>=2.13.0, <3.0.0
+INFO add_decision: Id::<PubGrubPackage>(53) @ 15.0.0 without checking dependencies    
+DEBUG Searching for a compatible version of id (*)
+DEBUG Selecting: id==1.6.1 [compatible] (id-1.6.1-py3-none-any.whl)
+DEBUG Adding transitive dependency for id==1.6.1: urllib3>=2, <3
+INFO add_decision: Id::<PubGrubPackage>(54) @ 1.6.1 without checking dependencies    
+DEBUG Searching for a compatible version of cachecontrol[filecache] (>=0.13.0)
+DEBUG Selecting: cachecontrol==0.14.4 [compatible] (cachecontrol-0.14.4-py3-none-any.whl)
+DEBUG Adding transitive dependency for cachecontrol==0.14.4: cachecontrol==0.14.4
+DEBUG Adding transitive dependency for cachecontrol==0.14.4: cachecontrol[filecache]==0.14.4
+INFO add_decision: Id::<PubGrubPackage>(55) @ 0.14.4 without checking dependencies    
+DEBUG Searching for a compatible version of cachecontrol (==0.14.4)
+DEBUG Selecting: cachecontrol==0.14.4 [compatible] (cachecontrol-0.14.4-py3-none-any.whl)
+DEBUG Adding transitive dependency for cachecontrol==0.14.4: requests>=2.16.0
+DEBUG Adding transitive dependency for cachecontrol==0.14.4: msgpack>=0.5.2, <2.0.0
+INFO add_decision: Id::<PubGrubPackage>(56) @ 0.14.4 without checking dependencies    
+DEBUG Searching for a compatible version of cachecontrol[filecache] (==0.14.4)
+DEBUG Selecting: cachecontrol==0.14.4 [compatible] (cachecontrol-0.14.4-py3-none-any.whl)
+DEBUG Adding transitive dependency for cachecontrol==0.14.4: filelock>=3.8.0
+INFO add_decision: Id::<PubGrubPackage>(97) @ 0.14.4 without checking dependencies    
+DEBUG Searching for a compatible version of cyclonedx-python-lib (>=5, <12)
+DEBUG Selecting: cyclonedx-python-lib==11.12.0 [compatible] (cyclonedx_python_lib-11.12.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for cyclonedx-python-lib==11.12.0: license-expression>=30, <31
+DEBUG Adding transitive dependency for cyclonedx-python-lib==11.12.0: packageurl-python>=0.11, <2
+DEBUG Adding transitive dependency for cyclonedx-python-lib==11.12.0: py-serializable>=2.1.0, <3.0.0
+DEBUG Adding transitive dependency for cyclonedx-python-lib==11.12.0: sortedcontainers>=2.4.0, <3.0.0
+INFO add_decision: Id::<PubGrubPackage>(57) @ 11.12.0 without checking dependencies    
+DEBUG Searching for a compatible version of pip-api (>=0.0.28)
+DEBUG Selecting: pip-api==0.0.35 [compatible] (pip_api-0.0.35-py3-none-any.whl)
+DEBUG Adding transitive dependency for pip-api==0.0.35: pip*
+INFO add_decision: Id::<PubGrubPackage>(58) @ 0.0.35 without checking dependencies    
+DEBUG Searching for a compatible version of pip-requirements-parser (>=32.0.0)
+DEBUG Selecting: pip-requirements-parser==32.0.1 [compatible] (pip_requirements_parser-32.0.1-py3-none-any.whl)
+DEBUG Adding transitive dependency for pip-requirements-parser==32.0.1: packaging*
+DEBUG Adding transitive dependency for pip-requirements-parser==32.0.1: pyparsing*
+INFO add_decision: Id::<PubGrubPackage>(59) @ 32.0.1 without checking dependencies    
+DEBUG Searching for a compatible version of tomli (>=2.2.1)
+DEBUG Selecting: tomli==2.5.0 [compatible] (tomli-2.5.0-cp315-cp315-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl)
+INFO add_decision: Id::<PubGrubPackage>(60) @ 2.5.0 without checking dependencies    
+DEBUG Searching for a compatible version of tomli-w (>=1.2.0)
+DEBUG Selecting: tomli-w==1.2.0 [compatible] (tomli_w-1.2.0-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(61) @ 1.2.0 without checking dependencies    
+DEBUG Searching for a compatible version of platformdirs (>=4.4, <5)
+DEBUG Selecting: platformdirs==4.14.5 [compatible] (platformdirs-4.14.5-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(62) @ 4.14.5 without checking dependencies    
+DEBUG Searching for a compatible version of tomlkit (>=0.11.1)
+DEBUG Selecting: tomlkit==0.15.2 [compatible] (tomlkit-0.15.2-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(63) @ 0.15.2 without checking dependencies    
+DEBUG Searching for a compatible version of trove-classifiers (*)
+DEBUG Selecting: trove-classifiers==2026.9.21.13 [compatible] (trove_classifiers-2026.9.21.13-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(64) @ 2026.9.21.13 without checking dependencies    
+DEBUG Searching for a compatible version of sphinxcontrib-applehelp (>=1.0.7)
+DEBUG Selecting: sphinxcontrib-applehelp==2.0.0 [compatible] (sphinxcontrib_applehelp-2.0.0-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(65) @ 2.0.0 without checking dependencies    
+DEBUG Searching for a compatible version of sphinxcontrib-devhelp (>=1.0.6)
+DEBUG Selecting: sphinxcontrib-devhelp==2.0.0 [compatible] (sphinxcontrib_devhelp-2.0.0-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(66) @ 2.0.0 without checking dependencies    
+DEBUG Searching for a compatible version of sphinxcontrib-htmlhelp (>=2.0.6)
+DEBUG Selecting: sphinxcontrib-htmlhelp==2.1.0 [compatible] (sphinxcontrib_htmlhelp-2.1.0-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(67) @ 2.1.0 without checking dependencies    
+DEBUG Searching for a compatible version of sphinxcontrib-jsmath (>=1.0.1)
+DEBUG Selecting: sphinxcontrib-jsmath==2.0.0 [compatible] (sphinxcontrib_jsmath-2.0.0-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(68) @ 2.0.0 without checking dependencies    
+DEBUG Searching for a compatible version of sphinxcontrib-qthelp (>=1.0.6)
+DEBUG Selecting: sphinxcontrib-qthelp==2.0.0 [compatible] (sphinxcontrib_qthelp-2.0.0-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(69) @ 2.0.0 without checking dependencies    
+DEBUG Searching for a compatible version of sphinxcontrib-serializinghtml (>=1.1.9)
+DEBUG Selecting: sphinxcontrib-serializinghtml==2.0.0 [compatible] (sphinxcontrib_serializinghtml-2.0.0-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(70) @ 2.0.0 without checking dependencies    
+DEBUG Searching for a compatible version of docutils (>=0.21.2, <0.24)
+DEBUG Selecting: docutils==0.23 [compatible] (docutils-0.23-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(71) @ 0.23 without checking dependencies    
+DEBUG Searching for a compatible version of snowballstemmer (>=3.0.1)
+DEBUG Selecting: snowballstemmer==3.1.1 [compatible] (snowballstemmer-3.1.1-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(72) @ 3.1.1 without checking dependencies    
+DEBUG Searching for a compatible version of babel (>=2.18)
+DEBUG Selecting: babel==2.18.0 [compatible] (babel-2.18.0-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(73) @ 2.18.0 without checking dependencies    
+DEBUG Searching for a compatible version of alabaster (>=1.0)
+DEBUG Selecting: alabaster==1.0.0 [compatible] (alabaster-1.0.0-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(74) @ 1.0.0 without checking dependencies    
+DEBUG Searching for a compatible version of imagesize (>=1.3)
+DEBUG Selecting: imagesize==2.0.1 [compatible] (imagesize-2.0.1-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(75) @ 2.0.1 without checking dependencies    
+DEBUG Searching for a compatible version of roman-numerals (>=3.0)
+DEBUG Selecting: roman-numerals==4.1.0 [compatible] (roman_numerals-4.1.0-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(76) @ 4.1.0 without checking dependencies    
+DEBUG Searching for a compatible version of beautifulsoup4 (*)
+DEBUG Selecting: beautifulsoup4==4.15.0 [compatible] (beautifulsoup4-4.15.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for beautifulsoup4==4.15.0: soupsieve>=1.6.1
+DEBUG Found stale response for: https://pypi.org/simple/distlib/
+DEBUG Found stale response for: https://pypi.org/simple/filelock/
+DEBUG Found stale response for: https://pypi.org/simple/python-discovery/
+DEBUG Sending revalidation request for: https://pypi.org/simple/distlib/
+DEBUG Adding transitive dependency for beautifulsoup4==4.15.0: typing-extensions>=4.0.0
+INFO add_decision: Id::<PubGrubPackage>(77) @ 4.15.0 without checking dependencies    
+DEBUG Searching for a compatible version of sphinx-basic-ng (>=1.0.0b2)
+DEBUG Selecting: sphinx-basic-ng==1.0.0b2 [compatible] (sphinx_basic_ng-1.0.0b2-py3-none-any.whl)
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/filelock/
+DEBUG Adding transitive dependency for sphinx-basic-ng==1.0.0b2: sphinx>=4.0
+INFO add_decision: Id::<PubGrubPackage>(78) @ 1.0.0b2 without checking dependencies    
+DEBUG Searching for a compatible version of accessible-pygments (>=0.0.5)
+DEBUG Selecting: accessible-pygments==0.0.5 [compatible] (accessible_pygments-0.0.5-py3-none-any.whl)
+DEBUG Adding transitive dependency for accessible-pygments==0.0.5: pygments>=1.5
+INFO add_decision: Id::<PubGrubPackage>(79) @ 0.0.5 without checking dependencies    
+DEBUG Searching for a compatible version of mdit-py-plugins (>=0.7, <1.dev0)
+DEBUG Found stale response for: https://pypi.org/simple/jeepney/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/python-discovery/
+DEBUG Selecting: mdit-py-plugins==0.7.0 [compatible] (mdit_py_plugins-0.7.0-py3-none-any.whl)
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/jeepney/
+DEBUG Adding transitive dependency for mdit-py-plugins==0.7.0: markdown-it-py>=3.0.0, <5.0.0
+INFO add_decision: Id::<PubGrubPackage>(80) @ 0.7.0 without checking dependencies    
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(147), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(149), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(151), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(153), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/secretstorage/
+DEBUG Sending revalidation request for: https://pypi.org/simple/secretstorage/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(155), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/jaraco-classes/
+DEBUG Sending revalidation request for: https://pypi.org/simple/jaraco-classes/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(157), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/nh3/
+DEBUG Found stale response for: https://pypi.org/simple/jaraco-functools/
+DEBUG Sending revalidation request for: https://pypi.org/simple/nh3/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/jaraco-functools/
+DEBUG Found stale response for: https://pypi.org/simple/jaraco-context/
+DEBUG Found stale response for: https://pypi.org/simple/license-expression/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/jaraco-context/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/license-expression/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(159), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(161), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(163), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(165), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/packageurl-python/
+DEBUG Sending revalidation request for: https://pypi.org/simple/packageurl-python/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(167), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/sortedcontainers/
+DEBUG Sending revalidation request for: https://pypi.org/simple/sortedcontainers/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(169), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/py-serializable/
+DEBUG Found stale response for: https://pypi.org/simple/pip/
+DEBUG Found stale response for: https://pypi.org/simple/pyparsing/
+DEBUG Found stale response for: https://pypi.org/simple/soupsieve/
+DEBUG Found stale response for: https://pypi.org/simple/msgpack/
+DEBUG Sending revalidation request for: https://pypi.org/simple/py-serializable/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/pip/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/pyparsing/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/soupsieve/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/msgpack/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(171), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(173), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(175), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(177), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(179), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(153), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(149), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(165), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(147), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/jeepney/
+DEBUG Found not-modified response for: https://pypi.org/simple/filelock/
+DEBUG Found not-modified response for: https://pypi.org/simple/license-expression/
+DEBUG Found not-modified response for: https://pypi.org/simple/distlib/
+DEBUG received frame=Headers { stream_id: StreamId(157), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/jaraco-classes/
+DEBUG Searching for a compatible version of distlib (>=0.4.3, <1)
+DEBUG Selecting: distlib==0.4.4 [compatible] (distlib-0.4.4-py2.py3-none-any.whl)
+DEBUG received frame=Headers { stream_id: StreamId(167), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(169), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(161), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/packageurl-python/
+DEBUG Found not-modified response for: https://pypi.org/simple/sortedcontainers/
+DEBUG Found not-modified response for: https://pypi.org/simple/jaraco-functools/
+DEBUG received frame=Headers { stream_id: StreamId(163), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/jaraco-context/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/b2/a3/e137168c9c44d18eff0376253da9f1e9234d0239e0ee230d2fee6cea8e55/jeepney-0.9.0-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/ef/90/5d0096a325aa0f83ba7a3968bfb485b67e32c947bdf9cd0fcb4b485be718/filelock-4.2.10-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/af/40/791891d4c0c4dab4c5e187c17261cedc26285fd41541577f900470a45a4d/license_expression-30.4.4-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/c1/2b/238f02a4927fa2e27aa995371d240a468b52e42eae44a678434aff736b38/distlib-0.4.4-py2.py3-none-any.whl.metadata
+INFO add_decision: Id::<PubGrubPackage>(86) @ 0.4.4 without checking dependencies    
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/02/36/ecc85bc96c273dc8a11273ed4782272975e6338d4a3e9228621175edf0e3/jaraco_functools-4.6.0-py3-none-any.whl.metadata
+DEBUG Searching for a compatible version of filelock{python_full_version >= '3.10'} (>=3.24.2, <5)
+DEBUG Selecting: filelock==4.2.10 [compatible] (filelock-4.2.10-py3-none-any.whl)
+DEBUG Adding transitive dependency for filelock==4.2.10: filelock==4.2.10
+DEBUG Adding transitive dependency for filelock==4.2.10: filelock{python_full_version >= '3.10'}==4.2.10
+INFO add_decision: Id::<PubGrubPackage>(84) @ 4.2.10 without checking dependencies    
+DEBUG Searching for a compatible version of filelock (==4.2.10)
+DEBUG Selecting: filelock==4.2.10 [compatible] (filelock-4.2.10-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(85) @ 4.2.10 without checking dependencies    
+DEBUG Searching for a compatible version of filelock{python_full_version >= '3.10'} (==4.2.10)
+DEBUG Selecting: filelock==4.2.10 [compatible] (filelock-4.2.10-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(106) @ 4.2.10 without checking dependencies    
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/32/46/9cb0e58b2deb7f82b84065f37f3bffeb12413f947f9388e4cac22c4621ce/sortedcontainers-2.4.0-py2.py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/7f/66/b15ce62552d84bbfcec9a4873ab79d993a1dd4edb922cbfccae192bd5b5f/jaraco.classes-3.4.0-py3-none-any.whl.metadata
+DEBUG received frame=Headers { stream_id: StreamId(155), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/b1/2f/c7277b7615a93f51b5fbc1eacfc1b75e8103370e786fd8ce2abf6e5c04ab/packageurl_python-0.17.6-py3-none-any.whl.metadata
+DEBUG Found not-modified response for: https://pypi.org/simple/secretstorage/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/f2/58/bc8954bda5fcda97bd7c19be11b85f91973d67a706ed4a3aec33e7de22db/jaraco_context-6.1.2-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/b7/46/f5af3402b579fd5e11573ce652019a67074317e18c1935cc0b4ba9b35552/secretstorage-3.5.0-py3-none-any.whl.metadata
+DEBUG received frame=Headers { stream_id: StreamId(159), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/nh3/
+DEBUG received frame=Headers { stream_id: StreamId(177), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/soupsieve/
+DEBUG received frame=Headers { stream_id: StreamId(175), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(151), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/pyparsing/
+DEBUG Found not-modified response for: https://pypi.org/simple/python-discovery/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/88/73/6a2087c72975cfc07394623bca8d17654342ea4055ae368deafe5a81a542/soupsieve-4.1-py3-none-any.whl.metadata
+DEBUG Searching for a compatible version of python-discovery (>=1.6.1)
+DEBUG Selecting: python-discovery==1.9.5 [compatible] (python_discovery-1.9.5-py3-none-any.whl)
+DEBUG received frame=Headers { stream_id: StreamId(179), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(173), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(171), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/msgpack/
+DEBUG Found not-modified response for: https://pypi.org/simple/pip/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/a6/ed/c5510c615dce55b6fcc364aa1838142f938beed64f5e4927490dfcaf4405/nh3-0.3.7-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata
+DEBUG Found not-modified response for: https://pypi.org/simple/py-serializable/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/38/bb/d215ee7c73b61497b28a5503f9f53523f294fcc936762b7caf90e0c1c2b5/pyparsing-3.3.3-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/ac/35/25bd092ca8a7e71192afdca67fbff4f797da74408e74ac3626e13b409ec0/python_discovery-1.9.5-py3-none-any.whl.metadata
+DEBUG Adding transitive dependency for python-discovery==1.9.5: filelock>=3.16.1
+INFO add_decision: Id::<PubGrubPackage>(87) @ 1.9.5 without checking dependencies    
+DEBUG Searching for a compatible version of nh3 (>=0.2.14)
+DEBUG Selecting: nh3==0.3.7 [compatible] (nh3-0.3.7-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl)
+INFO add_decision: Id::<PubGrubPackage>(88) @ 0.3.7 without checking dependencies    
+DEBUG Searching for a compatible version of secretstorage{sys_platform == 'linux'} (>=3.2)
+DEBUG Selecting: secretstorage==3.5.0 [compatible] (secretstorage-3.5.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for secretstorage==3.5.0: secretstorage==3.5.0
+DEBUG Adding transitive dependency for secretstorage==3.5.0: secretstorage{sys_platform == 'linux'}==3.5.0
+INFO add_decision: Id::<PubGrubPackage>(90) @ 3.5.0 without checking dependencies    
+DEBUG Searching for a compatible version of secretstorage (==3.5.0)
+DEBUG Selecting: secretstorage==3.5.0 [compatible] (secretstorage-3.5.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for secretstorage==3.5.0: cryptography>=2.0
+DEBUG Adding transitive dependency for secretstorage==3.5.0: jeepney>=0.6
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/b0/54/890510a2c9841aff63258e085d15d4e140c7eef559d4da81ef2d2d867436/msgpack-1.2.4-cp315-cp315-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/07/25/ee8c38ae72d66b844ce8eb9711ba905dba21ca1a8a0c960057c41cd23337/pip-26.3-py3-none-any.whl.metadata
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/7e/56/94f6a9ac81193713e6be0d41c62d6b916b53c814c05d8b3a0d90976db0d6/py_serializable-2.2.0-py3-none-any.whl.metadata
+INFO add_decision: Id::<PubGrubPackage>(91) @ 3.5.0 without checking dependencies    
+DEBUG Searching for a compatible version of secretstorage{sys_platform == 'linux'} (==3.5.0)
+DEBUG Selecting: secretstorage==3.5.0 [compatible] (secretstorage-3.5.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for secretstorage==3.5.0: cryptography>=2.0
+DEBUG Adding transitive dependency for secretstorage==3.5.0: jeepney>=0.6
+INFO add_decision: Id::<PubGrubPackage>(107) @ 3.5.0 without checking dependencies    
+DEBUG Searching for a compatible version of jeepney{sys_platform == 'linux'} (>=0.4.2)
+DEBUG Selecting: jeepney==0.9.0 [compatible] (jeepney-0.9.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for jeepney==0.9.0: jeepney==0.9.0
+DEBUG Adding transitive dependency for jeepney==0.9.0: jeepney{sys_platform == 'linux'}==0.9.0
+INFO add_decision: Id::<PubGrubPackage>(92) @ 0.9.0 without checking dependencies    
+DEBUG Searching for a compatible version of jeepney (==0.9.0)
+DEBUG Selecting: jeepney==0.9.0 [compatible] (jeepney-0.9.0-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(93) @ 0.9.0 without checking dependencies    
+DEBUG Searching for a compatible version of jeepney{sys_platform == 'linux'} (==0.9.0)
+DEBUG Selecting: jeepney==0.9.0 [compatible] (jeepney-0.9.0-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(109) @ 0.9.0 without checking dependencies    
+DEBUG Searching for a compatible version of jaraco-classes (*)
+DEBUG Selecting: jaraco-classes==3.4.0 [compatible] (jaraco.classes-3.4.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for jaraco-classes==3.4.0: more-itertools*
+INFO add_decision: Id::<PubGrubPackage>(94) @ 3.4.0 without checking dependencies    
+DEBUG Searching for a compatible version of jaraco-functools (*)
+DEBUG Selecting: jaraco-functools==4.6.0 [compatible] (jaraco_functools-4.6.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for jaraco-functools==4.6.0: more-itertools*
+INFO add_decision: Id::<PubGrubPackage>(95) @ 4.6.0 without checking dependencies    
+DEBUG Searching for a compatible version of jaraco-context (*)
+DEBUG Selecting: jaraco-context==6.1.2 [compatible] (jaraco_context-6.1.2-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(96) @ 6.1.2 without checking dependencies    
+DEBUG Searching for a compatible version of msgpack (>=0.5.2, <2.0.0)
+DEBUG Selecting: msgpack==1.2.4 [compatible] (msgpack-1.2.4-cp315-cp315-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl)
+INFO add_decision: Id::<PubGrubPackage>(98) @ 1.2.4 without checking dependencies    
+DEBUG Searching for a compatible version of license-expression (>=30, <31)
+DEBUG Selecting: license-expression==30.4.4 [compatible] (license_expression-30.4.4-py3-none-any.whl)
+DEBUG Adding transitive dependency for license-expression==30.4.4: boolean-py>=4.0
+INFO add_decision: Id::<PubGrubPackage>(99) @ 30.4.4 without checking dependencies    
+DEBUG Searching for a compatible version of packageurl-python (>=0.11, <2)
+DEBUG Selecting: packageurl-python==0.17.6 [compatible] (packageurl_python-0.17.6-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(100) @ 0.17.6 without checking dependencies    
+DEBUG Searching for a compatible version of py-serializable (>=2.1.0, <3.0.0)
+DEBUG Selecting: py-serializable==2.2.0 [compatible] (py_serializable-2.2.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for py-serializable==2.2.0: defusedxml>=0.7.1, <0.8.0
+INFO add_decision: Id::<PubGrubPackage>(101) @ 2.2.0 without checking dependencies    
+DEBUG Searching for a compatible version of sortedcontainers (>=2.4.0, <3.0.0)
+DEBUG Selecting: sortedcontainers==2.4.0 [compatible] (sortedcontainers-2.4.0-py2.py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(102) @ 2.4.0 without checking dependencies    
+DEBUG Searching for a compatible version of pip (*)
+DEBUG Selecting: pip==26.3 [compatible] (pip-26.3-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(103) @ 26.3 without checking dependencies    
+DEBUG Searching for a compatible version of pyparsing (*)
+DEBUG Selecting: pyparsing==3.3.3 [compatible] (pyparsing-3.3.3-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(104) @ 3.3.3 without checking dependencies    
+DEBUG Searching for a compatible version of soupsieve (>=1.6.1)
+DEBUG Selecting: soupsieve==4.1 [compatible] (soupsieve-4.1-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(105) @ 4.1 without checking dependencies    
+DEBUG Found stale response for: https://pypi.org/simple/more-itertools/
+DEBUG Sending revalidation request for: https://pypi.org/simple/more-itertools/
+DEBUG Found stale response for: https://pypi.org/simple/boolean-py/
+DEBUG Found stale response for: https://pypi.org/simple/defusedxml/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/boolean-py/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG Sending revalidation request for: https://pypi.org/simple/defusedxml/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(181), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(183), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG send frame=Headers { stream_id: StreamId(185), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found stale response for: https://pypi.org/simple/cryptography/
+DEBUG Sending revalidation request for: https://pypi.org/simple/cryptography/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(187), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(185), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/defusedxml/
+DEBUG received frame=Headers { stream_id: StreamId(181), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/more-itertools/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/07/6c/aa3f2f849e01cb6a001cd8554a88d4c77c5c1a31c95bdf1cf9301e6d9ef4/defusedxml-0.7.1-py2.py3-none-any.whl.metadata
+DEBUG received frame=Headers { stream_id: StreamId(183), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/boolean-py/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/5d/57/3c4b1c6f2e0cc29ba023802458ea3d2a996f87085559e4a5f2192d549532/more_itertools-11.2.1-py3-none-any.whl.metadata
+DEBUG received frame=Headers { stream_id: StreamId(187), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/cryptography/
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/e5/ca/78d423b324b8d77900030fa59c4aa9054261ef0925631cd2501dd015b7b7/boolean_py-5.0-py3-none-any.whl.metadata
+DEBUG Searching for a compatible version of cryptography (>=2.0)
+DEBUG Selecting: cryptography==50.0.2 [compatible] (cryptography-50.0.2-cp315-abi3.abi3t-manylinux_2_34_x86_64.whl)
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/24/95/83378121ef3eaaaf71d4b781577ff794acb39b9e1b87a3f156898c8497ed/cryptography-50.0.2-cp315-abi3.abi3t-manylinux_2_34_x86_64.whl.metadata
+DEBUG Adding transitive dependency for cryptography==50.0.2: cffi{platform_python_implementation != 'PyPy'}>=2.0.0
+INFO add_decision: Id::<PubGrubPackage>(108) @ 50.0.2 without checking dependencies    
+DEBUG Searching for a compatible version of more-itertools (*)
+DEBUG Selecting: more-itertools==11.2.1 [compatible] (more_itertools-11.2.1-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(110) @ 11.2.1 without checking dependencies    
+DEBUG Searching for a compatible version of boolean-py (>=4.0)
+DEBUG Selecting: boolean-py==5.0 [compatible] (boolean_py-5.0-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(111) @ 5.0 without checking dependencies    
+DEBUG Searching for a compatible version of defusedxml (>=0.7.1, <0.8.0)
+DEBUG Selecting: defusedxml==0.7.1 [compatible] (defusedxml-0.7.1-py2.py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(112) @ 0.7.1 without checking dependencies    
+DEBUG Found stale response for: https://pypi.org/simple/cffi/
+DEBUG Sending revalidation request for: https://pypi.org/simple/cffi/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(189), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(189), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/cffi/
+DEBUG Searching for a compatible version of cffi{platform_python_implementation != 'PyPy'} (>=2.0.0)
+DEBUG Selecting: cffi==2.1.1 [compatible] (cffi-2.1.1-cp315-cp315-manylinux2014_x86_64.manylinux_2_17_x86_64.whl)
+DEBUG Adding transitive dependency for cffi==2.1.1: cffi==2.1.1
+DEBUG Adding transitive dependency for cffi==2.1.1: cffi{platform_python_implementation != 'PyPy'}==2.1.1
+INFO add_decision: Id::<PubGrubPackage>(113) @ 2.1.1 without checking dependencies    
+DEBUG Searching for a compatible version of cffi (==2.1.1)
+DEBUG Selecting: cffi==2.1.1 [compatible] (cffi-2.1.1-cp315-cp315-manylinux2014_x86_64.manylinux_2_17_x86_64.whl)
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/44/16/29e6d01b388bef055ecd6ca8244b3f4d336bd09e92d5d892187b9601084e/cffi-2.1.1-cp315-cp315-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata
+DEBUG Adding transitive dependency for cffi==2.1.1: pycparser{implementation_name != 'PyPy'}*
+INFO add_decision: Id::<PubGrubPackage>(114) @ 2.1.1 without checking dependencies    
+DEBUG Searching for a compatible version of cffi{platform_python_implementation != 'PyPy'} (==2.1.1)
+DEBUG Selecting: cffi==2.1.1 [compatible] (cffi-2.1.1-cp315-cp315-manylinux2014_x86_64.manylinux_2_17_x86_64.whl)
+DEBUG Adding transitive dependency for cffi==2.1.1: pycparser{implementation_name != 'PyPy'}*
+INFO add_decision: Id::<PubGrubPackage>(115) @ 2.1.1 without checking dependencies    
+DEBUG Found stale response for: https://pypi.org/simple/pycparser/
+DEBUG Sending revalidation request for: https://pypi.org/simple/pycparser/
+DEBUG reuse idle connection for ("https", pypi.org)
+DEBUG send frame=Headers { stream_id: StreamId(191), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG received frame=Headers { stream_id: StreamId(191), flags: (0x5: END_HEADERS | END_STREAM) }
+DEBUG Found not-modified response for: https://pypi.org/simple/pycparser/
+DEBUG Searching for a compatible version of pycparser{implementation_name != 'PyPy'} (*)
+DEBUG Selecting: pycparser==3.12 [compatible] (pycparser-3.12-py3-none-any.whl)
+DEBUG Adding transitive dependency for pycparser==3.12: pycparser==3.12
+DEBUG Adding transitive dependency for pycparser==3.12: pycparser{implementation_name != 'PyPy'}==3.12
+INFO add_decision: Id::<PubGrubPackage>(116) @ 3.12 without checking dependencies    
+DEBUG Searching for a compatible version of pycparser (==3.12)
+DEBUG Selecting: pycparser==3.12 [compatible] (pycparser-3.12-py3-none-any.whl)
+DEBUG Found fresh response for: https://files.pythonhosted.org/packages/b6/ae/315bbeee126a769cbde43cf4908acb4b40408d8bf8bbf334dd7368d8dadf/pycparser-3.12-py3-none-any.whl.metadata
+INFO add_decision: Id::<PubGrubPackage>(117) @ 3.12 without checking dependencies    
+DEBUG Searching for a compatible version of pycparser{implementation_name != 'PyPy'} (==3.12)
+DEBUG Selecting: pycparser==3.12 [compatible] (pycparser-3.12-py3-none-any.whl)
+INFO add_decision: Id::<PubGrubPackage>(118) @ 3.12 without checking dependencies    
+DEBUG Tried 96 versions: accessible-pygments 1, alabaster 1, ast-serialize 1, attrs 1, babel 1, beautifulsoup4 1, boolean-py 1, build 1, cachecontrol 1, certifi 1, cffi 1, cfgv 1, charset-normalizer 1, click 1, click-log 1, coverage 1, cryptography 1, cyclonedx-python-lib 1, defusedxml 1, distlib 1, docutils 1, filelock 1, furo 1, hatchling 1, id 1, identify 1, idna 1, imagesize 1, iniconfig 1, jaraco-classes 1, jaraco-context 1, jaraco-functools 1, jeepney 1, jinja2 1, keyring 1, librt 1, license-expression 1, markdown-it-py 1, markupsafe 1, mdit-py-plugins 1, mdurl 1, more-itertools 1, msgpack 1, mypy 1, mypy-extensions 1, myst-parser 1, nh3 1, nodeenv 1, packageurl-python 1, packaging 1, pathspec 1, pip 1, pip-api 1, pip-audit 1, pip-requirements-parser 1, platformdirs 1, pluggy 1, pre-commit 1, py-serializable 1, pycparser 1, pygments 1, pyparsing 1, pyproject-hooks 1, pytest 1, pytest-asyncio 1, pytest-cov 1, python-discovery 1, pyyaml 1, readme-renderer 1, requests 1, requests-toolbelt 1, rfc3986 1, rich 1, roman-numerals 1, ruff 1, scriv 1, secretstorage 1, snowballstemmer 1, sortedcontainers 1, soupsieve 1, sphinx 1, sphinx-basic-ng 1, sphinxcontrib-applehelp 1, sphinxcontrib-devhelp 1, sphinxcontrib-htmlhelp 1, sphinxcontrib-jsmath 1, sphinxcontrib-qthelp 1, sphinxcontrib-serializinghtml 1, tomli 1, tomli-w 1, tomlkit 1, trove-classifiers 1, twine 1, typing-extensions 1, urllib3 1, virtualenv 1
+DEBUG marker environment resolution took 0.337s
+Resolved 96 packages in 346ms
+# This file was autogenerated by uv via the following command:
+#    uv pip compile pyproject.toml --all-extras --refresh --python .venv/bin/python -o requirements.lock
+accessible-pygments==0.0.5
+    # via furo
+alabaster==1.0.0
+    # via sphinx
+ast-serialize==0.13.1
+    # via mypy
+attrs==26.1.0
+    # via scriv
+babel==2.18.0
+    # via sphinx
+beautifulsoup4==4.15.0
+    # via furo
+boolean-py==5.0
+    # via license-expression
+build==1.6.1
+    # via my-package (pyproject.toml)
+cachecontrol==0.14.4
+    # via pip-audit
+certifi==2026.10.23
+    # via
+    #   requests
+    #   scriv
+cffi==2.1.1
+    # via cryptography
+cfgv==3.5.0
+    # via pre-commit
+charset-normalizer==3.5.2
+    # via
+    #   requests
+    #   scriv
+click==8.5.0
+    # via
+    #   click-log
+    #   scriv
+click-log==0.4.0
+    # via scriv
+coverage==7.17.3
+    # via pytest-cov
+cryptography==50.0.2
+    # via secretstorage
+cyclonedx-python-lib==11.12.0
+    # via pip-audit
+defusedxml==0.7.1
+    # via py-serializable
+distlib==0.4.4
+    # via virtualenv
+docutils==0.23
+    # via
+    #   myst-parser
+    #   readme-renderer
+    #   sphinx
+filelock==4.2.10
+    # via
+    #   cachecontrol
+    #   python-discovery
+    #   virtualenv
+furo==2025.12.19
+    # via my-package (pyproject.toml)
+hatchling==1.33.0
+    # via my-package (pyproject.toml)
+id==1.6.1
+    # via twine
+identify==2.6.20
+    # via pre-commit
+idna==3.20
+    # via
+    #   requests
+    #   scriv
+imagesize==2.0.1
+    # via sphinx
+iniconfig==2.3.1
+    # via pytest
+jaraco-classes==3.4.0
+    # via keyring
+jaraco-context==6.1.2
+    # via keyring
+jaraco-functools==4.6.0
+    # via keyring
+jeepney==0.9.0
+    # via
+    #   keyring
+    #   secretstorage
+jinja2==3.1.6
+    # via
+    #   myst-parser
+    #   scriv
+    #   sphinx
+keyring==25.7.0
+    # via twine
+librt==0.16.0
+    # via mypy
+license-expression==30.4.4
+    # via cyclonedx-python-lib
+markdown-it-py==4.2.0
+    # via
+    #   mdit-py-plugins
+    #   myst-parser
+    #   rich
+    #   scriv
+markupsafe==3.0.4
+    # via
+    #   jinja2
+    #   scriv
+mdit-py-plugins==0.7.0
+    # via myst-parser
+mdurl==0.1.2
+    # via
+    #   markdown-it-py
+    #   scriv
+more-itertools==11.2.1
+    # via
+    #   jaraco-classes
+    #   jaraco-functools
+msgpack==1.2.4
+    # via cachecontrol
+mypy==2.4.1
+    # via my-package (pyproject.toml)
+mypy-extensions==1.2.0
+    # via mypy
+myst-parser==5.2.0
+    # via my-package (pyproject.toml)
+nh3==0.3.7
+    # via readme-renderer
+nodeenv==1.12.0
+    # via pre-commit
+packageurl-python==0.17.6
+    # via cyclonedx-python-lib
+packaging==26.3
+    # via
+    #   build
+    #   hatchling
+    #   pip-audit
+    #   pip-requirements-parser
+    #   pytest
+    #   sphinx
+    #   twine
+    #   virtualenv
+pathspec==1.1.1
+    # via
+    #   hatchling
+    #   mypy
+pip==26.3
+    # via pip-api
+pip-api==0.0.35
+    # via pip-audit
+pip-audit==2.10.1
+    # via my-package (pyproject.toml)
+pip-requirements-parser==32.0.1
+    # via pip-audit
+platformdirs==4.14.5
+    # via
+    #   pip-audit
+    #   virtualenv
+pluggy==1.7.0
+    # via
+    #   hatchling
+    #   pytest
+    #   pytest-cov
+pre-commit==4.7.0
+    # via my-package (pyproject.toml)
+py-serializable==2.2.0
+    # via cyclonedx-python-lib
+pycparser==3.12
+    # via cffi
+pygments==2.21.0
+    # via
+    #   accessible-pygments
+    #   furo
+    #   pytest
+    #   readme-renderer
+    #   rich
+    #   sphinx
+pyparsing==3.3.3
+    # via pip-requirements-parser
+pyproject-hooks==1.3.3
+    # via build
+pytest==9.2.0
+    # via
+    #   my-package (pyproject.toml)
+    #   pytest-asyncio
+    #   pytest-cov
+pytest-asyncio==1.5.0
+    # via my-package (pyproject.toml)
+pytest-cov==7.1.0
+    # via my-package (pyproject.toml)
+python-discovery==1.9.5
+    # via virtualenv
+pyyaml==6.0.3
+    # via
+    #   myst-parser
+    #   pre-commit
+readme-renderer==46.0
+    # via twine
+requests==2.34.2
+    # via
+    #   cachecontrol
+    #   pip-audit
+    #   requests-toolbelt
+    #   scriv
+    #   sphinx
+    #   twine
+requests-toolbelt==1.0.0
+    # via twine
+rfc3986==2.0.0
+    # via twine
+rich==15.0.0
+    # via
+    #   pip-audit
+    #   twine
+roman-numerals==4.1.0
+    # via sphinx
+ruff==0.17.5
+    # via my-package (pyproject.toml)
+scriv==1.8.1
+    # via my-package (pyproject.toml)
+secretstorage==3.5.0
+    # via keyring
+snowballstemmer==3.1.1
+    # via sphinx
+sortedcontainers==2.4.0
+    # via cyclonedx-python-lib
+soupsieve==4.1
+    # via beautifulsoup4
+sphinx==9.2.0
+    # via
+    #   my-package (pyproject.toml)
+    #   furo
+    #   myst-parser
+    #   sphinx-basic-ng
+sphinx-basic-ng==1.0.0b2
+    # via furo
+sphinxcontrib-applehelp==2.0.0
+    # via sphinx
+sphinxcontrib-devhelp==2.0.0
+    # via sphinx
+sphinxcontrib-htmlhelp==2.1.0
+    # via sphinx
+sphinxcontrib-jsmath==2.0.0
+    # via sphinx
+sphinxcontrib-qthelp==2.0.0
+    # via sphinx
+sphinxcontrib-serializinghtml==2.0.0
+    # via sphinx
+tomli==2.5.0
+    # via pip-audit
+tomli-w==1.2.0
+    # via pip-audit
+tomlkit==0.15.2
+    # via hatchling
+trove-classifiers==2026.9.21.13
+    # via hatchling
+twine==7.0.0
+    # via my-package (pyproject.toml)
+typing-extensions==4.16.0
+    # via
+    #   beautifulsoup4
+    #   mypy
+urllib3==2.8.0
+    # via
+    #   id
+    #   requests
+    #   scriv
+    #   twine
+virtualenv==21.15.6
+    # via pre-commit

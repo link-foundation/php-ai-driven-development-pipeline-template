@@ -159,7 +159,7 @@ final class WebArchiveTest extends TestCase
             return ['status' => 404, 'body' => ''];
         });
 
-        $result = (new WebArchive($http, self::noSleep()))->review(['https://archived.test', 'https://missing.test']);
+        $result = new WebArchive($http, self::noSleep())->review(['https://archived.test', 'https://missing.test']);
 
         self::assertArrayHasKey('https://archived.test', $result['archived']);
         self::assertSame(['https://missing.test'], $result['missing']);

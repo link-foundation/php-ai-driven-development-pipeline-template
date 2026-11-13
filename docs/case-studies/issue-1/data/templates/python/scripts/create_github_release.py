@@ -21,7 +21,6 @@ import subprocess
 import sys
 from pathlib import Path
 
-
 MAX_RELEASE_NOTES_BYTES = 60_000
 ENCODING = "utf-8"
 
@@ -134,6 +133,7 @@ def cap_release_notes(
 
 
 def create_release(
+    *,
     version: str,
     repository: str,
     release_notes: str,

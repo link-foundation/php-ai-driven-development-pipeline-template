@@ -74,7 +74,7 @@ final class ChangelogFragmentsTest extends TestCase
         $this->write('b.md', "---\nbump: patch\n---\n### Fixed\n- Bug B.");
         $this->write('c.md', "---\nbump: minor\n---\n### Added\n- New C.");
 
-        $body = (new ChangelogFragments($this->dir))->collectBody();
+        $body = new ChangelogFragments($this->dir)->collectBody();
 
         self::assertStringContainsString("### Added\n- New A.\n- New C.", $body);
         self::assertStringContainsString("### Fixed\n- Bug B.", $body);

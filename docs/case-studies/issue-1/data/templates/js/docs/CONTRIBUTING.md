@@ -52,12 +52,7 @@ Tests should:
 - Work across all runtimes (Node.js, Bun, Deno)
 - Use the [test-anywhere](https://github.com/link-foundation/test-anywhere) framework
 
-```bash
-# Run tests
-bun test --timeout 30000
-npm test
-deno test --allow-read
-```
+Use the [runtime test commands in the development guide](../README.md#development), including Deno's locked dependency graph and filesystem/process permissions for CLI integration tests.
 
 ## Version Management with Changesets
 

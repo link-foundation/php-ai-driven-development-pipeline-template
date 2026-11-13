@@ -19,7 +19,7 @@ try {
     if ($workflows === []) {
         throw new RuntimeException('No active workflows found');
     }
-    $findings = (new WorkflowDependencies())->findings($workflows);
+    $findings = new WorkflowDependencies()->findings($workflows);
     // A newer upstream release is external state: gate it on pull requests,
     // where a contributor can act, and warn on push, schedule and manual runs
     // so main does not turn red without a commit (issue #20). Unpinned runner

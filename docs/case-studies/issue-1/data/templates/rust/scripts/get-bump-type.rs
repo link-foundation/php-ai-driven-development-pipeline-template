@@ -20,15 +20,15 @@
 //!
 //! ```cargo
 //! [dependencies]
-//! regex = "1"
+//! regex = "1.13.1"
 //! ```
 
+use regex::Regex;
 use std::env;
 use std::fs;
 use std::io::Write;
 use std::path::Path;
 use std::process::exit;
-use regex::Regex;
 
 fn get_arg(name: &str) -> Option<String> {
     let args: Vec<String> = env::args().collect();
@@ -71,10 +71,13 @@ fn get_changelog_dir(rust_root: &str) -> String {
 }
 
 fn set_output(key: &str, value: &str) {
-    if let Ok(output_file) = env::var("GITHUB_OUTPUT") {
-        if let Ok(mut file) = fs::OpenOptions::new().create(true).append(true).open(&output_file) {
-            let _ = writeln!(file, "{}={}", key, value);
-        }
+    if let Ok(output_file) = env::var("GITHUB_OUTPUT")
+        && let Ok(mut file) = fs::OpenOptions::new()
+            .create(true)
+            .append(true)
+            .open(&output_file)
+    {
+        let _ = writeln!(file, "{}={}", key, value);
     }
     println!("Output: {}={}", key, value);
 }
@@ -95,8 +98,8 @@ fn parse_frontmatter(content: &str) -> Option<String> {
         let frontmatter = caps.get(1).unwrap().as_str();
 
         // Parse YAML-like frontmatter (simple key: value format)
+        let bump_re = Regex::new(r"^\s*bump\s*:\s*(.+?)\s*$").unwrap();
         for line in frontmatter.lines() {
-            let bump_re = Regex::new(r"^\s*bump\s*:\s*(.+?)\s*$").unwrap();
             if let Some(bump_caps) = bump_re.captures(line) {
                 return Some(bump_caps.get(1).unwrap().as_str().to_string());
             }
@@ -118,8 +121,8 @@ fn determine_bump_type(changelog_dir: &str, default_bump: &str) -> (String, usiz
             .filter_map(|e| e.ok())
             .map(|e| e.path())
             .filter(|p| {
-                p.extension().map_or(false, |ext| ext == "md")
-                    && p.file_name().map_or(false, |name| name != "README.md")
+                p.extension().is_some_and(|ext| ext == "md")
+                    && p.file_name().is_some_and(|name| name != "README.md")
             })
             .collect(),
         Err(_) => {
@@ -146,7 +149,11 @@ fn determine_bump_type(changelog_dir: &str, default_bump: &str) -> (String, usiz
                     highest_priority = priority;
                     highest_bump_type = bump.clone();
                 }
-                println!("Fragment {}: bump={}", file.file_name().unwrap().to_string_lossy(), bump);
+                println!(
+                    "Fragment {}: bump={}",
+                    file.file_name().unwrap().to_string_lossy(),
+                    bump
+                );
             } else {
                 println!(
                     "Fragment {}: no bump specified, using default",
@@ -166,9 +173,15 @@ fn main() {
 
     let (bump_type, fragment_count) = determine_bump_type(&changelog_dir, &default_bump);
 
-    println!("\nDetermined bump type: {} (from {} fragment(s))", bump_type, fragment_count);
+    println!(
+        "\nDetermined bump type: {} (from {} fragment(s))",
+        bump_type, fragment_count
+    );
 
     set_output("bump_type", &bump_type);
     set_output("fragment_count", &fragment_count.to_string());
-    set_output("has_fragments", if fragment_count > 0 { "true" } else { "false" });
+    set_output(
+        "has_fragments",
+        if fragment_count > 0 { "true" } else { "false" },
+    );
 }

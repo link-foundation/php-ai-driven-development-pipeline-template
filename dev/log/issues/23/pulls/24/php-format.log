@@ -1,0 +1,24 @@
+PHP CS Fixer 3.95.30 Adalbertus by Fabien Potencier, Dariusz Ruminski and contributors.
+PHP runtime: 8.5.11
+Loaded config default from "/tmp/gh-issue-solver-1794605189377/.php-cs-fixer.dist.php".
+Running analysis on 1 core sequentially.
+  0/64 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%
+  7/64 [▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░░]  10%
+ 13/64 [▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░]  20%
+ 20/64 [▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░]  31%
+ 26/64 [▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░]  40%
+ 32/64 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░]  50%
+ 39/64 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░]  60%
+ 45/64 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░]  70%
+ 52/64 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░]  81%
+ 58/64 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░]  90%
+ 64/64 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+
+   1) scripts/recheck-broken-links.php
+   2) scripts/check-workflow-dependencies.php
+   3) tests/Pipeline/FileSizeCheckerTest.php
+   4) tests/Pipeline/WebArchiveTest.php
+   5) tests/Pipeline/ChangelogTest.php
+   6) tests/Pipeline/ChangelogFragmentsTest.php
+
+Fixed 6 of 64 files in 1.721 seconds, 20.00 MB memory used

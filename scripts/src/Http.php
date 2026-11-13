@@ -63,12 +63,10 @@ final class Http
                 ],
             ]);
 
-            // PHP populates $http_response_header in the local scope after the
-            // request; seed it so static analysis sees a defined list and a
-            // failed request still yields an empty header set.
-            $http_response_header = [];
+            // Do not reuse a previous response when this request cannot connect.
+            http_clear_last_response_headers();
             $body = @file_get_contents($url, false, $context);
-            $status = self::statusFromHeaders($http_response_header);
+            $status = self::statusFromHeaders(http_get_last_response_headers() ?? []);
 
             return ['status' => $status, 'body' => $body === false ? '' : $body];
         };

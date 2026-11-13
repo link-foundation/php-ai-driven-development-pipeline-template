@@ -1,0 +1,1514 @@
+{
+  "@electron/asar": [
+    {
+      "current": "3.4.1",
+      "wanted": "3.4.1",
+      "latest": "4.3.2",
+      "dependent": "electron-installer-common",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/@electron/asar"
+    },
+    {
+      "current": "3.4.1",
+      "wanted": "3.4.1",
+      "latest": "4.3.2",
+      "dependent": "electron-winstaller",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/@electron/asar"
+    }
+  ],
+  "@electron/windows-sign": {
+    "current": "1.2.2",
+    "wanted": "1.2.2",
+    "latest": "2.1.0",
+    "dependent": "electron-winstaller",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/@electron/windows-sign"
+  },
+  "@malept/cross-spawn-promise": {
+    "current": "1.1.1",
+    "wanted": "1.1.1",
+    "latest": "2.0.0",
+    "dependent": "electron-installer-common",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/electron-installer-common/node_modules/@malept/cross-spawn-promise"
+  },
+  "@oxc-project/types": {
+    "current": "0.156.0",
+    "wanted": "0.156.0",
+    "latest": "0.158.0",
+    "dependent": "rolldown",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/@oxc-project/types"
+  },
+  "@rolldown/binding-android-arm-eabi": {
+    "wanted": "1.2.19",
+    "latest": "1.3.2",
+    "dependent": "rolldown"
+  },
+  "@rolldown/binding-android-arm64": {
+    "wanted": "1.2.19",
+    "latest": "1.3.2",
+    "dependent": "rolldown"
+  },
+  "@rolldown/binding-darwin-arm64": {
+    "wanted": "1.2.19",
+    "latest": "1.3.2",
+    "dependent": "rolldown"
+  },
+  "@rolldown/binding-darwin-x64": {
+    "wanted": "1.2.19",
+    "latest": "1.3.2",
+    "dependent": "rolldown"
+  },
+  "@rolldown/binding-freebsd-x64": {
+    "wanted": "1.2.19",
+    "latest": "1.3.2",
+    "dependent": "rolldown"
+  },
+  "@rolldown/binding-linux-arm-gnueabihf": {
+    "wanted": "1.2.19",
+    "latest": "1.3.2",
+    "dependent": "rolldown"
+  },
+  "@rolldown/binding-linux-arm64-gnu": {
+    "wanted": "1.2.19",
+    "latest": "1.3.2",
+    "dependent": "rolldown"
+  },
+  "@rolldown/binding-linux-arm64-musl": {
+    "wanted": "1.2.19",
+    "latest": "1.3.2",
+    "dependent": "rolldown"
+  },
+  "@rolldown/binding-linux-ppc64-gnu": {
+    "wanted": "1.2.19",
+    "latest": "1.3.2",
+    "dependent": "rolldown"
+  },
+  "@rolldown/binding-linux-s390x-gnu": {
+    "wanted": "1.2.19",
+    "latest": "1.3.2",
+    "dependent": "rolldown"
+  },
+  "@rolldown/binding-linux-x64-gnu": {
+    "current": "1.2.19",
+    "wanted": "1.2.19",
+    "latest": "1.3.2",
+    "dependent": "rolldown",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/@rolldown/binding-linux-x64-gnu"
+  },
+  "@rolldown/binding-linux-x64-musl": {
+    "wanted": "1.2.19",
+    "latest": "1.3.2",
+    "dependent": "rolldown"
+  },
+  "@rolldown/binding-openharmony-arm64": {
+    "wanted": "1.2.19",
+    "latest": "1.3.2",
+    "dependent": "rolldown"
+  },
+  "@rolldown/binding-wasm32-wasi": {
+    "wanted": "1.2.19",
+    "latest": "1.3.2",
+    "dependent": "rolldown"
+  },
+  "@rolldown/binding-win32-arm64-msvc": {
+    "wanted": "1.2.19",
+    "latest": "1.3.2",
+    "dependent": "rolldown"
+  },
+  "@rolldown/binding-win32-x64-msvc": {
+    "wanted": "1.2.19",
+    "latest": "1.3.2",
+    "dependent": "rolldown"
+  },
+  "@rolldown/plugin-babel": {
+    "wanted": "0.3.1",
+    "latest": "0.3.1",
+    "dependent": "@vitejs/plugin-react"
+  },
+  "@types/fs-extra": [
+    {
+      "current": "8.1.5",
+      "wanted": "8.1.5",
+      "latest": "11.0.4",
+      "dependent": "@ionic/utils-fs",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/@types/fs-extra"
+    },
+    {
+      "current": "9.0.13",
+      "wanted": "9.0.13",
+      "latest": "11.0.4",
+      "dependent": "electron-installer-common",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/electron-installer-common/node_modules/@types/fs-extra"
+    }
+  ],
+  "@types/node": [
+    {
+      "current": "24.19.2",
+      "wanted": "26.6.6",
+      "latest": "26.6.6",
+      "dependent": "@types/fs-extra",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/@types/node"
+    },
+    {
+      "current": "24.19.2",
+      "wanted": "26.6.6",
+      "latest": "26.6.6",
+      "dependent": "@types/fs-extra",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/@types/node"
+    },
+    {
+      "current": "24.19.2",
+      "wanted": "24.19.2",
+      "latest": "26.6.6",
+      "dependent": "electron",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/@types/node"
+    },
+    {
+      "current": "24.19.2",
+      "wanted": "26.6.6",
+      "latest": "26.6.6",
+      "dependent": "vite",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/@types/node"
+    }
+  ],
+  "@types/react": {
+    "wanted": "19.3.0",
+    "latest": "19.3.0",
+    "dependent": "ink"
+  },
+  "@types/slice-ansi": {
+    "current": "4.0.0",
+    "wanted": "4.0.0",
+    "latest": "5.0.2",
+    "dependent": "@ionic/utils-terminal",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/@types/slice-ansi"
+  },
+  "@vitejs/devtools": {
+    "wanted": "0.8.2",
+    "latest": "0.8.2",
+    "dependent": "vite"
+  },
+  "abbrev": {
+    "current": "4.0.0",
+    "wanted": "4.0.0",
+    "latest": "5.0.0",
+    "dependent": "nopt",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/abbrev"
+  },
+  "ansi-regex": {
+    "current": "5.0.1",
+    "wanted": "5.0.1",
+    "latest": "6.6.0",
+    "dependent": "strip-ansi",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/ansi-regex"
+  },
+  "ansi-styles": [
+    {
+      "current": "6.2.3",
+      "wanted": "6.2.3",
+      "latest": "7.0.0",
+      "dependent": "@alcalzone/ansi-tokenize",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/@alcalzone/ansi-tokenize/node_modules/ansi-styles"
+    },
+    {
+      "current": "6.2.3",
+      "wanted": "6.2.3",
+      "latest": "7.0.0",
+      "dependent": "ink",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/ink/node_modules/ansi-styles"
+    },
+    {
+      "current": "6.2.3",
+      "wanted": "6.2.3",
+      "latest": "7.0.0",
+      "dependent": "slice-ansi",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/ink/node_modules/ansi-styles"
+    },
+    {
+      "current": "6.2.3",
+      "wanted": "6.2.3",
+      "latest": "7.0.0",
+      "dependent": "slice-ansi",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/log-update/node_modules/ansi-styles"
+    },
+    {
+      "current": "4.3.0",
+      "wanted": "4.3.0",
+      "latest": "7.0.0",
+      "dependent": "slice-ansi",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/ansi-styles"
+    },
+    {
+      "current": "4.3.0",
+      "wanted": "4.3.0",
+      "latest": "7.0.0",
+      "dependent": "wrap-ansi",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/ansi-styles"
+    },
+    {
+      "current": "6.2.3",
+      "wanted": "6.2.3",
+      "latest": "7.0.0",
+      "dependent": "wrap-ansi",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/cliui/node_modules/ansi-styles"
+    },
+    {
+      "current": "6.2.3",
+      "wanted": "6.2.3",
+      "latest": "7.0.0",
+      "dependent": "wrap-ansi",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/wrap-ansi/node_modules/ansi-styles"
+    }
+  ],
+  "babel-plugin-react-compiler": {
+    "wanted": "1.0.0",
+    "latest": "1.0.0",
+    "dependent": "@vitejs/plugin-react"
+  },
+  "balanced-match": [
+    {
+      "current": "4.0.4",
+      "wanted": "4.0.4",
+      "latest": "5.0.0",
+      "dependent": "brace-expansion",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/@electron/packager/node_modules/balanced-match"
+    },
+    {
+      "current": "4.0.4",
+      "wanted": "4.0.4",
+      "latest": "5.0.0",
+      "dependent": "brace-expansion",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/@electron/universal/node_modules/balanced-match"
+    },
+    {
+      "current": "1.0.2",
+      "wanted": "1.0.2",
+      "latest": "5.0.0",
+      "dependent": "brace-expansion",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/balanced-match"
+    },
+    {
+      "current": "4.0.4",
+      "wanted": "4.0.4",
+      "latest": "5.0.0",
+      "dependent": "brace-expansion",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/rimraf/node_modules/balanced-match"
+    }
+  ],
+  "bplist-creator": {
+    "current": "0.1.0",
+    "wanted": "0.1.0",
+    "latest": "0.3.0",
+    "dependent": "simple-plist",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/bplist-creator"
+  },
+  "bplist-parser": [
+    {
+      "current": "0.3.2",
+      "wanted": "0.3.2",
+      "latest": "0.5.0",
+      "dependent": "native-run",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/bplist-parser"
+    },
+    {
+      "current": "0.3.1",
+      "wanted": "0.3.1",
+      "latest": "0.5.0",
+      "dependent": "simple-plist",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/simple-plist/node_modules/bplist-parser"
+    }
+  ],
+  "brace-expansion": {
+    "current": "1.1.22",
+    "wanted": "1.1.22",
+    "latest": "5.0.13",
+    "dependent": "minimatch",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/brace-expansion"
+  },
+  "buffer-crc32": {
+    "current": "0.2.13",
+    "wanted": "0.2.13",
+    "latest": "1.0.0",
+    "dependent": "yauzl",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/buffer-crc32"
+  },
+  "bufferutil": {
+    "wanted": "4.2.0",
+    "latest": "4.2.0",
+    "dependent": "ws"
+  },
+  "chalk": {
+    "current": "5.6.2",
+    "wanted": "5.6.2",
+    "latest": "6.0.1",
+    "dependent": "ink",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/chalk"
+  },
+  "cli-cursor": {
+    "current": "4.0.0",
+    "wanted": "4.0.0",
+    "latest": "5.0.0",
+    "dependent": "ink",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/cli-cursor"
+  },
+  "color-convert": {
+    "current": "2.0.1",
+    "wanted": "2.0.1",
+    "latest": "3.1.3",
+    "dependent": "ansi-styles",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/color-convert"
+  },
+  "color-name": {
+    "current": "1.1.4",
+    "wanted": "1.1.4",
+    "latest": "2.1.1",
+    "dependent": "color-convert",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/color-name"
+  },
+  "commander": [
+    {
+      "current": "12.1.0",
+      "wanted": "12.1.0",
+      "latest": "15.1.0",
+      "dependent": "@capacitor/cli",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/commander"
+    },
+    {
+      "current": "11.1.0",
+      "wanted": "11.1.0",
+      "latest": "15.1.0",
+      "dependent": "@electron-forge/cli",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/@electron-forge/cli/node_modules/commander"
+    },
+    {
+      "current": "5.1.0",
+      "wanted": "5.1.0",
+      "latest": "15.1.0",
+      "dependent": "@electron/asar",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/@electron/asar/node_modules/commander"
+    },
+    {
+      "current": "9.5.0",
+      "wanted": "9.5.0",
+      "latest": "15.1.0",
+      "dependent": "postject",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/postject/node_modules/commander"
+    }
+  ],
+  "concat-map": {
+    "current": "0.0.1",
+    "wanted": "0.0.1",
+    "latest": "0.0.2",
+    "dependent": "brace-expansion",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/concat-map"
+  },
+  "cross-zip": {
+    "current": "4.0.1",
+    "wanted": "4.1.0",
+    "latest": "4.1.0",
+    "dependent": "@electron-forge/maker-zip",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/cross-zip"
+  },
+  "define-lazy-prop": {
+    "current": "2.0.0",
+    "wanted": "2.0.0",
+    "latest": "3.0.0",
+    "dependent": "open",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/define-lazy-prop"
+  },
+  "electron-winstaller": {
+    "current": "5.4.0",
+    "wanted": "5.4.4",
+    "latest": "5.4.4",
+    "dependent": "@electron-forge/maker-squirrel",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/electron-winstaller"
+  },
+  "emoji-regex": [
+    {
+      "current": "10.6.0",
+      "wanted": "10.6.0",
+      "latest": "11.0.0",
+      "dependent": "string-width",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/cliui/node_modules/emoji-regex"
+    },
+    {
+      "current": "8.0.0",
+      "wanted": "8.0.0",
+      "latest": "11.0.0",
+      "dependent": "string-width",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/emoji-regex"
+    }
+  ],
+  "env-paths": [
+    {
+      "current": "2.2.1",
+      "wanted": "2.2.1",
+      "latest": "4.0.0",
+      "dependent": "@capacitor/cli",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/env-paths"
+    },
+    {
+      "current": "3.0.0",
+      "wanted": "3.0.0",
+      "latest": "4.0.0",
+      "dependent": "@electron/get",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/@electron/get/node_modules/env-paths"
+    },
+    {
+      "current": "2.2.1",
+      "wanted": "2.2.1",
+      "latest": "4.0.0",
+      "dependent": "node-gyp",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/env-paths"
+    }
+  ],
+  "err-code": {
+    "current": "2.0.3",
+    "wanted": "2.0.3",
+    "latest": "3.0.1",
+    "dependent": "promise-retry",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/err-code"
+  },
+  "esbuild": {
+    "wanted": "0.28.2",
+    "latest": "0.28.2",
+    "dependent": "vite"
+  },
+  "escape-string-regexp": {
+    "current": "2.0.0",
+    "wanted": "2.0.0",
+    "latest": "5.0.0",
+    "dependent": "stack-utils",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/escape-string-regexp"
+  },
+  "filename-reserved-regex": {
+    "current": "3.0.0",
+    "wanted": "3.0.0",
+    "latest": "4.1.0",
+    "dependent": "filenamify",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/filename-reserved-regex"
+  },
+  "filenamify": {
+    "current": "6.0.0",
+    "wanted": "6.0.0",
+    "latest": "7.0.3",
+    "dependent": "@electron/packager",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/filenamify"
+  },
+  "fs-extra": [
+    {
+      "current": "11.3.5",
+      "wanted": "11.4.1",
+      "latest": "11.4.1",
+      "dependent": "@capacitor/cli",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/fs-extra"
+    },
+    {
+      "current": "11.3.5",
+      "wanted": "11.4.1",
+      "latest": "11.4.1",
+      "dependent": "@electron/windows-sign",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/fs-extra"
+    },
+    {
+      "current": "9.1.0",
+      "wanted": "9.1.0",
+      "latest": "11.4.1",
+      "dependent": "@ionic/utils-fs",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/@ionic/utils-fs/node_modules/fs-extra"
+    },
+    {
+      "current": "9.1.0",
+      "wanted": "9.1.0",
+      "latest": "11.4.1",
+      "dependent": "electron-installer-common",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/electron-installer-common/node_modules/fs-extra"
+    },
+    {
+      "current": "7.0.1",
+      "wanted": "7.0.1",
+      "latest": "11.4.1",
+      "dependent": "electron-winstaller",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/electron-winstaller/node_modules/fs-extra"
+    }
+  ],
+  "fsevents": {
+    "wanted": "2.3.3",
+    "latest": "2.3.3",
+    "dependent": "vite"
+  },
+  "glob": [
+    {
+      "current": "7.2.3",
+      "wanted": "7.2.3",
+      "latest": "14.0.6",
+      "dependent": "@electron/asar",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/glob"
+    },
+    {
+      "current": "7.2.3",
+      "wanted": "7.2.3",
+      "latest": "14.0.6",
+      "dependent": "electron-installer-common",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/glob"
+    },
+    {
+      "current": "7.2.3",
+      "wanted": "7.2.3",
+      "latest": "14.0.6",
+      "dependent": "rimraf",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/glob"
+    }
+  ],
+  "graceful-fs": [
+    {
+      "current": "4.2.11",
+      "wanted": "4.2.12",
+      "latest": "4.2.12",
+      "dependent": "@electron-forge/core",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/graceful-fs"
+    },
+    {
+      "current": "4.2.11",
+      "wanted": "4.2.12",
+      "latest": "4.2.12",
+      "dependent": "@electron-forge/core-utils",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/graceful-fs"
+    },
+    {
+      "current": "4.2.11",
+      "wanted": "4.2.12",
+      "latest": "4.2.12",
+      "dependent": "@electron/get",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/graceful-fs"
+    },
+    {
+      "current": "4.2.11",
+      "wanted": "4.2.12",
+      "latest": "4.2.12",
+      "dependent": "@electron/packager",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/graceful-fs"
+    },
+    {
+      "current": "4.2.11",
+      "wanted": "4.2.12",
+      "latest": "4.2.12",
+      "dependent": "@electron/windows-sign",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/graceful-fs"
+    },
+    {
+      "current": "4.2.11",
+      "wanted": "4.2.12",
+      "latest": "4.2.12",
+      "dependent": "fs-extra",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/graceful-fs"
+    },
+    {
+      "current": "4.2.11",
+      "wanted": "4.2.12",
+      "latest": "4.2.12",
+      "dependent": "fs-extra",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/graceful-fs"
+    },
+    {
+      "current": "4.2.11",
+      "wanted": "4.2.12",
+      "latest": "4.2.12",
+      "dependent": "fs-extra",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/graceful-fs"
+    },
+    {
+      "current": "4.2.11",
+      "wanted": "4.2.12",
+      "latest": "4.2.12",
+      "dependent": "fs-extra",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/graceful-fs"
+    },
+    {
+      "current": "4.2.11",
+      "wanted": "4.2.12",
+      "latest": "4.2.12",
+      "dependent": "jsonfile",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/graceful-fs"
+    },
+    {
+      "current": "4.2.11",
+      "wanted": "4.2.12",
+      "latest": "4.2.12",
+      "dependent": "jsonfile",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/graceful-fs"
+    },
+    {
+      "current": "4.2.11",
+      "wanted": "4.2.12",
+      "latest": "4.2.12",
+      "dependent": "node-gyp",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/graceful-fs"
+    }
+  ],
+  "ini": {
+    "current": "4.1.3",
+    "wanted": "4.1.3",
+    "latest": "7.0.0",
+    "dependent": "native-run",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/native-run/node_modules/ini"
+  },
+  "ink": {
+    "current": "7.1.1",
+    "wanted": "7.1.1",
+    "latest": "8.0.0",
+    "dependent": "@electron-forge/multi-logger",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/ink"
+  },
+  "is-docker": [
+    {
+      "current": "2.2.1",
+      "wanted": "2.2.1",
+      "latest": "4.0.0",
+      "dependent": "is-wsl",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/is-docker"
+    },
+    {
+      "current": "2.2.1",
+      "wanted": "2.2.1",
+      "latest": "4.0.0",
+      "dependent": "open",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/is-docker"
+    }
+  ],
+  "is-fullwidth-code-point": [
+    {
+      "current": "3.0.0",
+      "wanted": "3.0.0",
+      "latest": "5.1.0",
+      "dependent": "slice-ansi",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/is-fullwidth-code-point"
+    },
+    {
+      "current": "3.0.0",
+      "wanted": "3.0.0",
+      "latest": "5.1.0",
+      "dependent": "string-width",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/is-fullwidth-code-point"
+    }
+  ],
+  "is-wsl": {
+    "current": "2.2.0",
+    "wanted": "2.2.0",
+    "latest": "3.1.1",
+    "dependent": "open",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/is-wsl"
+  },
+  "isbinaryfile": {
+    "current": "4.0.10",
+    "wanted": "4.0.10",
+    "latest": "6.0.0",
+    "dependent": "@electron/osx-sign",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/isbinaryfile"
+  },
+  "isexe": [
+    {
+      "current": "3.1.5",
+      "wanted": "3.1.5",
+      "latest": "4.0.0",
+      "dependent": "which",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/electron-installer-redhat/node_modules/isexe"
+    },
+    {
+      "current": "2.0.0",
+      "wanted": "2.0.0",
+      "latest": "4.0.0",
+      "dependent": "which",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/isexe"
+    }
+  ],
+  "jsonfile": {
+    "current": "4.0.0",
+    "wanted": "4.0.0",
+    "latest": "6.2.1",
+    "dependent": "fs-extra",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/electron-winstaller/node_modules/jsonfile"
+  },
+  "kleur": {
+    "current": "3.0.3",
+    "wanted": "3.0.3",
+    "latest": "4.1.5",
+    "dependent": "prompts",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/prompts/node_modules/kleur"
+  },
+  "less": {
+    "wanted": "4.9.1",
+    "latest": "4.9.1",
+    "dependent": "vite"
+  },
+  "lightningcss-android-arm64": {
+    "wanted": "1.33.0",
+    "latest": "1.33.0",
+    "dependent": "lightningcss"
+  },
+  "lightningcss-darwin-arm64": {
+    "wanted": "1.33.0",
+    "latest": "1.33.0",
+    "dependent": "lightningcss"
+  },
+  "lightningcss-darwin-x64": {
+    "wanted": "1.33.0",
+    "latest": "1.33.0",
+    "dependent": "lightningcss"
+  },
+  "lightningcss-freebsd-x64": {
+    "wanted": "1.33.0",
+    "latest": "1.33.0",
+    "dependent": "lightningcss"
+  },
+  "lightningcss-linux-arm-gnueabihf": {
+    "wanted": "1.33.0",
+    "latest": "1.33.0",
+    "dependent": "lightningcss"
+  },
+  "lightningcss-linux-arm64-gnu": {
+    "wanted": "1.33.0",
+    "latest": "1.33.0",
+    "dependent": "lightningcss"
+  },
+  "lightningcss-linux-arm64-musl": {
+    "wanted": "1.33.0",
+    "latest": "1.33.0",
+    "dependent": "lightningcss"
+  },
+  "lightningcss-linux-x64-musl": {
+    "wanted": "1.33.0",
+    "latest": "1.33.0",
+    "dependent": "lightningcss"
+  },
+  "lightningcss-win32-arm64-msvc": {
+    "wanted": "1.33.0",
+    "latest": "1.33.0",
+    "dependent": "lightningcss"
+  },
+  "lightningcss-win32-x64-msvc": {
+    "wanted": "1.33.0",
+    "latest": "1.33.0",
+    "dependent": "lightningcss"
+  },
+  "mimic-fn": {
+    "current": "2.1.0",
+    "wanted": "2.1.0",
+    "latest": "4.0.0",
+    "dependent": "onetime",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/mimic-fn"
+  },
+  "minimatch": [
+    {
+      "current": "3.1.5",
+      "wanted": "3.1.5",
+      "latest": "11.0.8",
+      "dependent": "@electron/asar",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/minimatch"
+    },
+    {
+      "current": "3.1.5",
+      "wanted": "3.1.5",
+      "latest": "11.0.8",
+      "dependent": "glob",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/minimatch"
+    }
+  ],
+  "mkdirp": {
+    "current": "0.5.6",
+    "wanted": "0.5.6",
+    "latest": "3.0.1",
+    "dependent": "temp",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/temp/node_modules/mkdirp"
+  },
+  "nanoid": {
+    "current": "3.3.20",
+    "wanted": "3.3.20",
+    "latest": "6.0.2",
+    "dependent": "postcss",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/nanoid"
+  },
+  "native-run": {
+    "current": "2.0.3",
+    "wanted": "2.1.0",
+    "latest": "2.1.0",
+    "dependent": "@capacitor/cli",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/native-run"
+  },
+  "node-gyp": {
+    "current": "12.4.0",
+    "wanted": "12.4.0",
+    "latest": "13.1.0",
+    "dependent": "@electron/rebuild",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/node-gyp"
+  },
+  "nopt": {
+    "current": "9.0.0",
+    "wanted": "9.0.0",
+    "latest": "10.0.1",
+    "dependent": "node-gyp",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/nopt"
+  },
+  "onetime": [
+    {
+      "current": "7.0.0",
+      "wanted": "7.0.0",
+      "latest": "8.0.0",
+      "dependent": "restore-cursor",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/log-update/node_modules/onetime"
+    },
+    {
+      "current": "5.1.2",
+      "wanted": "5.1.2",
+      "latest": "8.0.0",
+      "dependent": "restore-cursor",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/onetime"
+    }
+  ],
+  "open": {
+    "current": "8.4.2",
+    "wanted": "8.4.2",
+    "latest": "11.0.4",
+    "dependent": "@capacitor/cli",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/open"
+  },
+  "oxc-transform-react": {
+    "wanted": "0.156.0",
+    "latest": "0.158.0",
+    "dependent": "@vitejs/plugin-react"
+  },
+  "path-key": {
+    "current": "3.1.1",
+    "wanted": "3.1.1",
+    "latest": "4.0.0",
+    "dependent": "cross-spawn",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/path-key"
+  },
+  "pe-library": {
+    "current": "1.0.1",
+    "wanted": "1.0.1",
+    "latest": "2.0.1",
+    "dependent": "resedit",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/pe-library"
+  },
+  "plist": [
+    {
+      "current": "3.1.1",
+      "wanted": "3.1.1",
+      "latest": "5.1.1",
+      "dependent": "@capacitor/cli",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/plist"
+    },
+    {
+      "current": "3.1.1",
+      "wanted": "3.1.1",
+      "latest": "5.1.1",
+      "dependent": "@electron/osx-sign",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/plist"
+    },
+    {
+      "current": "3.1.1",
+      "wanted": "3.1.1",
+      "latest": "5.1.1",
+      "dependent": "@electron/packager",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/plist"
+    },
+    {
+      "current": "3.1.1",
+      "wanted": "3.1.1",
+      "latest": "5.1.1",
+      "dependent": "@electron/universal",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/plist"
+    },
+    {
+      "current": "3.1.1",
+      "wanted": "3.1.1",
+      "latest": "5.1.1",
+      "dependent": "native-run",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/plist"
+    },
+    {
+      "current": "3.1.1",
+      "wanted": "3.1.1",
+      "latest": "5.1.1",
+      "dependent": "simple-plist",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/plist"
+    }
+  ],
+  "proc-log": {
+    "current": "6.1.0",
+    "wanted": "6.1.0",
+    "latest": "7.0.0",
+    "dependent": "node-gyp",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/proc-log"
+  },
+  "react-devtools-core": {
+    "wanted": "8.0.0",
+    "latest": "8.0.0",
+    "dependent": "ink"
+  },
+  "react-reconciler": {
+    "current": "0.33.0",
+    "wanted": "0.33.0",
+    "latest": "0.34.0",
+    "dependent": "ink",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/react-reconciler"
+  },
+  "readable-stream": {
+    "current": "3.6.2",
+    "wanted": "3.6.2",
+    "latest": "4.8.0",
+    "dependent": "through2",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/readable-stream"
+  },
+  "resedit": {
+    "current": "2.0.3",
+    "wanted": "2.0.3",
+    "latest": "3.1.0",
+    "dependent": "@electron/packager",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/resedit"
+  },
+  "restore-cursor": {
+    "current": "4.0.0",
+    "wanted": "4.0.0",
+    "latest": "5.1.0",
+    "dependent": "cli-cursor",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/restore-cursor"
+  },
+  "retry": {
+    "current": "0.12.0",
+    "wanted": "0.12.0",
+    "latest": "0.13.1",
+    "dependent": "promise-retry",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/retry"
+  },
+  "rimraf": {
+    "current": "2.6.3",
+    "wanted": "2.6.3",
+    "latest": "6.1.4",
+    "dependent": "temp",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/temp/node_modules/rimraf"
+  },
+  "rolldown": {
+    "current": "1.2.19",
+    "wanted": "1.2.19",
+    "latest": "1.3.2",
+    "dependent": "vite",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/rolldown"
+  },
+  "sass": {
+    "wanted": "1.108.2",
+    "latest": "1.108.2",
+    "dependent": "vite"
+  },
+  "sass-embedded": {
+    "wanted": "1.108.2",
+    "latest": "1.108.2",
+    "dependent": "vite"
+  },
+  "sax": [
+    {
+      "current": "1.1.4",
+      "wanted": "1.1.4",
+      "latest": "1.6.1",
+      "dependent": "elementtree",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/sax"
+    },
+    {
+      "current": "1.1.4",
+      "wanted": "1.6.1",
+      "latest": "1.6.1",
+      "dependent": "xml2js",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/sax"
+    }
+  ],
+  "scheduler": [
+    {
+      "current": "0.27.0",
+      "wanted": "0.27.0",
+      "latest": "0.28.0",
+      "dependent": "ink",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/scheduler"
+    },
+    {
+      "current": "0.27.0",
+      "wanted": "0.27.0",
+      "latest": "0.28.0",
+      "dependent": "react-reconciler",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/scheduler"
+    }
+  ],
+  "semver": [
+    {
+      "current": "7.8.0",
+      "wanted": "7.8.6",
+      "latest": "7.8.6",
+      "dependent": "@capacitor/cli",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/semver"
+    },
+    {
+      "current": "7.8.0",
+      "wanted": "7.8.6",
+      "latest": "7.8.6",
+      "dependent": "@electron-forge/cli",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/semver"
+    },
+    {
+      "current": "7.8.0",
+      "wanted": "7.8.6",
+      "latest": "7.8.6",
+      "dependent": "@electron-forge/core",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/semver"
+    },
+    {
+      "current": "7.8.0",
+      "wanted": "7.8.6",
+      "latest": "7.8.6",
+      "dependent": "@electron-forge/core-utils",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/semver"
+    },
+    {
+      "current": "7.8.0",
+      "wanted": "7.8.6",
+      "latest": "7.8.6",
+      "dependent": "@electron/get",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/semver"
+    },
+    {
+      "current": "7.8.0",
+      "wanted": "7.8.6",
+      "latest": "7.8.6",
+      "dependent": "@electron/osx-sign",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/semver"
+    },
+    {
+      "current": "7.8.0",
+      "wanted": "7.8.6",
+      "latest": "7.8.6",
+      "dependent": "@electron/packager",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/semver"
+    },
+    {
+      "current": "7.8.0",
+      "wanted": "7.8.6",
+      "latest": "7.8.6",
+      "dependent": "electron-installer-common",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/semver"
+    },
+    {
+      "current": "7.8.0",
+      "wanted": "7.8.6",
+      "latest": "7.8.6",
+      "dependent": "node-abi",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/semver"
+    },
+    {
+      "current": "7.8.0",
+      "wanted": "7.8.6",
+      "latest": "7.8.6",
+      "dependent": "node-api-version",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/semver"
+    },
+    {
+      "current": "7.8.0",
+      "wanted": "7.8.6",
+      "latest": "7.8.6",
+      "dependent": "node-gyp",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/semver"
+    }
+  ],
+  "shebang-regex": {
+    "current": "3.0.0",
+    "wanted": "3.0.0",
+    "latest": "4.0.0",
+    "dependent": "shebang-command",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/shebang-regex"
+  },
+  "signal-exit": [
+    {
+      "current": "3.0.7",
+      "wanted": "3.0.7",
+      "latest": "4.1.0",
+      "dependent": "@ionic/utils-process",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/signal-exit"
+    },
+    {
+      "current": "3.0.7",
+      "wanted": "3.0.7",
+      "latest": "4.1.0",
+      "dependent": "@ionic/utils-terminal",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/signal-exit"
+    },
+    {
+      "current": "3.0.7",
+      "wanted": "3.0.7",
+      "latest": "4.1.0",
+      "dependent": "ink",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/signal-exit"
+    },
+    {
+      "current": "3.0.7",
+      "wanted": "3.0.7",
+      "latest": "4.1.0",
+      "dependent": "restore-cursor",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/signal-exit"
+    }
+  ],
+  "sisteransi": {
+    "current": "1.0.5",
+    "wanted": "1.0.5",
+    "latest": "2.0.0",
+    "dependent": "prompts",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/sisteransi"
+  },
+  "slice-ansi": [
+    {
+      "current": "4.0.0",
+      "wanted": "4.0.0",
+      "latest": "10.0.1",
+      "dependent": "@ionic/utils-terminal",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/slice-ansi"
+    },
+    {
+      "current": "9.0.1",
+      "wanted": "9.0.1",
+      "latest": "10.0.1",
+      "dependent": "ink",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/ink/node_modules/slice-ansi"
+    },
+    {
+      "current": "9.0.1",
+      "wanted": "9.0.1",
+      "latest": "10.0.1",
+      "dependent": "log-update",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/log-update/node_modules/slice-ansi"
+    }
+  ],
+  "stream-buffers": {
+    "current": "2.2.0",
+    "wanted": "2.2.0",
+    "latest": "3.0.3",
+    "dependent": "bplist-creator",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/stream-buffers"
+  },
+  "string-width": [
+    {
+      "current": "8.3.0",
+      "wanted": "8.3.0",
+      "latest": "9.0.0",
+      "dependent": "@electron-forge/multi-logger",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/@electron-forge/multi-logger/node_modules/string-width"
+    },
+    {
+      "current": "4.2.3",
+      "wanted": "4.2.3",
+      "latest": "9.0.0",
+      "dependent": "@ionic/utils-terminal",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/string-width"
+    },
+    {
+      "current": "8.3.0",
+      "wanted": "8.3.0",
+      "latest": "9.0.0",
+      "dependent": "cli-truncate",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/cli-truncate/node_modules/string-width"
+    },
+    {
+      "current": "7.2.0",
+      "wanted": "7.2.0",
+      "latest": "9.0.0",
+      "dependent": "cliui",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/cliui/node_modules/string-width"
+    },
+    {
+      "current": "8.3.0",
+      "wanted": "8.3.0",
+      "latest": "9.0.0",
+      "dependent": "ink",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/ink/node_modules/string-width"
+    },
+    {
+      "current": "8.3.0",
+      "wanted": "8.3.0",
+      "latest": "9.0.0",
+      "dependent": "log-update",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/log-update/node_modules/string-width"
+    },
+    {
+      "current": "8.3.0",
+      "wanted": "8.3.0",
+      "latest": "9.0.0",
+      "dependent": "slice-ansi",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/cli-truncate/node_modules/string-width"
+    },
+    {
+      "current": "8.3.0",
+      "wanted": "8.3.0",
+      "latest": "9.0.0",
+      "dependent": "widest-line",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/widest-line/node_modules/string-width"
+    },
+    {
+      "current": "4.2.3",
+      "wanted": "4.2.3",
+      "latest": "9.0.0",
+      "dependent": "wrap-ansi",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/string-width"
+    },
+    {
+      "current": "7.2.0",
+      "wanted": "7.2.0",
+      "latest": "9.0.0",
+      "dependent": "wrap-ansi",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/cliui/node_modules/string-width"
+    },
+    {
+      "current": "8.3.0",
+      "wanted": "8.3.0",
+      "latest": "9.0.0",
+      "dependent": "wrap-ansi",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/wrap-ansi/node_modules/string-width"
+    },
+    {
+      "current": "8.3.0",
+      "wanted": "8.3.0",
+      "latest": "9.0.0",
+      "dependent": "yargs",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/yargs/node_modules/string-width"
+    }
+  ],
+  "strip-ansi": [
+    {
+      "current": "6.0.1",
+      "wanted": "6.0.1",
+      "latest": "7.2.0",
+      "dependent": "@ionic/utils-terminal",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/strip-ansi"
+    },
+    {
+      "current": "6.0.1",
+      "wanted": "6.0.1",
+      "latest": "7.2.0",
+      "dependent": "string-width",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/strip-ansi"
+    },
+    {
+      "current": "6.0.1",
+      "wanted": "6.0.1",
+      "latest": "7.2.0",
+      "dependent": "wrap-ansi",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/strip-ansi"
+    }
+  ],
+  "stylus": {
+    "wanted": "0.64.0",
+    "latest": "0.64.0",
+    "dependent": "vite"
+  },
+  "sugarss": {
+    "wanted": "5.0.2",
+    "latest": "5.0.2",
+    "dependent": "vite"
+  },
+  "terser": {
+    "wanted": "5.51.2",
+    "latest": "5.51.2",
+    "dependent": "vite"
+  },
+  "through2": {
+    "current": "4.0.2",
+    "wanted": "4.0.2",
+    "latest": "5.0.12",
+    "dependent": "native-run",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/through2"
+  },
+  "tslib": [
+    {
+      "current": "2.8.1",
+      "wanted": "2.9.1",
+      "latest": "2.9.1",
+      "dependent": "@capacitor/cli",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/tslib"
+    },
+    {
+      "current": "2.8.1",
+      "wanted": "2.9.1",
+      "latest": "2.9.1",
+      "dependent": "@capacitor/core",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/tslib"
+    },
+    {
+      "current": "2.8.1",
+      "wanted": "2.9.1",
+      "latest": "2.9.1",
+      "dependent": "@ionic/cli-framework-output",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/tslib"
+    },
+    {
+      "current": "2.8.1",
+      "wanted": "2.9.1",
+      "latest": "2.9.1",
+      "dependent": "@ionic/utils-array",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/tslib"
+    },
+    {
+      "current": "2.8.1",
+      "wanted": "2.9.1",
+      "latest": "2.9.1",
+      "dependent": "@ionic/utils-fs",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/tslib"
+    },
+    {
+      "current": "2.8.1",
+      "wanted": "2.9.1",
+      "latest": "2.9.1",
+      "dependent": "@ionic/utils-object",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/tslib"
+    },
+    {
+      "current": "2.8.1",
+      "wanted": "2.9.1",
+      "latest": "2.9.1",
+      "dependent": "@ionic/utils-process",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/tslib"
+    },
+    {
+      "current": "2.8.1",
+      "wanted": "2.9.1",
+      "latest": "2.9.1",
+      "dependent": "@ionic/utils-stream",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/tslib"
+    },
+    {
+      "current": "2.8.1",
+      "wanted": "2.9.1",
+      "latest": "2.9.1",
+      "dependent": "@ionic/utils-subprocess",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/tslib"
+    },
+    {
+      "current": "2.8.1",
+      "wanted": "2.9.1",
+      "latest": "2.9.1",
+      "dependent": "@ionic/utils-terminal",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/tslib"
+    },
+    {
+      "current": "2.8.1",
+      "wanted": "2.9.1",
+      "latest": "2.9.1",
+      "dependent": "native-run",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/tslib"
+    }
+  ],
+  "tsx": {
+    "wanted": "4.23.15",
+    "latest": "4.23.15",
+    "dependent": "vite"
+  },
+  "undici": [
+    {
+      "current": "7.30.2",
+      "wanted": "7.30.2",
+      "latest": "8.12.4",
+      "dependent": "@electron/get",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/undici"
+    },
+    {
+      "current": "6.29.1",
+      "wanted": "6.29.1",
+      "latest": "8.12.4",
+      "dependent": "node-gyp",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/node-gyp/node_modules/undici"
+    }
+  ],
+  "undici-types": {
+    "current": "7.24.6",
+    "wanted": "7.24.6",
+    "latest": "8.12.4",
+    "dependent": "@types/node",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/undici-types"
+  },
+  "universalify": {
+    "current": "0.1.2",
+    "wanted": "0.1.2",
+    "latest": "2.0.1",
+    "dependent": "fs-extra",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/electron-winstaller/node_modules/universalify"
+  },
+  "untildify": {
+    "current": "4.0.0",
+    "wanted": "4.0.0",
+    "latest": "6.0.0",
+    "dependent": "@ionic/utils-terminal",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/untildify"
+  },
+  "utf-8-validate": {
+    "wanted": "6.0.6",
+    "latest": "6.0.6",
+    "dependent": "ws"
+  },
+  "which": [
+    {
+      "current": "6.0.1",
+      "wanted": "6.0.1",
+      "latest": "7.0.0",
+      "dependent": "@electron-forge/maker-base",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/@electron-forge/maker-base/node_modules/which"
+    },
+    {
+      "current": "2.0.2",
+      "wanted": "2.0.2",
+      "latest": "7.0.0",
+      "dependent": "cross-spawn",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/which"
+    },
+    {
+      "current": "5.0.0",
+      "wanted": "5.0.0",
+      "latest": "7.0.0",
+      "dependent": "electron-installer-redhat",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/electron-installer-redhat/node_modules/which"
+    },
+    {
+      "current": "6.0.1",
+      "wanted": "6.0.1",
+      "latest": "7.0.0",
+      "dependent": "node-gyp",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/node-gyp/node_modules/which"
+    }
+  ],
+  "wrap-ansi": [
+    {
+      "current": "7.0.0",
+      "wanted": "7.0.0",
+      "latest": "10.0.2",
+      "dependent": "@ionic/utils-terminal",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/@ionic/utils-terminal/node_modules/wrap-ansi"
+    },
+    {
+      "current": "9.0.2",
+      "wanted": "9.0.2",
+      "latest": "10.0.2",
+      "dependent": "cliui",
+      "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/cliui/node_modules/wrap-ansi"
+    }
+  ],
+  "xmlbuilder": {
+    "current": "11.0.1",
+    "wanted": "11.0.1",
+    "latest": "15.1.1",
+    "dependent": "xml2js",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/xml2js/node_modules/xmlbuilder"
+  },
+  "yaml": {
+    "wanted": "2.9.1",
+    "latest": "2.9.1",
+    "dependent": "vite"
+  },
+  "yauzl": {
+    "current": "2.10.0",
+    "wanted": "2.10.0",
+    "latest": "3.4.0",
+    "dependent": "native-run",
+    "location": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/examples/universal-app/node_modules/yauzl"
+  }
+}

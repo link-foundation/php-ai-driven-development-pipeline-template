@@ -8,14 +8,14 @@
 //!
 //! ```cargo
 //! [dependencies]
-//! chrono = "0.4"
+//! chrono = "0.4.45"
 //! ```
 
+use chrono::Utc;
 use std::env;
 use std::fs;
 use std::path::Path;
 use std::process::exit;
-use chrono::Utc;
 
 fn get_arg(name: &str) -> Option<String> {
     let args: Vec<String> = env::args().collect();
@@ -34,10 +34,10 @@ fn get_rust_root() -> String {
         return root;
     }
 
-    if let Ok(root) = env::var("RUST_ROOT") {
-        if !root.is_empty() {
-            return root;
-        }
+    if let Ok(root) = env::var("RUST_ROOT")
+        && !root.is_empty()
+    {
+        return root;
     }
 
     if Path::new("./Cargo.toml").exists() {
@@ -78,7 +78,10 @@ fn main() {
 
     // Validate bump type
     if !["major", "minor", "patch"].contains(&bump_type.as_str()) {
-        eprintln!("Invalid bump type: {}. Must be major, minor, or patch.", bump_type);
+        eprintln!(
+            "Invalid bump type: {}. Must be major, minor, or patch.",
+            bump_type
+        );
         exit(1);
     }
 
@@ -99,11 +102,11 @@ fn main() {
 
     // Ensure changelog directory exists
     let dir_path = Path::new(&changelog_dir);
-    if !dir_path.exists() {
-        if let Err(e) = fs::create_dir_all(dir_path) {
-            eprintln!("Error creating directory {}: {}", changelog_dir, e);
-            exit(1);
-        }
+    if !dir_path.exists()
+        && let Err(e) = fs::create_dir_all(dir_path)
+    {
+        eprintln!("Error creating directory {}: {}", changelog_dir, e);
+        exit(1);
     }
 
     // Write the fragment file

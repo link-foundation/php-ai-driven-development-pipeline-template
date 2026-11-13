@@ -1,0 +1,327 @@
+submit-nuget	Set up job	﻿2026-11-13T23:13:36.5979300Z Current runner version: '2.338.2'
+submit-nuget	Set up job	2026-11-13T23:13:36.5998577Z ##[group]Runner Image Provisioner
+submit-nuget	Set up job	2026-11-13T23:13:36.5999156Z Hosted Compute Agent
+submit-nuget	Set up job	2026-11-13T23:13:36.5999559Z Version: 20261028.624
+submit-nuget	Set up job	2026-11-13T23:13:36.5999957Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+submit-nuget	Set up job	2026-11-13T23:13:36.6000366Z Build Date: 2026-10-28T21:51:42Z
+submit-nuget	Set up job	2026-11-13T23:13:36.6000799Z Worker ID: {b2a6164c-ad9e-4685-9fa9-7ac127deb11f}
+submit-nuget	Set up job	2026-11-13T23:13:36.6001214Z Region: centralus
+submit-nuget	Set up job	2026-11-13T23:13:36.6001569Z Cloud: Azure
+submit-nuget	Set up job	2026-11-13T23:13:36.6001952Z ##[endgroup]
+submit-nuget	Set up job	2026-11-13T23:13:36.6002712Z ##[group]Operating System
+submit-nuget	Set up job	2026-11-13T23:13:36.6003120Z Ubuntu
+submit-nuget	Set up job	2026-11-13T23:13:36.6003427Z 26.04.1
+submit-nuget	Set up job	2026-11-13T23:13:36.6003752Z LTS
+submit-nuget	Set up job	2026-11-13T23:13:36.6004096Z ##[endgroup]
+submit-nuget	Set up job	2026-11-13T23:13:36.6004416Z ##[group]Runner Image
+submit-nuget	Set up job	2026-11-13T23:13:36.6004787Z Image: ubuntu-26.04
+submit-nuget	Set up job	2026-11-13T23:13:36.6005121Z Version: 20261101.186.1
+submit-nuget	Set up job	2026-11-13T23:13:36.6005976Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261101.186/images/ubuntu/Ubuntu2604-Readme.md
+submit-nuget	Set up job	2026-11-13T23:13:36.6007087Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261101.186
+submit-nuget	Set up job	2026-11-13T23:13:36.6007947Z ##[endgroup]
+submit-nuget	Set up job	2026-11-13T23:13:36.6008611Z ##[group]GITHUB_TOKEN Permissions
+submit-nuget	Set up job	2026-11-13T23:13:36.6010013Z Contents: write
+submit-nuget	Set up job	2026-11-13T23:13:36.6010380Z Metadata: read
+submit-nuget	Set up job	2026-11-13T23:13:36.6010747Z ##[endgroup]
+submit-nuget	Set up job	2026-11-13T23:13:36.6012180Z Secret source: Actions
+submit-nuget	Set up job	2026-11-13T23:13:36.6012695Z Cache mode: write
+submit-nuget	Set up job	2026-11-13T23:13:36.6013261Z Prepare workflow directory
+submit-nuget	Set up job	2026-11-13T23:13:36.6372283Z Prepare all required actions
+submit-nuget	Set up job	2026-11-13T23:13:36.6403560Z Getting action download info
+submit-nuget	Set up job	2026-11-13T23:13:36.8924204Z Download action repository 'actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a' (SHA:f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a)
+submit-nuget	Set up job	2026-11-13T23:13:37.0174510Z Download action repository 'actions/setup-dotnet@v6' (SHA:0f4a354dd5547a28c70b7853dbd95d5b67886e73)
+submit-nuget	Set up job	2026-11-13T23:13:37.4237886Z Download action repository 'actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9' (SHA:55cc8345863c7cc4c66a329aec7e433d2d1c52a9)
+submit-nuget	Set up job	2026-11-13T23:13:37.5289904Z Download action repository 'actions/component-detection-dependency-submission-action@98beaea5a1227f3db476e4c9ca959a0cacd7ac4f' (SHA:98beaea5a1227f3db476e4c9ca959a0cacd7ac4f)
+submit-nuget	Set up job	2026-11-13T23:13:38.0125934Z Complete job name: submit-nuget
+submit-nuget	checkout	﻿2026-11-13T23:13:38.0741650Z ##[group]Run actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a
+submit-nuget	checkout	2026-11-13T23:13:38.0742664Z with:
+submit-nuget	checkout	2026-11-13T23:13:38.0743180Z   ref: refs/heads/issue-23-addf7c5fd0d4
+submit-nuget	checkout	2026-11-13T23:13:38.0744058Z   repository: link-foundation/php-ai-driven-development-pipeline-template
+submit-nuget	checkout	2026-11-13T23:13:38.0749339Z   token: ***
+submit-nuget	checkout	2026-11-13T23:13:38.0749830Z   ssh-strict: true
+submit-nuget	checkout	2026-11-13T23:13:38.0750343Z   ssh-user: git
+submit-nuget	checkout	2026-11-13T23:13:38.0750857Z   persist-credentials: true
+submit-nuget	checkout	2026-11-13T23:13:38.0751416Z   clean: true
+submit-nuget	checkout	2026-11-13T23:13:38.0751936Z   sparse-checkout-cone-mode: true
+submit-nuget	checkout	2026-11-13T23:13:38.0752566Z   fetch-depth: 1
+submit-nuget	checkout	2026-11-13T23:13:38.0753092Z   fetch-tags: false
+submit-nuget	checkout	2026-11-13T23:13:38.0753631Z   show-progress: true
+submit-nuget	checkout	2026-11-13T23:13:38.0754156Z   lfs: false
+submit-nuget	checkout	2026-11-13T23:13:38.0754641Z   submodules: false
+submit-nuget	checkout	2026-11-13T23:13:38.0755170Z   set-safe-directory: true
+submit-nuget	checkout	2026-11-13T23:13:38.0755843Z   allow-unsafe-pr-checkout: false
+submit-nuget	checkout	2026-11-13T23:13:38.0756525Z env:
+submit-nuget	checkout	2026-11-13T23:13:38.0756980Z   SKIP_CACHE: 
+submit-nuget	checkout	2026-11-13T23:13:38.0757512Z ##[endgroup]
+submit-nuget	checkout	2026-11-13T23:13:38.3025017Z Syncing repository: link-foundation/php-ai-driven-development-pipeline-template
+submit-nuget	checkout	2026-11-13T23:13:38.3028366Z ##[group]Getting Git version info
+submit-nuget	checkout	2026-11-13T23:13:38.3030215Z Working directory is '/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template'
+submit-nuget	checkout	2026-11-13T23:13:38.3032336Z [command]/usr/bin/git version
+submit-nuget	checkout	2026-11-13T23:13:38.3033224Z git version 2.56.0
+submit-nuget	checkout	2026-11-13T23:13:38.3036068Z ##[endgroup]
+submit-nuget	checkout	2026-11-13T23:13:38.3042119Z Temporarily overriding HOME='/home/runner/work/_temp/3e205c63-400f-4f3f-8e46-61b0b07dafcc' before making global git config changes
+submit-nuget	checkout	2026-11-13T23:13:38.3046983Z Adding repository directory to the temporary git global config as a safe directory
+submit-nuget	checkout	2026-11-13T23:13:38.3049975Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template
+submit-nuget	checkout	2026-11-13T23:13:38.3109938Z Deleting the contents of '/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template'
+submit-nuget	checkout	2026-11-13T23:13:38.3113344Z ##[group]Determining repository object format
+submit-nuget	checkout	2026-11-13T23:13:38.5745134Z ##[endgroup]
+submit-nuget	checkout	2026-11-13T23:13:38.5745878Z ##[group]Initializing the repository
+submit-nuget	checkout	2026-11-13T23:13:38.5749819Z [command]/usr/bin/git init /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template
+submit-nuget	checkout	2026-11-13T23:13:38.5847687Z hint: Using 'master' as the name for the initial branch. This default branch name
+submit-nuget	checkout	2026-11-13T23:13:38.5848171Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+submit-nuget	checkout	2026-11-13T23:13:38.5848501Z hint: to use in all of your new repositories, which will suppress this warning,
+submit-nuget	checkout	2026-11-13T23:13:38.5848747Z hint: call:
+submit-nuget	checkout	2026-11-13T23:13:38.5848882Z hint:
+submit-nuget	checkout	2026-11-13T23:13:38.5849099Z hint: 	git config --global init.defaultBranch <name>
+submit-nuget	checkout	2026-11-13T23:13:38.5849306Z hint:
+submit-nuget	checkout	2026-11-13T23:13:38.5849498Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+submit-nuget	checkout	2026-11-13T23:13:38.5849806Z hint: 'development'. The just-created branch can be renamed via this command:
+submit-nuget	checkout	2026-11-13T23:13:38.5850041Z hint:
+submit-nuget	checkout	2026-11-13T23:13:38.5850189Z hint: 	git branch -m <name>
+submit-nuget	checkout	2026-11-13T23:13:38.5850348Z hint:
+submit-nuget	checkout	2026-11-13T23:13:38.5850554Z hint: Disable this message with "git config set advice.defaultBranchName false"
+submit-nuget	checkout	2026-11-13T23:13:38.5925476Z Initialized empty Git repository in /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/
+submit-nuget	checkout	2026-11-13T23:13:38.5936393Z [command]/usr/bin/git remote add origin https://github.com/link-foundation/php-ai-driven-development-pipeline-template
+submit-nuget	checkout	2026-11-13T23:13:38.6014878Z ##[endgroup]
+submit-nuget	checkout	2026-11-13T23:13:38.6015582Z ##[group]Disabling automatic garbage collection
+submit-nuget	checkout	2026-11-13T23:13:38.6019445Z [command]/usr/bin/git config --local gc.auto 0
+submit-nuget	checkout	2026-11-13T23:13:38.6061606Z ##[endgroup]
+submit-nuget	checkout	2026-11-13T23:13:38.6062151Z ##[group]Setting up auth
+submit-nuget	checkout	2026-11-13T23:13:38.6062884Z Removing SSH command configuration
+submit-nuget	checkout	2026-11-13T23:13:38.6066759Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+submit-nuget	checkout	2026-11-13T23:13:38.6105786Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+submit-nuget	checkout	2026-11-13T23:13:38.6518297Z Removing HTTP extra header
+submit-nuget	checkout	2026-11-13T23:13:38.6524260Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+submit-nuget	checkout	2026-11-13T23:13:38.6563244Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+submit-nuget	checkout	2026-11-13T23:13:38.6793581Z Removing includeIf entries pointing to credentials config files
+submit-nuget	checkout	2026-11-13T23:13:38.6798123Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+submit-nuget	checkout	2026-11-13T23:13:38.6900247Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+submit-nuget	checkout	2026-11-13T23:13:38.7062953Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-4380ebe7-b9da-4e51-9d2e-0185dd46c1bd.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+submit-nuget	checkout	2026-11-13T23:13:38.7101164Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path /home/runner/work/_temp/git-credentials-4380ebe7-b9da-4e51-9d2e-0185dd46c1bd.config
+submit-nuget	checkout	2026-11-13T23:13:38.7134058Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-4380ebe7-b9da-4e51-9d2e-0185dd46c1bd.config
+submit-nuget	checkout	2026-11-13T23:13:38.7167597Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-4380ebe7-b9da-4e51-9d2e-0185dd46c1bd.config
+submit-nuget	checkout	2026-11-13T23:13:38.7197752Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-4380ebe7-b9da-4e51-9d2e-0185dd46c1bd.config
+submit-nuget	checkout	2026-11-13T23:13:38.7228272Z ##[endgroup]
+submit-nuget	checkout	2026-11-13T23:13:38.7228722Z ##[group]Fetching the repository
+submit-nuget	checkout	2026-11-13T23:13:38.7234450Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/issue-23-addf7c5fd0d4:refs/remotes/origin/issue-23-addf7c5fd0d4
+submit-nuget	checkout	2026-11-13T23:13:39.3826002Z From https://github.com/link-foundation/php-ai-driven-development-pipeline-template
+submit-nuget	checkout	2026-11-13T23:13:39.3826863Z  * [new branch]      issue-23-addf7c5fd0d4 -> origin/issue-23-addf7c5fd0d4
+submit-nuget	checkout	2026-11-13T23:13:39.3830656Z ##[endgroup]
+submit-nuget	checkout	2026-11-13T23:13:39.3831025Z ##[group]Determining the checkout info
+submit-nuget	checkout	2026-11-13T23:13:39.3831702Z ##[endgroup]
+submit-nuget	checkout	2026-11-13T23:13:39.3837691Z [command]/usr/bin/git sparse-checkout disable
+submit-nuget	checkout	2026-11-13T23:13:39.3897518Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+submit-nuget	checkout	2026-11-13T23:13:39.3933576Z ##[group]Checking out the ref
+submit-nuget	checkout	2026-11-13T23:13:39.3936653Z [command]/usr/bin/git checkout --progress --force -B issue-23-addf7c5fd0d4 refs/remotes/origin/issue-23-addf7c5fd0d4
+submit-nuget	checkout	2026-11-13T23:13:39.4429654Z Switched to a new branch 'issue-23-addf7c5fd0d4'
+submit-nuget	checkout	2026-11-13T23:13:39.4433384Z branch 'issue-23-addf7c5fd0d4' set up to track 'origin/issue-23-addf7c5fd0d4'.
+submit-nuget	checkout	2026-11-13T23:13:39.4441440Z ##[endgroup]
+submit-nuget	checkout	2026-11-13T23:13:39.4490698Z [command]/usr/bin/git log -1 --format=%H
+submit-nuget	checkout	2026-11-13T23:13:39.4519656Z eeb0625e9db83acef1416ec109e2bb3dcf38eb55
+submit-nuget	setup-ecosystem	﻿2026-11-13T23:13:39.4704027Z ##[group]Run if [ -f "global.json" ]; then
+submit-nuget	setup-ecosystem	2026-11-13T23:13:39.4704350Z ^[[36;1mif [ -f "global.json" ]; then^[[0m
+submit-nuget	setup-ecosystem	2026-11-13T23:13:39.4704516Z ^[[36;1m  echo "Found global.json file"^[[0m
+submit-nuget	setup-ecosystem	2026-11-13T23:13:39.4704709Z ^[[36;1m  echo "use-global-json=true" >> "$GITHUB_OUTPUT"^[[0m
+submit-nuget	setup-ecosystem	2026-11-13T23:13:39.4704886Z ^[[36;1melse^[[0m
+submit-nuget	setup-ecosystem	2026-11-13T23:13:39.4705042Z ^[[36;1m  echo "No global.json file found, using default versions"^[[0m
+submit-nuget	setup-ecosystem	2026-11-13T23:13:39.4705478Z ^[[36;1m  echo "use-global-json=false" >> "$GITHUB_OUTPUT"^[[0m
+submit-nuget	setup-ecosystem	2026-11-13T23:13:39.4705648Z ^[[36;1mfi^[[0m
+submit-nuget	setup-ecosystem	2026-11-13T23:13:39.4747426Z shell: /usr/bin/bash -e {0}
+submit-nuget	setup-ecosystem	2026-11-13T23:13:39.4747615Z env:
+submit-nuget	setup-ecosystem	2026-11-13T23:13:39.4747733Z   SKIP_CACHE: 
+submit-nuget	setup-ecosystem	2026-11-13T23:13:39.4747850Z ##[endgroup]
+submit-nuget	setup-ecosystem	2026-11-13T23:13:39.4821095Z No global.json file found, using default versions
+submit-nuget	Run actions/setup-dotnet@v6	﻿2026-11-13T23:13:39.4907427Z ##[group]Run actions/setup-dotnet@v6
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:39.4907613Z with:
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:39.4907772Z   dotnet-version: 8.0.x
+submit-nuget	Run actions/setup-dotnet@v6	9.0.x
+submit-nuget	Run actions/setup-dotnet@v6	10.0.x
+submit-nuget	Run actions/setup-dotnet@v6	
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:39.4907980Z   skip-lts-prepass: false
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:39.4908108Z   cache: false
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:39.4908219Z env:
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:39.4908326Z   SKIP_CACHE: 
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:39.4908438Z ##[endgroup]
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:39.5797230Z [command]/home/runner/work/_actions/actions/setup-dotnet/v6/externals/install-dotnet.sh --skip-non-versioned-files --runtime dotnet --channel LTS
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:39.9518389Z dotnet-install: Attempting to download using aka.ms link https://builds.dotnet.microsoft.com/dotnet/Runtime/10.0.15/dotnet-runtime-10.0.15-linux-x64.tar.gz
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:40.5802951Z dotnet-install: Remote file https://builds.dotnet.microsoft.com/dotnet/Runtime/10.0.15/dotnet-runtime-10.0.15-linux-x64.tar.gz size is 36659264 bytes.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:40.5809585Z dotnet-install: Extracting archive from https://builds.dotnet.microsoft.com/dotnet/Runtime/10.0.15/dotnet-runtime-10.0.15-linux-x64.tar.gz
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:40.9168666Z dotnet-install: Downloaded file size is 36659264 bytes.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:40.9173075Z dotnet-install: The remote and local file sizes are equal.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:40.9411699Z dotnet-install: Installed version is 10.0.15
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:40.9488672Z dotnet-install: Adding to current process PATH: `/usr/share/dotnet`. Note: This change will be visible only when sourcing script.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:40.9496084Z dotnet-install: Note that the script does not resolve dependencies during installation.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:40.9496789Z dotnet-install: To check the list of dependencies, go to https://learn.microsoft.com/dotnet/core/install, select your operating system and check the "Dependencies" section.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:40.9497451Z dotnet-install: Installation finished successfully.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:40.9509177Z [command]/home/runner/work/_actions/actions/setup-dotnet/v6/externals/install-dotnet.sh --skip-non-versioned-files --channel 8.0
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:41.1935038Z dotnet-install: Attempting to download using aka.ms link https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.428/dotnet-sdk-8.0.428-linux-x64.tar.gz
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:44.0857863Z dotnet-install: Remote file https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.428/dotnet-sdk-8.0.428-linux-x64.tar.gz size is 217266728 bytes.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:44.0870849Z dotnet-install: Extracting archive from https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.428/dotnet-sdk-8.0.428-linux-x64.tar.gz
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:46.4077872Z dotnet-install: Downloaded file size is 217266728 bytes.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:46.4078447Z dotnet-install: The remote and local file sizes are equal.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:46.6201719Z dotnet-install: Installed version is 8.0.428
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:46.6287563Z dotnet-install: Adding to current process PATH: `/usr/share/dotnet`. Note: This change will be visible only when sourcing script.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:46.6288343Z dotnet-install: Note that the script does not resolve dependencies during installation.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:46.6289110Z dotnet-install: To check the list of dependencies, go to https://learn.microsoft.com/dotnet/core/install, select your operating system and check the "Dependencies" section.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:46.6289778Z dotnet-install: Installation finished successfully.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:46.6305808Z [command]/home/runner/work/_actions/actions/setup-dotnet/v6/externals/install-dotnet.sh --skip-non-versioned-files --runtime dotnet --channel LTS
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:47.5483353Z dotnet-install: .NET Core Runtime with version '10.0.15' is already installed.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:47.5491123Z [command]/home/runner/work/_actions/actions/setup-dotnet/v6/externals/install-dotnet.sh --skip-non-versioned-files --channel 9.0
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:48.2568733Z dotnet-install: Attempting to download using aka.ms link https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.321/dotnet-sdk-9.0.321-linux-x64.tar.gz
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:51.3120250Z dotnet-install: Remote file https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.321/dotnet-sdk-9.0.321-linux-x64.tar.gz size is 218714762 bytes.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:51.3121788Z dotnet-install: Extracting archive from https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.321/dotnet-sdk-9.0.321-linux-x64.tar.gz
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:53.7426244Z dotnet-install: Downloaded file size is 218714762 bytes.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:53.7426945Z dotnet-install: The remote and local file sizes are equal.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:53.9570590Z dotnet-install: Installed version is 9.0.321
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:53.9653439Z dotnet-install: Adding to current process PATH: `/usr/share/dotnet`. Note: This change will be visible only when sourcing script.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:53.9654174Z dotnet-install: Note that the script does not resolve dependencies during installation.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:53.9654779Z dotnet-install: To check the list of dependencies, go to https://learn.microsoft.com/dotnet/core/install, select your operating system and check the "Dependencies" section.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:53.9655324Z dotnet-install: Installation finished successfully.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:53.9664333Z [command]/home/runner/work/_actions/actions/setup-dotnet/v6/externals/install-dotnet.sh --skip-non-versioned-files --runtime dotnet --channel LTS
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:54.3202204Z dotnet-install: .NET Core Runtime with version '10.0.15' is already installed.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:54.3210952Z [command]/home/runner/work/_actions/actions/setup-dotnet/v6/externals/install-dotnet.sh --skip-non-versioned-files --channel 10.0
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:54.5786509Z dotnet-install: Attempting to download using aka.ms link https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.404/dotnet-sdk-10.0.404-linux-x64.tar.gz
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:56.9603535Z dotnet-install: Remote file https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.404/dotnet-sdk-10.0.404-linux-x64.tar.gz size is 243138887 bytes.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:56.9609470Z dotnet-install: Extracting archive from https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.404/dotnet-sdk-10.0.404-linux-x64.tar.gz
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:59.4806421Z dotnet-install: Downloaded file size is 243138887 bytes.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:59.4806935Z dotnet-install: The remote and local file sizes are equal.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:59.7074564Z dotnet-install: Installed version is 10.0.404
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:59.7158684Z dotnet-install: Adding to current process PATH: `/usr/share/dotnet`. Note: This change will be visible only when sourcing script.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:59.7159431Z dotnet-install: Note that the script does not resolve dependencies during installation.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:59.7160206Z dotnet-install: To check the list of dependencies, go to https://learn.microsoft.com/dotnet/core/install, select your operating system and check the "Dependencies" section.
+submit-nuget	Run actions/setup-dotnet@v6	2026-11-13T23:13:59.7160866Z dotnet-install: Installation finished successfully.
+submit-nuget	log-toolchain-versions	﻿2026-11-13T23:13:59.7301258Z ##[group]Run version=$(dotnet --version)
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.7301598Z ^[[36;1mversion=$(dotnet --version)^[[0m
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.7301886Z ^[[36;1mecho "::notice::Using .NET SDK version: $version"^[[0m
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.7302163Z ^[[36;1mdotnet --list-sdks^[[0m
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.7347956Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.7348180Z env:
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.7348298Z   SKIP_CACHE: 
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.7348437Z   DOTNET_ROOT: /usr/share/dotnet
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.7348586Z ##[endgroup]
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.8041425Z ##[notice]Using .NET SDK version: 10.0.404
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.9445158Z 8.0.133 [/usr/share/dotnet/sdk]
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.9445602Z 8.0.206 [/usr/share/dotnet/sdk]
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.9445759Z 8.0.319 [/usr/share/dotnet/sdk]
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.9445907Z 8.0.427 [/usr/share/dotnet/sdk]
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.9446055Z 8.0.428 [/usr/share/dotnet/sdk]
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.9446250Z 9.0.123 [/usr/share/dotnet/sdk]
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.9446478Z 9.0.205 [/usr/share/dotnet/sdk]
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.9446789Z 9.0.320 [/usr/share/dotnet/sdk]
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.9447029Z 9.0.321 [/usr/share/dotnet/sdk]
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.9447246Z 10.0.114 [/usr/share/dotnet/sdk]
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.9447472Z 10.0.204 [/usr/share/dotnet/sdk]
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.9447701Z 10.0.303 [/usr/share/dotnet/sdk]
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.9447924Z 10.0.403 [/usr/share/dotnet/sdk]
+submit-nuget	log-toolchain-versions	2026-11-13T23:13:59.9448156Z 10.0.404 [/usr/share/dotnet/sdk]
+submit-nuget	check-cache-strategy	﻿2026-11-13T23:13:59.9544843Z ##[group]Run if [[ -n "" ]]; then
+submit-nuget	check-cache-strategy	2026-11-13T23:13:59.9545064Z ^[[36;1mif [[ -n "" ]]; then^[[0m
+submit-nuget	check-cache-strategy	2026-11-13T23:13:59.9545492Z ^[[36;1m  echo "NuGet cache disabled via 'GH_DEPENDENCY_SUBMISSION_SKIP_CACHE'"^[[0m
+submit-nuget	check-cache-strategy	2026-11-13T23:13:59.9545716Z ^[[36;1melse^[[0m
+submit-nuget	check-cache-strategy	2026-11-13T23:13:59.9545976Z ^[[36;1m  echo "Caching NuGet packages. Set 'GH_DEPENDENCY_SUBMISSION_SKIP_CACHE=true' to skip caching in future."^[[0m
+submit-nuget	check-cache-strategy	2026-11-13T23:13:59.9546250Z ^[[36;1mfi^[[0m
+submit-nuget	check-cache-strategy	2026-11-13T23:13:59.9588263Z shell: /usr/bin/bash -e {0}
+submit-nuget	check-cache-strategy	2026-11-13T23:13:59.9588416Z env:
+submit-nuget	check-cache-strategy	2026-11-13T23:13:59.9588532Z   SKIP_CACHE: 
+submit-nuget	check-cache-strategy	2026-11-13T23:13:59.9588660Z   DOTNET_ROOT: /usr/share/dotnet
+submit-nuget	check-cache-strategy	2026-11-13T23:13:59.9588804Z ##[endgroup]
+submit-nuget	check-cache-strategy	2026-11-13T23:13:59.9802786Z Caching NuGet packages. Set 'GH_DEPENDENCY_SUBMISSION_SKIP_CACHE=true' to skip caching in future.
+submit-nuget	configure-cache	﻿2026-11-13T23:14:00.1500318Z ##[group]Run actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+submit-nuget	configure-cache	2026-11-13T23:14:00.1500773Z with:
+submit-nuget	configure-cache	2026-11-13T23:14:00.1500900Z   path: ~/.nuget/packages
+submit-nuget	configure-cache	2026-11-13T23:14:00.1501126Z   key: Linux-nuget-27f9a6bc3b3c21d93bee65ea919b396d913242de8ddf61e277c3583591251b99
+submit-nuget	configure-cache	2026-11-13T23:14:00.1501378Z   restore-keys: Linux-nuget-
+submit-nuget	configure-cache	
+submit-nuget	configure-cache	2026-11-13T23:14:00.1501524Z   enableCrossOsArchive: false
+submit-nuget	configure-cache	2026-11-13T23:14:00.1501667Z   fail-on-cache-miss: false
+submit-nuget	configure-cache	2026-11-13T23:14:00.1501802Z   lookup-only: false
+submit-nuget	configure-cache	2026-11-13T23:14:00.1501932Z   save-always: false
+submit-nuget	configure-cache	2026-11-13T23:14:00.1502050Z env:
+submit-nuget	configure-cache	2026-11-13T23:14:00.1502160Z   SKIP_CACHE: 
+submit-nuget	configure-cache	2026-11-13T23:14:00.1502285Z   DOTNET_ROOT: /usr/share/dotnet
+submit-nuget	configure-cache	2026-11-13T23:14:00.1502427Z ##[endgroup]
+submit-nuget	configure-cache	2026-11-13T23:14:00.3891852Z Cache hit for: Linux-nuget-27f9a6bc3b3c21d93bee65ea919b396d913242de8ddf61e277c3583591251b99
+submit-nuget	configure-cache	2026-11-13T23:14:01.1244766Z Received 29584380 of 29584380 (100.0%), 47.3 MBs/sec
+submit-nuget	configure-cache	2026-11-13T23:14:01.1246731Z Cache Size: ~28 MB (29584380 B)
+submit-nuget	configure-cache	2026-11-13T23:14:01.1274209Z [command]/usr/bin/tar -xf /home/runner/work/_temp/3f274a6d-2e86-477d-b352-183d14a6bf97/cache.tzst -P -C /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template --use-compress-program unzstd
+submit-nuget	configure-cache	2026-11-13T23:14:01.2374471Z Cache restored successfully
+submit-nuget	configure-cache	2026-11-13T23:14:01.2528431Z Cache restored from key: Linux-nuget-27f9a6bc3b3c21d93bee65ea919b396d913242de8ddf61e277c3583591251b99
+submit-nuget	validate-project	﻿2026-11-13T23:14:01.2648287Z ##[group]Run # Find all project files
+submit-nuget	validate-project	2026-11-13T23:14:01.2648541Z ^[[36;1m# Find all project files^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2648927Z ^[[36;1mproject_files=$(find . -type f \( -name "*.csproj" -o -name "*.sln" -o -name "*.vbproj" -o -name "*.vcxproj" -o -name "*.fsproj" \) | grep -v '/obj/' | grep -v '/bin/' | head -20)^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2649303Z ^[[36;1m^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2649431Z ^[[36;1mif [ -z "$project_files" ]; then^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2649636Z ^[[36;1m  echo "valid-project=false" >> "$GITHUB_OUTPUT"^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2649887Z ^[[36;1m  echo "### :warning: No .NET project files found" >> $GITHUB_STEP_SUMMARY^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2650134Z ^[[36;1m  echo "" >> $GITHUB_STEP_SUMMARY^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2650417Z ^[[36;1m  echo "**This repository does not appear to contain any .NET project files.**" >> $GITHUB_STEP_SUMMARY^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2650703Z ^[[36;1m  echo "" >> $GITHUB_STEP_SUMMARY^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2650991Z ^[[36;1m  echo "Searched for: *.csproj, *.sln, packages.config, *.vbproj, *.vcxproj, *.fsproj" >> $GITHUB_STEP_SUMMARY^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2651306Z ^[[36;1m  echo "" >> $GITHUB_STEP_SUMMARY^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2651605Z ^[[36;1m  echo "If this is a .NET project, ensure your project files are committed to the repository." >> $GITHUB_STEP_SUMMARY^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2651938Z ^[[36;1m  echo "::error::No .NET project files found in repository"^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2652134Z ^[[36;1m  exit 1^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2652253Z ^[[36;1mfi^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2652367Z ^[[36;1m^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2652489Z ^[[36;1mecho "Found project files:"^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2652651Z ^[[36;1mecho "$project_files"^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2652802Z ^[[36;1m^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2652924Z ^[[36;1m# Restore all projects^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2653083Z ^[[36;1mwhile IFS= read -r project; do^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2653256Z ^[[36;1m  echo "Restoring project: $project"^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2653449Z ^[[36;1m  if ! dotnet restore "$project"; then^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2653657Z ^[[36;1m    echo "::error::Failed to restore project: $project"^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2653883Z ^[[36;1m    echo "valid-project=false" >> "$GITHUB_OUTPUT"^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2654065Z ^[[36;1m    exit 1^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2654193Z ^[[36;1m  fi^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2654320Z ^[[36;1mdone <<< "$project_files"^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2654466Z ^[[36;1m^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2654615Z ^[[36;1mecho "::debug::All projects restored successfully"^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2654834Z ^[[36;1mecho "valid-project=true" >> "$GITHUB_OUTPUT"^[[0m
+submit-nuget	validate-project	2026-11-13T23:14:01.2697580Z shell: /usr/bin/bash -e {0}
+submit-nuget	validate-project	2026-11-13T23:14:01.2697739Z env:
+submit-nuget	validate-project	2026-11-13T23:14:01.2698002Z   SKIP_CACHE: 
+submit-nuget	validate-project	2026-11-13T23:14:01.2698144Z   DOTNET_ROOT: /usr/share/dotnet
+submit-nuget	validate-project	2026-11-13T23:14:01.2698298Z ##[endgroup]
+submit-nuget	validate-project	2026-11-13T23:14:01.2805638Z Found project files:
+submit-nuget	validate-project	2026-11-13T23:14:01.2806093Z ./docs/case-studies/issue-1/data/templates/csharp/src/MyPackage/MyPackage.csproj
+submit-nuget	validate-project	2026-11-13T23:14:01.2806658Z ./docs/case-studies/issue-1/data/templates/csharp/tests/MyPackage.Tests/MyPackage.Tests.csproj
+submit-nuget	validate-project	2026-11-13T23:14:01.2807049Z ./docs/case-studies/issue-1/data/templates/csharp/MyPackage.sln
+submit-nuget	validate-project	2026-11-13T23:14:01.2807394Z Restoring project: ./docs/case-studies/issue-1/data/templates/csharp/src/MyPackage/MyPackage.csproj
+submit-nuget	validate-project	2026-11-13T23:14:01.7812496Z   Determining projects to restore...
+submit-nuget	validate-project	2026-11-13T23:14:01.7902393Z ##[error]/usr/share/dotnet/sdk/10.0.404/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.TargetFrameworkInference.targets(184,5): error NETSDK1045: The current .NET SDK does not support targeting .NET 11.0.  Either target .NET 10.0 or lower, or use a version of the .NET SDK that supports .NET 11.0. Download the .NET SDK from https://aka.ms/dotnet/download [/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/docs/case-studies/issue-1/data/templates/csharp/src/MyPackage/MyPackage.csproj]
+submit-nuget	validate-project	2026-11-13T23:14:01.8086264Z ##[error]Failed to restore project: ./docs/case-studies/issue-1/data/templates/csharp/src/MyPackage/MyPackage.csproj
+submit-nuget	validate-project	2026-11-13T23:14:01.8089450Z ##[error]Process completed with exit code 1.
+submit-nuget	Post checkout	﻿2026-11-13T23:14:01.8163197Z Post job cleanup.
+submit-nuget	Post checkout	2026-11-13T23:14:01.8736053Z [command]/usr/bin/git version
+submit-nuget	Post checkout	2026-11-13T23:14:01.8779081Z git version 2.56.0
+submit-nuget	Post checkout	2026-11-13T23:14:01.8802739Z Temporarily overriding HOME='/home/runner/work/_temp/c9988c1b-2d78-4133-85b5-fef572ffc875' before making global git config changes
+submit-nuget	Post checkout	2026-11-13T23:14:01.8803630Z Adding repository directory to the temporary git global config as a safe directory
+submit-nuget	Post checkout	2026-11-13T23:14:01.8806972Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template
+submit-nuget	Post checkout	2026-11-13T23:14:01.8840933Z Removing SSH command configuration
+submit-nuget	Post checkout	2026-11-13T23:14:01.8851587Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+submit-nuget	Post checkout	2026-11-13T23:14:01.8885628Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+submit-nuget	Post checkout	2026-11-13T23:14:01.9142339Z Removing HTTP extra header
+submit-nuget	Post checkout	2026-11-13T23:14:01.9152569Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+submit-nuget	Post checkout	2026-11-13T23:14:01.9186929Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+submit-nuget	Post checkout	2026-11-13T23:14:01.9405844Z Removing includeIf entries pointing to credentials config files
+submit-nuget	Post checkout	2026-11-13T23:14:01.9411666Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+submit-nuget	Post checkout	2026-11-13T23:14:01.9434949Z includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path
+submit-nuget	Post checkout	2026-11-13T23:14:01.9435819Z includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path
+submit-nuget	Post checkout	2026-11-13T23:14:01.9436215Z includeif.gitdir:/github/workspace/.git.path
+submit-nuget	Post checkout	2026-11-13T23:14:01.9436511Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+submit-nuget	Post checkout	2026-11-13T23:14:01.9442045Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path
+submit-nuget	Post checkout	2026-11-13T23:14:01.9463451Z /home/runner/work/_temp/git-credentials-4380ebe7-b9da-4e51-9d2e-0185dd46c1bd.config
+submit-nuget	Post checkout	2026-11-13T23:14:01.9471564Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-4380ebe7\-b9da\-4e51\-9d2e\-0185dd46c1bd\.config
+submit-nuget	Post checkout	2026-11-13T23:14:01.9502498Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path
+submit-nuget	Post checkout	2026-11-13T23:14:01.9523038Z /home/runner/work/_temp/git-credentials-4380ebe7-b9da-4e51-9d2e-0185dd46c1bd.config
+submit-nuget	Post checkout	2026-11-13T23:14:01.9561024Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-4380ebe7\-b9da\-4e51\-9d2e\-0185dd46c1bd\.config
+submit-nuget	Post checkout	2026-11-13T23:14:01.9591533Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+submit-nuget	Post checkout	2026-11-13T23:14:01.9611428Z /github/runner_temp/git-credentials-4380ebe7-b9da-4e51-9d2e-0185dd46c1bd.config
+submit-nuget	Post checkout	2026-11-13T23:14:01.9617219Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-4380ebe7\-b9da\-4e51\-9d2e\-0185dd46c1bd\.config
+submit-nuget	Post checkout	2026-11-13T23:14:01.9645303Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+submit-nuget	Post checkout	2026-11-13T23:14:01.9665406Z /github/runner_temp/git-credentials-4380ebe7-b9da-4e51-9d2e-0185dd46c1bd.config
+submit-nuget	Post checkout	2026-11-13T23:14:01.9670809Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-4380ebe7\-b9da\-4e51\-9d2e\-0185dd46c1bd\.config
+submit-nuget	Post checkout	2026-11-13T23:14:01.9699237Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+submit-nuget	Post checkout	2026-11-13T23:14:01.9919541Z Removing credentials config '/home/runner/work/_temp/git-credentials-4380ebe7-b9da-4e51-9d2e-0185dd46c1bd.config'
+submit-nuget	Complete job	﻿2026-11-13T23:14:02.0055444Z Cleaning up orphan processes

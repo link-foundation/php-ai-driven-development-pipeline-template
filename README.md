@@ -4,7 +4,7 @@ A comprehensive template for AI-driven Symfony / Composer **PHP** development wi
 full, native-PHP CI/CD pipeline.
 
 [![CI/CD Pipeline](https://github.com/link-foundation/php-ai-driven-development-pipeline-template/workflows/CI/CD%20Pipeline/badge.svg)](https://github.com/link-foundation/php-ai-driven-development-pipeline-template/actions)
-[![PHP Version](https://img.shields.io/badge/php-8.1%20--%208.4-777BB4.svg)](https://www.php.net/supported-versions.php)
+[![PHP Version](https://img.shields.io/badge/php-8.5-777BB4.svg)](https://www.php.net/supported-versions.php)
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](https://unlicense.org/)
 
 This template ports the battle-tested CI/CD practices from the sibling
@@ -19,18 +19,18 @@ and GitHub Releases.
 
 ## Features
 
-- **Multi-version PHP support**: tested on PHP 8.1, 8.2, 8.3 and 8.4
+- **Current PHP support**: tested on PHP 8.5
 - **Native-PHP pipeline**: all CI/CD logic lives in [`scripts/`](scripts) and the
   tested [`scripts/src/`](scripts/src) classes — no other languages used
 - **Comprehensive testing**: [PHPUnit](https://phpunit.de/) with separate package
   and pipeline test suites, plus coverage output
 - **Code quality**: [PHP-CS-Fixer](https://cs.symfony.com/) (`@PSR12` +
-  `@PHP81Migration`) and [PHPStan](https://phpstan.org/) at the strictest level 8
+  `@PHP85Migration`) and [PHPStan](https://phpstan.org/) at level 8
 - **Changeset-style changelog**: conflict-free `changelog.d/` fragments drive
   semantic versioning, like Changesets in JS or Scriv in Python
 - **Self-healing releases**: idempotent, re-runnable release flow with the git tag
   as the only idempotency guard; Packagist + GitHub Releases are the source of truth
-- **Combined CI/CD workflow**: change detection, lint, static analysis, multi-version
+- **Combined CI/CD workflow**: change detection, lint, static analysis, PHP 8.5
   tests, changeset validation, automatic + manual releases — all in one workflow
 - **API documentation**: [phpDocumentor](https://phpdoc.org/) build deployed to
   GitHub Pages on push to `main`
@@ -155,7 +155,7 @@ tags, and publishes. See [`changelog.d/README.md`](changelog.d/README.md).
 ## How the Release Pipeline Works
 
 1. **On every PR** the pipeline lints, statically analyses and tests the code
-   across PHP 8.1–8.4, validates that code changes ship a changelog fragment, and
+   across PHP 8.5, validates that code changes ship a changelog fragment, and
    ensures nobody hand-edited the version.
 2. **On push to `main`** it re-runs the checks, then decides whether a release is
    needed (are there fragments? is the current version already on Packagist?).

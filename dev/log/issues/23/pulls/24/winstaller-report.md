@@ -1,0 +1,5 @@
+Update after refreshing npm again: the registry's current electron-winstaller 5.4.4 tarball still publishes `const arch = os.arch;` in script/select-7z-arch.js, so the constructed vendor filename contains the function rather than x64/arm64. The merged os.arch() change here has not reached that release.
+
+In https://github.com/link-foundation/php-ai-driven-development-pipeline-template/pull/24 we verified the published bytes and evaluated the script with an os.arch mock returning x64 and a recording fs.copyFileSync: the requested paths were `vendor/7z-()=> 'x64'.exe` / `.dll`, rather than vendor/7z-x64.exe / .dll. Reproduction: https://github.com/link-foundation/php-ai-driven-development-pipeline-template/blob/issue-23-addf7c5fd0d4/experiments/issue-23/upstream-reproductions.mjs .
+
+We keep a narrow, idempotent local backport changing the assignment to `const arch = os.arch();`, then run the original selector. Please publish a release containing the merged fix so consumers can remove that backport. A selector test with a stubbed os.arch and recorded copy paths would prevent this regression.

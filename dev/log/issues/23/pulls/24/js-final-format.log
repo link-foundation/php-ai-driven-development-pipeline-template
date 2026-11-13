@@ -1,0 +1,3 @@
+npm notice run @link-foundation/example-package-name@0.11.4 npx
+npm notice run 'prettier' --write tests/workflow-reliability.test.js
+tests/workflow-reliability.test.js 163ms

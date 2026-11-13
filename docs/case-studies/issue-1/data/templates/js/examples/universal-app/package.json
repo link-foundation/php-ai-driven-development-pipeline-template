@@ -1,0 +1,51 @@
+{
+  "name": "universal-example-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Universal React example for the JavaScript template package",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "desktop:start": "npm run build && electron-forge start",
+    "desktop:package": "npm run build && electron-forge package",
+    "desktop:make": "npm run build && electron-forge make",
+    "mobile:sync": "npm run build && cap sync",
+    "mobile:android:add": "cap add android",
+    "mobile:android:open": "cap open android",
+    "mobile:android:run": "npm run build && cap sync android && cap run android",
+    "mobile:android:build": "npm run build && cap sync android && cap build android",
+    "mobile:ios:add": "cap add ios",
+    "mobile:ios:open": "cap open ios",
+    "mobile:ios:run": "npm run build && cap sync ios && cap run ios",
+    "mobile:ios:build": "npm run build && cap sync ios && cap build ios",
+    "postinstall": "node scripts/fix-winstaller.cjs"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.6.2",
+    "@capacitor/core": "^8.6.2",
+    "@capacitor/ios": "^8.6.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.6.2",
+    "@electron-forge/cli": "^8.0.1",
+    "@electron-forge/maker-deb": "^8.0.1",
+    "@electron-forge/maker-rpm": "^8.0.1",
+    "@electron-forge/maker-squirrel": "^8.0.1",
+    "@electron-forge/maker-zip": "^8.0.1",
+    "@vitejs/plugin-react": "^6.3.0",
+    "electron": "^45.3.2",
+    "vite": "^8.3.8"
+  },
+  "engines": {
+    "node": ">=26.13.1"
+  },
+  "packageManager": "npm@12.2.2",
+  "allowScripts": {
+    "electron-winstaller": false
+  }
+}

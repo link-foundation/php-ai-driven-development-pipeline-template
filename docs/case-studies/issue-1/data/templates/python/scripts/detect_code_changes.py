@@ -37,8 +37,10 @@ Outputs (written to GITHUB_OUTPUT):
 from __future__ import annotations
 
 import os
+import re
 import subprocess
 import sys
+from pathlib import Path
 
 
 def exec_command(command: str) -> str:
@@ -62,7 +64,7 @@ def set_output(name: str, value: str) -> None:
     """Write output to GitHub Actions output file."""
     output_file = os.environ.get("GITHUB_OUTPUT")
     if output_file:
-        with open(output_file, "a") as f:
+        with Path(output_file).open("a") as f:
             f.write(f"{name}={value}\n")
     print(f"{name}={value}")
 
@@ -125,11 +127,7 @@ def is_excluded_from_code_changes(file_path: str) -> bool:
     # Exclude specific folders from code changes
     excluded_folders = ["changelog.d/", "docs/", "experiments/", "examples/"]
 
-    for folder in excluded_folders:
-        if file_path.startswith(folder):
-            return True
-
-    return False
+    return any(file_path.startswith(folder) for folder in excluded_folders)
 
 
 def detect_changes() -> None:
@@ -180,8 +178,6 @@ def detect_changes() -> None:
     print()
 
     # Check if any code files changed (.py, .toml, .yml, .yaml, or workflow files)
-    import re
-
     code_pattern = re.compile(r"\.(py|toml|yml|yaml)$|\.github/workflows/")
     code_changed = any(code_pattern.search(f) for f in code_changed_files)
     set_output("any-code-changed", "true" if code_changed else "false")

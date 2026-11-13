@@ -17,10 +17,10 @@ fn get_arg(name: &str, default: &str) -> String {
     let args: Vec<String> = env::args().collect();
     let flag = format!("--{}", name);
 
-    if let Some(idx) = args.iter().position(|a| a == &flag) {
-        if let Some(value) = args.get(idx + 1) {
-            return value.clone();
-        }
+    if let Some(idx) = args.iter().position(|a| a == &flag)
+        && let Some(value) = args.get(idx + 1)
+    {
+        return value.clone();
     }
 
     // Check environment variable

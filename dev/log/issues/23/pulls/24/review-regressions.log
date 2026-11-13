@@ -1,0 +1,3 @@
+Before: parser rejects unquoted !cancelled() release conditions.
+After: all workflow conditions parse without errors or warnings.
+Preserved lint policy: missing comment spacing fails through @stylistic/spaced-comment.

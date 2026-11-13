@@ -46,7 +46,7 @@ jobs:
   # === DETECT CHANGES - determines which jobs should run ===
   detect-changes:
     name: Detect Changes
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 5
     if: github.event_name != 'workflow_dispatch'
     outputs:
@@ -56,77 +56,74 @@ jobs:
       workflow-changed: ${{ steps.changes.outputs.workflow-changed }}
       any-code-changed: ${{ steps.changes.outputs.any-code-changed }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
 
       - name: Setup Rust
-        uses: dtolnay/rust-toolchain@stable
-
-      - name: Install rust-script
-        run: cargo install rust-script
+        uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8
+        with:
+          toolchain: 1.100.0
 
       - name: Detect changes
         id: changes
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
-        run: rust-script scripts/detect-code-changes.rs
+        run: cargo run --locked --manifest-path pipeline/Cargo.toml --bin detect-code-changes --
 
   # === CHANGELOG CHECK - only runs on PRs with code changes ===
   # Docs-only PRs (./docs folder, markdown files) don't require changelog fragments
   changelog:
     name: Changelog Fragment Check
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 10
     needs: [detect-changes]
     if: github.event_name == 'pull_request' && needs.detect-changes.outputs.any-code-changed == 'true'
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
 
       - name: Setup Rust
-        uses: dtolnay/rust-toolchain@stable
-
-      - name: Install rust-script
-        run: cargo install rust-script
+        uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8
+        with:
+          toolchain: 1.100.0
 
       - name: Check for changelog fragments
         env:
           GITHUB_BASE_REF: ${{ github.base_ref }}
-        run: rust-script scripts/check-changelog-fragment.rs
+        run: cargo run --locked --manifest-path pipeline/Cargo.toml --bin check-changelog-fragment --
 
   # === VERSION CHECK - prevents manual version modification in PRs ===
   # This ensures versions are only modified by the automated release pipeline
   version-check:
     name: Version Modification Check
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 5
     if: github.event_name == 'pull_request'
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
 
       - name: Setup Rust
-        uses: dtolnay/rust-toolchain@stable
-
-      - name: Install rust-script
-        run: cargo install rust-script
+        uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8
+        with:
+          toolchain: 1.100.0
 
       - name: Check for manual version changes
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           GITHUB_HEAD_REF: ${{ github.head_ref }}
           GITHUB_BASE_REF: ${{ github.base_ref }}
-        run: rust-script scripts/check-version-modification.rs
+        run: cargo run --locked --manifest-path pipeline/Cargo.toml --bin check-version-modification --
 
   # === LINT AND FORMAT CHECK ===
   # Lint runs independently of changelog check - it's a fast check that should always run
   # See: https://github.com/link-assistant/hive-mind/pull/1024 for why this dependency was removed
   lint:
     name: Lint and Format Check
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 10
     needs: [detect-changes]
     # Note: always() is required because detect-changes is skipped on workflow_dispatch,
@@ -142,18 +139,16 @@ jobs:
         needs.detect-changes.outputs.workflow-changed == 'true'
       )
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
 
       - name: Setup Rust
-        uses: dtolnay/rust-toolchain@stable
+        uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8
         with:
+          toolchain: 1.100.0
           components: rustfmt, clippy
 
-      - name: Install rust-script
-        run: cargo install rust-script
-
       - name: Cache cargo registry
-        uses: actions/cache@v5
+        uses: actions/cache@v6.1.0
         with:
           path: |
             ~/.cargo/registry
@@ -170,7 +165,7 @@ jobs:
         run: cargo clippy --all-targets --all-features
 
       - name: Check file size limit
-        run: rust-script scripts/check-file-size.rs
+        run: cargo run --locked --manifest-path pipeline/Cargo.toml --bin check-file-size --
 
   # === TEST ===
   # Test runs independently of changelog check
@@ -184,15 +179,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-26.04, macos-26, windows-2025]
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
 
       - name: Setup Rust
-        uses: dtolnay/rust-toolchain@stable
+        uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8
+        with:
+          toolchain: 1.100.0
 
       - name: Cache cargo registry
-        uses: actions/cache@v5
+        uses: actions/cache@v6.1.0
         with:
           path: |
             ~/.cargo/registry
@@ -212,7 +209,7 @@ jobs:
   # Generate and upload code coverage using cargo-llvm-cov
   coverage:
     name: Code Coverage
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 15
     needs: [detect-changes]
     if: |
@@ -223,15 +220,16 @@ jobs:
         needs.detect-changes.outputs.toml-changed == 'true'
       )
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
 
       - name: Setup Rust
-        uses: dtolnay/rust-toolchain@stable
+        uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8
         with:
+          toolchain: 1.100.0
           components: llvm-tools-preview
 
       - name: Cache cargo registry
-        uses: actions/cache@v5
+        uses: actions/cache@v6.1.0
         with:
           path: |
             ~/.cargo/registry
@@ -242,13 +240,15 @@ jobs:
             ${{ runner.os }}-cargo-coverage-
 
       - name: Install cargo-llvm-cov
-        uses: taiki-e/install-action@cargo-llvm-cov
+        uses: taiki-e/install-action@v2.90.3
+        with:
+          tool: cargo-llvm-cov@0.9.1
 
       - name: Generate code coverage
         run: cargo llvm-cov --all-features --lcov --output-path lcov.info
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v7.1.1
         with:
           files: lcov.info
           fail_ci_if_error: false
@@ -257,21 +257,20 @@ jobs:
   # Build package - only runs if lint and test pass
   build:
     name: Build Package
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 10
     needs: [lint, test]
     if: always() && !cancelled() && needs.lint.result == 'success' && needs.test.result == 'success'
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
 
       - name: Setup Rust
-        uses: dtolnay/rust-toolchain@stable
-
-      - name: Install rust-script
-        run: cargo install rust-script
+        uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8
+        with:
+          toolchain: 1.100.0
 
       - name: Cache cargo registry
-        uses: actions/cache@v5
+        uses: actions/cache@v6.1.0
         with:
           path: |
             ~/.cargo/registry
@@ -288,7 +287,7 @@ jobs:
         run: cargo package --list --allow-dirty
 
       - name: Check crate package size
-        run: rust-script scripts/check-crate-size.rs
+        run: cargo run --locked --manifest-path pipeline/Cargo.toml --bin check-crate-size --
 
   # === AUTO RELEASE ===
   # Automatic release on push to main using changelog fragments
@@ -302,7 +301,7 @@ jobs:
       github.event_name == 'push' &&
       github.ref == 'refs/heads/main' &&
       needs.build.result == 'success'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 30
     env:
       DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME || secrets.DOCKERHUB_USERNAME }}
@@ -310,42 +309,41 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Rust
-        uses: dtolnay/rust-toolchain@stable
-
-      - name: Install rust-script
-        run: cargo install rust-script
+        uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8
+        with:
+          toolchain: 1.100.0
 
       - name: Configure git
-        run: rust-script scripts/git-config.rs
+        run: cargo run --locked --manifest-path pipeline/Cargo.toml --bin git-config --
 
       - name: Determine bump type from changelog fragments
         id: bump_type
-        run: rust-script scripts/get-bump-type.rs
+        run: cargo run --locked --manifest-path pipeline/Cargo.toml --bin get-bump-type --
 
       - name: Check if version already released or no fragments
         id: check
         env:
           HAS_FRAGMENTS: ${{ steps.bump_type.outputs.has_fragments }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: rust-script scripts/check-release-needed.rs
+        run: cargo run --locked --manifest-path pipeline/Cargo.toml --bin check-release-needed --
 
       - name: Collect changelog and bump version
         id: version
         if: steps.check.outputs.should_release == 'true' && steps.check.outputs.skip_bump != 'true'
         run: |
-          rust-script scripts/version-and-commit.rs \
+          cargo run --locked --manifest-path pipeline/Cargo.toml --bin version-and-commit -- \
             --bump-type "${{ steps.bump_type.outputs.bump_type }}"
 
       - name: Get current version
         id: current_version
         if: steps.check.outputs.should_release == 'true'
-        run: rust-script scripts/get-version.rs
+        run: cargo run --locked --manifest-path pipeline/Cargo.toml --bin get-version --
 
       - name: Build release
         if: steps.check.outputs.should_release == 'true'
@@ -353,7 +351,7 @@ jobs:
 
       - name: Check crate package size
         if: steps.check.outputs.should_release == 'true' && steps.check.outputs.crate_published != 'true'
-        run: rust-script scripts/check-crate-size.rs
+        run: cargo run --locked --manifest-path pipeline/Cargo.toml --bin check-crate-size --
 
       - name: Publish to Crates.io
         if: steps.check.outputs.should_release == 'true' && steps.check.outputs.crate_published != 'true'
@@ -361,7 +359,7 @@ jobs:
         env:
           CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN || secrets.CARGO_TOKEN }}
           CARGO_TOKEN: ${{ secrets.CARGO_TOKEN }}
-        run: rust-script scripts/publish-crate.rs
+        run: cargo run --locked --manifest-path pipeline/Cargo.toml --bin publish-crate --
 
       - name: Wait for Crate availability on Crates.io
         if: |
@@ -369,7 +367,7 @@ jobs:
             steps.check.outputs.crate_published == 'true' ||
             steps.publish-crate.outputs.publish_result == 'success'
           )
-        run: rust-script scripts/wait-for-crate.rs --release-version "${{ steps.current_version.outputs.version }}"
+        run: cargo run --locked --manifest-path pipeline/Cargo.toml --bin wait-for-crate -- --release-version "${{ steps.current_version.outputs.version }}"
 
       - name: Configure Docker Hub publishing
         if: |
@@ -405,19 +403,19 @@ jobs:
 
       - name: Log in to Docker Hub
         if: steps.dockerhub.outputs.enabled == 'true'
-        uses: docker/login-action@v4
+        uses: docker/login-action@v4.8.0
         with:
           username: ${{ env.DOCKERHUB_USERNAME }}
           password: ${{ env.DOCKERHUB_TOKEN }}
 
       - name: Set up Docker Buildx
         if: steps.dockerhub.outputs.enabled == 'true'
-        uses: docker/setup-buildx-action@v4
+        uses: docker/setup-buildx-action@v4.4.1
 
       - name: Extract Docker metadata
         if: steps.dockerhub.outputs.enabled == 'true'
         id: docker-meta
-        uses: docker/metadata-action@v6
+        uses: docker/metadata-action@v6.2.0
         with:
           images: ${{ env.DOCKERHUB_IMAGE }}
           tags: |
@@ -428,7 +426,7 @@ jobs:
 
       - name: Publish Docker image to Docker Hub
         if: steps.dockerhub.outputs.enabled == 'true'
-        uses: docker/build-push-action@v7
+        uses: docker/build-push-action@v7.4.0
         with:
           context: .
           push: true
@@ -458,7 +456,7 @@ jobs:
           if [ -n "$DOCKER_HUB_URL" ]; then
             release_args+=(--docker-hub-url "$DOCKER_HUB_URL")
           fi
-          rust-script scripts/create-github-release.rs "${release_args[@]}"
+          cargo run --locked --manifest-path pipeline/Cargo.toml --bin create-github-release -- "${release_args[@]}"
 
   # === MANUAL INSTANT RELEASE ===
   # Manual release via workflow_dispatch - only after CI passes
@@ -472,7 +470,7 @@ jobs:
       github.event_name == 'workflow_dispatch' &&
       github.event.inputs.release_mode == 'instant' &&
       needs.build.result == 'success'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 30
     env:
       DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME || secrets.DOCKERHUB_USERNAME }}
@@ -480,29 +478,28 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Rust
-        uses: dtolnay/rust-toolchain@stable
-
-      - name: Install rust-script
-        run: cargo install rust-script
+        uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8
+        with:
+          toolchain: 1.100.0
 
       - name: Configure git
-        run: rust-script scripts/git-config.rs
+        run: cargo run --locked --manifest-path pipeline/Cargo.toml --bin git-config --
 
       - name: Collect changelog fragments
-        run: rust-script scripts/collect-changelog.rs
+        run: cargo run --locked --manifest-path pipeline/Cargo.toml --bin collect-changelog --
 
       - name: Version and commit
         id: version
         env:
           BUMP_TYPE: ${{ github.event.inputs.bump_type }}
           DESCRIPTION: ${{ github.event.inputs.description }}
-        run: rust-script scripts/version-and-commit.rs --bump-type "${{ github.event.inputs.bump_type }}" --description "${{ github.event.inputs.description }}"
+        run: cargo run --locked --manifest-path pipeline/Cargo.toml --bin version-and-commit -- --bump-type "${{ github.event.inputs.bump_type }}" --description "${{ github.event.inputs.description }}"
 
       - name: Build release
         if: steps.version.outputs.version_committed == 'true' || steps.version.outputs.already_released == 'true'
@@ -510,7 +507,7 @@ jobs:
 
       - name: Check crate package size
         if: steps.version.outputs.version_committed == 'true' || steps.version.outputs.already_released == 'true'
-        run: rust-script scripts/check-crate-size.rs
+        run: cargo run --locked --manifest-path pipeline/Cargo.toml --bin check-crate-size --
 
       - name: Publish to Crates.io
         if: steps.version.outputs.version_committed == 'true' || steps.version.outputs.already_released == 'true'
@@ -518,14 +515,14 @@ jobs:
         env:
           CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN || secrets.CARGO_TOKEN }}
           CARGO_TOKEN: ${{ secrets.CARGO_TOKEN }}
-        run: rust-script scripts/publish-crate.rs
+        run: cargo run --locked --manifest-path pipeline/Cargo.toml --bin publish-crate --
 
       - name: Wait for Crate availability on Crates.io
         if: |
           (steps.version.outputs.version_committed == 'true' ||
             steps.version.outputs.already_released == 'true') &&
           steps.publish-crate.outputs.publish_result == 'success'
-        run: rust-script scripts/wait-for-crate.rs --release-version "${{ steps.version.outputs.new_version }}"
+        run: cargo run --locked --manifest-path pipeline/Cargo.toml --bin wait-for-crate -- --release-version "${{ steps.version.outputs.new_version }}"
 
       - name: Configure Docker Hub publishing
         if: |
@@ -560,19 +557,19 @@ jobs:
 
       - name: Log in to Docker Hub
         if: steps.dockerhub.outputs.enabled == 'true'
-        uses: docker/login-action@v4
+        uses: docker/login-action@v4.8.0
         with:
           username: ${{ env.DOCKERHUB_USERNAME }}
           password: ${{ env.DOCKERHUB_TOKEN }}
 
       - name: Set up Docker Buildx
         if: steps.dockerhub.outputs.enabled == 'true'
-        uses: docker/setup-buildx-action@v4
+        uses: docker/setup-buildx-action@v4.4.1
 
       - name: Extract Docker metadata
         if: steps.dockerhub.outputs.enabled == 'true'
         id: docker-meta
-        uses: docker/metadata-action@v6
+        uses: docker/metadata-action@v6.2.0
         with:
           images: ${{ env.DOCKERHUB_IMAGE }}
           tags: |
@@ -583,7 +580,7 @@ jobs:
 
       - name: Publish Docker image to Docker Hub
         if: steps.dockerhub.outputs.enabled == 'true'
-        uses: docker/build-push-action@v7
+        uses: docker/build-push-action@v7.4.0
         with:
           context: .
           push: true
@@ -606,36 +603,35 @@ jobs:
           if [ -n "$DOCKER_HUB_URL" ]; then
             release_args+=(--docker-hub-url "$DOCKER_HUB_URL")
           fi
-          rust-script scripts/create-github-release.rs "${release_args[@]}"
+          cargo run --locked --manifest-path pipeline/Cargo.toml --bin create-github-release -- "${release_args[@]}"
 
   # === MANUAL CHANGELOG PR ===
   changelog-pr:
     name: Create Changelog PR
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.release_mode == 'changelog-pr'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 10
     permissions:
       contents: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
 
       - name: Setup Rust
-        uses: dtolnay/rust-toolchain@stable
-
-      - name: Install rust-script
-        run: cargo install rust-script
+        uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8
+        with:
+          toolchain: 1.100.0
 
       - name: Create changelog fragment
         env:
           BUMP_TYPE: ${{ github.event.inputs.bump_type }}
           DESCRIPTION: ${{ github.event.inputs.description }}
-        run: rust-script scripts/create-changelog-fragment.rs --bump-type "${{ github.event.inputs.bump_type }}" --description "${{ github.event.inputs.description }}"
+        run: cargo run --locked --manifest-path pipeline/Cargo.toml --bin create-changelog-fragment -- --bump-type "${{ github.event.inputs.bump_type }}" --description "${{ github.event.inputs.description }}"
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v8
+        uses: peter-evans/create-pull-request@v8.1.3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: 'chore: add changelog for manual ${{ github.event.inputs.bump_type }} release'
@@ -677,7 +673,7 @@ jobs:
         (github.event_name == 'push' && github.ref == 'refs/heads/main') ||
         (github.event_name == 'workflow_dispatch' && github.event.inputs.release_mode == 'instant')
       )
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 15
     permissions:
       contents: read
@@ -687,24 +683,26 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
         with:
           ref: main
 
       - name: Setup Rust
-        uses: dtolnay/rust-toolchain@stable
+        uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8
+        with:
+          toolchain: 1.100.0
 
       - name: Build documentation
         run: cargo doc --no-deps --all-features
 
       - name: Configure GitHub Pages
-        uses: actions/configure-pages@v6
+        uses: actions/configure-pages@v6.0.0
 
       - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-pages-artifact@v5.0.0
         with:
           path: target/doc
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@v5.0.1

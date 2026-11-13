@@ -1,0 +1,90 @@
+Download https://registry.npmjs.org/playwright/-/playwright-1.65.1.tgz
+Download https://registry.npmjs.org/eslint/-/eslint-10.15.0.tgz
+Download https://registry.npmjs.org/playwright-core/-/playwright-core-1.65.1.tgz
+Download https://registry.npmjs.org/@eslint/config-array/-/config-array-0.23.6.tgz
+Download https://registry.npmjs.org/minimatch/-/minimatch-11.0.8.tgz
+Download https://registry.npmjs.org/@isaacs/nonrecursive-glob-match/-/nonrecursive-glob-match-1.1.0.tgz
+Initialize minimatch@11.0.8
+Initialize @isaacs/nonrecursive-glob-match@1.1.0
+Initialize @eslint/config-array@0.23.6
+Initialize playwright@1.65.1
+Initialize eslint@10.15.0
+Initialize playwright-core@1.65.1
+running 1 test from ./tests/check-file-line-limits.test.js
+defines a warning band below the hard limit ... ok (12ms)
+running 4 tests from ./tests/ci-timeouts.test.js
+sets timeout-minutes for every release workflow job ... ok (10ms)
+sets timeout-minutes for every link workflow job ... ok (803µs)
+parses workflow files checked out with Windows line endings ... ok (284µs)
+caps individual Node.js and Bun tests at 30 seconds ... ok (150µs)
+running 6 tests from ./tests/create-github-release.test.js
+parses language from CLI arguments and environment defaults ... ok (1ms)
+builds a human-readable release name from a language-prefixed tag ... ok (3ms)
+caps oversized release notes and links to the tagged changelog ... ok (64ms)
+uses gh api and reports successful creation only for exit code 0 ... ok (2ms)
+throws when gh api exits non-zero with an unexpected error ... ok (3ms)
+treats already_exists as an idempotent gh api result ... ok (342µs)
+running 8 tests from ./tests/docker-publish.test.js
+adds a Docker publish job downstream of npm release jobs ... ok (3ms)
+waits for the exact npm version before publishing Docker tags ... ok (571µs)
+uses Docker official GitHub Actions with DOCKERHUB_TOKEN authentication ... ok (136µs)
+keeps Docker publishing disabled until DOCKERHUB_IMAGE is configured ... ok (494µs)
+reports missing Docker Hub credentials when publishing is enabled ... ok (3ms)
+accepts complete Docker Hub configuration without exposing the token ... ok (441µs)
+parses release wait options ... ok (1ms)
+retries until npm reports the requested version ... ok (882µs)
+running 6 tests from ./tests/index.test.js
+should add two positive numbers ... ok (937µs)
+should add negative numbers ... ok (103µs)
+should add zero ... ok (102µs)
+should multiply two positive numbers ... ok (94µs)
+should multiply by zero ... ok (129µs)
+should multiply negative numbers ... ok (82µs)
+running 1 test from ./tests/manual-changeset.test.js
+creates a scoped package changeset in a separate root containing spaces ... ok (592ms)
+running 5 tests from ./tests/package-info.test.js
+reads scoped package names and versions from package.json content ... ok (1ms)
+formats npm package specifiers from the derived package name ... ok (206µs)
+formats changeset headers from the derived package name ... ok (182µs)
+matches changesets for the derived package name only ... ok (13ms)
+reports missing package names clearly ... ok (798µs)
+running 5 tests from ./tests/package-metadata.test.js
+uses the real link-foundation example package name ... ok (1ms)
+defines a globally installable CLI command ... ok (236µs)
+runs package functions through the CLI command ... ok (444µs)
+runs when invoked through an npm-style bin symlink ... ok (145µs)
+publishes only the package runtime surface ... ok (176µs)
+running 6 tests from ./tests/release-badge.test.js
+strips a plain v prefix for backward compatibility ... ok (1ms)
+strips a js-v prefix from multi-language release tags ... ok (196µs)
+strips a rust-v prefix from multi-language release tags ... ok (148µs)
+escapes hyphens in prerelease versions for shields.io static badge paths ... ok (134µs)
+builds a valid shields.io badge URL for prefixed tags ... ok (882µs)
+builds a valid shields.io badge URL for prefixed prerelease tags ... ok (151µs)
+running 3 tests from ./tests/setup-npm.test.js
+requires the project package manager and runtime floors ... ok (20ms)
+installs the pinned npm and verifies the resulting executable ... ok (3ms)
+fails if installation leaves an older executable on PATH ... ok (1ms)
+running 5 tests from ./tests/tag-prefix.test.js
+defaults to "v" prefix (backward compatible) ... ok (830µs)
+supports "js-v" prefix for multi-language repos ... ok (94µs)
+supports "rust-v" prefix ... ok (85µs)
+supports empty prefix ... ok (80µs)
+works with pre-release versions ... ok (123µs)
+running 6 tests from ./tests/universal-app.test.js
+defines the expected app package and build targets ... ok (2ms)
+renders a visual UI using the package add and multiply functions ... ok (305µs)
+shares the Vite build output with Capacitor and GitHub Pages ... ok (4ms)
+adds root scripts and a workflow for web, desktop, and mobile checks ... ok (2ms)
+documents local validation without store credentials ... ok (1ms)
+regenerates preview screenshots with browser-commander on every push to main ... ok (5ms)
+running 1 test from ./tests/winstaller.test.js
+calls os.arch and preserves already-fixed upstream scripts ... ok (33ms)
+running 4 tests from ./tests/workflow-reliability.test.js
+cancels superseded non-main runs without cancelling main runs ... ok (27ms)
+uploads preview regeneration artifacts when screenshot rendering fails ... ok (1ms)
+uses the official Playwright image for preview regeneration instead of downloading Chromium ... ok (3ms)
+verifies desktop package output before uploading artifacts ... ok (45ms)
+
+ok | 61 passed | 0 failed (4s)
+

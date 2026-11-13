@@ -57,6 +57,26 @@
 /.php-cs-fixer.cache
 /.phpstan.cache/
 
-# Composer lock is intentionally committed for the package consumers, but the
-# template ships without it so downstreams resolve fresh; keep it ignored here.
-/composer.lock
+
+# Generated dependency/build caches in captured templates
+**/node_modules/
+**/target/
+**/bin/Debug/
+**/bin/Release/
+**/obj/
+**/.venv/
+**/__pycache__/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/dist/
+**/_site/
+
+# Generated verification reports
+**/reports/
+**/TestResults/
+**/docs/_build/
+**/docs/api/
+
+# Electron Forge packages are generated build artifacts.
+**/out/

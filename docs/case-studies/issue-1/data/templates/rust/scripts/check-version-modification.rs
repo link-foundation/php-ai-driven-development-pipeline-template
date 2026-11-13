@@ -23,19 +23,17 @@
 //!
 //! ```cargo
 //! [dependencies]
-//! regex = "1"
+//! regex = "1.13.1"
 //! ```
 
+use regex::Regex;
 use std::env;
 use std::path::Path;
 use std::process::{Command, exit};
-use regex::Regex;
 
 fn exec(command: &str, args: &[&str]) -> String {
     match Command::new(command).args(args).output() {
-        Ok(output) => {
-            String::from_utf8_lossy(&output.stdout).trim().to_string()
-        }
+        Ok(output) => String::from_utf8_lossy(&output.stdout).trim().to_string(),
         Err(_) => String::new(),
     }
 }
@@ -70,10 +68,10 @@ fn should_skip_version_check() -> bool {
 }
 
 fn get_rust_root() -> String {
-    if let Ok(root) = env::var("RUST_ROOT") {
-        if !root.is_empty() {
-            return root;
-        }
+    if let Ok(root) = env::var("RUST_ROOT")
+        && !root.is_empty()
+    {
+        return root;
     }
 
     if Path::new("./Cargo.toml").exists() {
@@ -104,7 +102,12 @@ fn get_cargo_toml_diff(cargo_toml_path: &str) -> String {
     // Get the diff for Cargo.toml
     exec(
         "git",
-        &["diff", &format!("origin/{}...HEAD", base_ref), "--", cargo_toml_path],
+        &[
+            "diff",
+            &format!("origin/{}...HEAD", base_ref),
+            "--",
+            cargo_toml_path,
+        ],
     )
 }
 

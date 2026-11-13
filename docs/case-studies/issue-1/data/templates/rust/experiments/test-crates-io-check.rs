@@ -4,9 +4,9 @@
 //!
 //! ```cargo
 //! [dependencies]
-//! ureq = "2"
-//! serde = { version = "1", features = ["derive"] }
-//! serde_json = "1"
+//! ureq = { version = "3.5.2", features = ["json"] }
+//! serde = { version = "1.0.229", features = ["derive"] }
+//! serde_json = "1.0.154"
 //! ```
 
 use serde::Deserialize;
@@ -26,20 +26,18 @@ fn check_version_on_crates_io(crate_name: &str, version: &str) -> bool {
     let url = format!("https://crates.io/api/v1/crates/{}/{}", crate_name, version);
 
     match ureq::get(&url)
-        .set("User-Agent", "rust-script-version-and-commit")
+        .header("User-Agent", "rust-script-version-and-commit")
         .call()
     {
-        Ok(response) => {
+        Ok(mut response) => {
             if response.status() == 200 {
-                if let Ok(body) = response.into_string() {
-                    if let Ok(data) = serde_json::from_str::<CratesIoVersion>(&body) {
-                        return data.version.is_some();
-                    }
+                if let Ok(data) = response.body_mut().read_json::<CratesIoVersion>() {
+                    return data.version.is_some();
                 }
             }
             false
         }
-        Err(ureq::Error::Status(404, _)) => false,
+        Err(ureq::Error::StatusCode(404)) => false,
         Err(e) => {
             eprintln!("Warning: Could not check crates.io: {}", e);
             false

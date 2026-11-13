@@ -1,0 +1,486 @@
+2026-11-13T22:48:26.058245Z DEBUG rustls_platform_verifier::verification::others: Loaded 121 CA root certificates from the system
+2026-11-13T22:48:26.069861Z DEBUG reqwest::connect: starting new connection 'Some("github.com")'
+2026-11-13T22:48:26.075246Z DEBUG hyper_util::client::legacy::connect::http: connecting to 140.82.121.3:443
+2026-11-13T22:48:26.078849Z DEBUG hyper_util::client::legacy::connect::http: connected to 140.82.121.3:443
+2026-11-13T22:48:26.245990Z DEBUG h2::client: binding client connection
+2026-11-13T22:48:26.246105Z DEBUG h2::client: client connection bound
+2026-11-13T22:48:26.247319Z DEBUG h2::codec::framed_write: send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+2026-11-13T22:48:26.248937Z DEBUG hyper_util::client::legacy::pool: pooling idle connection for ("https", github.com)
+2026-11-13T22:48:26.255829Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=WindowUpdate { stream_id: StreamId(0), size_increment: 5177345 }
+2026-11-13T22:48:26.256230Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(1), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:26.258382Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Settings { flags: (0x0), max_concurrent_streams: 100, initial_window_size: 68560, max_frame_size: 68608, enable_connect_protocol: 1 }
+2026-11-13T22:48:26.258403Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Settings { flags: (0x1: ACK) }
+2026-11-13T22:48:26.258957Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Settings { flags: (0x1: ACK) }
+2026-11-13T22:48:26.258981Z DEBUG Connection{peer=Client}: h2::proto::settings: received settings ACK; applying Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+2026-11-13T22:48:26.420894Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(1), flags: (0x4: END_HEADERS) }
+2026-11-13T22:48:26.421029Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Data { stream_id: StreamId(1) }
+2026-11-13T22:48:26.421040Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Data { stream_id: StreamId(1), flags: (0x1: END_STREAM) }
+2026-11-13T22:48:26.450327Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", github.com)
+2026-11-13T22:48:26.450464Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(3), flags: (0x4: END_HEADERS) }
+2026-11-13T22:48:26.450554Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Data { stream_id: StreamId(3), flags: (0x1: END_STREAM) }
+2026-11-13T22:48:26.456028Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=WindowUpdate { stream_id: StreamId(3), size_increment: 156 }
+2026-11-13T22:48:26.456079Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=WindowUpdate { stream_id: StreamId(0), size_increment: 2147418268 }
+2026-11-13T22:48:26.601441Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(3), flags: (0x4: END_HEADERS) }
+2026-11-13T22:48:26.601519Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Data { stream_id: StreamId(3) }
+2026-11-13T22:48:26.601531Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Data { stream_id: StreamId(3), flags: (0x1: END_STREAM) }
+2026-11-13T22:48:27.477206Z DEBUG rustls_platform_verifier::verification::others: Loaded 121 CA root certificates from the system
+2026-11-13T22:48:27.482735Z DEBUG reqwest::connect: starting new connection 'Some("index.crates.io")'
+2026-11-13T22:48:27.494533Z DEBUG hyper_util::client::legacy::connect::http: connecting to 146.75.122.137:443
+2026-11-13T22:48:27.498371Z DEBUG hyper_util::client::legacy::connect::http: connected to 146.75.122.137:443
+2026-11-13T22:48:27.507174Z DEBUG h2::client: binding client connection
+2026-11-13T22:48:27.507262Z DEBUG h2::client: client connection bound
+2026-11-13T22:48:27.507273Z DEBUG h2::codec::framed_write: send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+2026-11-13T22:48:27.507344Z DEBUG hyper_util::client::legacy::pool: pooling idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.507410Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=WindowUpdate { stream_id: StreamId(0), size_increment: 5177345 }
+2026-11-13T22:48:27.507545Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(1), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.510407Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Settings { flags: (0x0), header_table_size: 8192, max_concurrent_streams: 100 }
+2026-11-13T22:48:27.510482Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Settings { flags: (0x1: ACK) }
+2026-11-13T22:48:27.510497Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=WindowUpdate { stream_id: StreamId(0), size_increment: 16711681 }
+2026-11-13T22:48:27.510745Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Settings { flags: (0x1: ACK) }
+2026-11-13T22:48:27.510782Z DEBUG Connection{peer=Client}: h2::proto::settings: received settings ACK; applying Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384, max_header_list_size: 16384 }
+2026-11-13T22:48:27.511431Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(1), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.513584Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.513662Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(3), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.513950Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.513985Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(5), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.514496Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.514527Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(7), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.514993Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.515050Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(9), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.515434Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.515457Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(11), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.516182Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.516209Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(13), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.516399Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.516417Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(15), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.517712Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(3), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.518410Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.518440Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(17), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.518671Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(5), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.518716Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(7), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.518826Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(9), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.518964Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.518984Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(19), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.519293Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(11), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.520000Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.520062Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(21), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.520974Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(13), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.521047Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.521061Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(23), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.522114Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.522151Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(25), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.523292Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(15), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.523320Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(17), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.523329Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(19), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.523390Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.523405Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(27), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.523457Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.523468Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(29), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.523842Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.523900Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(31), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.523987Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(21), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.524866Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(23), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.526127Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(25), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.528121Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.528234Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(29), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.528252Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(33), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.528857Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.528884Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(35), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.529234Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(27), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.529252Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(31), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.529951Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.530027Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(37), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.530400Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.530419Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(39), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.530715Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.530765Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(41), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.531630Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(33), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.531679Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.531697Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(43), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.532307Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.532332Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(45), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.533391Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.533423Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(47), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.533965Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(35), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.535211Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(39), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.535236Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(43), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.535244Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(41), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.535407Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.535456Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(49), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.536715Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(37), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.537039Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(45), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.537058Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(47), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.538299Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.538342Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(51), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.539561Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(49), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.540878Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.540944Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(53), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.541869Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.541945Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(55), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.542674Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(51), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.542777Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.542795Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(57), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.543358Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.543400Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(59), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.544611Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(53), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.544979Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.545147Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(61), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.545347Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(55), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.546727Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(59), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.546900Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.546928Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(63), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.547346Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(57), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.548113Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.548182Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(65), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.548739Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(61), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.549382Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.549421Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(67), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.550886Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(63), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.551111Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.551164Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(69), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.551519Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.551542Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(71), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.551685Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(65), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.552475Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.552628Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(73), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.553200Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.553230Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(75), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.553938Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(67), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.554917Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(69), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.558479Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(71), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.558538Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(73), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.558546Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(75), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.558694Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.558734Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(77), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.558853Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.558876Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(79), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.558928Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.558943Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(81), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.558996Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.559022Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(83), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.559092Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.559127Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.559140Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(85), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.559170Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(87), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.559788Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.559815Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(89), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.563954Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.564279Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(77), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.564317Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(85), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.564329Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(87), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.564339Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(89), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.564347Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(81), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.564361Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(91), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.564509Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.564550Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.564583Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.564614Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.564648Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.564664Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(93), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.564676Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(95), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.564683Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(97), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.564689Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(99), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.564695Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(101), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.564826Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.564856Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(103), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.564923Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.564961Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(105), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.565057Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.565080Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(107), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.565168Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(79), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.565205Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(83), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.566111Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.566142Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(109), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.569369Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.569612Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(101), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.569685Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(91), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.569703Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(95), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.569721Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(111), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.569888Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.569995Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.570074Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.570094Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(113), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.570106Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(115), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.570113Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(117), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.570197Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.570212Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(119), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.570284Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(93), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.570300Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(107), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.570311Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(109), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.570319Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(97), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.570327Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(105), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.571343Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.571410Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.571429Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(121), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.571446Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(123), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.572925Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(103), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.573132Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.576221Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.573219Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.575912Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(99), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.576506Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(125), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.576584Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(127), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.576596Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(129), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.577223Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(111), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.577293Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(113), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.577311Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(115), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.577322Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(119), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.577332Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(117), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.577542Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.577575Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(131), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.578418Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.578570Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.578594Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(133), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.578613Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(135), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.581094Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(125), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.581192Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(127), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.581271Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.581479Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(129), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.581503Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(137), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.582078Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.582134Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(139), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.585152Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(131), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.585274Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(133), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.585286Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(137), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.585402Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.585475Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(141), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.586060Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(139), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.586974Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.587080Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(143), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.587478Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(135), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.588964Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.589089Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(145), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.589283Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.589319Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(147), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.593119Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(141), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.593209Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(143), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.593240Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(147), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.593254Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(145), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.593482Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.593581Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.593788Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(149), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.593822Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(151), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.594908Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.594946Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(153), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.596743Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.596814Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(155), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.597391Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.597419Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(157), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.597934Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(151), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.597970Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(149), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.598598Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(153), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.598669Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.598697Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(159), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.598805Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.598829Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(161), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.600842Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.600919Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.600944Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(163), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.601051Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(165), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.601284Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.601302Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(167), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.602041Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.602078Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(169), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.602810Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.602811Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(157), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.602871Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(155), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.602895Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(159), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.602910Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(171), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.603932Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(161), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.604195Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.604229Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(173), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.604823Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.604857Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(175), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.604966Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(167), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.604983Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(165), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.605729Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(169), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.606887Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.607052Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(171), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.607079Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(163), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.607094Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(177), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.608229Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.608358Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(179), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.608937Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(175), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.609290Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(173), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.610955Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.611074Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.611106Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(181), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.611136Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(183), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.611840Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(177), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.611879Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(179), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.612134Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.612157Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(185), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.612413Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.612433Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(187), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.612929Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.612966Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.613040Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(189), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.613054Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(191), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.614895Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.615120Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(183), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.615177Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(181), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.615231Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(193), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.615377Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.615403Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(195), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.617381Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(187), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.617429Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(185), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.617532Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.617566Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(197), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.617658Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.617677Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(199), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.617782Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(189), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.617918Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.617941Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(201), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.618604Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(191), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.618939Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(193), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.621184Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.621358Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(199), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.621394Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(203), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.621579Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(201), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.621832Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.621879Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(205), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.622179Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(195), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.622373Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.622473Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(197), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.622493Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(207), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.623094Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.623128Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(209), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.625113Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.625204Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(211), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.625691Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(205), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.626335Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(203), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.626365Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(207), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.626473Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(209), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.629878Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.629997Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.630033Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.630341Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(211), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.630383Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(213), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.630409Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(215), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.630425Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(217), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.630588Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.630641Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(219), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.631144Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.631253Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(221), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.632300Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.632371Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(223), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.632960Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.633102Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(225), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.633419Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.633543Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(227), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.633608Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.633624Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(229), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.634643Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.634703Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(231), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.634883Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.634902Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(233), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.635727Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(219), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.635791Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(213), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.635940Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(223), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.636936Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.636992Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(235), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.637484Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.637541Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(215), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.637559Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(217), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.637570Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(225), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.637587Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(221), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.637595Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(237), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.637810Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(229), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.640899Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.641063Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.641091Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(239), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.641116Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(241), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.641229Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.641245Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(243), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.641286Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.641299Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(245), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.641347Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.641370Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(247), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.641433Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.641448Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(249), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.642292Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(227), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.642342Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(231), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.642356Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(233), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.642365Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(235), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.642373Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(237), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.642617Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.642639Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(251), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.643075Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.643101Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(253), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.643511Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.643530Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(255), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.643606Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.643624Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(257), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.645654Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.645778Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(259), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.647234Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.647490Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(239), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.647519Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(241), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.647527Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(243), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.647534Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(247), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.647541Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(245), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.647549Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(251), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.647556Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(253), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.647563Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(255), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.647575Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(261), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.648858Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.648967Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.649084Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(263), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.649110Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(265), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.649237Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(257), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.650263Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.650362Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(267), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.650719Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(249), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.650985Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(259), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.652608Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.652703Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(269), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.655109Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(261), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.655182Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(263), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.655192Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(265), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.655199Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(267), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.655304Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.655376Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.655398Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.655410Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.655501Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(271), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.655532Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(273), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.655541Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(275), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.655549Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(277), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.656243Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(269), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.656328Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.656351Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(279), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.658116Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.658274Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(281), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.658935Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.658971Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(283), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.659244Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.659268Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(285), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.659437Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(275), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.659460Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(273), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.659472Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(277), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.660128Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.660422Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(271), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.660490Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(279), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.660518Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(287), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.661905Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(281), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.662101Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.662141Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(289), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.662394Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(283), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.663190Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.663744Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(291), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.666555Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.666819Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(287), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.666861Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(285), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.666876Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(289), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.666890Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(293), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.673589Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.673647Z DEBUG hyper_util::client::legacy::pool: reuse idle connection for ("https", index.crates.io)
+2026-11-13T22:48:27.673713Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(295), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.674145Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(291), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.674177Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(293), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.674188Z DEBUG Connection{peer=Client}: h2::codec::framed_write: send frame=Headers { stream_id: StreamId(297), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.678800Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(297), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:27.678890Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(295), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:28.192459Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(121), flags: (0x5: END_HEADERS | END_STREAM) }
+2026-11-13T22:48:28.233547Z DEBUG Connection{peer=Client}: h2::codec::framed_read: received frame=Headers { stream_id: StreamId(123), flags: (0x5: END_HEADERS | END_STREAM) }
+{"database":{"advisory-count":1509,"last-commit":"4ef2df8e806a65e2f1ecc14f56f51249062b23d6","last-updated":"2026-11-13T13:33:03+01:00"},"lockfile":{"dependency-count":152},"settings":{"target_arch":[],"target_os":[],"severity":null,"ignore":[],"informational_warnings":["unmaintained","unsound","notice"]},"vulnerabilities":{"found":false,"count":0,"list":[]},"warnings":{}}

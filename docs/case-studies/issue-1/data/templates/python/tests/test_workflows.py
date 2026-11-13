@@ -5,7 +5,6 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 WORKFLOWS = ROOT / ".github" / "workflows"
 
@@ -75,9 +74,9 @@ def test_release_workflow_action_versions_are_current() -> None:
     """Release workflow actions should use the current major versions."""
     release_workflow = read_workflow("release.yml")
 
-    assert_action_pin_count(release_workflow, "actions/checkout", "v6", 7)
+    assert_action_pin_count(release_workflow, "actions/checkout", "v7", 7)
     assert_action_pin_count(release_workflow, "actions/upload-artifact", "v7", 1)
-    assert_action_pin_count(release_workflow, "actions/download-artifact", "v7", 1)
+    assert_action_pin_count(release_workflow, "actions/download-artifact", "v8", 1)
 
 
 STATUS_CHECK_FUNCTIONS = ("always()", "!cancelled()", "!failure()", "success()")
@@ -125,7 +124,7 @@ def test_docs_workflow_action_versions_are_current() -> None:
     """Docs workflow actions should stay aligned with the current Pages stack."""
     docs_workflow = read_workflow("docs.yml")
 
-    assert_action_pin_count(docs_workflow, "actions/checkout", "v6", 1)
+    assert_action_pin_count(docs_workflow, "actions/checkout", "v7", 1)
     assert_action_pin_count(docs_workflow, "actions/upload-artifact", "v7", 1)
     assert_action_pin_count(docs_workflow, "actions/configure-pages", "v6", 1)
     assert_action_pin_count(docs_workflow, "actions/upload-pages-artifact", "v5", 1)

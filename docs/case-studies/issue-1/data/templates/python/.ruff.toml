@@ -1,5 +1,6 @@
 # Ruff configuration
-# This file provides additional settings beyond pyproject.toml
+# Inherit the project rules before adding import grouping.
+extend = "pyproject.toml"
 
 [lint.isort]
 known-first-party = ["my_package"]

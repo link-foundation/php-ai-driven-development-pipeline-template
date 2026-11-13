@@ -1,0 +1,9 @@
+npm notice run @link-foundation/example-package-name@0.11.4 prepare
+npm notice run husky
+HUSKY=0 skip install
+up to date, audited 292 packages in 3s
+
+81 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities

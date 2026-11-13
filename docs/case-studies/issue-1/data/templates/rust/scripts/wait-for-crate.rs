@@ -19,8 +19,8 @@
 //!
 //! ```cargo
 //! [dependencies]
-//! regex = "1"
-//! ureq = "2"
+//! regex = "1.13.1"
+//! ureq = { version = "3.5.2", features = ["json"] }
 //! ```
 
 use std::env;
@@ -45,8 +45,8 @@ fn get_arg(name: &str) -> Option<String> {
 }
 
 fn set_output(key: &str, value: &str) {
-    if let Ok(output_file) = env::var("GITHUB_OUTPUT") {
-        if let Err(e) = fs::OpenOptions::new()
+    if let Ok(output_file) = env::var("GITHUB_OUTPUT")
+        && let Err(e) = fs::OpenOptions::new()
             .create(true)
             .append(true)
             .open(&output_file)
@@ -54,9 +54,8 @@ fn set_output(key: &str, value: &str) {
                 use std::io::Write;
                 writeln!(f, "{}={}", key, value)
             })
-        {
-            eprintln!("Warning: Could not write to GITHUB_OUTPUT: {}", e);
-        }
+    {
+        eprintln!("Warning: Could not write to GITHUB_OUTPUT: {}", e);
     }
     println!("Output: {}={}", key, value);
 }
@@ -82,11 +81,11 @@ fn crate_version_exists(crate_name: &str, version: &str) -> bool {
     let url = format!("https://crates.io/api/v1/crates/{}/{}", crate_name, version);
 
     match ureq::get(&url)
-        .set("User-Agent", "rust-script-wait-for-crate")
+        .header("User-Agent", "rust-script-wait-for-crate")
         .call()
     {
         Ok(response) => response.status() == 200,
-        Err(ureq::Error::Status(404, _)) => false,
+        Err(ureq::Error::StatusCode(404)) => false,
         Err(e) => {
             eprintln!("Warning: Could not check crates.io: {}", e);
             false

@@ -1,0 +1,205 @@
+    Checking captured-template-pipeline v0.0.0 (/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/rust/pipeline)
+       Fixed ../scripts/rust-paths.rs (2 fixes)
+       Fixed ../scripts/check-changelog-fragment.rs (1 fix)
+       Fixed ../scripts/create-changelog-fragment.rs (2 fixes)
+       Fixed ../scripts/collect-changelog.rs (5 fixes)
+       Fixed ../scripts/publish-crate.rs (1 fix)
+warning: doc list item overindented
+  --> ../scripts/publish-crate.rs:19:5
+   |
+19 | //!       'success'        - the crate version was published to crates.io
+   |     ^^^^^^ help: try using `    ` (4 spaces)
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.100.0/index.html#doc_overindented_list_items
+   = note: `-D clippy::doc-overindented-list-items` implied by `-D warnings`
+   = help: to override `-D warnings` add `#[allow(clippy::doc_overindented_list_items)]`
+   = note: the `clippy::doc_overindented_list_items` lint ignores `-D warnings`
+
+warning: doc list item overindented
+  --> ../scripts/publish-crate.rs:20:5
+   |
+20 | //!       'already_exists' - the version is already on crates.io (version-bump bug)
+   |     ^^^^^^ help: try using `    ` (4 spaces)
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.100.0/index.html#doc_overindented_list_items
+
+warning: doc list item overindented
+  --> ../scripts/publish-crate.rs:21:5
+   |
+21 | //!       'auth_failed'    - missing or invalid crates.io authentication token
+   |     ^^^^^^ help: try using `    ` (4 spaces)
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.100.0/index.html#doc_overindented_list_items
+
+warning: doc list item overindented
+  --> ../scripts/publish-crate.rs:22:5
+   |
+22 | //!       'rate_limited'   - crates.io returned HTTP 429 (too many versions in 24h);
+   |     ^^^^^^ help: try using `    ` (4 spaces)
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.100.0/index.html#doc_overindented_list_items
+
+warning: doc list item overindented
+  --> ../scripts/publish-crate.rs:23:5
+   |
+23 | //!                          deferred, automatically-recoverable outcome — the
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^ help: try using `    ` (4 spaces)
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.100.0/index.html#doc_overindented_list_items
+
+warning: doc list item overindented
+  --> ../scripts/publish-crate.rs:24:5
+   |
+24 | //!                          script exits 0 and the same version is retried on the
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^ help: try using `    ` (4 spaces)
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.100.0/index.html#doc_overindented_list_items
+
+warning: doc list item overindented
+  --> ../scripts/publish-crate.rs:25:5
+   |
+25 | //!                          next push to 'main' once the throttle window clears
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^ help: try using `    ` (4 spaces)
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.100.0/index.html#doc_overindented_list_items
+
+warning: doc list item overindented
+  --> ../scripts/publish-crate.rs:26:5
+   |
+26 | //!       'skipped'        - publish skipped (e.g. template default package name)
+   |     ^^^^^^ help: try using `    ` (4 spaces)
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.100.0/index.html#doc_overindented_list_items
+
+warning: doc list item overindented
+  --> ../scripts/publish-crate.rs:27:5
+   |
+27 | //!       'failed'         - publish failed for an unrecognised reason
+   |     ^^^^^^ help: try using `    ` (4 spaces)
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.100.0/index.html#doc_overindented_list_items
+
+warning: `captured-template-pipeline` (bin "publish-crate" test) generated 9 warnings
+warning: implementation of inherent method `to_string(&self) -> String` for type `Version`
+  --> ../scripts/bump-version.rs:56:5
+   |
+56 | /     fn to_string(&self) -> String {
+57 | |         format!("{}.{}.{}", self.major, self.minor, self.patch)
+58 | |     }
+   | |_____^
+   |
+   = help: implement trait `Display` for type `Version` instead
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.100.0/index.html#inherent_to_string
+   = note: `-D clippy::inherent-to-string` implied by `-D warnings`
+   = help: to override `-D warnings` add `#[allow(clippy::inherent_to_string)]`
+   = note: the `clippy::inherent_to_string` lint ignores `-D warnings`
+
+warning: `captured-template-pipeline` (bin "bump-version" test) generated 1 warning
+warning: `captured-template-pipeline` (bin "publish-crate") generated 9 warnings (9 duplicates)
+warning: `captured-template-pipeline` (bin "bump-version") generated 1 warning (1 duplicate)
+       Fixed ../scripts/check-version-modification.rs (1 fix)
+       Fixed ../scripts/git-config.rs (1 fix)
+       Fixed ../scripts/check-release-needed.rs (5 fixes)
+       Fixed ../scripts/get-version.rs (1 fix)
+       Fixed ../scripts/get-bump-type.rs (3 fixes)
+warning: compiling a regex in a loop
+   --> ../scripts/get-bump-type.rs:102:27
+    |
+102 |             let bump_re = Regex::new(r"^\s*bump\s*:\s*(.+?)\s*$").unwrap();
+    |                           ^^^^^^^^^^
+    |
+help: move the regex construction outside this loop
+   --> ../scripts/get-bump-type.rs:101:9
+    |
+101 |         for line in frontmatter.lines() {
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.100.0/index.html#regex_creation_in_loops
+    = note: `-D clippy::regex-creation-in-loops` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::regex_creation_in_loops)]`
+    = note: the `clippy::regex_creation_in_loops` lint ignores `-D warnings`
+
+warning: `captured-template-pipeline` (bin "get-bump-type") generated 1 warning
+       Fixed ../scripts/detect-code-changes.rs (1 fix)
+warning: `captured-template-pipeline` (bin "get-bump-type" test) generated 1 warning (1 duplicate)
+       Fixed ../scripts/wait-for-crate.rs (1 fix)
+       Fixed ../scripts/version-and-commit.rs (3 fixes)
+warning: function `get_arg` is never used
+  --> ../scripts/version-and-commit.rs:42:4
+   |
+42 | fn get_arg(name: &str) -> Option<String> {
+   |    ^^^^^^^
+   |
+   = note: `-D dead-code` implied by `-D warnings`
+   = help: to override `-D warnings` add `#[expect(dead_code)]` or `#[allow(dead_code)]`
+   = note: the `dead_code` lint ignores `-D warnings`
+
+warning: function `get_changelog_dir` is never used
+  --> ../scripts/version-and-commit.rs:54:4
+   |
+54 | fn get_changelog_dir(rust_root: &str) -> String {
+   |    ^^^^^^^^^^^^^^^^^
+
+warning: function `get_changelog_path` is never used
+  --> ../scripts/version-and-commit.rs:62:4
+   |
+62 | fn get_changelog_path(rust_root: &str) -> String {
+   |    ^^^^^^^^^^^^^^^^^^
+
+warning: function `set_output` is never used
+  --> ../scripts/version-and-commit.rs:70:4
+   |
+70 | fn set_output(key: &str, value: &str) {
+   |    ^^^^^^^^^^
+
+warning: function `exec` is never used
+  --> ../scripts/version-and-commit.rs:83:4
+   |
+83 | fn exec(command: &str, args: &[&str]) -> Result<String, String> {
+   |    ^^^^
+
+warning: function `exec_check` is never used
+  --> ../scripts/version-and-commit.rs:97:4
+   |
+97 | fn exec_check(command: &str, args: &[&str]) -> bool {
+   |    ^^^^^^^^^^
+
+warning: struct `Version` is never constructed
+   --> ../scripts/version-and-commit.rs:105:8
+    |
+105 | struct Version {
+    |        ^^^^^^^
+
+warning: associated items `parse` and `bump` are never used
+   --> ../scripts/version-and-commit.rs:114:8
+    |
+113 | impl Version {
+    | ------------ associated items in this implementation
+114 |     fn parse(content: &str) -> Option<Version> {
+    |        ^^^^^
+...
+125 |     fn bump(&self, bump_type: &str) -> String {
+    |        ^^^^
+
+warning: function `update_cargo_toml` is never used
+   --> ../scripts/version-and-commit.rs:134:4
+    |
+134 | fn update_cargo_toml(cargo_toml_path: &str, new_version: &str) -> Result<(), String> {
+    |    ^^^^^^^^^^^^^^^^^
+
+warning: function `get_crate_name` is never used
+   --> ../scripts/version-and-commit.rs:207:4
+    |
+207 | fn get_crate_name(cargo_toml_path: &str) -> Result<String, String> {
+    |    ^^^^^^^^^^^^^^
+
+warning: function `check_tag_exists` is never used
+   --> ../scripts/version-and-commit.rs:220:4
+    |
+220 | fn check_tag_exists(tag_prefix: &str, version: &str) -> bool {
+    |    ^^^^^^^^^^^^^^^^
+
+warning: `captured-template-pipeline` (bin "version-and-commit" test) generated 11 warnings
+       Fixed ../scripts/create-github-release.rs (1 fix)
+       Fixed ../scripts/version-and-commit.rs (6 fixes)
+       Fixed ../scripts/check-crate-size.rs (1 fix)
+    Finished `dev` profile [unoptimized] target(s) in 10.54s

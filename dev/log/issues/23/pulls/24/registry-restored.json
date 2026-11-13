@@ -1,0 +1,349 @@
+[
+  {
+    "ecosystem": "npm",
+    "name": "@capacitor/android",
+    "before": [
+      "^7.4.4"
+    ],
+    "latest": "8.6.2",
+    "source": "https://registry.npmjs.org/@capacitor/android/latest",
+    "details": {
+      "engines": null,
+      "repository": {
+        "url": "git+https://github.com/ionic-team/capacitor.git",
+        "type": "git"
+      },
+      "peerDependencies": {
+        "@capacitor/core": "^8.6.0"
+      }
+    }
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@capacitor/core",
+    "before": [
+      "^7.4.4"
+    ],
+    "latest": "8.6.2",
+    "source": "https://registry.npmjs.org/@capacitor/core/latest",
+    "details": {
+      "engines": null,
+      "repository": {
+        "url": "git+https://github.com/ionic-team/capacitor.git",
+        "type": "git"
+      },
+      "peerDependencies": null
+    }
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@capacitor/ios",
+    "before": [
+      "^7.4.4"
+    ],
+    "latest": "8.6.2",
+    "source": "https://registry.npmjs.org/@capacitor/ios/latest",
+    "details": {
+      "engines": null,
+      "repository": {
+        "url": "git+https://github.com/ionic-team/capacitor.git",
+        "type": "git"
+      },
+      "peerDependencies": {
+        "@capacitor/core": "^8.6.0"
+      }
+    }
+  },
+  {
+    "ecosystem": "npm",
+    "name": "react",
+    "before": [
+      "^18.3.1"
+    ],
+    "latest": "19.3.1",
+    "source": "https://registry.npmjs.org/react/latest",
+    "details": {
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "repository": {
+        "url": "git+https://github.com/react/react.git",
+        "type": "git",
+        "directory": "packages/react"
+      },
+      "peerDependencies": null
+    }
+  },
+  {
+    "ecosystem": "npm",
+    "name": "react-dom",
+    "before": [
+      "^18.3.1"
+    ],
+    "latest": "19.3.1",
+    "source": "https://registry.npmjs.org/react-dom/latest",
+    "details": {
+      "engines": null,
+      "repository": {
+        "url": "git+https://github.com/react/react.git",
+        "type": "git",
+        "directory": "packages/react-dom"
+      },
+      "peerDependencies": {
+        "react": "^19.3.1"
+      }
+    }
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@capacitor/cli",
+    "before": [
+      "^7.4.4"
+    ],
+    "latest": "8.6.2",
+    "source": "https://registry.npmjs.org/@capacitor/cli/latest",
+    "details": {
+      "engines": {
+        "node": ">=22.0.0"
+      },
+      "repository": {
+        "url": "git+https://github.com/ionic-team/capacitor.git",
+        "type": "git"
+      },
+      "peerDependencies": null
+    }
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@electron-forge/cli",
+    "before": [
+      "^7.8.3"
+    ],
+    "latest": "8.0.1",
+    "source": "https://registry.npmjs.org/@electron-forge/cli/latest",
+    "details": {
+      "engines": {
+        "node": ">= 22.13.0"
+      },
+      "repository": {
+        "url": "git+https://github.com/electron/forge.git",
+        "type": "git"
+      },
+      "peerDependencies": null
+    }
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@electron-forge/maker-deb",
+    "before": [
+      "^7.8.3"
+    ],
+    "latest": "8.0.1",
+    "source": "https://registry.npmjs.org/@electron-forge/maker-deb/latest",
+    "details": {
+      "engines": {
+        "node": ">= 22.13.0"
+      },
+      "repository": {
+        "url": "git+https://github.com/electron/forge.git",
+        "type": "git"
+      },
+      "peerDependencies": null
+    }
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@electron-forge/maker-rpm",
+    "before": [
+      "^7.8.3"
+    ],
+    "latest": "8.0.1",
+    "source": "https://registry.npmjs.org/@electron-forge/maker-rpm/latest",
+    "details": {
+      "engines": {
+        "node": ">= 22.13.0"
+      },
+      "repository": {
+        "url": "git+https://github.com/electron/forge.git",
+        "type": "git"
+      },
+      "peerDependencies": null
+    }
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@electron-forge/maker-squirrel",
+    "before": [
+      "^7.8.3"
+    ],
+    "latest": "8.0.1",
+    "source": "https://registry.npmjs.org/@electron-forge/maker-squirrel/latest",
+    "details": {
+      "engines": {
+        "node": ">= 22.13.0"
+      },
+      "repository": {
+        "url": "git+https://github.com/electron/forge.git",
+        "type": "git"
+      },
+      "peerDependencies": null
+    }
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@electron-forge/maker-zip",
+    "before": [
+      "^7.8.3"
+    ],
+    "latest": "8.0.1",
+    "source": "https://registry.npmjs.org/@electron-forge/maker-zip/latest",
+    "details": {
+      "engines": {
+        "node": ">= 22.13.0"
+      },
+      "repository": {
+        "url": "git+https://github.com/electron/forge.git",
+        "type": "git"
+      },
+      "peerDependencies": null
+    }
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@vitejs/plugin-react",
+    "before": [
+      "^4.7.0"
+    ],
+    "latest": "6.3.0",
+    "source": "https://registry.npmjs.org/@vitejs/plugin-react/latest",
+    "details": {
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "repository": {
+        "url": "git+https://github.com/vitejs/vite-plugin-react.git",
+        "type": "git",
+        "directory": "packages/plugin-react"
+      },
+      "peerDependencies": {
+        "vite": "^8.0.0",
+        "oxc-transform-react": ">=0.152.0 <0.157.0",
+        "@rolldown/plugin-babel": "^0.1.7 || ^0.2.0 || ^0.3.0",
+        "babel-plugin-react-compiler": "^1.0.0"
+      }
+    }
+  },
+  {
+    "ecosystem": "npm",
+    "name": "electron",
+    "before": [
+      "^33.4.11"
+    ],
+    "latest": "45.3.2",
+    "source": "https://registry.npmjs.org/electron/latest",
+    "details": {
+      "engines": {
+        "node": ">= 22.12.0"
+      },
+      "repository": {
+        "url": "git+https://github.com/electron/electron.git",
+        "type": "git"
+      },
+      "peerDependencies": null
+    }
+  },
+  {
+    "ecosystem": "npm",
+    "name": "vite",
+    "before": [
+      "^6.4.1"
+    ],
+    "latest": "8.3.8",
+    "source": "https://registry.npmjs.org/vite/latest",
+    "details": {
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "repository": {
+        "url": "git+https://github.com/vitejs/vite.git",
+        "type": "git",
+        "directory": "packages/vite"
+      },
+      "peerDependencies": {
+        "tsx": "^4.8.1",
+        "jiti": ">=1.21.0",
+        "less": "^4.0.0",
+        "sass": "^1.70.0",
+        "yaml": "^2.4.2",
+        "stylus": ">=0.54.8",
+        "terser": "^5.16.0",
+        "esbuild": "^0.27.0 || ^0.28.0",
+        "sugarss": "^5.0.0",
+        "@types/node": "^20.19.0 || >=22.12.0",
+        "sass-embedded": "^1.70.0",
+        "@vitejs/devtools": "^0.7.1 || ^0.8.0"
+      }
+    }
+  },
+  {
+    "ecosystem": "npm",
+    "name": "command-stream",
+    "before": [
+      "unversioned use-m import"
+    ],
+    "latest": "2.6.0",
+    "source": "https://registry.npmjs.org/command-stream/latest",
+    "details": {
+      "engines": {
+        "bun": ">=1.0.0",
+        "node": ">=22.0.0"
+      },
+      "repository": {
+        "url": "git+https://github.com/link-foundation/command-stream.git",
+        "type": "git",
+        "directory": "js"
+      },
+      "peerDependencies": null
+    }
+  },
+  {
+    "ecosystem": "npm",
+    "name": "lino-arguments",
+    "before": [
+      "unversioned use-m import"
+    ],
+    "latest": "0.4.1",
+    "source": "https://registry.npmjs.org/lino-arguments/latest",
+    "details": {
+      "engines": {
+        "node": "^20.19.0 || ^22.12.0 || >=23"
+      },
+      "repository": {
+        "url": "git+https://github.com/link-foundation/lino-arguments.git",
+        "type": "git"
+      },
+      "peerDependencies": {
+        "@dotenvx/dotenvx": "^2.38.2"
+      }
+    }
+  },
+  {
+    "ecosystem": "npm",
+    "name": "semver",
+    "before": [
+      "migration candidate"
+    ],
+    "latest": "7.8.6",
+    "source": "https://registry.npmjs.org/semver/latest",
+    "details": {
+      "engines": {
+        "node": ">=10"
+      },
+      "repository": {
+        "url": "git+https://github.com/npm/node-semver.git",
+        "type": "git"
+      },
+      "peerDependencies": null
+    }
+  }
+]

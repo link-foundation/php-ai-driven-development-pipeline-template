@@ -7,21 +7,28 @@ import subprocess
 import sys
 from pathlib import Path
 
+import pytest
 
 SCRIPT_PATH = (
     Path(__file__).resolve().parent.parent / "scripts" / "create_github_release.py"
 )
 spec = importlib.util.spec_from_file_location("create_github_release", SCRIPT_PATH)
+assert spec is not None
+assert spec.loader is not None
 module = importlib.util.module_from_spec(spec)
 sys.modules[spec.name] = module
-spec.loader.exec_module(module)  # type: ignore[union-attr]
+spec.loader.exec_module(module)
 
 
-def test_create_release_uses_tag_prefix_and_language_title(monkeypatch) -> None:
+def test_create_release_uses_tag_prefix_and_language_title(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
     """Release creation should separate tag format from display title."""
-    commands = []
+    commands: list[list[str]] = []
 
-    def fake_run_command(cmd, check=True):
+    def fake_run_command(
+        cmd: list[str], check: bool = True
+    ) -> subprocess.CompletedProcess[str]:
         commands.append(cmd)
         return subprocess.CompletedProcess(cmd, 0, "", "")
 
@@ -52,16 +59,20 @@ def test_create_release_uses_tag_prefix_and_language_title(monkeypatch) -> None:
     ]
 
 
-def test_create_release_caps_oversized_release_notes(monkeypatch) -> None:
+def test_create_release_caps_oversized_release_notes(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
     """Release creation should avoid sending oversized notes to GitHub."""
-    commands = []
+    commands: list[list[str]] = []
     oversized_notes = (
         "Important release summary\n\n"
         + ("Multi-byte change entry: café\n" * 3_000)
         + "\nTail marker that should be omitted"
     )
 
-    def fake_run_command(cmd, check=True):
+    def fake_run_command(
+        cmd: list[str], check: bool = True
+    ) -> subprocess.CompletedProcess[str]:
         commands.append(cmd)
         return subprocess.CompletedProcess(cmd, 0, "", "")
 

@@ -23,7 +23,7 @@ permissions:
 jobs:
   dependency-audit:
     name: Audit Resolved Composer Dependencies
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7.0.1
@@ -33,16 +33,13 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@2.40.0
         with:
-          php-version: '8.3'
+          php-version: '8.5.12'
           coverage: none
-          tools: composer:v2
+          tools: composer:2.11.2
 
       - name: Resolve the dependency set
-        # The template ships without composer.lock on purpose (consumers
-        # resolve their own), so this job resolves one first: auditing the
-        # freshly locked set is what a consumer installing today would get,
-        # not a stale lock inherited from the template.
-        run: composer update --no-interaction --prefer-dist --no-progress
+        # Audit the exact committed tree used by CI and fresh installs.
+        run: composer install --no-interaction --prefer-dist --no-progress
 
       - name: Audit dependencies against the PHP security advisories database
         # --locked audits the resolved lock file; --abandoned=fail turns "this
@@ -51,7 +48,7 @@ jobs:
 
   codeql:
     name: CodeQL (${{ matrix.language }})
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 30
     permissions:
       contents: read
@@ -83,7 +80,7 @@ jobs:
   dependency-review:
     name: Dependency Review
     if: github.event_name == 'pull_request'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 10
     permissions:
       contents: read
@@ -111,7 +108,7 @@ jobs:
       - codeql
       - dependency-review
     if: always()
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v7.0.1

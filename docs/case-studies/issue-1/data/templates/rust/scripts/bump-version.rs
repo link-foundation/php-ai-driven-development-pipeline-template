@@ -9,13 +9,13 @@
 //!
 //! ```cargo
 //! [dependencies]
-//! regex = "1"
+//! regex = "1.13.1"
 //! ```
 
+use regex::Regex;
 use std::env;
 use std::fs;
 use std::process::exit;
-use regex::Regex;
 
 #[path = "rust-paths.rs"]
 mod rust_paths;
@@ -52,9 +52,11 @@ impl Version {
             BumpType::Patch => format!("{}.{}.{}", self.major, self.minor, self.patch + 1),
         }
     }
+}
 
-    fn to_string(&self) -> String {
-        format!("{}.{}.{}", self.major, self.minor, self.patch)
+impl std::fmt::Display for Version {
+    fn fmt(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(formatter, "{}.{}.{}", self.major, self.minor, self.patch)
     }
 }
 
@@ -87,7 +89,11 @@ fn get_current_version(cargo_toml_path: &str) -> Result<Version, String> {
         let major: u32 = caps.get(1).unwrap().as_str().parse().unwrap();
         let minor: u32 = caps.get(2).unwrap().as_str().parse().unwrap();
         let patch: u32 = caps.get(3).unwrap().as_str().parse().unwrap();
-        Ok(Version { major, minor, patch })
+        Ok(Version {
+            major,
+            minor,
+            patch,
+        })
     } else {
         Err(format!("Could not parse version from {}", cargo_toml_path))
     }
@@ -110,7 +116,9 @@ fn main() {
     let bump_type_str = match get_arg("bump-type") {
         Some(s) => s,
         None => {
-            eprintln!("Usage: rust-script scripts/bump-version.rs --bump-type <major|minor|patch> [--dry-run] [--rust-root <path>]");
+            eprintln!(
+                "Usage: rust-script scripts/bump-version.rs --bump-type <major|minor|patch> [--dry-run] [--rust-root <path>]"
+            );
             exit(1);
         }
     };
@@ -118,7 +126,10 @@ fn main() {
     let bump_type = match BumpType::from_str(&bump_type_str) {
         Some(bt) => bt,
         None => {
-            eprintln!("Invalid bump type: {}. Must be major, minor, or patch.", bump_type_str);
+            eprintln!(
+                "Invalid bump type: {}. Must be major, minor, or patch.",
+                bump_type_str
+            );
             exit(1);
         }
     };
@@ -150,13 +161,14 @@ fn main() {
 
     let new_version = current.bump(bump_type);
 
-    println!("Current version: {}", current.to_string());
+    println!("Current version: {}", current);
     println!("New version: {}", new_version);
 
     if dry_run {
         println!("Dry run - no changes made");
     } else {
-        if let Err(e) = update_cargo_toml(package_manifest.to_string_lossy().as_ref(), &new_version) {
+        if let Err(e) = update_cargo_toml(package_manifest.to_string_lossy().as_ref(), &new_version)
+        {
             eprintln!("Error: {}", e);
             exit(1);
         }

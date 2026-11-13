@@ -1,0 +1,17 @@
+@capacitor/android 8.6.2
+@capacitor/core 8.6.2
+@capacitor/ios 8.6.2
+react 19.3.1
+react-dom 19.3.1
+@capacitor/cli 8.6.2
+@electron-forge/cli 8.0.1
+@electron-forge/maker-deb 8.0.1
+@electron-forge/maker-rpm 8.0.1
+@electron-forge/maker-squirrel 8.0.1
+@electron-forge/maker-zip 8.0.1
+@vitejs/plugin-react 6.3.0
+electron 45.3.2
+vite 8.3.8
+command-stream 2.6.0
+lino-arguments 0.4.1
+semver 7.8.6

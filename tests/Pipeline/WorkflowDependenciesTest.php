@@ -21,7 +21,7 @@ final class WorkflowDependenciesTest extends TestCase
                 runs-on: ${{ matrix.os }}
                 strategy:
                   matrix:
-                    os: [ubuntu-24.04, 'macos-latest', windows-latest]
+                    os: [ubuntu-26.04, 'macos-latest', windows-latest]
               block:
                 strategy:
                   matrix:
@@ -31,7 +31,7 @@ final class WorkflowDependenciesTest extends TestCase
             YAML;
 
         self::assertCount(3, WorkflowDependencies::runnerErrors($yaml));
-        self::assertSame([], WorkflowDependencies::runnerErrors('runs-on: ubuntu-24.04'));
+        self::assertSame([], WorkflowDependencies::runnerErrors('runs-on: ubuntu-26.04'));
     }
 
     public function testScannerIncludesSubActionsAndPinnedToolVersions(): void
@@ -108,7 +108,7 @@ final class WorkflowDependenciesTest extends TestCase
         ]);
 
         self::assertSame([false, true, false], array_column($findings, 'outdated'));
-        self::assertStringContainsString('ubuntu-24.04', $findings[0]['message']);
+        self::assertStringContainsString('ubuntu-26.04', $findings[0]['message']);
         self::assertStringContainsString('must use the latest stable release v7.0.1', $findings[1]['message']);
         self::assertStringContainsString('API unavailable', $findings[2]['message']);
     }

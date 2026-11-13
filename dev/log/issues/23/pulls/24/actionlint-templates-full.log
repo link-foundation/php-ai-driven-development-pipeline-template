@@ -1,0 +1,42 @@
+[33mdocs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml[0m[90m:[0m127[90m:[0m9[90m: [0m[1mshellcheck reported issue in this script: SC2034:warning:2:1: attempt appears unused. Verify use (or export if used externally)[0m[90m [shellcheck]
+[0m[90m    |
+[0m[90m127 | [0m        run: |
+[90m    | [0m[32m        ^~~~[0m
+[33mdocs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml[0m[90m:[0m158[90m:[0m9[90m: [0m[1mshellcheck reported issue in this script: SC2193:warning:2:32: The arguments to this comparison can never be equal. Make sure your syntax is correct[0m[90m [shellcheck]
+[0m[90m    |
+[0m[90m158 | [0m        run: |
+[90m    | [0m[32m        ^~~~[0m
+[33mdocs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml[0m[90m:[0m158[90m:[0m74[90m: [0m[1m"github.head_ref" is potentially untrusted. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.com/en/actions/reference/security/secure-use#good-practices-for-mitigating-script-injection-attacks for more details[0m[90m [expression]
+[0m[33mdocs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml[0m[90m:[0m216[90m:[0m9[90m: [0m[1mshellcheck reported issue in this script: SC2126:style:8:42: Consider using 'grep -c' instead of 'grep|wc -l'[0m[90m [shellcheck]
+[0m[90m    |
+[0m[90m216 | [0m        run: |
+[90m    | [0m[32m        ^~~~[0m
+[33mdocs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml[0m[90m:[0m271[90m:[0m9[90m: [0m[1mshellcheck reported issue in this script: SC2086:info:11:33: Double quote to prevent globbing and word splitting[0m[90m [shellcheck]
+[0m[90m    |
+[0m[90m271 | [0m        run: |
+[90m    | [0m[32m        ^~~~[0m
+[33mdocs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml[0m[90m:[0m271[90m:[0m9[90m: [0m[1mshellcheck reported issue in this script: SC2086:info:3:44: Double quote to prevent globbing and word splitting[0m[90m [shellcheck]
+[0m[90m    |
+[0m[90m271 | [0m        run: |
+[90m    | [0m[32m        ^~~~[0m
+[33mdocs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml[0m[90m:[0m271[90m:[0m9[90m: [0m[1mshellcheck reported issue in this script: SC2086:info:8:34: Double quote to prevent globbing and word splitting[0m[90m [shellcheck]
+[0m[90m    |
+[0m[90m271 | [0m        run: |
+[90m    | [0m[32m        ^~~~[0m
+[33mdocs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml[0m[90m:[0m98[90m:[0m9[90m: [0m[1mshellcheck reported issue in this script: SC2193:warning:2:32: The arguments to this comparison can never be equal. Make sure your syntax is correct[0m[90m [shellcheck]
+[0m[90m   |
+[0m[90m98 | [0m        run: |
+[90m   | [0m[32m        ^~~~[0m
+[33mdocs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml[0m[90m:[0m98[90m:[0m9[90m: [0m[1mshellcheck reported issue in this script: SC2193:warning:2:91: The arguments to this comparison can never be equal. Make sure your syntax is correct[0m[90m [shellcheck]
+[0m[90m   |
+[0m[90m98 | [0m        run: |
+[90m   | [0m[32m        ^~~~[0m
+[33mdocs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml[0m[90m:[0m98[90m:[0m74[90m: [0m[1m"github.head_ref" is potentially untrusted. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.com/en/actions/reference/security/secure-use#good-practices-for-mitigating-script-injection-attacks for more details[0m[90m [expression]
+[0m[33mdocs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml[0m[90m:[0m248[90m:[0m9[90m: [0m[1mshellcheck reported issue in this script: SC2086:info:4:89: Double quote to prevent globbing and word splitting[0m[90m [shellcheck]
+[0m[90m    |
+[0m[90m248 | [0m        run: |
+[90m    | [0m[32m        ^~~~[0m
+[33mdocs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml[0m[90m:[0m248[90m:[0m9[90m: [0m[1mshellcheck reported issue in this script: SC2086:info:5:44: Double quote to prevent globbing and word splitting[0m[90m [shellcheck]
+[0m[90m    |
+[0m[90m248 | [0m        run: |
+[90m    | [0m[32m        ^~~~[0m

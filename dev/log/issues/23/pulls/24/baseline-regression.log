@@ -1,0 +1,179 @@
+PHPUnit 10.5.67 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /tmp/gh-issue-solver-1794605189377/phpunit.xml.dist
+
+F                                                                   1 / 1 (100%)
+
+Time: 00:00.020, Memory: 10.00 MB
+
+There was 1 failure:
+
+1) LinkFoundation\Template\Tests\Pipeline\WorkflowPolicyTest::testWorkflowChangesAreLintedForCorrectnessAndSecurity
+Failed asserting that 'name: Workflows\n
+\n
+on:\n
+  push:\n
+    branches:\n
+      - main\n
+    paths:\n
+      - '.github/**'\n
+      - 'scripts/check-workflow-dependencies.php'\n
+      - 'scripts/src/WorkflowDependencies.php'\n
+      - 'tests/Pipeline/WorkflowDependenciesTest.php'\n
+  pull_request:\n
+    types: [opened, synchronize, reopened]\n
+    paths:\n
+      - '.github/**'\n
+      - 'scripts/check-workflow-dependencies.php'\n
+      - 'scripts/src/WorkflowDependencies.php'\n
+      - 'tests/Pipeline/WorkflowDependenciesTest.php'\n
+  schedule:\n
+    - cron: '17 6 * * 1'\n
+  workflow_dispatch:\n
+\n
+# Least-privilege default; these jobs only read the checked-out tree.\n
+permissions:\n
+  contents: read\n
+\n
+# actions/checkout runs git init before a workflow step can configure Git.\n
+env:\n
+  GIT_CONFIG_COUNT: '1'\n
+  GIT_CONFIG_KEY_0: init.defaultBranch\n
+  GIT_CONFIG_VALUE_0: main\n
+\n
+jobs:\n
+  dependencies:\n
+    name: Workflow dependency freshness\n
+    runs-on: ubuntu-24.04\n
+    timeout-minutes: 10\n
+    steps:\n
+      - uses: actions/checkout@v7.0.1\n
+        with:\n
+          persist-credentials: false\n
+\n
+      - name: Setup PHP\n
+        uses: shivammathur/setup-php@2.40.0\n
+        with:\n
+          php-version: '8.3'\n
+          coverage: none\n
+\n
+      - name: Check runner images and action/tool releases\n
+        timeout-minutes: 5\n
+        env:\n
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n
+        run: php scripts/check-workflow-dependencies.php\n
+\n
+  actionlint:\n
+    name: actionlint\n
+    runs-on: ubuntu-24.04\n
+    timeout-minutes: 10\n
+    concurrency:\n
+      group: check-${{ github.workflow }}-${{ github.ref }}-actionlint\n
+      cancel-in-progress: true\n
+    steps:\n
+      - uses: actions/checkout@v7.0.1\n
+        with:\n
+          persist-credentials: false\n
+\n
+      # The Docker image bundles shellcheck and pyflakes, so this also lints\n
+      # every `run:` block. A native actionlint binary without shellcheck on\n
+      # PATH silently skips those checks and exits 0. Reproduce locally with:\n
+      # docker run --rm -v "$PWD:/repo" -w /repo rhysd/actionlint:1.7.12 -color\n
+      #\n
+      # 1.7.12 (issue #5) adds the `glob` check for `paths:` filters that can\n
+      # never match and knows the modern hosted runner labels, so real labels\n
+      # are no longer reported as unknown.\n
+      #\n
+      # Pinned by digest because a mutable tag of a repository we do not\n
+      # control is arbitrary code execution in any job that holds credentials\n
+      # (the same reasoning as the `'*': hash-pin` policy in .github/zizmor.yml;\n
+      # the `unpinned-images` audit that would flag this is Pedantic-persona and\n
+      # runs in the zizmor job below). Re-resolve when bumping:\n
+      #   docker pull rhysd/actionlint:<tag> &&\n
+      #   docker inspect --format='{{index .RepoDigests 0}}' rhysd/actionlint:<tag>\n
+      - name: Lint workflow files\n
+        uses: docker://rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667 # v1.7.12\n
+        with:\n
+          args: -color\n
+\n
+  zizmor:\n
+    name: zizmor\n
+    runs-on: ubuntu-24.04\n
+    timeout-minutes: 10\n
+    concurrency:\n
+      group: check-${{ github.workflow }}-${{ github.ref }}-zizmor\n
+      cancel-in-progress: true\n
+    steps:\n
+      - uses: actions/checkout@v7.0.1\n
+        with:\n
+          persist-credentials: false\n
+\n
+      # Annotations work in forks where GitHub Advanced Security and code\n
+      # scanning may not be enabled, while still making findings fail loudly.\n
+      #\n
+      # `version` is named rather than left at the default, because the\n
+      # action's `latest` entry is its own frozen table (for example v0.6.4 -> zizmor\n
+      # 1.30.1), not the latest zizmor. Naming the version keeps the next bump\n
+      # a visible line in the diff rather than a side effect of bumping the\n
+      # action, and documents exactly which analyser reproduces a finding\n
+      # (issue #6).\n
+      - name: Audit workflow files\n
+        uses: zizmorcore/zizmor-action@v0.8.1\n
+        with:\n
+          advanced-security: false\n
+          annotations: true\n
+          config: .github/zizmor.yml\n
+          inputs: .github\n
+          min-confidence: medium\n
+          version: 1.31.1\n
+\n
+      # The step above runs the default (regular) persona, which is the right\n
+      # default: pedantic surfaces dozens of stylistic findings. But the audits\n
+      # that cover container image references (`unpinned-images` among them)\n
+      # are Pedantic-only, so the `'*': hash-pin` policy declared in\n
+      # .github/zizmor.yml is not enforced against `uses: docker://` or\n
+      # `container:` references by the regular pass. Narrowing this second pass\n
+      # to high severity *and* high confidence keeps that enforcement without\n
+      # importing the noise. Measured: after the digest pin above it reports\n
+      # nothing, and stays silent until someone reintroduces a mutable image\n
+      # reference (issue #5).\n
+      - name: Audit for pedantic-only high-severity findings\n
+        timeout-minutes: 5\n
+        run: |\n
+          pipx run zizmor==1.31.1 --config .github/zizmor.yml \\n
+            --persona pedantic --min-severity high --min-confidence high \\n
+            .github\n
+\n
+  # === PIPELINE STATUS ===\n
+  # GitHub reports jobs killed by timeout-minutes as cancelled. Observe every\n
+  # job so a timeout on main becomes a visible failure instead of a grey run,\n
+  # while a run superseded by a newer commit is recognised as expected churn\n
+  # (issue #9).\n
+  pipeline-status:\n
+    name: Pipeline Status\n
+    needs:\n
+      - dependencies\n
+      - actionlint\n
+      - zizmor\n
+    if: always()\n
+    runs-on: ubuntu-24.04\n
+    timeout-minutes: 5\n
+    steps:\n
+      - uses: actions/checkout@v7.0.1\n
+        with:\n
+          persist-credentials: false\n
+\n
+      - name: Check aggregate pipeline status\n
+        env:\n
+          NEEDS_JSON: ${{ toJSON(needs) }}\n
+          RUN_SHA: ${{ github.event.pull_request.head.sha || github.sha }}\n
+          BRANCH_REF: ${{ github.head_ref || github.ref_name }}\n
+          GIT_REMOTE: ${{ github.event.pull_request.head.repo.clone_url || 'origin' }}\n
+        run: bash scripts/check-pipeline-status.sh\n
+' [ASCII](length: 5958) contains "zizmorcore/zizmor-action@v0.8.0" [ASCII](length: 31).
+
+/tmp/gh-issue-solver-1794605189377/tests/Pipeline/WorkflowPolicyTest.php:150
+
+FAILURES!
+Tests: 1, Assertions: 5, Failures: 1.

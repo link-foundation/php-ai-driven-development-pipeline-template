@@ -1,0 +1,74 @@
+bun test v1.4.4 (38afee6c8)
+
+scripts/version-and-commit.test.mjs:
+(pass) version-and-commit > does not report already_released when the target tag is missing [494.19ms]
+(pass) version-and-commit > reports already_released when the target tag does exist [231.72ms]
+
+scripts/check-release-needed.test.mjs:
+(pass) check-release-needed decide() > changesets take the normal release path [0.27ms]
+(pass) check-release-needed decide() > self-heals when csproj version is missing from NuGet [0.13ms]
+(pass) check-release-needed decide() > self-heals when package id is unknown to NuGet [0.09ms]
+(pass) check-release-needed decide() > self-heals GitHub release when NuGet already has the version [0.07ms]
+(pass) check-release-needed decide() > no-op when both NuGet and GitHub release exist [0.05ms]
+(pass) check-release-needed readCsprojInfo() > extracts version and package id [1.13ms]
+(pass) check-release-needed readCsprojInfo() > returns empty package id when not set in csproj [0.62ms]
+(pass) check-release-needed readCsprojInfo() > throws on missing <Version> tag [5.49ms]
+Fetching http://127.0.0.1:44309/nuget/mypackage/index.json
+(pass) check-release-needed probes > fetchNugetVersions returns the version list from the flat-container index [75.57ms]
+Fetching http://127.0.0.1:42275/nuget/notregistered/index.json
+(pass) check-release-needed probes > fetchNugetVersions returns null when the package id is not registered [19.50ms]
+Fetching http://127.0.0.1:44401/github/repos/link-foundation/csharp-ai-driven-development-pipeline-template/releases/tags/csharp_v1.0.0
+(pass) check-release-needed probes > fetchGithubReleaseExists returns true when the GitHub release exists [16.54ms]
+Fetching http://127.0.0.1:33881/github/repos/link-foundation/csharp-ai-driven-development-pipeline-template/releases/tags/csharp_v9.9.9
+(pass) check-release-needed probes > fetchGithubReleaseExists returns false on HTTP 404 [3.89ms]
+(pass) check-release-needed probes > fetchGithubReleaseExists returns false when repository is empty [0.26ms]
+Fetching http://127.0.0.1:44347/nuget/mypackage/index.json
+Fetching http://127.0.0.1:44347/github/repos/link-foundation/csharp-ai-driven-development-pipeline-template/releases/tags/csharp_v2.4.0
+(pass) check-release-needed probes > end-to-end: missing NuGet version + missing GitHub release triggers self-heal [5.52ms]
+Fetching http://127.0.0.1:35429/nuget/mypackage/index.json
+Fetching http://127.0.0.1:35429/github/repos/link-foundation/csharp-ai-driven-development-pipeline-template/releases/tags/csharp_v2.4.0
+(pass) check-release-needed probes > end-to-end: NuGet has the version and GitHub release exists → no-op [14.54ms]
+
+scripts/create-github-release.test.mjs:
+(pass) create-github-release helpers > parseArgs defaults to the C# release format and accepts package id [0.31ms]
+(pass) create-github-release helpers > normalizes release versions from legacy and language-prefixed tags [0.22ms]
+(pass) create-github-release helpers > builds C# release tags and titles from bare semver [0.07ms]
+(pass) create-github-release helpers > appends a NuGet shields.io badge when release notes do not have one [0.12ms]
+(pass) create-github-release helpers > does not append a second badge when release notes already contain shields.io [0.06ms]
+(pass) create-github-release helpers > builds a GitHub release payload with C# title and NuGet badge [1.26ms]
+(pass) create-github-release helpers > limits oversized release payload bodies and links the tagged changelog [36.60ms]
+(pass) create-github-release helpers > truncates release notes without splitting UTF-8 characters [2.63ms]
+(pass) create-github-release helpers > findPackageId reads PackageId from a project file [2.07ms]
+(pass) create-github-release helpers > uploads matching NuGet package assets after creating a release [2.59ms]
+(pass) create-github-release helpers > uploads matching NuGet package assets when the release already exists [3.63ms]
+
+scripts/release-workflow-policy.test.mjs:
+(pass) release workflow policy > does not cancel release runs on main when newer pushes arrive [0.34ms]
+(pass) release workflow policy > sets explicit timeout-minutes on every job [0.92ms]
+(pass) release workflow policy > uses the current GitHub Action versions required by the template [1.28ms]
+
+scripts/wait-for-nuget.test.mjs:
+(pass) wait-for-nuget parseArgs() > defaults to two-minute checks across the NuGet indexing window [0.34ms]
+(pass) wait-for-nuget parseArgs() > accepts --version as an alias for --release-version [0.04ms]
+(pass) wait-for-nuget parseArgs() > honours CLI flags for max-attempts, sleep-seconds and flat-container-url [0.07ms]
+(pass) wait-for-nuget parseArgs() > reads overrides from environment variables [0.05ms]
+(pass) wait-for-nuget parseArgs() > inline --flag=value form is supported [0.04ms]
+(pass) wait-for-nuget parseArgs() > rejects non-positive integers for --max-attempts [0.21ms]
+(pass) wait-for-nuget parseArgs() > rejects non-positive integers for --sleep-seconds [0.09ms]
+(pass) wait-for-nuget parseArgs() > throws when a flag is missing its value [0.09ms]
+(pass) wait-for-nuget createNugetNuspecUrl() > builds the flat-container nuspec URL with lowercased id and version [0.10ms]
+(pass) wait-for-nuget createNugetNuspecUrl() > lowercases mixed-case versions (e.g. semver pre-release tags) [0.03ms]
+(pass) wait-for-nuget createNugetNuspecUrl() > defaults to the official flat-container URL when not specified [0.02ms]
+(pass) wait-for-nuget waitForNugetPackage() > succeeds when indexing takes longer than the old 125-second loop [0.57ms]
+(pass) wait-for-nuget waitForNugetPackage() > fails only after exhausting all attempts [0.20ms]
+(pass) wait-for-nuget waitForNugetPackage() > returns immediately when the package is already indexed [0.15ms]
+(pass) wait-for-nuget waitForNugetPackage() > tolerates transient network errors before succeeding [0.23ms]
+(pass) wait-for-nuget checkNugetPackageVersion() > reports 200 responses as available against a live HTTP endpoint [9.12ms]
+(pass) wait-for-nuget checkNugetPackageVersion() > reports 404 responses as unavailable without throwing [19.21ms]
+(pass) wait-for-nuget checkNugetPackageVersion() > treats fetch network errors as a soft failure [1.83ms]
+(pass) wait-for-nuget checkNugetPackageVersion() > end-to-end: waits through 404 responses then succeeds when the package appears [12.65ms]
+
+ 50 pass
+ 0 fail
+ 153 expect() calls
+Ran 50 tests across 5 files. [1101.00ms]

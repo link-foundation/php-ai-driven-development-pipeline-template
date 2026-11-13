@@ -1,0 +1,5 @@
+npm notice run @link-foundation/example-package-name@0.11.4 npx
+npm notice run 'prettier' --write .github/workflows/templates.yml .github/dependabot.yml .github/actionlint.yaml
+.github/workflows/templates.yml 103ms
+.github/dependabot.yml 21ms
+.github/actionlint.yaml 3ms (unchanged)

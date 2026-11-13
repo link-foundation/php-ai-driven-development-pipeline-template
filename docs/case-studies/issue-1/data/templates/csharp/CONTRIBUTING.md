@@ -13,25 +13,25 @@ Thank you for your interest in contributing! This document provides guidelines a
 
 2. **Install .NET SDK**
 
-   Install .NET 8.0 SDK from [dotnet.microsoft.com](https://dotnet.microsoft.com/download).
+   Install .NET 11.0 SDK from [dotnet.microsoft.com](https://dotnet.microsoft.com/download).
 
 3. **Install Bun** (for helper scripts)
 
    ```bash
-   curl -fsSL https://bun.sh/install | bash
+   curl -fsSL https://bun.sh/install | bash -s "bun-v1.4.4"
    ```
 
 4. **Restore dependencies and build**
 
    ```bash
-   dotnet restore
+   dotnet restore --locked-mode
    dotnet build
    ```
 
 5. **Install pre-commit hooks** (optional but recommended)
 
    ```bash
-   pip install pre-commit
+   pip install pre-commit==4.7.0
    pre-commit install
    ```
 
@@ -72,10 +72,10 @@ Thank you for your interest in contributing! This document provides guidelines a
    dotnet test
 
    # Run tests with verbose output
-   dotnet test --verbosity normal
+   dotnet test --output Detailed
 
    # Run tests with coverage
-   dotnet test --collect:"XPlat Code Coverage"
+   dotnet test --timeout 60s --coverlet --coverlet-output-format cobertura
 
    # Run a specific test
    dotnet test --filter "FullyQualifiedName~TestName"

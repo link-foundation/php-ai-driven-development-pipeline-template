@@ -18,20 +18,25 @@ namespace LinkFoundation\Template\Pipeline;
  *   polls anyway.
  * - The workflow token must be able to push. `create-github-release.php` runs
  *   last; a repository whose Actions workflow permissions are read-only only
- *   fails there. The probe asks the API for the repository's permission block.
+ *   fails there. Probe Git's receive-pack discovery endpoint, which checks
+ *   push authorization without sending objects or changing any refs. The REST
+ *   repository permissions block describes collaborator access and can report
+ *   false for an Actions installation token that has contents: write.
  *
- * Probing with a real answer (the metadata GET, the permissions block) is the
+ * Probing with a real answer (the metadata GET, Git authorization) is the
  * point: a login-style check would report a credential as good while the write
  * it is meant to prove is silently missing.
  */
 final class ReleasePreflight
 {
+    /** @param ?\Closure(string): void $trace Optional diagnostics; never includes credentials or response bodies. */
     public function __construct(
         private readonly string $packageName,
         private readonly string $githubRepository,
         private readonly Packagist $packagist = new Packagist(),
         private readonly Http $http = new Http(),
         private readonly string $githubToken = '',
+        private readonly ?\Closure $trace = null,
     ) {
     }
 
@@ -70,40 +75,50 @@ final class ReleasePreflight
         }
 
         $response = $this->http->get(
-            "https://api.github.com/repos/{$this->githubRepository}",
+            "https://github.com/{$this->githubRepository}.git/info/refs?service=git-receive-pack",
             [
-                'Authorization' => "Bearer {$this->githubToken}",
-                'Accept' => 'application/vnd.github+json',
-                'X-GitHub-Api-Version' => '2022-11-28',
+                'Authorization' => 'Basic ' . base64_encode("x-access-token:{$this->githubToken}"),
+                'Accept' => 'application/x-git-receive-pack-advertisement',
             ],
         );
 
-        if ($response['status'] !== 200) {
+        $advertisementHeader = "001f# service=git-receive-pack\n0000";
+        $advertisesPush = str_starts_with($response['body'], $advertisementHeader)
+            && \strlen($response['body']) >= \strlen($advertisementHeader) + 4
+            && str_ends_with($response['body'], '0000');
+        $this->trace?->__invoke(\sprintf(
+            'Git receive-pack discovery: HTTP %d; push advertisement: %s.',
+            $response['status'],
+            $advertisesPush ? 'yes' : 'no',
+        ));
+
+        if (\in_array($response['status'], [401, 403, 404], true)) {
             return new PreflightCheck(
                 $name,
                 PreflightCheck::FAILED,
-                "api.github.com answered {$response['status']} for {$this->githubRepository}; "
-                . 'the release will not be able to create a GitHub Release with this token.',
+                "github.com answered {$response['status']} for Git push discovery on {$this->githubRepository}; "
+                . 'check token access and Settings -> Actions -> General -> Workflow permissions, '
+                . 'and grant the release job contents: write.',
             );
         }
 
-        /** @var array{permissions?: array{push?: bool}} $data */
-        $data = json_decode($response['body'], true) ?: [];
-        $canPush = $data['permissions']['push'] ?? false;
+        if ($response['status'] !== 200) {
+            return $this->unanswered($name, $response['status'], 'github.com');
+        }
 
-        if ($canPush === true) {
+        if ($advertisesPush) {
             return new PreflightCheck(
                 $name,
                 PreflightCheck::VERIFIED,
-                "The token holds push permission on {$this->githubRepository}.",
+                "Git authorizes this token to push to {$this->githubRepository}; no refs were changed.",
             );
         }
 
         return new PreflightCheck(
             $name,
-            PreflightCheck::FAILED,
-            "The token has no push permission on {$this->githubRepository} "
-            . '(Settings -> Actions -> General -> Workflow permissions must grant write).',
+            PreflightCheck::UNKNOWN,
+            'github.com answered 200 without a complete Git receive-pack advertisement; '
+            . 'push authorization is undetermined.',
         );
     }
 

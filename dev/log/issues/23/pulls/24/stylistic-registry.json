@@ -1,0 +1,194 @@
+{
+  "bugs": {
+    "url": "https://github.com/eslint-stylistic/eslint-stylistic/issues"
+  },
+  "dist": {
+    "shasum": "471bbd9f7a27ceaac4a217e7f5b3890855e5640c",
+    "tarball": "https://registry.npmjs.org/@stylistic/eslint-plugin/-/eslint-plugin-5.10.0.tgz",
+    "fileCount": 108,
+    "integrity": "sha512-nPK52ZHvot8Ju/0A4ucSX1dcPV2/1clx0kLcH5wDmrE4naKso7TUC/voUyU1O9OTKTrR6MYip6LP0ogEMQ9jPQ==",
+    "signatures": [
+      {
+        "sig": "MEQCIE5U42aWk6GC68q2g4/1oUeV16gTB4V735O375sf9ev1AiACsj4qtYdJFtx+eOwD16rgQGxX1aGWum7Iic+endZNbg==",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      }
+    ],
+    "attestations": {
+      "url": "https://registry.npmjs.org/-/npm/v1/attestations/@stylistic%2feslint-plugin@5.10.0",
+      "provenance": {
+        "predicateType": "https://slsa.dev/provenance/v1"
+      }
+    },
+    "unpackedSize": 713026
+  },
+  "main": "./dist/index.js",
+  "name": "@stylistic/eslint-plugin",
+  "type": "module",
+  "_from": "file:stylistic-eslint-plugin-5.10.0.tgz",
+  "types": "./dist/dts/index.d.ts",
+  "author": {
+    "name": "Anthony Fu",
+    "email": "anthonyfu117@hotmail.com"
+  },
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/dts/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./rules/semi": "./dist/rules/semi.js",
+    "./rule-options": {
+      "types": "./dist/dts/rule-options.d.ts"
+    },
+    "./rules/indent": "./dist/rules/indent.js",
+    "./rules/quotes": "./dist/rules/quotes.js",
+    "./rules/max-len": "./dist/rules/max-len.js",
+    "./rules/no-tabs": "./dist/rules/no-tabs.js",
+    "./rules/eol-last": "./dist/rules/eol-last.js",
+    "./rules/wrap-iife": "./dist/rules/wrap-iife.js",
+    "./rules/jsx-indent": "./dist/rules/jsx-indent.js",
+    "./rules/jsx-quotes": "./dist/rules/jsx-quotes.js",
+    "./rules/list-style": "./dist/rules/list-style.js",
+    "./rules/new-parens": "./dist/rules/new-parens.js",
+    "./rules/semi-style": "./dist/rules/semi-style.js",
+    "./rules/wrap-regex": "./dist/rules/wrap-regex.js",
+    "./rules/brace-style": "./dist/rules/brace-style.js",
+    "./rules/comma-style": "./dist/rules/comma-style.js",
+    "./rules/jsx-newline": "./dist/rules/jsx-newline.js",
+    "./rules/key-spacing": "./dist/rules/key-spacing.js",
+    "./rules/quote-props": "./dist/rules/quote-props.js",
+    "./rules/arrow-parens": "./dist/rules/arrow-parens.js",
+    "./rules/comma-dangle": "./dist/rules/comma-dangle.js",
+    "./rules/dot-location": "./dist/rules/dot-location.js",
+    "./rules/semi-spacing": "./dist/rules/semi-spacing.js",
+    "./rules/arrow-spacing": "./dist/rules/arrow-spacing.js",
+    "./rules/block-spacing": "./dist/rules/block-spacing.js",
+    "./rules/comma-spacing": "./dist/rules/comma-spacing.js",
+    "./rules/curly-newline": "./dist/rules/curly-newline.js",
+    "./rules/no-extra-semi": "./dist/rules/no-extra-semi.js",
+    "./rules/padded-blocks": "./dist/rules/padded-blocks.js",
+    "./rules/jsx-sort-props": "./dist/rules/jsx-sort-props.js",
+    "./rules/spaced-comment": "./dist/rules/spaced-comment.js",
+    "./define-config-support": {
+      "types": "./dist/dts/define-config-support.d.ts"
+    },
+    "./rules/jsx-pascal-case": "./dist/rules/jsx-pascal-case.js",
+    "./rules/jsx-props-style": "./dist/rules/jsx-props-style.js",
+    "./rules/jsx-tag-spacing": "./dist/rules/jsx-tag-spacing.js",
+    "./rules/keyword-spacing": "./dist/rules/keyword-spacing.js",
+    "./rules/linebreak-style": "./dist/rules/linebreak-style.js",
+    "./rules/no-extra-parens": "./dist/rules/no-extra-parens.js",
+    "./rules/no-multi-spaces": "./dist/rules/no-multi-spaces.js",
+    "./rules/space-in-parens": "./dist/rules/space-in-parens.js",
+    "./rules/space-infix-ops": "./dist/rules/space-infix-ops.js",
+    "./rules/space-unary-ops": "./dist/rules/space-unary-ops.js",
+    "./rules/jsx-indent-props": "./dist/rules/jsx-indent-props.js",
+    "./rules/indent-binary-ops": "./dist/rules/indent-binary-ops.js",
+    "./rules/jsx-curly-newline": "./dist/rules/jsx-curly-newline.js",
+    "./rules/jsx-curly-spacing": "./dist/rules/jsx-curly-spacing.js",
+    "./rules/multiline-ternary": "./dist/rules/multiline-ternary.js",
+    "./rules/jsx-equals-spacing": "./dist/rules/jsx-equals-spacing.js",
+    "./rules/no-confusing-arrow": "./dist/rules/no-confusing-arrow.js",
+    "./rules/no-mixed-operators": "./dist/rules/no-mixed-operators.js",
+    "./rules/no-trailing-spaces": "./dist/rules/no-trailing-spaces.js",
+    "./rules/operator-linebreak": "./dist/rules/operator-linebreak.js",
+    "./rules/yield-star-spacing": "./dist/rules/yield-star-spacing.js",
+    "./rules/jsx-wrap-multilines": "./dist/rules/jsx-wrap-multilines.js",
+    "./rules/no-floating-decimal": "./dist/rules/no-floating-decimal.js",
+    "./rules/rest-spread-spacing": "./dist/rules/rest-spread-spacing.js",
+    "./rules/space-before-blocks": "./dist/rules/space-before-blocks.js",
+    "./rules/lines-around-comment": "./dist/rules/lines-around-comment.js",
+    "./rules/object-curly-newline": "./dist/rules/object-curly-newline.js",
+    "./rules/object-curly-spacing": "./dist/rules/object-curly-spacing.js",
+    "./rules/switch-colon-spacing": "./dist/rules/switch-colon-spacing.js",
+    "./rules/template-tag-spacing": "./dist/rules/template-tag-spacing.js",
+    "./rules/type-generic-spacing": "./dist/rules/type-generic-spacing.js",
+    "./rules/array-bracket-newline": "./dist/rules/array-bracket-newline.js",
+    "./rules/array-bracket-spacing": "./dist/rules/array-bracket-spacing.js",
+    "./rules/array-element-newline": "./dist/rules/array-element-newline.js",
+    "./rules/function-call-spacing": "./dist/rules/function-call-spacing.js",
+    "./rules/jsx-self-closing-comp": "./dist/rules/jsx-self-closing-comp.js",
+    "./rules/line-comment-position": "./dist/rules/line-comment-position.js",
+    "./rules/function-paren-newline": "./dist/rules/function-paren-newline.js",
+    "./rules/generator-star-spacing": "./dist/rules/generator-star-spacing.js",
+    "./rules/jsx-max-props-per-line": "./dist/rules/jsx-max-props-per-line.js",
+    "./rules/member-delimiter-style": "./dist/rules/member-delimiter-style.js",
+    "./rules/template-curly-spacing": "./dist/rules/template-curly-spacing.js",
+    "./rules/jsx-first-prop-new-line": "./dist/rules/jsx-first-prop-new-line.js",
+    "./rules/max-statements-per-line": "./dist/rules/max-statements-per-line.js",
+    "./rules/multiline-comment-style": "./dist/rules/multiline-comment-style.js",
+    "./rules/no-multiple-empty-lines": "./dist/rules/no-multiple-empty-lines.js",
+    "./rules/object-property-newline": "./dist/rules/object-property-newline.js",
+    "./rules/type-annotation-spacing": "./dist/rules/type-annotation-spacing.js",
+    "./rules/implicit-arrow-linebreak": "./dist/rules/implicit-arrow-linebreak.js",
+    "./rules/jsx-closing-tag-location": "./dist/rules/jsx-closing-tag-location.js",
+    "./rules/jsx-curly-brace-presence": "./dist/rules/jsx-curly-brace-presence.js",
+    "./rules/newline-per-chained-call": "./dist/rules/newline-per-chained-call.js",
+    "./rules/no-mixed-spaces-and-tabs": "./dist/rules/no-mixed-spaces-and-tabs.js",
+    "./rules/type-named-tuple-spacing": "./dist/rules/type-named-tuple-spacing.js",
+    "./rules/computed-property-spacing": "./dist/rules/computed-property-spacing.js",
+    "./rules/jsx-child-element-spacing": "./dist/rules/jsx-child-element-spacing.js",
+    "./rules/jsx-function-call-newline": "./dist/rules/jsx-function-call-newline.js",
+    "./rules/jsx-props-no-multi-spaces": "./dist/rules/jsx-props-no-multi-spaces.js",
+    "./rules/jsx-one-expression-per-line": "./dist/rules/jsx-one-expression-per-line.js",
+    "./rules/lines-between-class-members": "./dist/rules/lines-between-class-members.js",
+    "./rules/space-before-function-paren": "./dist/rules/space-before-function-paren.js",
+    "./rules/jsx-closing-bracket-location": "./dist/rules/jsx-closing-bracket-location.js",
+    "./rules/one-var-declaration-per-line": "./dist/rules/one-var-declaration-per-line.js",
+    "./rules/no-whitespace-before-property": "./dist/rules/no-whitespace-before-property.js",
+    "./rules/function-call-argument-newline": "./dist/rules/function-call-argument-newline.js",
+    "./rules/padding-line-between-statements": "./dist/rules/padding-line-between-statements.js",
+    "./rules/nonblock-statement-body-position": "./dist/rules/nonblock-statement-body-position.js"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsdown --watch",
+    "build": "tsdown"
+  },
+  "_npmUser": {
+    "name": "GitHub Actions",
+    "email": "npm-oidc-no-reply@github.com",
+    "trustedPublisher": {
+      "id": "github",
+      "oidcConfigId": "oidc:874f338a-7ea0-4497-ab09-496790cfa53b"
+    }
+  },
+  "homepage": "https://github.com/eslint-stylistic/eslint-stylistic#readme",
+  "_resolved": "/tmp/687c01ea8699076960305af22d7e7983/stylistic-eslint-plugin-5.10.0.tgz",
+  "_integrity": "sha512-nPK52ZHvot8Ju/0A4ucSX1dcPV2/1clx0kLcH5wDmrE4naKso7TUC/voUyU1O9OTKTrR6MYip6LP0ogEMQ9jPQ==",
+  "repository": {
+    "url": "git+https://github.com/eslint-stylistic/eslint-stylistic.git",
+    "type": "git",
+    "directory": "packages/eslint-plugin"
+  },
+  "_npmVersion": "11.11.0",
+  "directories": {},
+  "maintainers": [
+    {
+      "name": "eslint-stylistic-bot",
+      "email": "npm-eslint-stylistic@antfu.me"
+    }
+  ],
+  "_nodeVersion": "24.14.0",
+  "dependencies": {
+    "espree": "^10.4.0",
+    "picomatch": "^4.0.3",
+    "estraverse": "^5.3.0",
+    "eslint-visitor-keys": "^4.2.1",
+    "@typescript-eslint/types": "^8.56.0",
+    "@eslint-community/eslint-utils": "^4.9.1"
+  },
+  "_hasShrinkwrap": false,
+  "peerDependencies": {
+    "eslint": "^9.0.0 || ^10.0.0"
+  },
+  "_npmOperationalInternal": {
+    "tmp": "tmp/eslint-plugin_5.10.0_1772769609147_0.910443610855378",
+    "host": "s3://npm-registry-packages-npm-production"
+  },
+  "_id": "@stylistic/eslint-plugin@5.10.0",
+  "version": "5.10.0"
+}

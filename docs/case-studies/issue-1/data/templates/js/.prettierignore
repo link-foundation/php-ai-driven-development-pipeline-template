@@ -8,3 +8,8 @@ package-lock.json
 CLAUDE.md
 # Case study raw data files (downloaded from external sources)
 docs/case-studies/*/data/
+
+reports/
+
+# Electron Forge package output
+**/out/**

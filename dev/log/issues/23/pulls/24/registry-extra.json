@@ -1,0 +1,190 @@
+[
+  {
+    "ecosystem": "npm",
+    "name": "npm",
+    "latest": "12.2.2",
+    "before": [
+      "workflow tool or migration helper"
+    ],
+    "source": "https://registry.npmjs.org/npm/latest",
+    "details": {
+      "engines": {
+        "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
+      },
+      "peerDependencies": null,
+      "repository": {
+        "url": "git+https://github.com/npm/cli.git",
+        "type": "git"
+      }
+    }
+  },
+  {
+    "ecosystem": "npm",
+    "name": "secretlint",
+    "latest": "13.1.0",
+    "before": [
+      "workflow tool or migration helper"
+    ],
+    "source": "https://registry.npmjs.org/secretlint/latest",
+    "details": {
+      "engines": {
+        "node": ">=22.0.0"
+      },
+      "peerDependencies": null,
+      "repository": {
+        "url": "git+https://github.com/secretlint/secretlint.git",
+        "type": "git"
+      }
+    }
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@secretlint/secretlint-rule-preset-recommend",
+    "latest": "13.1.0",
+    "before": [
+      "workflow tool or migration helper"
+    ],
+    "source": "https://registry.npmjs.org/@secretlint/secretlint-rule-preset-recommend/latest",
+    "details": {
+      "engines": {
+        "node": ">=22.0.0"
+      },
+      "peerDependencies": null,
+      "repository": {
+        "url": "git+https://github.com/secretlint/secretlint.git",
+        "type": "git"
+      }
+    }
+  },
+  {
+    "ecosystem": "npm",
+    "name": "browser-commander",
+    "latest": "0.34.1",
+    "before": [
+      "workflow tool or migration helper"
+    ],
+    "source": "https://registry.npmjs.org/browser-commander/latest",
+    "details": {
+      "engines": {
+        "node": ">=22.12.0"
+      },
+      "peerDependencies": {
+        "puppeteer": ">=25.12.0",
+        "playwright": ">=1.63.0",
+        "selenium-webdriver": ">=4.50.0"
+      },
+      "repository": {
+        "url": "git+https://github.com/link-foundation/browser-commander.git",
+        "type": "git"
+      }
+    }
+  },
+  {
+    "ecosystem": "npm",
+    "name": "playwright",
+    "latest": "1.65.0",
+    "before": [
+      "workflow tool or migration helper"
+    ],
+    "source": "https://registry.npmjs.org/playwright/latest",
+    "details": {
+      "engines": {
+        "node": ">=20"
+      },
+      "peerDependencies": null,
+      "repository": {
+        "url": "git+https://github.com/microsoft/playwright.git",
+        "type": "git"
+      }
+    }
+  },
+  {
+    "ecosystem": "npm",
+    "name": "globals",
+    "latest": "17.14.0",
+    "before": [
+      "workflow tool or migration helper"
+    ],
+    "source": "https://registry.npmjs.org/globals/latest",
+    "details": {
+      "engines": {
+        "node": ">=18"
+      },
+      "peerDependencies": null,
+      "repository": {
+        "url": "git+https://github.com/sindresorhus/globals.git",
+        "type": "git"
+      }
+    }
+  },
+  {
+    "ecosystem": "github",
+    "name": "rhysd/actionlint",
+    "before": [
+      "toolchain / workflow tool"
+    ],
+    "latest": "v1.7.12",
+    "source": "https://github.com/rhysd/actionlint/releases/tag/v1.7.12",
+    "details": {
+      "body": "- Support the [`timezone` configuration in `on.schedule`](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onschedule) with checks for IANA timezone string. See the [documentation](https://github.com/rhysd/actionlint/blob/main/docs/checks.md#check-cron-syntax-and-timezone) for more details. Note that actionlint starts to embed the timezone database in the executables from this version so the binary sizes slightly increase. (#641, thanks @martincostello)\r\n  ```yaml\r\n  on:\r\n    schedule:\r\n      # ERROR: The timezone is not a valid IANA timezone string\r\n      - cron: '*/5 * * * *'\r\n        timezone: 'Asia/Somewhere'\r\n  ```\r\n- Support the [`jobs.<job_name>.environment.deployment` configuration](https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/control-deployments#using-environments-without-deployments). (#639, thanks @springmeyer)\r\n- Support the [`macos-26-intel` runner label](https://github.blog/changelog/2026-02-26-macos-26-is-now-generally-available-for-github-hosted-runners/). (#629, thanks @hugovk)\r\n- Fix the outdated [table of webhook activity types](https://github.com/rhysd/actionlint/blob/main/all_webhooks.go) by rebuilding the [script to scrape the table](https://github.com/rhysd/actionlint/tree/main/scripts/generate-webhook-events) from scratch.\r\n- Support Go 1.26 and drop the support for Go 1.24. Now supported versions are 1.25 and 1.26.\r\n- Tests are run on arm64 Windows in CI.\r\n- Update the popular actions data set to the latest."
+    }
+  },
+  {
+    "ecosystem": "github",
+    "name": "oven-sh/bun",
+    "before": [
+      "toolchain / workflow tool"
+    ],
+    "latest": "bun-v1.4.4",
+    "source": "https://github.com/oven-sh/bun/releases/tag/bun-v1.4.4",
+    "details": {
+      "body": "To install Bun v1.4.4\n```bash\ncurl -fsSL https://bun.com/install | bash\n# or you can use npm\n# npm install -g bun\n```\n\nWindows:\n```bash\npowershell -c \"irm bun.com/install.ps1|iex\"\n```\n\nTo upgrade to Bun v1.4.4:\n```bash\nbun upgrade\n```\n\n### [Read Bun v1.4.4's release notes on Bun's blog](https://bun.com/blog/bun-v1.4.4)\n\n### Thanks to 39 contributors!\n\n- [@0xh3x](https://github.com/0xh3x)\n- [@1cedsoda](https://github.com/1cedsoda)\n- [@alex-mextner](https://github.com/alex-mextner)\n- [@alii](https://github.com/alii)\n- [@Artoria2e5](https://github.com/Artoria2e5)\n- [@bompus](https://github.com/bompus)\n- [@C0casio45](https://github.com/C0casio45)\n- [@cirospaciari](https://github.com/cirospaciari)\n- [@davidhevn](https://github.com/davidhevn)\n- [@deepshekhardas](https://github.com/deepshekhardas)\n- [@Dex4Sure](https://github.com/Dex4Sure)\n- [@dylan-conway](https://github.com/dylan-conway)\n- [@EffortlessSteven](https://github.com/EffortlessSteven)\n- [@eriklangille](https://github.com/eriklangille)\n- [@filipesarturi](https://github.com/filipesarturi)\n- [@fredluz](https://github.com/fredluz)\n- [@gerardp](https://github.com/gerardp)\n- [@gohryt](https://github.com/gohryt)\n- [@himself65](https://github.com/himself65)\n- [@hughescr](https://github.com/hughescr)\n- [@Jarred-Sumner](https://github.com/Jarred-Sumner)\n- [@jdjkelly](https://github.com/jdjkelly)\n- [@jecquas](https://github.com/jecquas)\n- [@jobansd](https://github.com/jobansd)\n- [@kernoeb](https://github.com/kernoeb)\n- [@KilianB](https://github.com/KilianB)\n- [@MarshallOfSound](https://github.com/MarshallOfSound)\n- [@Neekoras](https://github.com/Neekoras)\n- [@nikeee](https://github.com/nikeee)\n- [@nikelborm](https://github.com/nikelborm)\n- [@ousamabenyounes](https://github.com/ousamabenyounes)\n- [@pjb3](https://github.com/pjb3)\n- [@RajeshKumar11](https://github.com/RajeshKumar11)\n- [@ralyodio](https://github.com/ralyodio)\n- [@robobun](https://github.com/robobun)\n- [@RubenPari](https://github.com/RubenPari)\n- [@sosukesuzuki](https://github.com/sosukesuzuki)\n- [@steipete](https://github.com/steipete)\n- [@SyMind](https://github.com/SyMind)\n"
+    }
+  },
+  {
+    "ecosystem": "github",
+    "name": "denoland/deno",
+    "before": [
+      "toolchain / workflow tool"
+    ],
+    "latest": "v2.9.8",
+    "source": "https://github.com/denoland/deno/releases/tag/v2.9.8",
+    "details": {
+      "body": "### 2.9.8 / 2026.10.21\r\n\r\n- fix(compile): check read permission for dynamically imported local files\r\n  (#36925)\r\n- fix(completions): complete script paths for bare deno run in zsh (#36976)\r\n- fix(core): keep op contexts alive until the isolate is disposed (#37026)\r\n- fix(coverage): skip the V8 code cache while collecting coverage (#36901)\r\n- fix(ext/fetch): bump hyper-util to 0.1.21 and hyper to 1.11.1 to cancel idle\r\n  interval when pool empties (#36968)\r\n- fix(ext/napi): check napi_create_dataview bounds for overflow (#36962)\r\n- fix(ext/napi): ignore the callback return value while an exception is pending\r\n  (#36942)\r\n- fix(ext/node): align X.509v1 certificate handling with OpenSSL (#36933)\r\n- fix(ext/node): mock.reset() restores mock.method() implementations (#36886)\r\n- fix(ext/node): support assert message functions and format arguments (#36944)\r\n- fix(npm): validate package link names (#37047)\r\n- fix(tls): distrust compromised eMudhra certificate authorities (#37046)\r\n- fix: bump rand 0.9.x to patched version"
+    }
+  },
+  {
+    "ecosystem": "github",
+    "name": "astral-sh/uv",
+    "before": [
+      "toolchain / workflow tool"
+    ],
+    "latest": "0.13.8",
+    "source": "https://github.com/astral-sh/uv/releases/tag/0.13.8",
+    "details": {
+      "body": "## Release Notes\n\nReleased on 2026-11-12.\n\n### Python\n\n- Add CPython 3.16.0a2 ([#23211](https://github.com/astral-sh/uv/pull/23211))\n- Update managed CPython 3.11, 3.12, 3.13, 3.14, and 3.15 builds to include pip 26.3, zlib 1.4, and Expat 2.10.0 ([#23211](https://github.com/astral-sh/uv/pull/23211))\n- Update GraalPy 3.13.0 to build 25.5.5 ([#23088](https://github.com/astral-sh/uv/pull/23088))\n\n### Preview features\n\n- Install wheel variants from local paths, direct URLs, and Git repositories in platform-specific resolutions ([#22720](https://github.com/astral-sh/uv/pull/22720), [#22722](https://github.com/astral-sh/uv/pull/22722), [#22724](https://github.com/astral-sh/uv/pull/22724))\n- Detect x86-64 microarchitecture levels and AArch64 architecture versions when selecting wheel variants ([#22832](https://github.com/astral-sh/uv/pull/22832), [#22949](https://github.com/astral-sh/uv/pull/22949))\n- Detect Google TPUs up when selecting wheel variants ([#23066](https://github.com/astral-sh/uv/pull/23066), [#23121](https://github.com/astral-sh/uv/pull/23121))\n- Fix CPU detection for wheel variants on macOS with GraalPy ([#23089](https://github.com/astral-sh/uv/pull/23089))\n- Report quarantined packages in `uv audit` when index URLs differ only in redacted query values ([#23129](https://github.com/astral-sh/uv/pull/23129))\n\n### Performance\n\n- Avoid duplicate environment builds when concurrent `uvx` or `uv run --with` invocations need the same environment ([#23123](https://github.com/astral-sh/uv/pull/23123))\n\n### Bug fixes\n\n- Restrict Unix plaintext credential files to owner-only permissions ([#23209](https://github.com/astral-sh/uv/pull/23209))\n- Honor per-index `exclude-newer-package` cutoffs during resolution ([#23122](https://github.com/astral-sh/uv/pull/23122))\n- Respect negative extra markers on constraints ([#23144](https://github.com/astral-sh/uv/pull/23144))\n- Resolve dependencies of recursive extras from a scoped override ([#23210](https://github.com/astral-sh/uv/pull/23210))\n- Fix `activate.bat` for Windows virtual environments whose paths contain apostrophes ([#23152](https://github.com/astral-sh/uv/pull/23152))\n\n### Documentation\n\n- Document the shell requirement for GitLab CI job images ([#23078](https://github.com/astral-sh/uv/pull/23078))\n\n## Install uv 0.13.8\n\n### Install prebuilt binaries via shell script\n\n```sh\ncurl --proto '=https' --tlsv1.2 -LsSf https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-installer.sh | sh\n```\n\n### Install prebuilt binaries via powershell script\n\n```sh\npowershell -ExecutionPolicy Bypass -c \"irm https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-installer.ps1 | iex\"\n```\n\n## Download uv 0.13.8\n\n|  File  | Platform | Checksum |\n|--------|----------|----------|\n| [uv-aarch64-apple-darwin.tar.gz](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-aarch64-apple-darwin.tar.gz) | Apple Silicon macOS | [checksum](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-aarch64-apple-darwin.tar.gz.sha256) |\n| [uv-x86_64-apple-darwin.tar.gz](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-x86_64-apple-darwin.tar.gz) | Intel macOS | [checksum](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-x86_64-apple-darwin.tar.gz.sha256) |\n| [uv-aarch64-pc-windows-msvc.zip](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-aarch64-pc-windows-msvc.zip) | ARM64 Windows | [checksum](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-aarch64-pc-windows-msvc.zip.sha256) |\n| [uv-i686-pc-windows-msvc.zip](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-i686-pc-windows-msvc.zip) | x86 Windows | [checksum](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-i686-pc-windows-msvc.zip.sha256) |\n| [uv-x86_64-pc-windows-msvc.zip](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-x86_64-pc-windows-msvc.zip) | x64 Windows | [checksum](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-x86_64-pc-windows-msvc.zip.sha256) |\n| [uv-aarch64-unknown-linux-gnu.tar.gz](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-aarch64-unknown-linux-gnu.tar.gz) | ARM64 Linux | [checksum](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-aarch64-unknown-linux-gnu.tar.gz.sha256) |\n| [uv-i686-unknown-linux-gnu.tar.gz](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-i686-unknown-linux-gnu.tar.gz) | x86 Linux | [checksum](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-i686-unknown-linux-gnu.tar.gz.sha256) |\n| [uv-powerpc64le-unknown-linux-gnu.tar.gz](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-powerpc64le-unknown-linux-gnu.tar.gz) | PPC64LE Linux | [checksum](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-powerpc64le-unknown-linux-gnu.tar.gz.sha256) |\n| [uv-riscv64gc-unknown-linux-gnu.tar.gz](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-riscv64gc-unknown-linux-gnu.tar.gz) | RISCV Linux | [checksum](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-riscv64gc-unknown-linux-gnu.tar.gz.sha256) |\n| [uv-s390x-unknown-linux-gnu.tar.gz](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-s390x-unknown-linux-gnu.tar.gz) | S390x Linux | [checksum](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-s390x-unknown-linux-gnu.tar.gz.sha256) |\n| [uv-x86_64-unknown-linux-gnu.tar.gz](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-x86_64-unknown-linux-gnu.tar.gz) | x64 Linux | [checksum](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-x86_64-unknown-linux-gnu.tar.gz.sha256) |\n| [uv-armv7-unknown-linux-gnueabihf.tar.gz](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-armv7-unknown-linux-gnueabihf.tar.gz) | ARMv7 Linux | [checksum](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-armv7-unknown-linux-gnueabihf.tar.gz.sha256) |\n| [uv-aarch64-unknown-linux-musl.tar.gz](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-aarch64-unknown-linux-musl.tar.gz) | ARM64 MUSL Linux | [checksum](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-aarch64-unknown-linux-musl.tar.gz.sha256) |\n| [uv-i686-unknown-linux-musl.tar.gz](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-i686-unknown-linux-musl.tar.gz) | x86 MUSL Linux | [checksum](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-i686-unknown-linux-musl.tar.gz.sha256) |\n| [uv-riscv64gc-unknown-linux-musl.tar.gz](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-riscv64gc-unknown-linux-musl.tar.gz) | RISCV MUSL Linux | [checksum](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-riscv64gc-unknown-linux-musl.tar.gz.sha256) |\n| [uv-x86_64-unknown-linux-musl.tar.gz](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-x86_64-unknown-linux-musl.tar.gz) | x64 MUSL Linux | [checksum](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-x86_64-unknown-linux-musl.tar.gz.sha256) |\n| [uv-arm-unknown-linux-musleabihf.tar.gz](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-arm-unknown-linux-musleabihf.tar.gz) | ARMv6 MUSL Linux (Hardfloat) | [checksum](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-arm-unknown-linux-musleabihf.tar.gz.sha256) |\n| [uv-armv7-unknown-linux-musleabihf.tar.gz](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-armv7-unknown-linux-musleabihf.tar.gz) | ARMv7 MUSL Linux | [checksum](https://releases.astral.sh/github/uv/releases/download/0.13.8/uv-armv7-unknown-linux-musleabihf.tar.gz.sha256) |\n\n## Verifying GitHub Artifact Attestations\n\nThe artifacts in this release have attestations generated with GitHub Artifact Attestations. These can be verified by using the [GitHub CLI](https://cli.github.com/manual/gh_attestation_verify):\n```sh\ngh attestation verify <file-path of downloaded artifact> --repo astral-sh/uv\n```\n\nYou can also download the attestation from [GitHub](https://github.com/astral-sh/uv/attestations) and verify against that directly:\n```sh\ngh attestation verify <file-path of downloaded artifact> --bundle <file-path of downloaded attestation>\n```\n\n\n"
+    }
+  },
+  {
+    "ecosystem": "github",
+    "name": "python/cpython",
+    "before": [
+      "toolchain"
+    ],
+    "latest": "v3.15.2",
+    "source": "https://github.com/python/cpython/releases/tag/v3.15.2",
+    "details": {}
+  },
+  {
+    "ecosystem": "github",
+    "name": "phpDocumentor/phpDocumentor",
+    "before": [
+      "toolchain / workflow tool"
+    ],
+    "latest": "v3.10.0",
+    "source": "https://github.com/phpDocumentor/phpDocumentor/releases/tag/v3.10.0",
+    "details": {
+      "body": "## What's Changed\r\n\r\nThis release contains a large number of bugfixes and improvements regarding php 8.3 and 8.4 api docs. And a number of improvements that will make trouble shooting for invalid docblocks easier. Thanks to @lacatoire for the improvements!\r\n\r\n* Add support for PHP 8.3 typed class constants by @lacatoire in https://github.com/phpDocumentor/phpDocumentor/pull/4085\r\n* Fix crash when tag body contains URL-encoded characters by @lacatoire in https://github.com/phpDocumentor/phpDocumentor/pull/4086\r\n* Group repeated tag entries in the default template by @lacatoire in https://github.com/phpDocumentor/phpDocumentor/pull/4093\r\n* Adopt reflection 6.6.0 for source line info in parse errors by @lacatoire in https://github.com/phpDocumentor/phpDocumentor/pull/4088\r\n* Add support for PHP 8.4 interface properties by @lacatoire in https://github.com/phpDocumentor/phpDocumentor/pull/4087\r\n\r\n## Automatic markdown TOC\r\n\r\nBesides that the Markdown support for guides has been improved, phpDocumentor will now automatically generate a menu from your markdown sources. This was reported in #3892 by @mzawodzinski and fixed in:\r\n\r\n * Allow runtime configuration  by @jaapio in https://github.com/phpDocumentor/phpDocumentor/pull/4128\r\n * Bump phpdocumentor packages by @jaapio in https://github.com/phpDocumentor/phpDocumentor/pull/4105\r\n\r\n\r\n## Template\r\n\r\nSome fixed in the default template to make your experience better.\r\n\r\n* Ship a branded favicon set with the default template by @lacatoire in https://github.com/phpDocumentor/phpDocumentor/pull/4090\r\n* Scope Tags/Attributes anchors to the enclosing element by @lacatoire in https://github.com/phpDocumentor/phpDocumentor/pull/4091\r\n* Show constant type alongside value in TOC and truncate long values by @lacatoire in https://github.com/phpDocumentor/phpDocumentor/pull/4108\r\n* Skip source-view modal in default template when include-source is disabled by @lacatoire in https://github.com/phpDocumentor/phpDocumentor/pull/4119\r\n\r\n## Internal maintenance\r\n\r\n* Upgrade to Monolog 3 by @lacatoire in https://github.com/phpDocumentor/phpDocumentor/pull/4083\r\n* Add new abstraction for filesystem operations by @jaapio in https://github.com/phpDocumentor/phpDocumentor/pull/3862\r\n* Add phpcs sniff to enforce canonical file-level DocBlocks by @lacatoire in https://github.com/phpDocumentor/phpDocumentor/pull/4107\r\n* Add cypress coverage for the enum page in the default template by @lacatoire in https://github.com/phpDocumentor/phpDocumentor/pull/4111\r\n\r\n## Documentation improvements\r\n\r\n* Clarify $this keyword usage in PHPDoc types by @lacatoire in https://github.com/phpDocumentor/phpDocumentor/pull/4104\r\n* Fill empty inheritdoc inline-tag reference page by @lacatoire in https://github.com/phpDocumentor/phpDocumentor/pull/4102\r\n* docs: clarify @package separator characters by @lacatoire in https://github.com/phpDocumentor/phpDocumentor/pull/4106\r\n\r\n\r\n\r\n\r\n## New Contributors\r\n* @lacatoire made their first contribution in https://github.com/phpDocumentor/phpDocumentor/pull/4083\r\n\r\n**Full Changelog**: https://github.com/phpDocumentor/phpDocumentor/compare/v3.9.1...v3.10.1"
+    }
+  }
+]

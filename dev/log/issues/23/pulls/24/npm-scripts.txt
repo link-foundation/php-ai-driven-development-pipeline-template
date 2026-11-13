@@ -1,0 +1,9 @@
+2 packages have install scripts blocked because they are not covered by allowScripts:
+  better-sqlite3@13.1.1 (install: node-gyp rebuild)
+  node-pty@1.1.0 (install: node-gyp rebuild)
+
+Run `npm install-scripts approve <pkg>` to allow, or `npm install-scripts deny <pkg>` to deny.
+1 package has install scripts blocked because they are not covered by allowScripts:
+  electron-winstaller@5.4.0 (install: node ./script/select-7z-arch.js)
+
+Run `npm install-scripts approve <pkg>` to allow, or `npm install-scripts deny <pkg>` to deny.

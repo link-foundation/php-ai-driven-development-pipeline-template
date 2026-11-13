@@ -47,7 +47,7 @@ final class WorkflowDependencies
         foreach (explode("\n", $yaml) as $index => $line) {
             $line = trim((string) preg_replace('/\s+#.*$/', '', $line));
             if (preg_match('/^(?:runs-on:|os:|-\s).*\b(?:ubuntu|windows|macos)-latest\b/', $line) === 1) {
-                $errors[] = 'line ' . ($index + 1) . ': pin hosted runners to an explicit image such as ubuntu-24.04';
+                $errors[] = 'line ' . ($index + 1) . ': pin hosted runners to an explicit image such as ubuntu-26.04';
             }
         }
 
