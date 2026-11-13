@@ -1,0 +1,8 @@
+  MyPackage -> /tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/csharp/src/MyPackage/bin/Debug/net11.0/MyPackage.dll
+  MyPackage.Tests -> /tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/csharp/tests/MyPackage.Tests/bin/Debug/net11.0/MyPackage.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.94

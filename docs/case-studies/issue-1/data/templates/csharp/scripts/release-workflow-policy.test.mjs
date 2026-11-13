@@ -81,7 +81,7 @@ describe('release workflow policy', () => {
   test('uses the current GitHub Action versions required by the template', () => {
     const workflow = readWorkflow(RELEASE_WORKFLOW);
 
-    expect(workflow).toContain('uses: actions/checkout@v6');
+    expect(workflow).toContain('uses: actions/checkout@v7');
     expect(workflow).toContain('uses: actions/upload-artifact@v7');
     expect(workflow).toContain('uses: peter-evans/create-pull-request@v8');
     expect(workflow).not.toContain('uses: actions/checkout@v4');

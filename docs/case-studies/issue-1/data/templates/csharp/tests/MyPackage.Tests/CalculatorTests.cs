@@ -117,7 +117,7 @@ public class CalculatorTests
         {
             var start = DateTime.UtcNow;
 
-            await Calculator.DelayAsync(0.1);
+            await Calculator.DelayAsync(0.1, TestContext.Current.CancellationToken);
 
             var elapsed = DateTime.UtcNow - start;
             Assert.True(elapsed.TotalSeconds >= 0.1, $"Delay should wait at least 0.1 seconds, but waited {elapsed.TotalSeconds:F4}s");
@@ -128,7 +128,7 @@ public class CalculatorTests
         {
             var start = DateTime.UtcNow;
 
-            await Calculator.DelayAsync(0.0);
+            await Calculator.DelayAsync(0.0, TestContext.Current.CancellationToken);
 
             var elapsed = DateTime.UtcNow - start;
             Assert.True(elapsed.TotalSeconds < 0.1, $"Zero delay should complete quickly, but took {elapsed.TotalSeconds:F4}s");

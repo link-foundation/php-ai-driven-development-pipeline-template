@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "parameters": "--vulnerable --include-transitive",
+  "sources": [
+    "https://api.nuget.org/v3/index.json"
+  ],
+  "projects": [
+    {
+      "path": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/csharp/src/MyPackage/MyPackage.csproj"
+    },
+    {
+      "path": "/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/csharp/tests/MyPackage.Tests/MyPackage.Tests.csproj"
+    }
+  ]
+}
