@@ -1,0 +1,144 @@
+PHPUnit 13.4.7 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /tmp/gh-issue-solver-1794605189377/phpunit.xml.dist
+
+...............................................................  63 / 132 ( 47%)
+............................................................... 126 / 132 ( 95%)
+.[41;37mF[0m....                                                          132 / 132 (100%)
+
+Time: 00:06.115, Memory: 22.00 MB
+
+There was 1 failure:
+
+1) LinkFoundation\Template\Tests\Pipeline\WorkflowPolicyTest::testSecurityWorkflowAuditsTheSupplyChain
+Failed asserting that 'name: Security\n
+\n
+# Continuous security auditing of the resolved dependency set, the workflow\n
+# files themselves, and every dependency change a pull request proposes.\n
+\n
+on:\n
+  push:\n
+    branches: [main]\n
+  pull_request:\n
+  schedule:\n
+    # Weekly, Monday mornings UTC, so a newly published advisory cannot sit\n
+    # unnoticed for longer than seven days even when nothing else runs.\n
+    - cron: '0 6 * * 1'\n
+\n
+# Never cancel an in-progress run on main; do cancel superseded PR runs.\n
+concurrency:\n
+  group: ${{ github.workflow }}-${{ github.ref }}\n
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}\n
+\n
+permissions:\n
+  contents: read\n
+\n
+jobs:\n
+  dependency-audit:\n
+    name: Audit Resolved Composer Dependencies\n
+    runs-on: ubuntu-24.04\n
+    timeout-minutes: 15\n
+    steps:\n
+      - uses: actions/checkout@v7.0.1\n
+        with:\n
+          persist-credentials: false\n
+\n
+      - name: Setup PHP\n
+        uses: shivammathur/setup-php@2.40.0\n
+        with:\n
+          php-version: '8.5.12'\n
+          coverage: none\n
+          tools: composer:2.11.2\n
+\n
+      - name: Resolve the dependency set\n
+        # Audit the exact committed tree used by CI and fresh installs.\n
+        run: composer install --no-interaction --prefer-dist --no-progress\n
+\n
+      - name: Audit dependencies against the PHP security advisories database\n
+        # --locked audits the resolved lock file; --abandoned=fail turns "this\n
+        # package was abandoned by its maintainer" into a hard failure too.\n
+        run: composer audit --locked --abandoned=fail\n
+\n
+  codeql:\n
+    name: CodeQL (${{ matrix.language }})\n
+    runs-on: ubuntu-24.04\n
+    timeout-minutes: 30\n
+    permissions:\n
+      contents: read\n
+      security-events: write\n
+    strategy:\n
+      fail-fast: false\n
+      matrix:\n
+        # CodeQL has no PHP analyser, so the source cannot be scanned here\n
+        # (PHPStan and php-cs-fixer carry that load in the release pipeline);\n
+        # `actions` scans this repository's own workflow files, which is\n
+        # where a template's real attack surface lives.\n
+        language: [actions]\n
+    steps:\n
+      - uses: actions/checkout@v7.0.1\n
+        with:\n
+          persist-credentials: false\n
+\n
+      - name: Initialize CodeQL\n
+        uses: github/codeql-action/init@v4.39.3\n
+        with:\n
+          languages: ${{ matrix.language }}\n
+\n
+      - name: Autobuild\n
+        uses: github/codeql-action/autobuild@v4.39.3\n
+\n
+      - name: Analyze\n
+        uses: github/codeql-action/analyze@v4.39.3\n
+\n
+  dependency-review:\n
+    name: Dependency Review\n
+    if: github.event_name == 'pull_request'\n
+    runs-on: ubuntu-24.04\n
+    timeout-minutes: 10\n
+    permissions:\n
+      contents: read\n
+      pull-requests: write\n
+    steps:\n
+      - uses: actions/checkout@v7.0.1\n
+        with:\n
+          persist-credentials: false\n
+\n
+      - name: Review dependency changes\n
+        uses: actions/dependency-review-action@v5.0.0\n
+        with:\n
+          fail-on-severity: high\n
+          comment-summary-in-pr: on-failure\n
+\n
+  # === PIPELINE STATUS ===\n
+  # GitHub reports jobs killed by timeout-minutes as cancelled. Observe every\n
+  # job so a timeout on main becomes a visible failure instead of a grey run,\n
+  # while a run superseded by a newer commit is recognised as expected churn\n
+  # (issue #9).\n
+  pipeline-status:\n
+    name: Pipeline Status\n
+    needs:\n
+      - dependency-audit\n
+      - codeql\n
+      - dependency-review\n
+    if: always()\n
+    runs-on: ubuntu-24.04\n
+    timeout-minutes: 5\n
+    steps:\n
+      - uses: actions/checkout@v7.0.1\n
+        with:\n
+          persist-credentials: false\n
+\n
+      - name: Check aggregate pipeline status\n
+        env:\n
+          NEEDS_JSON: ${{ toJSON(needs) }}\n
+          RUN_SHA: ${{ github.event.pull_request.head.sha || github.sha }}\n
+          BRANCH_REF: ${{ github.head_ref || github.ref_name }}\n
+          GIT_REMOTE: ${{ github.event.pull_request.head.repo.clone_url || 'origin' }}\n
+        run: bash scripts/check-pipeline-status.sh\n
+' [ASCII](length: 3865) contains "composer update --no-interaction" [ASCII](length: 32).
+
+/tmp/gh-issue-solver-1794605189377/tests/Pipeline/WorkflowPolicyTest.php:469
+
+[37;41mFAILURES![0m
+[37;41mTests: 132[0m[37;41m, Assertions: 605[0m[37;41m, Failures: 1[0m[37;41m.[0m

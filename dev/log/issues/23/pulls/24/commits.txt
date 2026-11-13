@@ -1,0 +1,15 @@
+7a4509e fix(ci): validate all template workflows and preserve lint policies
+a6d7de8 fix(templates): verify current npm and Deno locks and restore crate readme
+38903ab test(deps): preserve minimal upstream regression reproductions
+1ac65eb fix(ci): lock secret scanning and finish workflow validation
+80208ea fix: verify current toolchains across all template runtimes
+2b8dfea build: exclude generated Electron packages
+eac44b9 ci: verify all current template ecosystems and track every manifest
+75cef25 build: migrate JavaScript tools and preserve universal app targets
+164c8a3 build: resolve current NuGet and PyPI transitive releases
+e0159d9 build: migrate Rust 2024 scripts to one current locked graph
+5a869ba build: migrate .NET 11 tests to Microsoft Testing Platform
+ced9169 build: lock Python 3.15 tools and migrate strict checks
+b227841 build: migrate PHP tools and lock current dependencies
+87cf664 fix: keep workflow policy checks compatible with action updates
+99eedcd Initial commit with task details

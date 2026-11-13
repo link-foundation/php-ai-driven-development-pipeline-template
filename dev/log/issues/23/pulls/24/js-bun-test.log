@@ -1,0 +1,104 @@
+bun test v1.4.4 (38afee6c8)
+
+tests/tag-prefix.test.js:
+(pass) tag prefix logic > defaults to "v" prefix (backward compatible) [0.28ms]
+(pass) tag prefix logic > supports "js-v" prefix for multi-language repos [0.03ms]
+(pass) tag prefix logic > supports "rust-v" prefix [0.03ms]
+(pass) tag prefix logic > supports empty prefix [0.01ms]
+(pass) tag prefix logic > works with pre-release versions [0.02ms]
+
+tests/universal-app.test.js:
+(pass) universal React example app > defines the expected app package and build targets [1.13ms]
+(pass) universal React example app > renders a visual UI using the package add and multiply functions [0.12ms]
+(pass) universal React example app > shares the Vite build output with Capacitor and GitHub Pages [0.11ms]
+(pass) universal React example app > adds root scripts and a workflow for web, desktop, and mobile checks [1.22ms]
+(pass) universal React example app > documents local validation without store credentials [0.13ms]
+(pass) universal React example app > regenerates preview screenshots with browser-commander on every push to main [3.77ms]
+
+tests/create-github-release.test.js:
+(pass) create-github-release release title formatting > parses language from CLI arguments and environment defaults [1.83ms]
+(pass) create-github-release release title formatting > builds a human-readable release name from a language-prefixed tag [0.92ms]
+(pass) create-github-release release title formatting > caps oversized release notes and links to the tagged changelog [21.87ms]
+(pass) create-github-release.mjs > uses gh api and reports successful creation only for exit code 0 [0.50ms]
+(pass) create-github-release.mjs > throws when gh api exits non-zero with an unexpected error [0.91ms]
+(pass) create-github-release.mjs > treats already_exists as an idempotent gh api result [0.13ms]
+(pass) create-github-release.mjs > passes release payload to gh api and reports success only on exit code 0 [60.03ms]
+(pass) create-github-release.mjs > passes a human-readable release name for language-prefixed tags [52.05ms]
+(pass) create-github-release.mjs > fails when gh api exits non-zero with an unexpected error [53.51ms]
+(pass) create-github-release.mjs > treats already_exists as an explicit idempotent skip [52.50ms]
+
+tests/winstaller.test.js:
+(pass) published Windows installer architecture selection > calls os.arch and preserves already-fixed upstream scripts [0.41ms]
+
+tests/ci-timeouts.test.js:
+(pass) CI timeout policy > sets timeout-minutes for every release workflow job [3.46ms]
+(pass) CI timeout policy > sets timeout-minutes for every link workflow job [0.15ms]
+(pass) CI timeout policy > parses workflow files checked out with Windows line endings [0.11ms]
+(pass) CI timeout policy > caps individual Node.js and Bun tests at 30 seconds [0.04ms]
+
+tests/package-metadata.test.js:
+(pass) publishable package metadata > uses the real link-foundation example package name [0.17ms]
+(pass) publishable package metadata > defines a globally installable CLI command [0.45ms]
+(pass) publishable package metadata > runs package functions through the CLI command [0.37ms]
+(pass) publishable package metadata > runs when invoked through an npm-style bin symlink [21.47ms]
+(pass) publishable package metadata > publishes only the package runtime surface [0.20ms]
+
+tests/package-info.test.js:
+(pass) package info helpers > reads scoped package names and versions from package.json content [0.22ms]
+(pass) package info helpers > formats npm package specifiers from the derived package name [0.08ms]
+(pass) package info helpers > formats changeset headers from the derived package name [0.03ms]
+(pass) package info helpers > matches changesets for the derived package name only [2.03ms]
+(pass) package info helpers > reports missing package names clearly [0.09ms]
+
+tests/release-badge.test.js:
+(pass) release badge version normalization > strips a plain v prefix for backward compatibility [0.15ms]
+(pass) release badge version normalization > strips a js-v prefix from multi-language release tags [0.03ms]
+(pass) release badge version normalization > strips a rust-v prefix from multi-language release tags [0.01ms]
+(pass) release badge version normalization > escapes hyphens in prerelease versions for shields.io static badge paths [0.15ms]
+(pass) release badge version normalization > builds a valid shields.io badge URL for prefixed tags [0.07ms]
+(pass) release badge version normalization > builds a valid shields.io badge URL for prefixed prerelease tags [0.04ms]
+
+tests/workflow-reliability.test.js:
+(pass) workflow reliability policy > cancels superseded non-main runs without cancelling main runs [0.25ms]
+(pass) workflow reliability policy > uploads preview regeneration artifacts when screenshot rendering fails [0.24ms]
+(pass) workflow reliability policy > uses the official Playwright image for preview regeneration instead of downloading Chromium [1.08ms]
+(pass) workflow reliability policy > verifies desktop package output before uploading artifacts [59.65ms]
+
+tests/index.test.js:
+(pass) add function > should add two positive numbers [0.03ms]
+(pass) add function > should add negative numbers [0.02ms]
+(pass) add function > should add zero [0.02ms]
+(pass) multiply function > should multiply two positive numbers [0.08ms]
+(pass) multiply function > should multiply by zero [0.01ms]
+(pass) multiply function > should multiply negative numbers [0.01ms]
+
+tests/setup-npm.test.js:
+(pass) setup-npm version requirements > requires the project package manager and runtime floors [0.14ms]
+(pass) setup-npm version requirements > installs the pinned npm and verifies the resulting executable [0.93ms]
+(pass) setup-npm version requirements > fails if installation leaves an older executable on PATH [1.21ms]
+
+tests/docker-publish.test.js:
+(pass) optional Docker Hub publishing workflow > adds a Docker publish job downstream of npm release jobs [0.53ms]
+(pass) optional Docker Hub publishing workflow > waits for the exact npm version before publishing Docker tags [0.47ms]
+(pass) optional Docker Hub publishing workflow > uses Docker official GitHub Actions with DOCKERHUB_TOKEN authentication [0.04ms]
+(pass) Docker publish configuration > keeps Docker publishing disabled until DOCKERHUB_IMAGE is configured [0.29ms]
+(pass) Docker publish configuration > reports missing Docker Hub credentials when publishing is enabled [0.29ms]
+(pass) Docker publish configuration > accepts complete Docker Hub configuration without exposing the token [0.23ms]
+(pass) wait-for-npm.mjs > parses release wait options [0.25ms]
+(pass) wait-for-npm.mjs > retries until npm reports the requested version [0.37ms]
+
+tests/check-file-line-limits.test.js:
+(pass) check-file-line-limits.sh > defines a warning band below the hard limit [0.16ms]
+(pass) check-file-line-limits.sh > warns without failing for files above the warning threshold [39.82ms]
+(pass) check-file-line-limits.sh > still fails files over the hard limit [22.10ms]
+(pass) check-file-line-limits.sh > fails .js and .cjs files over the hard limit [27.55ms]
+(pass) check-file-line-limits.sh > fails Markdown files over the hard limit [20.79ms]
+(pass) check-file-line-limits.sh > exempts case-study generated-data files from the limit [17.52ms]
+(pass) check-file-line-limits.sh > normalizes padded wc output from BSD-like environments [21.42ms]
+
+tests/manual-changeset.test.js:
+(pass) Changesets 3 noninteractive release creation > creates a scoped package changeset in a separate root containing spaces [475.49ms]
+
+ 71 pass
+ 0 fail
+Ran 71 tests across 14 files. [1248.00ms]

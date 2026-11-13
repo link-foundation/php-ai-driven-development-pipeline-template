@@ -1,0 +1,7 @@
+Unable to find image 'rhysd/actionlint:1.7.12' locally
+1.7.12: Pulling from rhysd/actionlint
+Digest: sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667
+Status: Downloaded newer image for rhysd/actionlint:1.7.12
+[33mdocs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml[0m[90m:[0m158[90m:[0m74[90m: [0m[1m"github.head_ref" is potentially untrusted. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.com/en/actions/reference/security/secure-use#good-practices-for-mitigating-script-injection-attacks for more details[0m[90m [expression]
+[0m[33mdocs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml[0m[90m:[0m98[90m:[0m74[90m: [0m[1m"github.head_ref" is potentially untrusted. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.com/en/actions/reference/security/secure-use#good-practices-for-mitigating-script-injection-attacks for more details[0m[90m [expression]
+[0m

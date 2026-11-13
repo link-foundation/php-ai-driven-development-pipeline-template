@@ -1,0 +1,6 @@
+npm notice run @link-foundation/example-package-name@0.11.4 npx
+npm notice run 'jscpd' . --reporters json --output reports/jscpd
+Using config from .jscpd.json
+[32mJSON report saved to reports/jscpd/jscpd-report.json[39m
+ERROR: jscpd found too many duplicates (1.0%) over threshold (0.0%)
+[90mtime: 132.996ms[39m

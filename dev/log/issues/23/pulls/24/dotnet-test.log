@@ -1,9 +1,9 @@
 Running tests from /tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/csharp/tests/MyPackage.Tests/bin/Debug/net11.0/MyPackage.Tests.dll (net11.0|x64)
-/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/csharp/tests/MyPackage.Tests/bin/Debug/net11.0/MyPackage.Tests.dll (net11.0|x64) passed [+21/x0/?0] (2s 229ms)
+/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/csharp/tests/MyPackage.Tests/bin/Debug/net11.0/MyPackage.Tests.dll (net11.0|x64) passed [+21/x0/?0] (2s 254ms)
 
 Test run summary: Passed!
   total: 21
   failed: 0
   succeeded: 21
   skipped: 0
-  duration: 3s 948ms
+  duration: 4s 096ms

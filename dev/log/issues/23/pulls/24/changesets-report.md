@@ -1,0 +1,5 @@
+Reproduced with released @changesets/cli 3.0.3 and Node 26.13.1/npm 12.2.2 in https://github.com/link-foundation/php-ai-driven-development-pipeline-template/pull/24. A no-dependency package at 1.0.0, its npm v3 lockfile, and one patch changeset produce package.json 1.0.1 while both package-lock.json.version and packages[""].version remain 1.0.0 after `changeset version`.
+
+Reusable minimal fixture and captured output: https://github.com/link-foundation/php-ai-driven-development-pipeline-template/blob/issue-23-addf7c5fd0d4/experiments/issue-23/upstream-reproductions.mjs and https://github.com/link-foundation/php-ai-driven-development-pipeline-template/blob/issue-23-addf7c5fd0d4/dev/log/issues/23/pulls/24/upstream-reproductions.log .
+
+We retain `npm install --package-lock-only` after versioning. Could versioning invoke the detected package manager's lockfile-only update after writing manifests (as proposed in #1753), with a regression asserting the root metadata and workspace versions stay synchronized? Native noninteractive `add` works well in v3; this remaining synchronization step still needs a downstream wrapper.

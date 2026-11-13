@@ -1,0 +1,338 @@
+EXE001 Shebang is present but file is not executable
+ --> scripts/bump_version.py:1:1
+  |
+1 | #!/usr/bin/env python3
+  | ^^^^^^^^^^^^^^^^^^^^^^
+2 | """
+3 | Bump version in pyproject.toml and update CHANGELOG.md
+  |
+
+BLE001 Do not catch blind exception: `Exception`
+   --> scripts/bump_version.py:165:12
+    |
+163 |         return 0
+164 |
+165 |     except Exception as e:
+    |            ^^^^^^^^^
+166 |         print(f"Error: {e}", file=sys.stderr)
+167 |         return 1
+    |
+
+EXE001 Shebang is present but file is not executable
+ --> scripts/check_file_size.py:1:1
+  |
+1 | #!/usr/bin/env python3
+  | ^^^^^^^^^^^^^^^^^^^^^^
+2 | """Check for files exceeding the maximum allowed line count.
+  |
+
+BLE001 Do not catch blind exception: `Exception`
+   --> scripts/check_file_size.py:103:12
+    |
+101 |     try:
+102 |         main()
+103 |     except Exception as e:
+    |            ^^^^^^^^^
+104 |         print(f"Error: {e}", file=sys.stderr)
+105 |         if "DEBUG" in sys.modules:
+    |
+
+EXE001 Shebang is present but file is not executable
+ --> scripts/create_github_release.py:1:1
+  |
+1 | #!/usr/bin/env python3
+  | ^^^^^^^^^^^^^^^^^^^^^^
+2 | """
+3 | Create a GitHub release from CHANGELOG.md content.
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> scripts/create_github_release.py:17:1
+   |
+15 |   """
+16 |
+17 | / import argparse
+18 | | import os
+19 | | import re
+20 | | import subprocess
+21 | | import sys
+22 | | from pathlib import Path
+   | |________________________^
+help: Organize imports
+   |
+23 |
+   -
+24 | MAX_RELEASE_NOTES_BYTES = 60_000
+   |
+
+BLE001 Do not catch blind exception: `Exception`
+   --> scripts/create_github_release.py:254:12
+    |
+252 |         return 0
+253 |
+254 |     except Exception as e:
+    |            ^^^^^^^^^
+255 |         print(f"Error: {e}", file=sys.stderr)
+256 |         return 1
+    |
+
+EXE001 Shebang is present but file is not executable
+ --> scripts/create_manual_changeset.py:1:1
+  |
+1 | #!/usr/bin/env python3
+  | ^^^^^^^^^^^^^^^^^^^^^^
+2 | """
+3 | Create a manual changelog fragment for releases.
+  |
+
+EXE001 Shebang is present but file is not executable
+ --> scripts/detect_code_changes.py:1:1
+  |
+1 | #!/usr/bin/env python3
+  | ^^^^^^^^^^^^^^^^^^^^^^
+2 | """
+3 | Detect code changes for CI/CD pipeline.
+  |
+
+BLE001 Do not catch blind exception: `Exception`
+   --> scripts/detect_code_changes.py:100:20
+    |
+ 98 |                 if output:
+ 99 |                     return [f for f in output.split("\n") if f]
+100 |             except Exception as e:
+    |                    ^^^^^^^^^
+101 |                 print(f"Git diff failed: {e}", file=sys.stderr)
+    |
+
+BLE001 Do not catch blind exception: `Exception`
+   --> scripts/detect_code_changes.py:109:12
+    |
+107 |         if output:
+108 |             return [f for f in output.split("\n") if f]
+109 |     except Exception:
+    |            ^^^^^^^^^
+110 |         # If HEAD^ doesn't exist (first commit), list all files in HEAD
+111 |         print("HEAD^ not available, listing all files in HEAD")
+    |
+
+EXE001 Shebang is present but file is not executable
+ --> scripts/format_release_notes.py:1:1
+  |
+1 | #!/usr/bin/env python3
+  | ^^^^^^^^^^^^^^^^^^^^^^
+2 | """
+3 | Format GitHub release notes with enhanced information.
+  |
+
+UP045 [*] Use `X | None` for type annotations
+  --> scripts/format_release_notes.py:53:61
+   |
+53 | def find_pr_for_commit(repository: str, commit_sha: str) -> Optional[str]:
+   |                                                             ^^^^^^^^^^^^^
+54 |     """Find the pull request that contains a specific commit."""
+55 |     if not commit_sha:
+   |
+help: Convert to `X | None`
+   |
+52 |
+   - def find_pr_for_commit(repository: str, commit_sha: str) -> Optional[str]:
+53 + def find_pr_for_commit(repository: str, commit_sha: str) -> str | None:
+54 |     """Find the pull request that contains a specific commit."""
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> scripts/format_release_notes.py:81:16
+   |
+79 |     version: str,
+80 |     repository: str,
+81 |     pr_number: Optional[str],
+   |                ^^^^^^^^^^^^^
+82 |     package_name: str,
+83 | ) -> str:
+   |
+help: Convert to `X | None`
+   |
+80 |     repository: str,
+   -     pr_number: Optional[str],
+81 +     pr_number: str | None,
+82 |     package_name: str,
+   |
+
+EXE001 Shebang is present but file is not executable
+ --> scripts/publish_to_pypi.py:1:1
+  |
+1 | #!/usr/bin/env python3
+  | ^^^^^^^^^^^^^^^^^^^^^^
+2 | """
+3 | Build and publish package to PyPI using trusted publishing (OIDC).
+  |
+
+BLE001 Do not catch blind exception: `Exception`
+   --> scripts/publish_to_pypi.py:151:12
+    |
+149 |         return 0
+150 |
+151 |     except Exception as e:
+    |            ^^^^^^^^^
+152 |         print(f"Error: {e}", file=sys.stderr)
+153 |         return 1
+    |
+
+EXE001 Shebang is present but file is not executable
+ --> scripts/validate_changeset.py:1:1
+  |
+1 | #!/usr/bin/env python3
+  | ^^^^^^^^^^^^^^^^^^^^^^
+2 | """
+3 | Validate that PRs contain proper changelog fragments.
+  |
+
+EXE001 Shebang is present but file is not executable
+ --> scripts/version_and_commit.py:1:1
+  |
+1 | #!/usr/bin/env python3
+  | ^^^^^^^^^^^^^^^^^^^^^^
+2 | """
+3 | Version packages and commit to main branch.
+  |
+
+BLE001 Do not catch blind exception: `Exception`
+   --> scripts/version_and_commit.py:231:12
+    |
+229 |         return 0
+230 |
+231 |     except Exception as e:
+    |            ^^^^^^^^^
+232 |         print(f"Error: {e}", file=sys.stderr)
+233 |         return 1
+    |
+
+RUF022 [*] `__all__` is not sorted
+  --> src/my_package/__init__.py:10:11
+   |
+ 8 | __version__ = "0.1.0"
+ 9 |
+10 | __all__ = ["add", "multiply", "delay"]
+   |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: Apply an isort-style sorting to `__all__`
+   |
+9  |
+   - __all__ = ["add", "multiply", "delay"]
+10 + __all__ = ["add", "delay", "multiply"]
+11 |
+   |
+
+PYI041 [*] Use `float` instead of `int | float`
+  --> src/my_package/__init__.py:13:12
+   |
+13 | def add(a: int | float, b: int | float) -> int | float:
+   |            ^^^^^^^^^^^
+14 |     """Add two numbers.
+   |
+help: Remove redundant type
+   |
+12 |
+   - def add(a: int | float, b: int | float) -> int | float:
+13 + def add(a: float, b: int | float) -> int | float:
+14 |     """Add two numbers.
+   |
+
+PYI041 [*] Use `float` instead of `int | float`
+  --> src/my_package/__init__.py:13:28
+   |
+13 | def add(a: int | float, b: int | float) -> int | float:
+   |                            ^^^^^^^^^^^
+14 |     """Add two numbers.
+   |
+help: Remove redundant type
+   |
+12 |
+   - def add(a: int | float, b: int | float) -> int | float:
+13 + def add(a: int | float, b: float) -> int | float:
+14 |     """Add two numbers.
+   |
+
+PYI041 [*] Use `float` instead of `int | float`
+  --> src/my_package/__init__.py:26:17
+   |
+26 | def multiply(a: int | float, b: int | float) -> int | float:
+   |                 ^^^^^^^^^^^
+27 |     """Multiply two numbers.
+   |
+help: Remove redundant type
+   |
+25 |
+   - def multiply(a: int | float, b: int | float) -> int | float:
+26 + def multiply(a: float, b: int | float) -> int | float:
+27 |     """Multiply two numbers.
+   |
+
+PYI041 [*] Use `float` instead of `int | float`
+  --> src/my_package/__init__.py:26:33
+   |
+26 | def multiply(a: int | float, b: int | float) -> int | float:
+   |                                 ^^^^^^^^^^^
+27 |     """Multiply two numbers.
+   |
+help: Remove redundant type
+   |
+25 |
+   - def multiply(a: int | float, b: int | float) -> int | float:
+26 + def multiply(a: int | float, b: float) -> int | float:
+27 |     """Multiply two numbers.
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> tests/test_create_github_release.py:3:1
+  |
+1 |   """Tests for scripts/create_github_release.py."""
+2 |
+3 | / from __future__ import annotations
+4 | |
+5 | | import importlib.util
+6 | | import subprocess
+7 | | import sys
+8 | | from pathlib import Path
+  | |________________________^
+help: Organize imports
+   |
+9  |
+   -
+10 | SCRIPT_PATH = (
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> tests/test_preview_regeneration_docs.py:3:1
+  |
+1 |   """Tests for preview-regeneration parity documentation."""
+2 |
+3 | / from __future__ import annotations
+4 | |
+5 | | from pathlib import Path
+  | |________________________^
+help: Organize imports
+  |
+6 |
+  -
+7 | ROOT = Path(__file__).resolve().parent.parent
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> tests/test_workflows.py:3:1
+  |
+1 |   """Regression tests for GitHub Actions workflow policy."""
+2 |
+3 | / from __future__ import annotations
+4 | |
+5 | | import re
+6 | | from pathlib import Path
+  | |________________________^
+help: Organize imports
+  |
+7 |
+  -
+8 | ROOT = Path(__file__).resolve().parents[1]
+  |
+
+Found 27 errors.
+[*] 11 fixable with `--fix`.

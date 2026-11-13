@@ -1,0 +1,664 @@
+# Coverlet Microsoft Testing Platform Integration
+
+[Microsoft.Testing.Platform and Microsoft Test Framework](https://github.com/microsoft/testfx) is a lightweight alternative for VSTest.
+
+More information is available here:
+
+- [Microsoft.Testing.Platform overview](https://learn.microsoft.com/en-us/dotnet/core/testing/microsoft-testing-platform-intro?tabs=dotnetcli)
+- [Microsoft.Testing.Platform extensibility](https://learn.microsoft.com/en-us/dotnet/core/testing/microsoft-testing-platform-architecture-extensions)
+- [Migrate to MTP mode of dotnet test](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test#migrate-to-mtp-mode-of-dotnet-test)
+
+coverlet.MTP implements coverlet.collector functionality for Microsoft.Testing.Platform.
+
+## Supported Runtime Versions
+
+Since version `8.0.0`:
+
+- .NET Core >= 8.0
+
+## Quick Start
+
+### Installation
+
+Add the `coverlet.MTP` package to your test project:
+
+```bash
+dotnet add package coverlet.MTP
+```
+
+A sample project file looks like:
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+   <PropertyGroup>
+      <TargetFramework>net8.0</TargetFramework>
+      <OutputType>Exe</OutputType>
+      <!-- Enable Microsoft Testing Platform -->
+      <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
+      <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport> <!-- not required for .NET SDK 10 or later -->
+   </PropertyGroup>
+      <ItemGroup>
+      <!-- Use xunit.v3.mtp-v2 for MTP v2.x compatibility -->
+      <PackageReference Include="xunit.v3.mtp-v2" Version="3.2.1" />
+      <PackageReference Include="Microsoft.Testing.Platform" Version="2.2.1" />
+      <PackageReference Include="coverlet.MTP" Version="8.0.0" />
+   </ItemGroup>
+</Project>
+```
+
+### Basic Usage
+
+To collect code coverage, run your test executable with the `--coverlet` flag:
+
+```bash
+dotnet exec <test-assembly.dll> --coverlet
+```
+
+Or using `dotnet test` with MTP enabled projects:
+
+```bash
+dotnet test --coverlet
+```
+
+After the test run, a `coverage.json` file containing the results will be generated in the current directory.
+
+## Command Line Options
+
+The `coverlet.MTP` extension provides the following command line options. To see all available options, run:
+
+```bash
+dotnet exec <test-assembly.dll> --help
+```
+
+### Coverage Options
+
+| Option | Description |
+| :------- | :------------ |
+| `--coverlet` | Enable code coverage data collection. |
+| `--coverlet-output-format <format>` | Output format(s) for coverage report. Supported formats: `json`, `lcov`, `opencover`, `cobertura`, `teamcity`. Can be specified multiple times. (default: `json`, `cobertura`) |
+| `--coverlet-file-prefix <prefix>` | Prefix for coverage report filenames to prevent overwrites when multiple test projects write to the same directory. When specified, files are named `<prefix>.coverage.<extension>` instead of `coverage.<extension>`. (default: `none`) |
+| `--coverlet-include <filter>` | Include assemblies matching filters (e.g., `[Assembly]Type`). Can be specified multiple times. (default: `none`) |
+| `--coverlet-include-directory <path>` | Include additional directories for sources. Can be specified multiple times. (default: `none`) |
+| `--coverlet-exclude <filter>` | Exclude assemblies matching filters (e.g., `[Assembly]Type`). Can be specified multiple times. User-specified filters are merged with defaults. (defaults: see "Default Exclusions Behavior" below) |
+| `--coverlet-exclude-by-file <pattern>` | Exclude source files matching glob patterns. Can be specified multiple times. (default: `none`) |
+| `--coverlet-exclude-by-attribute <attribute>` | Exclude methods/classes decorated with attributes. Can be specified multiple times. User-specified attributes are merged with defaults. (defaults: see "Default Exclusions Behavior" below) |
+| `--coverlet-include-test-assembly` | Include test assembly in coverage. (default: `false`) |
+| `--coverlet-single-hit` | Limit the number of hits to one for each location. (default: `false`) |
+| `--coverlet-skip-auto-props` | Skip auto-implemented properties. (default: `false`) |
+| `--coverlet-does-not-return-attribute <attribute>` | Attributes that mark methods as not returning. Can be specified multiple times. (default: `none`) |
+| `--coverlet-exclude-assemblies-without-sources <value>` | Exclude assemblies without source code. Values: `MissingAll`, `MissingAny`, `None`. (default: `None`) |
+| `--coverlet-threshold <threshold>` | Exits with error if the coverage % is below value |
+| `--coverlet-threshold-type <line\|branch\|method>` | Coverage type(s) to apply the threshold to. Can be specified multiple times or as a comma-separated list. (default: `line`) |
+| `--coverlet-threshold-stat <Average\|Minimum\|Total>` | Coverage statistic used to enforce the threshold value. (default: `Minimum`) |
+
+> [!TIP]
+> If you encounter instrumentation failures like "The process cannot access the file ... because it is being used by another process", try setting `--coverlet-exclude-assemblies-without-sources MissingAll` (or in a config file: `"ExcludeAssembliesWithoutSources": "MissingAll"`) to skip assemblies without sources and reduce access conflicts.
+
+> [!NOTE]
+> Coverage report files will be stored in `--results-directory` folder and a time stamp `{DateTime.UtcNow:ddMMyyHHmmssfff}` is used for generated code coverage files name e.g. `coverage.280326122803612.json` or `coverage.cobertura.280326122803612.xml`
+
+### Default Exclusions Behavior
+
+Coverlet.MTP applies sensible default exclusions to reduce noise in coverage reports. The behavior differs based on whether you use command line options or a configuration file.
+
+**Command Line Defaults:**
+
+When using command line options **without** a configuration file, the following defaults are **automatically merged** with user-specified exclusions:
+
+- **Default Exclude Filters:** `[coverlet.*]*`, `[Microsoft.VisualStudio.TestPlatform.*]*`, `[testhost*]*`
+- **Default Exclude by Attributes:** `ExcludeFromCodeCoverage`, `ExcludeFromCodeCoverageAttribute`, `GeneratedCodeAttribute`, `CompilerGeneratedAttribute`
+
+**Dynamic Exclude Filters (Runtime Discovery):**
+
+Coverlet.MTP also applies **dynamic exclusions** discovered at runtime from two sources:
+
+- Runtime package/library names from `*.deps.json`
+- Assemblies already loaded in the controller process (for example build/test extensions that may lock files before instrumentation)
+
+`deps.json` entries continue to use wildcard normalization for resilient matching. Loaded-assembly entries use **exact assembly-name filters** to avoid broad prefix exclusions. For example, a loaded assembly `MSS.Tools.xUnit` is excluded as `[MSS.Tools.xUnit]*` (not `[MSS.Tools.*]*`), which prevents accidental exclusion of a SUT like `MSS.Tools.Markdown`.
+
+**Configuration File Behavior (Authoritative Mode):**
+
+When a configuration file is present (`testconfig.json` or `coverlet.mtp.appsettings.json`), the configuration file becomes **authoritative**:
+
+- **No defaults are injected** for `Format`, `Exclude`, `ExcludeByAttribute`, or other settings
+- **Dynamic exclude filters are also not applied** — you are fully responsible for defining all exclusions
+- Only the minimal `[coverlet.*]*` exclude filter is always prepended to prevent self-instrumentation
+
+This design follows the principle that providing a configuration file represents your complete intent for coverlet settings.
+
+> [!IMPORTANT]
+> **Breaking Change Notice:** In previous versions, defaults were merged even when a configuration file existed. Starting with this version, configuration files are authoritative. If you relied on default exclusions (including dynamic ones) being applied automatically, you must now explicitly add them to your configuration file.
+
+### Configuration Files
+
+Coverlet.MTP supports two configuration file formats:
+
+1. **`testconfig.json`** - Microsoft Testing Platform standard format (recommended)
+2. **`coverlet.mtp.appsettings.json`** - Legacy format (for backward compatibility)
+
+#### testconfig.json (Recommended)
+
+The `testconfig.json` format is the standard configuration file for Microsoft Testing Platform extensions. Coverlet settings are placed under `platformOptions.Coverlet`:
+
+**File Location Priority:**
+
+- `[appname].testconfig.json` - App-specific configuration (e.g., `MyTests.testconfig.json`)
+- `testconfig.json` - Generic configuration
+
+**Example `testconfig.json`:**
+
+```json
+{
+  "platformOptions": {
+    "Coverlet": {
+      "include": "[MyApp.*]*",
+      "exclude": "[*.Tests]*,[*.Generated]*",
+      "excludeByAttribute": "GeneratedCode,ExcludeFromCodeCoverage,ExcludeFromCodeCoverageAttribute,CompilerGeneratedAttribute",
+      "excludeByFile": "**/Migrations/*.cs",
+      "format": "cobertura,json",
+      "useSourceLink": false,
+      "singleHit": false,
+      "includeTestAssembly": false,
+      "skipAutoProps": true,
+      "deterministicReport": false,
+      "excludeAssembliesWithoutSources": "MissingAll"
+    }
+  }
+}
+```
+
+**Supported Keys in `platformOptions.Coverlet`:**
+
+| Key | Type | Description |
+| :--- | :--- | :---------- |
+| `Include` | string | Comma-separated include filters (e.g., `[MyApp.*]*`) |
+| `IncludeDirectory` | string | Comma-separated additional directories for sources |
+| `Exclude` | string | Comma-separated exclude filters (e.g., `[*.Tests]*`) |
+| `ExcludeByFile` | string | Comma-separated glob patterns for source file exclusion |
+| `ExcludeByAttribute` | string | Comma-separated attributes to exclude |
+| `Format` | string | Comma-separated output formats (default: `cobertura`) |
+| `UseSourceLink` | bool | Enable SourceLink support |
+| `SingleHit` | bool | Limit hits to one per location |
+| `IncludeTestAssembly` | bool | Include test assembly in coverage |
+| `SkipAutoProps` | bool | Skip auto-implemented properties |
+| `DoesNotReturnAttribute` | string | Comma-separated attributes marking non-returning methods |
+| `DeterministicReport` | bool | Generate deterministic reports |
+| `ExcludeAssembliesWithoutSources` | string | Values: `MissingAll`, `MissingAny`, `None` |
+| `DisableManagedInstrumentationRestore` | bool | Disable managed instrumentation restore |
+| `MergeWith` | string | Path to existing coverage file to merge with |
+
+> [!NOTE]
+> Keys in `testconfig.json` use **camelCase** (e.g., `excludeByAttribute`), following the Microsoft Testing Platform convention.
+
+**Project Setup for testconfig.json:**
+
+```xml
+<ItemGroup>
+  <None Update="testconfig.json">
+    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+  </None>
+</ItemGroup>
+```
+
+> [!TIP]
+> The `ItemGroup` is not required when the `testconfig.json` file is located in the test project folder.
+
+#### coverlet.mtp.appsettings.json (Legacy)
+
+The legacy `coverlet.mtp.appsettings.json` format is still supported for backward compatibility. If both `testconfig.json` and `coverlet.mtp.appsettings.json` exist, `testconfig.json` takes priority.
+
+**Project Setup:**
+
+1. **Create the configuration file** in your test project
+2. **Ensure it's copied to the output directory**:
+
+```xml
+<ItemGroup>
+  <None Update="coverlet.mtp.appsettings.json">
+    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+  </None>
+</ItemGroup>
+```
+
+> [!IMPORTANT]
+> The configuration file must be present in the **output directory** at runtime (next to the test assembly).
+
+**Supported Configuration Keys:**
+
+| Key | Type | Description |
+| :--- | :--- | :---------- |
+| `Include` | string | Comma-separated include filters (e.g., `[MyApp.*]*`) |
+| `IncludeDirectory` | string | Comma-separated additional directories for sources |
+| `Exclude` | string | Comma-separated exclude filters (e.g., `[*.Tests]*,[*.Generated]*`) |
+| `ExcludeByFile` | string | Comma-separated glob patterns for source file exclusion |
+| `ExcludeByAttribute` | string | Comma-separated attributes to exclude |
+| `Format` | string | Comma-separated output formats (default: `cobertura`) |
+| `UseSourceLink` | bool | Enable SourceLink support |
+| `SingleHit` | bool | Limit hits to one per location |
+| `IncludeTestAssembly` | bool | Include test assembly in coverage |
+| `SkipAutoProps` | bool | Skip auto-implemented properties |
+| `DoesNotReturnAttribute` | string | Comma-separated attributes marking non-returning methods |
+| `DeterministicReport` | bool | Generate deterministic reports |
+| `ExcludeAssembliesWithoutSources` | string | Values: `MissingAll`, `MissingAny`, `None` (default: `MissingAll`) |
+| `Threshold` | int | Exits with error if the code coverage [0..100%]  is below value |
+| `ThresholdType` | string | Comma-separated coverage type to apply the Threshold to. [default: `line`] |
+| `ThresholdStat` | string | Coverage statistic used to enforce the threshold value. Values: `Minimum`, `Average`, `Total`. (default: `Minimum`) |
+
+**Example `coverlet.mtp.appsettings.json`:**
+
+```json
+{
+  "Coverlet": {
+    "Include": "[MyApp.*]*",
+    "Exclude": "[*.Tests]*,[*.Generated]*",
+    "ExcludeByAttribute": "GeneratedCode,ExcludeFromCodeCoverage",
+    "ExcludeByFile": "**/Migrations/*.cs",
+    "Format": "cobertura,json",
+    "UseSourceLink": false,
+    "SingleHit": false,
+    "IncludeTestAssembly": false,
+    "SkipAutoProps": true,
+    "DeterministicReport": false,
+    "ExcludeAssembliesWithoutSources": "MissingAll"
+  }
+}
+```
+
+> [!NOTE]
+> - The configuration section is named `Coverlet`. With `Microsoft.Extensions.Configuration`, keys are case-insensitive (so `Coverlet`, `coverlet`, etc. all work).
+> - Array values are specified as comma-separated strings, not JSON arrays.
+> - The default exclude filter `[coverlet.*]*` is always prepended to the `Exclude` value.
+
+#### Configuration Precedence
+
+Coverlet.MTP uses the following precedence order when determining configuration values:
+
+```text
+Priority 1: Command line options (always take precedence)
+Priority 2: testconfig.json (app-specific > generic)
+Priority 3: coverlet.mtp.appsettings.json (legacy)
+Priority 4: Built-in defaults (only when no configuration file exists)
+```
+
+**Key Points:**
+
+- **Command line always wins:** CLI options override all configuration file settings
+- **Configuration files are authoritative:** When a config file exists, only its values are used (no defaults injected)
+- **testconfig.json has priority:** If both `testconfig.json` and `coverlet.mtp.appsettings.json` exist, only `testconfig.json` is used
+- **Defaults apply only without config files:** Built-in defaults are only used when no configuration file is present
+
+**File Priority for testconfig.json:**
+
+1. `[appname].testconfig.json` (e.g., `MyTests.testconfig.json`)
+2. `testconfig.json`
+
+> [!TIP]
+> See also: [Use a centralized testconfig.json](https://learn.microsoft.com/en-us/dotnet/core/testing/microsoft-testing-platform-config#use-a-centralized-testconfigjson)
+
+#### Alternative: MSBuild Property for Command Line Arguments
+
+If you prefer to define coverlet options in your `.csproj` file and leverage MSBuild variables (like `$(AssemblyName)`), you can use the `TestingPlatformCommandLineArguments` property:
+
+```xml
+<PropertyGroup>
+  <!-- Pass coverlet options via MSBuild - allows using MSBuild variables -->
+  <TestingPlatformCommandLineArguments>--coverlet --coverlet-file-prefix $(AssemblyName) --coverlet-output-format opencover</TestingPlatformCommandLineArguments>
+</PropertyGroup>
+```
+
+This approach is useful when you want to:
+
+- Use MSBuild variables like `$(AssemblyName)`, `$(MSBuildProjectName)`, or `$(Configuration)`
+- Define configuration at the solution level via `Directory.Build.props`
+- Ensure each test project uses its assembly name as the file prefix automatically
+
+**Example `Directory.Build.props` for solution-wide configuration:**
+
+```xml
+<Project>
+  <PropertyGroup Condition="'$(IsTestProject)' == 'true'">
+    <TestingPlatformCommandLineArguments>--coverlet --coverlet-file-prefix $(MSBuildProjectName)</TestingPlatformCommandLineArguments>
+  </PropertyGroup>
+</Project>
+```
+
+### Examples
+
+**Generate coverage in JSON format (default):**
+
+```bash
+dotnet exec TestProject.dll --coverlet
+```
+
+**Generate coverage in Cobertura format:**
+
+```bash
+dotnet exec TestProject.dll --coverlet --coverlet-output-format cobertura
+```
+
+**Generate coverage in multiple formats:**
+
+```bash
+dotnet run TestProject.dll --coverlet --coverlet-output-format json --coverlet-output-format cobertura --coverlet-output-format lcov
+```
+
+**Include only specific assemblies:**
+
+```bash
+dotnet exec TestProject.dll --coverlet --coverlet-include "[MyApp.]"
+```
+
+**Exclude test assemblies and specific namespaces:**
+
+```bash
+dotnet exec TestProject.dll --coverlet --coverlet-exclude "[.Tests]" --coverlet-exclude "[]MyApp.Generated."
+```
+
+**Exclude by attribute:**
+
+```bash
+dotnet exec TestProject.dll --coverlet --coverlet-exclude-by-attribute "Obsolete" --coverlet-exclude-by-attribute "GeneratedCode"
+```
+
+**Use file prefix to prevent overwrites in multi-project solutions:**
+
+```bash
+dotnet exec TestProject.dll --coverlet --coverlet-file-prefix "MyProject.UnitTests"
+```
+
+This generates files named `MyProject.UnitTests.coverage.json` and `MyProject.UnitTests.coverage.cobertura.xml` instead of overwriting the default `coverage.json` and `coverage.cobertura.xml`.
+
+## Coverage Output
+
+Coverlet can generate coverage results in multiple formats:
+
+- `json` (default) - Coverlet's native JSON format
+- `lcov` - LCOV format
+- `opencover` - OpenCover XML format
+- `cobertura` - Cobertura XML format
+- `teamcity` - TeamCity service messages
+
+## Filter Expressions
+
+Filter expressions allow fine-grained control over what gets included or excluded from coverage.
+
+**Syntax:** `[Assembly-Filter]Type-Filter`
+
+**Wildcards:**
+
+- `*` matches zero or more characters
+- `?` makes the prefixed character optional
+
+**Examples:**
+
+- `[*]*` - All types in all assemblies
+- `[coverlet.*]Coverlet.Core.Coverage` - Specific class in matching assemblies
+- `[*]Coverlet.Core.Instrumentation.*` - All types in a namespace
+- `[coverlet.*.tests?]*` - Assemblies ending with `.test` or `.tests`
+
+Both `--coverlet-include` and `--coverlet-exclude` can be used together, but `--coverlet-exclude` takes precedence.
+
+## Excluding From Coverage
+
+### Using Attributes
+
+Apply the `ExcludeFromCodeCoverage` attribute from `System.Diagnostics.CodeAnalysis` to exclude methods or classes:
+
+```csharp
+[ExcludeFromCodeCoverage] public class NotCovered { // This class will be excluded from coverage }
+```
+
+Additional attributes can be specified using `--coverlet-exclude-by-attribute`.
+
+### Using Source File Patterns
+
+Exclude source files using glob patterns with `--coverlet-exclude-by-file`:
+
+```bash
+dotnet exec TestProject.dll --coverlet --coverlet-exclude-by-file "**/Generated/*.cs"
+```
+
+## How It Works
+
+The `coverlet.MTP` extension integrates with the Microsoft Testing Platform using the extensibility model:
+
+1. **Test Host Controller Extension**: Implements `ITestHostProcessLifetimeHandler` to instrument assemblies before tests run and collect coverage after tests complete.
+
+2. **Before Tests Run**:
+   - Locates the test assembly and referenced assemblies with PDBs
+   - Instruments assemblies by inserting code to record sequence point hits
+
+3. **After Tests Run**:
+   - Restores original non-instrumented assemblies
+   - Reads recorded hit information
+   - Generates coverage report in the specified format(s)
+
+## Comparison with coverlet.collector (VSTest)
+
+| Feature | coverlet.MTP | coverlet.collector |
+| :-------- | :------------- | :------------------- |
+| Test Platform | Microsoft Testing Platform | VSTest |
+| Configuration | Command line options | runsettings file |
+| | coverlet.mtp.appsettings.json | |
+| Default Format | JSON | Cobertura |
+
+## Known Limitations
+
+- Threshold validation is not yet supported (planned for future releases)
+- Report merging is not yet supported (use external tools like `dotnet-coverage` or `reportgenerator`)
+- **`--coverlet-include-test-assembly` may be accepted, but the MTP test assembly itself cannot be instrumented**: In the MTP model the test assembly is also the controller process. Coverlet uses static (ahead-of-time) instrumentation and must rewrite the binary on disk before it is loaded. Because the controller executable is already in use when instrumentation runs, attempting to rewrite that assembly causes instrumentation of the test/controller assembly to fail. Coverlet logs a warning for that module and continues processing other eligible modules; it does not fail silently. This is a fundamental architectural constraint of the MTP in-process model, not a bug. See [issue #1911](https://github.com/coverlet-coverage/coverlet/issues/1911) for details. Use coverlet.collector (VSTest) or coverlet.msbuild if you need to measure coverage of the test assembly itself.
+
+> [!TIP]
+> **Merging coverage files from multiple test runs:**
+>
+> Use `dotnet-coverage` tool:
+>
+> ```bash
+> dotnet-coverage merge coverage/**/coverage.cobertura.xml -f cobertura -o coverage/merged.xml
+> ```
+>
+> Or use `reportgenerator`:
+>
+> ```bash
+> reportgenerator -reports:"**/*.cobertura.xml" -targetdir:"coverage/report" -reporttypes:"HtmlInline_AzurePipelines_Dark;Cobertura"
+> ```
+
+## Architecture
+
+Coverlet.MTP uses a two-process architecture:
+
+```mermaid
+flowchart LR
+    subgraph Controller["CONTROLLER PROCESS"]
+        direction TB
+        THC["builder.TestHostControllers"]
+        PLH["AddProcessLifetimeHandler"]
+        EVP["AddEnvironmentVariableProvider"]
+        THC --> PLH
+        THC --> EVP
+    end
+
+    subgraph TestHost["TEST HOST PROCESS"]
+        direction TB
+        TH["builder.TestHost"]
+        TSLH["AddTestSessionLifetimeHandle"]
+        DC["AddDataConsumer"]
+        TALC["AddTestApplicationLifecycleCallbacks"]
+        TH --> TSLH
+        TH --> DC
+        TH --> TALC
+    end
+
+    Controller -->|"Environment Variables<br/>Process Lifecycle Events"| TestHost
+
+    style Controller fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style TestHost fill:#e6ffe6,stroke:#009900,stroke-width:2px
+```
+
+And here's a sequence diagram showing the coverlet.MTP flow:
+
+```mermaid
+sequenceDiagram
+    participant C as Controller Process<br/>(CoverletExtensionCollector)
+    participant E as Environment Variables
+    participant T as Test Host Process<br/>(CoverletInProcessHandler)
+
+    Note over C: BeforeTestHostProcessStartAsync
+    C->>C: Instrument assemblies
+    C->>E: Set COVERLET_MTP_COVERAGE_ENABLED=true
+    C->>E: Set COVERLET_MTP_COVERAGE_IDENTIFIER
+    C->>E: Set COVERLET_MTP_HITS_FILE_PATH
+
+    Note over C: OnTestHostProcessStartedAsync
+    C->>T: Start test host process
+
+    Note over T: Constructor
+    T->>E: Read environment variables
+    T->>T: Initialize handler
+
+    Note over T: OnTestSessionStartingAsync
+    T->>T: Tests execute...
+
+    Note over T: OnTestSessionFinishingAsync
+    T->>T: FlushCoverageData()
+    T->>T: Call ModuleTrackerTemplate.UnloadModule
+
+    Note over C: OnTestHostProcessExitedAsync
+    C->>C: Read hit files
+    C->>C: Generate coverage reports
+```
+
+### Environment Variables
+
+| Variable | Purpose |
+| -------- | ------- |
+| `COVERLET_MTP_COVERAGE_ENABLED` | Indicates coverage is active |
+| `COVERLET_MTP_COVERAGE_IDENTIFIER` | Unique ID for result correlation |
+| `COVERLET_MTP_HITS_FILE_PATH` | Directory for hit data files |
+| `COVERLET_MTP_INPROC_DEBUG` | Set to "1" to debug in-process handler |
+| `COVERLET_MTP_INPROC_EXCEPTIONLOG_ENABLED` | Set to "1" to rethrow exceptions from the in-process handler |
+
+## Troubleshooting
+
+### Enable Diagnostic Output
+
+Use the MTP diagnostic options to get detailed logs:
+
+```bash
+dotnet exec TestProject.dll --coverlet --diagnostic --diagnostic-verbosity trace --diagnostic-output-directory ./logs
+```
+
+### Debug Coverlet Extension
+
+Set the environment variable to attach a debugger:
+
+```bash
+set COVERLET_MTP_DEBUG=1 dotnet exec TestProject.dll --coverlet
+```
+
+## Debugging and Troubleshooting (*not tested - just defined*)
+
+### Enable Debugger Launch
+
+To launch a debugger when coverlet.MTP initializes:
+
+Windows:
+
+```shell
+set COVERLET_MTP_DEBUG=1
+```
+
+Linux/macOS:
+
+```shell
+export COVERLET_MTP_DEBUG=1
+```
+
+### Wait for Debugger Attach
+
+To make coverlet.MTP wait for a debugger to attach (Windows):
+
+```shell
+set COVERLET_MTP_DEBUG_WAIT=1
+```
+
+The extension will display:
+
+```[Coverlet.MTP] CoverletExtension: Waiting for debugger to attach... [Coverlet.MTP] Process Id: 12345, Name: dotnet```
+
+Use Visual Studio's "Debug > Attach to Process" (Ctrl+Alt+P) to attach.
+
+### Enable Tracker Logging
+
+To collect detailed logs from the injected coverage tracker (Windows):
+
+```shell
+set COVERLET_ENABLETRACKERLOG=1
+```
+
+Log files will be created near the instrumented module location:
+
+- `moduleName.dll_tracker.txt` - Main tracker log
+- `TrackersHitsLog/` folder - Detailed hit information
+
+### Enable Instrumentation Debugging
+
+For detailed instrumentation diagnostics (Windows):
+
+```shell
+set COVERLET_MTP_INSTRUMENTATION_DEBUG=1
+```
+
+### Enable Exception Logging
+
+To rethrow exceptions from the in-process handler (making failures visible as a test run error):
+
+```shell
+set COVERLET_MTP_EXCEPTIONLOG_ENABLED=1
+```
+
+Or alternatively, using the in-process specific variable:
+
+```shell
+set COVERLET_MTP_INPROC_EXCEPTIONLOG_ENABLED=1
+```
+
+By default, failures in the in-proc handler's module-unload step are recorded in the MTP diagnostics log but do not abort the test run. Setting this variable to `1` causes those failures to be rethrown.
+
+### Using MTP Built-in Diagnostics
+
+Microsoft Testing Platform provides built-in diagnostic logging (Windows):
+
+```shell
+dotnet test --diagnostic --diagnostic-verbosity Trace
+```
+
+This creates detailed logs in the `TestResults` directory.
+
+### Combined Debugging Example
+
+Enable all debugging features (Windows)
+
+```shell
+set COVERLET_MTP_DEBUG_WAIT=1 set COVERLET_ENABLETRACKERLOG=1 set COVERLET_MTP_EXCEPTIONLOG_ENABLED=1
+```
+
+Run tests with MTP diagnostics
+
+```shell
+dotnet test --coverlet --diagnostic --diagnostic-verbosity Trace
+```
+
+## Requirements
+
+- .NET 8.0 SDK or newer
+- Microsoft.Testing.Platform 2.0.0 or newer
+- Test framework with MTP support (e.g., xUnit v3 (xunit.v3.mtp-v2), MSTest v3, NUnit with MTP adapter)
+
+## Related Documentation
+
+- [VSTest Integration](VSTestIntegration.md) - For VSTest-based projects using `coverlet.collector`
+- [MSBuild Integration](MSBuildIntegration.md) - For MSBuild-based coverage collection
+- [Global Tool](GlobalTool.md) - For standalone coverage collection
+- [Known Issues](KnownIssues.md) - Common issues and workarounds

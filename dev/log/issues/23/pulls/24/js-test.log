@@ -1,0 +1,117 @@
+npm notice run @link-foundation/example-package-name@0.11.4 test
+npm notice run node --test --test-timeout=30000 tests/*.test.js
+▶ check-file-line-limits.sh
+  ✔ defines a warning band below the hard limit (7.60669ms)
+  ✔ warns without failing for files above the warning threshold (126.720535ms)
+  ✔ still fails files over the hard limit (77.895871ms)
+  ✔ fails .js and .cjs files over the hard limit (76.086636ms)
+  ✔ fails Markdown files over the hard limit (74.840382ms)
+  ✔ exempts case-study generated-data files from the limit (47.072465ms)
+  ✔ normalizes padded wc output from BSD-like environments (83.975923ms)
+✔ check-file-line-limits.sh (504.840309ms)
+▶ CI timeout policy
+  ✔ sets timeout-minutes for every release workflow job (5.768981ms)
+  ✔ sets timeout-minutes for every link workflow job (0.432527ms)
+  ✔ parses workflow files checked out with Windows line endings (6.061016ms)
+  ✔ caps individual Node.js and Bun tests at 30 seconds (0.458856ms)
+✔ CI timeout policy (15.035216ms)
+▶ create-github-release release title formatting
+  ✔ parses language from CLI arguments and environment defaults (9.84814ms)
+  ✔ builds a human-readable release name from a language-prefixed tag (11.291882ms)
+  ✔ caps oversized release notes and links to the tagged changelog (119.720407ms)
+✔ create-github-release release title formatting (153.673211ms)
+▶ create-github-release.mjs
+  ✔ uses gh api and reports successful creation only for exit code 0 (3.930853ms)
+  ✔ throws when gh api exits non-zero with an unexpected error (0.947177ms)
+  ✔ treats already_exists as an idempotent gh api result (1.001709ms)
+  ✔ passes release payload to gh api and reports success only on exit code 0 (455.115997ms)
+  ✔ passes a human-readable release name for language-prefixed tags (257.592913ms)
+  ✔ fails when gh api exits non-zero with an unexpected error (248.191958ms)
+  ✔ treats already_exists as an explicit idempotent skip (346.573671ms)
+✔ create-github-release.mjs (1316.646648ms)
+▶ optional Docker Hub publishing workflow
+  ✔ adds a Docker publish job downstream of npm release jobs (3.729566ms)
+  ✔ waits for the exact npm version before publishing Docker tags (1.508183ms)
+  ✔ uses Docker official GitHub Actions with DOCKERHUB_TOKEN authentication (0.656694ms)
+✔ optional Docker Hub publishing workflow (8.705898ms)
+▶ Docker publish configuration
+  ✔ keeps Docker publishing disabled until DOCKERHUB_IMAGE is configured (0.875713ms)
+  ✔ reports missing Docker Hub credentials when publishing is enabled (0.887074ms)
+  ✔ accepts complete Docker Hub configuration without exposing the token (0.848863ms)
+✔ Docker publish configuration (8.349314ms)
+▶ wait-for-npm.mjs
+  ✔ parses release wait options (1.290287ms)
+  ✔ retries until npm reports the requested version (0.790695ms)
+✔ wait-for-npm.mjs (4.651346ms)
+▶ add function
+  ✔ should add two positive numbers (3.521889ms)
+  ✔ should add negative numbers (2.467172ms)
+  ✔ should add zero (0.718831ms)
+✔ add function (10.294914ms)
+▶ multiply function
+  ✔ should multiply two positive numbers (0.808418ms)
+  ✔ should multiply by zero (0.571475ms)
+  ✔ should multiply negative numbers (0.561717ms)
+✔ multiply function (11.460307ms)
+▶ Changesets 3 noninteractive release creation
+  ✔ creates a scoped package changeset in a separate root containing spaces (1557.203916ms)
+✔ Changesets 3 noninteractive release creation (1562.97441ms)
+▶ package info helpers
+  ✔ reads scoped package names and versions from package.json content (2.287437ms)
+  ✔ formats npm package specifiers from the derived package name (0.494031ms)
+  ✔ formats changeset headers from the derived package name (0.332981ms)
+  ✔ matches changesets for the derived package name only (0.65983ms)
+  ✔ reports missing package names clearly (0.605579ms)
+✔ package info helpers (9.680748ms)
+▶ publishable package metadata
+  ✔ uses the real link-foundation example package name (6.906523ms)
+  ✔ defines a globally installable CLI command (0.456151ms)
+  ✔ runs package functions through the CLI command (0.466952ms)
+  ✔ runs when invoked through an npm-style bin symlink (196.655225ms)
+  ✔ publishes only the package runtime surface (0.372485ms)
+✔ publishable package metadata (210.862656ms)
+▶ release badge version normalization
+  ✔ strips a plain v prefix for backward compatibility (3.072952ms)
+  ✔ strips a js-v prefix from multi-language release tags (0.517987ms)
+  ✔ strips a rust-v prefix from multi-language release tags (0.3485ms)
+  ✔ escapes hyphens in prerelease versions for shields.io static badge paths (0.423951ms)
+  ✔ builds a valid shields.io badge URL for prefixed tags (0.395288ms)
+  ✔ builds a valid shields.io badge URL for prefixed prerelease tags (0.379258ms)
+✔ release badge version normalization (10.937652ms)
+▶ setup-npm version requirements
+  ✔ requires the project package manager and runtime floors (2.694877ms)
+  ✔ installs the pinned npm and verifies the resulting executable (1.06722ms)
+  ✔ fails if installation leaves an older executable on PATH (1.06722ms)
+✔ setup-npm version requirements (9.083254ms)
+▶ tag prefix logic
+  ✔ defaults to "v" prefix (backward compatible) (4.865084ms)
+  ✔ supports "js-v" prefix for multi-language repos (0.516744ms)
+  ✔ supports "rust-v" prefix (0.293828ms)
+  ✔ supports empty prefix (0.344272ms)
+  ✔ works with pre-release versions (0.367425ms)
+✔ tag prefix logic (9.732153ms)
+▶ universal React example app
+  ✔ defines the expected app package and build targets (4.985009ms)
+  ✔ renders a visual UI using the package add and multiply functions (2.65892ms)
+  ✔ shares the Vite build output with Capacitor and GitHub Pages (7.095706ms)
+  ✔ adds root scripts and a workflow for web, desktop, and mobile checks (1.058484ms)
+  ✔ documents local validation without store credentials (4.032472ms)
+  ✔ regenerates preview screenshots with browser-commander on every push to main (19.740642ms)
+✔ universal React example app (46.241405ms)
+▶ published Windows installer architecture selection
+  ✔ calls os.arch and preserves already-fixed upstream scripts (3.360579ms)
+✔ published Windows installer architecture selection (5.637866ms)
+▶ workflow reliability policy
+  ✔ cancels superseded non-main runs without cancelling main runs (5.826819ms)
+  ✔ uploads preview regeneration artifacts when screenshot rendering fails (1.317538ms)
+  ✔ uses the official Playwright image for preview regeneration instead of downloading Chromium (3.127334ms)
+  ✔ verifies desktop package output before uploading artifacts (65.966959ms)
+✔ workflow reliability policy (80.035942ms)
+ℹ tests 71
+ℹ suites 18
+ℹ pass 71
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2128.602498

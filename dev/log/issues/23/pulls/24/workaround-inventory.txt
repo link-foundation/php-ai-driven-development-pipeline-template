@@ -1,0 +1,28 @@
+docs/case-studies/issue-1/data/templates/js/scripts/check-docker-publish.mjs:29:function normalizeRelativePath(value, fallback) {
+docs/case-studies/issue-1/data/templates/js/scripts/check-docker-publish.mjs:30:  return clean(value) || fallback;
+docs/case-studies/issue-1/data/templates/js/scripts/setup-npm.mjs:18: * Node 26 ships a working npm, so the old Node 22 tarball/corepack fallbacks
+docs/case-studies/issue-1/data/templates/js/scripts/validate-changeset.mjs:118: * Fallback: get all changesets in directory
+docs/case-studies/issue-1/data/templates/js/scripts/validate-changeset.mjs:160:  // Fallback to checking all changesets
+docs/case-studies/issue-1/data/templates/js/scripts/update-preview-images.mjs:10: *   - docs/screenshots/example-app/example-app.png  (en/light fallback copy)
+docs/case-studies/issue-1/data/templates/js/scripts/update-preview-images.mjs:325:    const fallback = path.resolve(screenshotsDir, 'example-app.png');
+docs/case-studies/issue-1/data/templates/js/scripts/update-preview-images.mjs:326:    const fallbackSource = path.resolve(
+docs/case-studies/issue-1/data/templates/js/scripts/update-preview-images.mjs:330:    await copyFile(fallbackSource, fallback);
+docs/case-studies/issue-1/data/templates/js/scripts/update-preview-images.mjs:331:    await reportPng('fallback (en/light copy)', fallback);
+docs/case-studies/issue-1/data/templates/js/scripts/version-and-commit.mjs:75:    '  node scripts/version-and-commit.mjs --mode instant --bump-type patch --description "Fix bug"'
+docs/case-studies/issue-1/data/templates/js/scripts/check-web-archive.mjs:140:  console.log('=== Web Archive Fallback Check ===\n');
+docs/case-studies/issue-1/data/templates/js/scripts/check-web-archive.mjs:218:        `::error title=Broken link - No Web Archive fallback::` +
+tests/Pipeline/ChangelogFragmentsTest.php:74:        $this->write('b.md', "---\nbump: patch\n---\n### Fixed\n- Bug B.");
+tests/Pipeline/ChangelogFragmentsTest.php:80:        self::assertStringContainsString("### Fixed\n- Bug B.", $body);
+tests/Pipeline/WorkflowDependenciesTest.php:101:    public function testOnlyNewerUpstreamReleasesAreMarkedAsOutdated(): void
+scripts/check-workflow-dependencies.php:23:    // A newer upstream release is external state: gate it on pull requests,
+scripts/check-web-archive.php:72:    ? "All broken links have an archived fallback.\n"
+scripts/check-web-archive.php:73:    : 'Some broken links have no archived fallback.' . "\n";
+scripts/src/ChangeDetector.php:38:        // Push (or fallback): diff the last commit; first commit lists the tree.
+scripts/src/WebArchive.php:13: * template's web-archive fallback, rewritten as native PHP.
+scripts/src/WorkflowDependencies.php:11: * A newer upstream release is a fact about the world, not about the commit
+scripts/src/WorkflowDependencies.php:130:     * Like check(), but marks findings caused only by a newer upstream release
+scripts/src/WorkflowDependencies.php:201:                . 'A newer upstream release is not caused by this commit, so this run only warns. '
+docs/case-studies/issue-1/data/templates/python/scripts/detect_code_changes.py:105:    # For push events or fallback
+docs/case-studies/issue-1/data/templates/python/scripts/create_manual_changeset.py:111:                        "patch": "Fixed",  # Patch = bug fixes
+docs/case-studies/issue-1/data/templates/python/scripts/create_manual_changeset.py:145:        "patch": "Fixed",  # Patch = bug fixes
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:102:        // Fallback: first commit in PR, compare base to PR head

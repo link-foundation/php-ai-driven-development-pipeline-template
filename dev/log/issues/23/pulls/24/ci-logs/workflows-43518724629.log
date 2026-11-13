@@ -1,0 +1,925 @@
+Workflow dependency freshness	Set up job	﻿2026-11-13T22:22:52.1962887Z Current runner version: '2.338.2'
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1982688Z ##[group]Runner Image Provisioner
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1983484Z Hosted Compute Agent
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1983892Z Version: 20261103.629
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1984386Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1984915Z Build Date: 2026-11-03T17:26:59Z
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1985434Z Worker ID: {dbac4dde-26f5-4547-a982-dbb6295146e7}
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1985945Z Region: us-west-2
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1986338Z Cloud: AWS
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1986739Z ##[endgroup]
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1987601Z ##[group]Operating System
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1988087Z Ubuntu
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1988466Z 26.04.1
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1988841Z LTS
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1989217Z ##[endgroup]
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1989603Z ##[group]Runner Image
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1990037Z Image: ubuntu-26.04
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1990459Z Version: 20261111.82.6
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1991463Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261111.82/images/ubuntu/Ubuntu2604-Readme.md
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1992770Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261111.82
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1993483Z ##[endgroup]
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1994307Z ##[group]GITHUB_TOKEN Permissions
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1995858Z Contents: read
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1996298Z Metadata: read
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1996717Z ##[endgroup]
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1998225Z Secret source: Actions
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1998854Z Cache mode: write
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.1999346Z Prepare workflow directory
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.2268527Z Prepare all required actions
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.2306184Z Getting action download info
+Workflow dependency freshness	Set up job	2026-11-13T22:22:52.5565644Z Download action repository 'actions/checkout@v7.0.1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+Workflow dependency freshness	Set up job	2026-11-13T22:22:54.1164227Z Download action repository 'shivammathur/setup-php@2.40.0' (SHA:eb7c497e18156a6bbabfef1d3a82760b9eda3962)
+Workflow dependency freshness	Set up job	2026-11-13T22:22:54.4421616Z Complete job name: Workflow dependency freshness
+Workflow dependency freshness	Run actions/checkout@v7.0.1	﻿2026-11-13T22:22:54.5106014Z ##[group]Run actions/checkout@v7.0.1
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:54.5106958Z with:
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:54.5107530Z   persist-credentials: false
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:54.5108451Z   repository: link-foundation/php-ai-driven-development-pipeline-template
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:54.5115078Z   token: ***
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:54.5115601Z   ssh-strict: true
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:54.5116145Z   ssh-user: git
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:54.5116651Z   clean: true
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:54.5117182Z   sparse-checkout-cone-mode: true
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:54.5117817Z   fetch-depth: 1
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:54.5118371Z   fetch-tags: false
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:54.5118902Z   show-progress: true
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:54.5119458Z   lfs: false
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:54.5119980Z   submodules: false
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:54.5120516Z   set-safe-directory: true
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:54.5121346Z   allow-unsafe-pr-checkout: false
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:54.5122215Z env:
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:54.5122693Z   GIT_CONFIG_COUNT: 1
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:54.5123268Z   GIT_CONFIG_KEY_0: init.defaultBranch
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:54.5123934Z   GIT_CONFIG_VALUE_0: main
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:54.5124644Z ##[endgroup]
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:57.9942835Z Syncing repository: link-foundation/php-ai-driven-development-pipeline-template
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:57.9945014Z ##[group]Getting Git version info
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:57.9945924Z Working directory is '/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template'
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:57.9947197Z [command]/usr/bin/git version
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:57.9947618Z git version 2.56.1
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:57.9961944Z ##[endgroup]
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:57.9969507Z Temporarily overriding HOME='/home/runner/work/_temp/cd8a36de-666b-4a42-8b76-4f5e1ffa3d6e' before making global git config changes
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:57.9971055Z Adding repository directory to the temporary git global config as a safe directory
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:57.9974441Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.1265757Z Deleting the contents of '/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template'
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.1267877Z ##[group]Determining repository object format
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.1268832Z ##[endgroup]
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.1269387Z ##[group]Initializing the repository
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.1273318Z [command]/usr/bin/git init /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.1737908Z Initialized empty Git repository in /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.1745459Z [command]/usr/bin/git remote add origin https://github.com/link-foundation/php-ai-driven-development-pipeline-template
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.1805409Z ##[endgroup]
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.1806064Z ##[group]Disabling automatic garbage collection
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.1807631Z [command]/usr/bin/git config --local gc.auto 0
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.1832666Z ##[endgroup]
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.1833561Z ##[group]Setting up auth
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.1834576Z Removing SSH command configuration
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.1835952Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.1859831Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.4448520Z Removing HTTP extra header
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.4453364Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.4481083Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.4657953Z Removing includeIf entries pointing to credentials config files
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.4663631Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.4687746Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.4868371Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-62583d25-313e-4978-aeb9-39ae83fbe42c.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.4896226Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path /home/runner/work/_temp/git-credentials-62583d25-313e-4978-aeb9-39ae83fbe42c.config
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.4917382Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-62583d25-313e-4978-aeb9-39ae83fbe42c.config
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.4940058Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-62583d25-313e-4978-aeb9-39ae83fbe42c.config
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.4959875Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-62583d25-313e-4978-aeb9-39ae83fbe42c.config
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.4978158Z ##[endgroup]
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.4978592Z ##[group]Fetching the repository
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:58.4983705Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5cd7eaa5aa64f6057e77479560dd5a639a4d11b2:refs/remotes/pull/24/merge
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.0759802Z From https://github.com/link-foundation/php-ai-driven-development-pipeline-template
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.0760436Z  * [new ref]         5cd7eaa5aa64f6057e77479560dd5a639a4d11b2 -> pull/24/merge
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.0774789Z ##[endgroup]
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.0775597Z ##[group]Determining the checkout info
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.0776475Z ##[endgroup]
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.0776919Z [command]/usr/bin/git sparse-checkout disable
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.0816010Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.0838178Z ##[group]Checking out the ref
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.0841858Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/24/merge
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1010532Z Note: switching to 'refs/remotes/pull/24/merge'.
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1011230Z 
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1011467Z You are in 'detached HEAD' state. You can look around, make experimental
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1011960Z changes and commit them, and you can discard any commits you make in this
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1012368Z state without impacting any branches by switching back to a branch.
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1012643Z 
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1012832Z If you want to create a new branch to retain commits you create, you may
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1013222Z do so (now or later) by using -c with the switch command. Example:
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1013662Z 
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1013913Z   git switch -c <new-branch-name>
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1014171Z 
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1014339Z Or undo this operation with:
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1014518Z 
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1014665Z   git switch -
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1014851Z 
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1015133Z Turn off this advice by setting config variable advice.detachedHead to false
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1015461Z 
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1015835Z HEAD is now at 5cd7eaa Merge 2b8dfea36b5926392c767eeaa192d85b603a7b89 into dda0eb244919927efb7e8668d120996d9d82489f
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1020249Z ##[endgroup]
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1056450Z [command]/usr/bin/git log -1 --format=%H
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1074255Z 5cd7eaa5aa64f6057e77479560dd5a639a4d11b2
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1080072Z ##[group]Removing auth
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1080458Z Removing SSH command configuration
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1083347Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1103565Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1292939Z Removing HTTP extra header
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1293865Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1313793Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1484891Z Removing includeIf entries pointing to credentials config files
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1487334Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1503605Z includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1504572Z includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1505517Z includeif.gitdir:/github/workspace/.git.path
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1505881Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1509265Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1527181Z /home/runner/work/_temp/git-credentials-62583d25-313e-4978-aeb9-39ae83fbe42c.config
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1533606Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-62583d25\-313e\-4978\-aeb9\-39ae83fbe42c\.config
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1567112Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1582651Z /home/runner/work/_temp/git-credentials-62583d25-313e-4978-aeb9-39ae83fbe42c.config
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1588476Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-62583d25\-313e\-4978\-aeb9\-39ae83fbe42c\.config
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1609768Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1625292Z /github/runner_temp/git-credentials-62583d25-313e-4978-aeb9-39ae83fbe42c.config
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1629707Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-62583d25\-313e\-4978\-aeb9\-39ae83fbe42c\.config
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1651903Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1673318Z /github/runner_temp/git-credentials-62583d25-313e-4978-aeb9-39ae83fbe42c.config
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1678024Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-62583d25\-313e\-4978\-aeb9\-39ae83fbe42c\.config
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1699803Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1874098Z Removing credentials config '/home/runner/work/_temp/git-credentials-62583d25-313e-4978-aeb9-39ae83fbe42c.config'
+Workflow dependency freshness	Run actions/checkout@v7.0.1	2026-11-13T22:22:59.1879738Z ##[endgroup]
+Workflow dependency freshness	Setup PHP	﻿2026-11-13T22:22:59.2051528Z ##[group]Run shivammathur/setup-php@2.40.0
+Workflow dependency freshness	Setup PHP	2026-11-13T22:22:59.2051849Z with:
+Workflow dependency freshness	Setup PHP	2026-11-13T22:22:59.2052096Z   php-version: 8.5.12
+Workflow dependency freshness	Setup PHP	2026-11-13T22:22:59.2052325Z   coverage: none
+Workflow dependency freshness	Setup PHP	2026-11-13T22:22:59.2052561Z   ini-file: production
+Workflow dependency freshness	Setup PHP	2026-11-13T22:22:59.2054628Z   github-token: ***
+Workflow dependency freshness	Setup PHP	2026-11-13T22:22:59.2054853Z env:
+Workflow dependency freshness	Setup PHP	2026-11-13T22:22:59.2055089Z   GIT_CONFIG_COUNT: 1
+Workflow dependency freshness	Setup PHP	2026-11-13T22:22:59.2055333Z   GIT_CONFIG_KEY_0: init.defaultBranch
+Workflow dependency freshness	Setup PHP	2026-11-13T22:22:59.2055615Z   GIT_CONFIG_VALUE_0: main
+Workflow dependency freshness	Setup PHP	2026-11-13T22:22:59.2055848Z ##[endgroup]
+Workflow dependency freshness	Setup PHP	2026-11-13T22:22:59.2353349Z [command]/usr/bin/bash /home/runner/work/_actions/shivammathur/setup-php/2.40.0/src/scripts/run.sh
+Workflow dependency freshness	Setup PHP	2026-11-13T22:22:59.2711089Z 
+Workflow dependency freshness	Setup PHP	2026-11-13T22:22:59.2712056Z ^[[90;1m==> ^[[0m^[[37;1mSetup PHP^[[0m
+Workflow dependency freshness	Setup PHP	2026-11-13T22:23:25.2819752Z ^[[32;1m✓ ^[[0m^[[34;1mPHP ^[[0m^[[90;1mUpdated to PHP 8.5.12^[[0m
+Workflow dependency freshness	Setup PHP	2026-11-13T22:23:25.2820232Z 
+Workflow dependency freshness	Setup PHP	2026-11-13T22:23:25.2821253Z ^[[90;1m==> ^[[0m^[[37;1mSetup Tools^[[0m
+Workflow dependency freshness	Setup PHP	2026-11-13T22:23:25.5752895Z ^[[32;1m✓ ^[[0m^[[34;1mcomposer ^[[0m^[[90;1mAdded composer 2.11.2^[[0m
+Workflow dependency freshness	Setup PHP	2026-11-13T22:23:25.5753573Z 
+Workflow dependency freshness	Setup PHP	2026-11-13T22:23:25.5754384Z ^[[90;1m==> ^[[0m^[[37;1mSetup Coverage^[[0m
+Workflow dependency freshness	Setup PHP	2026-11-13T22:23:25.7978140Z ^[[32;1m✓ ^[[0m^[[34;1mnone ^[[0m^[[90;1mDisabled Xdebug and PCOV^[[0m
+Workflow dependency freshness	Setup PHP	2026-11-13T22:23:25.7978653Z 
+Workflow dependency freshness	Setup PHP	2026-11-13T22:23:25.7979121Z ^[[90;1m==> ^[[0m^[[37;1mSponsor setup-php^[[0m
+Workflow dependency freshness	Setup PHP	2026-11-13T22:23:25.7979795Z ^[[32;1m✓ ^[[0m^[[34;1msetup-php ^[[0m^[[90;1mhttps://setup-php.com/sponsor^[[0m
+Workflow dependency freshness	Check runner images and action/tool releases	﻿2026-11-13T22:23:25.8126353Z ##[group]Run php scripts/check-workflow-dependencies.php
+Workflow dependency freshness	Check runner images and action/tool releases	2026-11-13T22:23:25.8126818Z ^[[36;1mphp scripts/check-workflow-dependencies.php^[[0m
+Workflow dependency freshness	Check runner images and action/tool releases	2026-11-13T22:23:25.8152037Z shell: /usr/bin/bash -e {0}
+Workflow dependency freshness	Check runner images and action/tool releases	2026-11-13T22:23:25.8152349Z env:
+Workflow dependency freshness	Check runner images and action/tool releases	2026-11-13T22:23:25.8152660Z   GIT_CONFIG_COUNT: 1
+Workflow dependency freshness	Check runner images and action/tool releases	2026-11-13T22:23:25.8152912Z   GIT_CONFIG_KEY_0: init.defaultBranch
+Workflow dependency freshness	Check runner images and action/tool releases	2026-11-13T22:23:25.8153239Z   GIT_CONFIG_VALUE_0: main
+Workflow dependency freshness	Check runner images and action/tool releases	2026-11-13T22:23:25.8153492Z   COMPOSER_PROCESS_TIMEOUT: 0
+Workflow dependency freshness	Check runner images and action/tool releases	2026-11-13T22:23:25.8153742Z   COMPOSER_NO_INTERACTION: 1
+Workflow dependency freshness	Check runner images and action/tool releases	2026-11-13T22:23:25.8153992Z   COMPOSER_NO_AUDIT: 1
+Workflow dependency freshness	Check runner images and action/tool releases	2026-11-13T22:23:25.8156035Z   GH_TOKEN: ***
+Workflow dependency freshness	Check runner images and action/tool releases	2026-11-13T22:23:25.8156304Z ##[endgroup]
+Workflow dependency freshness	Check runner images and action/tool releases	2026-11-13T22:23:44.7055137Z All hosted runner images are explicit and workflow dependencies use current stable releases.
+Workflow dependency freshness	Post Run actions/checkout@v7.0.1	﻿2026-11-13T22:23:44.7229022Z Post job cleanup.
+Workflow dependency freshness	Post Run actions/checkout@v7.0.1	2026-11-13T22:23:44.7929185Z [command]/usr/bin/git version
+Workflow dependency freshness	Post Run actions/checkout@v7.0.1	2026-11-13T22:23:44.7961843Z git version 2.56.1
+Workflow dependency freshness	Post Run actions/checkout@v7.0.1	2026-11-13T22:23:44.7985026Z Temporarily overriding HOME='/home/runner/work/_temp/663eb0e3-2c95-4783-8f43-d44f3594e3d7' before making global git config changes
+Workflow dependency freshness	Post Run actions/checkout@v7.0.1	2026-11-13T22:23:44.7986235Z Adding repository directory to the temporary git global config as a safe directory
+Workflow dependency freshness	Post Run actions/checkout@v7.0.1	2026-11-13T22:23:44.7988929Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template
+Workflow dependency freshness	Post Run actions/checkout@v7.0.1	2026-11-13T22:23:44.8015198Z Removing SSH command configuration
+Workflow dependency freshness	Post Run actions/checkout@v7.0.1	2026-11-13T22:23:44.8019770Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Workflow dependency freshness	Post Run actions/checkout@v7.0.1	2026-11-13T22:23:44.8044244Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Workflow dependency freshness	Post Run actions/checkout@v7.0.1	2026-11-13T22:23:44.8240216Z Removing HTTP extra header
+Workflow dependency freshness	Post Run actions/checkout@v7.0.1	2026-11-13T22:23:44.8243955Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Workflow dependency freshness	Post Run actions/checkout@v7.0.1	2026-11-13T22:23:44.8268155Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Workflow dependency freshness	Post Run actions/checkout@v7.0.1	2026-11-13T22:23:44.8462817Z Removing includeIf entries pointing to credentials config files
+Workflow dependency freshness	Post Run actions/checkout@v7.0.1	2026-11-13T22:23:44.8467192Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Workflow dependency freshness	Post Run actions/checkout@v7.0.1	2026-11-13T22:23:44.8493200Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Workflow dependency freshness	Complete job	﻿2026-11-13T22:23:44.8786282Z Cleaning up orphan processes
+actionlint	Set up job	﻿2026-11-13T22:24:30.0650015Z Current runner version: '2.338.2'
+actionlint	Set up job	2026-11-13T22:24:30.0670244Z ##[group]Runner Image Provisioner
+actionlint	Set up job	2026-11-13T22:24:30.0670898Z Hosted Compute Agent
+actionlint	Set up job	2026-11-13T22:24:30.0671291Z Version: 20261103.629
+actionlint	Set up job	2026-11-13T22:24:30.0671745Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+actionlint	Set up job	2026-11-13T22:24:30.0672211Z Build Date: 2026-11-03T17:26:59Z
+actionlint	Set up job	2026-11-13T22:24:30.0672669Z Worker ID: {ab399e10-6a95-40b3-b3b4-aca4a6ef32d1}
+actionlint	Set up job	2026-11-13T22:24:30.0673171Z Region: northcentralus
+actionlint	Set up job	2026-11-13T22:24:30.0673543Z Cloud: Azure
+actionlint	Set up job	2026-11-13T22:24:30.0673929Z ##[endgroup]
+actionlint	Set up job	2026-11-13T22:24:30.0674771Z ##[group]Operating System
+actionlint	Set up job	2026-11-13T22:24:30.0675175Z Ubuntu
+actionlint	Set up job	2026-11-13T22:24:30.0675601Z 26.04.1
+actionlint	Set up job	2026-11-13T22:24:30.0675964Z LTS
+actionlint	Set up job	2026-11-13T22:24:30.0676338Z ##[endgroup]
+actionlint	Set up job	2026-11-13T22:24:30.0676690Z ##[group]Runner Image
+actionlint	Set up job	2026-11-13T22:24:30.0677075Z Image: ubuntu-26.04
+actionlint	Set up job	2026-11-13T22:24:30.0677524Z Version: 20261111.196.1
+actionlint	Set up job	2026-11-13T22:24:30.0678413Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261111.196/images/ubuntu/Ubuntu2604-Readme.md
+actionlint	Set up job	2026-11-13T22:24:30.0679587Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261111.196
+actionlint	Set up job	2026-11-13T22:24:30.0680193Z ##[endgroup]
+actionlint	Set up job	2026-11-13T22:24:30.0681003Z ##[group]GITHUB_TOKEN Permissions
+actionlint	Set up job	2026-11-13T22:24:30.0682307Z Contents: read
+actionlint	Set up job	2026-11-13T22:24:30.0682747Z Metadata: read
+actionlint	Set up job	2026-11-13T22:24:30.0683100Z ##[endgroup]
+actionlint	Set up job	2026-11-13T22:24:30.0684630Z Secret source: Actions
+actionlint	Set up job	2026-11-13T22:24:30.0685238Z Cache mode: write
+actionlint	Set up job	2026-11-13T22:24:30.0685720Z Prepare workflow directory
+actionlint	Set up job	2026-11-13T22:24:30.0985715Z Prepare all required actions
+actionlint	Set up job	2026-11-13T22:24:30.1021906Z Getting action download info
+actionlint	Set up job	2026-11-13T22:24:30.3058349Z Download action repository 'actions/checkout@v7.0.1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+actionlint	Set up job	2026-11-13T22:24:30.4434882Z Complete job name: actionlint
+actionlint	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	﻿2026-11-13T22:24:30.4826636Z ##[group]Pull down action image 'rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667'
+actionlint	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-11-13T22:24:30.4912399Z ##[command]/usr/bin/docker pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667
+actionlint	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-11-13T22:24:30.9598894Z docker.io/rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667: Pulling from rhysd/actionlint
+actionlint	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-11-13T22:24:31.1391104Z 589002ba0eae: Pulling fs layer
+actionlint	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-11-13T22:24:31.1392034Z b6b4b7b0e257: Pulling fs layer
+actionlint	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-11-13T22:24:31.1392411Z c09af8888d6a: Pulling fs layer
+actionlint	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-11-13T22:24:31.1392880Z 4ccd7d76ca98: Pulling fs layer
+actionlint	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-11-13T22:24:31.2657294Z c09af8888d6a: Download complete
+actionlint	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-11-13T22:24:31.2658361Z 589002ba0eae: Download complete
+actionlint	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-11-13T22:24:31.3656958Z 4ccd7d76ca98: Download complete
+actionlint	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-11-13T22:24:31.3661755Z b6b4b7b0e257: Download complete
+actionlint	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-11-13T22:24:31.3675486Z 589002ba0eae: Pull complete
+actionlint	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-11-13T22:24:31.4668092Z 402b0b0a10fa: Download complete
+actionlint	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-11-13T22:24:31.4685342Z c09af8888d6a: Pull complete
+actionlint	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-11-13T22:24:31.4701899Z 4ccd7d76ca98: Pull complete
+actionlint	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-11-13T22:24:31.6612834Z b6b4b7b0e257: Pull complete
+actionlint	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-11-13T22:24:31.6614933Z Digest: sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667
+actionlint	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-11-13T22:24:31.6617330Z Status: Downloaded newer image for rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667
+actionlint	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-11-13T22:24:31.6621782Z docker.io/rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667
+actionlint	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-11-13T22:24:31.6651723Z ##[endgroup]
+actionlint	Run actions/checkout@v7.0.1	﻿2026-11-13T22:24:31.6995465Z ##[group]Run actions/checkout@v7.0.1
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.6996397Z with:
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.6996972Z   persist-credentials: false
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.6997968Z   repository: link-foundation/php-ai-driven-development-pipeline-template
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.7003982Z   token: ***
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.7004541Z   ssh-strict: true
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.7005122Z   ssh-user: git
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.7005678Z   clean: true
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.7006279Z   sparse-checkout-cone-mode: true
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.7006980Z   fetch-depth: 1
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.7007771Z   fetch-tags: false
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.7008447Z   show-progress: true
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.7009090Z   lfs: false
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.7009632Z   submodules: false
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.7010232Z   set-safe-directory: true
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.7010914Z   allow-unsafe-pr-checkout: false
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.7011702Z env:
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.7012221Z   GIT_CONFIG_COUNT: 1
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.7012848Z   GIT_CONFIG_KEY_0: init.defaultBranch
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.7013580Z   GIT_CONFIG_VALUE_0: main
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.7014248Z ##[endgroup]
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9094717Z Syncing repository: link-foundation/php-ai-driven-development-pipeline-template
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9098595Z ##[group]Getting Git version info
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9101148Z Working directory is '/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template'
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9104448Z [command]/usr/bin/git version
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9105460Z git version 2.56.1
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9108498Z ##[endgroup]
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9115324Z Temporarily overriding HOME='/home/runner/work/_temp/98728615-0cf9-4b8d-8ee0-a27262a49045' before making global git config changes
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9118306Z Adding repository directory to the temporary git global config as a safe directory
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9121732Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9175565Z Deleting the contents of '/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template'
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9179521Z ##[group]Determining repository object format
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9181738Z ##[endgroup]
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9183427Z ##[group]Initializing the repository
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9185854Z [command]/usr/bin/git init /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9284678Z Initialized empty Git repository in /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9293516Z [command]/usr/bin/git remote add origin https://github.com/link-foundation/php-ai-driven-development-pipeline-template
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9340633Z ##[endgroup]
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9342220Z ##[group]Disabling automatic garbage collection
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9343611Z [command]/usr/bin/git config --local gc.auto 0
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9377206Z ##[endgroup]
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9379199Z ##[group]Setting up auth
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9380606Z Removing SSH command configuration
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9382370Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9418166Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9844183Z Removing HTTP extra header
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9848594Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:31.9880711Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.0109235Z Removing includeIf entries pointing to credentials config files
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.0113069Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.0142240Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.0375451Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-b49ddad1-9eb8-4240-854a-338837a7e2c9.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.0411705Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path /home/runner/work/_temp/git-credentials-b49ddad1-9eb8-4240-854a-338837a7e2c9.config
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.0441561Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-b49ddad1-9eb8-4240-854a-338837a7e2c9.config
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.0473626Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-b49ddad1-9eb8-4240-854a-338837a7e2c9.config
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.0502480Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-b49ddad1-9eb8-4240-854a-338837a7e2c9.config
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.0528414Z ##[endgroup]
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.0529438Z ##[group]Fetching the repository
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.0533773Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5cd7eaa5aa64f6057e77479560dd5a639a4d11b2:refs/remotes/pull/24/merge
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4404209Z From https://github.com/link-foundation/php-ai-driven-development-pipeline-template
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4404815Z  * [new ref]         5cd7eaa5aa64f6057e77479560dd5a639a4d11b2 -> pull/24/merge
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4413306Z ##[endgroup]
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4413729Z ##[group]Determining the checkout info
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4414246Z ##[endgroup]
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4415753Z [command]/usr/bin/git sparse-checkout disable
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4512415Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4542016Z ##[group]Checking out the ref
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4545431Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/24/merge
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4743503Z Note: switching to 'refs/remotes/pull/24/merge'.
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4743919Z 
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4744182Z You are in 'detached HEAD' state. You can look around, make experimental
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4744534Z changes and commit them, and you can discard any commits you make in this
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4744911Z state without impacting any branches by switching back to a branch.
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4745116Z 
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4745321Z If you want to create a new branch to retain commits you create, you may
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4745642Z do so (now or later) by using -c with the switch command. Example:
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4745830Z 
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4745961Z   git switch -c <new-branch-name>
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4746122Z 
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4746212Z Or undo this operation with:
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4746325Z 
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4746403Z   git switch -
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4746513Z 
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4746679Z Turn off this advice by setting config variable advice.detachedHead to false
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4746878Z 
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4747144Z HEAD is now at 5cd7eaa Merge 2b8dfea36b5926392c767eeaa192d85b603a7b89 into dda0eb244919927efb7e8668d120996d9d82489f
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4753224Z ##[endgroup]
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4798753Z [command]/usr/bin/git log -1 --format=%H
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4823752Z 5cd7eaa5aa64f6057e77479560dd5a639a4d11b2
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4831727Z ##[group]Removing auth
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4832081Z Removing SSH command configuration
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4834770Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.4862920Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5100627Z Removing HTTP extra header
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5103513Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5132807Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5364664Z Removing includeIf entries pointing to credentials config files
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5366829Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5391641Z includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5392462Z includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5392991Z includeif.gitdir:/github/workspace/.git.path
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5393254Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5399605Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5420982Z /home/runner/work/_temp/git-credentials-b49ddad1-9eb8-4240-854a-338837a7e2c9.config
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5430385Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-b49ddad1\-9eb8\-4240\-854a\-338837a7e2c9\.config
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5467576Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5488980Z /home/runner/work/_temp/git-credentials-b49ddad1-9eb8-4240-854a-338837a7e2c9.config
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5496947Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-b49ddad1\-9eb8\-4240\-854a\-338837a7e2c9\.config
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5526621Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5549846Z /github/runner_temp/git-credentials-b49ddad1-9eb8-4240-854a-338837a7e2c9.config
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5555994Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-b49ddad1\-9eb8\-4240\-854a\-338837a7e2c9\.config
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5610141Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5631772Z /github/runner_temp/git-credentials-b49ddad1-9eb8-4240-854a-338837a7e2c9.config
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5637446Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-b49ddad1\-9eb8\-4240\-854a\-338837a7e2c9\.config
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5668850Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5897083Z Removing credentials config '/home/runner/work/_temp/git-credentials-b49ddad1-9eb8-4240-854a-338837a7e2c9.config'
+actionlint	Run actions/checkout@v7.0.1	2026-11-13T22:24:32.5905240Z ##[endgroup]
+actionlint	Lint workflow files	﻿2026-11-13T22:24:32.6065510Z ##[group]Run docker://rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667
+actionlint	Lint workflow files	2026-11-13T22:24:32.6065884Z with:
+actionlint	Lint workflow files	2026-11-13T22:24:32.6066068Z   args: -color
+actionlint	Lint workflow files	2026-11-13T22:24:32.6066219Z env:
+actionlint	Lint workflow files	2026-11-13T22:24:32.6066369Z   GIT_CONFIG_COUNT: 1
+actionlint	Lint workflow files	2026-11-13T22:24:32.6066546Z   GIT_CONFIG_KEY_0: init.defaultBranch
+actionlint	Lint workflow files	2026-11-13T22:24:32.6066754Z   GIT_CONFIG_VALUE_0: main
+actionlint	Lint workflow files	2026-11-13T22:24:32.6066928Z ##[endgroup]
+actionlint	Lint workflow files	2026-11-13T22:24:32.6204937Z ##[command]/usr/bin/docker run --name rhysdactionlintsha256b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667_24ac10 --label 6b6385 --workdir /github/workspace --rm -e "GIT_CONFIG_COUNT" -e "GIT_CONFIG_KEY_0" -e "GIT_CONFIG_VALUE_0" -e "INPUT_ARGS" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "GITHUB_ARTIFACTS" -e "GITHUB_ARTIFACTS_LIST" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e "ACTIONS_CACHE_MODE" -e "ACTIONS_ORCHESTRATION_ID" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp":"/github/runner_temp" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template":"/github/workspace" rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667 -color
+actionlint	Lint workflow files	2026-11-13T22:24:33.4066222Z ^[[33m.github/workflows/docs.yml^[[0m^[[90m:^[[0m38^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4070256Z ^[[0m^[[90m   |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4071106Z ^[[0m^[[90m38 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4071498Z ^[[90m   | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4074557Z ^[[33m.github/workflows/docs.yml^[[0m^[[90m:^[[0m76^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4077497Z ^[[0m^[[90m   |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4077747Z ^[[0m^[[90m76 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4079132Z ^[[90m   | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4082961Z ^[[33m.github/workflows/docs.yml^[[0m^[[90m:^[[0m100^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4085707Z ^[[0m^[[90m    |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4085938Z ^[[0m^[[90m100 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4086168Z ^[[90m    | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4088617Z ^[[33m.github/workflows/links.yml^[[0m^[[90m:^[[0m39^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4091383Z ^[[0m^[[90m   |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4091671Z ^[[0m^[[90m39 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4091987Z ^[[90m   | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4094317Z ^[[33m.github/workflows/links.yml^[[0m^[[90m:^[[0m130^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4096125Z ^[[0m^[[90m    |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4096290Z ^[[0m^[[90m130 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4096485Z ^[[90m    | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4100056Z ^[[33m.github/workflows/release.yml^[[0m^[[90m:^[[0m40^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4101954Z ^[[0m^[[90m   |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4102202Z ^[[0m^[[90m40 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4102404Z ^[[90m   | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4104536Z ^[[33m.github/workflows/release.yml^[[0m^[[90m:^[[0m74^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4106203Z ^[[0m^[[90m   |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4106364Z ^[[0m^[[90m74 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4106558Z ^[[90m   | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4108801Z ^[[33m.github/workflows/release.yml^[[0m^[[90m:^[[0m146^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4110550Z ^[[0m^[[90m    |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4110759Z ^[[0m^[[90m146 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4110963Z ^[[90m    | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4112760Z ^[[33m.github/workflows/release.yml^[[0m^[[90m:^[[0m179^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4114251Z ^[[0m^[[90m    |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4114404Z ^[[0m^[[90m179 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4114603Z ^[[90m    | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4116408Z ^[[33m.github/workflows/release.yml^[[0m^[[90m:^[[0m227^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4118494Z ^[[0m^[[90m    |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4118723Z ^[[0m^[[90m227 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4119023Z ^[[90m    | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4121187Z ^[[33m.github/workflows/release.yml^[[0m^[[90m:^[[0m268^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4122687Z ^[[0m^[[90m    |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4122838Z ^[[0m^[[90m268 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4123033Z ^[[90m    | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4124817Z ^[[33m.github/workflows/release.yml^[[0m^[[90m:^[[0m322^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4126311Z ^[[0m^[[90m    |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4126465Z ^[[0m^[[90m322 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4126665Z ^[[90m    | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4128674Z ^[[33m.github/workflows/release.yml^[[0m^[[90m:^[[0m415^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4130189Z ^[[0m^[[90m    |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4130462Z ^[[0m^[[90m415 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4130656Z ^[[90m    | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4132437Z ^[[33m.github/workflows/release.yml^[[0m^[[90m:^[[0m498^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4134009Z ^[[0m^[[90m    |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4134164Z ^[[0m^[[90m498 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4134358Z ^[[90m    | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4136150Z ^[[33m.github/workflows/security.yml^[[0m^[[90m:^[[0m26^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4137638Z ^[[0m^[[90m   |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4137792Z ^[[0m^[[90m26 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4137988Z ^[[90m   | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4139930Z ^[[33m.github/workflows/security.yml^[[0m^[[90m:^[[0m51^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4141419Z ^[[0m^[[90m   |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4141578Z ^[[0m^[[90m51 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4141770Z ^[[90m   | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4143553Z ^[[33m.github/workflows/security.yml^[[0m^[[90m:^[[0m83^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4145153Z ^[[0m^[[90m   |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4145441Z ^[[0m^[[90m83 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4145632Z ^[[90m   | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4147413Z ^[[33m.github/workflows/security.yml^[[0m^[[90m:^[[0m111^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4149856Z ^[[0m^[[90m    |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4150090Z ^[[0m^[[90m111 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4150393Z ^[[90m    | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4153539Z ^[[33m.github/workflows/templates.yml^[[0m^[[90m:^[[0m26^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4156337Z ^[[0m^[[90m   |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4156516Z ^[[0m^[[90m26 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4156852Z ^[[90m   | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4159632Z ^[[33m.github/workflows/templates.yml^[[0m^[[90m:^[[0m56^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4162054Z ^[[0m^[[90m   |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4162294Z ^[[0m^[[90m56 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4162590Z ^[[90m   | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4165635Z ^[[33m.github/workflows/templates.yml^[[0m^[[90m:^[[0m89^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4168658Z ^[[0m^[[90m   |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4168912Z ^[[0m^[[90m89 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4169222Z ^[[90m   | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4172323Z ^[[33m.github/workflows/templates.yml^[[0m^[[90m:^[[0m118^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4175232Z ^[[0m^[[90m    |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4175523Z ^[[0m^[[90m118 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4175722Z ^[[90m    | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4177536Z ^[[33m.github/workflows/workflows.yml^[[0m^[[90m:^[[0m36^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4179299Z ^[[0m^[[90m   |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4179461Z ^[[0m^[[90m36 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4179725Z ^[[90m   | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4181594Z ^[[33m.github/workflows/workflows.yml^[[0m^[[90m:^[[0m57^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4183087Z ^[[0m^[[90m   |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4183246Z ^[[0m^[[90m57 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4183442Z ^[[90m   | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4185224Z ^[[33m.github/workflows/workflows.yml^[[0m^[[90m:^[[0m90^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4186919Z ^[[0m^[[90m   |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4187076Z ^[[0m^[[90m90 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4187266Z ^[[90m   | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Lint workflow files	2026-11-13T22:24:33.4189212Z ^[[33m.github/workflows/workflows.yml^[[0m^[[90m:^[[0m148^[[90m:^[[0m14^[[90m: ^[[0m^[[1mlabel "ubuntu-26.04" is unknown. available labels are "windows-latest", "windows-latest-8-cores", "windows-2025", "windows-2025-vs2026", "windows-2022", "windows-11-arm", "ubuntu-slim", "ubuntu-latest", "ubuntu-latest-4-cores", "ubuntu-latest-8-cores", "ubuntu-latest-16-cores", "ubuntu-24.04", "ubuntu-24.04-arm", "ubuntu-22.04", "ubuntu-22.04-arm", "macos-latest", "macos-latest-xlarge", "macos-latest-large", "macos-26-intel", "macos-26-xlarge", "macos-26-large", "macos-26", "macos-15-intel", "macos-15-xlarge", "macos-15-large", "macos-15", "macos-14-xlarge", "macos-14-large", "macos-14", "self-hosted", "x64", "arm", "arm64", "linux", "macos", "windows". if it is a custom label for self-hosted runner, set list of labels in actionlint.yaml config file^[[0m^[[90m [runner-label]
+actionlint	Lint workflow files	2026-11-13T22:24:33.4190706Z ^[[0m^[[90m    |
+actionlint	Lint workflow files	2026-11-13T22:24:33.4190863Z ^[[0m^[[90m148 | ^[[0m    runs-on: ubuntu-26.04
+actionlint	Lint workflow files	2026-11-13T22:24:33.4191062Z ^[[90m    | ^[[0m^[[32m             ^~~~~~~~~~~~^[[0m
+actionlint	Post Run actions/checkout@v7.0.1	﻿2026-11-13T22:24:33.4932532Z Post job cleanup.
+actionlint	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:33.5578675Z [command]/usr/bin/git version
+actionlint	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:33.5596668Z git version 2.56.1
+actionlint	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:33.5622515Z Temporarily overriding HOME='/home/runner/work/_temp/0bec32c0-5276-4cc4-b1f1-2090be51baea' before making global git config changes
+actionlint	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:33.5623361Z Adding repository directory to the temporary git global config as a safe directory
+actionlint	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:33.5626179Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template
+actionlint	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:33.5662411Z Removing SSH command configuration
+actionlint	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:33.5668306Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+actionlint	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:33.5704407Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+actionlint	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:33.5980557Z Removing HTTP extra header
+actionlint	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:33.5986473Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+actionlint	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6039437Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+actionlint	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6296813Z Removing includeIf entries pointing to credentials config files
+actionlint	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6304602Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+actionlint	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6337985Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+actionlint	Complete job	﻿2026-11-13T22:24:33.6826931Z Cleaning up orphan processes
+zizmor	Set up job	﻿2026-11-13T22:24:32.2357387Z Current runner version: '2.338.2'
+zizmor	Set up job	2026-11-13T22:24:32.2382712Z ##[group]Runner Image Provisioner
+zizmor	Set up job	2026-11-13T22:24:32.2383755Z Hosted Compute Agent
+zizmor	Set up job	2026-11-13T22:24:32.2384241Z Version: 20261103.629
+zizmor	Set up job	2026-11-13T22:24:32.2384817Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+zizmor	Set up job	2026-11-13T22:24:32.2385457Z Build Date: 2026-11-03T17:26:59Z
+zizmor	Set up job	2026-11-13T22:24:32.2386033Z Worker ID: {767102f1-999c-4749-80a4-1d68aba6bb91}
+zizmor	Set up job	2026-11-13T22:24:32.2386710Z Region: southcentralus
+zizmor	Set up job	2026-11-13T22:24:32.2387231Z Cloud: Azure
+zizmor	Set up job	2026-11-13T22:24:32.2387715Z ##[endgroup]
+zizmor	Set up job	2026-11-13T22:24:32.2389113Z ##[group]Operating System
+zizmor	Set up job	2026-11-13T22:24:32.2389633Z Ubuntu
+zizmor	Set up job	2026-11-13T22:24:32.2390162Z 26.04.1
+zizmor	Set up job	2026-11-13T22:24:32.2390588Z LTS
+zizmor	Set up job	2026-11-13T22:24:32.2391004Z ##[endgroup]
+zizmor	Set up job	2026-11-13T22:24:32.2391499Z ##[group]Runner Image
+zizmor	Set up job	2026-11-13T22:24:32.2391988Z Image: ubuntu-26.04
+zizmor	Set up job	2026-11-13T22:24:32.2392531Z Version: 20261111.196.1
+zizmor	Set up job	2026-11-13T22:24:32.2393499Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261111.196/images/ubuntu/Ubuntu2604-Readme.md
+zizmor	Set up job	2026-11-13T22:24:32.2395052Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261111.196
+zizmor	Set up job	2026-11-13T22:24:32.2395906Z ##[endgroup]
+zizmor	Set up job	2026-11-13T22:24:32.2396948Z ##[group]GITHUB_TOKEN Permissions
+zizmor	Set up job	2026-11-13T22:24:32.2399025Z Contents: read
+zizmor	Set up job	2026-11-13T22:24:32.2399626Z Metadata: read
+zizmor	Set up job	2026-11-13T22:24:32.2400083Z ##[endgroup]
+zizmor	Set up job	2026-11-13T22:24:32.2401947Z Secret source: Actions
+zizmor	Set up job	2026-11-13T22:24:32.2402788Z Cache mode: write
+zizmor	Set up job	2026-11-13T22:24:32.2403398Z Prepare workflow directory
+zizmor	Set up job	2026-11-13T22:24:32.2680678Z Prepare all required actions
+zizmor	Set up job	2026-11-13T22:24:32.2712581Z Getting action download info
+zizmor	Set up job	2026-11-13T22:24:32.5185605Z Download action repository 'actions/checkout@v7.0.1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+zizmor	Set up job	2026-11-13T22:24:32.5938187Z Download action repository 'zizmorcore/zizmor-action@v0.8.1' (SHA:45d7276c9ca790aabd705e31ca99c6185c3e76dd)
+zizmor	Set up job	2026-11-13T22:24:32.9184065Z Getting action download info
+zizmor	Set up job	2026-11-13T22:24:33.0119705Z Download action repository 'github/codeql-action@9b3254085494b55a0f7c4c2b3d2d52cc712ce370' (SHA:9b3254085494b55a0f7c4c2b3d2d52cc712ce370)
+zizmor	Set up job	2026-11-13T22:24:33.5877671Z Complete job name: zizmor
+zizmor	Run actions/checkout@v7.0.1	﻿2026-11-13T22:24:33.6463416Z ##[group]Run actions/checkout@v7.0.1
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6464213Z with:
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6464690Z   persist-credentials: false
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6465511Z   repository: link-foundation/php-ai-driven-development-pipeline-template
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6470552Z   token: ***
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6471022Z   ssh-strict: true
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6471511Z   ssh-user: git
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6471978Z   clean: true
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6472475Z   sparse-checkout-cone-mode: true
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6473066Z   fetch-depth: 1
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6473546Z   fetch-tags: false
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6474041Z   show-progress: true
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6474552Z   lfs: false
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6475008Z   submodules: false
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6475533Z   set-safe-directory: true
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6476109Z   allow-unsafe-pr-checkout: false
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6476795Z env:
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6477232Z   GIT_CONFIG_COUNT: 1
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6477758Z   GIT_CONFIG_KEY_0: init.defaultBranch
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6478365Z   GIT_CONFIG_VALUE_0: main
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.6478998Z ##[endgroup]
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8424625Z Syncing repository: link-foundation/php-ai-driven-development-pipeline-template
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8427332Z ##[group]Getting Git version info
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8429726Z Working directory is '/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template'
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8432607Z [command]/usr/bin/git version
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8433593Z git version 2.56.1
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8444597Z ##[endgroup]
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8453672Z Temporarily overriding HOME='/home/runner/work/_temp/35d19eb2-ff39-423d-b647-f4f732c6f2d9' before making global git config changes
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8456455Z Adding repository directory to the temporary git global config as a safe directory
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8460209Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8511715Z Deleting the contents of '/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template'
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8514798Z ##[group]Determining repository object format
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8516333Z ##[endgroup]
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8517624Z ##[group]Initializing the repository
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8520153Z [command]/usr/bin/git init /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8612053Z Initialized empty Git repository in /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8617830Z [command]/usr/bin/git remote add origin https://github.com/link-foundation/php-ai-driven-development-pipeline-template
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8661000Z ##[endgroup]
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8662524Z ##[group]Disabling automatic garbage collection
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8663819Z [command]/usr/bin/git config --local gc.auto 0
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8695123Z ##[endgroup]
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8696500Z ##[group]Setting up auth
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8697479Z Removing SSH command configuration
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8699789Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.8731830Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.9076456Z Removing HTTP extra header
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.9080646Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.9109272Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.9313387Z Removing includeIf entries pointing to credentials config files
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.9317930Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.9345511Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.9557480Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-af65a82d-41d0-4027-bafc-da182c343144.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.9589443Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path /home/runner/work/_temp/git-credentials-af65a82d-41d0-4027-bafc-da182c343144.config
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.9615271Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-af65a82d-41d0-4027-bafc-da182c343144.config
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.9754097Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-af65a82d-41d0-4027-bafc-da182c343144.config
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.9776111Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-af65a82d-41d0-4027-bafc-da182c343144.config
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.9803546Z ##[endgroup]
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.9804410Z ##[group]Fetching the repository
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:33.9808533Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5cd7eaa5aa64f6057e77479560dd5a639a4d11b2:refs/remotes/pull/24/merge
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4576800Z From https://github.com/link-foundation/php-ai-driven-development-pipeline-template
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4577896Z  * [new ref]         5cd7eaa5aa64f6057e77479560dd5a639a4d11b2 -> pull/24/merge
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4580640Z ##[endgroup]
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4581584Z ##[group]Determining the checkout info
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4582344Z ##[endgroup]
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4584797Z [command]/usr/bin/git sparse-checkout disable
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4634439Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4659799Z ##[group]Checking out the ref
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4662298Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/24/merge
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4841891Z Note: switching to 'refs/remotes/pull/24/merge'.
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4842268Z 
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4842570Z You are in 'detached HEAD' state. You can look around, make experimental
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4843218Z changes and commit them, and you can discard any commits you make in this
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4843892Z state without impacting any branches by switching back to a branch.
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4844290Z 
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4844587Z If you want to create a new branch to retain commits you create, you may
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4845242Z do so (now or later) by using -c with the switch command. Example:
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4845608Z 
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4845871Z   git switch -c <new-branch-name>
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4846174Z 
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4846396Z Or undo this operation with:
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4846677Z 
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4846884Z   git switch -
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4847202Z 
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4847701Z Turn off this advice by setting config variable advice.detachedHead to false
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4848325Z 
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4849135Z HEAD is now at 5cd7eaa Merge 2b8dfea36b5926392c767eeaa192d85b603a7b89 into dda0eb244919927efb7e8668d120996d9d82489f
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4851605Z ##[endgroup]
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4886297Z [command]/usr/bin/git log -1 --format=%H
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4907541Z 5cd7eaa5aa64f6057e77479560dd5a639a4d11b2
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4914262Z ##[group]Removing auth
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4914803Z Removing SSH command configuration
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4916269Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.4940745Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5154555Z Removing HTTP extra header
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5157016Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5181833Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5383992Z Removing includeIf entries pointing to credentials config files
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5385883Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5406367Z includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5407670Z includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5408979Z includeif.gitdir:/github/workspace/.git.path
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5409584Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5412718Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5432399Z /home/runner/work/_temp/git-credentials-af65a82d-41d0-4027-bafc-da182c343144.config
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5440692Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-af65a82d\-41d0\-4027\-bafc\-da182c343144\.config
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5476267Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5495972Z /home/runner/work/_temp/git-credentials-af65a82d-41d0-4027-bafc-da182c343144.config
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5503197Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-af65a82d\-41d0\-4027\-bafc\-da182c343144\.config
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5545384Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5566309Z /github/runner_temp/git-credentials-af65a82d-41d0-4027-bafc-da182c343144.config
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5574334Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-af65a82d\-41d0\-4027\-bafc\-da182c343144\.config
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5602560Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5622397Z /github/runner_temp/git-credentials-af65a82d-41d0-4027-bafc-da182c343144.config
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5628612Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-af65a82d\-41d0\-4027\-bafc\-da182c343144\.config
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5656361Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5866916Z Removing credentials config '/home/runner/work/_temp/git-credentials-af65a82d-41d0-4027-bafc-da182c343144.config'
+zizmor	Run actions/checkout@v7.0.1	2026-11-13T22:24:34.5874796Z ##[endgroup]
+zizmor	Audit workflow files	﻿2026-11-13T22:24:34.6095888Z ##[group]Run zizmorcore/zizmor-action@v0.8.1
+zizmor	Audit workflow files	2026-11-13T22:24:34.6096421Z with:
+zizmor	Audit workflow files	2026-11-13T22:24:34.6096839Z   advanced-security: false
+zizmor	Audit workflow files	2026-11-13T22:24:34.6097274Z   annotations: true
+zizmor	Audit workflow files	2026-11-13T22:24:34.6097699Z   config: .github/zizmor.yml
+zizmor	Audit workflow files	2026-11-13T22:24:34.6098137Z   inputs: .github
+zizmor	Audit workflow files	2026-11-13T22:24:34.6098558Z   min-confidence: medium
+zizmor	Audit workflow files	2026-11-13T22:24:34.6099187Z   version: 1.32.0
+zizmor	Audit workflow files	2026-11-13T22:24:34.6099591Z   collect: default
+zizmor	Audit workflow files	2026-11-13T22:24:34.6100009Z   online-audits: true
+zizmor	Audit workflow files	2026-11-13T22:24:34.6100431Z   persona: regular
+zizmor	Audit workflow files	2026-11-13T22:24:34.6102213Z   token: ***
+zizmor	Audit workflow files	2026-11-13T22:24:34.6102621Z   color: true
+zizmor	Audit workflow files	2026-11-13T22:24:34.6103048Z   fail-on-no-inputs: true
+zizmor	Audit workflow files	2026-11-13T22:24:34.6103482Z env:
+zizmor	Audit workflow files	2026-11-13T22:24:34.6103880Z   GIT_CONFIG_COUNT: 1
+zizmor	Audit workflow files	2026-11-13T22:24:34.6104333Z   GIT_CONFIG_KEY_0: init.defaultBranch
+zizmor	Audit workflow files	2026-11-13T22:24:34.6104789Z   GIT_CONFIG_VALUE_0: main
+zizmor	Audit workflow files	2026-11-13T22:24:34.6105223Z ##[endgroup]
+zizmor	Audit workflow files	2026-11-13T22:24:34.6146182Z ##[start-action display=Run zizmor;id=__zizmorcore_zizmor-action.run-zizmor]
+zizmor	Audit workflow files	2026-11-13T22:24:34.6182214Z ##[group]Run "${GITHUB_ACTION_PATH}/action.sh"
+zizmor	Audit workflow files	2026-11-13T22:24:34.6182811Z ^[[36;1m"${GITHUB_ACTION_PATH}/action.sh"^[[0m
+zizmor	Audit workflow files	2026-11-13T22:24:34.6227518Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+zizmor	Audit workflow files	2026-11-13T22:24:34.6228094Z env:
+zizmor	Audit workflow files	2026-11-13T22:24:34.6228513Z   GIT_CONFIG_COUNT: 1
+zizmor	Audit workflow files	2026-11-13T22:24:34.6229088Z   GIT_CONFIG_KEY_0: init.defaultBranch
+zizmor	Audit workflow files	2026-11-13T22:24:34.6229575Z   GIT_CONFIG_VALUE_0: main
+zizmor	Audit workflow files	2026-11-13T22:24:34.6230036Z   GHA_ZIZMOR_INPUTS: .github
+zizmor	Audit workflow files	2026-11-13T22:24:34.6230505Z   GHA_ZIZMOR_COLLECT: default
+zizmor	Audit workflow files	2026-11-13T22:24:34.6230981Z   GHA_ZIZMOR_ONLINE_AUDITS: true
+zizmor	Audit workflow files	2026-11-13T22:24:34.6231449Z   GHA_ZIZMOR_PERSONA: regular
+zizmor	Audit workflow files	2026-11-13T22:24:34.6231915Z   GHA_ZIZMOR_MIN_SEVERITY: 
+zizmor	Audit workflow files	2026-11-13T22:24:34.6232382Z   GHA_ZIZMOR_MIN_CONFIDENCE: medium
+zizmor	Audit workflow files	2026-11-13T22:24:34.6232854Z   GHA_ZIZMOR_VERSION: 1.32.0
+zizmor	Audit workflow files	2026-11-13T22:24:34.6234837Z   GHA_ZIZMOR_TOKEN: ***
+zizmor	Audit workflow files	2026-11-13T22:24:34.6235312Z   GHA_ZIZMOR_ADVANCED_SECURITY: false
+zizmor	Audit workflow files	2026-11-13T22:24:34.6235797Z   GHA_ZIZMOR_COLOR: true
+zizmor	Audit workflow files	2026-11-13T22:24:34.6236414Z   GHA_ZIZMOR_ANNOTATIONS: true
+zizmor	Audit workflow files	2026-11-13T22:24:34.6236891Z   GHA_ZIZMOR_CONFIG: .github/zizmor.yml
+zizmor	Audit workflow files	2026-11-13T22:24:34.6237384Z   GHA_ZIZMOR_FAIL_ON_NO_INPUTS: true
+zizmor	Audit workflow files	2026-11-13T22:24:34.6237853Z ##[endgroup]
+zizmor	Audit workflow files	2026-11-13T22:24:35.6440355Z ^[[32m INFO^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 zizmor v1.32.0
+zizmor	Audit workflow files	2026-11-13T22:24:35.6888182Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/dependabot.yml
+zizmor	Audit workflow files	2026-11-13T22:24:36.6078935Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/docs.yml
+zizmor	Audit workflow files	2026-11-13T22:24:36.8163503Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/links.yml
+zizmor	Audit workflow files	2026-11-13T22:24:37.0077361Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/release.yml
+zizmor	Audit workflow files	2026-11-13T22:24:37.3954427Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/security.yml
+zizmor	Audit workflow files	2026-11-13T22:24:38.0103128Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/templates.yml
+zizmor	Audit workflow files	2026-11-13T22:24:38.1901697Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/workflows.yml
+zizmor	Audit workflow files	2026-11-13T22:24:38.1936943Z ##[warning]dependabot.yml:4: insufficient cooldown in Dependabot updates: insufficient implicit default-days (less than 7)
+zizmor	Audit workflow files	2026-11-13T22:24:38.1938636Z ##[warning]dependabot.yml:11: insufficient cooldown in Dependabot updates: insufficient implicit default-days (less than 7)
+zizmor	Audit workflow files	2026-11-13T22:24:38.1940034Z ##[warning]dependabot.yml:23: insufficient cooldown in Dependabot updates: insufficient implicit default-days (less than 7)
+zizmor	Audit workflow files	2026-11-13T22:24:38.1941281Z ##[warning]dependabot.yml:33: insufficient cooldown in Dependabot updates: insufficient implicit default-days (less than 7)
+zizmor	Audit workflow files	2026-11-13T22:24:38.1942209Z ##[warning]dependabot.yml:40: insufficient cooldown in Dependabot updates: insufficient implicit default-days (less than 7)
+zizmor	Audit workflow files	2026-11-13T22:24:38.1943582Z ##[warning]dependabot.yml:49: insufficient cooldown in Dependabot updates: insufficient implicit default-days (less than 7)
+zizmor	Audit workflow files	2026-11-13T22:24:38.1945034Z ##[warning]dependabot.yml:56: insufficient cooldown in Dependabot updates: insufficient implicit default-days (less than 7)
+zizmor	Audit workflow files	2026-11-13T22:24:38.1946429Z ##[warning]templates.yml:43: ad-hoc installation of packages: installs a package outside of a lockfile
+zizmor	Audit workflow files	2026-11-13T22:24:38.1951069Z ##[error]Process completed with exit code 13.
+zizmor	Audit workflow files	2026-11-13T22:24:38.1962377Z ##[end-action id=__zizmorcore_zizmor-action.run-zizmor;outcome=failure;conclusion=failure;duration_ms=3581]
+zizmor	Audit workflow files	2026-11-13T22:24:38.1965995Z ##[start-action display=Upload SARIF file to GitHub Advanced Security;id=__zizmorcore_zizmor-action.__github_codeql-action]
+zizmor	Audit workflow files	2026-11-13T22:24:38.1976749Z ##[end-action id=__zizmorcore_zizmor-action.__github_codeql-action;outcome=skipped;conclusion=skipped;duration_ms=0]
+zizmor	Post Audit workflow files	﻿2026-11-13T22:24:38.2111346Z Post job cleanup.
+zizmor	Post Run actions/checkout@v7.0.1	﻿2026-11-13T22:24:38.2176006Z Post job cleanup.
+zizmor	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:38.2788309Z [command]/usr/bin/git version
+zizmor	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:38.2803042Z git version 2.56.1
+zizmor	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:38.2829962Z Temporarily overriding HOME='/home/runner/work/_temp/12cab130-3c0a-48b7-83ea-fa2ad44a66a6' before making global git config changes
+zizmor	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:38.2830773Z Adding repository directory to the temporary git global config as a safe directory
+zizmor	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:38.2834412Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template
+zizmor	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:38.2868065Z Removing SSH command configuration
+zizmor	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:38.2872750Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+zizmor	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:38.2912999Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+zizmor	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:38.3161227Z Removing HTTP extra header
+zizmor	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:38.3167358Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+zizmor	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:38.3212751Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+zizmor	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:38.3446256Z Removing includeIf entries pointing to credentials config files
+zizmor	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:38.3451935Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+zizmor	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:38.3481736Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+zizmor	Complete job	﻿2026-11-13T22:24:38.3827682Z Cleaning up orphan processes
+Pipeline Status	Set up job	﻿2026-11-13T22:24:55.3660446Z Current runner version: '2.338.2'
+Pipeline Status	Set up job	2026-11-13T22:24:55.3686254Z ##[group]Runner Image Provisioner
+Pipeline Status	Set up job	2026-11-13T22:24:55.3687234Z Hosted Compute Agent
+Pipeline Status	Set up job	2026-11-13T22:24:55.3687823Z Version: 20261103.629
+Pipeline Status	Set up job	2026-11-13T22:24:55.3688550Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+Pipeline Status	Set up job	2026-11-13T22:24:55.3689277Z Build Date: 2026-11-03T17:26:59Z
+Pipeline Status	Set up job	2026-11-13T22:24:55.3690037Z Worker ID: {b35f60a8-9cde-4ff4-a010-385a19f0a3bb}
+Pipeline Status	Set up job	2026-11-13T22:24:55.3690768Z Region: westus3
+Pipeline Status	Set up job	2026-11-13T22:24:55.3691313Z Cloud: Azure
+Pipeline Status	Set up job	2026-11-13T22:24:55.3691892Z ##[endgroup]
+Pipeline Status	Set up job	2026-11-13T22:24:55.3693328Z ##[group]Operating System
+Pipeline Status	Set up job	2026-11-13T22:24:55.3693945Z Ubuntu
+Pipeline Status	Set up job	2026-11-13T22:24:55.3694595Z 26.04.1
+Pipeline Status	Set up job	2026-11-13T22:24:55.3695105Z LTS
+Pipeline Status	Set up job	2026-11-13T22:24:55.3696141Z ##[endgroup]
+Pipeline Status	Set up job	2026-11-13T22:24:55.3696722Z ##[group]Runner Image
+Pipeline Status	Set up job	2026-11-13T22:24:55.3697345Z Image: ubuntu-26.04
+Pipeline Status	Set up job	2026-11-13T22:24:55.3697972Z Version: 20261111.196.1
+Pipeline Status	Set up job	2026-11-13T22:24:55.3699038Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261111.196/images/ubuntu/Ubuntu2604-Readme.md
+Pipeline Status	Set up job	2026-11-13T22:24:55.3700837Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261111.196
+Pipeline Status	Set up job	2026-11-13T22:24:55.3701810Z ##[endgroup]
+Pipeline Status	Set up job	2026-11-13T22:24:55.3702942Z ##[group]GITHUB_TOKEN Permissions
+Pipeline Status	Set up job	2026-11-13T22:24:55.3705084Z Contents: read
+Pipeline Status	Set up job	2026-11-13T22:24:55.3706124Z Metadata: read
+Pipeline Status	Set up job	2026-11-13T22:24:55.3706692Z ##[endgroup]
+Pipeline Status	Set up job	2026-11-13T22:24:55.3708831Z Secret source: Actions
+Pipeline Status	Set up job	2026-11-13T22:24:55.3709828Z Cache mode: write
+Pipeline Status	Set up job	2026-11-13T22:24:55.3710552Z Prepare workflow directory
+Pipeline Status	Set up job	2026-11-13T22:24:55.4109321Z Prepare all required actions
+Pipeline Status	Set up job	2026-11-13T22:24:55.4156768Z Getting action download info
+Pipeline Status	Set up job	2026-11-13T22:24:55.7331509Z Download action repository 'actions/checkout@v7.0.1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+Pipeline Status	Set up job	2026-11-13T22:24:55.9770317Z Complete job name: Pipeline Status
+Pipeline Status	Run actions/checkout@v7.0.1	﻿2026-11-13T22:24:56.0638071Z ##[group]Run actions/checkout@v7.0.1
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.0639371Z with:
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.0639862Z   persist-credentials: false
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.0640697Z   repository: link-foundation/php-ai-driven-development-pipeline-template
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.0644685Z   token: ***
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.0645121Z   ssh-strict: true
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.0645880Z   ssh-user: git
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.0646323Z   clean: true
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.0646783Z   sparse-checkout-cone-mode: true
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.0647321Z   fetch-depth: 1
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.0647758Z   fetch-tags: false
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.0648214Z   show-progress: true
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.0648681Z   lfs: false
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.0649102Z   submodules: false
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.0649570Z   set-safe-directory: true
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.0650092Z   allow-unsafe-pr-checkout: false
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.0650913Z env:
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.0651332Z   GIT_CONFIG_COUNT: 1
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.0651941Z   GIT_CONFIG_KEY_0: init.defaultBranch
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.0652572Z   GIT_CONFIG_VALUE_0: main
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.0653096Z ##[endgroup]
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.3722958Z Syncing repository: link-foundation/php-ai-driven-development-pipeline-template
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.3726453Z ##[group]Getting Git version info
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.3728613Z Working directory is '/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template'
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.3731662Z [command]/usr/bin/git version
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.3742861Z git version 2.56.1
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.3767440Z ##[endgroup]
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.3778411Z Temporarily overriding HOME='/home/runner/work/_temp/87520e1f-aea9-4871-bb94-be48a9b30b33' before making global git config changes
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.3782157Z Adding repository directory to the temporary git global config as a safe directory
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.3785577Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.3864880Z Deleting the contents of '/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template'
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.3871019Z ##[group]Determining repository object format
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.3873013Z ##[endgroup]
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.3874498Z ##[group]Initializing the repository
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.3879509Z [command]/usr/bin/git init /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.4031757Z Initialized empty Git repository in /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.4043764Z [command]/usr/bin/git remote add origin https://github.com/link-foundation/php-ai-driven-development-pipeline-template
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.4115700Z ##[endgroup]
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.4117516Z ##[group]Disabling automatic garbage collection
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.4125078Z [command]/usr/bin/git config --local gc.auto 0
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.4188969Z ##[endgroup]
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.4197197Z ##[group]Setting up auth
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.4198448Z Removing SSH command configuration
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.4200603Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.4248266Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.4792733Z Removing HTTP extra header
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.4801511Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.4846148Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.5121023Z Removing includeIf entries pointing to credentials config files
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.5126809Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.5161076Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.5450626Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-ebbedc80-334c-4b62-8d8f-f7df47bf8704.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.5493600Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path /home/runner/work/_temp/git-credentials-ebbedc80-334c-4b62-8d8f-f7df47bf8704.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.5529536Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-ebbedc80-334c-4b62-8d8f-f7df47bf8704.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.5567839Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-ebbedc80-334c-4b62-8d8f-f7df47bf8704.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.5602836Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-ebbedc80-334c-4b62-8d8f-f7df47bf8704.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.5634301Z ##[endgroup]
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.5635686Z ##[group]Fetching the repository
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:56.5641021Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5cd7eaa5aa64f6057e77479560dd5a639a4d11b2:refs/remotes/pull/24/merge
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2316035Z From https://github.com/link-foundation/php-ai-driven-development-pipeline-template
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2318842Z  * [new ref]         5cd7eaa5aa64f6057e77479560dd5a639a4d11b2 -> pull/24/merge
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2322672Z ##[endgroup]
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2324187Z ##[group]Determining the checkout info
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2326440Z ##[endgroup]
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2327560Z [command]/usr/bin/git sparse-checkout disable
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2384824Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2419421Z ##[group]Checking out the ref
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2422952Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/24/merge
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2693676Z Note: switching to 'refs/remotes/pull/24/merge'.
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2694852Z 
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2696157Z You are in 'detached HEAD' state. You can look around, make experimental
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2699060Z changes and commit them, and you can discard any commits you make in this
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2701841Z state without impacting any branches by switching back to a branch.
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2703211Z 
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2704010Z If you want to create a new branch to retain commits you create, you may
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2706278Z do so (now or later) by using -c with the switch command. Example:
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2707538Z 
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2708004Z   git switch -c <new-branch-name>
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2708727Z 
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2709299Z Or undo this operation with:
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2710431Z 
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2711030Z   git switch -
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2711720Z 
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2712723Z Turn off this advice by setting config variable advice.detachedHead to false
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2714135Z 
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2716014Z HEAD is now at 5cd7eaa Merge 2b8dfea36b5926392c767eeaa192d85b603a7b89 into dda0eb244919927efb7e8668d120996d9d82489f
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2721162Z ##[endgroup]
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2759075Z [command]/usr/bin/git log -1 --format=%H
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2786277Z 5cd7eaa5aa64f6057e77479560dd5a639a4d11b2
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2795897Z ##[group]Removing auth
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2797339Z Removing SSH command configuration
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2799868Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.2833287Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3118788Z Removing HTTP extra header
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3122187Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3156518Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3428298Z Removing includeIf entries pointing to credentials config files
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3431412Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3459830Z includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3465526Z includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3469530Z includeif.gitdir:/github/workspace/.git.path
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3471428Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3477641Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3493241Z /home/runner/work/_temp/git-credentials-ebbedc80-334c-4b62-8d8f-f7df47bf8704.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3508581Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-ebbedc80\-334c\-4b62\-8d8f\-f7df47bf8704\.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3546072Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3575711Z /home/runner/work/_temp/git-credentials-ebbedc80-334c-4b62-8d8f-f7df47bf8704.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3585136Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-ebbedc80\-334c\-4b62\-8d8f\-f7df47bf8704\.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3617886Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3643430Z /github/runner_temp/git-credentials-ebbedc80-334c-4b62-8d8f-f7df47bf8704.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3655091Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-ebbedc80\-334c\-4b62\-8d8f\-f7df47bf8704\.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3690108Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3714814Z /github/runner_temp/git-credentials-ebbedc80-334c-4b62-8d8f-f7df47bf8704.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3725898Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-ebbedc80\-334c\-4b62\-8d8f\-f7df47bf8704\.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.3761504Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.4030409Z Removing credentials config '/home/runner/work/_temp/git-credentials-ebbedc80-334c-4b62-8d8f-f7df47bf8704.config'
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T22:24:57.4039114Z ##[endgroup]
+Pipeline Status	Check aggregate pipeline status	﻿2026-11-13T22:24:57.4356163Z ##[group]Run bash scripts/check-pipeline-status.sh
+Pipeline Status	Check aggregate pipeline status	2026-11-13T22:24:57.4357873Z ^[[36;1mbash scripts/check-pipeline-status.sh^[[0m
+Pipeline Status	Check aggregate pipeline status	2026-11-13T22:24:57.4413639Z shell: /usr/bin/bash -e {0}
+Pipeline Status	Check aggregate pipeline status	2026-11-13T22:24:57.4414765Z env:
+Pipeline Status	Check aggregate pipeline status	2026-11-13T22:24:57.4415804Z   GIT_CONFIG_COUNT: 1
+Pipeline Status	Check aggregate pipeline status	2026-11-13T22:24:57.4416885Z   GIT_CONFIG_KEY_0: init.defaultBranch
+Pipeline Status	Check aggregate pipeline status	2026-11-13T22:24:57.4418149Z   GIT_CONFIG_VALUE_0: main
+Pipeline Status	Check aggregate pipeline status	2026-11-13T22:24:57.4421111Z   NEEDS_JSON: {
+Pipeline Status	Check aggregate pipeline status	  "dependencies": {
+Pipeline Status	Check aggregate pipeline status	    "result": "success",
+Pipeline Status	Check aggregate pipeline status	    "outputs": {}
+Pipeline Status	Check aggregate pipeline status	  },
+Pipeline Status	Check aggregate pipeline status	  "actionlint": {
+Pipeline Status	Check aggregate pipeline status	    "result": "failure",
+Pipeline Status	Check aggregate pipeline status	    "outputs": {}
+Pipeline Status	Check aggregate pipeline status	  },
+Pipeline Status	Check aggregate pipeline status	  "zizmor": {
+Pipeline Status	Check aggregate pipeline status	    "result": "failure",
+Pipeline Status	Check aggregate pipeline status	    "outputs": {}
+Pipeline Status	Check aggregate pipeline status	  }
+Pipeline Status	Check aggregate pipeline status	}
+Pipeline Status	Check aggregate pipeline status	2026-11-13T22:24:57.4424392Z   RUN_SHA: 2b8dfea36b5926392c767eeaa192d85b603a7b89
+Pipeline Status	Check aggregate pipeline status	2026-11-13T22:24:57.4425917Z   BRANCH_REF: issue-23-addf7c5fd0d4
+Pipeline Status	Check aggregate pipeline status	2026-11-13T22:24:57.4428003Z   GIT_REMOTE: https://github.com/link-foundation/php-ai-driven-development-pipeline-template.git
+Pipeline Status	Check aggregate pipeline status	2026-11-13T22:24:57.4430133Z ##[endgroup]
+Pipeline Status	Check aggregate pipeline status	2026-11-13T22:24:57.5557056Z Failed jobs:    actionlint, zizmor
+Pipeline Status	Check aggregate pipeline status	2026-11-13T22:24:57.5558842Z Cancelled jobs: <none>
+Pipeline Status	Check aggregate pipeline status	2026-11-13T22:24:57.5581454Z ##[error]Failing jobs: actionlint, zizmor
+Pipeline Status	Check aggregate pipeline status	2026-11-13T22:24:57.5596687Z ##[error]Process completed with exit code 1.
+Pipeline Status	Post Run actions/checkout@v7.0.1	﻿2026-11-13T22:24:57.5961414Z Post job cleanup.
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:57.6863991Z [command]/usr/bin/git version
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:57.6911003Z git version 2.56.1
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:57.6956768Z Temporarily overriding HOME='/home/runner/work/_temp/c79b427f-7ed2-43d4-a901-179a2aebff77' before making global git config changes
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:57.6961466Z Adding repository directory to the temporary git global config as a safe directory
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:57.6966945Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:57.6998241Z Removing SSH command configuration
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:57.7004855Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:57.7045727Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:57.7360296Z Removing HTTP extra header
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:57.7367050Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:57.7410599Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:57.7714656Z Removing includeIf entries pointing to credentials config files
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:57.7720804Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T22:24:57.7758163Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Pipeline Status	Complete job	﻿2026-11-13T22:24:57.8201148Z Cleaning up orphan processes

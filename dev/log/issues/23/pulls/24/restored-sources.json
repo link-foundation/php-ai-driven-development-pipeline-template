@@ -1,0 +1,294 @@
+[
+  {
+    "path": "docs/case-studies/issue-1/data/templates/rust/CHANGELOG.md",
+    "source": "https://raw.githubusercontent.com/link-foundation/rust-ai-driven-development-pipeline-template/e18dfdcfbab0240f5d168036fc4116ccd190f964/CHANGELOG.md"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/rust/LICENSE",
+    "source": "https://raw.githubusercontent.com/link-foundation/rust-ai-driven-development-pipeline-template/e18dfdcfbab0240f5d168036fc4116ccd190f964/LICENSE"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/rust/src/lib.rs",
+    "source": "https://raw.githubusercontent.com/link-foundation/rust-ai-driven-development-pipeline-template/e18dfdcfbab0240f5d168036fc4116ccd190f964/src/lib.rs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/rust/src/main.rs",
+    "source": "https://raw.githubusercontent.com/link-foundation/rust-ai-driven-development-pipeline-template/e18dfdcfbab0240f5d168036fc4116ccd190f964/src/main.rs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/rust/src/sum.rs",
+    "source": "https://raw.githubusercontent.com/link-foundation/rust-ai-driven-development-pipeline-template/e18dfdcfbab0240f5d168036fc4116ccd190f964/src/sum.rs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/rust/tests/integration/mod.rs",
+    "source": "https://raw.githubusercontent.com/link-foundation/rust-ai-driven-development-pipeline-template/e18dfdcfbab0240f5d168036fc4116ccd190f964/tests/integration/mod.rs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/rust/tests/integration/sum.rs",
+    "source": "https://raw.githubusercontent.com/link-foundation/rust-ai-driven-development-pipeline-template/e18dfdcfbab0240f5d168036fc4116ccd190f964/tests/integration/sum.rs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/rust/tests/unit/ci-cd/changelog_parsing.rs",
+    "source": "https://raw.githubusercontent.com/link-foundation/rust-ai-driven-development-pipeline-template/e18dfdcfbab0240f5d168036fc4116ccd190f964/tests/unit/ci-cd/changelog_parsing.rs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/rust/tests/unit/ci-cd/mod.rs",
+    "source": "https://raw.githubusercontent.com/link-foundation/rust-ai-driven-development-pipeline-template/e18dfdcfbab0240f5d168036fc4116ccd190f964/tests/unit/ci-cd/mod.rs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/rust/tests/unit/ci-cd/workflow_release.rs",
+    "source": "https://raw.githubusercontent.com/link-foundation/rust-ai-driven-development-pipeline-template/e18dfdcfbab0240f5d168036fc4116ccd190f964/tests/unit/ci-cd/workflow_release.rs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/rust/tests/unit/ci-cd/workspace_manifest_resolution.rs",
+    "source": "https://raw.githubusercontent.com/link-foundation/rust-ai-driven-development-pipeline-template/e18dfdcfbab0240f5d168036fc4116ccd190f964/tests/unit/ci-cd/workspace_manifest_resolution.rs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/rust/tests/unit/mod.rs",
+    "source": "https://raw.githubusercontent.com/link-foundation/rust-ai-driven-development-pipeline-template/e18dfdcfbab0240f5d168036fc4116ccd190f964/tests/unit/mod.rs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/rust/tests/unit/sum.rs",
+    "source": "https://raw.githubusercontent.com/link-foundation/rust-ai-driven-development-pipeline-template/e18dfdcfbab0240f5d168036fc4116ccd190f964/tests/unit/sum.rs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/csharp/LICENSE",
+    "source": "https://raw.githubusercontent.com/link-foundation/csharp-ai-driven-development-pipeline-template/6872708aa3da13d5a67338cc8350c610c3af2275/LICENSE"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/csharp/src/MyPackage/Calculator.cs",
+    "source": "https://raw.githubusercontent.com/link-foundation/csharp-ai-driven-development-pipeline-template/6872708aa3da13d5a67338cc8350c610c3af2275/src/MyPackage/Calculator.cs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/csharp/src/MyPackage/PackageInfo.cs",
+    "source": "https://raw.githubusercontent.com/link-foundation/csharp-ai-driven-development-pipeline-template/6872708aa3da13d5a67338cc8350c610c3af2275/src/MyPackage/PackageInfo.cs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/CHANGELOG.md",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/CHANGELOG.md"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/LICENSE",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/LICENSE"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/examples/basic-usage.js",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/examples/basic-usage.js"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/examples/universal-app/README.md",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/examples/universal-app/README.md"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/examples/universal-app/capacitor.config.json",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/examples/universal-app/capacitor.config.json"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/examples/universal-app/electron/main.cjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/examples/universal-app/electron/main.cjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/examples/universal-app/electron/preload.cjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/examples/universal-app/electron/preload.cjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/examples/universal-app/forge.config.cjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/examples/universal-app/forge.config.cjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/examples/universal-app/index.html",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/examples/universal-app/index.html"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/examples/universal-app/package-lock.json",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/examples/universal-app/package-lock.json"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/examples/universal-app/package.json",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/examples/universal-app/package.json"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/examples/universal-app/public/favicon.svg",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/examples/universal-app/public/favicon.svg"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/examples/universal-app/src/App.js",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/examples/universal-app/src/App.js"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/examples/universal-app/src/main.js",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/examples/universal-app/src/main.js"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/examples/universal-app/src/styles.css",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/examples/universal-app/src/styles.css"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/examples/universal-app/vite.config.js",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/examples/universal-app/vite.config.js"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/package-lock.json",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/package-lock.json"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/changeset-version.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/changeset-version.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/check-changesets.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/check-changesets.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/check-docker-publish.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/check-docker-publish.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/check-file-line-limits.sh",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/check-file-line-limits.sh"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/check-mjs-syntax.sh",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/check-mjs-syntax.sh"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/check-release-needed.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/check-release-needed.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/check-version.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/check-version.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/check-web-archive.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/check-web-archive.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/create-github-release.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/create-github-release.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/create-manual-changeset.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/create-manual-changeset.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/detect-code-changes.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/detect-code-changes.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/format-github-release.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/format-github-release.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/format-release-notes-helpers.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/format-release-notes-helpers.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/format-release-notes.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/format-release-notes.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/instant-version-bump.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/instant-version-bump.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/js-paths.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/js-paths.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/merge-changesets.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/merge-changesets.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/package-info.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/package-info.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/publish-to-npm.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/publish-to-npm.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/setup-npm.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/setup-npm.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/simulate-fresh-merge.sh",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/simulate-fresh-merge.sh"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/update-preview-images.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/update-preview-images.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/validate-changeset.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/validate-changeset.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/version-and-commit.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/version-and-commit.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/scripts/wait-for-npm.mjs",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/scripts/wait-for-npm.mjs"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/src/index.d.ts",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/src/index.d.ts"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/src/index.js",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/src/index.js"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/tests/check-file-line-limits.test.js",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/tests/check-file-line-limits.test.js"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/tests/ci-timeouts.test.js",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/tests/ci-timeouts.test.js"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/tests/create-github-release.test.js",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/tests/create-github-release.test.js"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/tests/docker-publish.test.js",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/tests/docker-publish.test.js"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/tests/index.test.js",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/tests/index.test.js"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/tests/package-info.test.js",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/tests/package-info.test.js"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/tests/package-metadata.test.js",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/tests/package-metadata.test.js"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/tests/release-badge.test.js",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/tests/release-badge.test.js"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/tests/setup-npm.test.js",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/tests/setup-npm.test.js"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/tests/tag-prefix.test.js",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/tests/tag-prefix.test.js"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/tests/universal-app.test.js",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/tests/universal-app.test.js"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/js/tests/workflow-reliability.test.js",
+    "source": "https://raw.githubusercontent.com/link-foundation/js-ai-driven-development-pipeline-template/2d77e242d1a1778b6fc7f3ca563b2a36ef555d0e/tests/workflow-reliability.test.js"
+  },
+  {
+    "path": "docs/case-studies/issue-1/data/templates/rust/README.md",
+    "source": "https://raw.githubusercontent.com/link-foundation/rust-ai-driven-development-pipeline-template/e18dfdcfbab0240f5d168036fc4116ccd190f964/README.md"
+  }
+]

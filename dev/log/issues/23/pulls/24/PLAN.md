@@ -2,21 +2,20 @@
 
 Objective: implement and verify every requirement in issue 23 in this PR, without merging or changing main directly.
 
-1. [in progress] Preserve complete issue, comments, PR conversation/reviews/inline comments, required sub-issues, merged-PR context, baseline CI logs, and registry evidence.
-2. [pending] Produce per-ecosystem before/latest tables (including script metadata, toolchains, actions, images and transitive locks), research major migrations and existing components.
-3. [pending] PHP first: upgrade constraints, runtime, PHPUnit/PHPStan/formatter APIs, commit Composer lock, reproduce/fix baseline failures with regression coverage.
-4. [pending] Update every nested template ecosystem and every repeated version; restore missing source only if needed to make captured projects verifiable; preserve provenance and existing features.
-5. [pending] Cover all manifests in Dependabot; add full cross-ecosystem build/test/lint/audit verification using bounded CI jobs and small sequential local checks.
-6. [pending] Search upstream reports for dependency workarounds, report reproducible general issues, retain necessary local workarounds and link reports.
-7. [pending] Commit atomic steps, push only issue-23-addf7c5fd0d4, update PR title/body (Fixes #23), fetch fresh CI logs for current SHA, repair all failures, review full diff, verify default-branch ancestry and clean tree, mark PR 24 ready.
-
-No required sub-issues or PR feedback were present in the first complete API snapshots. The default branch cannot receive these fixes until the PR is merged; validate fixes on the PR and keep any main-only deployment setup failures explicit.
+1. [complete] Read and preserve the complete issue, comments, all three PR feedback types, required sub-issues, recent merged work, baseline CI and official registry evidence. Fresh snapshots confirm no additional required sub-issues or PR feedback.
+2. [complete] Produce direct/runtime/action and every physical resolved dependency inventory with before/current/latest versions and explicit parent/upstream compatibility reasons. Document major migrations and existing component choices.
+3. [complete] PHP first: migrate runtime, PHPUnit, PHPStan, formatter and locked dependencies. Reproduce the original policy failure and verify its regression fix; repair the release preflight token scope.
+4. [complete] Update all captured C#, pre-commit, Python, JavaScript/app, Rust, shell tools, actions, images and repeated pins. Restore missing source from recorded capture revisions with provenance; preserve the original tests and build interfaces.
+5. [complete] Expand Dependabot to all manifests. Add full cross-ecosystem CI, locked installation, audits and bounded test/job execution. Extend actionlint/shellcheck to captured workflows and add release-expression regression coverage.
+6. [complete] Search upstream work first; post four concrete reproductions/proposals to existing reports and link already-complete reports for the remaining known upstream constraints. Keep the narrow Windows installer backport and all audit coverage.
+7. [in progress] Finish evidence commit and full PR diff review; verify every current-SHA CI run, repair failures, update PR title/body with Fixes #23 and final screenshot, confirm main ancestry and clean tree, mark PR 24 ready.
+8. [externally dependent / unfinished] Literal default-branch recovery requires normal merge and GitHub Pages repository setup. Branch-only instructions prohibit directly modifying or merging main. The PR keeps a clear main-only setup failure and remains unmerged.
 
 ## CI investigation protocol
 
-- List latest five branch runs with IDs, creation timestamps, conclusions and head SHAs.
-- Match runs to latest pushed SHA before using a result as verification.
-- Download each failing run into ci-logs; inspect files in chunks no larger than 1500 lines and record exact error lines.
-- Baseline: main dda0eb2, pipeline 43509261699 failed; docs 41539790049 failed at dad99fe. Other latest baseline security/workflow/link checks succeeded.
-- Confirmed pipeline regression: WorkflowPolicyTest.php:150 expects zizmor-action v0.8.0 after Dependabot upgraded to v0.8.1 (baseline log 1533, 1695–1700; repeated across PHP matrix).
-- Separate baseline configuration failures: preflight job checks a read-only workflow token for push permission (log 411); Pages site absent (docs log 230–231). Do not hide release/deployment precondition errors on main.
+- List recent branch runs with IDs, creation timestamps, conclusions and head SHAs; use only the latest pushed SHA as final verification.
+- Download every failing run to ci-logs, read in chunks at most 1500 lines, and record exact failure lines and corrective commits in SELF-REVIEW.md.
+- Baseline main dda0eb2 pipeline 43509261699: WorkflowPolicyTest expected zizmor-action v0.8.0 after Dependabot selected v0.8.1 (baseline log 1533 and 1695–1700). baseline-regression.log reproduces it; policy-regression-fixed.log and php-check.log pass after adaptation.
+- The same baseline preflight probed a read-only workflow token for release push permission (log 411). Give only that probing job the release scope.
+- Baseline Docs 41539790049 at dad99fe: Pages absent (log 230–231). PRs build docs without requiring deployment setup; main reports an actionable configuration error.
+- Draft CI revealed formatter, trusted publisher and missing Rust package README issues; each is repaired in forward-moving commits, with logs preserved. Final workflow review also caught invalid leading ! YAML and shell diagnostics before final CI.

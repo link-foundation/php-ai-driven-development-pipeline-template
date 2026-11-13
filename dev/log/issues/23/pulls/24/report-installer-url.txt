@@ -1,0 +1,1 @@
+https://github.com/electron-userland/electron-installer-common/pull/229#issuecomment-6866781966

@@ -1,0 +1,10 @@
+PHPUnit 10.5.67 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /tmp/gh-issue-solver-1794605189377/phpunit.xml.dist
+
+..                                                                  2 / 2 (100%)
+
+Time: 00:00.015, Memory: 10.00 MB
+
+OK (2 tests, 12 assertions)

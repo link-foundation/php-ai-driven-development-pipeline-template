@@ -1,0 +1,2 @@
+npm notice run @link-foundation/example-package-name@0.11.4 lint:fix
+npm notice run eslint . --fix

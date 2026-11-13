@@ -1,0 +1,15 @@
+{
+  "preserved_local_ref": "refs/issue-23/unpublished-build-output",
+  "records": [
+    {
+      "original": "94c8c03cc7c9487ef25c53cfeea58dde1643e31b",
+      "corrected": "75cef25fb6e0a1f99e4def910024fa11b7ef5817",
+      "message": "build: migrate JavaScript tools and preserve universal app targets"
+    },
+    {
+      "original": "d95d79708022ad64697655978d45febf1fdb9b60",
+      "corrected": "eac44b930fe0f3c4f6accec03e602ecc79a6dc46",
+      "message": "ci: verify all current template ecosystems and track every manifest"
+    }
+  ]
+}

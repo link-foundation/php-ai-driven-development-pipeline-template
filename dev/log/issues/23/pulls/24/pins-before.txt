@@ -1,0 +1,712 @@
+docs/case-studies/issue-1/data/templates/rust/experiments/test-crates-io-check.rs:2://! Test script for crates.io version check logic
+docs/case-studies/issue-1/data/templates/rust/experiments/test-crates-io-check.rs:3://! Validates that the check_version_on_crates_io function works correctly
+docs/case-studies/issue-1/data/templates/rust/experiments/test-crates-io-check.rs:4://!
+docs/case-studies/issue-1/data/templates/rust/experiments/test-crates-io-check.rs:5://! ```cargo
+docs/case-studies/issue-1/data/templates/rust/experiments/test-crates-io-check.rs:6://! [dependencies]
+docs/case-studies/issue-1/data/templates/rust/experiments/test-crates-io-check.rs:7://! ureq = "2"
+docs/case-studies/issue-1/data/templates/rust/experiments/test-crates-io-check.rs:8://! serde = { version = "1", features = ["derive"] }
+docs/case-studies/issue-1/data/templates/rust/experiments/test-crates-io-check.rs:9://! serde_json = "1"
+docs/case-studies/issue-1/data/templates/rust/experiments/test-crates-io-check.rs:10://! ```
+docs/case-studies/issue-1/data/templates/rust/experiments/test-crates-io-check.rs:16:    version: Option<CratesIoVersionInfo>,
+docs/case-studies/issue-1/data/templates/rust/experiments/test-crates-io-check.rs:25:fn check_version_on_crates_io(crate_name: &str, version: &str) -> bool {
+docs/case-studies/issue-1/data/templates/rust/experiments/test-changelog-parsing.rs:2://! Test script to verify changelog parsing without look-ahead regex
+docs/case-studies/issue-1/data/templates/rust/experiments/test-changelog-parsing.rs:3://!
+docs/case-studies/issue-1/data/templates/rust/experiments/test-changelog-parsing.rs:4://! ```cargo
+docs/case-studies/issue-1/data/templates/rust/experiments/test-changelog-parsing.rs:5://! [dependencies]
+docs/case-studies/issue-1/data/templates/rust/experiments/test-changelog-parsing.rs:6://! regex = "1"
+docs/case-studies/issue-1/data/templates/rust/experiments/test-changelog-parsing.rs:7://! ```
+docs/case-studies/issue-1/data/templates/rust/experiments/test-changelog-parsing.rs:11:fn get_changelog_for_version(content: &str, version: &str) -> String {
+.github/dependabot.yml:3:# `uses:` references; the zizmor `version` input, the `pipx run zizmor==`
+.github/dependabot.yml:5:version: 2
+.github/zizmor.yml:3:  unpinned-uses:
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:59:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:64:        uses: dtolnay/rust-toolchain@stable
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:67:        run: cargo install rust-script
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:84:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:89:        uses: dtolnay/rust-toolchain@stable
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:92:        run: cargo install rust-script
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:107:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:112:        uses: dtolnay/rust-toolchain@stable
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:115:        run: cargo install rust-script
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:145:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:148:        uses: dtolnay/rust-toolchain@stable
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:153:        run: cargo install rust-script
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:156:        uses: actions/cache@v5
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:189:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:192:        uses: dtolnay/rust-toolchain@stable
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:195:        uses: actions/cache@v5
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:226:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:229:        uses: dtolnay/rust-toolchain@stable
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:234:        uses: actions/cache@v5
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:245:        uses: taiki-e/install-action@cargo-llvm-cov
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:251:        uses: codecov/codecov-action@v5
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:265:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:268:        uses: dtolnay/rust-toolchain@stable
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:271:        run: cargo install rust-script
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:274:        uses: actions/cache@v5
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:313:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:319:        uses: dtolnay/rust-toolchain@stable
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:322:        run: cargo install rust-script
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:408:        uses: docker/login-action@v4
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:415:        uses: docker/setup-buildx-action@v4
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:420:        uses: docker/metadata-action@v6
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:431:        uses: docker/build-push-action@v7
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:483:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:489:        uses: dtolnay/rust-toolchain@stable
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:492:        run: cargo install rust-script
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:563:        uses: docker/login-action@v4
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:570:        uses: docker/setup-buildx-action@v4
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:575:        uses: docker/metadata-action@v6
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:586:        uses: docker/build-push-action@v7
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:621:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:626:        uses: dtolnay/rust-toolchain@stable
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:629:        run: cargo install rust-script
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:638:        uses: peter-evans/create-pull-request@v8
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:690:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:695:        uses: dtolnay/rust-toolchain@stable
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:701:        uses: actions/configure-pages@v6
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:704:        uses: actions/upload-pages-artifact@v5
+docs/case-studies/issue-1/data/templates/rust/.github/workflows/release.yml:710:        uses: actions/deploy-pages@v5
+.github/workflows/workflows.yml:39:      - uses: actions/checkout@v7.0.1
+.github/workflows/workflows.yml:44:        uses: shivammathur/setup-php@2.40.0
+.github/workflows/workflows.yml:46:          php-version: '8.3'
+.github/workflows/workflows.yml:63:      - uses: actions/checkout@v7.0.1
+.github/workflows/workflows.yml:84:        uses: docker://rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667 # v1.7.12
+.github/workflows/workflows.yml:96:      - uses: actions/checkout@v7.0.1
+.github/workflows/workflows.yml:110:        uses: zizmorcore/zizmor-action@v0.8.1
+.github/workflows/workflows.yml:117:          version: 1.31.1
+.github/workflows/workflows.yml:123:      # .github/zizmor.yml is not enforced against `uses: docker://` or
+.github/workflows/workflows.yml:132:          pipx run zizmor==1.31.1 --config .github/zizmor.yml \
+.github/workflows/workflows.yml:151:      - uses: actions/checkout@v7.0.1
+.github/workflows/release.yml:51:      - uses: actions/checkout@v7.0.1
+.github/workflows/release.yml:57:        uses: shivammathur/setup-php@2.40.0
+.github/workflows/release.yml:59:          php-version: ${{ env.PHP_VERSION }}
+.github/workflows/release.yml:90:      - uses: actions/checkout@v7.0.1
+.github/workflows/release.yml:95:        uses: shivammathur/setup-php@2.40.0
+.github/workflows/release.yml:97:          php-version: ${{ env.PHP_VERSION }}
+.github/workflows/release.yml:102:        # --no-check-version: the version field is intentionally present and
+.github/workflows/release.yml:108:        uses: ramsey/composer-install@4.0.0
+.github/workflows/release.yml:109:        # A `uses:` step cannot be wrapped by run-with-budget-warning.sh, so
+.github/workflows/release.yml:149:      - uses: actions/checkout@v7.0.1
+.github/workflows/release.yml:154:        uses: shivammathur/setup-php@2.40.0
+.github/workflows/release.yml:156:          php-version: ${{ env.PHP_VERSION }}
+.github/workflows/release.yml:194:      - uses: actions/checkout@v7.0.1
+.github/workflows/release.yml:199:        uses: shivammathur/setup-php@2.40.0
+.github/workflows/release.yml:201:          php-version: ${{ matrix.php }}
+.github/workflows/release.yml:206:        uses: ramsey/composer-install@4.0.0
+.github/workflows/release.yml:207:        # A `uses:` step cannot be wrapped by run-with-budget-warning.sh, so
+.github/workflows/release.yml:230:      - uses: actions/checkout@v7.0.1
+.github/workflows/release.yml:236:        uses: shivammathur/setup-php@2.40.0
+.github/workflows/release.yml:238:          php-version: ${{ env.PHP_VERSION }}
+.github/workflows/release.yml:243:        uses: ramsey/composer-install@4.0.0
+.github/workflows/release.yml:244:        # A `uses:` step cannot be wrapped by run-with-budget-warning.sh, so
+.github/workflows/release.yml:279:      - uses: actions/checkout@v7.0.1
+.github/workflows/release.yml:284:        uses: shivammathur/setup-php@2.40.0
+.github/workflows/release.yml:286:          php-version: ${{ env.PHP_VERSION }}
+.github/workflows/release.yml:291:        # --no-check-version: the version field is intentionally present and
+.github/workflows/release.yml:330:      - uses: actions/checkout@v7.0.1
+.github/workflows/release.yml:337:        uses: shivammathur/setup-php@2.40.0
+.github/workflows/release.yml:339:          php-version: ${{ env.PHP_VERSION }}
+.github/workflows/release.yml:344:        uses: ramsey/composer-install@4.0.0
+.github/workflows/release.yml:345:        # A `uses:` step cannot be wrapped by run-with-budget-warning.sh, so
+.github/workflows/release.yml:423:      - uses: actions/checkout@v7.0.1
+.github/workflows/release.yml:430:        uses: shivammathur/setup-php@2.40.0
+.github/workflows/release.yml:432:          php-version: ${{ env.PHP_VERSION }}
+.github/workflows/release.yml:437:        uses: ramsey/composer-install@4.0.0
+.github/workflows/release.yml:438:        # A `uses:` step cannot be wrapped by run-with-budget-warning.sh, so
+.github/workflows/release.yml:499:      - uses: actions/checkout@v7.0.1
+.github/workflows/security.yml:29:      - uses: actions/checkout@v7.0.1
+.github/workflows/security.yml:34:        uses: shivammathur/setup-php@2.40.0
+.github/workflows/security.yml:36:          php-version: '8.3'
+.github/workflows/security.yml:68:      - uses: actions/checkout@v7.0.1
+.github/workflows/security.yml:73:        uses: github/codeql-action/init@v4.39.3
+.github/workflows/security.yml:78:        uses: github/codeql-action/autobuild@v4.39.3
+.github/workflows/security.yml:81:        uses: github/codeql-action/analyze@v4.39.3
+.github/workflows/security.yml:92:      - uses: actions/checkout@v7.0.1
+.github/workflows/security.yml:97:        uses: actions/dependency-review-action@v5.0.0
+.github/workflows/security.yml:117:      - uses: actions/checkout@v7.0.1
+.github/workflows/links.yml:46:      - uses: actions/checkout@v7.0.1
+.github/workflows/links.yml:51:        uses: shivammathur/setup-php@2.40.0
+.github/workflows/links.yml:53:          php-version: '8.3'
+.github/workflows/links.yml:58:        uses: lycheeverse/lychee-action@v2.9.0
+.github/workflows/links.yml:133:      - uses: actions/checkout@v7.0.1
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:40:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:43:        uses: actions/setup-node@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:45:          node-version: '24.x'
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:51:        uses: actions/configure-pages@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:63:        uses: actions/upload-artifact@v7
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:71:        uses: actions/upload-pages-artifact@v5
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:93:        uses: actions/deploy-pages@v5
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:104:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:107:        uses: actions/setup-node@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:112:          node-version: '20.x'
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:137:        uses: actions/upload-artifact@v7
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:149:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:152:        uses: actions/setup-node@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:154:          node-version: '24.x'
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:159:        uses: actions/setup-java@v5
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:162:          java-version: '21'
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:165:        uses: android-actions/setup-android@v3
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:177:        uses: actions/upload-artifact@v7
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:191:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:194:        uses: actions/setup-node@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:196:          node-version: '24.x'
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:217:      image: mcr.microsoft.com/playwright:v1.59.1-noble
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:227:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:241:        run: npm install --no-save --package-lock=false --no-audit --no-fund browser-commander@0.8.1 playwright@1.59.1
+docs/case-studies/issue-1/data/templates/js/.github/workflows/example-app.yml:279:        uses: actions/upload-artifact@v7
+docs/case-studies/issue-1/data/templates/js/.github/workflows/links.yml:29:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/links.yml:33:        uses: lycheeverse/lychee-action@v2
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:61:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:84:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:103:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:128:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:143:    # Typical run: <30s including npm install. 10min covers cold runners.
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:148:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:153:        uses: actions/setup-node@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:155:          node-version: '24.x'
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:158:        run: npm install
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:198:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:210:        uses: actions/setup-node@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:212:          node-version: '24.x'
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:215:        run: npm install
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:263:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:277:        uses: actions/setup-node@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:279:          node-version: '24.x'
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:283:        run: npm install
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:291:        uses: oven-sh/setup-bun@v2
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:293:          bun-version: latest
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:307:        uses: denoland/setup-deno@v2
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:309:          deno-version: v2.x
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:327:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:383:      published_version: ${{ steps.publish.outputs.published_version }}
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:385:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:390:        uses: actions/setup-node@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:392:          node-version: '24.x'
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:396:        run: npm install
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:460:      published_version: ${{ steps.publish.outputs.published_version }}
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:462:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:467:        uses: actions/setup-node@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:469:          node-version: '24.x'
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:473:        run: npm install
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:524:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:536:        uses: ./.github/actions/publish-dockerhub
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:540:          image: ${{ steps.docker_config.outputs.image }}
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:543:          version: ${{ env.RELEASE_VERSION }}
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:556:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:561:        uses: actions/setup-node@v6
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:563:          node-version: '24.x'
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:566:        run: npm install
+docs/case-studies/issue-1/data/templates/js/.github/workflows/release.yml:579:        uses: peter-evans/create-pull-request@v8
+docs/case-studies/issue-1/data/templates/js/.github/actions/publish-dockerhub/action.yml:13:  image:
+docs/case-studies/issue-1/data/templates/js/.github/actions/publish-dockerhub/action.yml:22:  version:
+docs/case-studies/issue-1/data/templates/js/.github/actions/publish-dockerhub/action.yml:30:      uses: docker/setup-buildx-action@v4
+docs/case-studies/issue-1/data/templates/js/.github/actions/publish-dockerhub/action.yml:33:      uses: docker/login-action@v4
+docs/case-studies/issue-1/data/templates/js/.github/actions/publish-dockerhub/action.yml:40:      uses: docker/metadata-action@v6
+docs/case-studies/issue-1/data/templates/js/.github/actions/publish-dockerhub/action.yml:50:      uses: docker/build-push-action@v7
+docs/case-studies/issue-1/data/templates/rust/scripts/check-file-size.rs:2://! Check Rust files for maximum and warning line-count thresholds
+docs/case-studies/issue-1/data/templates/rust/scripts/check-file-size.rs:3://! Exits with error code 1 if any files exceed the hard limit
+docs/case-studies/issue-1/data/templates/rust/scripts/check-file-size.rs:4://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-file-size.rs:5://! Usage: rust-script scripts/check-file-size.rs
+docs/case-studies/issue-1/data/templates/rust/scripts/check-file-size.rs:6://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-file-size.rs:7://! ```cargo
+docs/case-studies/issue-1/data/templates/rust/scripts/check-file-size.rs:8://! [dependencies]
+docs/case-studies/issue-1/data/templates/rust/scripts/check-file-size.rs:9://! walkdir = "2"
+docs/case-studies/issue-1/data/templates/rust/scripts/check-file-size.rs:10://! ```
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:2://! Check if a release is needed based on changelog fragments and version state
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:3://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:4://! This script checks:
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:5://! 1. If there are changelog fragments to process
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:6://! 2. If the current version has already been published to crates.io
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:7://! 3. If the matching GitHub release and configured Docker Hub image tag exist
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:8://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:9://! IMPORTANT: This script checks external release artifacts, NOT git tags.
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:10://! This is critical because:
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:11://! - Git tags can exist without the package being published
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:12://! - GitHub releases create tags but do not publish to crates.io or Docker Hub
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:13://! - A crates.io publish can succeed while later Docker/GitHub release steps fail
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:14://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:15://! Supports both single-language and multi-language repository structures:
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:16://! - Single-language: Cargo.toml in repository root
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:17://! - Multi-language: Cargo.toml in rust/ subfolder
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:18://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:19://! Usage: rust-script scripts/check-release-needed.rs [--rust-root <path>]
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:20://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:21://! Environment variables:
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:22://!   - HAS_FRAGMENTS: 'true' if changelog fragments exist (from get-bump-type.rs)
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:23://!   - DOCKERHUB_IMAGE: Optional Docker Hub image name to verify (namespace/repository)
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:24://!   - GITHUB_REPOSITORY: GitHub repository to verify (owner/repository)
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:25://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:26://! Outputs (written to GITHUB_OUTPUT):
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:27://!   - should_release: 'true' if a release should be created
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:28://!   - skip_bump: 'true' if version bump should be skipped while missing artifacts are recreated
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:29://!   - crate_published: 'true' if the current version already exists on crates.io
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:30://!   - dockerhub_required: 'true' if Docker Hub publishing is configured and a Dockerfile exists
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:31://!   - dockerhub_published: 'true' if the configured Docker Hub tag exists
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:32://!   - github_release_published: 'true' if the matching GitHub release exists
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:33://!   - max_published_version: the highest non-yanked version on crates.io (for downstream use)
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:34://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:35://! ```cargo
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:36://! [dependencies]
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:37://! regex = "1"
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:38://! ureq = "2"
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:39://! serde = { version = "1", features = ["derive"] }
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:40://! serde_json = "1"
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:41://! ```
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:83:    version: Option<CratesIoVersionInfo>,
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:103:fn check_version_on_crates_io(crate_name: &str, version: &str) -> bool {
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:128:fn split_docker_image(image: &str) -> Option<(&str, &str)> {
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:140:fn check_docker_hub_tag(image: &str, version: &str) -> bool {
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:167:fn check_github_release(repository: &str, tag_prefix: &str, version: &str) -> bool {
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:210:fn parse_semver(version: &str) -> Option<(u32, u32, u32)> {
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:234:                            let mut max_version: Option<(u32, u32, u32, String)> = None;
+docs/case-studies/issue-1/data/templates/rust/scripts/check-release-needed.rs:360:                "Docker image: {}, version/latest tags published on Docker Hub: {}",
+docs/case-studies/issue-1/data/templates/rust/scripts/bump-version.rs:2://! Bump version in Cargo.toml
+docs/case-studies/issue-1/data/templates/rust/scripts/bump-version.rs:3://!
+docs/case-studies/issue-1/data/templates/rust/scripts/bump-version.rs:4://! Usage: rust-script scripts/bump-version.rs --bump-type <major|minor|patch> [--dry-run] [--rust-root <path>]
+docs/case-studies/issue-1/data/templates/rust/scripts/bump-version.rs:5://!
+docs/case-studies/issue-1/data/templates/rust/scripts/bump-version.rs:6://! Supports both single-language and multi-language repository structures:
+docs/case-studies/issue-1/data/templates/rust/scripts/bump-version.rs:7://! - Single-language: Cargo.toml in repository root
+docs/case-studies/issue-1/data/templates/rust/scripts/bump-version.rs:8://! - Multi-language: Cargo.toml in rust/ subfolder
+docs/case-studies/issue-1/data/templates/rust/scripts/bump-version.rs:9://!
+docs/case-studies/issue-1/data/templates/rust/scripts/bump-version.rs:10://! ```cargo
+docs/case-studies/issue-1/data/templates/rust/scripts/bump-version.rs:11://! [dependencies]
+docs/case-studies/issue-1/data/templates/rust/scripts/bump-version.rs:12://! regex = "1"
+docs/case-studies/issue-1/data/templates/rust/scripts/bump-version.rs:13://! ```
+docs/case-studies/issue-1/data/templates/rust/scripts/bump-version.rs:96:fn update_cargo_toml(cargo_toml_path: &str, new_version: &str) -> Result<(), String> {
+docs/case-studies/issue-1/data/templates/rust/scripts/bump-version.rs:153:    println!("Current version: {}", current.to_string());
+docs/case-studies/issue-1/data/templates/rust/scripts/bump-version.rs:154:    println!("New version: {}", new_version);
+docs/case-studies/issue-1/data/templates/rust/scripts/git-config.rs:2://! Configure git user for CI/CD pipeline
+docs/case-studies/issue-1/data/templates/rust/scripts/git-config.rs:3://!
+docs/case-studies/issue-1/data/templates/rust/scripts/git-config.rs:4://! This script sets up the git user name and email for automated commits.
+docs/case-studies/issue-1/data/templates/rust/scripts/git-config.rs:5://! It's used by the CI/CD pipeline before making commits.
+docs/case-studies/issue-1/data/templates/rust/scripts/git-config.rs:6://!
+docs/case-studies/issue-1/data/templates/rust/scripts/git-config.rs:7://! Usage: rust-script scripts/git-config.rs [--name <name>] [--email <email>]
+docs/case-studies/issue-1/data/templates/rust/scripts/git-config.rs:8://!
+docs/case-studies/issue-1/data/templates/rust/scripts/git-config.rs:9://! Environment variables:
+docs/case-studies/issue-1/data/templates/rust/scripts/git-config.rs:10://!   - GIT_USER_NAME: Git user name (default: github-actions[bot])
+docs/case-studies/issue-1/data/templates/rust/scripts/git-config.rs:11://!   - GIT_USER_EMAIL: Git user email (default: github-actions[bot]@users.noreply.github.com)
+docs/case-studies/issue-1/data/templates/rust/scripts/create-changelog-fragment.rs:2://! Create a changelog fragment for manual release PR
+docs/case-studies/issue-1/data/templates/rust/scripts/create-changelog-fragment.rs:3://!
+docs/case-studies/issue-1/data/templates/rust/scripts/create-changelog-fragment.rs:4://! This script creates a changelog fragment with the appropriate
+docs/case-studies/issue-1/data/templates/rust/scripts/create-changelog-fragment.rs:5://! category based on the bump type.
+docs/case-studies/issue-1/data/templates/rust/scripts/create-changelog-fragment.rs:6://!
+docs/case-studies/issue-1/data/templates/rust/scripts/create-changelog-fragment.rs:7://! Usage: rust-script scripts/create-changelog-fragment.rs --bump-type <type> [--description <desc>]
+docs/case-studies/issue-1/data/templates/rust/scripts/create-changelog-fragment.rs:8://!
+docs/case-studies/issue-1/data/templates/rust/scripts/create-changelog-fragment.rs:9://! ```cargo
+docs/case-studies/issue-1/data/templates/rust/scripts/create-changelog-fragment.rs:10://! [dependencies]
+docs/case-studies/issue-1/data/templates/rust/scripts/create-changelog-fragment.rs:11://! chrono = "0.4"
+docs/case-studies/issue-1/data/templates/rust/scripts/create-changelog-fragment.rs:12://! ```
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:2://! Publish package to crates.io
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:3://!
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:4://! This script publishes the Rust package to crates.io and handles
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:5://! the case where the version already exists.
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:6://!
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:7://! Supports both single-language and multi-language repository structures:
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:8://! - Single-language: Cargo.toml in repository root
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:9://! - Multi-language: Cargo.toml in rust/ subfolder
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:10://!
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:11://! Usage: rust-script scripts/publish-crate.rs [--token <token>] [--rust-root <path>]
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:12://!
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:13://! Environment variables (checked in order of priority):
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:14://!   - CARGO_REGISTRY_TOKEN: Cargo's native crates.io token (preferred)
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:15://!   - CARGO_TOKEN: Alternative token name for backwards compatibility
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:16://!
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:17://! Outputs (written to GITHUB_OUTPUT):
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:18://!   - publish_result: one of
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:19://!       'success'        - the crate version was published to crates.io
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:20://!       'already_exists' - the version is already on crates.io (version-bump bug)
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:21://!       'auth_failed'    - missing or invalid crates.io authentication token
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:22://!       'rate_limited'   - crates.io returned HTTP 429 (too many versions in 24h);
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:23://!                          deferred, automatically-recoverable outcome — the
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:24://!                          script exits 0 and the same version is retried on the
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:25://!                          next push to 'main' once the throttle window clears
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:26://!       'skipped'        - publish skipped (e.g. template default package name)
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:27://!       'failed'         - publish failed for an unrecognised reason
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:28://!
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:29://! ```cargo
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:30://! [dependencies]
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:31://! regex = "1"
+docs/case-studies/issue-1/data/templates/rust/scripts/publish-crate.rs:32://! ```
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:2://! Bump version in Cargo.toml and commit changes
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:3://! Used by the CI/CD pipeline for releases
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:4://!
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:5://! IMPORTANT: This script checks crates.io (the source of truth for Rust packages),
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:6://! NOT git tags. This is critical because:
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:7://! - Git tags can exist without the package being published
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:8://! - GitHub releases create tags but don't publish to crates.io
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:9://! - Only crates.io publication means users can actually install the package
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:10://!
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:11://! Supports both single-language and multi-language repository structures:
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:12://! - Single-language: Cargo.toml and changelog.d/ in repository root
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:13://! - Multi-language: Cargo.toml and changelog.d/ in rust/ subfolder
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:14://!
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:15://! Usage: rust-script scripts/version-and-commit.rs --bump-type <major|minor|patch> [--description <desc>] [--rust-root <path>] [--tag-prefix <prefix>] [--release-label <label>]
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:16://!
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:17://! ```cargo
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:18://! [dependencies]
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:19://! regex = "1"
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:20://! chrono = "0.4"
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:21://! ureq = "2"
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:22://! serde = { version = "1", features = ["derive"] }
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:23://! serde_json = "1"
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:24://! ```
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:135:fn update_cargo_toml(cargo_toml_path: &str, new_version: &str) -> Result<(), String> {
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:152:    new_version: &str,
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:221:fn check_tag_exists(tag_prefix: &str, version: &str) -> bool {
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:226:fn check_version_on_crates_io(crate_name: &str, version: &str) -> bool {
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:359:fn collect_changelog(changelog_dir: &str, changelog_file: &str, version: &str) {
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:367:    version: &str,
+docs/case-studies/issue-1/data/templates/rust/scripts/version-and-commit.rs:687:    println!("Final release version: {}", new_version);
+docs/case-studies/issue-1/data/templates/rust/scripts/create-github-release.rs:2://! Create GitHub Release from CHANGELOG.md
+docs/case-studies/issue-1/data/templates/rust/scripts/create-github-release.rs:3://!
+docs/case-studies/issue-1/data/templates/rust/scripts/create-github-release.rs:4://! Automatically includes crates.io and docs.rs badges in release notes
+docs/case-studies/issue-1/data/templates/rust/scripts/create-github-release.rs:5://! when the crate name can be detected from Cargo.toml.
+docs/case-studies/issue-1/data/templates/rust/scripts/create-github-release.rs:6://!
+docs/case-studies/issue-1/data/templates/rust/scripts/create-github-release.rs:7://! Usage: rust-script scripts/create-github-release.rs --release-version <version> --repository <repository> [--tag-prefix <prefix>] [--language <name>] [--release-label <label>] [--docker-hub-url <url>]
+docs/case-studies/issue-1/data/templates/rust/scripts/create-github-release.rs:8://!
+docs/case-studies/issue-1/data/templates/rust/scripts/create-github-release.rs:9://! ```cargo
+docs/case-studies/issue-1/data/templates/rust/scripts/create-github-release.rs:10://! [dependencies]
+docs/case-studies/issue-1/data/templates/rust/scripts/create-github-release.rs:11://! regex = "1"
+docs/case-studies/issue-1/data/templates/rust/scripts/create-github-release.rs:12://! serde = { version = "1", features = ["derive"] }
+docs/case-studies/issue-1/data/templates/rust/scripts/create-github-release.rs:13://! serde_json = "1"
+docs/case-studies/issue-1/data/templates/rust/scripts/create-github-release.rs:14://! ```
+docs/case-studies/issue-1/data/templates/rust/scripts/create-github-release.rs:91:fn normalize_release_version(release_version: &str) -> String {
+docs/case-studies/issue-1/data/templates/rust/scripts/create-github-release.rs:115:fn build_release_tag(tag_prefix: &str, release_version: &str) -> String {
+docs/case-studies/issue-1/data/templates/rust/scripts/create-github-release.rs:122:    release_version: &str,
+docs/case-studies/issue-1/data/templates/rust/scripts/create-github-release.rs:153:fn docker_hub_tag_query(version: &str) -> String {
+docs/case-studies/issue-1/data/templates/rust/scripts/create-github-release.rs:157:fn docker_hub_badge(url: &str, version: &str) -> String {
+docs/case-studies/issue-1/data/templates/rust/scripts/create-github-release.rs:177:fn get_changelog_for_version(changelog_path: &str, version: &str) -> String {
+docs/case-studies/issue-1/data/templates/rust/scripts/create-github-release.rs:226:    release_version: &str,
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:2://! Check for manual version modification in Cargo.toml
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:3://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:4://! This script prevents manual version changes in pull requests.
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:5://! Versions should be managed automatically by the CI/CD pipeline
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:6://! using changelog fragments in changelog.d/.
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:7://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:8://! Key behavior:
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:9://! - Detects if `version = "..."` line has changed in Cargo.toml
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:10://! - Fails the CI check if manual version change is detected
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:11://! - Skips check for automated release branches (changelog-manual-release-*)
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:12://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:13://! Usage: rust-script scripts/check-version-modification.rs
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:14://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:15://! Environment variables (set by GitHub Actions):
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:16://!   - GITHUB_HEAD_REF: The head branch name for PRs
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:17://!   - GITHUB_BASE_REF: The base branch name for PRs
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:18://!   - GITHUB_EVENT_NAME: Should be 'pull_request'
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:19://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:20://! Exit codes:
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:21://!   - 0: No manual version changes detected (or check skipped)
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:22://!   - 1: Manual version changes detected
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:23://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:24://! ```cargo
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:25://! [dependencies]
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:26://! regex = "1"
+docs/case-studies/issue-1/data/templates/rust/scripts/check-version-modification.rs:27://! ```
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:2://! Detect code changes for CI/CD pipeline
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:3://!
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:4://! This script detects what types of files have changed in the latest commit
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:5://! and outputs the results for use in GitHub Actions workflow conditions.
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:6://!
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:7://! Key behavior:
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:8://! - For PRs: detects GitHub Actions' synthetic merge commit and uses
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:9://!   HEAD^2^..HEAD^2 to get the per-commit diff of the actual PR head,
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:10://!   so a commit touching only non-code files correctly skips CI jobs
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:11://!   even when earlier commits in the same PR touched code files.
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:12://! - For pushes: compares HEAD against HEAD^
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:13://! - Excludes certain folders and file types from "code changes" detection
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:14://!
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:15://! Excluded from code changes (don't require changelog fragments):
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:16://! - Markdown files (*.md) in any folder
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:17://! - changelog.d/ folder (changelog fragments)
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:18://! - docs/ folder (documentation)
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:19://! - experiments/ folder (experimental scripts)
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:20://! - examples/ folder (example scripts)
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:21://!
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:22://! Usage: rust-script scripts/detect-code-changes.rs
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:23://!
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:24://! Environment variables (set by GitHub Actions):
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:25://!   - GITHUB_EVENT_NAME: 'pull_request' or 'push'
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:26://!
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:27://! Outputs (written to GITHUB_OUTPUT):
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:28://!   - rs-changed: 'true' if any .rs files changed
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:29://!   - toml-changed: 'true' if any .toml files changed
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:30://!   - mjs-changed: 'true' if any .mjs files changed
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:31://!   - docs-changed: 'true' if any .md files changed
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:32://!   - workflow-changed: 'true' if any .github/workflows/ files changed
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:33://!   - any-code-changed: 'true' if any code files changed (excludes docs, changelog.d, experiments, examples)
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:34://!
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:35://! ```cargo
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:36://! [dependencies]
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:37://! regex = "1"
+docs/case-studies/issue-1/data/templates/rust/scripts/detect-code-changes.rs:38://! ```
+.github/workflows/docs.yml:41:      - uses: actions/checkout@v7.0.1
+.github/workflows/docs.yml:46:        uses: shivammathur/setup-php@2.40.0
+.github/workflows/docs.yml:48:          php-version: '8.3'
+.github/workflows/docs.yml:56:        uses: actions/upload-artifact@v7.0.2
+.github/workflows/docs.yml:64:        uses: actions/configure-pages@v6.0.0
+.github/workflows/docs.yml:68:        uses: actions/upload-pages-artifact@v5.0.0
+.github/workflows/docs.yml:87:        uses: actions/deploy-pages@v5.0.1
+.github/workflows/docs.yml:103:      - uses: actions/checkout@v7.0.1
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:2://! Wait for a crates.io package version to become visible.
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:3://!
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:4://! The Docker release step runs after `cargo publish`, but crates.io indexing can
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:5://! lag briefly. Waiting here makes Docker Hub tags and GitHub releases point at a
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:6://! crate version that users can already resolve.
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:7://!
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:8://! Usage:
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:9://!   rust-script scripts/wait-for-crate.rs --release-version <version>
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:10://!
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:11://! Optional arguments:
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:12://!   --crate-name <name>       Crate name. Defaults to Cargo.toml package name.
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:13://!   --rust-root <path>        Root containing Cargo.toml. Defaults to auto-detect.
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:14://!   --max-attempts <count>    Defaults to 30.
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:15://!   --sleep-seconds <count>   Defaults to 10.
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:16://!
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:17://! Outputs (written to GITHUB_OUTPUT):
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:18://!   - crate_available: 'true' when the version is visible, or 'skipped' for template defaults
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:19://!
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:20://! ```cargo
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:21://! [dependencies]
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:22://! regex = "1"
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:23://! ureq = "2"
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:24://! ```
+docs/case-studies/issue-1/data/templates/rust/scripts/wait-for-crate.rs:81:fn crate_version_exists(crate_name: &str, version: &str) -> bool {
+docs/case-studies/issue-1/data/templates/rust/scripts/collect-changelog.rs:2://! Collect changelog fragments into CHANGELOG.md
+docs/case-studies/issue-1/data/templates/rust/scripts/collect-changelog.rs:3://!
+docs/case-studies/issue-1/data/templates/rust/scripts/collect-changelog.rs:4://! This script collects all .md files from changelog.d/ (except README.md)
+docs/case-studies/issue-1/data/templates/rust/scripts/collect-changelog.rs:5://! and prepends them to CHANGELOG.md, then removes the processed fragments.
+docs/case-studies/issue-1/data/templates/rust/scripts/collect-changelog.rs:6://!
+docs/case-studies/issue-1/data/templates/rust/scripts/collect-changelog.rs:7://! Supports both single-language and multi-language repository structures:
+docs/case-studies/issue-1/data/templates/rust/scripts/collect-changelog.rs:8://! - Single-language: Cargo.toml and changelog.d/ in repository root
+docs/case-studies/issue-1/data/templates/rust/scripts/collect-changelog.rs:9://! - Multi-language: Cargo.toml and changelog.d/ in rust/ subfolder
+docs/case-studies/issue-1/data/templates/rust/scripts/collect-changelog.rs:10://!
+docs/case-studies/issue-1/data/templates/rust/scripts/collect-changelog.rs:11://! Usage: rust-script scripts/collect-changelog.rs [--rust-root <path>]
+docs/case-studies/issue-1/data/templates/rust/scripts/collect-changelog.rs:12://!
+docs/case-studies/issue-1/data/templates/rust/scripts/collect-changelog.rs:13://! ```cargo
+docs/case-studies/issue-1/data/templates/rust/scripts/collect-changelog.rs:14://! [dependencies]
+docs/case-studies/issue-1/data/templates/rust/scripts/collect-changelog.rs:15://! regex = "1"
+docs/case-studies/issue-1/data/templates/rust/scripts/collect-changelog.rs:16://! chrono = "0.4"
+docs/case-studies/issue-1/data/templates/rust/scripts/collect-changelog.rs:17://! ```
+docs/case-studies/issue-1/data/templates/rust/scripts/collect-changelog.rs:139:fn update_changelog(changelog_file: &str, version: &str, fragments: &str) {
+docs/case-studies/issue-1/data/templates/rust/scripts/rust-paths.rs:2://! Rust package path detection utility
+docs/case-studies/issue-1/data/templates/rust/scripts/rust-paths.rs:3://!
+docs/case-studies/issue-1/data/templates/rust/scripts/rust-paths.rs:4://! Automatically detects the Rust package root for both:
+docs/case-studies/issue-1/data/templates/rust/scripts/rust-paths.rs:5://! - Single-language repositories (Cargo.toml in root)
+docs/case-studies/issue-1/data/templates/rust/scripts/rust-paths.rs:6://! - Multi-language repositories (Cargo.toml in rust/ subfolder)
+docs/case-studies/issue-1/data/templates/rust/scripts/rust-paths.rs:7://!
+docs/case-studies/issue-1/data/templates/rust/scripts/rust-paths.rs:8://! This utility follows best practices for multi-language monorepo support,
+docs/case-studies/issue-1/data/templates/rust/scripts/rust-paths.rs:9://! allowing scripts to work seamlessly in both repository structures.
+docs/case-studies/issue-1/data/templates/rust/scripts/rust-paths.rs:10://!
+docs/case-studies/issue-1/data/templates/rust/scripts/rust-paths.rs:11://! Usage (as library - import functions from this module):
+docs/case-studies/issue-1/data/templates/rust/scripts/rust-paths.rs:12://!   The functions are used by other scripts in this directory.
+docs/case-studies/issue-1/data/templates/rust/scripts/rust-paths.rs:13://!
+docs/case-studies/issue-1/data/templates/rust/scripts/rust-paths.rs:14://! Configuration options (in order of priority):
+docs/case-studies/issue-1/data/templates/rust/scripts/rust-paths.rs:15://!   1. Explicit parameter passed to functions
+docs/case-studies/issue-1/data/templates/rust/scripts/rust-paths.rs:16://!   2. CLI argument: --rust-root <path>
+docs/case-studies/issue-1/data/templates/rust/scripts/rust-paths.rs:17://!   3. Environment variable: `RUST_ROOT`
+docs/case-studies/issue-1/data/templates/rust/scripts/rust-paths.rs:18://!   4. Auto-detection: Check ./Cargo.toml first, then ./rust/Cargo.toml
+docs/case-studies/issue-1/data/templates/rust/scripts/rust-paths.rs:30:    pub version: String,
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:2://! Check the packaged `.crate` archive against the crates.io upload limit
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:3://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:4://! crates.io rejects `cargo publish` uploads larger than 10 MiB (10485760 bytes)
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:5://! with an HTTP 413 error. This guard runs `cargo package` to build the archive
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:6://! and fails the release before publishing when the archive is too large, so the
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:7://! release pipeline surfaces a clear, actionable error instead of a late 413.
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:8://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:9://! Supports both single-language and multi-language repository structures:
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:10://! - Single-language: Cargo.toml in repository root
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:11://! - Multi-language: Cargo.toml in rust/ subfolder
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:12://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:13://! Usage: rust-script scripts/check-crate-size.rs [--rust-root <path>]
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:14://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:15://! Outputs (written to `GITHUB_OUTPUT`):
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:16://!   - `crate_size_bytes`: size of the generated `.crate` archive in bytes
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:17://!   - `crate_size_check`: 'pass' or 'fail'
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:18://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:19://! Reference: <https://doc.rust-lang.org/cargo/reference/publishing.html#packaging-a-crate>
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:20://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:21://! ```cargo
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:22://! [dependencies]
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:23://! regex = "1"
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:24://! ```
+docs/case-studies/issue-1/data/templates/rust/scripts/check-crate-size.rs:85:fn find_crate_archive(rust_root: &str, name: &str, version: &str) -> Option<PathBuf> {
+docs/case-studies/issue-1/data/templates/rust/scripts/check-changelog-fragment.rs:2://! Check if a changelog fragment was added in the current PR
+docs/case-studies/issue-1/data/templates/rust/scripts/check-changelog-fragment.rs:3://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-changelog-fragment.rs:4://! This script validates that a changelog fragment is added in the PR diff,
+docs/case-studies/issue-1/data/templates/rust/scripts/check-changelog-fragment.rs:5://! not just checking if any fragments exist in the directory. This prevents
+docs/case-studies/issue-1/data/templates/rust/scripts/check-changelog-fragment.rs:6://! the check from incorrectly passing when there are leftover fragments
+docs/case-studies/issue-1/data/templates/rust/scripts/check-changelog-fragment.rs:7://! from previous PRs that haven't been released yet.
+docs/case-studies/issue-1/data/templates/rust/scripts/check-changelog-fragment.rs:8://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-changelog-fragment.rs:9://! Usage: rust-script scripts/check-changelog-fragment.rs
+docs/case-studies/issue-1/data/templates/rust/scripts/check-changelog-fragment.rs:10://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-changelog-fragment.rs:11://! Environment variables (set by GitHub Actions):
+docs/case-studies/issue-1/data/templates/rust/scripts/check-changelog-fragment.rs:12://!   - GITHUB_BASE_REF: Base branch name for PR (e.g., "main")
+docs/case-studies/issue-1/data/templates/rust/scripts/check-changelog-fragment.rs:13://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-changelog-fragment.rs:14://! Exit codes:
+docs/case-studies/issue-1/data/templates/rust/scripts/check-changelog-fragment.rs:15://!   - 0: Check passed (fragment added or no source changes)
+docs/case-studies/issue-1/data/templates/rust/scripts/check-changelog-fragment.rs:16://!   - 1: Check failed (source changes without changelog fragment)
+docs/case-studies/issue-1/data/templates/rust/scripts/check-changelog-fragment.rs:17://!
+docs/case-studies/issue-1/data/templates/rust/scripts/check-changelog-fragment.rs:18://! ```cargo
+docs/case-studies/issue-1/data/templates/rust/scripts/check-changelog-fragment.rs:19://! [dependencies]
+docs/case-studies/issue-1/data/templates/rust/scripts/check-changelog-fragment.rs:20://! regex = "1"
+docs/case-studies/issue-1/data/templates/rust/scripts/check-changelog-fragment.rs:21://! ```
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/docs.yml:48:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/docs.yml:51:        uses: actions/setup-dotnet@v4
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/docs.yml:53:          dotnet-version: '8.0.x'
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/docs.yml:72:        uses: actions/configure-pages@v6
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/docs.yml:76:        uses: actions/upload-pages-artifact@v5
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/docs.yml:92:        uses: actions/deploy-pages@v5
+docs/case-studies/issue-1/data/templates/rust/scripts/get-version.rs:2://! Get the current version from Cargo.toml
+docs/case-studies/issue-1/data/templates/rust/scripts/get-version.rs:3://!
+docs/case-studies/issue-1/data/templates/rust/scripts/get-version.rs:4://! This script reads the version from Cargo.toml and outputs it
+docs/case-studies/issue-1/data/templates/rust/scripts/get-version.rs:5://! for use in GitHub Actions.
+docs/case-studies/issue-1/data/templates/rust/scripts/get-version.rs:6://!
+docs/case-studies/issue-1/data/templates/rust/scripts/get-version.rs:7://! Supports both single-language and multi-language repository structures:
+docs/case-studies/issue-1/data/templates/rust/scripts/get-version.rs:8://! - Single-language: Cargo.toml in repository root
+docs/case-studies/issue-1/data/templates/rust/scripts/get-version.rs:9://! - Multi-language: Cargo.toml in rust/ subfolder
+docs/case-studies/issue-1/data/templates/rust/scripts/get-version.rs:10://!
+docs/case-studies/issue-1/data/templates/rust/scripts/get-version.rs:11://! Usage: rust-script scripts/get-version.rs [--rust-root <path>]
+docs/case-studies/issue-1/data/templates/rust/scripts/get-version.rs:12://!
+docs/case-studies/issue-1/data/templates/rust/scripts/get-version.rs:13://! Outputs (written to GITHUB_OUTPUT):
+docs/case-studies/issue-1/data/templates/rust/scripts/get-version.rs:14://!   - version: The current version from Cargo.toml
+docs/case-studies/issue-1/data/templates/rust/scripts/get-version.rs:15://!
+docs/case-studies/issue-1/data/templates/rust/scripts/get-version.rs:16://! ```cargo
+docs/case-studies/issue-1/data/templates/rust/scripts/get-version.rs:17://! [dependencies]
+docs/case-studies/issue-1/data/templates/rust/scripts/get-version.rs:18://! regex = "1"
+docs/case-studies/issue-1/data/templates/rust/scripts/get-version.rs:19://! ```
+docs/case-studies/issue-1/data/templates/rust/scripts/get-version.rs:64:            println!("Current version: {}", info.version);
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:58:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:63:        uses: oven-sh/setup-bun@v2
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:65:          bun-version: latest
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:84:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:89:        uses: oven-sh/setup-bun@v2
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:91:          bun-version: latest
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:127:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:130:        uses: actions/setup-dotnet@v4
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:132:          dotnet-version: '8.0.x'
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:135:        uses: oven-sh/setup-bun@v2
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:137:          bun-version: latest
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:167:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:170:        uses: actions/setup-dotnet@v4
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:172:          dotnet-version: '8.0.x'
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:185:        uses: codecov/codecov-action@v4
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:198:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:201:        uses: actions/setup-dotnet@v4
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:203:          dotnet-version: '8.0.x'
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:215:        uses: actions/upload-artifact@v7
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:232:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:237:        uses: actions/setup-dotnet@v4
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:239:          dotnet-version: '8.0.x'
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:242:        uses: oven-sh/setup-bun@v2
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:244:          bun-version: latest
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:295:          echo "Releasing version: $VERSION"
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:405:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:411:        uses: actions/setup-dotnet@v4
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:413:          dotnet-version: '8.0.x'
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:416:        uses: oven-sh/setup-bun@v2
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:418:          bun-version: latest
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:521:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:526:        uses: oven-sh/setup-bun@v2
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:528:          bun-version: latest
+docs/case-studies/issue-1/data/templates/csharp/.github/workflows/release.yml:546:        uses: peter-evans/create-pull-request@v8
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:2://! Parse changelog fragments and determine version bump type
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:3://!
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:4://! This script reads changeset fragments from changelog.d/ and determines
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:5://! the version bump type based on the frontmatter in each fragment.
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:6://!
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:7://! Supports both single-language and multi-language repository structures:
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:8://! - Single-language: changelog.d/ in repository root
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:9://! - Multi-language: changelog.d/ in rust/ subfolder
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:10://!
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:11://! Fragment format:
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:12://! ---
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:13://! bump: patch|minor|major
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:14://! ---
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:15://!
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:16://! ### Added
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:17://! - Your changes here
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:18://!
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:19://! Usage: rust-script scripts/get-bump-type.rs [--default <patch|minor|major>] [--rust-root <path>]
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:20://!
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:21://! ```cargo
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:22://! [dependencies]
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:23://! regex = "1"
+docs/case-studies/issue-1/data/templates/rust/scripts/get-bump-type.rs:24://! ```
+docs/case-studies/issue-1/data/templates/csharp/scripts/wait-for-nuget.test.mjs:19: * @param {{ statuses: number[] }} options Sequence of HTTP statuses to serve in
+docs/case-studies/issue-1/data/templates/csharp/scripts/wait-for-nuget.test.mjs:158:        version: '2.4.0',
+docs/case-studies/issue-1/data/templates/csharp/scripts/wait-for-nuget.test.mjs:168:        version: '1.0.0-RC.1',
+docs/case-studies/issue-1/data/templates/csharp/scripts/wait-for-nuget.test.mjs:175:      createNugetNuspecUrl({ packageId: 'MyPackage', version: '1.0.0' })
+docs/case-studies/issue-1/data/templates/csharp/scripts/wait-for-nuget.test.mjs:200:      version: '2.4.0',
+docs/case-studies/issue-1/data/templates/csharp/scripts/wait-for-nuget.test.mjs:224:      version: '2.4.0',
+docs/case-studies/issue-1/data/templates/csharp/scripts/wait-for-nuget.test.mjs:248:      version: '2.4.0',
+docs/case-studies/issue-1/data/templates/csharp/scripts/wait-for-nuget.test.mjs:273:      version: '1.0.0',
+docs/case-studies/issue-1/data/templates/csharp/scripts/wait-for-nuget.test.mjs:284:    const mock = await startNugetMock({ statuses: [200] });
+docs/case-studies/issue-1/data/templates/csharp/scripts/wait-for-nuget.test.mjs:289:        version: '1.0.0',
+docs/case-studies/issue-1/data/templates/csharp/scripts/wait-for-nuget.test.mjs:305:    const mock = await startNugetMock({ statuses: [404] });
+docs/case-studies/issue-1/data/templates/csharp/scripts/wait-for-nuget.test.mjs:310:        version: '9.9.9',
+docs/case-studies/issue-1/data/templates/csharp/scripts/wait-for-nuget.test.mjs:326:      version: '1.0.0',
+docs/case-studies/issue-1/data/templates/csharp/scripts/wait-for-nuget.test.mjs:334:    const mock = await startNugetMock({ statuses: [404, 404, 200] });
+docs/case-studies/issue-1/data/templates/csharp/scripts/wait-for-nuget.test.mjs:347:        version: '1.0.0',
+docs/case-studies/issue-1/data/templates/csharp/scripts/check-release-needed.mjs:42: *   - current_version:       the current csproj <Version> value
+docs/case-studies/issue-1/data/templates/csharp/scripts/check-release-needed.mjs:103: * @returns {{ version: string, packageId: string }}
+docs/case-studies/issue-1/data/templates/csharp/scripts/check-release-needed.mjs:118:    version: versionMatch[1].trim(),
+docs/case-studies/issue-1/data/templates/csharp/scripts/check-release-needed.mjs:279:  console.log(`Current version: ${currentVersion}`);
+docs/case-studies/issue-1/data/templates/csharp/scripts/release-workflow-policy.test.mjs:84:    expect(workflow).toContain('uses: actions/checkout@v6');
+docs/case-studies/issue-1/data/templates/csharp/scripts/release-workflow-policy.test.mjs:85:    expect(workflow).toContain('uses: actions/upload-artifact@v7');
+docs/case-studies/issue-1/data/templates/csharp/scripts/release-workflow-policy.test.mjs:86:    expect(workflow).toContain('uses: peter-evans/create-pull-request@v8');
+docs/case-studies/issue-1/data/templates/csharp/scripts/release-workflow-policy.test.mjs:87:    expect(workflow).not.toContain('uses: actions/checkout@v4');
+docs/case-studies/issue-1/data/templates/csharp/scripts/release-workflow-policy.test.mjs:88:    expect(workflow).not.toContain('uses: actions/upload-artifact@v4');
+docs/case-studies/issue-1/data/templates/csharp/scripts/release-workflow-policy.test.mjs:89:    expect(workflow).not.toContain('uses: peter-evans/create-pull-request@v7');
+docs/case-studies/issue-1/data/templates/csharp/scripts/wait-for-nuget.mjs:224:      version: config.releaseVersion,
+docs/case-studies/issue-1/data/templates/csharp/scripts/bump-version.mjs:90:  console.log(`Current version: ${currentStr}`);
+docs/case-studies/issue-1/data/templates/csharp/scripts/bump-version.mjs:91:  console.log(`New version: ${newVersion}`);
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:43:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:48:        uses: actions/setup-python@v5
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:50:          python-version: '3.13'
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:85:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:88:        uses: actions/setup-python@v5
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:90:          python-version: '3.13'
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:94:          python -m pip install --upgrade pip
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:95:          pip install -e ".[dev]"
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:129:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:132:        uses: actions/setup-python@v5
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:134:          python-version: '3.13'
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:138:          python -m pip install --upgrade pip
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:139:          pip install -e ".[dev]"
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:145:        uses: codecov/codecov-action@v4
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:168:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:171:        uses: actions/setup-python@v5
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:173:          python-version: '3.13'
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:177:          python -m pip install --upgrade pip
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:178:          pip install build twine
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:187:        uses: actions/upload-artifact@v7
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:201:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:206:        uses: actions/setup-python@v5
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:208:          python-version: "3.13"
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:211:        run: pip install "scriv[toml]"
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:228:            echo "  pip install 'scriv[toml]'"
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:253:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:258:        uses: actions/setup-python@v5
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:260:          python-version: '3.13'
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:264:          python -m pip install --upgrade pip
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:265:          pip install build twine
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:285:        uses: actions/download-artifact@v7
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:292:        uses: pypa/gh-action-pypi-publish@release/v1
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:322:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:328:        uses: actions/setup-python@v5
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:330:          python-version: '3.13'
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:334:          python -m pip install --upgrade pip
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:335:          pip install build twine "scriv[toml]"
+docs/case-studies/issue-1/data/templates/python/.github/workflows/release.yml:370:        uses: pypa/gh-action-pypi-publish@release/v1
+docs/case-studies/issue-1/data/templates/python/.github/workflows/docs.yml:44:      - uses: actions/checkout@v6
+docs/case-studies/issue-1/data/templates/python/.github/workflows/docs.yml:47:        uses: actions/setup-python@v5
+docs/case-studies/issue-1/data/templates/python/.github/workflows/docs.yml:49:          python-version: '3.13'
+docs/case-studies/issue-1/data/templates/python/.github/workflows/docs.yml:53:          python -m pip install --upgrade pip
+docs/case-studies/issue-1/data/templates/python/.github/workflows/docs.yml:54:          pip install -e .
+docs/case-studies/issue-1/data/templates/python/.github/workflows/docs.yml:55:          pip install -r docs/requirements.txt
+docs/case-studies/issue-1/data/templates/python/.github/workflows/docs.yml:61:        uses: actions/upload-artifact@v7
+docs/case-studies/issue-1/data/templates/python/.github/workflows/docs.yml:69:        uses: actions/configure-pages@v6
+docs/case-studies/issue-1/data/templates/python/.github/workflows/docs.yml:73:        uses: actions/upload-pages-artifact@v5
+docs/case-studies/issue-1/data/templates/python/.github/workflows/docs.yml:89:        uses: actions/deploy-pages@v5

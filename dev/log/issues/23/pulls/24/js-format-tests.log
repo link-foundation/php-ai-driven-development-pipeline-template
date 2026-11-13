@@ -1,0 +1,19 @@
+npm notice run @link-foundation/example-package-name@0.11.4 npx
+npm notice run 'prettier' --write docs/case-studies/issue-1/data/templates/js/scripts/create-manual-changeset.mjs docs/case-studies/issue-1/data/templates/js/tests
+docs/case-studies/issue-1/data/templates/js/scripts/create-manual-changeset.mjs 98ms
+docs/case-studies/issue-1/data/templates/js/tests/check-file-line-limits.test.js 109ms (unchanged)
+docs/case-studies/issue-1/data/templates/js/tests/ci-timeouts.test.js 33ms (unchanged)
+docs/case-studies/issue-1/data/templates/js/tests/create-github-release.test.js 126ms (unchanged)
+docs/case-studies/issue-1/data/templates/js/tests/docker-publish.test.js 95ms (unchanged)
+docs/case-studies/issue-1/data/templates/js/tests/fixtures.js 8ms (unchanged)
+docs/case-studies/issue-1/data/templates/js/tests/index.test.js 7ms (unchanged)
+docs/case-studies/issue-1/data/templates/js/tests/manual-changeset.test.js 11ms
+docs/case-studies/issue-1/data/templates/js/tests/package-info.test.js 7ms (unchanged)
+docs/case-studies/issue-1/data/templates/js/tests/package-metadata.test.js 14ms (unchanged)
+docs/case-studies/issue-1/data/templates/js/tests/release-badge.test.js 24ms (unchanged)
+docs/case-studies/issue-1/data/templates/js/tests/setup-npm.test.js 17ms (unchanged)
+docs/case-studies/issue-1/data/templates/js/tests/tag-prefix.test.js 16ms (unchanged)
+docs/case-studies/issue-1/data/templates/js/tests/universal-app.test.js 33ms (unchanged)
+docs/case-studies/issue-1/data/templates/js/tests/winstaller.test.js 8ms
+docs/case-studies/issue-1/data/templates/js/tests/workflow-helpers.js 10ms (unchanged)
+docs/case-studies/issue-1/data/templates/js/tests/workflow-reliability.test.js 26ms (unchanged)

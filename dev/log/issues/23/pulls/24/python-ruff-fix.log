@@ -1,0 +1,270 @@
+EM101 Exception must not use a string literal, assign to variable first
+  --> scripts/bump_version.py:26:26
+   |
+24 |     match = re.search(r'^version\s*=\s*["\']([^"\']+)["\']', content, re.MULTILINE)
+25 |     if not match:
+26 |         raise ValueError("Could not find version in pyproject.toml")
+   |                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+27 |     return match.group(1)
+   |
+help: Assign to variable; remove string literal
+   |
+25 |     if not match:
+   -         raise ValueError("Could not find version in pyproject.toml")
+26 +         msg = "Could not find version in pyproject.toml"
+27 +         raise ValueError(msg)
+28 |     return match.group(1)
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+EM102 Exception must not use an f-string literal, assign to variable first
+  --> scripts/bump_version.py:34:26
+   |
+32 |     parts = current.split(".")
+33 |     if len(parts) != 3:
+34 |         raise ValueError(f"Invalid version format: {current}")
+   |                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+35 |
+36 |     major, minor, patch = map(int, parts)
+   |
+help: Assign to variable; remove f-string literal
+   |
+33 |     if len(parts) != 3:
+   -         raise ValueError(f"Invalid version format: {current}")
+34 +         msg = f"Invalid version format: {current}"
+35 +         raise ValueError(msg)
+36 |
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+EM102 Exception must not use an f-string literal, assign to variable first
+  --> scripts/bump_version.py:44:22
+   |
+42 |     if bump_type == "patch":
+43 |         return f"{major}.{minor}.{patch + 1}"
+44 |     raise ValueError(f"Invalid bump type: {bump_type}")
+   |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: Assign to variable; remove f-string literal
+   |
+43 |         return f"{major}.{minor}.{patch + 1}"
+   -     raise ValueError(f"Invalid bump type: {bump_type}")
+44 +     msg = f"Invalid bump type: {bump_type}"
+45 +     raise ValueError(msg)
+46 |
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+EM102 Exception must not use an f-string literal, assign to variable first
+  --> scripts/bump_version.py:57:13
+   |
+55 |     if content == new_content:
+56 |         raise ValueError(
+57 |             f"Failed to update version from {old_version} to {new_version}"
+   |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+58 |         )
+   |
+help: Assign to variable; remove f-string literal
+   |
+55 |     if content == new_content:
+56 +         msg = f"Failed to update version from {old_version} to {new_version}"
+57 |         raise ValueError(
+   -             f"Failed to update version from {old_version} to {new_version}"
+58 +             msg
+59 |         )
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+DTZ005 `datetime.datetime.now()` called without a `tz` argument
+  --> scripts/bump_version.py:73:13
+   |
+72 |     content = changelog_path.read_text()
+73 |     today = datetime.now().strftime("%Y-%m-%d")
+   |             ^^^^^^^^^^^^^^
+74 |
+75 |     # Create new entry
+   |
+help: Pass a `datetime.timezone` object to the `tz` parameter
+
+PLR0917 Too many positional arguments (6 > 5)
+   --> scripts/create_github_release.py:135:5
+    |
+135 | def create_release(
+    |     ^^^^^^^^^^^^^^
+136 |     version: str,
+137 |     repository: str,
+    |
+
+DTZ005 `datetime.datetime.now()` called without a `tz` argument
+   --> scripts/create_manual_changeset.py:131:17
+    |
+129 |     """Create a changelog fragment manually without scriv."""
+130 |     # Generate filename
+131 |     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    |                 ^^^^^^^^^^^^^^
+132 |     username = get_username()
+133 |     branch = get_branch_name()
+    |
+help: Pass a `datetime.timezone` object to the `tz` parameter
+
+PTH123 `open()` should be replaced by `Path.open()`
+  --> scripts/detect_code_changes.py:65:14
+   |
+63 |     output_file = os.environ.get("GITHUB_OUTPUT")
+64 |     if output_file:
+65 |         with open(output_file, "a") as f:
+   |              ^^^^
+66 |             f.write(f"{name}={value}\n")
+67 |     print(f"{name}={value}")
+   |
+help: Replace with `Path.open()`
+
+SIM110 Use `return any(file_path.startswith(folder) for folder in excluded_folders)` instead of `for` loop
+   --> scripts/detect_code_changes.py:128:5
+    |
+126 |       excluded_folders = ["changelog.d/", "docs/", "experiments/", "examples/"]
+127 |
+128 | /     for folder in excluded_folders:
+129 | |         if file_path.startswith(folder):
+130 | |             return True
+131 | |
+132 | |     return False
+    | |________________^
+help: Replace with `return any(file_path.startswith(folder) for folder in excluded_folders)`
+    |
+127 |
+    -     for folder in excluded_folders:
+    -         if file_path.startswith(folder):
+    -             return True
+    -
+    -     return False
+128 +     return any(file_path.startswith(folder) for folder in excluded_folders)
+129 |
+    |
+note: This is an unsafe fix and may change runtime behavior
+
+PLC0415 `import` should be at the top-level of a file
+   --> scripts/detect_code_changes.py:183:5
+    |
+182 |     # Check if any code files changed (.py, .toml, .yml, .yaml, or workflow files)
+183 |     import re
+    |     ^^^^^^^^^
+184 |
+185 |     code_pattern = re.compile(r"\.(py|toml|yml|yaml)$|\.github/workflows/")
+    |
+
+RUF005 Consider `["gh", *args]` instead of concatenation
+  --> scripts/format_release_notes.py:32:13
+   |
+30 |     try:
+31 |         result = subprocess.run(
+32 |             ["gh"] + args,
+   |             ^^^^^^^^^^^^^
+33 |             capture_output=True,
+34 |             text=True,
+   |
+help: Replace with `["gh", *args]`
+   |
+31 |         result = subprocess.run(
+   -             ["gh"] + args,
+32 +             ["gh", *args],
+33 |             capture_output=True,
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+PTH123 `open()` should be replaced by `Path.open()`
+   --> scripts/format_release_notes.py:151:14
+    |
+149 |     """Get the package name from pyproject.toml."""
+150 |     try:
+151 |         with open("pyproject.toml") as f:
+    |              ^^^^
+152 |             content = f.read()
+153 |             match = re.search(r'^name\s*=\s*["\']([^"\']+)["\']', content, re.MULTILINE)
+    |
+help: Replace with `Path.open()`
+
+PLR0915 Too many statements (53 > 50)
+  --> scripts/validate_changeset.py:80:5
+   |
+80 | def main() -> int:
+   |     ^^^^
+81 |     """Main entry point."""
+82 |     # Determine project root and changelog directory
+   |
+
+PTH123 `open()` should be replaced by `Path.open()`
+  --> scripts/version_and_commit.py:64:14
+   |
+62 |     output_file = os.environ.get("GITHUB_OUTPUT")
+63 |     if output_file:
+64 |         with open(output_file, "a") as f:
+   |              ^^^^
+65 |             f.write(f"{key}={value}\n")
+66 |         print(f"Set output: {key}={value}")
+   |
+help: Replace with `Path.open()`
+
+EM101 Exception must not use a string literal, assign to variable first
+  --> scripts/version_and_commit.py:74:26
+   |
+72 |     match = re.search(r'^version\s*=\s*["\']([^"\']+)["\']', content, re.MULTILINE)
+73 |     if not match:
+74 |         raise ValueError("Could not find version in pyproject.toml")
+   |                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+75 |     return match.group(1)
+   |
+help: Assign to variable; remove string literal
+   |
+73 |     if not match:
+   -         raise ValueError("Could not find version in pyproject.toml")
+74 +         msg = "Could not find version in pyproject.toml"
+75 +         raise ValueError(msg)
+76 |     return match.group(1)
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+PLC0415 `import` should be at the top-level of a file
+  --> src/my_package/__init__.py:45:5
+   |
+43 |         seconds: Seconds to wait
+44 |     """
+45 |     import asyncio
+   |     ^^^^^^^^^^^^^^
+46 |
+47 |     await asyncio.sleep(seconds)
+   |
+
+PT018 Assertion should be broken down into multiple parts
+  --> tests/test_create_github_release.py:16:1
+   |
+14 | )
+15 | spec = importlib.util.spec_from_file_location("create_github_release", SCRIPT_PATH)
+16 | assert spec is not None and spec.loader is not None
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+17 | module = importlib.util.module_from_spec(spec)
+18 | sys.modules[spec.name] = module
+   |
+help: Break down assertion into multiple parts
+   |
+15 | spec = importlib.util.spec_from_file_location("create_github_release", SCRIPT_PATH)
+   - assert spec is not None and spec.loader is not None
+16 + assert spec is not None
+17 + assert spec.loader is not None
+18 | module = importlib.util.module_from_spec(spec)
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+PLC0415 `import` should be at the top-level of a file
+  --> tests/test_my_package.py:59:9
+   |
+57 |     async def test_delay(self) -> None:
+58 |         """Test async delay function."""
+59 |         import time
+   |         ^^^^^^^^^^^
+60 |
+61 |         start = time.time()
+   |
+
+Found 26 errors (8 fixed, 18 remaining).
+8 unsafe fixes available with `--fix --unsafe-fixes`.
+2 files reformatted, 28 files left unchanged

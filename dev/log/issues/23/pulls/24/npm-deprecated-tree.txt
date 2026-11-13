@@ -1,0 +1,44 @@
+inflight@1.0.6 dev optional
+node_modules/inflight
+  inflight@"^1.0.4" from glob@7.2.3
+  node_modules/glob
+    glob@"^7.1.4" from electron-installer-common@0.10.4
+    node_modules/electron-installer-common
+      electron-installer-common@"^0.10.3" from electron-installer-redhat@4.0.0
+      node_modules/electron-installer-redhat
+        optional electron-installer-redhat@"^4.0.0" from @electron-forge/maker-rpm@8.0.1
+        node_modules/@electron-forge/maker-rpm
+          dev @electron-forge/maker-rpm@"^8.0.1" from the root project
+      electron-installer-common@"^0.10.3" from electron-installer-debian@4.0.0
+      node_modules/electron-installer-debian
+        optional electron-installer-debian@"^4.0.0" from @electron-forge/maker-deb@8.0.1
+        node_modules/@electron-forge/maker-deb
+          dev @electron-forge/maker-deb@"^8.0.1" from the root project
+    glob@"^7.1.6" from @electron/asar@3.4.1
+    node_modules/@electron/asar
+      @electron/asar@"^3.2.5" from electron-installer-common@0.10.4
+      node_modules/electron-installer-common
+        electron-installer-common@"^0.10.3" from electron-installer-redhat@4.0.0
+        node_modules/electron-installer-redhat
+          optional electron-installer-redhat@"^4.0.0" from @electron-forge/maker-rpm@8.0.1
+          node_modules/@electron-forge/maker-rpm
+            dev @electron-forge/maker-rpm@"^8.0.1" from the root project
+        electron-installer-common@"^0.10.3" from electron-installer-debian@4.0.0
+        node_modules/electron-installer-debian
+          optional electron-installer-debian@"^4.0.0" from @electron-forge/maker-deb@8.0.1
+          node_modules/@electron-forge/maker-deb
+            dev @electron-forge/maker-deb@"^8.0.1" from the root project
+      @electron/asar@"^3.2.1" from electron-winstaller@5.4.0
+      node_modules/electron-winstaller
+        optional electron-winstaller@"^5.3.0" from @electron-forge/maker-squirrel@8.0.1
+        node_modules/@electron-forge/maker-squirrel
+          dev @electron-forge/maker-squirrel@"^8.0.1" from the root project
+    glob@"^7.1.3" from rimraf@2.6.3
+    node_modules/temp/node_modules/rimraf
+      rimraf@"~2.6.2" from temp@0.9.4
+      node_modules/temp
+        temp@"^0.9.0" from electron-winstaller@5.4.0
+        node_modules/electron-winstaller
+          optional electron-winstaller@"^5.3.0" from @electron-forge/maker-squirrel@8.0.1
+          node_modules/@electron-forge/maker-squirrel
+            dev @electron-forge/maker-squirrel@"^8.0.1" from the root project

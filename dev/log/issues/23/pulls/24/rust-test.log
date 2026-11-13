@@ -1,0 +1,92 @@
+   Compiling example-sum-package-name v0.18.0 (/tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/rust)
+    Finished `test` profile [unoptimized] target(s) in 2.05s
+     Running unittests src/lib.rs (target/debug/build/example-sum-package-name/c505ba6bbfd2f304/out/example_sum_package_name-c505ba6bbfd2f304)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/build/example-sum-package-name/0d1b061b3542ffe7/out/example_sum_package_name-0d1b061b3542ffe7)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/integration/mod.rs (target/debug/build/example-sum-package-name/564b985aeeccd02c/out/integration-564b985aeeccd02c)
+
+running 3 tests
+test sum::test_cli_default_args ... ok
+test sum::test_cli_sum_two_numbers ... ok
+test sum::test_cli_negative_numbers ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/unit/mod.rs (target/debug/build/example-sum-package-name/07c8ed52f5799f0b/out/unit-07c8ed52f5799f0b)
+
+running 51 tests
+test ci_cd::check_crate_size::tests::blocks_above_hard_limit ... ok
+test ci_cd::changelog_parsing::test_version_with_dots_regex_escape ... ok
+test ci_cd::changelog_parsing::test_nonexistent_version ... ok
+test ci_cd::changelog_parsing::test_last_version_extraction ... ok
+test ci_cd::changelog_parsing::test_middle_version_extraction ... ok
+test ci_cd::check_crate_size::tests::find_crate_archive_returns_none_when_missing ... ok
+test ci_cd::check_crate_size::tests::format_mib_is_human_readable ... ok
+test ci_cd::check_crate_size::tests::limit_matches_crates_io_documented_bytes ... ok
+test ci_cd::check_crate_size::tests::warns_before_blocking ... ok
+test ci_cd::check_file_size::tests::classifies_warning_band_without_blocking ... ok
+test ci_cd::check_file_size::tests::warning_annotation_uses_github_actions_format ... ok
+test ci_cd::create_github_release::tests::docker_hub_badge_escapes_build_metadata ... ok
+test ci_cd::create_github_release::tests::docker_hub_badge_links_to_exact_tag ... ok
+test ci_cd::create_github_release::tests::duplicate_release_validation_is_idempotent ... ok
+test ci_cd::create_github_release::tests::generic_validation_failure_is_not_existing_release ... ok
+test ci_cd::check_file_size::tests::classifies_hard_limit_violations ... ok
+test ci_cd::create_github_release::tests::mixed_validation_failure_is_not_existing_release ... ok
+test ci_cd::changelog_parsing::test_empty_section_fallback ... ok
+test ci_cd::check_crate_size::tests::find_crate_archive_locates_generated_archive ... ok
+test ci_cd::create_github_release::tests::oversized_release_notes_are_capped_with_full_changelog_link ... ok
+test ci_cd::check_file_size::tests::check_directory_reports_warning_and_violation_separately ... ok
+test ci_cd::create_github_release::tests::release_title_defaults_empty_language_to_rust ... ok
+test ci_cd::create_github_release::tests::release_title_uses_language_and_bare_semver ... ok
+test ci_cd::version_and_commit::tests::cargo_lock_update_returns_false_when_lock_file_is_absent ... ok
+test ci_cd::version_and_commit::tests::cargo_lock_update_is_idempotent_when_version_already_matches ... ok
+test ci_cd::create_github_release::tests::release_tag_uses_prefix_with_normalized_semver ... ok
+test ci_cd::create_github_release::tests::release_label_remains_optional_suffix ... ok
+test ci_cd::workflow_release::build_job_checks_crate_size ... ok
+test ci_cd::create_github_release::tests::release_payload_keeps_tag_prefix_out_of_release_name ... ok
+test ci_cd::workflow_release::cargo_manifest_uses_narrow_include_allowlist ... ok
+test ci_cd::workflow_release::crate_size_guard_uses_documented_crates_io_limit ... ok
+test ci_cd::workflow_release::documentation_deploy_uses_github_pages_artifact_flow ... ok
+test ci_cd::workflow_release::release_jobs_check_crate_size_before_publishing ... ok
+test ci_cd::version_and_commit::tests::cargo_lock_update_scopes_to_named_package_entry ... ok
+test ci_cd::workflow_release::documentation_deploy_is_independent_from_release_publication ... ok
+test ci_cd::workflow_release::release_workflow_publishes_optional_docker_hub_image_after_crate_is_visible ... ok
+test ci_cd::workflow_release::release_workflow_jobs_have_explicit_timeouts ... ok
+test ci_cd::workspace_manifest_resolution::path_helpers_match_repository_layout ... ok
+test ci_cd::workflow_release::release_scripts_check_configured_release_artifacts ... ok
+test ci_cd::version_and_commit::tests::cargo_lock_update_returns_false_when_package_entry_is_absent ... ok
+test ci_cd::version_and_commit::tests::changelog_collection_removes_consumed_fragments_and_keeps_readme ... ok
+test ci_cd::workspace_manifest_resolution::rust_root_prefers_explicit_parameter ... ok
+test sum::test_sum_large_numbers ... ok
+test sum::test_sum_mixed_sign ... ok
+test sum::test_sum_negative_numbers ... ok
+test sum::test_sum_positive_numbers ... ok
+test sum::test_sum_zero ... ok
+test ci_cd::workspace_manifest_resolution::errors_when_workspace_has_no_publishable_members ... ok
+
+running 1 test
+test ci_cd::workspace_manifest_resolution::rust_root_cli_parser_returns_none_without_configuration ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 50 filtered out; finished in 0.00s
+
+test ci_cd::workspace_manifest_resolution::resolves_root_package_manifest_when_package_exists ... ok
+test ci_cd::workspace_manifest_resolution::rust_root_cli_parser_returns_none_without_configuration ... ok
+test ci_cd::workspace_manifest_resolution::resolves_first_publishable_workspace_member ... ok
+
+test result: ok. 51 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+   Doc-tests example_sum_package_name
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

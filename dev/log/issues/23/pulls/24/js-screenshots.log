@@ -1,0 +1,11 @@
+[preview] example-app server: http://127.0.0.1:45299/
+[preview] capturing preview tile: locale=en theme=light
+[preview] wrote tile en/light (116764 bytes, 1280x800) -> /tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/docs/screenshots/example-app/example-app-en-light.png
+[preview] capturing preview tile: locale=en theme=dark
+[preview] wrote tile en/dark (116764 bytes, 1280x800) -> /tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/docs/screenshots/example-app/example-app-en-dark.png
+[preview] capturing preview tile: locale=ru theme=light
+[preview] wrote tile ru/light (116764 bytes, 1280x800) -> /tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/docs/screenshots/example-app/example-app-ru-light.png
+[preview] capturing preview tile: locale=ru theme=dark
+[preview] wrote tile ru/dark (116764 bytes, 1280x800) -> /tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/docs/screenshots/example-app/example-app-ru-dark.png
+[preview] wrote fallback (en/light copy) (116764 bytes, 1280x800) -> /tmp/gh-issue-solver-1794605189377/docs/case-studies/issue-1/data/templates/js/docs/screenshots/example-app/example-app.png
+[preview] all preview images regenerated

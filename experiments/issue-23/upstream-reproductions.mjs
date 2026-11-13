@@ -2,7 +2,7 @@
 import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
-import { execFileSync, spawnSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 import { createRequire } from 'node:module';
 import { runInNewContext } from 'node:vm';
 const require = createRequire(resolve('docs/case-studies/issue-1/data/templates/js/package.json'));
