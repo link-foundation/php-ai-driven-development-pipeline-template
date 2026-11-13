@@ -61,7 +61,9 @@ describe('workflow reliability policy', () => {
     ).devDependencies.playwright.slice(1);
 
     expect(previewRegenJob).toContain('container:');
-    expect(imageVersion).toBe('1.65.0');
+    const lockedVersion = JSON.parse(readFileSync('package-lock.json', 'utf8'))
+      .packages['node_modules/playwright'].version;
+    expect(imageVersion).toBe(lockedVersion);
     expect(packageVersion).toBe(imageVersion);
     expect(previewRegenJob).toContain("PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'");
     expect(previewRegenJob).not.toContain('npx playwright install');

@@ -58,6 +58,7 @@ jobs:
       - run: npm run example:web:build
       - run: npm run example:desktop:package
       - run: npm run example:mobile:sync
+      - run: deno audit
       - run: npm audit
       - run: npm audit --prefix examples/universal-app
 

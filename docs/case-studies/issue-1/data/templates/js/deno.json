@@ -3,5 +3,6 @@
   "test": {
     "include": ["tests/"],
     "exclude": ["examples/", "node_modules/"]
-  }
+  },
+  "minimumDependencyAge": 0
 }

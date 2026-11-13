@@ -208,7 +208,7 @@ jobs:
     runs-on: ubuntu-26.04
     container:
       # Keep this tag in sync with the playwright package version below.
-      image: mcr.microsoft.com/playwright:v1.65.0-noble
+      image: mcr.microsoft.com/playwright:v1.65.1-noble
     timeout-minutes: 20
     if: |
       (github.event_name == 'push' && github.ref == 'refs/heads/main') ||

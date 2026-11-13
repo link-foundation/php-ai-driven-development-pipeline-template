@@ -1,4 +1,4 @@
-// Published 5.4.0 predates electron/windows-installer#614's os.arch() fix.
+// Published 5.4.4 predates electron/windows-installer#614's os.arch() fix.
 // Keep this narrow backport until that upstream fix is released.
 const { readFileSync, writeFileSync } = require('node:fs');
 const { dirname, join } = require('node:path');

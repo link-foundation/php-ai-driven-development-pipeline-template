@@ -116,7 +116,7 @@ describe('universal React example app', () => {
 
     expect(workflow).toContain('preview-regen:');
     expect(workflow).toContain(
-      'image: mcr.microsoft.com/playwright:v1.65.0-noble'
+      `image: mcr.microsoft.com/playwright:v${readJson('package-lock.json').packages['node_modules/playwright'].version}-noble`
     );
     expect(workflow).toContain('browser-commander');
     expect(workflow).not.toContain('npx playwright install');

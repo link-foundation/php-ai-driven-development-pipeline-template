@@ -6,6 +6,8 @@ This repository publishes the real test package
 `@link-foundation/example-package-name` so the template release pipeline is
 validated end to end with npm trusted publishing.
 
+Deno resolves the committed lock with `minimumDependencyAge: 0` so its dependency tree includes the current releases required by this template, including packages published within the last 24 hours.
+
 ## Features
 
 - **Multi-runtime support**: Works with Bun, Node.js, and Deno
