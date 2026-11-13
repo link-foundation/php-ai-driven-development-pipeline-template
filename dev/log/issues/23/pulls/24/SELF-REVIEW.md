@@ -10,6 +10,10 @@ Read the complete issue and comments, all three PR feedback types and sub-issue 
 
 The final review found and repaired leading ! cancellation expressions serialized as YAML tags; a parser regression fails on a6d7de8's workflow and passes on the fix. It also preserves the old comment-spacing lint rule using its maintained Stylistic replacement, proven with a negative CLI fixture. Full template actionlint/shellcheck found unsafe branch interpolation and shell diagnostics, now repaired and covered in root workflow CI. Updated current setup/coverage docs without altering historical changelogs or case-study analysis.
 
+After committing the complete evidence, GitHub's diff endpoint returned HTTP 406 because the PR exceeds its 300-file limit. The earlier complete code review remains valid; final review uses the paginated PR files API and local diff for the remaining changes. Raw external best-practices source is stored as .txt so its original relative links are preserved as research data rather than published as broken local documentation links.
+
+Automatic NuGet submission 43525474448 failed at eeb0625: ci-logs/nuget-43525474448.log:292–294 reports NETSDK1045 because the server-generated workflow only discovers a root global.json and otherwise selects SDK 10.0.404. Add the same 11.0.100 SDK pin at the root, preserving the captured template's standalone pin. Captured C# CI now performs its locked solution restore from the repository root before running the template-local build, tests and audit, exercising the failing SDK lookup on every PR. The actual automatic submission workflow provides a second regression check.
+
 ## Root regression and local verification
 
 - Baseline original `WorkflowPolicyTest` fails because Dependabot selected zizmor-action v0.8.1 while the policy asserts v0.8.0. See baseline-regression.log and the baseline pipeline logs (43509261699:1533,1695–1700). The repaired interface assertion passes in policy-regression-fixed.log; all 132 PHP tests / 626 assertions, formatter, PHPStan and file-size checks pass in php-check.log. Focused final workflow checks: php-policy-review.log, 23 tests / 323 assertions.

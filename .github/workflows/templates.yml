@@ -111,7 +111,10 @@ jobs:
       - uses: oven-sh/setup-bun@v2.2.0
         with:
           bun-version: "1.4.4"
-      - run: dotnet restore --locked-mode
+      # GitHub's automatic NuGet submission restores from the repository root.
+      # Exercise that SDK lookup as well as the template-local build/test setup.
+      - run: dotnet restore docs/case-studies/issue-1/data/templates/csharp/MyPackage.sln --locked-mode
+        working-directory: .
       - run: dotnet build --no-restore
       - run: dotnet test --no-build --timeout 60s --coverlet --coverlet-output-format cobertura
       - run: dotnet format --verify-no-changes --no-restore
