@@ -45,7 +45,7 @@ jobs:
   # === DETECT CHANGES - determines which jobs should run ===
   detect-changes:
     name: Detect Changes
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     # Typical run: ~6s. Cap at 5min so a hung detection step
     # surfaces quickly instead of stalling the whole pipeline.
     timeout-minutes: 5
@@ -58,7 +58,8 @@ jobs:
       workflow-changed: ${{ steps.changes.outputs.workflow-changed }}
       any-code-changed: ${{ steps.changes.outputs.any-code-changed }}
     steps:
-      - uses: actions/checkout@v6
+      - &shared-step-1
+        uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
 
@@ -72,16 +73,14 @@ jobs:
   # Syntax check all .mjs files with node --check (~7s)
   test-compilation:
     name: Test Compilation
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     # Typical run: <10s. Tight cap fails fast on syntax-check hangs.
     timeout-minutes: 5
-    needs: [detect-changes]
-    if: |
-      github.event_name == 'push' ||
-      needs.detect-changes.outputs.mjs-changed == 'true' ||
-      needs.detect-changes.outputs.js-changed == 'true'
+    needs: &change-detection [detect-changes]
+    if: github.event_name == 'push' || needs.detect-changes.outputs.any-code-changed == 'true'
     steps:
-      - uses: actions/checkout@v6
+      - &common-step-1
+        uses: actions/checkout@v7.0.1
 
       - name: Check .mjs syntax
         run: bash scripts/check-mjs-syntax.sh
@@ -89,22 +88,16 @@ jobs:
   # Enforce 1500-line limit on .mjs files and release.yml
   check-file-line-limits:
     name: Check File Line Limits
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     # Typical run: <10s. This job only walks tracked files and counts lines.
     timeout-minutes: 5
-    needs: [detect-changes]
-    if: |
-      github.event_name == 'push' ||
-      needs.detect-changes.outputs.mjs-changed == 'true' ||
-      needs.detect-changes.outputs.js-changed == 'true' ||
-      needs.detect-changes.outputs.docs-changed == 'true' ||
-      needs.detect-changes.outputs.workflow-changed == 'true'
+    needs: *change-detection
+    if: github.event_name == 'push' || needs.detect-changes.outputs.any-code-changed == 'true' || needs.detect-changes.outputs.docs-changed == 'true' || needs.detect-changes.outputs.workflow-changed == 'true'
     steps:
-      - uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
+      - *shared-step-1
 
-      - name: Simulate fresh merge with base branch (PR only)
+      - &shared-step-2
+        name: Simulate fresh merge with base branch (PR only)
         if: github.event_name == 'pull_request'
         env:
           BASE_REF: ${{ github.base_ref }}
@@ -120,14 +113,12 @@ jobs:
   # Prohibit manual version changes in package.json - versions should only be changed by CI/CD
   version-check:
     name: Check for Manual Version Changes
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     # Typical run: ~6s. Read-only package.json diff inspection.
     timeout-minutes: 5
     if: github.event_name == 'pull_request'
     steps:
-      - uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
+      - *shared-step-1
 
       - name: Check for version changes in package.json
         env:
@@ -139,23 +130,23 @@ jobs:
   # Docs-only PRs (./docs folder, markdown files) don't require changesets
   changeset-check:
     name: Check for Changesets
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     # Typical run: <30s including npm install. 10min covers cold runners.
     timeout-minutes: 10
-    needs: [detect-changes]
+    needs: *change-detection
     if: github.event_name == 'pull_request' && needs.detect-changes.outputs.any-code-changed == 'true'
     steps:
-      - uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
+      - *shared-step-1
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
+      - &shared-step-3
+        name: Setup Node.js
+        uses: actions/setup-node@v7.1.0
         with:
-          node-version: '24.x'
+          node-version: '26.13.1'
 
-      - name: Install dependencies
-        run: npm install
+      - &common-step-2
+        name: Install dependencies
+        run: npm ci
 
       - name: Check for changesets
         env:
@@ -182,37 +173,24 @@ jobs:
   # See docs/case-studies/issue-23 for why fresh merge simulation is critical
   lint:
     name: Lint and Format Check
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     # Typical run: <1min including install, ESLint, Prettier, jscpd,
     # and secretlint. 10min protects against a hung lint plugin.
     timeout-minutes: 10
-    needs: [detect-changes]
-    if: |
-      github.event_name == 'push' ||
-      needs.detect-changes.outputs.mjs-changed == 'true' ||
-      needs.detect-changes.outputs.js-changed == 'true' ||
-      needs.detect-changes.outputs.docs-changed == 'true' ||
-      needs.detect-changes.outputs.package-changed == 'true' ||
-      needs.detect-changes.outputs.workflow-changed == 'true'
+    needs: *change-detection
+    if: github.event_name == 'push' || needs.detect-changes.outputs.any-code-changed == 'true' || needs.detect-changes.outputs.docs-changed == 'true' || needs.detect-changes.outputs.package-changed == 'true' || needs.detect-changes.outputs.workflow-changed == 'true'
     steps:
-      - uses: actions/checkout@v6
+      - &shared-step-4
+        uses: actions/checkout@v7.0.1
         with:
           # For PRs, fetch enough history to merge with base branch
           fetch-depth: 0
 
-      - name: Simulate fresh merge with base branch (PR only)
-        if: github.event_name == 'pull_request'
-        env:
-          BASE_REF: ${{ github.base_ref }}
-        run: bash scripts/simulate-fresh-merge.sh
+      - *shared-step-2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: '24.x'
+      - *shared-step-3
 
-      - name: Install dependencies
-        run: npm install
+      - *common-step-2
 
       - name: Run ESLint
         run: npm run lint
@@ -224,7 +202,7 @@ jobs:
         run: npm run check:duplication
 
       - name: Check for secrets
-        run: npx --yes -p secretlint -p @secretlint/secretlint-rule-preset-recommend secretlint "**/*"
+        run: npx --yes -p secretlint@13.1.0 -p @secretlint/secretlint-rule-preset-recommend@13.1.0 secretlint "**/*"
 
   # Test matrix: 3 runtimes (Node.js, Bun, Deno) x 3 OS (Ubuntu, macOS, Windows)
   # IMPORTANT: Tests must validate the ACTUAL merge result, not a stale merge preview.
@@ -248,22 +226,14 @@ jobs:
     # Use !cancelled() instead of always() so cancellation propagates correctly (hive-mind issue #1278)
     # Run if: push event, OR changeset-check succeeded, OR changeset-check was skipped (docs-only PR)
     # AND all fast checks passed (or were skipped for irrelevant changes)
-    if: |
-      !cancelled() &&
-      (github.event_name == 'push' || needs.changeset-check.result == 'success' || needs.changeset-check.result == 'skipped') &&
-      (needs.test-compilation.result == 'success' || needs.test-compilation.result == 'skipped') &&
-      (needs.lint.result == 'success' || needs.lint.result == 'skipped') &&
-      (needs.check-file-line-limits.result == 'success' || needs.check-file-line-limits.result == 'skipped')
+    if: !cancelled() && (github.event_name == 'push' || needs.changeset-check.result == 'success' || needs.changeset-check.result == 'skipped') && (needs.test-compilation.result == 'success' || needs.test-compilation.result == 'skipped') && (needs.lint.result == 'success' || needs.lint.result == 'skipped') && (needs.check-file-line-limits.result == 'success' || needs.check-file-line-limits.result == 'skipped')
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-26.04, macos-26, windows-2025]
         runtime: [node, bun, deno]
     steps:
-      - uses: actions/checkout@v6
-        with:
-          # For PRs, fetch enough history to merge with base branch
-          fetch-depth: 0
+      - *shared-step-4
 
       - name: Simulate fresh merge with base branch (PR only)
         if: github.event_name == 'pull_request'
@@ -274,13 +244,13 @@ jobs:
 
       - name: Setup Node.js
         if: matrix.runtime == 'node'
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7.1.0
         with:
-          node-version: '24.x'
+          node-version: '26.13.1'
 
       - name: Install dependencies (Node.js)
         if: matrix.runtime == 'node'
-        run: npm install
+        run: npm ci
 
       - name: Run tests (Node.js)
         if: matrix.runtime == 'node'
@@ -288,9 +258,9 @@ jobs:
 
       - name: Setup Bun
         if: matrix.runtime == 'bun'
-        uses: oven-sh/setup-bun@v2
+        uses: oven-sh/setup-bun@v2.2.0
         with:
-          bun-version: latest
+          bun-version: 1.4.4
 
       - name: Install dependencies (Bun)
         if: matrix.runtime == 'bun'
@@ -304,9 +274,9 @@ jobs:
 
       - name: Setup Deno
         if: matrix.runtime == 'deno'
-        uses: denoland/setup-deno@v2
+        uses: denoland/setup-deno@v2.0.5
         with:
-          deno-version: v2.x
+          deno-version: v2.9.8
 
       - name: Run tests (Deno)
         if: matrix.runtime == 'deno'
@@ -316,15 +286,13 @@ jobs:
   # Validate documentation files when docs change (hive-mind principle #12)
   validate-docs:
     name: Validate Documentation
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     # Typical run: <10s. Pure shell checks over documentation files.
     timeout-minutes: 5
-    needs: [detect-changes]
-    if: |
-      github.event_name == 'push' ||
-      needs.detect-changes.outputs.docs-changed == 'true'
+    needs: *change-detection
+    if: github.event_name == 'push' || needs.detect-changes.outputs.docs-changed == 'true'
     steps:
-      - uses: actions/checkout@v6
+      - *common-step-1
 
       # Documentation line limits (1500 lines, matching the architecture
       # limit) are enforced by the check-file-line-limits job, which scans
@@ -366,36 +334,30 @@ jobs:
     timeout-minutes: 30
     # Use !cancelled() instead of always() so cancellation propagates correctly (hive-mind issue #1278)
     # This is needed because lint/test jobs have a transitive dependency on changeset-check
-    if: |
-      !cancelled() &&
-      github.ref == 'refs/heads/main' &&
-      github.event_name == 'push' &&
-      needs.lint.result == 'success' &&
-      needs.test.result == 'success'
-    runs-on: ubuntu-latest
+    if: !cancelled() && github.ref == 'refs/heads/main' && github.event_name == 'push' && needs.lint.result == 'success' && needs.test.result == 'success'
+    runs-on: ubuntu-26.04
     # Permissions required for npm OIDC trusted publishing
-    permissions:
+    permissions: &publish-permissions
       contents: write
       pull-requests: write
       id-token: write
-    outputs:
+    outputs: &publish-outputs
       published: ${{ steps.publish.outputs.published }}
       published_version: ${{ steps.publish.outputs.published_version }}
     steps:
-      - uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
+      - *shared-step-1
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
+      - &shared-step-5
+        name: Setup Node.js
+        uses: actions/setup-node@v7.1.0
         with:
-          node-version: '24.x'
+          node-version: '26.13.1'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Install dependencies
-        run: npm install
+      - *common-step-2
 
-      - name: Update npm for OIDC trusted publishing
+      - &common-step-3
+        name: Update npm for OIDC trusted publishing
         run: node scripts/setup-npm.mjs
 
       - name: Check for changesets
@@ -429,13 +391,15 @@ jobs:
         id: publish
         run: node scripts/publish-to-npm.mjs --should-pull
 
-      - name: Create GitHub Release
+      - &shared-step-6
+        name: Create GitHub Release
         if: steps.publish.outputs.published == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/create-github-release.mjs --release-version "${{ steps.publish.outputs.published_version }}" --repository "${{ github.repository }}"
 
-      - name: Format GitHub release notes
+      - &shared-step-7
+        name: Format GitHub release notes
         if: steps.publish.outputs.published == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -447,33 +411,20 @@ jobs:
   instant-release:
     name: Instant Release
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.release_mode == 'instant'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     # Same publish envelope as the automated release path.
     timeout-minutes: 30
     # Permissions required for npm OIDC trusted publishing
-    permissions:
-      contents: write
-      pull-requests: write
-      id-token: write
-    outputs:
-      published: ${{ steps.publish.outputs.published }}
-      published_version: ${{ steps.publish.outputs.published_version }}
+    permissions: *publish-permissions
+    outputs: *publish-outputs
     steps:
-      - uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
+      - *shared-step-1
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: '24.x'
-          registry-url: 'https://registry.npmjs.org'
+      - *shared-step-5
 
-      - name: Install dependencies
-        run: npm install
+      - *common-step-2
 
-      - name: Update npm for OIDC trusted publishing
-        run: node scripts/setup-npm.mjs
+      - *common-step-3
 
       - name: Version packages and commit to main
         id: version
@@ -485,17 +436,9 @@ jobs:
         id: publish
         run: node scripts/publish-to-npm.mjs
 
-      - name: Create GitHub Release
-        if: steps.publish.outputs.published == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node scripts/create-github-release.mjs --release-version "${{ steps.publish.outputs.published_version }}" --repository "${{ github.repository }}"
+      - *shared-step-6
 
-      - name: Format GitHub release notes
-        if: steps.publish.outputs.published == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node scripts/format-github-release.mjs --release-version "${{ steps.publish.outputs.published_version }}" --repository "${{ github.repository }}" --commit-sha "${{ github.sha }}"
+      - *shared-step-7
 
   # Optional Docker Hub publishing for packages that also ship Docker images.
   # Set vars.DOCKERHUB_IMAGE to enable this path, then configure
@@ -504,13 +447,8 @@ jobs:
     name: Optional Docker Hub Publish
     needs: [release, instant-release]
     timeout-minutes: 30
-    if: |
-      !cancelled() &&
-      (
-        (needs.release.result == 'success' && needs.release.outputs.published == 'true') ||
-        (needs.instant-release.result == 'success' && needs.instant-release.outputs.published == 'true')
-      )
-    runs-on: ubuntu-latest
+    if: !cancelled() && ( (needs.release.result == 'success' && needs.release.outputs.published == 'true') || (needs.instant-release.result == 'success' && needs.instant-release.outputs.published == 'true') )
+    runs-on: ubuntu-26.04
     permissions:
       contents: read
     env:
@@ -521,7 +459,7 @@ jobs:
       DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
       RELEASE_VERSION: ${{ needs.release.outputs.published_version || needs.instant-release.outputs.published_version }}
     steps:
-      - uses: actions/checkout@v6
+      - *common-step-1
 
       - name: Check Docker publish configuration
         id: docker_config
@@ -546,24 +484,18 @@ jobs:
   changeset-pr:
     name: Create Changeset PR
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.release_mode == 'changeset-pr'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     # PR creation only: install, create a changeset, format, and open a PR.
     timeout-minutes: 10
     permissions:
       contents: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
+      - *shared-step-1
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: '24.x'
+      - *shared-step-3
 
-      - name: Install dependencies
-        run: npm install
+      - *common-step-2
 
       - name: Create changeset file
         run: node scripts/create-manual-changeset.mjs --bump-type "${{ github.event.inputs.bump_type }}" --description "${{ github.event.inputs.description }}"
@@ -576,7 +508,7 @@ jobs:
           echo "Formatted changeset files"
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v8
+        uses: peter-evans/create-pull-request@v8.1.3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: 'chore: add changeset for manual ${{ github.event.inputs.bump_type }} release'

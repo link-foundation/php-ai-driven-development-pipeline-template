@@ -1,8 +1,10 @@
 import js from '@eslint/js';
+import globals from 'globals';
+import { defineConfig } from 'eslint/config';
 import prettierConfig from 'eslint-config-prettier';
 import prettierPlugin from 'eslint-plugin-prettier';
 
-export default [
+export default defineConfig([
   js.configs.recommended,
   prettierConfig,
   {
@@ -14,17 +16,7 @@ export default [
       ecmaVersion: 'latest',
       sourceType: 'module',
       globals: {
-        // Node.js globals
-        console: 'readonly',
-        process: 'readonly',
-        Buffer: 'readonly',
-        __dirname: 'readonly',
-        __filename: 'readonly',
-        require: 'readonly',
-        module: 'readonly',
-        // Node.js 18+ globals
-        fetch: 'readonly',
-        AbortController: 'readonly',
+        ...globals.node,
         // Runtime-specific globals
         Bun: 'readonly',
         Deno: 'readonly',
@@ -57,7 +49,6 @@ export default [
       'require-await': 'warn',
 
       // Comments and documentation
-      'spaced-comment': ['error', 'always', { markers: ['/'] }],
 
       // Complexity rules - reasonable thresholds for maintainability
       complexity: ['warn', 15], // Cyclomatic complexity - allow more complex logic than strict 8
@@ -105,4 +96,4 @@ export default [
       'docs/case-studies/*/data/**',
     ],
   },
-];
+]);

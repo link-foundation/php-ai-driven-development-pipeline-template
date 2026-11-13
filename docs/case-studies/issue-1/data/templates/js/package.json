@@ -36,7 +36,7 @@
     "example:desktop:package": "npm --prefix examples/universal-app run desktop:package",
     "example:desktop:make": "npm --prefix examples/universal-app run desktop:make",
     "example:mobile:sync": "npm --prefix examples/universal-app run mobile:sync",
-    "prepare": "husky || true",
+    "prepare": "husky",
     "changeset": "changeset",
     "changeset:version": "node scripts/changeset-version.mjs",
     "changeset:publish": "changeset publish",
@@ -58,18 +58,27 @@
     "url": "git+https://github.com/link-foundation/js-ai-driven-development-pipeline-template.git"
   },
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=26.13.1"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.29.7",
-    "eslint": "^9.38.0",
+    "@actions/core": "^3.0.1",
+    "@changesets/cli": "^3.0.3",
+    "@eslint/js": "^10.0.1",
+    "browser-commander": "^0.34.1",
+    "command-stream": "^2.6.0",
+    "eslint": "^10.14.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-prettier": "^5.5.7",
+    "globals": "^17.14.0",
     "husky": "^9.1.7",
-    "jscpd": "^4.0.5",
-    "lint-staged": "^16.2.6",
-    "prettier": "^3.6.2",
-    "test-anywhere": "^0.8.48"
+    "jscpd": "^5.4.3",
+    "lino-arguments": "^0.4.1",
+    "lint-staged": "^17.6.0",
+    "playwright": "^1.65.0",
+    "prettier": "^3.10.1",
+    "semver": "^7.8.6",
+    "test-anywhere": "^0.9.1",
+    "yaml": "^2.9.1"
   },
   "lint-staged": {
     "*.{js,mjs,cjs}": [
@@ -81,5 +90,10 @@
       "prettier --write",
       "prettier --check"
     ]
+  },
+  "packageManager": "npm@12.2.2",
+  "allowScripts": {
+    "better-sqlite3@13.1.1": true,
+    "node-pty@1.1.0": true
   }
 }
