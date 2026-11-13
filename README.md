@@ -4,7 +4,7 @@ A comprehensive template for AI-driven Symfony / Composer **PHP** development wi
 full, native-PHP CI/CD pipeline.
 
 [![CI/CD Pipeline](https://github.com/link-foundation/php-ai-driven-development-pipeline-template/workflows/CI/CD%20Pipeline/badge.svg)](https://github.com/link-foundation/php-ai-driven-development-pipeline-template/actions)
-[![PHP Version](https://img.shields.io/badge/php-8.1%20--%208.4-777BB4.svg)](https://www.php.net/supported-versions.php)
+[![PHP Version](https://img.shields.io/badge/php-8.5-777BB4.svg)](https://www.php.net/supported-versions.php)
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](https://unlicense.org/)
 
 This template ports the battle-tested CI/CD practices from the sibling
@@ -19,7 +19,7 @@ and GitHub Releases.
 
 ## Features
 
-- **Multi-version PHP support**: tested on PHP 8.5, 8.2, 8.3 and 8.4
+- **Current PHP support**: tested on PHP 8.5
 - **Native-PHP pipeline**: all CI/CD logic lives in [`scripts/`](scripts) and the
   tested [`scripts/src/`](scripts/src) classes — no other languages used
 - **Comprehensive testing**: [PHPUnit](https://phpunit.de/) with separate package

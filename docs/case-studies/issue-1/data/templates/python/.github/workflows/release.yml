@@ -29,7 +29,7 @@ jobs:
   # === DETECT CHANGES - determines which jobs should run ===
   detect-changes:
     name: Detect Changes
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 5
     if: github.event_name != 'workflow_dispatch'
     outputs:
@@ -65,7 +65,7 @@ jobs:
   # See: https://github.com/link-assistant/hive-mind/pull/1024 for why this dependency was removed
   lint:
     name: Lint and Format Check
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 20
     needs: [detect-changes]
     # always() && !cancelled() lets this job evaluate even though detect-changes
@@ -111,7 +111,7 @@ jobs:
   # Test on latest Python version only
   test:
     name: Test (Python 3.13)
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 30
     needs: [detect-changes]
     # always() && !cancelled() lets this job evaluate even though detect-changes
@@ -153,7 +153,7 @@ jobs:
   # Build package - runs if lint and test pass, or were skipped (docs-only PR)
   build:
     name: Build Package
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 20
     needs: [detect-changes, lint, test]
     # Run if: push/dispatch event, OR lint/test succeeded, OR lint/test were skipped (docs-only PR)
@@ -195,7 +195,7 @@ jobs:
   # Docs-only PRs (./docs folder, markdown files) don't require changelog fragments
   changelog:
     name: Changelog Fragment Check
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 10
     needs: [detect-changes]
     if: github.event_name == 'pull_request' && needs.detect-changes.outputs.any-code-changed == 'true'
@@ -246,7 +246,7 @@ jobs:
     name: Auto Release
     needs: [lint, test, build]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 30
     permissions:
       contents: write
@@ -315,7 +315,7 @@ jobs:
       needs.lint.result == 'success' &&
       needs.test.result == 'success' &&
       needs.build.result == 'success'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 30
     permissions:
       contents: write

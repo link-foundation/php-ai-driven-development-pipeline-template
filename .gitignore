@@ -71,3 +71,9 @@
 **/.ruff_cache/
 **/dist/
 **/_site/
+
+# Generated verification reports
+**/reports/
+**/TestResults/
+**/docs/_build/
+**/docs/api/

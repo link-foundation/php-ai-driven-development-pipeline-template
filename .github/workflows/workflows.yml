@@ -33,7 +33,7 @@ env:
 jobs:
   dependencies:
     name: Workflow dependency freshness
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7.0.1
@@ -54,7 +54,7 @@ jobs:
 
   actionlint:
     name: actionlint
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 10
     concurrency:
       group: check-${{ github.workflow }}-${{ github.ref }}-actionlint
@@ -87,7 +87,7 @@ jobs:
 
   zizmor:
     name: zizmor
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 10
     concurrency:
       group: check-${{ github.workflow }}-${{ github.ref }}-zizmor
@@ -145,7 +145,7 @@ jobs:
       - actionlint
       - zizmor
     if: always()
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v7.0.1

@@ -52,7 +52,7 @@ CI.
    Auto-fix style issues with `composer lint:fix`.
 
    Workflow dependencies use exact stable release tags, and hosted runners use
-   explicit images such as `ubuntu-24.04`. The Workflows check verifies these
+   explicit images such as `ubuntu-26.04`. The Workflows check verifies these
    on relevant changes and weekly, including the zizmor tool input and the
    actionlint image's release annotation. With an authenticated GitHub CLI,
    run the same live check locally:
