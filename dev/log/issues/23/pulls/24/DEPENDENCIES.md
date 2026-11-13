@@ -142,9 +142,9 @@ Registry snapshots collected on 2026-11-13; stable releases only. Historical con
 | Rust | stable / MSRV 1.70 / edition 2021 | 1.100.0 / edition 2024 | 1.100.0 | rust-stable.toml |
 | .NET SDK / TFM | 8.0.x / net8.0 | 11.0.100 / net11.0 | 11.0.100 | dotnet-releases.json |
 | Temurin Java | 21 | 24.0.2+12 | 27.0.1.0.2+1 | java-27-latest.json / java-24-latest.json; Capacitor 8.6.2 template Gradle 8.14.3 supports at most Java 24. See UPSTREAM.md. |
-| Ubuntu hosted image | 24.04 | 26.04 | 26.04 | runner-images.md; actionlint label workaround documented |
-| macOS hosted image | 14 | 26 | 26 | runner-images.md |
-| Windows hosted image | 2022 | 2025 | 2025 | runner-images.md; current standard non-preview hosted image |
+| Ubuntu hosted image | 24.04 | 26.04 | 26.04 | runner-images.txt; actionlint label workaround documented |
+| macOS hosted image | 14 | 26 | 26 | runner-images.txt |
+| Windows hosted image | 2022 | 2025 | 2025 | runner-images.txt; current standard non-preview hosted image |
 | Playwright container | 1.61.1-noble | v1.65.1-noble | v1.65.1-noble | package registry Playwright 1.65.1 and official image matching that release |
 | phpDocumentor | 3 (floating download) | 3.10.0 | 3.10.0 | registry-extra.json |
 | actionlint image | 1.7.12 digest | 1.7.12 / b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667 | 1.7.12 | registry.json; official Docker digest; actionlint-final.log |

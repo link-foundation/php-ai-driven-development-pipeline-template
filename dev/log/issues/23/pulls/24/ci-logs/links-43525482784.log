@@ -1,0 +1,717 @@
+Check Links	Set up job	﻿2026-11-13T23:13:34.5635749Z Current runner version: '2.338.2'
+Check Links	Set up job	2026-11-13T23:13:34.5661825Z ##[group]Runner Image Provisioner
+Check Links	Set up job	2026-11-13T23:13:34.5663067Z Hosted Compute Agent
+Check Links	Set up job	2026-11-13T23:13:34.5663775Z Version: 20261103.629
+Check Links	Set up job	2026-11-13T23:13:34.5664481Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+Check Links	Set up job	2026-11-13T23:13:34.5665277Z Build Date: 2026-11-03T17:26:59Z
+Check Links	Set up job	2026-11-13T23:13:34.5666046Z Worker ID: {ed036e09-c247-4eae-9bf6-7c64cc51e102}
+Check Links	Set up job	2026-11-13T23:13:34.5666774Z Region: westus
+Check Links	Set up job	2026-11-13T23:13:34.5667350Z Cloud: Azure
+Check Links	Set up job	2026-11-13T23:13:34.5667971Z ##[endgroup]
+Check Links	Set up job	2026-11-13T23:13:34.5669551Z ##[group]Operating System
+Check Links	Set up job	2026-11-13T23:13:34.5670293Z Ubuntu
+Check Links	Set up job	2026-11-13T23:13:34.5670847Z 26.04.1
+Check Links	Set up job	2026-11-13T23:13:34.5671382Z LTS
+Check Links	Set up job	2026-11-13T23:13:34.5672289Z ##[endgroup]
+Check Links	Set up job	2026-11-13T23:13:34.5672958Z ##[group]Runner Image
+Check Links	Set up job	2026-11-13T23:13:34.5673638Z Image: ubuntu-26.04
+Check Links	Set up job	2026-11-13T23:13:34.5674247Z Version: 20261111.196.1
+Check Links	Set up job	2026-11-13T23:13:34.5675335Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261111.196/images/ubuntu/Ubuntu2604-Readme.md
+Check Links	Set up job	2026-11-13T23:13:34.5677149Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261111.196
+Check Links	Set up job	2026-11-13T23:13:34.5678167Z ##[endgroup]
+Check Links	Set up job	2026-11-13T23:13:34.5679349Z ##[group]GITHUB_TOKEN Permissions
+Check Links	Set up job	2026-11-13T23:13:34.5681533Z Contents: read
+Check Links	Set up job	2026-11-13T23:13:34.5682649Z Metadata: read
+Check Links	Set up job	2026-11-13T23:13:34.5683255Z ##[endgroup]
+Check Links	Set up job	2026-11-13T23:13:34.5685601Z Secret source: Actions
+Check Links	Set up job	2026-11-13T23:13:34.5686596Z Cache mode: write
+Check Links	Set up job	2026-11-13T23:13:34.5687744Z Prepare workflow directory
+Check Links	Set up job	2026-11-13T23:13:34.6038112Z Prepare all required actions
+Check Links	Set up job	2026-11-13T23:13:34.6087952Z Getting action download info
+Check Links	Set up job	2026-11-13T23:13:34.9711095Z Download action repository 'actions/checkout@v7.0.1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+Check Links	Set up job	2026-11-13T23:13:35.1045654Z Download action repository 'shivammathur/setup-php@2.40.0' (SHA:eb7c497e18156a6bbabfef1d3a82760b9eda3962)
+Check Links	Set up job	2026-11-13T23:13:35.3760903Z Download action repository 'lycheeverse/lychee-action@v2.9.0' (SHA:e7477775783ea5526144ba13e8db5eec57747ce8)
+Check Links	Set up job	2026-11-13T23:13:35.7772754Z Complete job name: Check Links
+Check Links	Run actions/checkout@v7.0.1	﻿2026-11-13T23:13:35.8887069Z ##[group]Run actions/checkout@v7.0.1
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:35.8888644Z with:
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:35.8889574Z   persist-credentials: false
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:35.8891136Z   repository: link-foundation/php-ai-driven-development-pipeline-template
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:35.8901222Z   token: ***
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:35.8902386Z   ssh-strict: true
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:35.8903354Z   ssh-user: git
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:35.8904261Z   clean: true
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:35.8905224Z   sparse-checkout-cone-mode: true
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:35.8906353Z   fetch-depth: 1
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:35.8907277Z   fetch-tags: false
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:35.8908218Z   show-progress: true
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:35.8909186Z   lfs: false
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:35.8910092Z   submodules: false
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:35.8911057Z   set-safe-directory: true
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:35.8912247Z   allow-unsafe-pr-checkout: false
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:35.8913733Z ##[endgroup]
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.1849780Z Syncing repository: link-foundation/php-ai-driven-development-pipeline-template
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.1854239Z ##[group]Getting Git version info
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.1858326Z Working directory is '/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template'
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.1862861Z [command]/usr/bin/git version
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.1863992Z git version 2.56.1
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.1868986Z ##[endgroup]
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.1878161Z Temporarily overriding HOME='/home/runner/work/_temp/c4a463b4-2547-471e-a5c7-fcbf48fcbd3d' before making global git config changes
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.1895006Z Adding repository directory to the temporary git global config as a safe directory
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.1900889Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.1957640Z Deleting the contents of '/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template'
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.1962904Z ##[group]Determining repository object format
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.1964852Z ##[endgroup]
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.1967035Z ##[group]Initializing the repository
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.1970655Z [command]/usr/bin/git init /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2113428Z hint: Using 'master' as the name for the initial branch. This default branch name
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2116539Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2118776Z hint: to use in all of your new repositories, which will suppress this warning,
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2120385Z hint: call:
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2121257Z hint:
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2122853Z hint: 	git config --global init.defaultBranch <name>
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2124245Z hint:
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2125786Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2128078Z hint: 'development'. The just-created branch can be renamed via this command:
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2130232Z hint:
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2131687Z hint: 	git branch -m <name>
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2133592Z hint:
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2135941Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2141289Z Initialized empty Git repository in /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2149635Z [command]/usr/bin/git remote add origin https://github.com/link-foundation/php-ai-driven-development-pipeline-template
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2210137Z ##[endgroup]
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2212884Z ##[group]Disabling automatic garbage collection
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2215349Z [command]/usr/bin/git config --local gc.auto 0
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2256988Z ##[endgroup]
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2259727Z ##[group]Setting up auth
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2261728Z Removing SSH command configuration
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2264296Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2304293Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2764545Z Removing HTTP extra header
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2772716Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.2812876Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.3095619Z Removing includeIf entries pointing to credentials config files
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.3100696Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.3137924Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.3449446Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-4d05275b-16da-4979-99c6-fece5bdaaeeb.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.3490152Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path /home/runner/work/_temp/git-credentials-4d05275b-16da-4979-99c6-fece5bdaaeeb.config
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.3529214Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-4d05275b-16da-4979-99c6-fece5bdaaeeb.config
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.3566538Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-4d05275b-16da-4979-99c6-fece5bdaaeeb.config
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.3602873Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-4d05275b-16da-4979-99c6-fece5bdaaeeb.config
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.3634740Z ##[endgroup]
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.3636375Z ##[group]Fetching the repository
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.3640676Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +7f786012b316e7f033052f56d410b141ef2008c1:refs/remotes/pull/24/merge
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9098351Z From https://github.com/link-foundation/php-ai-driven-development-pipeline-template
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9100931Z  * [new ref]         7f786012b316e7f033052f56d410b141ef2008c1 -> pull/24/merge
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9105090Z ##[endgroup]
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9106667Z ##[group]Determining the checkout info
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9108716Z ##[endgroup]
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9110046Z [command]/usr/bin/git sparse-checkout disable
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9165601Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9197367Z ##[group]Checking out the ref
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9201258Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/24/merge
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9879147Z Note: switching to 'refs/remotes/pull/24/merge'.
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9880605Z 
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9881381Z You are in 'detached HEAD' state. You can look around, make experimental
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9883555Z changes and commit them, and you can discard any commits you make in this
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9885396Z state without impacting any branches by switching back to a branch.
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9886473Z 
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9887182Z If you want to create a new branch to retain commits you create, you may
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9888890Z do so (now or later) by using -c with the switch command. Example:
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9889875Z 
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9890314Z   git switch -c <new-branch-name>
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9891077Z 
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9892000Z Or undo this operation with:
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9893164Z 
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9893838Z   git switch -
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9895076Z 
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9896160Z Turn off this advice by setting config variable advice.detachedHead to false
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9897367Z 
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9899042Z HEAD is now at 7f78601 Merge eeb0625e9db83acef1416ec109e2bb3dcf38eb55 into dda0eb244919927efb7e8668d120996d9d82489f
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9903506Z ##[endgroup]
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9949713Z [command]/usr/bin/git log -1 --format=%H
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9979280Z 7f786012b316e7f033052f56d410b141ef2008c1
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9989349Z ##[group]Removing auth
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9991036Z Removing SSH command configuration
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:36.9994160Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0029763Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0320182Z Removing HTTP extra header
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0323716Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0363696Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0656737Z Removing includeIf entries pointing to credentials config files
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0659907Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0687387Z includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0692564Z includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0696545Z includeif.gitdir:/github/workspace/.git.path
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0698982Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0705715Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0728482Z /home/runner/work/_temp/git-credentials-4d05275b-16da-4979-99c6-fece5bdaaeeb.config
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0747099Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-4d05275b\-16da\-4979\-99c6\-fece5bdaaeeb\.config
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0790339Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0821463Z /home/runner/work/_temp/git-credentials-4d05275b-16da-4979-99c6-fece5bdaaeeb.config
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0835471Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-4d05275b\-16da\-4979\-99c6\-fece5bdaaeeb\.config
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0871642Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0897028Z /github/runner_temp/git-credentials-4d05275b-16da-4979-99c6-fece5bdaaeeb.config
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0905747Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-4d05275b\-16da\-4979\-99c6\-fece5bdaaeeb\.config
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0948412Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0974612Z /github/runner_temp/git-credentials-4d05275b-16da-4979-99c6-fece5bdaaeeb.config
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.0983955Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-4d05275b\-16da\-4979\-99c6\-fece5bdaaeeb\.config
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.1020068Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.1298372Z Removing credentials config '/home/runner/work/_temp/git-credentials-4d05275b-16da-4979-99c6-fece5bdaaeeb.config'
+Check Links	Run actions/checkout@v7.0.1	2026-11-13T23:13:37.1308330Z ##[endgroup]
+Check Links	Setup PHP	﻿2026-11-13T23:13:37.1615161Z ##[group]Run shivammathur/setup-php@2.40.0
+Check Links	Setup PHP	2026-11-13T23:13:37.1616385Z with:
+Check Links	Setup PHP	2026-11-13T23:13:37.1617212Z   php-version: 8.5.12
+Check Links	Setup PHP	2026-11-13T23:13:37.1618138Z   coverage: none
+Check Links	Setup PHP	2026-11-13T23:13:37.1619013Z   ini-file: production
+Check Links	Setup PHP	2026-11-13T23:13:37.1627965Z   github-token: ***
+Check Links	Setup PHP	2026-11-13T23:13:37.1628882Z ##[endgroup]
+Check Links	Setup PHP	2026-11-13T23:13:37.2072838Z [command]/usr/bin/bash /home/runner/work/_actions/shivammathur/setup-php/2.40.0/src/scripts/run.sh
+Check Links	Setup PHP	2026-11-13T23:13:37.2616631Z 
+Check Links	Setup PHP	2026-11-13T23:13:39.4866291Z ^[[90;1m==> ^[[0m^[[37;1mSetup PHP^[[0m
+Check Links	Setup PHP	2026-11-13T23:13:39.4867799Z ^[[32;1m✓ ^[[0m^[[34;1mPHP ^[[0m^[[90;1mUpdated to PHP 8.5.12^[[0m
+Check Links	Setup PHP	2026-11-13T23:13:39.4871121Z 
+Check Links	Setup PHP	2026-11-13T23:13:39.4871618Z ^[[90;1m==> ^[[0m^[[37;1mSetup Tools^[[0m
+Check Links	Setup PHP	2026-11-13T23:13:39.7936053Z ^[[32;1m✓ ^[[0m^[[34;1mcomposer ^[[0m^[[90;1mAdded composer 2.11.2^[[0m
+Check Links	Setup PHP	2026-11-13T23:13:39.7937025Z 
+Check Links	Setup PHP	2026-11-13T23:13:39.7939759Z ^[[90;1m==> ^[[0m^[[37;1mSetup Coverage^[[0m
+Check Links	Setup PHP	2026-11-13T23:13:40.1219235Z ^[[32;1m✓ ^[[0m^[[34;1mnone ^[[0m^[[90;1mDisabled Xdebug and PCOV^[[0m
+Check Links	Setup PHP	2026-11-13T23:13:40.1220606Z 
+Check Links	Setup PHP	2026-11-13T23:13:40.1243259Z ^[[90;1m==> ^[[0m^[[37;1mSponsor setup-php^[[0m
+Check Links	Setup PHP	2026-11-13T23:13:40.1253863Z ^[[32;1m✓ ^[[0m^[[34;1msetup-php ^[[0m^[[90;1mhttps://setup-php.com/sponsor^[[0m
+Check Links	Check links with lychee	﻿2026-11-13T23:13:40.1577985Z ##[group]Run lycheeverse/lychee-action@v2.9.0
+Check Links	Check links with lychee	2026-11-13T23:13:40.1578373Z with:
+Check Links	Check links with lychee	2026-11-13T23:13:40.1578976Z   args: --verbose --no-progress --cache --max-cache-age 1d --max-retries 3 --timeout 30 --exclude-path docs/case-studies './**/*.md' './**/*.html'
+Check Links	Check links with lychee	2026-11-13T23:13:40.1579812Z   fail: false
+Check Links	Check links with lychee	2026-11-13T23:13:40.1580058Z   output: lychee/out.md
+Check Links	Check links with lychee	2026-11-13T23:13:40.1580287Z   jobSummary: true
+Check Links	Check links with lychee	2026-11-13T23:13:40.1580496Z   debug: false
+Check Links	Check links with lychee	2026-11-13T23:13:40.1580693Z   failIfEmpty: true
+Check Links	Check links with lychee	2026-11-13T23:13:40.1580906Z   format: markdown
+Check Links	Check links with lychee	2026-11-13T23:13:40.1581108Z   lycheeVersion: v0.24.2
+Check Links	Check links with lychee	2026-11-13T23:13:40.1581368Z   checkbox: true
+Check Links	Check links with lychee	2026-11-13T23:13:40.1584049Z   token: ***
+Check Links	Check links with lychee	2026-11-13T23:13:40.1584287Z   workingDirectory: .
+Check Links	Check links with lychee	2026-11-13T23:13:40.1584510Z env:
+Check Links	Check links with lychee	2026-11-13T23:13:40.1584708Z   COMPOSER_PROCESS_TIMEOUT: 0
+Check Links	Check links with lychee	2026-11-13T23:13:40.1584960Z   COMPOSER_NO_INTERACTION: 1
+Check Links	Check links with lychee	2026-11-13T23:13:40.1585201Z   COMPOSER_NO_AUDIT: 1
+Check Links	Check links with lychee	2026-11-13T23:13:40.1587666Z   GITHUB_TOKEN: ***
+Check Links	Check links with lychee	2026-11-13T23:13:40.1587900Z ##[endgroup]
+Check Links	Check links with lychee	2026-11-13T23:13:40.1648942Z ##[start-action display=Set up environment;id=lychee.__run]
+Check Links	Check links with lychee	2026-11-13T23:13:40.1697152Z ##[group]Run # Install into $RUNNER_TEMP (not $HOME) so the install path is stable
+Check Links	Check links with lychee	2026-11-13T23:13:40.1697822Z ^[[36;1m# Install into $RUNNER_TEMP (not $HOME) so the install path is stable^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1698388Z ^[[36;1m# across composite steps. On some runners $HOME is overridden per step^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1698898Z ^[[36;1m# (e.g. actions/checkout temporarily sets it), which made the PATH^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1699392Z ^[[36;1m# entry from one step and the install in another step diverge.^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1699820Z ^[[36;1mecho "$RUNNER_TEMP/lychee/bin" >> "$GITHUB_PATH"^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1700184Z ^[[36;1mmkdir -p "$RUNNER_TEMP/lychee/bin"^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1758957Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Check Links	Check links with lychee	2026-11-13T23:13:40.1759344Z env:
+Check Links	Check links with lychee	2026-11-13T23:13:40.1759564Z   COMPOSER_PROCESS_TIMEOUT: 0
+Check Links	Check links with lychee	2026-11-13T23:13:40.1759826Z   COMPOSER_NO_INTERACTION: 1
+Check Links	Check links with lychee	2026-11-13T23:13:40.1760091Z   COMPOSER_NO_AUDIT: 1
+Check Links	Check links with lychee	2026-11-13T23:13:40.1762795Z   GITHUB_TOKEN: ***
+Check Links	Check links with lychee	2026-11-13T23:13:40.1763077Z ##[endgroup]
+Check Links	Check links with lychee	2026-11-13T23:13:40.1910129Z ##[end-action id=lychee.__run;outcome=success;conclusion=success;duration_ms=26]
+Check Links	Check links with lychee	2026-11-13T23:13:40.1914753Z ##[start-action display=Download and extract lychee in temp directory;id=lychee.lychee-setup]
+Check Links	Check links with lychee	2026-11-13T23:13:40.1945276Z ##[group]Run # Create a temporary directory for downloads and extraction
+Check Links	Check links with lychee	2026-11-13T23:13:40.1945827Z ^[[36;1m# Create a temporary directory for downloads and extraction^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1946234Z ^[[36;1mTEMP_DIR="${RUNNER_TEMP}/lychee-download"^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1946599Z ^[[36;1mrm -rf "${TEMP_DIR}" && mkdir -p "${TEMP_DIR}"^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1946953Z ^[[36;1mcd "${TEMP_DIR}"^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1947183Z ^[[36;1m^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1947380Z ^[[36;1mARCH=$(uname -m)^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1947688Z ^[[36;1m# Determine filename and download URL based on version^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1948117Z ^[[36;1mif [[ "${LYCHEE_VERSION}" =~ ^v0\.0|^v0\.1[0-5]\. ]]; then^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1948569Z ^[[36;1m  FILENAME="lychee-${LYCHEE_VERSION}-${ARCH}-unknown-linux-gnu.tar.gz"^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1949251Z ^[[36;1m  DOWNLOAD_URL="https://github.com/lycheeverse/lychee/releases/download/${LYCHEE_VERSION}/${FILENAME}"^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1949793Z ^[[36;1melse^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1950074Z ^[[36;1m  FILENAME="lychee-${ARCH}-unknown-linux-gnu.tar.gz"^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1950458Z ^[[36;1m  if [[ "${LYCHEE_VERSION}" == 'nightly' ]]; then^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1950972Z ^[[36;1m    DOWNLOAD_URL="https://github.com/lycheeverse/lychee/releases/download/nightly/${FILENAME}"^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1951486Z ^[[36;1m  elif [[ "${LYCHEE_VERSION}" == 'latest' ]]; then^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1952253Z ^[[36;1m    DOWNLOAD_URL="https://github.com/lycheeverse/lychee/releases/latest/download/${FILENAME}"^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1952726Z ^[[36;1m  else^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1953198Z ^[[36;1m    DOWNLOAD_URL="https://github.com/lycheeverse/lychee/releases/download/lychee-${LYCHEE_VERSION}/${FILENAME}"^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1953947Z ^[[36;1m  fi^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1954271Z ^[[36;1mfi^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1954456Z ^[[36;1m^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1954678Z ^[[36;1mecho "Downloading from: ${DOWNLOAD_URL}"^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1954987Z ^[[36;1mcurl -sfLO "${DOWNLOAD_URL}"^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1955240Z ^[[36;1m^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1955434Z ^[[36;1mecho "Extracting ${FILENAME}"^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1955704Z ^[[36;1mtar -xvzf "${FILENAME}"^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1955961Z ^[[36;1mrm -rv "${FILENAME}"^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1956196Z ^[[36;1m^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1956489Z ^[[36;1m# Detect if lychee binary is in a subfolder within the tar.gz^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1956929Z ^[[36;1mif ! [[ -f "${TEMP_DIR}/lychee" ]]; then^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1957332Z ^[[36;1m  TEMP_DIR="$(echo "${TEMP_DIR}"/lychee-*)"  # need `echo` to evaluate glob^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1957715Z ^[[36;1mfi^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1957952Z ^[[36;1mif ! [[ -f "${TEMP_DIR}/lychee" ]]; then^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1958412Z ^[[36;1m  echo "Cannot find lychee binary in $TEMP_DIR. Did the archive structure change?" >&2^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1958849Z ^[[36;1m  exit 1^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1959049Z ^[[36;1mfi^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1959239Z ^[[36;1m^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1959481Z ^[[36;1m# Output temp directory for use in later steps^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.1959839Z ^[[36;1mecho "temp_dir=${TEMP_DIR}" >> $GITHUB_OUTPUT^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.2011823Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Check Links	Check links with lychee	2026-11-13T23:13:40.2012448Z env:
+Check Links	Check links with lychee	2026-11-13T23:13:40.2012659Z   COMPOSER_PROCESS_TIMEOUT: 0
+Check Links	Check links with lychee	2026-11-13T23:13:40.2012927Z   COMPOSER_NO_INTERACTION: 1
+Check Links	Check links with lychee	2026-11-13T23:13:40.2013176Z   COMPOSER_NO_AUDIT: 1
+Check Links	Check links with lychee	2026-11-13T23:13:40.2015730Z   GITHUB_TOKEN: ***
+Check Links	Check links with lychee	2026-11-13T23:13:40.2015972Z   LYCHEE_VERSION: v0.24.2
+Check Links	Check links with lychee	2026-11-13T23:13:40.2016208Z ##[endgroup]
+Check Links	Check links with lychee	2026-11-13T23:13:40.2153284Z Downloading from: https://github.com/lycheeverse/lychee/releases/download/lychee-v0.24.2/lychee-x86_64-unknown-linux-gnu.tar.gz
+Check Links	Check links with lychee	2026-11-13T23:13:40.4325701Z Extracting lychee-x86_64-unknown-linux-gnu.tar.gz
+Check Links	Check links with lychee	2026-11-13T23:13:40.4356131Z lychee-x86_64-unknown-linux-gnu/
+Check Links	Check links with lychee	2026-11-13T23:13:40.4357073Z lychee-x86_64-unknown-linux-gnu/README.md
+Check Links	Check links with lychee	2026-11-13T23:13:40.4358219Z lychee-x86_64-unknown-linux-gnu/docs/
+Check Links	Check links with lychee	2026-11-13T23:13:40.4358984Z lychee-x86_64-unknown-linux-gnu/docs/lychee.1
+Check Links	Check links with lychee	2026-11-13T23:13:40.4359919Z lychee-x86_64-unknown-linux-gnu/docs/TROUBLESHOOTING.md
+Check Links	Check links with lychee	2026-11-13T23:13:40.4360860Z lychee-x86_64-unknown-linux-gnu/docs/PRE_COMMIT.md
+Check Links	Check links with lychee	2026-11-13T23:13:40.4361690Z lychee-x86_64-unknown-linux-gnu/complete/
+Check Links	Check links with lychee	2026-11-13T23:13:40.4362798Z lychee-x86_64-unknown-linux-gnu/complete/_lychee.ps1
+Check Links	Check links with lychee	2026-11-13T23:13:40.4363715Z lychee-x86_64-unknown-linux-gnu/complete/lychee.elv
+Check Links	Check links with lychee	2026-11-13T23:13:40.4364557Z lychee-x86_64-unknown-linux-gnu/complete/lychee.fish
+Check Links	Check links with lychee	2026-11-13T23:13:40.4365402Z lychee-x86_64-unknown-linux-gnu/complete/lychee.bash
+Check Links	Check links with lychee	2026-11-13T23:13:40.4366310Z lychee-x86_64-unknown-linux-gnu/complete/_lychee
+Check Links	Check links with lychee	2026-11-13T23:13:40.4367156Z lychee-x86_64-unknown-linux-gnu/lychee
+Check Links	Check links with lychee	2026-11-13T23:13:40.5266350Z removed 'lychee-x86_64-unknown-linux-gnu.tar.gz'
+Check Links	Check links with lychee	2026-11-13T23:13:40.5301799Z ##[end-action id=lychee.lychee-setup;outcome=success;conclusion=success;duration_ms=338]
+Check Links	Check links with lychee	2026-11-13T23:13:40.5307249Z ##[start-action display=Install lychee;id=lychee.__run_2]
+Check Links	Check links with lychee	2026-11-13T23:13:40.5357575Z ##[group]Run # Install lychee from the temporary directory
+Check Links	Check links with lychee	2026-11-13T23:13:40.5358002Z ^[[36;1m# Install lychee from the temporary directory^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.5358654Z ^[[36;1minstall -t "$RUNNER_TEMP/lychee/bin" -D "/home/runner/work/_temp/lychee-download/lychee-x86_64-unknown-linux-gnu/lychee"^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.5413305Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Check Links	Check links with lychee	2026-11-13T23:13:40.5413684Z env:
+Check Links	Check links with lychee	2026-11-13T23:13:40.5413888Z   COMPOSER_PROCESS_TIMEOUT: 0
+Check Links	Check links with lychee	2026-11-13T23:13:40.5414147Z   COMPOSER_NO_INTERACTION: 1
+Check Links	Check links with lychee	2026-11-13T23:13:40.5414389Z   COMPOSER_NO_AUDIT: 1
+Check Links	Check links with lychee	2026-11-13T23:13:40.5417182Z   GITHUB_TOKEN: ***
+Check Links	Check links with lychee	2026-11-13T23:13:40.5417403Z ##[endgroup]
+Check Links	Check links with lychee	2026-11-13T23:13:40.5632925Z ##[end-action id=lychee.__run_2;outcome=success;conclusion=success;duration_ms=32]
+Check Links	Check links with lychee	2026-11-13T23:13:40.5641714Z ##[start-action display=Run Lychee;id=lychee.run-lychee]
+Check Links	Check links with lychee	2026-11-13T23:13:40.5671456Z ##[group]Run /home/runner/work/_actions/lycheeverse/lychee-action/v2.9.0/entrypoint.sh
+Check Links	Check links with lychee	2026-11-13T23:13:40.5672375Z ^[[36;1m/home/runner/work/_actions/lycheeverse/lychee-action/v2.9.0/entrypoint.sh^[[0m
+Check Links	Check links with lychee	2026-11-13T23:13:40.5729843Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Check Links	Check links with lychee	2026-11-13T23:13:40.5730230Z env:
+Check Links	Check links with lychee	2026-11-13T23:13:40.5730445Z   COMPOSER_PROCESS_TIMEOUT: 0
+Check Links	Check links with lychee	2026-11-13T23:13:40.5730720Z   COMPOSER_NO_INTERACTION: 1
+Check Links	Check links with lychee	2026-11-13T23:13:40.5730980Z   COMPOSER_NO_AUDIT: 1
+Check Links	Check links with lychee	2026-11-13T23:13:40.5733930Z   GITHUB_TOKEN: ***
+Check Links	Check links with lychee	2026-11-13T23:13:40.5736547Z   INPUT_TOKEN: ***
+Check Links	Check links with lychee	2026-11-13T23:13:40.5737174Z   INPUT_ARGS: --verbose --no-progress --cache --max-cache-age 1d --max-retries 3 --timeout 30 --exclude-path docs/case-studies './**/*.md' './**/*.html'
+Check Links	Check links with lychee	2026-11-13T23:13:40.5737863Z   INPUT_DEBUG: false
+Check Links	Check links with lychee	2026-11-13T23:13:40.5738084Z   INPUT_FAIL: false
+Check Links	Check links with lychee	2026-11-13T23:13:40.5738322Z   INPUT_FAILIFEMPTY: true
+Check Links	Check links with lychee	2026-11-13T23:13:40.5738566Z   INPUT_FORMAT: markdown
+Check Links	Check links with lychee	2026-11-13T23:13:40.5738814Z   INPUT_JOBSUMMARY: true
+Check Links	Check links with lychee	2026-11-13T23:13:40.5739047Z   INPUT_CHECKBOX: true
+Check Links	Check links with lychee	2026-11-13T23:13:40.5739277Z   INPUT_OUTPUT: lychee/out.md
+Check Links	Check links with lychee	2026-11-13T23:13:40.5739930Z   SUMMARY_URL: https://github.com/link-foundation/php-ai-driven-development-pipeline-template/actions/runs/43525482784#summary-132230053860
+Check Links	Check links with lychee	2026-11-13T23:13:40.5740620Z ##[endgroup]
+Check Links	Check links with lychee	2026-11-13T23:13:40.8883709Z   [WARN] ./**/*.html: No files found for this input source
+Check Links	Check links with lychee	2026-11-13T23:13:41.0864366Z [404] https://docs.deno.com/runtime/reference/cli/deno_json/#minimum-dependency-age (at 52:221) | Rejected status code: 404 Not Found
+Check Links	Check links with lychee	2026-11-13T23:13:41.1193465Z [404] https://learn.microsoft.com/en-us/dotnet/core/compatibility/11.0 (at 29:299) | Rejected status code: 404 Not Found
+Check Links	Check links with lychee	2026-11-13T23:13:41.1736703Z [404] https://phpstan.org/blog/phpstan-2-0-released (at 8:3) | Rejected status code: 404 Not Found
+Check Links	Check links with lychee	2026-11-13T23:13:41.4600183Z [ERROR] file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/VSTestIntegration.md (at 661:3) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:13:41.4602901Z [ERROR] file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/MSBuildIntegration.md (at 662:3) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:13:41.4605512Z [ERROR] file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/GlobalTool.md (at 663:3) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:13:41.4607709Z [ERROR] file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/KnownIssues.md (at 664:3) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:14:09.0042823Z [ERROR] file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/DEPENDENCY-UPDATE-BEST-PRACTICES.zh.md (at 1:79) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:14:09.0046300Z [ERROR] file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/DEPENDENCY-UPDATE-BEST-PRACTICES.hi.md (at 1:126) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:14:09.0050277Z [ERROR] file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/DEPENDENCY-UPDATE-BEST-PRACTICES.ru.md (at 1:173) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:14:09.0054970Z [ERROR] file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/case-studies/issue-2184/data/ecosystem-update-commands.json (at 35:318) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:14:09.0074354Z [ERROR] file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/CI-CD-BEST-PRACTICES.md (at 140:348) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:14:09.0510894Z [ERROR] file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/CI-CD-BEST-PRACTICES.md (at 254:3) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:14:09.0515444Z [ERROR] file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/CONFIGURATION.md (at 255:3) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:14:09.0519484Z [ERROR] file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/case-studies/issue-2184/README.md (at 256:3) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:14:09.2596769Z [ERROR] file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/docs/create-image-and-azure-resources.md (at 17:56) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:14:09.7245502Z [ERROR] file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/docs/dotnet-ubuntu.md (at 132:125) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:14:09.7547467Z [403] https://x.com/GHchangelog (at 107:136) | Rejected status code: 403 Forbidden
+Check Links	Check links with lychee	2026-11-13T23:14:09.7942557Z [404] https://packagecloud.io/install/repositories/github/git-lfs (at 146:329) | Rejected status code: 404 Not Found
+Check Links	Check links with lychee	2026-11-13T23:14:09.8665077Z  [ERROR] failed to verify TLS certificate: invalid peer certificate: certificate expired: verification time 1794611649 (UNIX), but certificate is not valid after 1790467199 (4144450 seconds ago)
+Check Links	Check links with lychee	2026-11-13T23:14:09.8666980Z [ERROR] https://dl.hhvm.com/ubuntu (at 146:601) | SSL certificate expired. Site needs to renew certificate
+Check Links	Check links with lychee	2026-11-13T23:14:09.8714949Z [404] https://packages.cloud.google.com/apt (at 146:471) | Rejected status code: 404 Not Found
+Check Links	Check links with lychee	2026-11-13T23:14:09.9473269Z [404] https://cli-assets.heroku.com/channels/stable/apt (at 146:535) | Rejected status code: 404 Not Found
+Check Links	Check links with lychee	2026-11-13T23:14:10.1425901Z [404] https://download.mono-project.com/repo/ubuntu (at 146:695) | Rejected status code: 404 Not Found
+Check Links	Check links with lychee	2026-11-13T23:14:10.1486561Z [502] https://packages.erlang-solutions.com/ubuntu (at 146:202) | Rejected status code: 502 Bad Gateway
+Check Links	Check links with lychee	2026-11-13T23:14:10.1714468Z  [ERROR] failed to verify TLS certificate: invalid peer certificate: certificate not valid for name "ppa.launchpad.net"; certificate is only valid for DnsName("private-ppa.launchpad.net")
+Check Links	Check links with lychee	2026-11-13T23:14:10.1715974Z [ERROR] https://ppa.launchpad.net/mozillateam/ppa/ubuntu (at 146:263) | SSL certificate error. Check certificate validity
+Check Links	Check links with lychee	2026-11-13T23:14:14.4153010Z [404] https://github.com/kucherenko/jscpd/tree/master/packages/jscpd (at 46:15) | Rejected status code: 404 Not Found
+Check Links	Check links with lychee	2026-11-13T23:14:56.3218866Z [500] https://github.com/customer-terms/github-online-services-sla (at 76:118) | Rejected status code: 500 Internal Server Error
+Check Links	Check links with lychee	2026-11-13T23:15:06.0775833Z [500] https://github.com/customer-terms/github-online-services-sla (at 89:42) | Rejected status code: 500 Internal Server Error
+Check Links	Check links with lychee	2026-11-13T23:15:07.2559874Z Hint: You can configure accepted/rejected response codes with `-a` or `--accept`
+Check Links	Check links with lychee	2026-11-13T23:15:07.2755037Z # Summary
+Check Links	Check links with lychee	2026-11-13T23:15:07.2755687Z 
+Check Links	Check links with lychee	2026-11-13T23:15:07.2755854Z | Status         | Count |
+Check Links	Check links with lychee	2026-11-13T23:15:07.2756286Z |----------------|-------|
+Check Links	Check links with lychee	2026-11-13T23:15:07.2757172Z | 🔍 Total       | 1742  |
+Check Links	Check links with lychee	2026-11-13T23:15:07.2757602Z | 🔗 Unique      | 1080  |
+Check Links	Check links with lychee	2026-11-13T23:15:07.2758126Z | ✅ Successful  | 1714  |
+Check Links	Check links with lychee	2026-11-13T23:15:07.2758602Z | ⏳ Timeouts    | 0     |
+Check Links	Check links with lychee	2026-11-13T23:15:07.2759085Z | 🔀 Redirected  | 12    |
+Check Links	Check links with lychee	2026-11-13T23:15:07.2759551Z | 👻 Excluded    | 0     |
+Check Links	Check links with lychee	2026-11-13T23:15:07.2760016Z | ❓ Unknown     | 0     |
+Check Links	Check links with lychee	2026-11-13T23:15:07.2760522Z | 🚫 Errors      | 28    |
+Check Links	Check links with lychee	2026-11-13T23:15:07.2761059Z | ⛔ Unsupported | 0     |
+Check Links	Check links with lychee	2026-11-13T23:15:07.2761334Z 
+Check Links	Check links with lychee	2026-11-13T23:15:07.2761497Z ## Errors per input
+Check Links	Check links with lychee	2026-11-13T23:15:07.2761765Z 
+Check Links	Check links with lychee	2026-11-13T23:15:07.2762288Z ### Errors in dev/log/issues/23/pulls/24/coverlet-mtp-guide.md
+Check Links	Check links with lychee	2026-11-13T23:15:07.2762822Z 
+Check Links	Check links with lychee	2026-11-13T23:15:07.2764177Z * [ERROR] <file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/GlobalTool.md> (at 663:3) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:15:07.2766178Z * [ERROR] <file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/KnownIssues.md> (at 664:3) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:15:07.2767929Z * [ERROR] <file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/MSBuildIntegration.md> (at 662:3) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:15:07.2769624Z * [ERROR] <file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/VSTestIntegration.md> (at 661:3) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:15:07.2770516Z 
+Check Links	Check links with lychee	2026-11-13T23:15:07.2770724Z ### Errors in dev/log/issues/23/pulls/24/dependency-update-best-practices.md
+Check Links	Check links with lychee	2026-11-13T23:15:07.2771039Z 
+Check Links	Check links with lychee	2026-11-13T23:15:07.2772209Z * [ERROR] <file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/case-studies/issue-2184/data/ecosystem-update-commands.json> (at 35:318) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:15:07.2774196Z * [ERROR] <file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/case-studies/issue-2184/README.md> (at 256:3) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:15:07.2775965Z * [ERROR] <file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/CI-CD-BEST-PRACTICES.md> (at 140:348) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:15:07.2777655Z * [ERROR] <file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/CI-CD-BEST-PRACTICES.md> (at 254:3) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:15:07.2779375Z * [ERROR] <file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/CONFIGURATION.md> (at 255:3) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:15:07.2781109Z * [ERROR] <file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/DEPENDENCY-UPDATE-BEST-PRACTICES.hi.md> (at 1:126) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:15:07.2783145Z * [ERROR] <file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/DEPENDENCY-UPDATE-BEST-PRACTICES.ru.md> (at 1:173) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:15:07.2785205Z * [ERROR] <file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/DEPENDENCY-UPDATE-BEST-PRACTICES.zh.md> (at 1:79) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:15:07.2786329Z 
+Check Links	Check links with lychee	2026-11-13T23:15:07.2786487Z ### Errors in dev/log/issues/23/pulls/24/MIGRATIONS.md
+Check Links	Check links with lychee	2026-11-13T23:15:07.2786707Z 
+Check Links	Check links with lychee	2026-11-13T23:15:07.2787155Z * [404] <https://docs.deno.com/runtime/reference/cli/deno_json/#minimum-dependency-age> (at 52:221) | Rejected status code: 404 Not Found
+Check Links	Check links with lychee	2026-11-13T23:15:07.2787999Z * [404] <https://github.com/kucherenko/jscpd/tree/master/packages/jscpd> (at 46:15) | Rejected status code: 404 Not Found
+Check Links	Check links with lychee	2026-11-13T23:15:07.2788812Z * [404] <https://learn.microsoft.com/en-us/dotnet/core/compatibility/11.0> (at 29:299) | Rejected status code: 404 Not Found
+Check Links	Check links with lychee	2026-11-13T23:15:07.2790145Z * [404] <https://phpstan.org/blog/phpstan-2-0-released> (at 8:3) | Rejected status code: 404 Not Found
+Check Links	Check links with lychee	2026-11-13T23:15:07.2790860Z 
+Check Links	Check links with lychee	2026-11-13T23:15:07.2791103Z ### Errors in dev/log/issues/23/pulls/24/runner-images.md
+Check Links	Check links with lychee	2026-11-13T23:15:07.2791514Z 
+Check Links	Check links with lychee	2026-11-13T23:15:07.2793311Z * [ERROR] <file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/docs/create-image-and-azure-resources.md> (at 17:56) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:15:07.2796491Z * [ERROR] <file:///home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/dev/log/issues/23/pulls/24/docs/dotnet-ubuntu.md> (at 132:125) | File not found. Check if file exists and path is correct
+Check Links	Check links with lychee	2026-11-13T23:15:07.2798254Z * [404] <https://cli-assets.heroku.com/channels/stable/apt> (at 146:535) | Rejected status code: 404 Not Found
+Check Links	Check links with lychee	2026-11-13T23:15:07.2798949Z * [ERROR] <https://dl.hhvm.com/ubuntu> (at 146:601) | SSL certificate expired. Site needs to renew certificate
+Check Links	Check links with lychee	2026-11-13T23:15:07.2799674Z * [404] <https://download.mono-project.com/repo/ubuntu> (at 146:695) | Rejected status code: 404 Not Found
+Check Links	Check links with lychee	2026-11-13T23:15:07.2800911Z * [500] <https://github.com/customer-terms/github-online-services-sla> (at 76:118) | Rejected status code: 500 Internal Server Error
+Check Links	Check links with lychee	2026-11-13T23:15:07.2802547Z * [500] <https://github.com/customer-terms/github-online-services-sla> (at 89:42) | Rejected status code: 500 Internal Server Error
+Check Links	Check links with lychee	2026-11-13T23:15:07.2803554Z * [404] <https://packagecloud.io/install/repositories/github/git-lfs> (at 146:329) | Rejected status code: 404 Not Found
+Check Links	Check links with lychee	2026-11-13T23:15:07.2804251Z * [404] <https://packages.cloud.google.com/apt> (at 146:471) | Rejected status code: 404 Not Found
+Check Links	Check links with lychee	2026-11-13T23:15:07.2804940Z * [502] <https://packages.erlang-solutions.com/ubuntu> (at 146:202) | Rejected status code: 502 Bad Gateway
+Check Links	Check links with lychee	2026-11-13T23:15:07.2805681Z * [ERROR] <https://ppa.launchpad.net/mozillateam/ppa/ubuntu> (at 146:263) | SSL certificate error. Check certificate validity
+Check Links	Check links with lychee	2026-11-13T23:15:07.2806403Z * [403] <https://x.com/GHchangelog> (at 107:136) | Rejected status code: 403 Forbidden
+Check Links	Check links with lychee	2026-11-13T23:15:07.2806712Z 
+Check Links	Check links with lychee	2026-11-13T23:15:07.2806811Z ## Redirects per input
+Check Links	Check links with lychee	2026-11-13T23:15:07.2806946Z 
+Check Links	Check links with lychee	2026-11-13T23:15:07.2807172Z ### Redirects in dev/log/issues/23/pulls/24/dependency-update-best-practices.md
+Check Links	Check links with lychee	2026-11-13T23:15:07.2807493Z 
+Check Links	Check links with lychee	2026-11-13T23:15:07.2808265Z * https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference --[301]--> https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference
+Check Links	Check links with lychee	2026-11-13T23:15:07.2809118Z 
+Check Links	Check links with lychee	2026-11-13T23:15:07.2809276Z ### Redirects in dev/log/issues/23/pulls/24/MIGRATIONS.md
+Check Links	Check links with lychee	2026-11-13T23:15:07.2809513Z 
+Check Links	Check links with lychee	2026-11-13T23:15:07.2809921Z * https://docs.npmjs.com/cli/v12/commands/npm-install-scripts --[301]--> https://docs.npmjs.com/cli/v12/commands/npm-install-scripts/
+Check Links	Check links with lychee	2026-11-13T23:15:07.2810434Z 
+Check Links	Check links with lychee	2026-11-13T23:15:07.2810589Z ### Redirects in dev/log/issues/23/pulls/24/runner-images.md
+Check Links	Check links with lychee	2026-11-13T23:15:07.2811010Z 
+Check Links	Check links with lychee	2026-11-13T23:15:07.2811315Z * https://cloud.r-project.org/bin/linux/ubuntu --[301]--> https://cloud.r-project.org/bin/linux/ubuntu/
+Check Links	Check links with lychee	2026-11-13T23:15:07.2812626Z * https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners --[301]--> https://docs.github.com/en/actions/concepts/runners/github-hosted-runners
+Check Links	Check links with lychee	2026-11-13T23:15:07.2813574Z * https://download.docker.com/linux/ubuntu --[302]--> https://download.docker.com/linux/ubuntu/
+Check Links	Check links with lychee	2026-11-13T23:15:07.2815838Z * https://github.com/actions/runner-images/assets/88318005/922a8bf5-3e4d-4265-9527-b3b51e6bf9c8 --[302]--> https://github-production-user-asset-6210df.s3.amazonaws.com/88318005/266008702-922a8bf5-3e4d-4265-9527-b3b51e6bf9c8.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20261113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261113T231504Z&X-Amz-Expires=300&X-Amz-Signature=9c2d16a455b8e91444d5bebb73ace608fecc8305c0c36436179012d74dfe822d&X-Amz-SignedHeaders=host&response-content-type=image%2Fpng
+Check Links	Check links with lychee	2026-11-13T23:15:07.2818337Z * https://github.com/actions/runner-images/issues/new/choose --[302]--> https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Factions%2Frunner-images%2Fissues%2Fnew%2Fchoose
+Check Links	Check links with lychee	2026-11-13T23:15:07.2819585Z * https://github.com/orgs/community/discussions/new?category=actions --[302]--> https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Forgs%2Fcommunity%2Fdiscussions%2Fnew%3Fcategory%3Dactions
+Check Links	Check links with lychee	2026-11-13T23:15:07.2820958Z * https://help.github.com/en/actions/hosting-your-own-runners --[301]--> https://docs.github.com/en/actions/hosting-your-own-runners --[301]--> https://docs.github.com/en/actions/concepts/runners/self-hosted-runners
+Check Links	Check links with lychee	2026-11-13T23:15:07.2822228Z * https://packages.microsoft.com/repos/edge --[301]--> https://packages.microsoft.com/repos/edge/
+Check Links	Check links with lychee	2026-11-13T23:15:07.2822816Z * https://pypa.github.io/pipx --[301]--> https://pypa.github.io/pipx/
+Check Links	Check links with lychee	2026-11-13T23:15:07.2823334Z * https://repo.mongodb.org/apt/ubuntu --[302]--> https://repo.mongodb.org/apt/ubuntu/
+Check Links	Check links with lychee	2026-11-13T23:15:07.2823681Z 
+Check Links	Check links with lychee	2026-11-13T23:15:07.2823686Z 
+Check Links	Check links with lychee	2026-11-13T23:15:07.2841694Z ##[notice]Summary report available at: https://github.com/link-foundation/php-ai-driven-development-pipeline-template/actions/runs/43525482784#summary-132230053860
+Check Links	Check links with lychee	2026-11-13T23:15:07.2883039Z ##[end-action id=lychee.run-lychee;outcome=success;conclusion=success;duration_ms=86724]
+Check Links	Re-check transient and unanswered link failures	﻿2026-11-13T23:15:07.2977938Z ##[group]Run php scripts/recheck-broken-links.php
+Check Links	Re-check transient and unanswered link failures	2026-11-13T23:15:07.2978353Z ^[[36;1mphp scripts/recheck-broken-links.php^[[0m
+Check Links	Re-check transient and unanswered link failures	2026-11-13T23:15:07.3027480Z shell: /usr/bin/bash -e {0}
+Check Links	Re-check transient and unanswered link failures	2026-11-13T23:15:07.3027733Z env:
+Check Links	Re-check transient and unanswered link failures	2026-11-13T23:15:07.3027931Z   COMPOSER_PROCESS_TIMEOUT: 0
+Check Links	Re-check transient and unanswered link failures	2026-11-13T23:15:07.3028183Z   COMPOSER_NO_INTERACTION: 1
+Check Links	Re-check transient and unanswered link failures	2026-11-13T23:15:07.3028413Z   COMPOSER_NO_AUDIT: 1
+Check Links	Re-check transient and unanswered link failures	2026-11-13T23:15:07.3028630Z   LYCHEE_OUTPUT: lychee/out.md
+Check Links	Re-check transient and unanswered link failures	2026-11-13T23:15:07.3028889Z   RECOVERED_OUTPUT: lychee/recovered.txt
+Check Links	Re-check transient and unanswered link failures	2026-11-13T23:15:07.3029177Z ##[endgroup]
+Check Links	Re-check transient and unanswered link failures	2026-11-13T23:15:07.3580864Z Re-check: 28 lychee failure(s), 23 final, 5 transient or unanswered
+Check Links	Re-check transient and unanswered link failures	2026-11-13T23:17:18.4210833Z ##[notice]https://github.com/customer-terms/github-online-services-sla answers 100..=103,200..=299 on re-check -- not a broken link
+Check Links	Re-check transient and unanswered link failures	2026-11-13T23:17:18.4213466Z Re-check finished: 1 recovered, 3 still failing
+Check Links	Check broken links against the Web Archive	﻿2026-11-13T23:17:18.4365884Z ##[group]Run php scripts/check-web-archive.php
+Check Links	Check broken links against the Web Archive	2026-11-13T23:17:18.4366296Z ^[[36;1mphp scripts/check-web-archive.php^[[0m
+Check Links	Check broken links against the Web Archive	2026-11-13T23:17:18.4414085Z shell: /usr/bin/bash -e {0}
+Check Links	Check broken links against the Web Archive	2026-11-13T23:17:18.4414339Z env:
+Check Links	Check broken links against the Web Archive	2026-11-13T23:17:18.4414543Z   COMPOSER_PROCESS_TIMEOUT: 0
+Check Links	Check broken links against the Web Archive	2026-11-13T23:17:18.4414802Z   COMPOSER_NO_INTERACTION: 1
+Check Links	Check broken links against the Web Archive	2026-11-13T23:17:18.4415049Z   COMPOSER_NO_AUDIT: 1
+Check Links	Check broken links against the Web Archive	2026-11-13T23:17:18.4415278Z   LYCHEE_OUTPUT: lychee/out.md
+Check Links	Check broken links against the Web Archive	2026-11-13T23:17:18.4415544Z   RECOVERED_URLS: lychee/recovered.txt
+Check Links	Check broken links against the Web Archive	2026-11-13T23:17:18.4415810Z ##[endgroup]
+Check Links	Check broken links against the Web Archive	2026-11-13T23:17:18.4962887Z   https://github.com/customer-terms/github-online-services-sla never answered lychee but answers the re-check -- not broken
+Check Links	Check broken links against the Web Archive	2026-11-13T23:17:18.4963901Z Checking 12 link(s) against the Web Archive...
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4901431Z ##[notice]Archived copy available for https://github.com/kucherenko/jscpd/tree/master/packages/jscpd -> http://web.archive.org/web/20240330080640/https://github.com/kucherenko/jscpd/tree/master/packages/jscpd
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4907274Z   ✓ https://github.com/kucherenko/jscpd/tree/master/packages/jscpd
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4908510Z       http://web.archive.org/web/20240330080640/https://github.com/kucherenko/jscpd/tree/master/packages/jscpd
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4911446Z ##[notice]Archived copy available for https://dl.hhvm.com/ubuntu -> http://web.archive.org/web/20260715134734/https://dl.hhvm.com/ubuntu/
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4913853Z   ✓ https://dl.hhvm.com/ubuntu
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4914426Z       http://web.archive.org/web/20260715134734/https://dl.hhvm.com/ubuntu/
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4917135Z ##[notice]Archived copy available for https://download.mono-project.com/repo/ubuntu -> http://web.archive.org/web/20240511022014/https://download.mono-project.com/repo/ubuntu/
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4919061Z   ✓ https://download.mono-project.com/repo/ubuntu
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4919856Z       http://web.archive.org/web/20240511022014/https://download.mono-project.com/repo/ubuntu/
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4922647Z ##[notice]Archived copy available for https://packages.cloud.google.com/apt -> http://web.archive.org/web/20240104115242/https://packages.cloud.google.com/apt/
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4924768Z   ✓ https://packages.cloud.google.com/apt
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4925663Z       http://web.archive.org/web/20240104115242/https://packages.cloud.google.com/apt/
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4928895Z ##[notice]Archived copy available for https://packages.erlang-solutions.com/ubuntu -> http://web.archive.org/web/20250116185703/http://packages.erlang-solutions.com/ubuntu/
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4931329Z   ✓ https://packages.erlang-solutions.com/ubuntu
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4932441Z       http://web.archive.org/web/20250116185703/http://packages.erlang-solutions.com/ubuntu/
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4936796Z ##[warning]No Web Archive snapshot for https://docs.deno.com/runtime/reference/cli/deno_json/#minimum-dependency-age
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4939118Z   ✗ https://docs.deno.com/runtime/reference/cli/deno_json/#minimum-dependency-age
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4941397Z ##[warning]No Web Archive snapshot for https://learn.microsoft.com/en-us/dotnet/core/compatibility/11.0
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4943702Z   ✗ https://learn.microsoft.com/en-us/dotnet/core/compatibility/11.0
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4945601Z ##[warning]No Web Archive snapshot for https://phpstan.org/blog/phpstan-2-0-released
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4947361Z   ✗ https://phpstan.org/blog/phpstan-2-0-released
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4949196Z ##[warning]No Web Archive snapshot for https://cli-assets.heroku.com/channels/stable/apt
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4950981Z   ✗ https://cli-assets.heroku.com/channels/stable/apt
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4953135Z ##[warning]No Web Archive snapshot for https://packagecloud.io/install/repositories/github/git-lfs
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4955063Z   ✗ https://packagecloud.io/install/repositories/github/git-lfs
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4956983Z ##[warning]No Web Archive snapshot for https://ppa.launchpad.net/mozillateam/ppa/ubuntu
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4958812Z   ✗ https://ppa.launchpad.net/mozillateam/ppa/ubuntu
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4961249Z ##[warning]No Web Archive snapshot for https://x.com/GHchangelog
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4963369Z   ✗ https://x.com/GHchangelog
+Check Links	Check broken links against the Web Archive	2026-11-13T23:18:11.4963946Z Some broken links have no archived fallback.
+Check Links	Fail if broken links found and no web archive fallback	﻿2026-11-13T23:18:11.5071681Z ##[group]Run echo "::error::Broken links were detected with no Web Archive fallback available."
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5072704Z ^[[36;1mecho "::error::Broken links were detected with no Web Archive fallback available."^[[0m
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5073147Z ^[[36;1mecho ""^[[0m
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5073361Z ^[[36;1mecho "How to fix:"^[[0m
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5073739Z ^[[36;1mecho "  1. Review the 'Check links with lychee' step above for the full list."^[[0m
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5074290Z ^[[36;1mecho "  2. For links with a '::notice::' annotation, a Web Archive copy exists —"^[[0m
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5074997Z ^[[36;1mecho "     replace the broken link with the suggested archive.org URL."^[[0m
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5075529Z ^[[36;1mecho "  3. Otherwise update the URL, remove the link, or add it to .lycheeignore."^[[0m
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5075945Z ^[[36;1mecho ""^[[0m
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5076179Z ^[[36;1mecho "Report location: lychee/out.md"^[[0m
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5076462Z ^[[36;1mexit 1^[[0m
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5124485Z shell: /usr/bin/bash -e {0}
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5124782Z env:
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5124984Z   COMPOSER_PROCESS_TIMEOUT: 0
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5125248Z   COMPOSER_NO_INTERACTION: 1
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5125494Z   COMPOSER_NO_AUDIT: 1
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5125739Z ##[endgroup]
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5195024Z ##[error]Broken links were detected with no Web Archive fallback available.
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5196438Z 
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5196605Z How to fix:
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5197092Z   1. Review the 'Check links with lychee' step above for the full list.
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5201020Z   2. For links with a '::notice::' annotation, a Web Archive copy exists —
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5201532Z      replace the broken link with the suggested archive.org URL.
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5202330Z   3. Otherwise update the URL, remove the link, or add it to .lycheeignore.
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5202648Z 
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5202755Z Report location: lychee/out.md
+Check Links	Fail if broken links found and no web archive fallback	2026-11-13T23:18:11.5204400Z ##[error]Process completed with exit code 1.
+Check Links	Post Run actions/checkout@v7.0.1	﻿2026-11-13T23:18:11.5298329Z Post job cleanup.
+Check Links	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:11.6189300Z [command]/usr/bin/git version
+Check Links	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:11.6238699Z git version 2.56.1
+Check Links	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:11.6289087Z Temporarily overriding HOME='/home/runner/work/_temp/d8e52b70-6abb-4835-a2e0-25d2797c2088' before making global git config changes
+Check Links	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:11.6290450Z Adding repository directory to the temporary git global config as a safe directory
+Check Links	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:11.6292222Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template
+Check Links	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:11.6322694Z Removing SSH command configuration
+Check Links	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:11.6329678Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Check Links	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:11.6369455Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Check Links	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:11.6662241Z Removing HTTP extra header
+Check Links	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:11.6668299Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Check Links	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:11.6707360Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Check Links	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:11.7092092Z Removing includeIf entries pointing to credentials config files
+Check Links	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:11.7114541Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Check Links	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:11.7183134Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Check Links	Complete job	﻿2026-11-13T23:18:11.7639568Z Cleaning up orphan processes
+Pipeline Status	Set up job	﻿2026-11-13T23:18:45.8240279Z Current runner version: '2.338.2'
+Pipeline Status	Set up job	2026-11-13T23:18:45.8255174Z ##[group]Runner Image Provisioner
+Pipeline Status	Set up job	2026-11-13T23:18:45.8255782Z Hosted Compute Agent
+Pipeline Status	Set up job	2026-11-13T23:18:45.8256118Z Version: 20261103.629
+Pipeline Status	Set up job	2026-11-13T23:18:45.8256498Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+Pipeline Status	Set up job	2026-11-13T23:18:45.8256916Z Build Date: 2026-11-03T17:26:59Z
+Pipeline Status	Set up job	2026-11-13T23:18:45.8257295Z Worker ID: {25f9a238-2672-4939-b054-e1eb50c695d6}
+Pipeline Status	Set up job	2026-11-13T23:18:45.8257715Z Region: centralus
+Pipeline Status	Set up job	2026-11-13T23:18:45.8258060Z Cloud: Azure
+Pipeline Status	Set up job	2026-11-13T23:18:45.8258359Z ##[endgroup]
+Pipeline Status	Set up job	2026-11-13T23:18:45.8259340Z ##[group]Operating System
+Pipeline Status	Set up job	2026-11-13T23:18:45.8259676Z Ubuntu
+Pipeline Status	Set up job	2026-11-13T23:18:45.8260044Z 26.04.1
+Pipeline Status	Set up job	2026-11-13T23:18:45.8260332Z LTS
+Pipeline Status	Set up job	2026-11-13T23:18:45.8260616Z ##[endgroup]
+Pipeline Status	Set up job	2026-11-13T23:18:45.8260969Z ##[group]Runner Image
+Pipeline Status	Set up job	2026-11-13T23:18:45.8261308Z Image: ubuntu-26.04
+Pipeline Status	Set up job	2026-11-13T23:18:45.8261659Z Version: 20261111.196.1
+Pipeline Status	Set up job	2026-11-13T23:18:45.8262279Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261111.196/images/ubuntu/Ubuntu2604-Readme.md
+Pipeline Status	Set up job	2026-11-13T23:18:45.8263255Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261111.196
+Pipeline Status	Set up job	2026-11-13T23:18:45.8263783Z ##[endgroup]
+Pipeline Status	Set up job	2026-11-13T23:18:45.8264464Z ##[group]GITHUB_TOKEN Permissions
+Pipeline Status	Set up job	2026-11-13T23:18:45.8265706Z Contents: read
+Pipeline Status	Set up job	2026-11-13T23:18:45.8266077Z Metadata: read
+Pipeline Status	Set up job	2026-11-13T23:18:45.8266403Z ##[endgroup]
+Pipeline Status	Set up job	2026-11-13T23:18:45.8267607Z Secret source: Actions
+Pipeline Status	Set up job	2026-11-13T23:18:45.8268191Z Cache mode: write
+Pipeline Status	Set up job	2026-11-13T23:18:45.8268903Z Prepare workflow directory
+Pipeline Status	Set up job	2026-11-13T23:18:45.8461520Z Prepare all required actions
+Pipeline Status	Set up job	2026-11-13T23:18:45.8491145Z Getting action download info
+Pipeline Status	Set up job	2026-11-13T23:18:46.0516815Z Download action repository 'actions/checkout@v7.0.1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+Pipeline Status	Set up job	2026-11-13T23:18:46.2379439Z Complete job name: Pipeline Status
+Pipeline Status	Run actions/checkout@v7.0.1	﻿2026-11-13T23:18:46.2877704Z ##[group]Run actions/checkout@v7.0.1
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.2878143Z with:
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.2878382Z   persist-credentials: false
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.2878917Z   repository: link-foundation/php-ai-driven-development-pipeline-template
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.2880921Z   token: ***
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.2881150Z   ssh-strict: true
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.2881384Z   ssh-user: git
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.2881611Z   clean: true
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.2881854Z   sparse-checkout-cone-mode: true
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.2882133Z   fetch-depth: 1
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.2882369Z   fetch-tags: false
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.2882608Z   show-progress: true
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.2882849Z   lfs: false
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.2883075Z   submodules: false
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.2883321Z   set-safe-directory: true
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.2883599Z   allow-unsafe-pr-checkout: false
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.2884084Z ##[endgroup]
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5257959Z Syncing repository: link-foundation/php-ai-driven-development-pipeline-template
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5259903Z ##[group]Getting Git version info
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5260953Z Working directory is '/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template'
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5262319Z [command]/usr/bin/git version
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5273694Z git version 2.56.1
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5286134Z ##[endgroup]
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5292948Z Temporarily overriding HOME='/home/runner/work/_temp/329b601e-a8e6-4766-934e-9081a9457c2e' before making global git config changes
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5294088Z Adding repository directory to the temporary git global config as a safe directory
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5297975Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5350409Z Deleting the contents of '/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template'
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5351877Z ##[group]Determining repository object format
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5352818Z ##[endgroup]
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5353406Z ##[group]Initializing the repository
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5355848Z [command]/usr/bin/git init /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5454797Z hint: Using 'master' as the name for the initial branch. This default branch name
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5455402Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5455907Z hint: to use in all of your new repositories, which will suppress this warning,
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5456450Z hint: call:
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5456760Z hint:
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5457051Z hint: 	git config --global init.defaultBranch <name>
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5457383Z hint:
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5457691Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5458182Z hint: 'development'. The just-created branch can be renamed via this command:
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5458743Z hint:
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5458981Z hint: 	git branch -m <name>
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5459231Z hint:
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5459681Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5467131Z Initialized empty Git repository in /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5475105Z [command]/usr/bin/git remote add origin https://github.com/link-foundation/php-ai-driven-development-pipeline-template
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5519843Z ##[endgroup]
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5520505Z ##[group]Disabling automatic garbage collection
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5522636Z [command]/usr/bin/git config --local gc.auto 0
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5557391Z ##[endgroup]
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5558430Z ##[group]Setting up auth
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5559054Z Removing SSH command configuration
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5561266Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5590752Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5936308Z Removing HTTP extra header
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5940586Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.5966657Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.6168896Z Removing includeIf entries pointing to credentials config files
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.6172289Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.6197212Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.6396942Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-440dc630-cda2-4a70-9c3d-36157bdfd876.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.6425002Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path /home/runner/work/_temp/git-credentials-440dc630-cda2-4a70-9c3d-36157bdfd876.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.6449870Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-440dc630-cda2-4a70-9c3d-36157bdfd876.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.6476779Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-440dc630-cda2-4a70-9c3d-36157bdfd876.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.6501649Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-440dc630-cda2-4a70-9c3d-36157bdfd876.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.6524001Z ##[endgroup]
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.6527784Z ##[group]Fetching the repository
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:46.6528486Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +7f786012b316e7f033052f56d410b141ef2008c1:refs/remotes/pull/24/merge
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2319988Z From https://github.com/link-foundation/php-ai-driven-development-pipeline-template
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2321043Z  * [new ref]         7f786012b316e7f033052f56d410b141ef2008c1 -> pull/24/merge
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2324400Z ##[endgroup]
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2325020Z ##[group]Determining the checkout info
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2325733Z ##[endgroup]
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2328509Z [command]/usr/bin/git sparse-checkout disable
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2370493Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2394148Z ##[group]Checking out the ref
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2396801Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/24/merge
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2862253Z Note: switching to 'refs/remotes/pull/24/merge'.
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2862836Z 
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2863309Z You are in 'detached HEAD' state. You can look around, make experimental
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2864165Z changes and commit them, and you can discard any commits you make in this
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2864847Z state without impacting any branches by switching back to a branch.
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2865241Z 
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2865517Z If you want to create a new branch to retain commits you create, you may
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2866104Z do so (now or later) by using -c with the switch command. Example:
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2866449Z 
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2866571Z   git switch -c <new-branch-name>
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2866794Z 
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2866918Z Or undo this operation with:
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2867147Z 
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2867255Z   git switch -
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2867612Z 
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2867889Z Turn off this advice by setting config variable advice.detachedHead to false
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2868324Z 
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2868963Z HEAD is now at 7f78601 Merge eeb0625e9db83acef1416ec109e2bb3dcf38eb55 into dda0eb244919927efb7e8668d120996d9d82489f
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2872997Z ##[endgroup]
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2910955Z [command]/usr/bin/git log -1 --format=%H
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2931402Z 7f786012b316e7f033052f56d410b141ef2008c1
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2937773Z ##[group]Removing auth
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2938247Z Removing SSH command configuration
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2940104Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.2963250Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3176626Z Removing HTTP extra header
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3178113Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3204886Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3402190Z Removing includeIf entries pointing to credentials config files
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3404212Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3423891Z includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3426463Z includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3428121Z includeif.gitdir:/github/workspace/.git.path
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3429197Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3431802Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3447900Z /home/runner/work/_temp/git-credentials-440dc630-cda2-4a70-9c3d-36157bdfd876.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3459103Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-440dc630\-cda2\-4a70\-9c3d\-36157bdfd876\.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3487950Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3506529Z /home/runner/work/_temp/git-credentials-440dc630-cda2-4a70-9c3d-36157bdfd876.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3518980Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-440dc630\-cda2\-4a70\-9c3d\-36157bdfd876\.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3544912Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3564125Z /github/runner_temp/git-credentials-440dc630-cda2-4a70-9c3d-36157bdfd876.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3570722Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-440dc630\-cda2\-4a70\-9c3d\-36157bdfd876\.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3597756Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3617011Z /github/runner_temp/git-credentials-440dc630-cda2-4a70-9c3d-36157bdfd876.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3623266Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-440dc630\-cda2\-4a70\-9c3d\-36157bdfd876\.config
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3648958Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3846813Z Removing credentials config '/home/runner/work/_temp/git-credentials-440dc630-cda2-4a70-9c3d-36157bdfd876.config'
+Pipeline Status	Run actions/checkout@v7.0.1	2026-11-13T23:18:47.3853407Z ##[endgroup]
+Pipeline Status	Check aggregate pipeline status	﻿2026-11-13T23:18:47.4045622Z ##[group]Run bash scripts/check-pipeline-status.sh
+Pipeline Status	Check aggregate pipeline status	2026-11-13T23:18:47.4046283Z ^[[36;1mbash scripts/check-pipeline-status.sh^[[0m
+Pipeline Status	Check aggregate pipeline status	2026-11-13T23:18:47.4088503Z shell: /usr/bin/bash -e {0}
+Pipeline Status	Check aggregate pipeline status	2026-11-13T23:18:47.4089014Z env:
+Pipeline Status	Check aggregate pipeline status	2026-11-13T23:18:47.4089501Z   NEEDS_JSON: {
+Pipeline Status	Check aggregate pipeline status	  "link-checker": {
+Pipeline Status	Check aggregate pipeline status	    "result": "failure",
+Pipeline Status	Check aggregate pipeline status	    "outputs": {}
+Pipeline Status	Check aggregate pipeline status	  }
+Pipeline Status	Check aggregate pipeline status	}
+Pipeline Status	Check aggregate pipeline status	2026-11-13T23:18:47.4090261Z   RUN_SHA: eeb0625e9db83acef1416ec109e2bb3dcf38eb55
+Pipeline Status	Check aggregate pipeline status	2026-11-13T23:18:47.4090768Z   BRANCH_REF: issue-23-addf7c5fd0d4
+Pipeline Status	Check aggregate pipeline status	2026-11-13T23:18:47.4091595Z   GIT_REMOTE: https://github.com/link-foundation/php-ai-driven-development-pipeline-template.git
+Pipeline Status	Check aggregate pipeline status	2026-11-13T23:18:47.4092449Z ##[endgroup]
+Pipeline Status	Check aggregate pipeline status	2026-11-13T23:18:47.4859217Z Failed jobs:    link-checker
+Pipeline Status	Check aggregate pipeline status	2026-11-13T23:18:47.4859916Z Cancelled jobs: <none>
+Pipeline Status	Check aggregate pipeline status	2026-11-13T23:18:47.4875185Z ##[error]Failing jobs: link-checker
+Pipeline Status	Check aggregate pipeline status	2026-11-13T23:18:47.4883909Z ##[error]Process completed with exit code 1.
+Pipeline Status	Post Run actions/checkout@v7.0.1	﻿2026-11-13T23:18:47.5077139Z Post job cleanup.
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:47.5646771Z [command]/usr/bin/git version
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:47.5681643Z git version 2.56.1
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:47.5705347Z Temporarily overriding HOME='/home/runner/work/_temp/d324817d-1708-45d6-9ffc-b9d653d29990' before making global git config changes
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:47.5706765Z Adding repository directory to the temporary git global config as a safe directory
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:47.5710122Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/php-ai-driven-development-pipeline-template/php-ai-driven-development-pipeline-template
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:47.5740763Z Removing SSH command configuration
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:47.5744941Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:47.5773694Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:47.6004300Z Removing HTTP extra header
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:47.6009615Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:47.6041639Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:47.6264445Z Removing includeIf entries pointing to credentials config files
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:47.6269104Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Pipeline Status	Post Run actions/checkout@v7.0.1	2026-11-13T23:18:47.6295247Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Pipeline Status	Complete job	﻿2026-11-13T23:18:47.6614785Z Cleaning up orphan processes
