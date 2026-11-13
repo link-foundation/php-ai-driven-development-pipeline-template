@@ -77,3 +77,6 @@
 **/TestResults/
 **/docs/_build/
 **/docs/api/
+
+# Electron Forge packages are generated build artifacts.
+**/out/
