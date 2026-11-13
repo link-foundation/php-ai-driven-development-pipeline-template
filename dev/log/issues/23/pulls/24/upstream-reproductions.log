@@ -1,0 +1,6 @@
+🦋 changeset v3.0.3
+
+All files have been updated. Review them and commit at your leisure
+{"changesets":"3.0.3","packageVersion":"1.0.1","lockVersion":"1.0.0","lockRootVersion":"1.0.0"}
+unpatched arch source: const arch = os.arch;
+{"winstaller":"5.4.0","selected":["vendor/7z-()=> 'x64'.exe","vendor/7z-()=> 'x64'.dll"]}
