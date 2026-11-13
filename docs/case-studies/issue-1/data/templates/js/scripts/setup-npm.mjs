@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
 import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { gte, minVersion } from 'semver';
 
 const metadata = JSON.parse(
@@ -18,8 +16,8 @@ export const isSupportedNpmVersion = (version) => gte(version, NPM_MIN_VERSION);
  * Node 26 ships a working npm, so the old Node 22 tarball/corepack fallbacks
  * are no longer needed. Keep version validation so an ineffective install fails.
  */
-export async function setupNpm($) {
-  if (!isSupportedNodeVersion(process.version)) {
+export async function setupNpm($, nodeVersion = process.version) {
+  if (!isSupportedNodeVersion(nodeVersion)) {
     throw new Error(`Node.js ${NODE_MIN_VERSION} or later is required`);
   }
   await $`npm install --global npm@${NPM_MIN_VERSION}`;
@@ -29,10 +27,7 @@ export async function setupNpm($) {
   }
 }
 
-if (
-  process.argv[1] &&
-  resolve(process.argv[1]) === fileURLToPath(import.meta.url)
-) {
+if (import.meta.main) {
   const { $ } = await import('command-stream');
   await setupNpm($);
 }

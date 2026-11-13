@@ -1,0 +1,5 @@
+# Ubuntu 26.04 is hosted; actionlint 1.7.12 predates its label.
+# Keep validation enabled for every other unknown label.
+self-hosted-runner:
+  labels:
+    - ubuntu-26.04

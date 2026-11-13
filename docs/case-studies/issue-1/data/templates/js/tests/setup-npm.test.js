@@ -27,7 +27,7 @@ describe('setup-npm version requirements', () => {
 
   it('installs the pinned npm and verifies the resulting executable', async () => {
     const { command, calls } = mockCommand(NPM_MIN_VERSION);
-    await setupNpm(command);
+    await setupNpm(command, 'v26.13.1');
     expect(calls).toEqual([
       `npm install --global npm@${NPM_MIN_VERSION}`,
       'npm --version',
@@ -36,6 +36,9 @@ describe('setup-npm version requirements', () => {
 
   it('fails if installation leaves an older executable on PATH', async () => {
     const { command } = mockCommand('11.20.0');
-    await assert.rejects(setupNpm(command), /npm .* or later is required/);
+    await assert.rejects(
+      setupNpm(command, 'v26.13.1'),
+      /npm .* or later is required/
+    );
   });
 });

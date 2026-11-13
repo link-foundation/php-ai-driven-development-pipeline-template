@@ -31,7 +31,7 @@ describe('Changesets 3 noninteractive release creation', () => {
         })
       );
       execFileSync(
-        process.execPath,
+        'node',
         [
           fileURLToPath(
             new URL('../scripts/create-manual-changeset.mjs', import.meta.url)

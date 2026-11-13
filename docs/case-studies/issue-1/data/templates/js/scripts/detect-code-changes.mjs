@@ -102,6 +102,10 @@ function detectChanges() {
 
   const packageChanged = changedFiles.some((file) => file === 'package.json');
   setOutput('package-changed', packageChanged ? 'true' : 'false');
+  setOutput(
+    'runtime-changed',
+    mjsChanged || jsChanged || packageChanged ? 'true' : 'false'
+  );
 
   const docsChanged = changedFiles.some((file) => file.endsWith('.md'));
   setOutput('docs-changed', docsChanged ? 'true' : 'false');

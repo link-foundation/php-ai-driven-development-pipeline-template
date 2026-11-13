@@ -56,6 +56,7 @@ jobs:
       package-changed: ${{ steps.changes.outputs.package-changed }}
       docs-changed: ${{ steps.changes.outputs.docs-changed }}
       workflow-changed: ${{ steps.changes.outputs.workflow-changed }}
+      runtime-changed: ${{ steps.changes.outputs.runtime-changed }}
       any-code-changed: ${{ steps.changes.outputs.any-code-changed }}
     steps:
       - &shared-step-1
@@ -77,7 +78,7 @@ jobs:
     # Typical run: <10s. Tight cap fails fast on syntax-check hangs.
     timeout-minutes: 5
     needs: &change-detection [detect-changes]
-    if: github.event_name == 'push' || needs.detect-changes.outputs.any-code-changed == 'true'
+    if: github.event_name == 'push' || needs.detect-changes.outputs.runtime-changed == 'true'
     steps:
       - &common-step-1
         uses: actions/checkout@v7.0.1
@@ -92,7 +93,7 @@ jobs:
     # Typical run: <10s. This job only walks tracked files and counts lines.
     timeout-minutes: 5
     needs: *change-detection
-    if: github.event_name == 'push' || needs.detect-changes.outputs.any-code-changed == 'true' || needs.detect-changes.outputs.docs-changed == 'true' || needs.detect-changes.outputs.workflow-changed == 'true'
+    if: github.event_name == 'push' || needs.detect-changes.outputs.runtime-changed == 'true' || needs.detect-changes.outputs.docs-changed == 'true' || needs.detect-changes.outputs.workflow-changed == 'true'
     steps:
       - *shared-step-1
 
@@ -178,7 +179,7 @@ jobs:
     # and secretlint. 10min protects against a hung lint plugin.
     timeout-minutes: 10
     needs: *change-detection
-    if: github.event_name == 'push' || needs.detect-changes.outputs.any-code-changed == 'true' || needs.detect-changes.outputs.docs-changed == 'true' || needs.detect-changes.outputs.package-changed == 'true' || needs.detect-changes.outputs.workflow-changed == 'true'
+    if: github.event_name == 'push' || needs.detect-changes.outputs.runtime-changed == 'true' || needs.detect-changes.outputs.docs-changed == 'true' || needs.detect-changes.outputs.package-changed == 'true' || needs.detect-changes.outputs.workflow-changed == 'true'
     steps:
       - &shared-step-4
         uses: actions/checkout@v7.0.1
@@ -280,7 +281,7 @@ jobs:
 
       - name: Run tests (Deno)
         if: matrix.runtime == 'deno'
-        run: deno test --allow-read
+        run: deno test --allow-read --allow-write --allow-env --allow-run tests
 
   # === DOCUMENTATION VALIDATION ===
   # Validate documentation files when docs change (hive-mind principle #12)

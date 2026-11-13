@@ -3,11 +3,13 @@ version: 2
 updates:
   - package-ecosystem: composer
     directory: /
+    cooldown:
+      default-days: 7
     schedule:
       interval: weekly
     groups:
       composer:
-        patterns: ['*']
+        patterns: ["*"]
   - package-ecosystem: github-actions
     directories:
       - /
@@ -15,50 +17,64 @@ updates:
       - /docs/case-studies/issue-1/data/templates/python
       - /docs/case-studies/issue-1/data/templates/rust
       - /docs/case-studies/issue-1/data/templates/csharp
+    cooldown:
+      default-days: 7
     schedule:
       interval: weekly
     groups:
       actions:
-        patterns: ['*']
+        patterns: ["*"]
   - package-ecosystem: nuget
     directories:
       - /docs/case-studies/issue-1/data/templates/csharp
       - /docs/case-studies/issue-1/data/templates/csharp/src/MyPackage
       - /docs/case-studies/issue-1/data/templates/csharp/tests/MyPackage.Tests
+    cooldown:
+      default-days: 7
     schedule:
       interval: weekly
     groups:
       nuget:
-        patterns: ['*']
+        patterns: ["*"]
   - package-ecosystem: pre-commit
     directories:
       - /docs/case-studies/issue-1/data/templates/csharp
       - /docs/case-studies/issue-1/data/templates/python
       - /docs/case-studies/issue-1/data/templates/rust
+    cooldown:
+      default-days: 7
     schedule:
       interval: weekly
   - package-ecosystem: pip
     directories:
       - /docs/case-studies/issue-1/data/templates/python
       - /docs/case-studies/issue-1/data/templates/python/docs
+    cooldown:
+      default-days: 7
     schedule:
       interval: weekly
     groups:
       python:
-        patterns: ['*']
+        patterns: ["*"]
   - package-ecosystem: npm
-    directory: /docs/case-studies/issue-1/data/templates/js
+    directories:
+      - /docs/case-studies/issue-1/data/templates/js
+      - /docs/case-studies/issue-1/data/templates/js/examples/universal-app
+    cooldown:
+      default-days: 7
     schedule:
       interval: weekly
     groups:
       npm:
-        patterns: ['*']
+        patterns: ["*"]
   - package-ecosystem: cargo
     directories:
       - /docs/case-studies/issue-1/data/templates/rust
       - /docs/case-studies/issue-1/data/templates/rust/pipeline
+    cooldown:
+      default-days: 7
     schedule:
       interval: weekly
     groups:
       rust:
-        patterns: ['*']
+        patterns: ["*"]

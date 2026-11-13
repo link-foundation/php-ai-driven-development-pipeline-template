@@ -203,7 +203,7 @@ fn release_jobs_check_crate_size_before_publishing() {
             "{job_name} should check the crate size before publishing to crates.io"
         );
         assert!(
-            job.contains("rust-script scripts/check-crate-size.rs"),
+            job.contains("cargo run --locked --manifest-path pipeline/Cargo.toml --bin check-crate-size --"),
             "{job_name} should run the check-crate-size guard script"
         );
     }
@@ -219,7 +219,7 @@ fn build_job_checks_crate_size() {
         "build job should surface oversized packages early on PRs"
     );
     assert!(
-        build.contains("rust-script scripts/check-crate-size.rs"),
+        build.contains("cargo run --locked --manifest-path pipeline/Cargo.toml --bin check-crate-size --"),
         "build job should run the check-crate-size guard script"
     );
 }

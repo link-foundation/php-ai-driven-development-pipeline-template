@@ -430,7 +430,6 @@ fn collect_changelog_with_date(
     println!("Collected {} changelog fragment(s)", files.len());
 }
 
-
 fn main() {
     let bump_type = match get_arg("bump-type") {
         Some(bt) => bt,
