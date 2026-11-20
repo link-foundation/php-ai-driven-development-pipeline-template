@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- changelog-insert-here -->
 
+## [1.0.1] - 2026-11-20
+
+### Fixed
+- Build and upload API docs independently of optional GitHub Pages deployment.
+- Fail change detection when Git history cannot establish a complete comparison.
+- Require successful change detection, lint, tests, build, and preflight before automatic releases.
+- Fail the release CLI when Git rejects a branch or tag push.
+- Keep the Composer lock file current when publishing a release.
+
+
 ## [1.0.0] - 2026-11-14
 
 ### Added
