@@ -46,12 +46,12 @@ final class Git
 
     public function push(string $remote = 'origin', string $branch = 'HEAD'): ProcessResult
     {
-        return Process::run(['git', 'push', $remote, $branch], $this->cwd);
+        return Process::mustRun(['git', 'push', $remote, $branch], $this->cwd);
     }
 
     public function pushTags(string $remote = 'origin'): ProcessResult
     {
-        return Process::run(['git', 'push', $remote, '--tags'], $this->cwd);
+        return Process::mustRun(['git', 'push', $remote, '--tags'], $this->cwd);
     }
 
     public function currentBranch(): string

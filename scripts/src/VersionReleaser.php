@@ -65,9 +65,17 @@ final class VersionReleaser
         }
 
         $this->project->setVersion($newVersion);
-        $this->changelog->insert(Changelog::entry($newVersion, $body, $date));
-
         $paths = ['composer.json', 'CHANGELOG.md'];
+        if (is_file($this->project->path('composer.lock'))) {
+            // The root version is part of Composer's lock content hash.
+            Process::mustRun([
+                'composer', 'update', '--lock', '--no-install', '--no-interaction',
+                '--no-scripts', '--no-plugins', '--no-audit',
+            ], $this->project->root());
+            $paths[] = 'composer.lock';
+        }
+
+        $this->changelog->insert(Changelog::entry($newVersion, $body, $date));
 
         if ($mode === 'changeset') {
             $this->fragments->clear();

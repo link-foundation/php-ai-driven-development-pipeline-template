@@ -66,9 +66,10 @@ class of merge conflicts and "forgot to bump" mistakes.
 
 The release flow uses the git tag `v<version>` as the **only** idempotency guard,
 and treats **Packagist + GitHub Releases as the source of truth** — not the tag.
-Every step (tag, wait-for-Packagist, create-release) checks whether its work is
-already done and no-ops if so. A release that fails halfway through simply
-finishes on the next run.
+After the tag reaches the remote, the workflow can resume waiting for
+Packagist or creating a GitHub Release. A rejected Git push fails the release
+step before it emits success outputs. If the branch push succeeds and the tag
+push fails, the release commit may already be on the remote.
 
 Packagist is special: it publishes on a **tag-push webhook**, so there is no
 "upload" step (unlike PyPI/npm). The pipeline pushes the tag and then *polls*

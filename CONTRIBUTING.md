@@ -109,7 +109,11 @@ Releases are fully automated and you should never tag or bump versions manually:
 3. Packagist imports the tag via its GitHub webhook; the pipeline waits for it,
    then publishes the matching GitHub Release.
 
-The whole flow is idempotent — re-running it after a partial failure is safe.
+The workflow can resume publication to Packagist or GitHub after the release
+tag reaches the remote. If the tag push is rejected after the branch push
+succeeds, the CLI fails and the release commit may already be on the remote.
+After resolving the rejection, publish the release tag for that commit before
+rerunning the workflow.
 
 ## Code of Conduct
 

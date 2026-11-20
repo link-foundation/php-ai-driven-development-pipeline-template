@@ -14,7 +14,7 @@ declare(strict_types=1);
  *
  * Outputs:
  *   new_version        the version that should be released
- *   version_committed  true when a release commit/tag was created
+ *   version_committed  true when the release commit and tag were pushed
  *   already_released   true when the tag already existed
  */
 
@@ -52,7 +52,12 @@ $description = Cli::string($options, 'description');
 $date = Cli::string($options, 'date', gmdate('Y-m-d')) ?? gmdate('Y-m-d');
 
 $releaser = VersionReleaser::forProject($project);
-$result = $releaser->release($mode, $bump, $description, $date);
+try {
+    $result = $releaser->release($mode, $bump, $description, $date);
+} catch (RuntimeException $error) {
+    fwrite(STDERR, $error->getMessage() . "\n");
+    exit(1);
+}
 
 Actions::setOutput('new_version', $result['new_version']);
 Actions::setBoolOutput('version_committed', $result['version_committed']);

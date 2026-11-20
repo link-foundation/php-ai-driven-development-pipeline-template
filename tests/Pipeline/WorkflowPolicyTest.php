@@ -394,6 +394,64 @@ final class WorkflowPolicyTest extends TestCase
         }
     }
 
+    public function testAutomaticReleaseRequiresEveryDependencyToSucceed(): void
+    {
+        $job = self::jobBlock(self::workflow('release.yml'), 'auto-release');
+        $settings = self::needsList($job);
+        self::assertSame(['detect-changes', 'lint', 'test', 'build', 'release-preflight'], $settings);
+        preg_match('/^    if: \|\n((?:^      .*\n)+)/m', $job, $match);
+        $condition = trim(str_replace("\n      ", ' ', $match[1] ?? ''));
+        $terms = explode(' && ', $condition);
+
+        $successfulRun = [
+            'always()' => true,
+            '!cancelled()' => true,
+            "github.event_name == 'push'" => true,
+            "github.ref == 'refs/heads/main'" => true,
+        ];
+        foreach ($settings as $dependency) {
+            $successfulRun["needs.{$dependency}.result == 'success'"] = true;
+        }
+        self::assertSame(array_keys($successfulRun), $terms, 'The guard must require all predicates.');
+
+        foreach ($settings as $dependency) {
+            foreach (['success', 'failure', 'cancelled', 'skipped'] as $result) {
+                $run = $successfulRun;
+                $run["needs.{$dependency}.result == 'success'"] = $result === 'success';
+                $allowsRelease = !\in_array(false, array_intersect_key($run, array_flip($terms)), true);
+                self::assertSame($result === 'success', $allowsRelease, "{$dependency}: {$result}");
+            }
+        }
+    }
+
+    public function testPushChangeDetectionUsesTheEventRange(): void
+    {
+        $job = self::jobBlock(self::workflow('release.yml'), 'detect-changes');
+
+        self::assertStringContainsString('fetch-depth: 0', $job);
+        self::assertStringContainsString('GITHUB_BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}', $job);
+        self::assertStringContainsString('GITHUB_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.event.after }}', $job);
+    }
+
+    public function testDocsBuildIsIndependentOfOptInPagesDeployment(): void
+    {
+        $yaml = self::workflow('docs.yml');
+        $build = self::jobBlock($yaml, 'build');
+        $deploy = self::jobBlock($yaml, 'deploy');
+        $mainPush = "github.event_name == 'push' && github.ref == 'refs/heads/main'";
+
+        self::assertStringContainsString('name: docs-site', $build);
+        self::assertStringContainsString("if: {$mainPush} && vars.DEPLOY_GITHUB_PAGES != 'true'\n        run: echo \"::notice::", $build);
+        self::assertSame(['build'], self::needsList($deploy));
+        self::assertStringContainsString("if: {$mainPush} && vars.DEPLOY_GITHUB_PAGES == 'true'", $deploy);
+        foreach (['configure-pages', 'upload-pages-artifact', 'deploy-pages'] as $action) {
+            self::assertStringNotContainsString("uses: actions/{$action}@", $build);
+            self::assertStringContainsString("uses: actions/{$action}@", $deploy);
+        }
+        self::assertMatchesRegularExpression('/uses: actions\/download-artifact@[^\n]+\n        with:\n          name: docs-site\n          path: _site/', $deploy);
+        self::assertSame(['build', 'deploy'], self::needsList(self::jobBlock($yaml, 'pipeline-status')));
+    }
+
     public function testEveryWorkflowGrantsExplicitTopLevelPermissions(): void
     {
         // A workflow without a top-level permissions block hands every job
