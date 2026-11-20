@@ -16,9 +16,11 @@ a native-PHP CI/CD pipeline template for Symfony / Composer packages.
 
 ## API Reference
 
-The class-level API reference is generated from source by
-[phpDocumentor](https://phpdoc.org/) and published to GitHub Pages on every push
-to `main` (see [`.github/workflows/docs.yml`](../.github/workflows/docs.yml)).
+The [docs workflow](../.github/workflows/docs.yml) builds the class-level API
+reference with [phpDocumentor](https://phpdoc.org/) and uploads it as the
+`docs-site` workflow artifact. To publish it on relevant pushes to `main`,
+set the Pages source to **GitHub Actions** and set the repository variable
+`DEPLOY_GITHUB_PAGES` to `true`.
 
 To build the docs locally:
 

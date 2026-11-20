@@ -12,12 +12,18 @@ require_once __DIR__ . '/bootstrap.php';
 use LinkFoundation\Template\Pipeline\Actions;
 use LinkFoundation\Template\Pipeline\ChangeDetector;
 
-$files = ChangeDetector::changedFiles();
+try {
+    $files = ChangeDetector::changedFiles();
+} catch (RuntimeException $error) {
+    fwrite(STDERR, $error->getMessage() . "\n");
+    exit(1);
+}
+
 $flags = ChangeDetector::classify($files);
 
 echo 'Changed files (' . count($files) . "):\n";
 foreach ($files as $file) {
-    echo "  - {$file}\n";
+    echo '  - ' . addcslashes($file, "\x00..\x1f\x7f") . "\n";
 }
 
 echo "\nClassification:\n";

@@ -32,8 +32,8 @@ and GitHub Releases.
   as the only idempotency guard; Packagist + GitHub Releases are the source of truth
 - **Combined CI/CD workflow**: change detection, lint, static analysis, PHP 8.5
   tests, changeset validation, automatic + manual releases — all in one workflow
-- **API documentation**: [phpDocumentor](https://phpdoc.org/) build deployed to
-  GitHub Pages on push to `main`
+- **API documentation**: [phpDocumentor](https://phpdoc.org/) build artifact
+  with optional GitHub Pages deployment on push to `main`
 - **Link checking with archive fallback**: broken external links are re-checked
   against the [Wayback Machine](https://web.archive.org/) in native PHP
 - **File-size guardrail**: no source file may exceed 1000 lines, keeping logic
@@ -59,6 +59,10 @@ and GitHub Releases.
 > release steps run in **dry-run** mode (no tags, no Packagist wait, no GitHub
 > release), so you can fork and experiment safely. Renaming the package "arms"
 > the pipeline.
+
+To publish the API docs, select **GitHub Actions** under **Settings → Pages →
+Source**, then create the repository variable `DEPLOY_GITHUB_PAGES` with value
+`true` under **Settings → Secrets and variables → Actions → Variables**.
 
 ### Development Setup
 
