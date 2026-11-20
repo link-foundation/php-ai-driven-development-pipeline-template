@@ -63,8 +63,8 @@ jobs:
         id: changes
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
-          GITHUB_BASE_SHA: ${{ github.event.pull_request.base.sha }}
-          GITHUB_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          GITHUB_BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+          GITHUB_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.event.after }}
         run: php scripts/detect-code-changes.php
 
   # === LINT AND STATIC ANALYSIS ===
@@ -311,13 +311,16 @@ jobs:
   # truth, not git tags. Re-running after a partial failure resumes safely.
   auto-release:
     name: Auto Release
-    needs: [lint, test, build, release-preflight]
-    # A refused precondition must stop the release even when everything else
-    # is green: `result == 'success'`, not mere non-failure, is the gate
-    # (issue #11).
+    needs: [detect-changes, lint, test, build, release-preflight]
+    # The status functions override the implicit success check. Require
+    # success explicitly for every dependency before publishing.
     if: |
       always() && !cancelled() &&
       github.event_name == 'push' && github.ref == 'refs/heads/main' &&
+      needs.detect-changes.result == 'success' &&
+      needs.lint.result == 'success' &&
+      needs.test.result == 'success' &&
+      needs.build.result == 'success' &&
       needs.release-preflight.result == 'success'
     runs-on: ubuntu-26.04
     timeout-minutes: 30

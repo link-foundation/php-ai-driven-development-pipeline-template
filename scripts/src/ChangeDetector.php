@@ -25,26 +25,50 @@ final class ChangeDetector
         $baseSha = getenv('GITHUB_BASE_SHA') ?: '';
         $headSha = getenv('GITHUB_HEAD_SHA') ?: '';
 
-        if ($event === 'pull_request' && $baseSha !== '' && $headSha !== '') {
-            // Ensure the base commit is present locally.
-            Process::run(['git', 'fetch', '--no-tags', '--depth', '1', 'origin', $baseSha], $cwd);
-            $result = Process::run(['git', 'diff', '--name-only', "{$baseSha}...{$headSha}"], $cwd);
-
-            if ($result->ok()) {
-                return self::splitLines($result->stdout);
+        if ($event === 'pull_request' || $event === 'push') {
+            foreach ([$baseSha, $headSha] as $sha) {
+                if (!preg_match('/\A(?:[a-f0-9]{40}|[a-f0-9]{64})\z/', $sha)) {
+                    throw new \RuntimeException("Missing or invalid base/head SHA for {$event} change detection.");
+                }
             }
+
+            $head = "{$headSha}^{commit}";
+            if ($event === 'push' && trim($baseSha, '0') === '') {
+                // An all-zero before SHA means the ref was created. Treat
+                // every path in the new tree as changed.
+                return self::listTree($head, $cwd);
+            }
+
+            $separator = $event === 'pull_request' ? '...' : '..';
+            if ($event === 'pull_request'
+                && Process::mustRun(['git', 'rev-parse', '--is-shallow-repository'], $cwd)->output() === 'true') {
+                throw new \RuntimeException('A full Git history is required for pull request change detection.');
+            }
+
+            return self::diff("{$baseSha}^{commit}{$separator}{$head}", $cwd);
         }
 
-        // Push (or fallback): diff the last commit; first commit lists the tree.
-        $result = Process::run(['git', 'diff', '--name-only', 'HEAD^', 'HEAD'], $cwd);
-
-        if ($result->ok()) {
-            return self::splitLines($result->stdout);
+        // Local use compares the latest commit to its first parent. Read the
+        // stored header so a shallow checkout cannot masquerade as a root.
+        $commit = Process::mustRun(['git', 'cat-file', 'commit', 'HEAD'], $cwd)->stdout;
+        $header = explode("\n\n", $commit, 2)[0];
+        if (preg_match('/^parent /m', $header) === 0) {
+            return self::listTree('HEAD', $cwd);
         }
 
-        $tree = Process::run(['git', 'ls-tree', '-r', '--name-only', 'HEAD'], $cwd);
+        return self::diff('HEAD^..HEAD', $cwd);
+    }
 
-        return $tree->ok() ? self::splitLines($tree->stdout) : [];
+    /** @return list<string> */
+    private static function diff(string $range, ?string $cwd): array
+    {
+        return self::readPaths(['git', 'diff', '--name-only', '--no-renames', '-z', $range, '--'], $cwd);
+    }
+
+    /** @return list<string> */
+    private static function listTree(string $commit, ?string $cwd): array
+    {
+        return self::readPaths(['git', 'ls-tree', '-r', '--name-only', '-z', $commit], $cwd);
     }
 
     /**
@@ -121,12 +145,14 @@ final class ChangeDetector
     }
 
     /**
+     * @param list<string> $command
      * @return list<string>
      */
-    private static function splitLines(string $text): array
+    private static function readPaths(array $command, ?string $cwd): array
     {
-        $lines = preg_split('/\r?\n/', trim($text)) ?: [];
+        $paths = explode("\0", Process::mustRun($command, $cwd)->stdout);
+        array_pop($paths);
 
-        return array_values(array_filter($lines, static fn (string $l): bool => $l !== ''));
+        return $paths;
     }
 }
