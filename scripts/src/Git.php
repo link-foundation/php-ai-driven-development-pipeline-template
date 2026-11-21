@@ -19,6 +19,25 @@ final class Git
         Process::run(['git', 'config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com'], $this->cwd);
     }
 
+    public function fetchOriginBranch(string $branch): string
+    {
+        $ref = "refs/heads/{$branch}";
+        Process::mustRun(['git', 'check-ref-format', $ref], $this->cwd);
+
+        // Isolate this fetch from shared FETCH_HEAD and remote-tracking refs.
+        $destination = 'refs/php-pipeline/fetched-base/' . bin2hex(random_bytes(8));
+        Process::mustRun([
+            'git', 'fetch', '--atomic', '--no-tags', '--no-write-fetch-head', '--refmap=',
+            '--', 'origin', "{$ref}:{$destination}",
+        ], $this->cwd);
+
+        try {
+            return Process::mustRun(['git', 'rev-parse', '--verify', "{$destination}^{commit}"], $this->cwd)->output();
+        } finally {
+            Process::mustRun(['git', 'update-ref', '-d', $destination], $this->cwd);
+        }
+    }
+
     public function tagExists(string $tag): bool
     {
         $result = Process::run(['git', 'rev-parse', '--verify', '--quiet', "refs/tags/{$tag}"], $this->cwd);

@@ -20,10 +20,14 @@ $project = Project::locate();
 $fragments = ChangelogFragments::forProject($project);
 $validator = new ChangesetValidator($fragments);
 
-$added = ChangesetValidator::addedFragments($project->root());
-$addedCount = $added === [] ? null : count($added);
+try {
+    $added = ChangesetValidator::addedFragments($project->root());
+} catch (RuntimeException $error) {
+    Actions::error($error->getMessage());
+    exit(1);
+}
 
-$result = $validator->validate($addedCount);
+$result = $validator->validate($added === null ? null : count($added));
 
 foreach ($result['warnings'] as $warning) {
     Actions::warning($warning);
