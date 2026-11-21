@@ -17,27 +17,52 @@ final class Process
      */
     public static function run(array $command, ?string $cwd = null): ProcessResult
     {
-        $descriptors = [
-            0 => ['pipe', 'r'],
-            1 => ['pipe', 'w'],
-            2 => ['pipe', 'w'],
-        ];
-
         $cmd = implode(' ', array_map('escapeshellarg', $command));
-        $proc = proc_open($cmd, $descriptors, $pipes, $cwd);
+        $capture = [];
 
-        if (!\is_resource($proc)) {
-            throw new \RuntimeException('Failed to start command: ' . $cmd);
+        try {
+            // Separate files let the child write either stream without waiting
+            // for a pipe reader, including on platforms with blocking pipes.
+            foreach ([1, 2] as $descriptor) {
+                $stream = tmpfile();
+                if ($stream === false) {
+                    throw new \RuntimeException('Failed to open a temporary command output file.');
+                }
+                $capture[$descriptor] = $stream;
+            }
+
+            $proc = proc_open($cmd, [0 => ['pipe', 'r']] + $capture, $pipes, $cwd);
+            if (!\is_resource($proc)) {
+                throw new \RuntimeException('Failed to start command: ' . $cmd);
+            }
+
+            try {
+                fclose($pipes[0]);
+            } finally {
+                $exitCode = proc_close($proc);
+            }
+
+            return new ProcessResult($exitCode, self::readOutput($capture[1]), self::readOutput($capture[2]));
+        } finally {
+            foreach ($capture as $stream) {
+                fclose($stream);
+            }
+        }
+    }
+
+    /** @param resource $stream */
+    private static function readOutput($stream): string
+    {
+        if (!rewind($stream)) {
+            throw new \RuntimeException('Failed to rewind command output.');
         }
 
-        fclose($pipes[0]);
-        $stdout = stream_get_contents($pipes[1]) ?: '';
-        $stderr = stream_get_contents($pipes[2]) ?: '';
-        fclose($pipes[1]);
-        fclose($pipes[2]);
-        $exitCode = proc_close($proc);
+        $output = stream_get_contents($stream);
+        if ($output === false) {
+            throw new \RuntimeException('Failed to read command output.');
+        }
 
-        return new ProcessResult($exitCode, $stdout, $stderr);
+        return $output;
     }
 
     /**
