@@ -34,11 +34,15 @@ final class ReleaseNotes
     }
 
     /**
-     * Truncate to MAX_BYTES without splitting a multibyte character, appending
-     * a notice that links to the full CHANGELOG at the release tag.
+     * Cap UTF-8 release notes by byte count. Reserve space for the changelog
+     * notice and clip the notice itself if it exceeds the cap.
      */
     public static function capBytes(string $body, string $repository, string $tag, int $max = self::MAX_BYTES): string
     {
+        if ($max <= 0) {
+            return '';
+        }
+
         if (\strlen($body) <= $max) {
             return $body;
         }
@@ -47,14 +51,26 @@ final class ReleaseNotes
             . "[CHANGELOG.md](https://github.com/{$repository}/blob/{$tag}/CHANGELOG.md)._\n";
 
         $budget = $max - \strlen($notice);
-        $truncated = substr($body, 0, max(0, $budget));
-
-        // Avoid cutting in the middle of a UTF-8 sequence.
-        while ($truncated !== '' && (\ord($truncated[\strlen($truncated) - 1]) & 0xC0) === 0x80) {
-            $truncated = substr($truncated, 0, -1);
+        if ($budget <= 0) {
+            return self::utf8Prefix($notice, $max);
         }
 
-        return $truncated . $notice;
+        return self::utf8Prefix($body, $budget) . $notice;
+    }
+
+    private static function utf8Prefix(string $text, int $bytes): string
+    {
+        if (\strlen($text) <= $bytes) {
+            return $text;
+        }
+
+        // A continuation byte at the first omitted position means the cut
+        // falls inside a character. Move back to its leading byte.
+        while ($bytes > 0 && (\ord($text[$bytes]) & 0xC0) === 0x80) {
+            --$bytes;
+        }
+
+        return substr($text, 0, $bytes);
     }
 
     public static function build(
