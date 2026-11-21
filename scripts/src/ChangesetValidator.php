@@ -16,41 +16,35 @@ final class ChangesetValidator
 
     /**
      * Find fragment files *added* by this PR (git status "A") under
-     * changelog.d/. Falls back to "all fragments present" when run locally.
+     * changelog.d/. Return null for a local run without a comparison range.
      *
-     * @return list<string>
+     * @return list<string>|null
      */
-    public static function addedFragments(?string $cwd = null): array
+    public static function addedFragments(?string $cwd = null): ?array
     {
         $baseSha = getenv('GITHUB_BASE_SHA') ?: '';
         $headSha = getenv('GITHUB_HEAD_SHA') ?: '';
+        $baseRef = getenv('GITHUB_BASE_REF');
 
-        if ($baseSha !== '' && $headSha !== '') {
-            $result = Process::run(
-                ['git', 'diff', '--name-status', '--diff-filter=A', "{$baseSha}...{$headSha}"],
-                $cwd,
-            );
-
-            if ($result->ok()) {
-                return self::parseAdded($result->stdout);
+        if ($baseSha !== '' || $headSha !== '') {
+            foreach ([$baseSha, $headSha] as $sha) {
+                if (!preg_match('/\A(?:[a-f0-9]{40}|[a-f0-9]{64})\z/', $sha)) {
+                    throw new \RuntimeException('Missing or invalid base/head SHA for pull request changeset validation.');
+                }
             }
+            $range = "{$baseSha}...{$headSha}";
+        } elseif ($baseRef !== false && $baseRef !== '') {
+            $baseCommit = new Git($cwd)->fetchOriginBranch($baseRef);
+            $range = "{$baseCommit}...HEAD";
+        } elseif (getenv('GITHUB_EVENT_NAME') === 'pull_request') {
+            throw new \RuntimeException('Missing base/head SHA or GITHUB_BASE_REF for pull request changeset validation.');
+        } else {
+            return null;
         }
 
-        $baseRef = getenv('GITHUB_BASE_REF') ?: '';
+        $result = Process::mustRun(['git', 'diff', '--name-status', '--diff-filter=A', $range, '--'], $cwd);
 
-        if ($baseRef !== '') {
-            Process::run(['git', 'fetch', '--no-tags', '--depth', '1', 'origin', $baseRef], $cwd);
-            $result = Process::run(
-                ['git', 'diff', '--name-status', '--diff-filter=A', "origin/{$baseRef}...HEAD"],
-                $cwd,
-            );
-
-            if ($result->ok()) {
-                return self::parseAdded($result->stdout);
-            }
-        }
-
-        return [];
+        return self::parseAdded($result->stdout);
     }
 
     /**
