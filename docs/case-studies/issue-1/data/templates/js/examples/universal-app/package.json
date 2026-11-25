@@ -38,7 +38,7 @@
     "@electron-forge/maker-squirrel": "^8.0.1",
     "@electron-forge/maker-zip": "^8.0.1",
     "@vitejs/plugin-react": "^6.3.0",
-    "electron": "^45.3.2",
+    "electron": "^45.3.4",
     "vite": "^8.3.8"
   },
   "engines": {
